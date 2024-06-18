@@ -17,7 +17,7 @@
         ];
       };
     };
-    home.packages = [ pkgs.xdg-terminal-exec ];
+    # home.packages = [ pkgs.xdg-terminal-exec ];
 
     wayland.windowManager.hyprland = {
       enable = true;

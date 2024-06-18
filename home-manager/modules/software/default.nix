@@ -6,13 +6,14 @@
     ./swappy.nix
     ./vesktop.nix
     ./firefox.nix
-    #./steam.nix
+    ./steam.nix
     ./64gram.nix
     ./qtct.nix
     ./xdg.nix
-    #./zoom.nix
-    #./protonvpn.nix
-    #./office.nix
+    ./zoom.nix
+    ./protonvpn.nix
+    ./office.nix
     ./fonts.nix
+    ./ide.nix
   ];
 }
