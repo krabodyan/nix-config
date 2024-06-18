@@ -190,7 +190,7 @@
         # "float, ^(Chromium-browser)$"
 
         "animation slide bottom, ^(wofi)$"
-        "move 500 600, ^(wofi)$"
+        "move 754 910, ^(wofi)$"
       ];
 
       windowrulev2 = [
@@ -214,7 +214,8 @@
       ];
 
       exec-once = [
-        #"rfkill block wifi"
+        "rfkill block wifi"
+        "env QT_QPA_PLATFORMTHEME=gtk3 telegram-desktop"
         "swaybg --output 'eDP-1' -i ${config.background-image} -m fill"
         "waybar"
       ];

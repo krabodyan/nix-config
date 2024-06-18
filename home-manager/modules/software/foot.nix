@@ -10,14 +10,14 @@
     settings = {
       main = {
         term = "xterm-256color";
-        font = "${config.font}:style:SemiBold:size=11.5";
-        font-bold = "${config.font}:style=Bold:size=11.5";
-        font-italic = "${config.font}:style=SemiBold Italic:size=11.5";
-        font-bold-italic = "${config.font}:style=SemiBold Italic:size=11.5";
+        font = "${config.font}:style:SemiBold:size=10";
+        font-bold = "${config.font}:style=Bold:size=10";
+        font-italic = "${config.font}:style=SemiBold Italic:size=10";
+        font-bold-italic = "${config.font}:style=SemiBold Italic:size=10";
         box-drawings-uses-font-glyphs = true;
-        pad = "15x11";
+        pad = "30x20";
         dpi-aware = "yes";
-        initial-window-size-pixels = "580x400";
+        initial-window-size-pixels = "880x600";
       };
 
       scrollback = {

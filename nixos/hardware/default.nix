@@ -4,5 +4,6 @@
     ./ssd.nix
     ./disks.nix
     ./opengl.nix
+    ./nvidia
   ];
 }
