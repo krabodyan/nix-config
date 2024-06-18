@@ -39,10 +39,5 @@
     exiftool
     # --------------
 
-    mesa
-    mesa-demos
-    vulkan-tools
-    intel-gpu-tools
-    libva-utils
   ];
 }

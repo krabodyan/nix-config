@@ -1,7 +1,7 @@
 {
   boot.tmp = {
     useTmpfs = true;
-    tmpfsSize = "2g";
+    tmpfsSize = "4g";
   };
 
   services.btrfs.autoScrub = {
