@@ -1,8 +1,38 @@
 { pkgs, config, lib, ... }:
 {
-  # programs.sway = {
-  #  enable = true;
-  #    # };
+  xdg = {
+    enable = true;
+    userDirs.enable = true;
+    mimeApps.enable = true;
+    configFile."mimeapps.list".force = true;
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = false;
+      config.common.default = "*";
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
+      ];
+    };
+  };
+
+  home.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = 1;
+    SDL_VIDEODRIVER = "wayland";
+    _JAVA_AWT_WM_NONREPARENTING = 1;
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "Sway";
+    XDG_SCREENSHOTS_DIR = "~/pictures";
+    WLR_RENDERER = "vulkan";
+    #"WLR_RENDERER_ALLOW_SOFTWARE,1"
+    WLR_DRM_NO_ATOMIC = 1;
+    #"__GL_VRR_ALLOWED,0"
+    __GL_THREADED_OPTIMIZATIONS = 1;
+    QT_AUTO_SCREEN_SCALE_FACTOR = 1;
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
+    GDK_BACKEND = "wayland,x11,*";
+    QT_QPA_PLATFORM = "wayland;xcb";
+  };
 
   wayland.windowManager.sway = {
     enable = true;
@@ -18,6 +48,12 @@
       assigns = {
         "workspace 1" = [{ app_id = "^io.github.tdesktop_x64.TDesktop$"; }];
         "workspace 2" = [{ app_id = "^firefox$"; }];
+        "workspace 3" = [{ app_id = "^vesktop$"; }];
+        "workspace 4" = [
+          { class = "^steam$"; }
+          { class = "^DesktopEditors$"; }
+        ];
+        "workspace 7" = [{ app_id = "^chromium-browser.*$"; }];
       };
 
       window.commands = [
@@ -25,6 +61,12 @@
           command = "floating enable";
           criteria = {
             app_id = "floaterm";
+          };
+        }
+        {
+          command = "border pixel 2";
+          criteria = {
+            app_id = ".*";
           };
         }
       ];
@@ -35,11 +77,6 @@
         };
       };
 
-      #left = "h";
-      #right = "j";
-      #up = "k";
-      #down = "l";
-
       gaps = {
         smartBorders = "on";
         smartGaps = true;
@@ -48,13 +85,13 @@
       };
 
       window = {
-        border = 2;
+        # border = 2;
         hideEdgeBorders = "smart";
         titlebar = false;
       };
 
       floating = {
-        border = 2;
+        # border = 2;
         titlebar = false;
         modifier = config.wayland.windowManager.sway.config.modifier;
       };
@@ -156,6 +193,9 @@
         "F4"                    = "exec ${microphone}/bin/microphone";
         "XF86MonBrightnessUp"   = "exec ${brightness}/bin/brightness up";
         "XF86MonBrightnessDown" = "exec ${brightness}/bin/brightness down";
+
+        "Print" = "exec grim -g \"$(slurp -d)\" - | wl-copy -t image/png";
+        "F12"   = "exec grim - | wl-copy -t image/png";
 
         "${mod}+w" = "exec pkill -SIGUSR1 waybar";
       };

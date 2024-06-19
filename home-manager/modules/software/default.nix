@@ -4,7 +4,7 @@
     ./foot.nix
     ./mpv.nix
     ./swappy.nix
-    ./vesktop.nix
+    ./discord
     ./firefox.nix
     ./steam.nix
     ./64gram.nix

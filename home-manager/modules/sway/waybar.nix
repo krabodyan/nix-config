@@ -6,14 +6,15 @@
     settings.mainBar = {
       position = "right";
       layer = "top";
+      # mode = "invisible";
       start_hidden = false;
       width = 26;
       height = 360;
       spacing = 0;
       margin = "0";
       padding = "0";
-      margin-right = 5;
-      margin-left = 5;
+      margin-right = 4;
+      margin-left = 4;
 
       modules-left = [ "battery" "network" "tray" ];
       modules-center = [ "sway/workspaces" ];
@@ -92,6 +93,7 @@
       window#waybar {
         background-color: #${config.colors.bg};
         border-radius: 8px;
+        /* border: solid 2px #${config.colors.accent} */
       }
 
       #language,

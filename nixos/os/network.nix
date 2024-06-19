@@ -6,7 +6,7 @@
       extraConfig = ''
         noarp
         nohook iwd
-        static domain_name_servers=1.1.1.1
+        static domain_name_servers=8.8.8.8 8.8.4.4
 
         #interface enp2s0
         #static ip_address=192.168.1.222
@@ -36,5 +36,5 @@
       };
     };
   };
-  # systemd.services.iwd.wantedBy = lib.mkForce [];
+  systemd.services.iwd.wantedBy = lib.mkForce [];
 }

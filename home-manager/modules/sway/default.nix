@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    #./gtk.nix
+    ./gtk.nix
     ./cursor.nix
     #./hyprland.nix
     ./mako.nix

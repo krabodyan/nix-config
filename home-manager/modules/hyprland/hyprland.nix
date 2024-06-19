@@ -129,7 +129,7 @@
       ];
 
       animations = {
-        enabled = true;
+        enabled = false;
         bezier = [
           "md3_decel, 0.05, 0.7, 0.1, 1"
           "overshot, 0.1, 1.1, 0.1, 1.032"

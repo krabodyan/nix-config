@@ -17,7 +17,6 @@
         ];
       };
     };
-    home.packages = [ pkgs.sway ];
 
     wayland.windowManager.hyprland = {
       enable = true;
