@@ -80,8 +80,8 @@
       gaps = {
         smartBorders = "on";
         smartGaps = true;
-        inner = 5;
-        outer = 3;
+        inner = 3;
+        outer = 6;
       };
 
       window = {
@@ -113,13 +113,13 @@
           builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
 
         focusedInactive = let
-          color = "ffffff00";
+          color = config.colors.bg;
           fields = [ "border" "background" "childBorder" "indicator" "text" ];
         in
           builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
 
         unfocused = let
-          color = "ffffff00";
+          color = config.colors.bg;
           fields = [ "border" "background" "childBorder" "indicator" "text" ];
         in
           builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
