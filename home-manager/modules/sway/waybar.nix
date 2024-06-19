@@ -12,7 +12,8 @@
       spacing = 0;
       margin = "0";
       padding = "0";
-      margin-right = 8;
+      margin-right = 5;
+      margin-left = 5;
 
       modules-left = [ "battery" "network" "tray" ];
       modules-center = [ "sway/workspaces" ];
@@ -22,11 +23,18 @@
         format = "<span font='SymbolsNerdFont'>{icon}</span>";
         format-icons = {
           default = "󱓻";
-          active = "󱓻";
-          empty = "󱓼";
+          focused = "󱓻";
+          persistent = "󱓼";
         };
         tooltip = false;
-        persistent-workspaces = { "*" = 5; };
+        disable-scroll =  true;
+        persistent-workspaces = {
+          "1" = [];
+          "2" = [];
+          "3" = [];
+          "4" = [];
+          "5" = [];
+        };
       };
 
       tray = {
@@ -38,7 +46,7 @@
         format = "{}"; # "<span style='italic'>{}</span>";
         format-en = "us"; #"🇬🇧";
         format-ru = "ru"; #"🇷🇺";
-        format-uk = "ua"; #"🇺🇦";
+        format-ua = "ua"; #"🇺🇦";
       };
 
       clock = {
@@ -113,13 +121,11 @@
       }
 
       #workspaces button,
-      #workspaces button.empty {
+      #workspaces button.persistent {
         color: #${config.colors.fg-dark};
       }
 
-      #workspaces button.active,
-      #workspaces button.active.empty,
-      #workspaces button:hover {
+      #workspaces button.focused {
         color: #${config.colors.fg};
       }
 

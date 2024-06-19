@@ -2,7 +2,7 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    font = "JetBrains Mono Medium 14";
+    #font = "JetBrainsMono Nerd Font Bold 10";
     terminal = "foot";
     location = "bottom";
     extraConfig = {
@@ -17,7 +17,7 @@
       inherit (config.lib.formats.rasi) mkLiteral;
     in {
       "*" = {
-        font = "Jetbrains Mono Bold 10";
+        font = "${config.font} Bold 10";
         bg = mkLiteral "#${config.colors.bg}"; # 99
         fg = mkLiteral "#${config.colors.fg-dark}";
         red = mkLiteral "#${config.colors.red}";

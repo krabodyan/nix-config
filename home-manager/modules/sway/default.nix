@@ -1,12 +1,13 @@
 {...}: {
   imports = [
-    ./gtk.nix
+    #./gtk.nix
     ./cursor.nix
-    ./hyprland.nix
+    #./hyprland.nix
     ./mako.nix
     ./waybar.nix
-    ./hyprlock.nix
+    #./hyprlock.nix
     ./rofi.nix
-    ./wofi.nix
+    #./wofi.nix
+    ./sway.nix
   ];
 }
