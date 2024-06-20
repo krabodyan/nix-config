@@ -17,6 +17,7 @@
   };
 
   home.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = 1;
     MOZ_ENABLE_WAYLAND = 1;
     SDL_VIDEODRIVER = "wayland";
     _JAVA_AWT_WM_NONREPARENTING = 1;
@@ -80,8 +81,8 @@
       gaps = {
         smartBorders = "on";
         smartGaps = true;
-        inner = 3;
-        outer = 6;
+        inner = 8;
+        outer = 0;
       };
 
       window = {

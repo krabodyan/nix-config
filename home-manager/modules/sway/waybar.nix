@@ -6,19 +6,19 @@
     settings.mainBar = {
       position = "right";
       layer = "top";
-      # mode = "hide";
+      # mode = "invisible";
       start_hidden = false;
       width = 26;
-      #height = 360;
+      height = 360;
       spacing = 0;
       margin = "0";
       padding = "0";
-      margin-right = 0;
-      margin-left = 0;
+      margin-right = 4;
+      margin-left = 4;
 
-      modules-left = [];
-      modules-center = [ "battery" "network" "tray" "sway/workspaces" "sway/language" "clock" ];
-      modules-right = [];
+      modules-left = [ "battery" "network" "tray" ];
+      modules-center = [ "sway/workspaces" ];
+      modules-right = [ "sway/language" "clock" ];
 
       "sway/workspaces" = {
         format = "<span font='SymbolsNerdFont'>{icon}</span>";
@@ -93,14 +93,8 @@
 
       window#waybar {
         background-color: #${config.colors.bg};
-        /* border-radius: 8px; */
+        border-radius: 8px;
         /* border: solid 2px #${config.colors.accent} */
-      }
-
-      window#waybar.solo {
-        color:      #c2c2b0;
-        border-radius: 20px;
-        background-color: #ffffff;
       }
 
       #language,

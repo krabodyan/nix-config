@@ -30,5 +30,6 @@
     wf-recorder
 
     xdg-utils
+    devenv
   ];
 }
