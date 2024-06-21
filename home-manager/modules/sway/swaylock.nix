@@ -8,28 +8,35 @@
     in {
       font = config.font;
       image = config.background-image;
+      daemonize = true;
 
       color = col.bg;
       inside-color = t;
       line-color = col.fg;
       key-hl-color = col.fg;
       separator-color = t;
-      inside-clear-color = col.lightgreen;
-      inside-caps-lock-color = col.red;
-      inside-ver-color = col.cyan;
-      inside-wrong-color = col.red;
+      inside-clear-color = t;
+      inside-caps-lock-color = t;
+      inside-ver-color = t;
+      inside-wrong-color = t;
 
       ring-color = t;
       ring-clear-color = col.yellow;
       ring-caps-lock-color = col.red;
-      ring-ver-color = col.red;
+      ring-ver-color = col.cyan;
       ring-wrong-color = col.red;
 
-      font-size = 14;
-      ignore-empty-password = true;
-      show-failed-attempts = true;
+      text-color = col.fg;
+      text-caps-lock-color = col.fg;
+      text-clear-color = col.fg;
+      text-ver-color = col.fg;
+      text-wrong-color = col.fg;
 
-      indicator-radius = 40;
+      font-size = 16;
+      ignore-empty-password = true;
+      show-failed-attempts = false;
+
+      indicator-radius = 100;
       indicator-idle-visible = false;
       indicator-thickness = 20;
       indicator-caps-lock = true;

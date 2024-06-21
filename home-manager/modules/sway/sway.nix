@@ -207,7 +207,7 @@
         "Ctrl+Alt+Delete" = "exit";
         "Ctrl+Alt+Backspace" = "reload";
         "Print" = "exec grim -g \"$(slurp -d)\" - | swappy -f -";
-        "F12"   = "exec grim - | wl-copy -t image/png";
+        "Pause"   = "exec grim - | wl-copy -t image/png";
 
         "${mod}+l" = "exec swaylock";
         "${mod}+w" = "exec pkill -SIGUSR1 waybar";
