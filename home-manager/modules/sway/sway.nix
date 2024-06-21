@@ -106,7 +106,10 @@
       };
 
       focus.followMouse = false;
-      seat.seat0.xcursor_theme = "GoogleDot-Blue";
+      seat.seat0 = {
+        xcursor_theme = "GoogleDot-Blue";
+        hide_cursor = "1000";
+      };
 
       colors = {
         focused = let
@@ -154,12 +157,21 @@
         microphone = import ./scripts/microphone.nix { inherit pkgs; };
         brightness = import ./scripts/brightness.nix { inherit pkgs; };
       in {
-        "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";
+        "${mod}+Return"       = "exec ${pkgs.foot}/bin/foot";
         "${mod}+Shift+Return" = "exec ${pkgs.foot}/bin/foot -a floaterm";
-        "${mod}+q" = "kill";
-        "${mod}+d" = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun";
-        "${mod}+Shift+Backspace" = "reload";
+        "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot ${pkgs.ranger}/bin/ranger";
+        "${mod}+d"            = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun";
 
+        "Ctrl+Alt+Backspace"  = "reload";
+        "Ctrl+Alt+Delete"     = "exit";
+
+        "Print" = "exec grim -g \"$(slurp -d)\" - | swappy -f -";
+        "Pause" = "exec grim - | wl-copy -t image/png";
+
+        "${mod}+l" = "exec swaylock";
+        "${mod}+w" = "exec pkill -SIGUSR1 waybar";
+
+        "${mod}+q" = "kill";
         "${mod}+Left" = "focus left";
         "${mod}+Down" = "focus down";
         "${mod}+Right" = "focus right";
@@ -203,14 +215,6 @@
         "F4"                    = "exec ${microphone}/bin/microphone";
         "XF86MonBrightnessUp"   = "exec ${brightness}/bin/brightness up";
         "XF86MonBrightnessDown" = "exec ${brightness}/bin/brightness down";
-
-        "Ctrl+Alt+Delete" = "exit";
-        "Ctrl+Alt+Backspace" = "reload";
-        "Print" = "exec grim -g \"$(slurp -d)\" - | swappy -f -";
-        "Pause"   = "exec grim - | wl-copy -t image/png";
-
-        "${mod}+l" = "exec swaylock";
-        "${mod}+w" = "exec pkill -SIGUSR1 waybar";
       };
     };
   };

@@ -11,6 +11,7 @@ in
   pkgs.writeShellScriptBin "volume" ''
     if [ "$1" = "mute" ]; then
       ${pamixer} -t
+      ${pamixer} --default-source -t
     fi
 
     if ${pamixer} --get-mute | grep -q "true"; then
