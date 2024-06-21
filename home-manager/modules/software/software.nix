@@ -2,11 +2,14 @@
   home.packages = with pkgs; [
     pcmanfm
     qbittorrent
-    deluge
     solaar
     gcolor3
-    #obs-studio
+    obs-studio
+    v4l-utils
     kooha
+
+    system-config-printer
+    gnome.simple-scan
 
     pavucontrol
     pamixer

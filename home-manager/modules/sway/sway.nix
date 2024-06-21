@@ -24,11 +24,11 @@
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Sway";
     XDG_SCREENSHOTS_DIR = "~/pictures";
-    WLR_RENDERER = "vulkan";
+    # WLR_RENDERER = "vulkan";
     #"WLR_RENDERER_ALLOW_SOFTWARE,1"
-    WLR_DRM_NO_ATOMIC = 1;
+    # WLR_DRM_NO_ATOMIC = 1;
     #"__GL_VRR_ALLOWED,0"
-    __GL_THREADED_OPTIMIZATIONS = 1;
+    # __GL_THREADED_OPTIMIZATIONS = 1;
     QT_AUTO_SCREEN_SCALE_FACTOR = 1;
     QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
     GDK_BACKEND = "wayland,x11,*";
@@ -169,6 +169,9 @@
         "${mod}+Shift+Down" = "move down";
 
         "${mod}+s" = "layout toggle";
+        "${mod}+f" = "fullscreen";
+        "${mod}+e" = "splitv";
+        "${mod}+r" = "splith";
 
         "${mod}+1" = "workspace number 1";
         "${mod}+2" = "workspace number 2";
@@ -186,6 +189,10 @@
         "${mod}+Shift+6" = "move container to workspace number 6";
         "${mod}+Shift+7" = "move container to workspace number 7";
 
+        "${mod}+Ctrl+Right" = "resize shrink width 10 px";
+        "${mod}+Ctrl+Left"  = "resize grow   width 10 px";
+        "${mod}+Ctrl+Up"    = "resize shrink height 10 px";
+        "${mod}+Ctrl+Down"  = "resize grow   height 10 px";
         #"XF86Display,           exec, ${touchpad}/bin/touchpad";
 
         "XF86AudioRaiseVolume"  = "exec ${volume}/bin/volume up";
@@ -195,7 +202,9 @@
         "XF86MonBrightnessUp"   = "exec ${brightness}/bin/brightness up";
         "XF86MonBrightnessDown" = "exec ${brightness}/bin/brightness down";
 
-        "Print" = "exec grim -g \"$(slurp -d)\" - | wl-copy -t image/png";
+        "Ctrl+Alt+Delete" = "exit";
+        "Ctrl+Alt+Backspace" = "reload";
+        "Print" = "exec grim -g \"$(slurp -d)\" - | swappy -f -";
         "F12"   = "exec grim - | wl-copy -t image/png";
 
         "${mod}+w" = "exec pkill -SIGUSR1 waybar";

@@ -24,6 +24,7 @@
     lshw
     usbutils
     ncdu
+    pciutils
     jq
 
     acpi
@@ -38,6 +39,5 @@
     poppler_utils
     exiftool
     # --------------
-
   ];
 }

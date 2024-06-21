@@ -1,7 +1,11 @@
-{
-  services.dbus = {
-    enable = true;
-  };
+{ pkgs, ... }: {
+  services.dbus.enable = true;
+
+  services.printing.enable = true;
+  hardware.sane.enable = true;
+  services.ipp-usb.enable=true;
+  hardware.sane.extraBackends = [ pkgs.sane-airscan ];
+  hardware.sane.disabledDefaultBackends = [ "v4l" ];
 
   services.journald = {
     extraConfig = ''
@@ -10,9 +14,7 @@
     '';
   };
 
-  services.earlyoom = {
-    enable = false;
-  };
+  services.earlyoom.enable = false;
 
   security.pam.loginLimits = [{
     domain = "krabodyan";
@@ -21,7 +23,7 @@
     value = "unlimited";
   }];
 
-  security.pam.services.hyprlock = {};
+  security.pam.services.swaylock = {};
 
   # services.xserver.gdk-pixbuf.modulePackages = [ pkgs.librsvg ];
 }
