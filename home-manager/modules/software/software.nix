@@ -7,6 +7,7 @@
     obs-studio
     v4l-utils
     kooha
+    gimp
 
     system-config-printer
     gnome.simple-scan

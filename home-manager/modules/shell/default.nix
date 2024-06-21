@@ -6,7 +6,7 @@
     ./btop.nix
     ./ranger.nix
     ./git.nix
-    ./fastfetch.nix
+    ./ufetch.nix
   ];
-  home.packages = with pkgs; [ htop ninja gst_all_1.gstreamer];
+  home.packages = with pkgs; [ htop ];
 }

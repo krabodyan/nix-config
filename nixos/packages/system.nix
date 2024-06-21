@@ -13,7 +13,6 @@
     pfetch
     inxi
     wget
-    tree
     python3
     killall
     ffmpeg-full
@@ -26,6 +25,8 @@
     ncdu
     pciutils
     jq
+    pkg-config
+    libusb1
 
     acpi
     ntfs3g

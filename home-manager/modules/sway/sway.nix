@@ -15,6 +15,7 @@
       ];
     };
   };
+  home.packages = with pkgs; [ wlr-randr ];
 
   home.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = 1;
@@ -75,6 +76,7 @@
       output = {
         "eDP-1" = {
           bg = "${config.background-image} fill";
+          mode = "1920x1080@144.000Hz"; # 60.002
         };
       };
 
@@ -207,6 +209,7 @@
         "Print" = "exec grim -g \"$(slurp -d)\" - | swappy -f -";
         "F12"   = "exec grim - | wl-copy -t image/png";
 
+        "${mod}+l" = "exec swaylock";
         "${mod}+w" = "exec pkill -SIGUSR1 waybar";
       };
     };
