@@ -135,6 +135,8 @@
         "*" = {
 	        xkb_layout = "us,ru,ua";
 	        xkb_options = "grp:alt_shift_toggle";
+          repeat_rate = "35";
+          repeat_delay = "400";
         };
         "1267:12410:ELAN1203:00_04F3:307A_Touchpad" = {
           events = "disabled";
@@ -149,17 +151,19 @@
       bars = [];
 
       bindkeysToCode = true;
-      keybindings = let
+      keybindings =
+      let
         mod = config.wayland.windowManager.sway.config.modifier;
         volume     = import ./scripts/volume.nix     { inherit pkgs; };
         gamemode   = import ./scripts/gamemode.nix   { inherit pkgs; };
         touchpad   = import ./scripts/touchpad.nix   { inherit pkgs; };
         microphone = import ./scripts/microphone.nix { inherit pkgs; };
         brightness = import ./scripts/brightness.nix { inherit pkgs; };
-      in {
+      in
+      {
         "${mod}+Return"       = "exec ${pkgs.foot}/bin/foot";
         "${mod}+Shift+Return" = "exec ${pkgs.foot}/bin/foot -a floaterm";
-        "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot ${pkgs.ranger}/bin/ranger";
+        "${mod}+Shift+e"      = "exec ${pkgs.foot}/bin/foot ${pkgs.ranger}/bin/ranger";
         "${mod}+d"            = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun";
 
         "Ctrl+Alt+Backspace"  = "reload";
@@ -209,6 +213,8 @@
         "${mod}+Ctrl+Down"  = "resize grow   height 10 px";
         #"XF86Display,           exec, ${touchpad}/bin/touchpad";
 
+        "${mod}+p"              = "output \"eDP-1\" power off";
+        "${mod}+Shift+p"        = "output \"eDP-1\" power on";
         "XF86AudioRaiseVolume"  = "exec ${volume}/bin/volume up";
         "XF86AudioLowerVolume"  = "exec ${volume}/bin/volume down";
         "XF86AudioMute"         = "exec ${volume}/bin/volume mute";

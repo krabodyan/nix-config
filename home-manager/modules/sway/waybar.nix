@@ -45,6 +45,7 @@
       };
 
       "sway/language" = {
+        tooltip = false;
         format = "{}"; # "<span style='italic'>{}</span>";
         format-en = "us"; #"🇬🇧";
         format-ru = "ru"; #"🇷🇺";
