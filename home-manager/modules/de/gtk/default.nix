@@ -1,5 +1,9 @@
 {config, pkgs, ...}:
 {
+  imports = [
+    ./cursor.nix
+    ./qtct.nix
+  ];
   home.packages = with pkgs; [
     dconf
     libsForQt5.qtstyleplugins
@@ -31,31 +35,17 @@
     gtk3.extraConfig = {
       gtk-decoration-layout = ":menu";
       gtk-dialogs-use-header = false;
-      #gtk-cursor-theme-size = 16;
-      #gtk-toolbar-style = "GTK_TOOLBAR_BOTH_HORIZ";
-      #gtk-toolbar-icon-size = "GTK_ICON_SIZE_LARGE_TOOLBAR";
       gtk-enable-event-sounds = 0;
       gtk-enable-input-feedback-sounds = 0;
-      #gtk-xft-antialias=1;
-      #gtk-xft-hinting=1;
-      #gtk-xft-hintstyle="hintslight";
-      #gtk-xft-rgba="none";
       gtk-application-prefer-dark-theme = 1;
     };
     gtk4.extraConfig = {
       gtk-decoration-layout = ":menu";
       gtk-dialogs-use-header = false;
-      #gtk-cursor-theme-size = 16;
-      #gtk-toolbar-style = "GTK_TOOLBAR_BOTH_HORIZ";
-      #gtk-toolbar-icon-size = "GTK_ICON_SIZE_LARGE_TOOLBAR";
       gtk-button-images = 0;
       gtk-menu-images = 0;
       gtk-enable-event-sounds = 0;
       gtk-enable-input-feedback-sounds = 0;
-      #gtk-xft-antialias=1;
-      #gtk-xft-hinting=1;
-      #gtk-xft-hintstyle="hintslight";
-      #gtk-xft-rgba="none";
       gtk-application-prefer-dark-theme = 1;
     };
   };
@@ -74,10 +64,6 @@
 
   qt = {
     enable = true;
-    #style = {
-    #  name = "catppuccin-kvantum";
-    #  package = pkgs.catppuccin-kvantum;
-    #};
     platformTheme.name = "qtct";
   };
 }

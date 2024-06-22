@@ -1,6 +1,6 @@
-{...}: {
+{
   imports = [
-    ./sway
+    ./de
     ./packages
     ./shell
   ];
