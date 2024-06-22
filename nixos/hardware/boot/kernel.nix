@@ -23,7 +23,6 @@
     "jfs" "nilfs2" "omfs"
     "ufs"
   ];
-
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" ];
   # boot.initrd.kernelModules = [ ];
 
