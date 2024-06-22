@@ -14,6 +14,6 @@
       vimPlugins.catppuccin-nvim
     ];
 
-    plugins = import ./plugins {};
+    plugins = import ./plugins;
   };
 }
