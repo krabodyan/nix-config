@@ -6,13 +6,12 @@
     };
     background-image = lib.mkOption {
       type = lib.types.str;
-      default = "$HOME/nix-config/home-manager/modules/misc/background.jpg";
+      default = "${config.home.homeDirectory}/nix-config/home-manager/modules/misc/background.jpg";
     };
     colors = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
       default = {
         opacity    = "1";
-        # border     = "94e2d5"; # e5678b";
         accent     = "cba6f7";
 
         bg-rgba    = "rgba(30, 30, 46, 1)";

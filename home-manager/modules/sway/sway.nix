@@ -15,7 +15,17 @@
       ];
     };
   };
-  home.packages = with pkgs; [ wlr-randr swaykbdd ];
+
+  home.packages = with pkgs; [
+    wlr-randr
+    swaykbdd
+    grim
+    slurp
+    wev
+    xwayland
+    wl-clipboard
+    wl-clipboard-x11
+  ];
 
   home.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = 1;
@@ -107,7 +117,7 @@
       focus.followMouse = false;
       seat.seat0 = {
         xcursor_theme = "GoogleDot-Blue";
-        hide_cursor = "1000";
+        hide_cursor = "3000";
       };
 
       colors = {
