@@ -1,6 +1,7 @@
 { config, lib, ... }: {
   imports = [ ./intel-only.nix ];
   services.xserver.videoDrivers = ["nvidia"];
+  boot.blacklistedKernelModules = [ "nouveau" ];
 
   hardware.nvidia = {
     modesetting.enable = true;

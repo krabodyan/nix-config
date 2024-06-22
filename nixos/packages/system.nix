@@ -24,7 +24,6 @@
 
     acpi
     ntfs3g
-    pipewire
 
     # ranger ----
     ranger
