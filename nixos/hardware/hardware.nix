@@ -14,7 +14,7 @@
     "rootfstype=btrfs"
   ];
   boot.supportedFilesystems = [ "btrfs" "ntfs" ];
-  #boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   #boot.extraModprobeConfig = '''';
   boot.blacklistedKernelModules = [
     "ax25" "netrom" "rose"
@@ -25,15 +25,15 @@
     "qnx4" "qnx6" "sysv" "ufs"
   ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "thunderbolt" "xhci_pci" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
 
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", TAG+="uaccess"
   '';
 
-  boot.kernelModules = [ "kvm-intel" "v4l2loopback" ]; # "i915" "uinput" ];
-  boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
+  boot.kernelModules = [ "kvm-intel" ]; #"v4l2loopback" ]; # "i915" "uinput" ];
+  #boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

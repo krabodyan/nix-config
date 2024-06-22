@@ -131,18 +131,18 @@
       };
 
       input = {
-        "*" = {
+        "type:keyboard" = {
 	        xkb_layout = "us,ru,ua";
 	        xkb_options = "grp:alt_shift_toggle";
           repeat_rate = "35";
           repeat_delay = "400";
         };
-        "1267:12410:ELAN1203:00_04F3:307A_Touchpad" = {
+        "type:touchpad" = {
           events = "disabled";
         };
-        "1133:50504:Logitech_USB_Receiver" = {
+        "type:pointer" = {
           accel_profile = "flat";
-          pointer_accel = "-1";
+          pointer_accel = "0.1";
         };
 	    };
 
