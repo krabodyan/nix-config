@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   services.dbus.enable = true;
-  services.printing.enable = true;
+  services.dbus.implementation = "broker";
+  services.printing.enable = false;
 
   services.journald = {
     extraConfig = ''

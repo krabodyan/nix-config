@@ -15,7 +15,7 @@
       ];
     };
   };
-  home.packages = with pkgs; [ wlr-randr ];
+  home.packages = with pkgs; [ wlr-randr swaykbdd ];
 
   home.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = 1;
@@ -45,7 +45,8 @@
       modifier = "Mod4";
       terminal = "foot";
       startup = [
-        { command = "waybar"; }
+        { command = "${pkgs.waybar}/bin/waybar"; }
+        { command = "${pkgs.swaykbdd}/bin/swaykbdd"; }
       ];
       assigns = {
         "workspace 1" = [{ app_id = "^io.github.tdesktop_x64.TDesktop$"; }];
@@ -55,7 +56,7 @@
           { class = "^steam$"; }
           { class = "^DesktopEditors$"; }
         ];
-        "workspace 7" = [{ app_id = "^chromium-browser.*$"; }];
+        "workspace 6" = [{ app_id = "^chromium-browser.*$"; }];
       };
 
       window.commands = [
@@ -76,7 +77,7 @@
       output = {
         "eDP-1" = {
           bg = "${config.background-image} fill";
-          mode = "1920x1080@144.000Hz"; # 60.002
+          mode = "1920x1080@144.000Hz";
         };
       };
 
@@ -88,13 +89,11 @@
       };
 
       window = {
-        # border = 2;
         hideEdgeBorders = "smart";
         titlebar = false;
       };
 
       floating = {
-        # border = 2;
         titlebar = false;
         modifier = config.wayland.windowManager.sway.config.modifier;
       };
@@ -153,10 +152,8 @@
       bindkeysToCode = true;
       keybindings =
       let
-        mod = config.wayland.windowManager.sway.config.modifier;
+        mod        = config.wayland.windowManager.sway.config.modifier;
         volume     = import ./scripts/volume.nix     { inherit pkgs; };
-        gamemode   = import ./scripts/gamemode.nix   { inherit pkgs; };
-        touchpad   = import ./scripts/touchpad.nix   { inherit pkgs; };
         microphone = import ./scripts/microphone.nix { inherit pkgs; };
         brightness = import ./scripts/brightness.nix { inherit pkgs; };
       in
@@ -169,13 +166,12 @@
         "Ctrl+Alt+Backspace"  = "reload";
         "Ctrl+Alt+Delete"     = "exit";
 
-        "Print" = "exec grim -g \"$(slurp -d)\" - | swappy -f -";
-        "Pause" = "exec grim - | wl-copy -t image/png";
+        Print = "exec grim -g \"$(slurp -d)\" - | swappy -f -";
+        Pause = "exec grim - | wl-copy -t image/png";
 
         "${mod}+l" = "exec swaylock";
         "${mod}+w" = "exec pkill -SIGUSR1 waybar";
 
-        "${mod}+q" = "kill";
         "${mod}+Left" = "focus left";
         "${mod}+Down" = "focus down";
         "${mod}+Right" = "focus right";
@@ -190,6 +186,8 @@
         "${mod}+f" = "fullscreen";
         "${mod}+e" = "splitv";
         "${mod}+r" = "splith";
+        "${mod}+t" = "floating toggle";
+        "${mod}+q" = "kill";
 
         "${mod}+1" = "workspace number 1";
         "${mod}+2" = "workspace number 2";
@@ -211,16 +209,17 @@
         "${mod}+Ctrl+Left"  = "resize grow   width 10 px";
         "${mod}+Ctrl+Up"    = "resize shrink height 10 px";
         "${mod}+Ctrl+Down"  = "resize grow   height 10 px";
-        #"XF86Display,           exec, ${touchpad}/bin/touchpad";
 
-        "${mod}+p"              = "output \"eDP-1\" power off";
-        "${mod}+Shift+p"        = "output \"eDP-1\" power on";
-        "XF86AudioRaiseVolume"  = "exec ${volume}/bin/volume up";
-        "XF86AudioLowerVolume"  = "exec ${volume}/bin/volume down";
-        "XF86AudioMute"         = "exec ${volume}/bin/volume mute";
-        "F4"                    = "exec ${microphone}/bin/microphone";
-        "XF86MonBrightnessUp"   = "exec ${brightness}/bin/brightness up";
-        "XF86MonBrightnessDown" = "exec ${brightness}/bin/brightness down";
+        "${mod}+p"          = "output \"eDP-1\" power off";
+        "${mod}+Shift+p"    = "output \"eDP-1\" power on";
+
+        XF86TouchpadToggle    = "input type:touchpad events toggle enabled disabled";
+        XF86AudioRaiseVolume  = "exec ${volume}/bin/volume up";
+        XF86AudioLowerVolume  = "exec ${volume}/bin/volume down";
+        XF86AudioMute         = "exec ${volume}/bin/volume mute";
+        F4                    = "exec ${microphone}/bin/microphone";
+        XF86MonBrightnessUp   = "exec ${brightness}/bin/brightness up";
+        XF86MonBrightnessDown = "exec ${brightness}/bin/brightness down";
       };
     };
   };

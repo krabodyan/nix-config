@@ -2,7 +2,6 @@
   nixpkgs.config = {
     allowUnfree = true;
   };
-
   environment.etc.nixpkgs.source = inputs.nixpkgs;
   environment.systemPackages = with pkgs; [
     home-manager

@@ -8,5 +8,5 @@
     ./git.nix
     ./ufetch.nix
   ];
-  home.packages = with pkgs; [ htop ];
+  home.packages = with pkgs; [ htop nvtopPackages.intel ];
 }
