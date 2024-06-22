@@ -9,7 +9,6 @@
 
     git
     gcc
-    pfetch
     inxi
     wget
     python3
