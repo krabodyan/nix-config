@@ -5,28 +5,27 @@
   boot.kernelParams = [
     "info"
     "splash"
-    "apm=power_off"
-    "acpi=force"
-    "reboot=acpi"
+    #"apm=power_off"
+    #"acpi=force"
+    #"reboot=acpi"
     "nohibernate"
-    "ibt=off"
+    # "ibt=off"
     "raid=noautodetect"
-    "rootfstype=btrfs"
+    # "rootfstype=btrfs"
   ];
-  boot.supportedFilesystems = [ "btrfs" "ntfs" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.supportedFilesystems = [ "btrfs" ];
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
   # boot.extraModprobeConfig = '''';
   boot.blacklistedKernelModules = [
-    "ax25" "netrom" "rose"
     "adfs" "affs" "bfs" "befs"
     "cramfs" "efs" "erofs" "exofs"
     "freevxfs" "f2fs" "hfs" "hpfs"
-    "jfs" "minix" "nilfs2" "omfs"
-    "qnx4" "qnx6" "sysv" "ufs"
+    "jfs" "nilfs2" "omfs"
+    "ufs"
   ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" ];
+  # boot.initrd.kernelModules = [ ];
 
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", TAG+="uaccess"

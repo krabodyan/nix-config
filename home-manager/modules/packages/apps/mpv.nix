@@ -1,5 +1,5 @@
 { pkgs, ...}: {
-  home.file.".config/mpv/mpv.conf".text = ''
+  xdg.configFile.".config/mpv/mpv.conf".text = ''
     gpu-context=wayland
     vo=gpu
     profile=fast

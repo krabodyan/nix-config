@@ -5,12 +5,20 @@
     checkConfig = false;
     wrapperFeatures.gtk = true;
     xwayland = true;
+    package = pkgs.swayfx;
+    extraConfig = ''
+      blur off
+      corner_radius 10
+      shadows off
+      scratchpad_minimize disable
+    '';
     config = {
       modifier = "Mod4";
       terminal = "foot";
       startup = [
         { command = "${pkgs.waybar}/bin/waybar"; }
         { command = "${pkgs.swaykbdd}/bin/swaykbdd"; }
+        { command = "/usr/bin/env QT_QPA_PLATFORMTHEME=gtk3 ${pkgs._64gram}/bin/telegram-desktop"; }
       ];
       assigns = {
         "workspace 1" = [{ app_id = "^io.github.tdesktop_x64.TDesktop$"; }];

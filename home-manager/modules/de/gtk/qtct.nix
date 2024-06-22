@@ -4,9 +4,9 @@
     qt6ct
   ];
 
-  home.file.".config/qt5ct/qt5ct.conf".text = ''
+  xdg.configFile."qt5ct/qt5ct.conf".text = ''
 [Appearance]
-color_scheme_path=/nix/store/a0ynl33ql76nd9jzc5yjscyn05zrlwvi-qt5ct-1.8/share/qt5ct/colors/airy.conf
+color_scheme_path=${pkgs.qt5ct}/share/qt5ct/colors/airy.conf
 custom_palette=false
 icon_theme=Papirus-Dark
 standard_dialogs=gtk2
@@ -38,9 +38,9 @@ geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\x2\x9e\0\0\x2\x
 force_raster_widgets=1
 ignored_applications=@Invalid()
   '';
-  home.file.".config/qt6ct/qt6ct.conf".text = ''
+  xdg.configFile."qt6ct/qt6ct.conf".text = ''
 [Appearance]
-color_scheme_path=/nix/store/2ly909zqigjg25ffn6flz5gbg9whzcwd-qt6ct-0.9/share/qt6ct/colors/darker.conf
+color_scheme_path=${pkgs.qt6ct}/share/qt6ct/colors/darker.conf
 custom_palette=false
 icon_theme=Papirus-Dark
 standard_dialogs=gtk2
