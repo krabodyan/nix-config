@@ -118,13 +118,13 @@
           builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
 
         focusedInactive = let
-          color = config.colors.bg;
+          color = "00000000"; #config.colors.bg;
           fields = [ "border" "background" "childBorder" "indicator" "text" ];
         in
           builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
 
         unfocused = let
-          color = config.colors.bg;
+          color = "00000000"; # config.colors.bg;
           fields = [ "border" "background" "childBorder" "indicator" "text" ];
         in
           builtins.listToAttrs (map (field: { name = field; value = color; }) fields);

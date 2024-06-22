@@ -15,6 +15,8 @@
       line-color = col.fg;
       key-hl-color = col.fg;
       separator-color = t;
+      bs-hl-color = col.pink;
+
       inside-clear-color = t;
       inside-caps-lock-color = t;
       inside-ver-color = t;
@@ -32,13 +34,17 @@
       text-ver-color = col.fg;
       text-wrong-color = col.fg;
 
+      layout-bg-color = t;
+      layout-border-color = t;
+      layout-text-color = col.fg;
+
       font-size = 16;
       ignore-empty-password = true;
       show-failed-attempts = false;
 
-      indicator-radius = 100;
+      indicator-radius = 70;
       indicator-idle-visible = false;
-      indicator-thickness = 20;
+      indicator-thickness = 15;
       indicator-caps-lock = true;
     };
   };
