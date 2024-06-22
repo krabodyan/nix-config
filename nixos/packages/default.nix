@@ -1,6 +1,12 @@
-{...}: {
+{inputs, ...}: {
   imports = [
     ./system.nix
-    ./nixvim/nixvim.nix
+    ./nixvim
   ];
+
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
+  environment.etc.nixpkgs.source = inputs.nixpkgs;
 }

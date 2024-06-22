@@ -15,7 +15,7 @@
         "flakes"
       ];
       max-jobs = 1;
-      cores = 4;
+      cores = 12;
       trusted-users = [ "krabodyan" "root" ];
     };
   };

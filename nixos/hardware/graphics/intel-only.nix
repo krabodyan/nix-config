@@ -1,31 +1,10 @@
-{ config, lib, ... }: {
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    nvidiaSettings = true;
-    open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-    prime = {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-      nvidiaBusId = "PCI:1:0:0";
-      intelBusId = "PCI:0:2:0";
-    };
-  };
-
+{ lib, ... }: {
   specialisation.intel-only.configuration = {
     system.nixos.tags = [ "intel-only" ];
-      hardware.nvidia = {
-        modesetting.enable = lib.mkForce false;
-      };
-      boot.extraModprobeConfig = ''
-        blacklist nouveau
-        options nouveau modeset=0
+    hardware.nvidia.modesetting.enable = lib.mkForce false;
+    boot.extraModprobeConfig = ''
+      blacklist nouveau
+      options nouveau modeset=0
     '';
 
     services.udev.extraRules = ''

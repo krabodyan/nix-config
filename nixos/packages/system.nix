@@ -1,8 +1,4 @@
-{ pkgs, lib, inputs, ... }: {
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
-  environment.etc.nixpkgs.source = inputs.nixpkgs;
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     home-manager
     compsize

@@ -15,7 +15,7 @@
   ];
   boot.supportedFilesystems = [ "btrfs" "ntfs" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
-  #boot.extraModprobeConfig = '''';
+  # boot.extraModprobeConfig = '''';
   boot.blacklistedKernelModules = [
     "ax25" "netrom" "rose"
     "adfs" "affs" "bfs" "befs"
@@ -33,7 +33,7 @@
   '';
 
   boot.kernelModules = [ "kvm-intel" ]; #"v4l2loopback" ]; # "i915" "uinput" ];
-  #boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
+  # boot.extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.enableRedistributableFirmware = true;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

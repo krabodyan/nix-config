@@ -6,7 +6,7 @@
     };
     background-image = lib.mkOption {
       type = lib.types.str;
-      default = "${config.home.homeDirectory}/nix-config/home-manager/modules/misc/background.jpg";
+      default = "${config.home.homeDirectory}/nix-config/home-manager/modules/etc/background.jpg";
     };
     colors = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;

@@ -1,9 +1,4 @@
-{ pkgs, ...}: {
-  time = {
-    timeZone = "Europe/Kiev";
-    hardwareClockInLocalTime = true;
-  };
-
+{
   i18n =
   let
     locale = "uk_UA.UTF-8";
@@ -20,12 +15,5 @@
       LC_TELEPHONE = locale;
       LC_TIME = locale;
     };
-  };
-
-  console = {
-    earlySetup = true;
-    font = "${pkgs.terminus_font}/share/consolefonts/ter-v16n.psf.gz";
-    packages = [ pkgs.terminus_font ];
-    keyMap = "us";
   };
 }

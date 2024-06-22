@@ -1,7 +1,8 @@
 { pkgs, lib, ... }: {
   imports = [
-    ./os
+    ./system
     ./packages
     ./hardware
   ];
+  system.stateVersion = "24.05";
 }
