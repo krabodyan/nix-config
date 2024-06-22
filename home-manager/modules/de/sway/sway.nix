@@ -133,7 +133,7 @@
         "${mod}+Return"       = "exec ${pkgs.foot}/bin/foot";
         "${mod}+Shift+Return" = "exec ${pkgs.foot}/bin/foot -a floaterm";
         "${mod}+Shift+e"      = "exec ${pkgs.foot}/bin/foot ${pkgs.ranger}/bin/ranger";
-        "${mod}+d"            = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun";
+        "${mod}+d"            = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun -normal-window -kb-cancel 'Alt+d'";
 
         "Ctrl+Alt+Backspace"  = "reload";
         "Ctrl+Alt+Delete"     = "exit";

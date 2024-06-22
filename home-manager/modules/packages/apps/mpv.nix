@@ -72,7 +72,6 @@
     makeAssociations = types: builtins.listToAttrs (map (type: { name = type; value = "mpv.desktop"; }) types);
     associations = makeAssociations videoTypes;
   in {
-    enable = true;
     associations.added = associations;
     defaultApplications = associations;
   };
