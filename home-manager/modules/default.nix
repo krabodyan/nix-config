@@ -1,8 +1,7 @@
 {...}: {
   imports = [
     ./sway
-    #./hyprland
-    ./software
+    ./packages
     ./shell
   ];
 }

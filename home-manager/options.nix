@@ -1,4 +1,4 @@
-{ lib, ...}: {
+{ lib, config, ...}: {
   options = {
     font = lib.mkOption {
       type = lib.types.str;
