@@ -21,11 +21,11 @@
       modules-right = [ "sway/language" "clock" ];
 
       "sway/workspaces" = {
-        format = "<span font='SymbolsNerdFont'>{icon}</span>";
+        format = "<span font='SymbolsNerdFont 9.5'>{icon}</span>";
         format-icons = {
-          default = "󱓻";
-          focused = "󱓻";
-          persistent = "󱓼";
+          default = "󰊠"; # "󱓻";
+          focused = "󰮯"; # "󱓻";
+          persistent = ""; # "󱓼";
         };
         tooltip = false;
         disable-scroll =  true;
