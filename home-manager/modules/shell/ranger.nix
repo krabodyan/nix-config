@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  xdg.configFile.".config/ranger/rc.conf".text = ''
+  xdg.configFile."ranger/rc.conf".text = ''
     set preview_images false
     #set preview_images_method sixel
     #set sixel_dithering Riemersma

@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   imports = [
     ./fish.nix
-    ./python.nix
     ./bat.nix
     ./htop.nix
     ./ranger.nix
@@ -13,5 +12,7 @@
     brightnessctl
     xdg-utils
     devenv
+    poetry
+    aria2
   ];
 }

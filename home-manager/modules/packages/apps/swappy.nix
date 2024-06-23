@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  xdg.configFile.".config/swappy/config".text = ''
+  xdg.configFile."swappy/config".text = ''
     [Default]
     save_dir=/home/$USER/pictures
     save_filename_format=swappy-%Y-%m-%d-%H-%M-%S.png

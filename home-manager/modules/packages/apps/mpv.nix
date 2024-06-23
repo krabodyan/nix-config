@@ -1,5 +1,8 @@
 { pkgs, ...}: {
-  xdg.configFile.".config/mpv/mpv.conf".text = ''
+  home.packages = with pkgs; [
+    yt-dlp
+  ];
+  xdg.configFile."mpv/mpv.conf".text = ''
     gpu-context=wayland
     vo=gpu
     profile=fast
