@@ -15,9 +15,9 @@
     ytdl-format=bestvideo[height<=?1080][ext=mp4][vcodec^=avc1]+bestaudio[ext=m4a]
     script-opts=ytdl_hook-ytdl_path=${pkgs.yt-dlp}/bin/yt-dlp
 
-    [extension.mkv]
-    profile-desc="profile for .mkv files"
-    audio-file-auto=exact
+    audio-file-auto-exts=mkv
+    audio-file-auto=fuzzy
+    audio-file-paths=RUS Sound
   '';
   programs.mpv = {
     enable = true;

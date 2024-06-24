@@ -1,7 +1,7 @@
 {
   imports = [ ./tlp.nix ];
   services = {
-    printing.enable = false;
+    printing.enable = true;
     earlyoom.enable = false;
     dbus = {
       enable = true;

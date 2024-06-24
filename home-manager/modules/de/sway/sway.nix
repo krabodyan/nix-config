@@ -18,7 +18,7 @@
       startup = [
         { command = "${pkgs.waybar}/bin/waybar"; }
         { command = "${pkgs.swaykbdd}/bin/swaykbdd"; }
-        { command = "/usr/bin/env QT_QPA_PLATFORMTHEME=gtk3 ${pkgs._64gram}/bin/telegram-desktop"; }
+        # { command = "/usr/bin/env QT_QPA_PLATFORMTHEME=gtk3 ${pkgs._64gram}/bin/telegram-desktop"; }
       ];
       assigns = {
         "workspace 1" = [{ app_id = "^io.github.tdesktop_x64.TDesktop$"; }];
@@ -97,6 +97,12 @@
 
         unfocused = let
           color = "00000000"; # config.colors.bg;
+          fields = [ "border" "background" "childBorder" "indicator" "text" ];
+        in
+          builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
+
+        urgent = let
+          color = config.colors.pink;
           fields = [ "border" "background" "childBorder" "indicator" "text" ];
         in
           builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
