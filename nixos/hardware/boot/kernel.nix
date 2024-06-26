@@ -9,12 +9,12 @@
     #"acpi=force"
     #"reboot=acpi"
     "nohibernate"
-    # "ibt=off"
+    "ibt=off"
     "raid=noautodetect"
-    # "rootfstype=btrfs"
+    "rootfstype=btrfs"
   ];
   # boot.supportedFilesystems = [ "btrfs" ];
-  # boot.kernelPackages = pkgs.linuxPackages_zen;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.extraModprobeConfig = '''';
   boot.blacklistedKernelModules = [
     "adfs" "affs" "bfs" "befs"
