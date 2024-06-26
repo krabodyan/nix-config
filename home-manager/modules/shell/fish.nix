@@ -8,55 +8,43 @@
     };
 
     plugins = [
-      {
-        name = "autopair";
-        inherit (pkgs.fishPlugins.autopair) src;
-      }
+      #{
+      #  name = "autopair";
+      #  inherit (pkgs.fishPlugins.autopair) src;
+      #}
       {
         name = "done";
         inherit (pkgs.fishPlugins.done) src;
       }
     ];
 
-    interactiveShellInit = ''
+    interactiveShellInit = let
+      c = config.colors;
+    in ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+      set -g fish_color_normal ${c.fg}
+      set -g fish_color_command ${c.green}
+      set -g fish_color_keyword -i ${c.yellow}
+      set -g fish_color_quote -i ${c.yellow}
+      set -g fish_color_redirection ${c.orange}
+      set -g fish_color_end ${c.orange}
+      set -g fish_color_error ${c.red}
+      set -g fish_color_warn ${c.orange}
+      set -g fish_color_param ${c.fg}
+      set -g fish_color_comment -i ${c.fg-dark}
+      set -g fish_color_selection --background=${c.bg-dark}
+      set -g fish_color_search_match --background=${c.bg-dark}
+      set -g fish_color_operator ${c.green}
+      set -g fish_color_escape ${c.pink}
+      set -g fish_color_autosuggestion ${c.fg-dark}
+      set -g fish_color_valid_path ${c.blue}
+      set -g fish_color_cancel ${c.red}
 
-      set -l comment ${config.colors.fg-dark}
-      set -l foreground ${config.colors.fg-bright}
-      set -l selection ${config.colors.fg-dark}
-      set -l red ${config.colors.red}
-      set -l orange ${config.colors.orange}
-      set -l yellow ${config.colors.yellow}
-      set -l green ${config.colors.green}
-      set -l purple ${config.colors.magenta}
-      set -l cyan ${config.colors.cyan}
-      set -l pink ${config.colors.pink}
-      set -l blue ${config.colors.blue}
-      set -l lightgreen ${config.colors.lightgreen}
-
-      set -g fish_color_normal $foreground
-      set -g fish_color_command $green
-      set -g fish_color_keyword -i $yellow
-      set -g fish_color_quote -i $yellow
-      set -g fish_color_redirection $orange
-      set -g fish_color_end $orange
-      set -g fish_color_error $red
-      set -g fish_color_warn $orange
-      set -g fish_color_param $foreground
-      set -g fish_color_comment -i $comment
-      set -g fish_color_selection --background=$selection
-      set -g fish_color_search_match --background=$selection
-      set -g fish_color_operator $green
-      set -g fish_color_escape $pink
-      set -g fish_color_autosuggestion $comment
-      set -g fish_color_valid_path $blue
-      set -g fish_color_cancel $red
-
-      set -g fish_pager_color_progress $comment
-      set -g fish_pager_color_prefix $green
-      set -g fish_pager_color_completion $foreground
-      set -g fish_pager_color_description -i $lightgreen
-      set -g fish_pager_color_selected_background --background=$selection
+      set -g fish_pager_color_progress ${c.fg-dark}
+      set -g fish_pager_color_prefix ${c.green}
+      set -g fish_pager_color_completion ${c.fg}
+      set -g fish_pager_color_description -i ${c.accent}
+      set -g fish_pager_color_selected_background --background=${c.fg-dark}
 
       set -g fish_prompt_pwd_dir_length 3
       set -g fish_prompt_pwd_full_dirs 0

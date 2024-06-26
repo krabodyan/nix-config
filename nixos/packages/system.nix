@@ -7,7 +7,7 @@
     gcc
     inxi
     wget
-    python312
+    python3Full
     killall
     ffmpeg-full
     imagemagick
