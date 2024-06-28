@@ -8,8 +8,6 @@
     ./ufetch.nix
   ];
   home.packages = with pkgs; [
-    pamixer
-    brightnessctl
     xdg-utils
   ];
 }
