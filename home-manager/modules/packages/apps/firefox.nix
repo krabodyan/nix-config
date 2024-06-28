@@ -4,6 +4,7 @@
     enable = true;
     package = pkgs.firefox-wayland;
     profiles.krabodyan.settings = {
+      "media.webspeech.synth.enabled" = false;
       "privacy.webrtc.legacyGlobalIndicator" = false;
       "ui.key.menuAccessKeyFocuses" = false;
       "extensions.pocket.enabled" = false;
