@@ -1,41 +1,29 @@
 {
-  description = "My system configuration";
+  description = "krabodyan system configuration";
 
   inputs = {
-
     nixpkgs = {
       type  = "github";
       owner = "nixos";
       repo  = "nixpkgs";
       ref   = "nixos-unstable";
     };
-
     home-manager = {
       type  = "github";
       owner = "nix-community";
       repo  = "home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nixvim = {
       type  = "github";
       owner = "nix-community";
       repo  = "nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    #hyprlock.url = "github:hyprwm/Hyprlock";
-
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?rev=cba1ade848feac44b2eda677503900639581c3f4";
-
-    #waybar = {
-    #  url = "git+https://github.com/Alexays/Waybar?rev=0251e25f234d24300b9f1063896e13a188fda03c";
-    #};
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
