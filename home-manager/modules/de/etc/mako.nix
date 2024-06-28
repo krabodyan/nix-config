@@ -9,7 +9,7 @@
     backgroundColor = "#${config.colors.bg}ff"; #e6
     progressColor = "over #${config.colors.accent}";
     textColor = "#${config.colors.fg}";
-    width = 360;
+    width = 400;
     height = 110;
     padding = "12,0";
     borderSize = 2;

@@ -12,6 +12,7 @@
     ./office.nix
     ./ide.nix
     ./imv.nix
+    ./vscode.nix
   ];
   home.packages = with pkgs; [
     pcmanfm
