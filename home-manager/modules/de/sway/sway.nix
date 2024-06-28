@@ -79,7 +79,7 @@
       focus.followMouse = false;
       seat.seat0 = {
         xcursor_theme = "GoogleDot-Blue";
-        hide_cursor = "3000";
+        # hide_cursor = "3000";
       };
 
       colors = {

@@ -25,6 +25,7 @@
       ".vscode"
       ".idea"
       ".vs"
+      ".devenv.*"
     ];
   };
 }
