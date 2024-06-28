@@ -24,14 +24,5 @@
 
     acpi
     ntfs3g
-
-    # ranger ----
-    ranger
-    p7zip
-    libsixel
-    ffmpegthumbnailer
-    poppler_utils
-    exiftool
-    # --------------
   ];
 }
