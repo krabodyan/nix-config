@@ -11,7 +11,7 @@
         show_hidden = false;
         sort_by = "alphabetical";
         sort_sensitive = false;
-        linemode = "size";
+        linemode = "mtime";
       };
       preview = {
         image_quality = 50;
