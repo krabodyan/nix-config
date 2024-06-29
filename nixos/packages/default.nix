@@ -1,7 +1,6 @@
 {inputs, ...}: {
   imports = [
     ./system.nix
-    ./nixvim
   ];
 
   nixpkgs.config = {

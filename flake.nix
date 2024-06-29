@@ -36,7 +36,6 @@
           ./nixos/configuration.nix
           inputs.disko.nixosModules.default
           (import ./disko.nix { device = "/dev/sda"; })
-          inputs.nixvim.nixosModules.nixvim
         ];
       };
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
@@ -44,6 +43,7 @@
         extraSpecialArgs = { inherit system inputs; };
         modules = [
           ./home-manager/home.nix
+          inputs.nixvim.homeManagerModules.nixvim
         ];
       };
     };
