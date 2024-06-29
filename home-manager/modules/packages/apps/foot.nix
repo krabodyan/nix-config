@@ -1,9 +1,4 @@
 { config, ... }: {
-  home.sessionVariables = {
-    TERM = "foot";
-    TERMINAL = "foot";
-  };
-
   programs.foot = {
     enable = true;
     server.enable = false;

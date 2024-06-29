@@ -1,20 +1,16 @@
 { pkgs, ...}: {
-  home.packages = with pkgs; [
-    yt-dlp
-  ];
   xdg.configFile."mpv/mpv.conf".text = ''
     gpu-context=wayland
     vo=gpu
     profile=fast
     hwdec=vaapi
-    volume=65
+    volume=75
     keep-open=yes
     fullscreen=no
     sid=0
     initial-audio-sync
-    ytdl-format=bestvideo[height<=?1080][ext=mp4][vcodec^=avc1]+bestaudio[ext=m4a]
-    script-opts=ytdl_hook-ytdl_path=${pkgs.yt-dlp}/bin/yt-dlp
-
+    # ytdl-format=bestvideo[height<=?1080][ext=mp4][vcodec^=avc1]+bestaudio[ext=m4a]
+    # script-opts=ytdl_hook-ytdl_path=${pkgs.yt-dlp}/bin/yt-dlp
     audio-file-auto-exts=mkv
     audio-file-auto=fuzzy
     audio-file-paths=RUS Sound
