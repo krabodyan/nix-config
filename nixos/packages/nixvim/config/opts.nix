@@ -7,8 +7,8 @@
     };
 
     opts = {
-      updatetime = 1000; # Faster completion
-
+      # updatetime = 1000; # Faster completion
+      # guicursor = "a:hor20-Cursor";
       relativenumber = true; # Relative line numbers
       number = true; # Display the absolute line number of the current line
 

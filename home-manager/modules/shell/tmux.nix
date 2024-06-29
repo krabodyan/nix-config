@@ -6,25 +6,23 @@
       {
         plugin = pkgs.tmuxPlugins.catppuccin;
         extraConfig = ''
-          set -g default-terminal "xterm-256color"
-          set-option -ga terminal-overrides ",xterm-256color:Tc"
-          set -ga terminal-overrides ',*:Ss=\E[%p1%d q:Se=\E[2 q'
+          set -ga terminal-overrides ',xterm-256color:Tc'
+          set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
 
           set -g @catppuccin_flavour 'mocha'
 
-          set -g @catppuccin_window_default_fill "number"
           set -g @catppuccin_window_default_text "#W"
-
-          set -g @catppuccin_window_current_fill "number"
+          set -g @catppuccin_window_default_fill "none"
+          set -g @catppuccin_window_current_color "#{thm_blue}"
+          set -g @catppuccin_window_current_fill "all"
           set -g @catppuccin_window_current_text "#W"
+          set -g @catppuccin_window_default_color "#{thm_gray}"
 
           set -g @catppuccin_window_number_position "right"
+
           set -g @catppuccin_window_left_separator ""
           set -g @catppuccin_window_middle_separator " | "
           set -g @catppuccin_window_right_separator " "
-          set -g @catppuccin_window_default_fill "none"
-          set -g @catppuccin_window_current_fill "all"
-          set -g @catppuccin_window_default_text "#{b:pane_current_path}"
 
           set -g @catppuccin_status_background "default"
 
