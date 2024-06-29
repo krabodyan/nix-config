@@ -31,7 +31,7 @@
       system = "x86_64-linux";
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit system inputs; };
+        specialArgs = { inherit self system inputs; };
         modules = [
           ./nixos/configuration.nix
           inputs.disko.nixosModules.default

@@ -2,7 +2,6 @@
   environment.systemPackages = with pkgs; [
     home-manager
     compsize
-
     git
     gcc
     inxi
@@ -19,9 +18,6 @@
     ncdu
     pciutils
     jq
-    pkg-config
-    libusb1
-
     acpi
     ntfs3g
   ];
