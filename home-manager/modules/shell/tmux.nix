@@ -1,27 +1,15 @@
-{ pkgs, config, ... }:
-let
-  tpm = pkgs.tmuxPlugins.mkTmuxPlugin {
-    pluginName = "tpm";
-    version = "1.0.0";
-    src = pkgs.fetchFromGitHub {
-      owner = "tmux-plugins";
-      repo = "tpm";
-      rev = "99469c4a9b1ccf77fade25842dc7bafbc8ce9946";
-      sha256 = "sha256-hW8mfwB8F9ZkTQ72WQp/1fy8KL1IIYMZBtZYIwZdMQc=";
-    };
-  };
-in {
+{ pkgs, config, ... }: {
   programs.tmux = {
     enable = true;
-    terminal = "xterm-256color";
     shell = "${pkgs.fish}/bin/fish";
     plugins = [
-      tpm
       {
         plugin = pkgs.tmuxPlugins.catppuccin;
         extraConfig = ''
-          set -g @plugin 'catppuccin/tmux'
-          set -g @plugin 'tmux-plugins/tpm'
+          set -g default-terminal "xterm-256color"
+          set-option -ga terminal-overrides ",xterm-256color:Tc"
+          set -ga terminal-overrides ',*:Ss=\E[%p1%d q:Se=\E[2 q'
+
           set -g @catppuccin_flavour 'mocha'
 
           set -g @catppuccin_window_default_fill "number"
