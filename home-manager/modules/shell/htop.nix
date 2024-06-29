@@ -1,5 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   home.packages = with pkgs; [ htop nvtopPackages.intel ];
+  home.activation.removeHtop = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
+    run rm -f ${config.xdg.configHome}/htop/htoprc
+  '';
   xdg.configFile."htop/htoprc".text = ''
 htop_version=3.3.0
 config_reader_min_version=3

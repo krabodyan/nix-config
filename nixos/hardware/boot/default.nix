@@ -7,5 +7,5 @@
     systemd-boot.consoleMode = "max";
     timeout = 8;
   };
-  system.nixos.label = "";
+  system.nixos.label = ":D";
 }
