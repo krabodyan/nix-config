@@ -26,8 +26,8 @@
       set -g fish_color_command ${c.lightgreen}
       set -g fish_color_keyword -i ${c.yellow}
       set -g fish_color_quote -i ${c.yellow}
-      set -g fish_color_redirection ${c.orange}
-      set -g fish_color_end ${c.orange}
+      set -g fish_color_redirection ${c.blue}
+      set -g fish_color_end ${c.blue}
       set -g fish_color_error ${c.red}
       set -g fish_color_warn ${c.orange}
       set -g fish_color_param ${c.fg}

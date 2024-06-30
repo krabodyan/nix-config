@@ -30,7 +30,7 @@
         blue       = "63e7ff";
         magenta    = "bd94eb";
         cyan       = "00FFDE";
-        orange     = "ff771e";
+        orange     = "ff4f00";
         pink       = "ff1181";
         peach      = "fa8967";
         lightgreen = "00FF96";
