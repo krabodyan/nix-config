@@ -23,7 +23,7 @@
     in ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       set -g fish_color_normal ${c.fg}
-      set -g fish_color_command ${c.green}
+      set -g fish_color_command ${c.lightgreen}
       set -g fish_color_keyword -i ${c.yellow}
       set -g fish_color_quote -i ${c.yellow}
       set -g fish_color_redirection ${c.orange}
@@ -34,16 +34,16 @@
       set -g fish_color_comment -i ${c.fg-dark}
       set -g fish_color_selection --background=${c.bg-dark}
       set -g fish_color_search_match --background=${c.bg-dark}
-      set -g fish_color_operator ${c.green}
+      set -g fish_color_operator ${c.lightgreen}
       set -g fish_color_escape ${c.pink}
       set -g fish_color_autosuggestion ${c.fg-dark}
       set -g fish_color_valid_path ${c.blue}
       set -g fish_color_cancel ${c.red}
 
       set -g fish_pager_color_progress ${c.fg-dark}
-      set -g fish_pager_color_prefix ${c.green}
+      set -g fish_pager_color_prefix ${c.lightgreen}
       set -g fish_pager_color_completion ${c.fg}
-      set -g fish_pager_color_description -i ${c.accent}
+      set -g fish_pager_color_description -i ${c.fg-dark}
       set -g fish_pager_color_selected_background --background=${c.fg-dark}
 
       set -g fish_prompt_pwd_dir_length 3

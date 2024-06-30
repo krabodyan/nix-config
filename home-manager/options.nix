@@ -20,20 +20,20 @@
         bg-bright  = "32324d";
 
         fg         = "cdd6f4";
-        fg-dark    = "6c7086";
+        fg-dark    = "70758D";
         fg-bright  = "a6adc8";
 
         black      = "222222";
         red        = "FC7971";
-        green      = "47fd2a";
+        green      = "00FF6A";
         yellow     = "FADA5E";
         blue       = "63e7ff";
         magenta    = "bd94eb";
-        cyan       = "94e2d5";
+        cyan       = "00FFDE";
         orange     = "ff771e";
         pink       = "ff1181";
         peach      = "fa8967";
-        lightgreen = "A6E3A1";
+        lightgreen = "00FF96";
       };
     };
   };

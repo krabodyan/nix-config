@@ -26,6 +26,7 @@
         show_cpu_temperature = true;
         cpu_count_from_one = true;
         color_scheme = 6;
+        delay = 5;
 
         fields = with fields; [
           PID
