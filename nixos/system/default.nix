@@ -1,6 +1,5 @@
 {
   imports = [
-    ./devices
     ./users
     ./etc
     ./services
