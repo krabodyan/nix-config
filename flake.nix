@@ -2,24 +2,17 @@
   description = "krabodyan system configuration";
 
   inputs = {
-    nixpkgs = {
-      type  = "github";
-      owner = "nixos";
-      repo  = "nixpkgs";
-      ref   = "nixos-unstable";
-    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      type  = "github";
-      owner = "nix-community";
-      repo  = "home-manager";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      type  = "github";
-      owner = "nix-community";
-      repo  = "nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #nixvim = {
+    #  type  = "github";
+    #  owner = "nix-community";
+    #  repo  = "nixvim";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -43,7 +36,7 @@
         extraSpecialArgs = { inherit system inputs; };
         modules = [
           ./home-manager/home.nix
-          inputs.nixvim.homeManagerModules.nixvim
+          #inputs.nixvim.homeManagerModules.nixvim
         ];
       };
     };

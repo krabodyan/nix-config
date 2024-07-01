@@ -2,7 +2,7 @@
   home.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = 1;
     MOZ_ENABLE_WAYLAND = 1;
-    SDL_VIDEODRIVER = "wayland";
+    SDL_VIDEODRIVER = "wayland,x11,windows";
     _JAVA_AWT_WM_NONREPARENTING = 1;
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Sway";

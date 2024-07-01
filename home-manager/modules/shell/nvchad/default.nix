@@ -2,7 +2,7 @@
   programs.neovim = {
     enable = true;
     vimAlias = true;
-    extraPackages = with pkgs; [ lua-language-server ];
+    extraPackages = with pkgs; [ nixpkgs-fmt lua-language-server ];
   };
 
   xdg.configFile."nvim".source = pkgs.stdenv.mkDerivation {
@@ -16,8 +16,7 @@
     installPhase = ''
       mkdir -p $out
       cp -r ./* $out/
-      mkdir -p $out/lua/custom/
-      cp -r ${./config.lua} $out/lua/custom/init.lua
+      cp -r ${./custom} $out/lua/custom
     '';
   };
 }

@@ -6,10 +6,10 @@
     ./discord
     ./firefox.nix
     ./64gram.nix
-    ./zoom.nix
-    ./protonvpn.nix
-    ./office.nix
-    ./ide.nix
+    #./zoom.nix
+    #./protonvpn.nix
+    #./office.nix
+    #./ide.nix
     ./imv.nix
     ./vscode.nix
   ];
