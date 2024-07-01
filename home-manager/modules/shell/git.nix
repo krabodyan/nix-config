@@ -8,6 +8,7 @@
       branch = {sort = "-committerdate";};
       pull = {rebase = true;};
       push = {default = "simple";};
+      safe = {directory = "*";};
     };
     ignores = [
       # c commons
@@ -26,6 +27,7 @@
       ".idea"
       ".vs"
       ".devenv.*"
+      "venv"
     ];
   };
 }

@@ -2,7 +2,8 @@
   imports = [
     ./bat
     ./yazi
-    ./nixvim
+    ./nvchad
+    #./nixvim
     ./fish.nix
     ./htop.nix
     ./git.nix

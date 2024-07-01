@@ -5,7 +5,6 @@
     ./swappy.nix
     ./discord
     ./firefox.nix
-    ./steam.nix
     ./64gram.nix
     ./zoom.nix
     ./protonvpn.nix
@@ -28,6 +27,7 @@
     zathura
     swappy
     wf-recorder
+    adwsteamgtk
   ];
   xdg.mimeApps =
   let

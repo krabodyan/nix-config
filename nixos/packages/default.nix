@@ -1,6 +1,7 @@
 {inputs, ...}: {
   imports = [
     ./system.nix
+    ./steam.nix
   ];
 
   nixpkgs.config = {
