@@ -10,7 +10,7 @@
         {
           "<C-n>" = ":Neotree toggle<CR>";
           "<esc>" = ":noh<CR>";
-          "<C-k>" = ":lua require('whitespace-nvim').trim()<CR>";
+          "<C-k>" = ":lua require('whitespace-nvim').trim()<CR>";    
           Y = "y$";
           "<C-q>" = ":close<CR>";
           "<C-x>" = ":qa<CR>";

@@ -5,11 +5,11 @@
     settings = {
       main = {
         term = "xterm-256color";
-        font = "${config.font}:style:SemiBold:size=11";
+        font = "${config.font}:size=11";
         font-bold = "${config.font}:style=Bold:size=11";
-        font-italic = "${config.font}:style=SemiBold Italic:size=11";
-        font-bold-italic = "${config.font}:style=SemiBold Italic:size=11";
-        box-drawings-uses-font-glyphs = true;
+        font-italic = "${config.font}:style=Italic:size=11";
+        font-bold-italic = "${config.font}:style=Bold Italic:size=11";
+        box-drawings-uses-font-glyphs = false;
         pad = "30x20";
         dpi-aware = "yes";
         initial-window-size-pixels = "880x600";
