@@ -7,6 +7,7 @@
         plugin = pkgs.tmuxPlugins.catppuccin;
         extraConfig = ''
           set -g prefix C-k
+          set -g default-terminal "xterm-256color"
           set -ga terminal-overrides ',xterm-256color:Tc'
           set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
 

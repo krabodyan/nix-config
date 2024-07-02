@@ -9,6 +9,7 @@
         line-number = "relative";
         cursorline = true;
         color-modes = true;
+
         lsp = {
           display-messages = true;
           display-inlay-hints = true;
