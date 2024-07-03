@@ -95,7 +95,7 @@
     languages.language-server = {
       # ruff.command = "ruff-lsp";
       pyright.config.python.analysis = {
-        typeCheckingMode = "basic";
+        typeCheckingMode = "strict";
       };
     };
     languages.language = [
