@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 let
   ufetch = pkgs.stdenv.mkDerivation {
     name = "ufetch";
@@ -14,6 +14,7 @@ let
       cp -rv $src/ufetch-nixos "$out/bin/ufetch"
     '';
   };
-in {
+in
+{
   home.packages = [ ufetch ];
 }

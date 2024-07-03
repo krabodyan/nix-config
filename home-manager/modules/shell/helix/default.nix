@@ -1,4 +1,7 @@
 { pkgs, config, ... }: {
+  home.sessionVariables = {
+    EDITOR = "hx";
+  };
   programs.helix = {
     enable = true;
     extraPackages = with pkgs; [ nil python311Packages.python-lsp-server ];
@@ -10,9 +13,12 @@
         cursorline = true;
         color-modes = true;
 
+        completion-timeout = 0;
+        popup-border = "none";
+        indent-heuristic = "tree-sitter";
         lsp = {
           display-messages = true;
-          display-inlay-hints = true;
+          # display-inlay-hints = true;
         };
 
         indent-guides = {
@@ -46,15 +52,24 @@
           };
         };
       };
-
-      keys.normal = {
-        space.space = "file_picker";
-        space.w = ":w";
-        space.q = ":q";
-        # p = "paste_clipboard_before";
-        # y = "yank_main_selection_to_clipboard";
-        esc = [ "collapse_selection" "keep_primary_selection" ];
-      };
+      keys =
+        let
+          binds = {
+            "C-x" = ":q";
+            "C-s" = ":w";
+            "C-c" = "normal_mode";
+            "C-7" = "toggle_comments";
+          };
+        in
+        {
+          normal = binds // {
+            p = "paste_clipboard_before";
+            y = "yank_main_selection_to_clipboard";
+            "esc" = [ "collapse_selection" "keep_primary_selection" ];
+          };
+          insert = binds;
+          select = binds;
+        };
     };
 
     languages.language = [

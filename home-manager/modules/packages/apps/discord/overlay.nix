@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 (pkgs.vesktop.override {
   vencord = pkgs.vencord.overrideAttrs (old: {
     src = old.src.override {
@@ -6,8 +6,7 @@
       hash = "sha256-USBfqpsre8hrt3lxwfkfoxQ3PT+sGkBPGfQ4dCuQECY=";
     };
   });
-})
-.overrideAttrs (oldAttrs: rec {
+}).overrideAttrs (oldAttrs: rec {
   version = "1.5.2";
   src = oldAttrs.src.override {
     rev = "8eaa5206b98ce7029b6879cc2ce361c2ae5f6239";

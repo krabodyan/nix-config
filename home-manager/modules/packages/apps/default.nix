@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{ pkgs, ... }: {
   imports = [
     ./foot.nix
     ./mpv.nix
@@ -30,12 +30,13 @@
     adwsteamgtk
   ];
   xdg.mimeApps =
-  let
-    associations = {
-      "application/pdf" = "org.pwmt.zathura.desktop";
+    let
+      associations = {
+        "application/pdf" = "org.pwmt.zathura.desktop";
+      };
+    in
+    {
+      associations.added = associations;
+      defaultApplications = associations;
     };
-  in {
-    associations.added = associations;
-    defaultApplications = associations;
-  };
 }

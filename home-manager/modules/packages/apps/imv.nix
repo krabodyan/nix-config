@@ -40,16 +40,17 @@
   '';
   home.packages = [ pkgs.swayimg ];
   xdg.mimeApps =
-  let
-    associations = {
-      "image/jpeg" = "swayimg.desktop";
-      "image/png"  = "swayimg.desktop";
-      "image/webp" = "swayimg.desktop";
-      "image/svg"  = "swayimg.desktop";
-      "image/jpg"  = "swayimg.desktop";
+    let
+      associations = {
+        "image/jpeg" = "swayimg.desktop";
+        "image/png" = "swayimg.desktop";
+        "image/webp" = "swayimg.desktop";
+        "image/svg" = "swayimg.desktop";
+        "image/jpg" = "swayimg.desktop";
+      };
+    in
+    {
+      associations.added = associations;
+      defaultApplications = associations;
     };
-  in {
-    associations.added = associations;
-    defaultApplications = associations;
-  };
 }

@@ -1,7 +1,6 @@
-{ pkgs, config, inputs, ... }: {
+{ config, ... }: {
   programs.waybar = {
     enable = true;
-    # package = inputs.waybar.packages.${pkgs.system}.waybar;
 
     settings.mainBar = {
       position = "right";
@@ -28,15 +27,15 @@
           persistent = ""; # "󱓼";
         };
         tooltip = false;
-        disable-scroll =  true;
+        disable-scroll = true;
         persistent-workspaces = {
-          "1" = [];
-          "2" = [];
-          "3" = [];
-          "4" = [];
-          "5" = [];
+          "1" = [ ];
+          "2" = [ ];
+          "3" = [ ];
+          "4" = [ ];
+          "5" = [ ];
         };
-        window-rewrite = {};
+        window-rewrite = { };
       };
 
       tray = {
@@ -56,10 +55,10 @@
         format = "{:%H\n%M}"; #"<span style='italic'>{:%H:%M}</span>";
         tooltip-format = "{calendar}";
         format-alt = "{:%d\n%m}";
-	      actions = {
-		      on-scroll-up = "shift_up";
-	        on-scroll-down = "shift_down";
-	      };
+        actions = {
+          on-scroll-up = "shift_up";
+          on-scroll-down = "shift_down";
+        };
       };
 
       network = {
@@ -76,7 +75,7 @@
       battery = {
         format = "<span font='SymbolsNerdFont'>{icon}</span>";
         format-alt = "{capacity}";
-        format-icons = ["" "" "" "" ""];
+        format-icons = [ "" "" "" "" "" ];
       };
     };
 

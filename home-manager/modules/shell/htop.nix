@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, ... }: {
   home.packages = with pkgs; [ nvtopPackages.intel ];
   xdg.configFile."htop/htoprc".force = true;
   programs.htop = {
@@ -35,6 +35,6 @@
           PERCENT_MEM
           COMM
         ];
-    };
+      };
   };
 }

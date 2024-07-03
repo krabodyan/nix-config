@@ -8,8 +8,8 @@
         extraConfig = ''
           set -g prefix C-k
           set -g default-terminal "xterm-256color"
-          set -ga terminal-overrides ',xterm-256color:Tc'
-          set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
+          # set -ga terminal-overrides ',xterm-256color:Tc'
+          # set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
 
           set -g @catppuccin_flavour 'mocha'
 

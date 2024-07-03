@@ -8,21 +8,21 @@ let
     -h string:x-canonical-private-synchronous:hyprnotify \
   '';
 in
-  pkgs.writeShellScriptBin "volume" ''
-    if [ "$1" = "mute" ]; then
-      ${pamixer} -t
-    fi
+pkgs.writeShellScriptBin "volume" ''
+  if [ "$1" = "mute" ]; then
+    ${pamixer} -t
+  fi
 
-    if ${pamixer} --get-mute | grep -q "true"; then
-      ${send} "󰖁 $(${pamixer} --get-volume-human)"
-      exit
-    fi
+  if ${pamixer} --get-mute | grep -q "true"; then
+    ${send} "󰖁 $(${pamixer} --get-volume-human)"
+    exit
+  fi
 
-    if [ "$1" = "up" ]; then
-      ${pamixer} -i 5
-    elif [ "$1" = "down" ]; then
-      ${pamixer} -d 5
-    fi
+  if [ "$1" = "up" ]; then
+    ${pamixer} -i 5
+  elif [ "$1" = "down" ]; then
+    ${pamixer} -d 5
+  fi
 
-    ${send} -h "int:value:$(${pamixer} --get-volume)" "󰕾 $(${pamixer} --get-volume-human)"
-  ''
+  ${send} -h "int:value:$(${pamixer} --get-volume)" "󰕾 $(${pamixer} --get-volume-human)"
+''

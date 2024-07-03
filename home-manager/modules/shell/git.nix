@@ -1,14 +1,14 @@
 {
   programs.git = {
     enable = true;
-    userName  = "krabodyan";
+    userName = "krabodyan";
     userEmail = "krabraketa@example.com";
     extraConfig = {
-      init = {defaultbranch = "main";};
-      branch = {sort = "-committerdate";};
-      pull = {rebase = true;};
-      push = {default = "simple";};
-      safe = {directory = "*";};
+      init = { defaultbranch = "main"; };
+      branch = { sort = "-committerdate"; };
+      pull = { rebase = true; };
+      push = { default = "simple"; };
+      safe = { directory = "*"; };
     };
     ignores = [
       # c commons

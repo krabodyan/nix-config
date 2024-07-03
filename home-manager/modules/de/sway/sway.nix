@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, config, ... }:
 {
   wayland.windowManager.sway = {
     enable = true;
@@ -83,35 +83,39 @@
       };
 
       colors = {
-        focused = let
-          color = config.colors.accent;
-          fields = [ "border" "background" "childBorder" "indicator" "text" ];
-        in
+        focused =
+          let
+            color = config.colors.accent;
+            fields = [ "border" "background" "childBorder" "indicator" "text" ];
+          in
           builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
 
-        focusedInactive = let
-          color = "00000000"; #config.colors.bg;
-          fields = [ "border" "background" "childBorder" "indicator" "text" ];
-        in
+        focusedInactive =
+          let
+            color = "00000000"; #config.colors.bg;
+            fields = [ "border" "background" "childBorder" "indicator" "text" ];
+          in
           builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
 
-        unfocused = let
-          color = "00000000"; # config.colors.bg;
-          fields = [ "border" "background" "childBorder" "indicator" "text" ];
-        in
+        unfocused =
+          let
+            color = "00000000"; # config.colors.bg;
+            fields = [ "border" "background" "childBorder" "indicator" "text" ];
+          in
           builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
 
-        urgent = let
-          color = config.colors.pink;
-          fields = [ "border" "background" "childBorder" "indicator" "text" ];
-        in
+        urgent =
+          let
+            color = config.colors.pink;
+            fields = [ "border" "background" "childBorder" "indicator" "text" ];
+          in
           builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
       };
 
       input = {
         "type:keyboard" = {
-	        xkb_layout = "us,ru,ua";
-	        xkb_options = "grp:alt_shift_toggle";
+          xkb_layout = "us,ru,ua";
+          xkb_options = "grp:alt_shift_toggle";
           repeat_rate = "35";
           repeat_delay = "400";
         };
@@ -122,83 +126,83 @@
           accel_profile = "flat";
           pointer_accel = "0";
         };
-	    };
+      };
 
       workspaceLayout = "default";
-      bars = [];
+      bars = [ ];
 
       bindkeysToCode = true;
       keybindings =
-      let
-        mod        = config.wayland.windowManager.sway.config.modifier;
-        volume     = import ./scripts/volume.nix     { inherit pkgs; };
-        microphone = import ./scripts/microphone.nix { inherit pkgs; };
-        brightness = import ./scripts/brightness.nix { inherit pkgs; };
-      in
-      {
-        "${mod}+Return"       = "exec ${pkgs.foot}/bin/foot";
-        "${mod}+Shift+Return" = "exec ${pkgs.foot}/bin/foot -a floaterm";
-        "${mod}+Shift+e"      = "exec ${pkgs.foot}/bin/foot ${pkgs.yazi}/bin/yazi";
-        "${mod}+d"            = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun -normal-window -kb-cancel 'Alt+d'";
+        let
+          mod = config.wayland.windowManager.sway.config.modifier;
+          volume = import ./scripts/volume.nix { inherit pkgs; };
+          microphone = import ./scripts/microphone.nix { inherit pkgs; };
+          brightness = import ./scripts/brightness.nix { inherit pkgs; };
+        in
+        {
+          "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";
+          "${mod}+Shift+Return" = "exec ${pkgs.foot}/bin/foot -a floaterm";
+          "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot ${pkgs.yazi}/bin/yazi";
+          "${mod}+d" = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun -normal-window -kb-cancel 'Alt+d'";
 
-        "Ctrl+Alt+Backspace"  = "reload";
-        "Ctrl+Alt+Delete"     = "exit";
+          "Ctrl+Alt+Backspace" = "reload";
+          "Ctrl+Alt+Delete" = "exit";
 
-        Print = "exec grim -g \"$(slurp -d)\" - | swappy -f -";
-        Pause = "exec grim - | swappy -f -";
+          Print = "exec grim -g \"$(slurp -d)\" - | swappy -f -";
+          Pause = "exec grim - | swappy -f -";
 
-        "${mod}+l" = "exec swaylock";
-        "${mod}+w" = "exec pkill -SIGUSR1 waybar";
+          "${mod}+l" = "exec swaylock";
+          "${mod}+w" = "exec pkill -SIGUSR1 waybar";
 
-        "${mod}+Left" = "focus left";
-        "${mod}+Down" = "focus down";
-        "${mod}+Right" = "focus right";
-        "${mod}+Up" = "focus up";
+          "${mod}+Left" = "focus left";
+          "${mod}+Down" = "focus down";
+          "${mod}+Right" = "focus right";
+          "${mod}+Up" = "focus up";
 
-        "${mod}+Shift+Left" = "move left";
-        "${mod}+Shift+Right" = "move right";
-        "${mod}+Shift+Up" = "move up";
-        "${mod}+Shift+Down" = "move down";
+          "${mod}+Shift+Left" = "move left";
+          "${mod}+Shift+Right" = "move right";
+          "${mod}+Shift+Up" = "move up";
+          "${mod}+Shift+Down" = "move down";
 
-        "${mod}+s" = "layout toggle";
-        "${mod}+f" = "fullscreen";
-        "${mod}+e" = "splitv";
-        "${mod}+r" = "splith";
-        "${mod}+t" = "floating toggle";
-        "${mod}+q" = "kill";
+          "${mod}+s" = "layout toggle";
+          "${mod}+f" = "fullscreen";
+          "${mod}+e" = "splitv";
+          "${mod}+r" = "splith";
+          "${mod}+t" = "floating toggle";
+          "${mod}+q" = "kill";
 
-        "${mod}+1" = "workspace number 1";
-        "${mod}+2" = "workspace number 2";
-        "${mod}+3" = "workspace number 3";
-        "${mod}+4" = "workspace number 4";
-        "${mod}+5" = "workspace number 5";
-        "${mod}+6" = "workspace number 6";
-        "${mod}+7" = "workspace number 7";
+          "${mod}+1" = "workspace number 1";
+          "${mod}+2" = "workspace number 2";
+          "${mod}+3" = "workspace number 3";
+          "${mod}+4" = "workspace number 4";
+          "${mod}+5" = "workspace number 5";
+          "${mod}+6" = "workspace number 6";
+          "${mod}+7" = "workspace number 7";
 
-        "${mod}+Shift+1" = "move container to workspace number 1";
-        "${mod}+Shift+2" = "move container to workspace number 2";
-        "${mod}+Shift+3" = "move container to workspace number 3";
-        "${mod}+Shift+4" = "move container to workspace number 4";
-        "${mod}+Shift+5" = "move container to workspace number 5";
-        "${mod}+Shift+6" = "move container to workspace number 6";
-        "${mod}+Shift+7" = "move container to workspace number 7";
+          "${mod}+Shift+1" = "move container to workspace number 1";
+          "${mod}+Shift+2" = "move container to workspace number 2";
+          "${mod}+Shift+3" = "move container to workspace number 3";
+          "${mod}+Shift+4" = "move container to workspace number 4";
+          "${mod}+Shift+5" = "move container to workspace number 5";
+          "${mod}+Shift+6" = "move container to workspace number 6";
+          "${mod}+Shift+7" = "move container to workspace number 7";
 
-        "${mod}+Ctrl+Right" = "resize shrink width 10 px";
-        "${mod}+Ctrl+Left"  = "resize grow   width 10 px";
-        "${mod}+Ctrl+Up"    = "resize shrink height 10 px";
-        "${mod}+Ctrl+Down"  = "resize grow   height 10 px";
+          "${mod}+Ctrl+Right" = "resize shrink width 10 px";
+          "${mod}+Ctrl+Left" = "resize grow   width 10 px";
+          "${mod}+Ctrl+Up" = "resize shrink height 10 px";
+          "${mod}+Ctrl+Down" = "resize grow   height 10 px";
 
-        "${mod}+p"          = "output \"eDP-1\" power off";
-        "${mod}+Shift+p"    = "output \"eDP-1\" power on";
+          "${mod}+p" = "output \"eDP-1\" power off";
+          "${mod}+Shift+p" = "output \"eDP-1\" power on";
 
-        XF86TouchpadToggle    = "input type:touchpad events toggle enabled disabled";
-        XF86AudioRaiseVolume  = "exec ${volume}/bin/volume up";
-        XF86AudioLowerVolume  = "exec ${volume}/bin/volume down";
-        XF86AudioMute         = "exec ${volume}/bin/volume mute";
-        F4                    = "exec ${microphone}/bin/microphone";
-        XF86MonBrightnessUp   = "exec ${brightness}/bin/brightness up";
-        XF86MonBrightnessDown = "exec ${brightness}/bin/brightness down";
-      };
+          XF86TouchpadToggle = "input type:touchpad events toggle enabled disabled";
+          XF86AudioRaiseVolume = "exec ${volume}/bin/volume up";
+          XF86AudioLowerVolume = "exec ${volume}/bin/volume down";
+          XF86AudioMute = "exec ${volume}/bin/volume mute";
+          F4 = "exec ${microphone}/bin/microphone";
+          XF86MonBrightnessUp = "exec ${brightness}/bin/brightness up";
+          XF86MonBrightnessDown = "exec ${brightness}/bin/brightness down";
+        };
     };
   };
 }

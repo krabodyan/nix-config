@@ -33,17 +33,17 @@
       colors = {
         alpha = "${config.colors.opacity}";
         background = "${config.colors.bg}"; #"2e3440"; #"1b1d22";
-        foreground = "${config.colors.fg}";#"eaf2f1";
+        foreground = "${config.colors.fg}"; #"eaf2f1";
         flash = "${config.colors.fg-bright}";
         flash-alpha = 0.7;
 
-        regular0 = "${config.colors.black}";  # чорний
-        regular1 = "${config.colors.red}";  # червоний
-        regular2 = "${config.colors.green}";  # зелений
-        regular3 = "${config.colors.yellow}";  # жовтий
-        regular4 = "${config.colors.blue}";  # синій
-        regular5 = "${config.colors.magenta}";  # пурпурний
-        regular6 = "${config.colors.cyan}";  # бірюзовий
+        regular0 = "${config.colors.black}"; # чорний
+        regular1 = "${config.colors.red}"; # червоний
+        regular2 = "${config.colors.green}"; # зелений
+        regular3 = "${config.colors.yellow}"; # жовтий
+        regular4 = "${config.colors.blue}"; # синій
+        regular5 = "${config.colors.magenta}"; # пурпурний
+        regular6 = "${config.colors.cyan}"; # бірюзовий
         regular7 = "${config.colors.fg-bright}"; #"bfd0f2"; #"eaf2f1";  # білий
         #bright0="696d77";   # яскраво-чорний
         #bright1="ff657a";   # яскраво-червоний
