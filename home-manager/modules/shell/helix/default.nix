@@ -4,7 +4,7 @@
   };
   programs.helix = {
     enable = true;
-    extraPackages = with pkgs; [ nil pyright ]; #ruff-lsp ];
+    extraPackages = with pkgs; [ nil pyright ruff-lsp ];
     settings = {
       theme = "catppuccin_mocha";
       editor = {
@@ -13,7 +13,7 @@
         cursorline = true;
         color-modes = true;
         scrolloff = 10;
-        completion-replace = true;
+        completion-replace = false;
         preview-completion-insert = false;
         completion-timeout = 0;
 
@@ -43,7 +43,7 @@
         soft-wrap = {
           enable = true;
           wrap-at-text-width = true;
-          wrap-indicator = "";
+          # wrap-indicator = "";
         };
 
         statusline = {
@@ -93,14 +93,11 @@
     };
 
     languages.language-server = {
-      # ruff-lsp = {
-      #   command = "ruff-lsp";
-      # };
+      # ruff.command = "ruff-lsp";
       pyright.config.python.analysis = {
-        typeCheckingMode = "strict";
+        typeCheckingMode = "basic";
       };
     };
-
     languages.language = [
       {
         name = "nix";
