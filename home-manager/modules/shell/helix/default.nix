@@ -66,6 +66,17 @@
             "C-c" = "normal_mode";
             "C-7" = "toggle_comments";
             "C-/" = "toggle_comments";
+            "C-A-down" = [
+              "extend_to_line_bounds"
+              "delete_selection"
+              "paste_after"
+            ];
+            "C-A-up" = [
+              "extend_to_line_bounds"
+              "delete_selection"
+              "move_line_up"
+              "paste_before"
+            ];
           };
         in
         {
