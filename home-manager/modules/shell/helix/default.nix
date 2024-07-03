@@ -4,7 +4,7 @@
   };
   programs.helix = {
     enable = true;
-    extraPackages = with pkgs; [ nil python311Packages.python-lsp-server ];
+    extraPackages = with pkgs; [ nil ]; # python311Packages.python-lsp-server ];
     settings = {
       theme = "catppuccin_mocha";
       editor = {
@@ -12,9 +12,13 @@
         line-number = "relative";
         cursorline = true;
         color-modes = true;
-
+        scrolloff = 10;
+        preview-completion-insert = false;
         completion-timeout = 0;
+
+        bufferline = "multiple";
         popup-border = "none";
+        text-width = 100;
         indent-heuristic = "tree-sitter";
 
         lsp = {
@@ -37,8 +41,8 @@
 
         soft-wrap = {
           enable = true;
-          # wrap-at-text-width = true;
-          # wrap-indicator = "↩";
+          wrap-at-text-width = true;
+          wrap-indicator = "";
         };
 
         statusline = {
@@ -59,14 +63,15 @@
             "C-x" = ":q";
             "C-s" = ":w";
             "C-c" = "normal_mode";
-            "C-7" = "toggle_comments";
+            # "C-7" = "toggle_comments";
+            "C-/" = "toggle_comments";
           };
         in
         {
           normal = binds // {
             p = "paste_clipboard_before";
             y = "yank_main_selection_to_clipboard";
-            "esc" = [ "collapse_selection" "keep_primary_selection" ];
+            esc = [ "collapse_selection" "keep_primary_selection" ];
           };
           insert = binds;
           select = binds;
@@ -82,11 +87,8 @@
       }
       {
         name = "python";
-        # auto-format = true;
-        formatter = {
-          command = "${pkgs.python311Packages.python-lsp-server}/bin/pylsp";
-        };
-        language-servers = [ "pylsp" ];
+        comment-token = "#";
+        formatter.command = "${pkgs.python311Packages.python-lsp-server}/bin/pylsp";
       }
     ];
     themes =
