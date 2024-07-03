@@ -7,9 +7,9 @@
         plugin = pkgs.tmuxPlugins.catppuccin;
         extraConfig = ''
           set -g prefix C-k
-          # set -g default-terminal "xterm-256color"
-          set -ga terminal-overrides ',xterm-256color:Tc'
-          set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
+          set -g default-terminal "tmux-256color"
+          set -sg terminal-overrides ",*:RGB"
+          # set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
 
           set -g @catppuccin_flavour 'mocha'
 
