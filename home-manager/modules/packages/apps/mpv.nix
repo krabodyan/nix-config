@@ -1,9 +1,9 @@
 { pkgs, ... }: {
   xdg.configFile."mpv/mpv.conf".text = ''
     gpu-context=wayland
-    # vo=gpu
+    vo=gpu
     profile=fast
-    # hwdec=vaapi
+    hwdec=vaapi
     volume=75
     keep-open=yes
     fullscreen=no

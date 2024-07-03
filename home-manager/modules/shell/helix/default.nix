@@ -71,6 +71,8 @@
           normal = binds // {
             p = "paste_clipboard_before";
             y = "yank_main_selection_to_clipboard";
+            tab = ":buffer-next";
+            "S-q" = ":buffer-close";
             esc = [ "collapse_selection" "keep_primary_selection" ];
           };
           insert = binds;
