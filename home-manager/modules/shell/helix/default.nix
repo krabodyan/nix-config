@@ -4,7 +4,7 @@
   };
   programs.helix = {
     enable = true;
-    extraPackages = with pkgs; [ nil pyright python311Packages.python-lsp-server ];
+    extraPackages = with pkgs; [ nil ruff-lsp ];
     settings = {
       theme = "catppuccin_mocha";
       editor = {
@@ -13,6 +13,7 @@
         cursorline = true;
         color-modes = true;
         scrolloff = 10;
+        completion-replace = true;
         preview-completion-insert = false;
         completion-timeout = 0;
 
@@ -31,7 +32,7 @@
           skip-levels = 1;
         };
 
-        true-color = true;
+        true-color = false;
 
         cursor-shape = {
           normal = "block";
@@ -80,8 +81,9 @@
         };
     };
 
-    #language-server.python-server = { 
-    #};
+    languages.language-server.ruff-lsp = {
+      command = "ruff-lsp";
+    };
 
     languages.language = [
       {
@@ -94,9 +96,11 @@
         name = "python";
         auto-format = true;
         comment-token = "#";
-        language-servers = [ "pyright" ]; # "python-server" ];
-        formatter.command = "${pkgs.pyright}/bin/pyright-langserver";
-        # formatter.command = "${pkgs.python311Packages.python-lsp-server}/bin/pylsp";
+        language-servers = [ "ruff-lsp" ];
+        formatter = {
+          command = "${pkgs.black}/bin/black";
+          args = [ "--quiet" "-" ];
+        };
       }
     ];
     themes =
