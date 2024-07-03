@@ -1,7 +1,8 @@
 {
   imports = [ ./tlp.nix ];
+  systemd.coredump.enable = false;
   services = {
-    printing.enable = true;
+    printing.enable = false;
     earlyoom.enable = false;
     dbus = {
       enable = true;
