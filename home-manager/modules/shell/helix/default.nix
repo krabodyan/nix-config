@@ -16,9 +16,10 @@
         completion-timeout = 0;
         popup-border = "none";
         indent-heuristic = "tree-sitter";
+
         lsp = {
           display-messages = true;
-          # display-inlay-hints = true;
+          display-inlay-hints = true;
         };
 
         indent-guides = {
@@ -82,10 +83,12 @@
       {
         name = "python";
         # auto-format = true;
-        formatter.command = "${pkgs.python311Packages.python-lsp-server}/bin/pylsp";
+        formatter = {
+          command = "${pkgs.python311Packages.python-lsp-server}/bin/pylsp";
+        };
+        language-servers = [ "pylsp" ];
       }
     ];
-
     themes =
       let
         mkHex = color: "#${color}";
