@@ -84,35 +84,17 @@
         hide_cursor = "10000";
       };
 
-      colors = {
-        focused =
-          let
-            color = config.colors.accent;
-            fields = [ "border" "background" "childBorder" "indicator" "text" ];
-          in
-          builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
-
-        focusedInactive =
-          let
-            color = "00000000"; #config.colors.bg;
-            fields = [ "border" "background" "childBorder" "indicator" "text" ];
-          in
-          builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
-
-        unfocused =
-          let
-            color = "00000000"; # config.colors.bg;
-            fields = [ "border" "background" "childBorder" "indicator" "text" ];
-          in
-          builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
-
-        urgent =
-          let
-            color = config.colors.pink;
-            fields = [ "border" "background" "childBorder" "indicator" "text" ];
-          in
-          builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
-      };
+      colors = with config.colors;
+        let
+          fields = [ "border" "background" "childBorder" "indicator" "text" ];
+          mkColor = color: builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
+        in
+        {
+          focused = mkColor accent;
+          focusedInactive = mkColor "00000000";
+          unfocused = mkColor "00000000";
+          urgent = mkColor pink;
+        };
 
       input = {
         "type:keyboard" = {

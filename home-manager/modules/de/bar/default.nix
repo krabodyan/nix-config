@@ -79,7 +79,7 @@
       };
     };
 
-    style = ''
+    style = with config.colors; ''
       * {
         all: unset;
         min-height: 0;
@@ -92,9 +92,9 @@
       }
 
       window#waybar {
-        background-color: #${config.colors.bg};
+        background-color: #${bg};
         border-radius: 8px;
-        /* border: solid 2px #${config.colors.accent} */
+        /* border: solid 2px #${accent} */
       }
 
       #language,
@@ -104,7 +104,7 @@
       #battery,
       #workspaces button
       {
-        color: #${config.colors.fg-bright};
+        color: #${fg-bright};
         padding: 0;
         margin: 5px 0;
       }
@@ -125,23 +125,23 @@
 
       #workspaces button,
       #workspaces button.persistent {
-        color: #${config.colors.fg-dark};
+        color: #${fg-dark};
       }
 
       #workspaces button.focused {
-        color: #${config.colors.fg};
+        color: #${fg};
       }
 
       #workspaces button.urgent {
-        color: #${config.colors.red};
+        color: #${red};
       }
 
       tooltip,
       #tray menu {
-        border: solid #${config.colors.accent} 2px;
+        border: solid #${accent} 2px;
         border-radius: 8px;
         padding: 8px 0;
-        background-color: #${config.colors.bg};
+        background-color: #${bg};
       }
 
       #tray menu menuitem {
@@ -151,7 +151,7 @@
       }
 
       #tray menu menuitem:hover {
-        background-color: #${config.colors.bg-bright};
+        background-color: #${bg-bright};
       }
     '';
   };

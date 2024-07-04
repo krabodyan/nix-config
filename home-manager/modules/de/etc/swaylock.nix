@@ -1,9 +1,8 @@
-{ pkgs, config, ... }: {
+{ config, ... }: {
   programs.swaylock = {
     enable = true;
-    settings =
+    settings = with config.colors;
       let
-        col = config.colors;
         t = "00000000";
       in
       {
@@ -11,12 +10,12 @@
         image = config.background-image;
         daemonize = true;
 
-        color = col.bg;
+        color = bg;
         inside-color = t;
-        line-color = col.fg;
-        key-hl-color = col.fg;
+        line-color = fg;
+        key-hl-color = fg;
         separator-color = t;
-        bs-hl-color = col.pink;
+        bs-hl-color = pink;
 
         inside-clear-color = t;
         inside-caps-lock-color = t;
@@ -24,20 +23,20 @@
         inside-wrong-color = t;
 
         ring-color = t;
-        ring-clear-color = col.yellow;
-        ring-caps-lock-color = col.red;
-        ring-ver-color = col.cyan;
-        ring-wrong-color = col.red;
+        ring-clear-color = yellow;
+        ring-caps-lock-color = red;
+        ring-ver-color = cyan;
+        ring-wrong-color = red;
 
-        text-color = col.fg;
-        text-caps-lock-color = col.fg;
-        text-clear-color = col.fg;
-        text-ver-color = col.fg;
-        text-wrong-color = col.fg;
+        text-color = fg;
+        text-caps-lock-color = fg;
+        text-clear-color = fg;
+        text-ver-color = fg;
+        text-wrong-color = fg;
 
         layout-bg-color = t;
         layout-border-color = t;
-        layout-text-color = col.fg;
+        layout-text-color = fg;
 
         font-size = 16;
         ignore-empty-password = true;

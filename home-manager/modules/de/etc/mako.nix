@@ -1,19 +1,19 @@
 { pkgs, config, ... }: {
   home.packages = [ pkgs.libnotify ];
-  services.mako = {
+  services.mako = with config.colors; {
     enable = true;
     font = "${config.font} Bold 10";
     sort = "-time";
     layer = "overlay";
     anchor = "bottom-center";
-    backgroundColor = "#${config.colors.bg}ff"; #e6
-    progressColor = "over #${config.colors.accent}";
-    textColor = "#${config.colors.fg}";
+    backgroundColor = "#${bg}ff"; #e6
+    progressColor = "over #${accent}";
+    textColor = "#${fg}";
     width = 400;
     height = 110;
     padding = "12,0";
     borderSize = 2;
-    borderColor = "#${config.colors.accent}";
+    borderColor = "#${accent}";
     borderRadius = 12;
     iconPath = "${pkgs.papirus-icon-theme}/share/icons/Papirus-Dark";
     maxIconSize = 32;
@@ -27,13 +27,13 @@
       format=<b>%s [%g]</b>\n%b
 
       [urgency=low]
-      border-color=#${config.colors.accent}
+      border-color=#${accent}
 
       [urgency=normal]
-      border-color=#${config.colors.accent}
+      border-color=#${accent}
 
       [urgency=critical]
-      border-color=#${config.colors.red}
+      border-color=#${red}
       default-timeout=12000
       format=<b>ERROR: %s</b>\n%b
     '';

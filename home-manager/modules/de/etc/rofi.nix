@@ -2,7 +2,6 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
-    #font = "JetBrainsMono Nerd Font Bold 10";
     terminal = "foot";
     location = "bottom";
     extraConfig = {
@@ -12,17 +11,17 @@
       display-clipboard = "";
       drun-display-format = "{name}";
     };
-    theme =
+    theme = with config.colors;
       let
         inherit (config.lib.formats.rasi) mkLiteral;
       in
       {
         "*" = {
           font = "${config.font} Bold 10";
-          bg = mkLiteral "#${config.colors.bg}"; # 99
-          fg = mkLiteral "#${config.colors.fg-dark}";
-          red = mkLiteral "#${config.colors.red}";
-          fg-bright = mkLiteral "#${config.colors.fg}";
+          bg = mkLiteral "#${bg}"; # 99
+          fg = mkLiteral "#${fg-dark}";
+          red = mkLiteral "#${red}";
+          fg-bright = mkLiteral "#${fg}";
           background-color = mkLiteral "@bg";
           text-color = mkLiteral "@fg";
           separatorcolor = mkLiteral "transparent";
@@ -38,7 +37,7 @@
           y-offset = -30;
           border-radius = 12;
           border = 2;
-          border-color = mkLiteral "#${config.colors.accent}";
+          border-color = mkLiteral "#${accent}";
           background-color = mkLiteral "@bg";
         };
 
@@ -70,7 +69,7 @@
           text-color = mkLiteral "@fg-bright";
           border-radius = 17;
           border = 2;
-          border-color = mkLiteral "#${config.colors.accent}";
+          border-color = mkLiteral "#${accent}";
           background-color = mkLiteral "transparent";
           placeholder = "";
           cursor = mkLiteral "underline";

@@ -123,10 +123,10 @@
         mkHex = color: "#${color}";
       in
       {
-        catppuccin_mocha = {
+        catppuccin_mocha = with config.colors; {
           "inherits" = "catppuccin_mocha";
           "ui.background" = { };
-          "comment" = mkHex config.colors.fg-dark;
+          "comment" = mkHex fg-dark;
         };
       };
   };
