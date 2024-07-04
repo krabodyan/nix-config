@@ -4,10 +4,11 @@
   };
   programs.helix = {
     enable = true;
-    extraPackages = with pkgs; [ nil pyright ruff-lsp ];
+    extraPackages = with pkgs; [ nil pyright ];
     settings = {
       theme = "catppuccin_mocha";
       editor = {
+        workspace-lsp-roots = [ "fuzz" ];
         mouse = false;
         line-number = "relative";
         cursorline = true;
@@ -94,8 +95,12 @@
 
     languages.language-server = {
       # ruff.command = "ruff-lsp";
-      pyright.config.python.analysis = {
-        typeCheckingMode = "strict";
+      pyright = {
+        args = [ "--stdio" ];
+        config.python.analysis = {
+          typeCheckingMode = "strict";
+          autoImportCompletions = true;
+        };
       };
     };
     languages.language = [
@@ -107,8 +112,17 @@
       }
       {
         name = "python";
+        scope = "source.python";
+        injection-regex = "python";
+        shebangs = [ "python" ];
+        indent = {
+          tab-width = 4;
+          unit = "    ";
+        };
+        roots = [ "setup.py" "setup.cfg" "pyproject.toml" ];
         auto-format = true;
         comment-token = "#";
+        file-types = [ "py" ];
         language-servers = [ "pyright" ];
         formatter = {
           command = "${pkgs.black}/bin/black";
