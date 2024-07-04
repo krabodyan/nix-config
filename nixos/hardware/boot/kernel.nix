@@ -1,7 +1,9 @@
 { config, lib, pkgs, modulesPath, ... }:
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
+  boot.kernel.sysctl = {
+    "kernel.printk" = 2;
+  };
   boot.kernelParams = [
     "info"
     "splash"
@@ -17,10 +19,21 @@
   # boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.extraModprobeConfig = '''';
   boot.blacklistedKernelModules = [
-    "adfs" "affs" "bfs" "befs"
-    "cramfs" "efs" "erofs" "exofs"
-    "freevxfs" "f2fs" "hfs" "hpfs"
-    "jfs" "nilfs2" "omfs"
+    "adfs"
+    "affs"
+    "bfs"
+    "befs"
+    "cramfs"
+    "efs"
+    "erofs"
+    "exofs"
+    "freevxfs"
+    "f2fs"
+    "hfs"
+    "hpfs"
+    "jfs"
+    "nilfs2"
+    "omfs"
     "ufs"
   ];
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" ];

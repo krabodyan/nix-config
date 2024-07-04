@@ -4,11 +4,11 @@
   };
   programs.helix = {
     enable = true;
-    extraPackages = with pkgs; [ nil pyright bash-language-server ];
+    extraPackages = with pkgs; [ nil pyright python312Packages.python-lsp-server bash-language-server ];
     settings = {
       theme = "catppuccin_mocha";
       editor = {
-        mouse = false;
+        # mouse = false;
         line-number = "relative";
         cursorline = true;
         color-modes = true;
@@ -26,6 +26,8 @@
         lsp = {
           display-messages = true;
           display-inlay-hints = true;
+          display-signature-help-docs = true;
+          snippets = true;
         };
 
         indent-guides = {
