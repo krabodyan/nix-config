@@ -6,7 +6,6 @@
     kernel.sysctl = {
       "kernel.printk" = 2;
       "kernel.nmi_watchdog" = 0;
-      "kernel.dmesg_restrict" = 1;
 
       "vm.max_map_count" = 2147483642;
 

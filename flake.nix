@@ -1,5 +1,5 @@
 {
-  description = "krabodyan system configuration";
+  description = "   snowy place  󱄅  full of flakes  ";
 
   nixConfig = {
     extra-substituters = [
