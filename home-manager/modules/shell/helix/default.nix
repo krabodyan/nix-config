@@ -4,19 +4,19 @@
   };
   programs.helix = {
     enable = true;
-    extraPackages = with pkgs; [ nil pyright ];
+    extraPackages = with pkgs; [ nil pyright bash-language-server ];
     settings = {
       theme = "catppuccin_mocha";
       editor = {
-        workspace-lsp-roots = [ "fuzz" ];
         mouse = false;
         line-number = "relative";
         cursorline = true;
         color-modes = true;
         scrolloff = 10;
+
         completion-replace = false;
         preview-completion-insert = false;
-        completion-timeout = 0;
+        completion-timeout = 5;
 
         bufferline = "multiple";
         popup-border = "none";
@@ -44,7 +44,6 @@
         soft-wrap = {
           enable = true;
           wrap-at-text-width = true;
-          # wrap-indicator = "";
         };
 
         statusline = {
@@ -92,15 +91,11 @@
           select = binds;
         };
     };
-
+    languages.file_watch_support = false;
     languages.language-server = {
       # ruff.command = "ruff-lsp";
-      pyright = {
-        args = [ "--stdio" ];
-        config.python.analysis = {
-          typeCheckingMode = "strict";
-          autoImportCompletions = true;
-        };
+      pyright.config.python.analysis = {
+        typeCheckingMode = "strict";
       };
     };
     languages.language = [
@@ -112,17 +107,8 @@
       }
       {
         name = "python";
-        scope = "source.python";
-        injection-regex = "python";
-        shebangs = [ "python" ];
-        indent = {
-          tab-width = 4;
-          unit = "    ";
-        };
-        roots = [ "setup.py" "setup.cfg" "pyproject.toml" ];
         auto-format = true;
         comment-token = "#";
-        file-types = [ "py" ];
         language-servers = [ "pyright" ];
         formatter = {
           command = "${pkgs.black}/bin/black";

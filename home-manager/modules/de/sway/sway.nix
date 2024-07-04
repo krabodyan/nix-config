@@ -11,6 +11,8 @@
       corner_radius 10
       shadows off
       scratchpad_minimize disable
+      focus_wrapping force
+      popup_during_fullscreen leave_fullscreen
     '';
     config = {
       modifier = "Mod4";
