@@ -1,4 +1,5 @@
-{
+{ system, lib, ... }: {
+  nixpkgs.hostPlatform = lib.mkDefault system;
   nix = {
     gc = {
       automatic = true;

@@ -2,13 +2,14 @@
   home.sessionVariables = {
     EDITOR = "hx";
   };
-  home.packages = with pkgs; [ nil pyright bash-language-server ];
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${system}.helix;
+    extraPackages = with pkgs; [ nil pyright ];
     settings = {
       theme = "catppuccin_mocha";
       editor = {
+        insert-final-newline = false;
         mouse = false;
         line-number = "relative";
         cursorline = true;
@@ -21,14 +22,13 @@
 
         bufferline = "multiple";
         popup-border = "none";
-        text-width = 100;
+        text-width = 110;
         indent-heuristic = "tree-sitter";
 
         lsp = {
           display-messages = true;
           display-inlay-hints = true;
-          display-signature-help-docs = true;
-          snippets = true;
+          snippets = false;
         };
 
         indent-guides = {
