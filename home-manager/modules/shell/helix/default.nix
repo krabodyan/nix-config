@@ -1,14 +1,15 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, inputs, system, ... }: {
   home.sessionVariables = {
     EDITOR = "hx";
   };
+  home.packages = with pkgs; [ nil pyright bash-language-server ];
   programs.helix = {
     enable = true;
-    extraPackages = with pkgs; [ nil pyright python312Packages.python-lsp-server bash-language-server ];
+    package = inputs.helix.packages.${system}.helix;
     settings = {
       theme = "catppuccin_mocha";
       editor = {
-        # mouse = false;
+        mouse = false;
         line-number = "relative";
         cursorline = true;
         color-modes = true;
@@ -95,7 +96,6 @@
     };
     languages.file_watch_support = false;
     languages.language-server = {
-      # ruff.command = "ruff-lsp";
       pyright.config.python.analysis = {
         typeCheckingMode = "strict";
       };

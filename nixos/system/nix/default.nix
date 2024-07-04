@@ -14,9 +14,9 @@
         "nix-command"
         "flakes"
       ];
-      use-xdg-base-directories = true;
-      max-jobs = 1;
-      cores = 12;
+      builders-use-substitutes = true;
+      max-jobs = 12;
+      cores = 0;
       trusted-users = [ "krabodyan" "root" ];
       auto-optimise-store = true;
     };

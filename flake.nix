@@ -1,18 +1,22 @@
 {
   description = "krabodyan system configuration";
 
+  nixConfig = {
+    extra-substituters = [
+      "https://helix.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    helix.url = "github:helix-editor/helix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #nixvim = {
-    #  type  = "github";
-    #  owner = "nix-community";
-    #  repo  = "nixvim";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +26,8 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
-    in {
+    in
+    {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit self system inputs; };
         modules = [
@@ -36,7 +41,6 @@
         extraSpecialArgs = { inherit system inputs; };
         modules = [
           ./home-manager/home.nix
-          #inputs.nixvim.homeManagerModules.nixvim
         ];
       };
     };
