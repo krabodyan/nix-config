@@ -1,8 +1,20 @@
 { pkgs }: {
   file_watch_support = true;
+
+  server = {
+    timeout = 360;
+  };
+
   language-server = {
-    pyright.config.python.analysis = {
-      typeCheckingMode = "strict";
+    ruff = {
+      command = "${pkgs.ruff-lsp}/bin/ruff-lsp";
+      settings_section = "_";
+    };
+    ruff.settings._.globalSettings = {
+      organizeImports = true;
+      fixAll = true;
+      codeAction.disableRuleComment.enable = false;
+      codeAction.fixViolation.enable = false;
     };
   };
   language = [
@@ -16,7 +28,7 @@
       name = "python";
       auto-format = true;
       comment-token = "#";
-      language-servers = [ "pyright" ];
+      language-servers = [ "pylsp" "ruff" ];
       formatter = {
         command = "${pkgs.black}/bin/black";
         args = [ "--line-length" "88" "--quiet" "-" ];
