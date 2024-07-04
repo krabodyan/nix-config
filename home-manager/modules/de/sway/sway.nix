@@ -86,8 +86,13 @@
 
       colors = with config.colors;
         let
-          fields = [ "border" "background" "childBorder" "indicator" "text" ];
-          mkColor = color: builtins.listToAttrs (map (field: { name = field; value = color; }) fields);
+          mkColor = color: builtins.listToAttrs (map
+            (field: {
+              name = field;
+              value = color;
+            })
+            [ "border" "background" "childBorder" "indicator" "text" ]
+          );
         in
         {
           focused = mkColor accent;
