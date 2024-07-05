@@ -5,9 +5,8 @@
   cursorline = true;
   color-modes = true;
   scrolloff = 10;
-
   completion-replace = false;
-  preview-completion-insert = false;
+  preview-completion-insert = true;
   completion-timeout = 5;
   undercurl = true;
   bufferline = "multiple";

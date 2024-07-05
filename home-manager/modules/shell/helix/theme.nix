@@ -22,6 +22,7 @@ in
     "string.regexp" = "pink";
     "string.special" = "blue";
     "string.special.symbol" = "red";
+    "string.special.path" = "pink";
 
     "comment" = {
       fg = mkHex fg-dark;
@@ -42,13 +43,12 @@ in
     "punctuation.bracket" = "red";
     "punctuation.special" = "peach";
 
-    "keyword" = "mauve";
-    "keyword.control.conditional" = {
+    "keyword" = {
       fg = "mauve";
       modifiers = [ "italic" ];
     };
-
     "operator" = "teal";
+
     "function" = {
       fg = "blue";
       modifiers = [ "italic" ];
@@ -59,14 +59,14 @@ in
     };
     "function.macro" = "peach";
 
-    "tag" = mkHex black;
+    "tag" = "mauve";
 
     "namespace" = {
       fg = "text";
       modifiers = [ "italic" ];
     };
 
-    "special" = mkHex black;
+    "special" = "red";
 
     "markup.heading.marker" = {
       fg = "peach";
