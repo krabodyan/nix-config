@@ -8,7 +8,7 @@
     };
     optimise = {
       automatic = true;
-      dates = [ "13:00" ];
+      dates = "weekly";
     };
     settings = {
       experimental-features = [
