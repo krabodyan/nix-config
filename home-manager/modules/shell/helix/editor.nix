@@ -9,7 +9,7 @@
   completion-replace = false;
   preview-completion-insert = false;
   completion-timeout = 5;
-
+  undercurl = true;
   bufferline = "multiple";
   popup-border = "none";
   text-width = 110;

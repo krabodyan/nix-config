@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   programs.foot = {
     enable = true;
     server.enable = false;
@@ -9,6 +9,7 @@
         in
         {
           term = "xterm-256color";
+          shell = "${pkgs.fish}/bin/fish";
 
           inherit font;
           font-bold = "${font}:style=Bold";
@@ -18,9 +19,11 @@
           box-drawings-uses-font-glyphs = false;
           pad = "30x20";
           dpi-aware = "yes";
+          resize-by-cells = false;
+          resize-delay-ms = 0;
           initial-window-size-pixels = "880x600";
           underline-offset = "5px";
-          underline-thickness = "2px";
+          underline-thickness = "1px";
         };
 
       scrollback = {

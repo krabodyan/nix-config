@@ -20,7 +20,7 @@
         bg-bright = "32324d";
 
         fg = "cdd6f4";
-        fg-dark = "70758D";
+        fg-dark = "616991";
         fg-bright = "a6adc8";
 
         black = "222222";

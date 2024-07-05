@@ -1,4 +1,4 @@
-{ config }:
+{ config, lib }:
 let
   mkHex = color: "#${color}";
 in
@@ -10,11 +10,31 @@ in
       fg = mkHex fg-dark;
       modifiers = [ "italic" ];
     };
-    "diagnostic.error" = {
-      fg = mkHex fg-dark;
-      bg = mkHex red;
+
+    "diagnostic.unnecessary" = {
+      fg = mkHex cyan;
+      underline = { };
       modifiers = [ ];
     };
+
+    # "diagnostic.error" = {
+    #   fg = "red";
+    #   # modifiers = [ "underlined" ];
+    # };
+    # # "diagnostic.warning" = {
+    # #   fg = mkHex yellow;
+    # #   modifiers = [ "underlined" ];
+    # # };
+    # "diagnostic.deprecated" = {
+    #   fg = mkHex cyan;
+    #   # modifiers = [ "underlined" ];
+    # };
+    # "diagnostic.unnecessary" = {
+    #   fg = mkHex fg-dark;
+    #   underline = { };
+    #   # modifiers = [ "crossed_out" ];
+    # };
+
     type = {
       fg = mkHex blue;
       modifiers = [ "italic" ];
