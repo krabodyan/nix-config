@@ -5,14 +5,18 @@ in
 {
   catppuccin_mocha = with config.colors; {
     "attribute" = "yellow";
-    "type" = "yellow";
+    "type" = {
+      fg = "yellow";
+      modifiers = [ "italic" ];
+    };
     "type.enum.variant" = "teal";
 
-    "constructor" = "sapphire";
+    "constructor" = "blue";
 
-    "constant" = "peach";
-    "constant.character" = "teal";
-    "constant.character.escape" = "pink";
+    "constant.builtin" = "mauve";
+    "constant.numeric" = "peach";
+    "constant.character" = mkHex cyan;
+    "constant.character.escape" = "maroon";
 
     "string" = "green";
     "string.regexp" = "pink";
@@ -29,13 +33,14 @@ in
       fg = "maroon";
       modifiers = [ "italic" ];
     };
-    "variable.builtin" = "red";
+    "variable.builtin" = "mauve";
     "variable.other.member" = "blue";
 
     "label" = "sapphire"; # used for lifetimes
 
     "punctuation" = "overlay2";
-    "punctuation.special" = "sky";
+    "punctuation.bracket" = "red";
+    "punctuation.special" = "peach";
 
     "keyword" = "mauve";
     "keyword.control.conditional" = {
@@ -43,19 +48,25 @@ in
       modifiers = [ "italic" ];
     };
 
-    "operator" = "sky";
+    "operator" = "teal";
+    "function" = {
+      fg = "blue";
+      modifiers = [ "italic" ];
+    };
+    "function.builtin" = {
+      fg = "peach";
+      modifiers = [ "italic" ];
+    };
+    "function.macro" = "peach";
 
-    "function" = "blue";
-    "function.macro" = "mauve";
-
-    "tag" = "blue";
+    "tag" = mkHex black;
 
     "namespace" = {
-      fg = "yellow";
+      fg = "text";
       modifiers = [ "italic" ];
     };
 
-    "special" = "blue";
+    "special" = mkHex black;
 
     "markup.heading.marker" = {
       fg = "peach";
