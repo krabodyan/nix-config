@@ -5,7 +5,7 @@
     settings = {
       main =
         let
-          font = "${config.font}:size=11";
+          font = "${config.font}:size=10";
         in
         {
           term = "xterm-256color";
@@ -19,6 +19,8 @@
           pad = "30x20";
           dpi-aware = "yes";
           initial-window-size-pixels = "880x600";
+          underline-offset = "5px";
+          underline-thickness = "2px";
         };
 
       scrollback = {

@@ -26,11 +26,11 @@
         black = "222222";
         red = "FC7971";
         green = "00FF6A";
-        yellow = "FADA5E";
+        yellow = "f9e2af";
         blue = "63e7ff";
         magenta = "bd94eb";
         cyan = "00FFDE";
-        orange = "ff4f00";
+        orange = "ef9f76";
         pink = "ff1181";
         peach = "fa8967";
         lightgreen = "00FF96";
