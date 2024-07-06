@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.nix-ld = {
     enable = true;
     package = pkgs.nix-ld-rs;
@@ -44,6 +45,7 @@
       gst_all_1.gstreamer
       gtk2
       gtk3
+      gtk4
       harfbuzz
       icu
       imlib2
@@ -92,11 +94,7 @@
       libxcrypt
       libxkbcommon
       libxml2
-
       libstdcxx5
-      gtk3
-      gtk2
-      gtk4
 
       lsof
       mesa

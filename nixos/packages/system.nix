@@ -3,13 +3,14 @@
   environment.systemPackages = with pkgs; [
     home-manager
     compsize
+    ffmpeg-full
+    python3Full
+
     git
     gcc
     inxi
     wget
-    python3Full
     killall
-    ffmpeg-full
     imagemagick
     lm_sensors
     zip
@@ -22,5 +23,7 @@
     jq
     acpi
     ntfs3g
+
+    temurin-jre-bin-17 # minecraft
   ];
 }
