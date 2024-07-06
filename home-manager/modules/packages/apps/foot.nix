@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   programs.foot = {
     enable = true;
     server.enable = false;
@@ -28,7 +29,7 @@
 
       scrollback = {
         indicator-position = "none";
-        lines = 100;
+        lines = 250;
       };
 
       url = {
@@ -43,8 +44,8 @@
 
       colors = with config.colors; {
         alpha = "${opacity}";
-        background = "${bg}"; #"2e3440"; #"1b1d22";
-        foreground = "${fg}"; #"eaf2f1";
+        background = "${bg}"; # "2e3440"; #"1b1d22";
+        foreground = "${fg}"; # "eaf2f1";
         flash = "${fg-bright}";
         flash-alpha = 0.7;
 
@@ -55,7 +56,7 @@
         regular4 = "${blue}"; # синій
         regular5 = "${magenta}"; # пурпурний
         regular6 = "${cyan}"; # бірюзовий
-        regular7 = "${fg-bright}"; #"bfd0f2"; #"eaf2f1";  # білий
+        regular7 = "${fg-bright}"; # "bfd0f2"; #"eaf2f1";  # білий
         #bright0="696d77";   # яскраво-чорний
         #bright1="ff657a";   # яскраво-червоний
         #bright2="66ff00";   # яскраво-зелений

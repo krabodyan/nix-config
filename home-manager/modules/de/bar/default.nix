@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.waybar = {
     enable = true;
 
@@ -15,9 +16,16 @@
       margin-right = 4;
       margin-left = 4;
 
-      modules-left = [ "battery" "network" "tray" ];
+      modules-left = [
+        "battery"
+        "network"
+        "tray"
+      ];
       modules-center = [ "sway/workspaces" ];
-      modules-right = [ "sway/language" "clock" ];
+      modules-right = [
+        "sway/language"
+        "clock"
+      ];
 
       "sway/workspaces" = {
         format = "<span font='SymbolsNerdFont 9.5'>{icon}</span>";
@@ -46,13 +54,13 @@
       "sway/language" = {
         tooltip = false;
         format = "{}"; # "<span style='italic'>{}</span>";
-        format-en = "us"; #"🇬🇧";
-        format-ru = "ru"; #"🇷🇺";
-        format-ua = "ua"; #"🇺🇦";
+        format-en = "us"; # "🇬🇧";
+        format-ru = "ru"; # "🇷🇺";
+        format-ua = "ua"; # "🇺🇦";
       };
 
       clock = {
-        format = "{:%H\n%M}"; #"<span style='italic'>{:%H:%M}</span>";
+        format = "{:%H\n%M}"; # "<span style='italic'>{:%H:%M}</span>";
         tooltip-format = "{calendar}";
         format-alt = "{:%d\n%m}";
         actions = {
@@ -75,7 +83,13 @@
       battery = {
         format = "<span font='SymbolsNerdFont'>{icon}</span>";
         format-alt = "{capacity}";
-        format-icons = [ "" "" "" "" "" ];
+        format-icons = [
+          ""
+          ""
+          ""
+          ""
+          ""
+        ];
       };
     };
 

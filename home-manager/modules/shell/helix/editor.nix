@@ -39,9 +39,17 @@
   };
 
   statusline = {
-    right = [ "version-control" "spinner" ];
+    right = [
+      "version-control"
+      "spinner"
+    ];
     center = [ "diagnostics" ];
-    left = [ "mode" "file-base-name" "file-modification-indicator" "read-only-indicator" ];
+    left = [
+      "mode"
+      "file-base-name"
+      "file-modification-indicator"
+      "read-only-indicator"
+    ];
     separator = " │ ";
     mode = {
       normal = "normal";

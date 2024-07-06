@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./bat
     ./yazi
@@ -10,7 +11,5 @@
     ./tmux.nix
   ];
 
-  home.packages = with pkgs; [
-    xdg-utils
-  ];
+  home.packages = with pkgs; [ xdg-utils ];
 }

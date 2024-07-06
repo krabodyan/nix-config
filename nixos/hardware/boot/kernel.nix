@@ -1,4 +1,10 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}:
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
@@ -19,20 +25,20 @@
     };
 
     kernelParams = [
-      "info"
-      "splash"
-      "i915.enable_guc=3"
       #"apm=power_off"
       #"acpi=force"
       #"reboot=acpi"
       "nohibernate"
       "ibt=off"
-      "raid=noautodetect"
       "rootfstype=btrfs"
     ];
-    supportedFilesystems = [ "btrfs" ];
+    # supportedFilesystems = [ "btrfs" ];
     # kernelPackages = pkgs.linuxPackages_6_8; intel xe
-    # extraModprobeConfig = '''';
+    extraModprobeConfig = ''
+      options i915 enable_guc=2
+      options i915 enable_fbc=1
+      options i915 fastboot=1 
+    '';
     blacklistedKernelModules = [
       "adfs"
       "affs"
@@ -51,12 +57,19 @@
       "omfs"
       "ufs"
     ];
-    initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" ];
+    initrd.availableKernelModules = [
+      "xhci_pci"
+      "thunderbolt"
+      "nvme"
+      "usbhid"
+    ];
     # initrd.kernelModules = [ ];
 
-
-    kernelModules = [ "kvm-intel" "acpi_call" ]; #"v4l2loopback" ]; # "i915" "uinput" ];
-    extraModulePackages = [ config.boot.kernelPackages.acpi_call ]; # pkgs.linuxPackages.v4l2loopback ];
+    kernelModules = [
+      "kvm-intel"
+      "i915"
+    ]; # "v4l2loopback" ]; # "i915" "uinput" ];
+    # extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
   };
 
   services.udev.extraRules = ''

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./foot.nix
     ./mpv.nix
@@ -10,7 +11,7 @@
     #./protonvpn.nix
     #./office.nix
     #./ide.nix
-    ./imv.nix
+    ./swayimg.nix
     ./vscode.nix
   ];
   home.packages = with pkgs; [
@@ -23,9 +24,7 @@
     gimp
     system-config-printer
     pavucontrol
-    swayimg
     zathura
-    swappy
     wf-recorder
     adwsteamgtk
   ];

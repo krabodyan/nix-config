@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   home.packages = with pkgs; [ nvtopPackages.intel ];
   xdg.configFile."htop/htoprc".force = true;
   programs.htop = {
@@ -13,9 +14,7 @@
         (bar "CPU")
         (bar "Memory")
       ]
-      // rightMeters [
-        (bar "RightCPUs")
-      ]
+      // rightMeters [ (bar "RightCPUs") ]
       // {
         tree_view = false;
         hide_kernel_threads = true;

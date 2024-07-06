@@ -1,4 +1,5 @@
-{ pkgs }: {
+{ pkgs }:
+{
   file_watch_support = true;
 
   server = {
@@ -22,16 +23,24 @@
       name = "nix";
       auto-format = true;
       comment-token = "#";
-      formatter.command = "${pkgs.nixpkgs-fmt}/bin/nixpkgs-fmt";
+      formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
     }
     {
       name = "python";
       auto-format = true;
       comment-token = "#";
-      language-servers = [ "pylsp" "ruff" ];
+      language-servers = [
+        "pylsp"
+        "ruff"
+      ];
       formatter = {
         command = "${pkgs.black}/bin/black";
-        args = [ "--line-length" "88" "--quiet" "-" ];
+        args = [
+          "--line-length"
+          "88"
+          "--quiet"
+          "-"
+        ];
       };
     }
   ];

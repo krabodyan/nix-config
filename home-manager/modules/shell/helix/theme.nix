@@ -87,7 +87,10 @@ in
     };
     "markup.link.url" = {
       fg = "blue";
-      modifiers = [ "italic" "underlined" ];
+      modifiers = [
+        "italic"
+        "underlined"
+      ];
     };
     "markup.link.text" = "blue";
     "markup.raw" = "flamingo";
@@ -162,9 +165,13 @@ in
       bg = "surface0";
       modifiers = [ "bold" ];
     };
-    "ui.text.inactive" = { fg = "overlay1"; };
+    "ui.text.inactive" = {
+      fg = "overlay1";
+    };
     "ui.virtual" = "overlay0";
-    "ui.virtual.ruler" = { bg = "surface0"; };
+    "ui.virtual.ruler" = {
+      bg = "surface0";
+    };
     "ui.virtual.indent-guide" = "surface0";
     "ui.virtual.inlay-hint" = {
       fg = "surface1";
@@ -175,7 +182,9 @@ in
       modifiers = [ "bold" ];
     };
 
-    "ui.selection" = { bg = "surface1"; };
+    "ui.selection" = {
+      bg = "surface1";
+    };
 
     "ui.cursor" = {
       fg = "base";
@@ -190,9 +199,18 @@ in
       modifiers = [ "bold" ];
     };
 
-    "ui.cursor.primary.normal" = { fg = "base"; bg = "lavender"; };
-    "ui.cursor.primary.insert" = { fg = "base"; bg = "green"; };
-    "ui.cursor.primary.select" = { fg = "base"; bg = "flamingo"; };
+    "ui.cursor.primary.normal" = {
+      fg = "base";
+      bg = "lavender";
+    };
+    "ui.cursor.primary.insert" = {
+      fg = "base";
+      bg = "green";
+    };
+    "ui.cursor.primary.select" = {
+      fg = "base";
+      bg = "flamingo";
+    };
 
     "ui.cursor.normal" = {
       fg = "base";
@@ -207,7 +225,9 @@ in
       bg = "secondary_cursor";
     };
 
-    "ui.cursorline.primary" = { bg = "cursorline"; };
+    "ui.cursorline.primary" = {
+      bg = "cursorline";
+    };
     "ui.highlight" = {
       bg = "surface1";
       modifiers = [ "bold" ];

@@ -2,12 +2,8 @@
   description = "   snowy place  󱄅  full of flakes  ";
 
   nixConfig = {
-    extra-substituters = [
-      "https://helix.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
-    ];
+    extra-substituters = [ "https://helix.cachix.org" ];
+    extra-trusted-public-keys = [ "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs=" ];
   };
 
   inputs = {
@@ -26,13 +22,21 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
     in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit self system inputs; };
+        specialArgs = {
+          inherit self system inputs;
+        };
         modules = [
           ./nixos/configuration.nix
           inputs.disko.nixosModules.default
@@ -41,10 +45,10 @@
       };
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
-        extraSpecialArgs = { inherit system inputs; };
-        modules = [
-          ./home-manager/home.nix
-        ];
+        extraSpecialArgs = {
+          inherit system inputs;
+        };
+        modules = [ ./home-manager/home.nix ];
       };
     };
 }

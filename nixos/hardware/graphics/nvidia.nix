@@ -1,10 +1,11 @@
-{ config, ... }: {
+{ config, ... }:
+{
   imports = [ ./intel-only.nix ];
   services.xserver.videoDrivers = [ "nvidia" ];
   boot.blacklistedKernelModules = [ "nouveau" ];
   boot.extraModprobeConfig = ''
-    options NVreg_PreserveVideoMemoryAllocations=1
-    options NVreg_TemporaryFilePath=/tmp
+    options nvidia NVreg_PreserveVideoMemoryAllocations=1
+    options nvidia NVreg_TemporaryFilePath=/tmp
   '';
 
   # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];

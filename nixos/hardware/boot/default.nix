@@ -1,4 +1,10 @@
-{ self, pkgs, lib, ...}: {
+{
+  self,
+  pkgs,
+  lib,
+  ...
+}:
+{
   imports = [ ./kernel.nix ];
   boot.loader = {
     systemd-boot.enable = true;

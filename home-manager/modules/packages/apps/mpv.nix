@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   xdg.configFile."mpv/mpv.conf".text = ''
     gpu-context=wayland
     vo=gpu
@@ -68,7 +69,14 @@
         "video/x-theora"
         "video/x-theora+ogg"
       ];
-      makeAssociations = types: builtins.listToAttrs (map (type: { name = type; value = "mpv.desktop"; }) types);
+      makeAssociations =
+        types:
+        builtins.listToAttrs (
+          map (type: {
+            name = type;
+            value = "mpv.desktop";
+          }) types
+        );
       associations = makeAssociations videoTypes;
     in
     {

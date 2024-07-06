@@ -1,4 +1,6 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }:
+{
+  home.packages = [ pkgs.swappy ];
   xdg.configFile."swappy/config".text = ''
     [Default]
     save_dir=/home/$USER/pictures
@@ -12,4 +14,3 @@
     fill_shape=false
   '';
 }
-

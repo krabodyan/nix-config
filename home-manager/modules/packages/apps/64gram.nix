@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   home.packages = [ pkgs._64gram ];
   xdg.desktopEntries."io.github.tdesktop_x64.TDesktop" = {
     name = "Telegram Desktop";

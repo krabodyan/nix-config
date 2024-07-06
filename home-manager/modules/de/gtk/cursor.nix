@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   home = {
     pointerCursor = {
       package = pkgs.google-cursor;

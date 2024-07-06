@@ -1,4 +1,5 @@
-{ pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [ ./krabodyan.nix ];
   programs.fish.enable = true;
   programs.command-not-found.enable = true;

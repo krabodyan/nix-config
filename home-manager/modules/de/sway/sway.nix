@@ -23,14 +23,14 @@
         # { command = "/usr/bin/env QT_QPA_PLATFORMTHEME=gtk3 ${pkgs._64gram}/bin/telegram-desktop"; }
       ];
       assigns = {
-        "workspace 1" = [{ app_id = "^io.github.tdesktop_x64.TDesktop$"; }];
-        "workspace 2" = [{ app_id = "^firefox$"; }];
-        "workspace 3" = [{ app_id = "^vesktop$"; }];
+        "workspace 1" = [ { app_id = "^io.github.tdesktop_x64.TDesktop$"; } ];
+        "workspace 2" = [ { app_id = "^firefox$"; } ];
+        "workspace 3" = [ { app_id = "^vesktop$"; } ];
         "workspace 4" = [
           { class = "^steam$"; }
           { class = "^DesktopEditors$"; }
         ];
-        "workspace 6" = [{ app_id = "^(chromium-browser)(.*)$"; }];
+        "workspace 6" = [ { app_id = "^(chromium-browser)(.*)$"; } ];
       };
 
       window.commands = [
@@ -84,15 +84,25 @@
         hide_cursor = "10000";
       };
 
-      colors = with config.colors;
+      colors =
+        with config.colors;
         let
-          mkColor = color: builtins.listToAttrs (map
-            (field: {
-              name = field;
-              value = color;
-            })
-            [ "border" "background" "childBorder" "indicator" "text" ]
-          );
+          mkColor =
+            color:
+            builtins.listToAttrs (
+              map
+                (field: {
+                  name = field;
+                  value = color;
+                })
+                [
+                  "border"
+                  "background"
+                  "childBorder"
+                  "indicator"
+                  "text"
+                ]
+            );
         in
         {
           focused = mkColor accent;

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     home-manager
     compsize
@@ -11,7 +12,8 @@
     ffmpeg-full
     imagemagick
     lm_sensors
-    zip unzip
+    zip
+    unzip
     file
     lshw
     usbutils

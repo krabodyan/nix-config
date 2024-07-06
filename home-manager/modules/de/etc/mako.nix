@@ -15,6 +15,7 @@
     borderSize = 2;
     borderColor = "#${accent}";
     borderRadius = 12;
+    icons = true;
     iconPath = "${pkgs.papirus-icon-theme}/share/icons/Papirus-Dark";
     maxIconSize = 32;
     defaultTimeout = 3000;

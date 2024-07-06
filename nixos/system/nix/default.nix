@@ -1,4 +1,5 @@
 { system, lib, ... }: {
+  imports = [ ./ld.nix ];
   nixpkgs.hostPlatform = lib.mkDefault system;
   nix = {
     gc = {

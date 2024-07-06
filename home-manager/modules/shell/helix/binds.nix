@@ -25,7 +25,10 @@ in
     y = "yank_main_selection_to_clipboard";
     "A-tab" = ":buffer-next";
     "S-q" = ":buffer-close";
-    esc = [ "collapse_selection" "keep_primary_selection" ];
+    esc = [
+      "collapse_selection"
+      "keep_primary_selection"
+    ];
   };
   insert = binds;
   select = binds;

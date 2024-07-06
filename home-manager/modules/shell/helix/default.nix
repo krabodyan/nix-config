@@ -1,11 +1,21 @@
-{ pkgs, config, inputs, system, ... }: {
+{
+  pkgs,
+  config,
+  inputs,
+  system,
+  ...
+}:
+{
   home.sessionVariables = {
     EDITOR = "hx";
   };
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${system}.helix;
-    extraPackages = with pkgs; [ nil python312Packages.python-lsp-server ];
+    extraPackages = with pkgs; [
+      nil
+      python312Packages.python-lsp-server
+    ];
     settings = {
       theme = "catppuccin_mocha";
       editor = import ./editor.nix;

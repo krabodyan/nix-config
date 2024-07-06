@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 {
   imports = [
     ./cursor.nix
@@ -26,7 +26,10 @@
       package = pkgs.catppuccin-gtk.override {
         accents = [ "mauve" ];
         size = "compact";
-        tweaks = [ "rimless" "normal" ];
+        tweaks = [
+          "rimless"
+          "normal"
+        ];
         variant = "mocha";
       };
       name = "catppuccin-mocha-mauve-compact+rimless,normal";
@@ -61,28 +64,27 @@
       };
     };
   };
-  
+
   qt = {
     enable = true;
     platformTheme.name = "qtct";
     style.name = "kvantum";
   };
 
-  xdg.configFile = 
-  let
-    variant = "Mocha";
-    accent = "Mauve";
-    kvantumThemePackage = pkgs.catppuccin-kvantum.override {
-    inherit variant accent;
-  };
-  in {
-    "Kvantum/kvantum.kvconfig".text = ''
-      [General]
-      theme=Catppuccin-${variant}-${accent}
-    '';
+  xdg.configFile =
+    let
+      variant = "Mocha";
+      accent = "Mauve";
+      kvantumThemePackage = pkgs.catppuccin-kvantum.override { inherit variant accent; };
+    in
+    {
+      "Kvantum/kvantum.kvconfig".text = ''
+        [General]
+        theme=Catppuccin-${variant}-${accent}
+      '';
 
-    # The important bit is here, links the theme directory from the package to a directory under `~/.config`
-    # where Kvantum should find it.
-    "Kvantum/Catppuccin-${variant}-${accent}".source = "${kvantumThemePackage}/share/Kvantum/Catppuccin-${variant}-${accent}";
-  };
+      # The important bit is here, links the theme directory from the package to a directory under `~/.config`
+      # where Kvantum should find it.
+      "Kvantum/Catppuccin-${variant}-${accent}".source = "${kvantumThemePackage}/share/Kvantum/Catppuccin-${variant}-${accent}";
+    };
 }

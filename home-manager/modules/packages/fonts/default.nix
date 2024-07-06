@@ -3,10 +3,6 @@
     corefonts
     noto-fonts
     noto-fonts-emoji
-    twemoji-color-font
-    font-awesome
-    powerline-fonts
-    powerline-symbols
     roboto
     noto-fonts-cjk-sans
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" "JetBrainsMono" ]; })
@@ -17,7 +13,7 @@
       serif = [ "Roboto Medium" ];
       sansSerif = [ "Roboto Medium" ];
       monospace = [ config.font ];
-      emoji = [ config.font ];
+      emoji = [ "Noto Color Emoji" ];
     };
   };
   xdg.configFile."fontconfig/fonts.conf".source = ./fonts.conf;
