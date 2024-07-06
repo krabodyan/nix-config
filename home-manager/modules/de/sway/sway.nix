@@ -147,8 +147,8 @@
           "Ctrl+Alt+Backspace" = "reload";
           "Ctrl+Alt+Delete" = "exit";
 
-          Print = "exec grim -g \"$(slurp -d)\" - | swappy -f -";
-          Pause = "exec grim - | swappy -f -";
+          Print = "exec grim -t png -g \"$(slurp -d)\" - | swappy -f -";
+          Pause = "exec grim -c -t png - | swappy -f -";
 
           "${mod}+l" = "exec swaylock";
           "${mod}+w" = "exec pkill -SIGUSR1 waybar";

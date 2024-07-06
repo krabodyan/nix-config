@@ -5,16 +5,46 @@ let
     "C-c" = "normal_mode";
     "C-7" = "toggle_comments";
     "C-/" = "toggle_comments";
-    "C-A-down" = [
+    "A-x" = "extend_line_up";
+    "S-x" = [
+      "extend_line_up"
       "extend_to_line_bounds"
-      "delete_selection"
-      "paste_after"
     ];
     "C-A-up" = [
-      "extend_to_line_bounds"
+      "extend_line"
+      "yank"
+      "move_line_up"
+      "open_above"
+      "replace_with_yanked"
+      "move_line_down"
+      "move_line_down"
+      "extend_line"
       "delete_selection"
       "move_line_up"
-      "paste_before"
+      "move_line_up"
+    ];
+    "C-A-down" = [
+      "extend_line"
+      "delete_selection"
+      "paste_after"
+      "move_line_down"
+    ];
+    "C-S-up" = [
+      "extend_line"
+      "yank"
+      "open_above"
+      "normal_mode"
+      "replace_with_yanked"
+      "insert_mode"
+    ];
+    "C-S-down" = [
+      "extend_line"
+      "yank"
+      "move_line_down"
+      "open_above"
+      "normal_mode"
+      "replace_with_yanked"
+      "insert_mode"
     ];
   };
 in
