@@ -1,7 +1,9 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.swaylock = {
     enable = true;
-    settings = with config.colors;
+    settings =
+      with config.colors;
       let
         t = "00000000";
       in

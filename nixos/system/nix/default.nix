@@ -1,4 +1,5 @@
-{ system, lib, ... }: {
+{ system, lib, ... }:
+{
   imports = [ ./ld.nix ];
   nixpkgs.hostPlatform = lib.mkDefault system;
   nix = {
@@ -19,7 +20,10 @@
       builders-use-substitutes = true;
       max-jobs = 12;
       cores = 0;
-      trusted-users = [ "krabodyan" "root" ];
+      trusted-users = [
+        "krabodyan"
+        "root"
+      ];
       auto-optimise-store = true;
     };
   };
