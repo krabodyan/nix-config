@@ -1,10 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = [ pkgs._64gram ];
-  xdg.desktopEntries."io.github.tdesktop_x64.TDesktop" = {
-    name = "Telegram Desktop";
-    exec = "telegram-desktop -- %u > /dev/null";
-  };
 
   xdg.mimeApps.defaultApplications = {
     "x-scheme-handler/tg" = [ "io.github.tdesktop_x64.TDesktop.desktop" ];

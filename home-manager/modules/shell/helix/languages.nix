@@ -6,9 +6,9 @@
     timeout = 360;
   };
 
-  language-server = {
+  language-server = with pkgs; {
     ruff = {
-      command = "${pkgs.ruff-lsp}/bin/ruff-lsp";
+      command = "${ruff-lsp}/bin/ruff-lsp";
       settings_section = "_";
     };
     ruff.settings._.globalSettings = {
@@ -17,12 +17,19 @@
       codeAction.disableRuleComment.enable = false;
       codeAction.fixViolation.enable = false;
     };
+    nil = {
+      command = "${nil}/bin/nil";
+    };
+    pylsp = {
+      command = "${python312Packages.python-lsp-server}/bin/pylsp";
+    };
   };
   language = [
     {
       name = "nix";
       auto-format = true;
       comment-token = "#";
+      language-servers = [ "nil" ];
       formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
     }
     {

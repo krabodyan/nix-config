@@ -10,7 +10,6 @@
           set -g prefix C-k
           set -g default-terminal "tmux-256color"
           set -sg terminal-overrides ",*:RGB"
-          # set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
           set -g @catppuccin_flavour 'mocha'
 
           set -g @catppuccin_window_default_text "#W"

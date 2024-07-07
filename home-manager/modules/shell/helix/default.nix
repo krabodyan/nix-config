@@ -12,10 +12,6 @@
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${system}.helix;
-    extraPackages = with pkgs; [
-      nil
-      python312Packages.python-lsp-server
-    ];
     settings = {
       theme = "catppuccin_mocha";
       editor = import ./editor.nix;

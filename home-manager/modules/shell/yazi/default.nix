@@ -13,11 +13,16 @@
         enabled = false;
       };
       manager = {
+        ratio = [
+          2
+          3
+          3
+        ];
         sort_dir_first = true;
         show_hidden = false;
         sort_by = "alphabetical";
         sort_sensitive = false;
-        linemode = "mtime";
+        linemode = "none";
       };
       preview = {
         image_quality = 50;

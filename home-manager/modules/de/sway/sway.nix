@@ -11,8 +11,8 @@
       corner_radius 10
       shadows off
       scratchpad_minimize disable
-      focus_wrapping force
-      popup_during_fullscreen leave_fullscreen
+      # focus_wrapping force
+      # popup_during_fullscreen leave_fullscreen
     '';
     config = {
       modifier = "Mod4";
@@ -141,7 +141,7 @@
         {
           "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";
           "${mod}+Shift+Return" = "exec ${pkgs.foot}/bin/foot -a floaterm";
-          "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot ${pkgs.yazi}/bin/yazi";
+          "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot -a floaterm ${pkgs.yazi}/bin/yazi";
           "${mod}+d" = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun -normal-window -kb-cancel 'Alt+d'";
 
           "Ctrl+Alt+Backspace" = "reload";
