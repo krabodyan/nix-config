@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-  home.packages = [
-    pkgs.chromedriver
-    pkgs.chromium
-  ]; # pkgs.google-chrome ];
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-wayland;
@@ -25,8 +21,9 @@
       "browser.newtabpage.activity-stream.system.showSponsored" = false;
       "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
       "media.ffmpeg.vaapi.enabled" = true;
+      "media.ffmpeg.encoder.enabled" = true;
       "security.sandbox.content.level" = 0;
-      # "media.ffmpeg.encoder.enabled" = true;
+      "widget.wayland.opaque-region.enabled" = false;
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
       DisablePocket = true;

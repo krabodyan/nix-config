@@ -11,23 +11,19 @@ let
       "extend_to_line_bounds"
     ];
     "C-A-up" = [
-      "extend_line"
-      "yank"
-      "move_line_up"
-      "open_above"
-      "replace_with_yanked"
-      "move_line_down"
-      "move_line_down"
-      "extend_line"
-      "delete_selection"
-      "move_line_up"
-      "move_line_up"
+      "extend_to_line_bounds"
+      "extend_line_below"
+      "split_selection_on_newline"
+      "rotate_selection_contents_forward"
+      "rotate_selections_backward"
+      "keep_primary_selection"
     ];
     "C-A-down" = [
-      "extend_line"
-      "delete_selection"
-      "paste_after"
-      "move_line_down"
+      "extend_to_line_bounds"
+      "extend_line_above"
+      "split_selection_on_newline"
+      "rotate_selection_contents_forward"
+      "keep_primary_selection"
     ];
     "C-S-up" = [
       "extend_line"

@@ -7,7 +7,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ls = "${pkgs.eza}/bin/eza --icons -F -H --group-directories-first --tree -L 1";
+      ls = "${pkgs.eza}/bin/eza --icons -F -H --group-directories-first -1 -L 1";
       tree = "${pkgs.eza}/bin/eza -F -H --icons --group-directories-first --tree -L 4";
     };
     plugins = [
