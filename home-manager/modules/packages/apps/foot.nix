@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+  home.packages = [ pkgs.xdg-terminal-exec ];
+  xdg.configFile."xdg-terminals.list".text = ''
+    org.codeberg.dnkl.foot.desktop
+  '';
   programs.foot = {
     enable = true;
     server.enable = false;
