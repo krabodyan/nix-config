@@ -15,8 +15,9 @@
       '';
     };
     nameservers = [
-      "8.8.8.8"
-      "8.8.4.4"
+      "1.1.1.1"
+      # "8.8.8.8"
+      # "8.8.4.4"
     ];
     useDHCP = true;
     firewall.enable = false;

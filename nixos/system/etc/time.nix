@@ -1,6 +1,6 @@
 {
   time = {
     timeZone = "Europe/Kiev";
-    hardwareClockInLocalTime = true;
+    hardwareClockInLocalTime = false;
   };
 }

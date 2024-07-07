@@ -3,8 +3,8 @@
   xdg.configFile."mpv/mpv.conf".text = ''
     gpu-context=wayland
     vo=gpu
-    profile=fast
-    hwdec=vaapi
+    profile=gpu-hq
+    hwdec=auto-safe
     volume=75
     keep-open=yes
     fullscreen=no

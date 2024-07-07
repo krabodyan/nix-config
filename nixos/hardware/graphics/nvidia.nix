@@ -3,17 +3,17 @@
   imports = [ ./intel-only.nix ];
   services.xserver.videoDrivers = [ "nvidia" ];
   boot.blacklistedKernelModules = [ "nouveau" ];
-  boot.extraModprobeConfig = ''
-    options nvidia NVreg_PreserveVideoMemoryAllocations=1
-    options nvidia NVreg_TemporaryFilePath=/tmp
-  '';
+  # boot.extraModprobeConfig = ''
+  #   options nvidia NVreg_PreserveVideoMemoryAllocations=1
+  #   options nvidia NVreg_TemporaryFilePath=/tmp
+  # '';
 
   # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
 
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = true;
-    powerManagement.finegrained = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
     nvidiaSettings = true;
     open = false;
     package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
