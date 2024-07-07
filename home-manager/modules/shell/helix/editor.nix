@@ -1,14 +1,17 @@
 {
-  insert-final-newline = false;
+  insert-final-newline = true;
   mouse = false;
   line-number = "relative";
   cursorline = true;
   color-modes = true;
   scrolloff = 10;
+
   completion-replace = false;
   preview-completion-insert = true;
   completion-timeout = 5;
-  undercurl = true;
+  completion-trigger-len = 1;
+
+  undercurl = false;
   bufferline = "multiple";
   popup-border = "none";
   text-width = 110;
@@ -17,7 +20,7 @@
   lsp = {
     display-messages = true;
     display-inlay-hints = true;
-    snippets = false;
+    snippets = true;
   };
 
   indent-guides = {

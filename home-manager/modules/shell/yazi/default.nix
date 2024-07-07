@@ -15,8 +15,8 @@
       manager = {
         ratio = [
           0
-          2
-          3
+          1
+          1
         ];
         sort_dir_first = true;
         show_hidden = false;

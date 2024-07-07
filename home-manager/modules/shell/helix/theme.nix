@@ -1,7 +1,4 @@
-{ config }:
-let
-  mkHex = color: "#${color}";
-in
+{ config, mkHex }:
 {
   catppuccin_mocha = with config.colors; {
     "attribute" = "yellow";

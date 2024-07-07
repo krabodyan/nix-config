@@ -18,7 +18,8 @@
 
         bg-rgba = "rgba(30, 30, 46, 1)";
         bg = "1E1E2E";
-        bg-dark = "11111a";
+        border-unfocused = "1c1c2b";
+        bg-dark = "161621";
         bg-bright = "32324d";
 
         fg = "cdd6f4";

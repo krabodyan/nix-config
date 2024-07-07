@@ -4,7 +4,7 @@
     mimeApps.enable = true;
     portal = {
       enable = true;
-      xdgOpenUsePortal = true;
+      xdgOpenUsePortal = false;
       config.common.default = "gtk";
       extraPortals = with pkgs; [
         xdg-desktop-portal-wlr

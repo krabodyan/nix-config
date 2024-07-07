@@ -3,6 +3,7 @@
   config,
   inputs,
   system,
+  helpers,
   ...
 }:
 {
@@ -18,6 +19,9 @@
       keys = import ./binds.nix;
     };
     languages = import ./languages.nix { inherit pkgs; };
-    themes = import ./theme.nix { inherit config; };
+    themes = import ./theme.nix {
+      inherit config;
+      mkHex = helpers.mkHex;
+    };
   };
 }

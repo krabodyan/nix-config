@@ -8,6 +8,7 @@
         plugin = pkgs.tmuxPlugins.catppuccin;
         extraConfig = ''
           set -g prefix C-k
+          set -g update-environment "DISPLAY WAYLAND_DISPLAY SWAYSOCK SSH_AUTH_SOCK"
           set -g default-terminal "tmux-256color"
           set -sg terminal-overrides ",*:RGB"
           set -g @catppuccin_flavour 'mocha'

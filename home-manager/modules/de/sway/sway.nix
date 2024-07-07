@@ -1,4 +1,9 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  helpers,
+  ...
+}:
 {
   wayland.windowManager.sway = {
     enable = true;
@@ -88,29 +93,28 @@
 
       colors =
         with config.colors;
+        with helpers;
         let
-          mkColor =
-            color:
-            builtins.listToAttrs (
-              map
-                (field: {
-                  name = field;
-                  value = color;
-                })
-                [
-                  "border"
-                  "background"
-                  "childBorder"
-                  "indicator"
-                  "text"
-                ]
-            );
+          unfocused = {
+            background = mkHex bg;
+            border = mkHex border-unfocused;
+            childBorder = mkHex border-unfocused;
+            indicator = mkHex bg;
+            text = mkHex fg-dark;
+          };
+          focused = {
+            background = mkHex bg;
+            border = mkHex accent;
+            childBorder = mkHex accent;
+            indicator = mkHex fg;
+            text = mkHex fg;
+          };
         in
         {
-          focused = mkColor accent;
-          focusedInactive = mkColor "00000000";
-          unfocused = mkColor "00000000";
-          urgent = mkColor pink;
+          focused = focused;
+          focusedInactive = unfocused;
+          unfocused = unfocused;
+          urgent = focused;
         };
 
       input = {
@@ -166,10 +170,11 @@
           "${mod}+Shift+Down" = "move down";
 
           "${mod}+s" = "layout toggle";
-          "${mod}+f" = "fullscreen";
+          "${mod}+g" = "layout tabbed";
+          "${mod}+t" = "fullscreen";
           "${mod}+e" = "splitv";
           "${mod}+r" = "splith";
-          "${mod}+t" = "floating toggle";
+          "${mod}+f" = "floating toggle";
           "${mod}+q" = "kill";
 
           "${mod}+1" = "workspace number 1";

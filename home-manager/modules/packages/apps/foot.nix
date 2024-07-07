@@ -26,7 +26,7 @@
           dpi-aware = "yes";
           resize-by-cells = false;
           resize-delay-ms = 0;
-          initial-window-size-pixels = "1100x700";
+          initial-window-size-pixels = "1000x650";
           underline-offset = "5px";
           underline-thickness = "1px";
         };
