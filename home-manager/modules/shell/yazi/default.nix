@@ -1,4 +1,10 @@
 {
+  xdg.mimeApps = {
+    defaultApplications = {
+      "inode/directory" = [ "yazi.desktop" ];
+      "application/x-gnome-saved-search" = [ "yazi.desktop" ];
+    };
+  };
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;

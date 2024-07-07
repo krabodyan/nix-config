@@ -7,6 +7,7 @@
     ./discord
     ./firefox.nix
     ./64gram.nix
+    ./zathura.nix
     #./zoom.nix
     #./protonvpn.nix
     #./office.nix
@@ -28,14 +29,4 @@
     wf-recorder
     adwsteamgtk
   ];
-  xdg.mimeApps =
-    let
-      associations = {
-        "application/pdf" = "org.pwmt.zathura.desktop";
-      };
-    in
-    {
-      associations.added = associations;
-      defaultApplications = associations;
-    };
 }

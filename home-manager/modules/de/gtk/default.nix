@@ -9,9 +9,6 @@
     libsForQt5.qtstyleplugins
     papirus-icon-theme
     qt6Packages.qt6gtk2
-    #qt6.qtwayland
-    #libsForQt5.qt5.qtwayland
-    #gtk3
   ];
 
   gtk = {
@@ -45,11 +42,8 @@
     gtk4.extraConfig = {
       gtk-decoration-layout = ":menu";
       gtk-dialogs-use-header = false;
-      gtk-button-images = 0;
-      gtk-menu-images = 0;
       gtk-enable-event-sounds = 0;
       gtk-enable-input-feedback-sounds = 0;
-      gtk-application-prefer-dark-theme = 1;
     };
   };
 

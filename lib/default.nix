@@ -1,0 +1,1 @@
+{ mkHex = color: "#${color}"; }

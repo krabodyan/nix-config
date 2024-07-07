@@ -5,7 +5,6 @@
       type = lib.types.str;
       default = "JetBrainsMono Nerd Font";
     };
-    x = ./test;
     background-image = lib.mkOption {
       type = lib.types.str;
       default = "${config.home.homeDirectory}/nix-config/home-manager/modules/etc/background.jpg";
@@ -15,6 +14,7 @@
       default = {
         opacity = "1";
         accent = "cba6f7";
+        accent-rgba = "rgba(203, 166, 247, 0.7)";
 
         bg-rgba = "rgba(30, 30, 46, 1)";
         bg = "1E1E2E";

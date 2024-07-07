@@ -40,18 +40,11 @@
     recursive = no
     all = yes
   '';
-  xdg.mimeApps =
-    let
-      associations = {
-        "image/jpeg" = "swayimg.desktop";
-        "image/png" = "swayimg.desktop";
-        "image/webp" = "swayimg.desktop";
-        "image/svg" = "swayimg.desktop";
-        "image/jpg" = "swayimg.desktop";
-      };
-    in
-    {
-      associations.added = associations;
-      defaultApplications = associations;
-    };
+  xdg.mimeApps.defaultApplications = {
+    "image/jpeg" = "swayimg.desktop";
+    "image/png" = "swayimg.desktop";
+    "image/webp" = "swayimg.desktop";
+    "image/svg" = "swayimg.desktop";
+    "image/jpg" = "swayimg.desktop";
+  };
 }
