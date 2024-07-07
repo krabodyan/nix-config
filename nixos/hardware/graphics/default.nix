@@ -1,7 +1,7 @@
 {
   imports = [
-    ./nvidia.nix
     ./opengl.nix
+    ./nvidia.nix
     ./intel-only.nix
   ];
 }

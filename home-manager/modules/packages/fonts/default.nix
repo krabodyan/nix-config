@@ -1,11 +1,21 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
   home.packages = with pkgs; [
     corefonts
     noto-fonts
     noto-fonts-emoji
     roboto
     noto-fonts-cjk-sans
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" "JetBrainsMono" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "NerdFontsSymbolsOnly"
+        "JetBrainsMono"
+      ];
+    })
+
+    liberation_ttf
+    wqy_zenhei
+    source-han-sans
   ];
   fonts.fontconfig = {
     enable = true;

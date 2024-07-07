@@ -6,13 +6,6 @@
     stateVersion = "24.05";
   };
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = (_: true);
-    };
-  };
-
   news.display = "silent";
   imports = [
     ./modules
