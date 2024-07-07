@@ -16,7 +16,8 @@
       corner_radius 10
       shadows off
       scratchpad_minimize disable
-      # popup_during_fullscreen leave_fullscreen
+      titlebar_border_thickness 2
+      default_border pixel 2
     '';
     config = {
       modifier = "Mod4";
@@ -44,19 +45,17 @@
             app_id = "floaterm";
           };
         }
-        {
-          command = "border pixel 2";
-          criteria = {
-            app_id = ".*";
-          };
-        }
+        # {
+        #   command = "border pixel 2";
+        #   criteria = {
+        #     app_id = ".*";
+        #   };
+        # }
       ];
 
-      output = {
-        "eDP-1" = {
-          bg = "${config.background-image} fill";
-          mode = "1920x1080@144.000Hz";
-        };
+      output."eDP-1" = {
+        bg = "${config.background-image} fill";
+        mode = "1920x1080@144.000Hz";
       };
 
       gaps = {
@@ -84,8 +83,9 @@
 
       focus = {
         followMouse = false;
-        wrapping = "force";
+        wrapping = "yes";
       };
+
       seat.seat0 = {
         xcursor_theme = "GoogleDot-Blue";
         hide_cursor = "10000";
@@ -156,7 +156,7 @@
           Print = "exec grim -t png -g \"$(slurp -d)\" - | swappy -f -";
           Pause = "exec grim -c -t png - | swappy -f -";
 
-          "${mod}+l" = "exec swaylock";
+          "${mod}+Shift+l" = "exec swaylock";
           "${mod}+w" = "exec pkill -SIGUSR1 waybar";
 
           "${mod}+Left" = "focus left";
@@ -169,8 +169,8 @@
           "${mod}+Shift+Up" = "move up";
           "${mod}+Shift+Down" = "move down";
 
+          "${mod}+Shift+s" = "layout tabbed";
           "${mod}+s" = "layout toggle";
-          "${mod}+g" = "layout tabbed";
           "${mod}+t" = "fullscreen";
           "${mod}+e" = "splitv";
           "${mod}+r" = "splith";
