@@ -14,18 +14,20 @@
       };
       manager = {
         ratio = [
+          0
           2
-          3
           3
         ];
         sort_dir_first = true;
         show_hidden = false;
         sort_by = "alphabetical";
         sort_sensitive = false;
-        linemode = "none";
+        linemode = "mtime";
       };
       preview = {
+        image_filter = "nearest";
         image_quality = 50;
+        sixel_fraction = 20;
       };
     };
   };

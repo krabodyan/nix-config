@@ -5,7 +5,6 @@
   server = {
     timeout = 360;
   };
-
   language-server = with pkgs; {
     ruff = {
       command = "${ruff-lsp}/bin/ruff-lsp";

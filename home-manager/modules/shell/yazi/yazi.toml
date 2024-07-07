@@ -3,7 +3,7 @@ cwd = { fg = "#94e2d5" }
 
 # Hovered
 hovered         = { fg = "#1e1e2e", bg = "#89b4fa" }
-preview_hovered = { underline = true }
+preview_hovered = { underline = false, italic = true }
 
 # Find
 find_keyword  = { fg = "#f9e2af", italic = true }
@@ -25,8 +25,8 @@ count_cut      = { fg = "#1e1e2e", bg = "#f38ba8" }
 count_selected = { fg = "#1e1e2e", bg = "#89b4fa" }
 
 # Border
-border_symbol = "│"
-border_style  = { fg = "#7f849c" }
+border_symbol = "╎"
+border_style  = { fg = "#616991" }
 
 # Highlighting
 syntect_theme = "~/.config/bat/themes/catppuccin.tmTheme"

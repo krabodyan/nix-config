@@ -11,7 +11,6 @@
       corner_radius 10
       shadows off
       scratchpad_minimize disable
-      # focus_wrapping force
       # popup_during_fullscreen leave_fullscreen
     '';
     config = {
@@ -78,7 +77,10 @@
         size = 10.0;
       };
 
-      focus.followMouse = false;
+      focus = {
+        followMouse = false;
+        wrapping = "force";
+      };
       seat.seat0 = {
         xcursor_theme = "GoogleDot-Blue";
         hide_cursor = "10000";

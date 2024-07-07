@@ -22,7 +22,8 @@
 
   indent-guides = {
     render = true;
-    skip-levels = 1;
+    character = "╎";
+    skip-levels = 2;
   };
 
   true-color = false;

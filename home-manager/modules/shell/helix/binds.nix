@@ -41,19 +41,20 @@ let
       "insert_mode"
     ];
   };
-in
-{
-  normal = binds // {
-    p = "paste_clipboard_after";
-    P = "paste_clipboard_before";
-    y = "yank_main_selection_to_clipboard";
-    "A-tab" = ":buffer-next";
+  special = {
+    tab = ":buffer-next";
     "S-q" = ":buffer-close";
     esc = [
       "collapse_selection"
       "keep_primary_selection"
     ];
+    p = "paste_clipboard_after";
+    P = "paste_clipboard_before";
+    y = "yank_main_selection_to_clipboard";
   };
+in
+{
+  normal = binds // special;
   insert = binds;
-  select = binds;
+  select = binds // special;
 }
