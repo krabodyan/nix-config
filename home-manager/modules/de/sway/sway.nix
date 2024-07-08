@@ -154,7 +154,7 @@
           "Ctrl+Alt+Delete" = "exit";
 
           Print = "exec grim -t png -g \"$(slurp -d)\" - | swappy -f -";
-          Pause = "exec grim -c -t png - | swappy -f -";
+          Pause = "exec grim -c -t png - | wl-copy"; # swappy -f -";
 
           "${mod}+Shift+l" = "exec swaylock";
           "${mod}+w" = "exec pkill -SIGUSR1 waybar";

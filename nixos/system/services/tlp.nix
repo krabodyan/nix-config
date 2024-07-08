@@ -18,6 +18,7 @@
       CPU_HWP_DYN_BOOST_ON_BAT = 0;
       RUNTIME_PM_ON_AC = "auto";
       RUNTIME_PM_ON_BAT = "auto";
+      RUNTIME_PM_DRIVER_DENYLIST = "nouveau nvidia";
     };
   };
 }

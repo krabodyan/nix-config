@@ -12,10 +12,6 @@
         "JetBrainsMono"
       ];
     })
-
-    liberation_ttf
-    wqy_zenhei
-    source-han-sans
   ];
   fonts.fontconfig = {
     enable = true;
