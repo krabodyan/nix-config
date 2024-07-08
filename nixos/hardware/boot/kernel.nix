@@ -34,7 +34,7 @@
       "rootfstype=btrfs"
     ];
     # supportedFilesystems = [ "btrfs" ];
-    kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_latest;
     extraModprobeConfig = ''
       options i915 enable_guc=2
       options i915 enable_fbc=1
@@ -65,11 +65,8 @@
       "usbhid"
     ];
     # initrd.kernelModules = [ ];
-
-    kernelModules = [
-      "kvm-intel"
-      "i915"
-    ]; # "v4l2loopback" ]; # "i915" "uinput" ];
+    initrd.compressor = pkg: "${pkg.lz4}/bin/lz4";
+    kernelModules = [ ]; # "v4l2loopback" ]; # "i915" "uinput" ];
     # extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
   };
 

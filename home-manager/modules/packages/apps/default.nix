@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     ./foot.nix
@@ -15,6 +15,9 @@
     ./swayimg.nix
     ./vscode.nix
   ];
+
+  nixpkgs.config.allowUnfreePredicate = (_: true);
+
   home.packages = with pkgs; [
     pcmanfm
     qbittorrent

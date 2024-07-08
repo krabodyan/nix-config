@@ -4,7 +4,7 @@
     gpu-context=wayland
     vo=gpu
     profile=gpu-hq
-    hwdec=auto-safe
+    hwdec=auto
     volume=75
     keep-open=yes
     fullscreen=no
