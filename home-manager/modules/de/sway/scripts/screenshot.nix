@@ -9,8 +9,14 @@ let
   '';
 in
 pkgs.writeShellScriptBin "screenshot" ''
-  ${grim} -t png - | ${pkgs.swayimg}/bin/swayimg - & 
-  ${grim} -t png -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.wl-clipboard}/bin/wl-copy
+  ${grim} -t png - | ${pkgs.swayimg}/bin/swayimg - &
+  size=$(${pkgs.slurp}/bin/slurp)
+  status=$?
+  if [ $status -eq 0 ]; then
+    ${grim} -t png -g "$size" - | ${pkgs.wl-clipboard}/bin/wl-copy
+    ${send} "screenshot copied"
+  else
+    ${send} "screenshot canceled"
+  fi
   pkill swayimg
-  ${send} "screenshot copied"
 ''
