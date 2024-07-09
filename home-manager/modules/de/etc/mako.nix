@@ -1,4 +1,5 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
+{
   home.packages = [ pkgs.libnotify ];
   services.mako = with config.colors; {
     enable = true;
@@ -6,7 +7,7 @@
     sort = "-time";
     layer = "overlay";
     anchor = "bottom-center";
-    backgroundColor = "#${bg}ff"; #e6
+    backgroundColor = "#${bg}ff"; # e6
     progressColor = "over #${accent}";
     textColor = "#${fg}";
     width = 400;

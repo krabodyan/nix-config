@@ -152,14 +152,14 @@
           "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";
           "${mod}+Shift+Return" = "exec ${pkgs.foot}/bin/foot -a floaterm";
           "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot -a floaterm ${pkgs.yazi}/bin/yazi";
-          "${mod}+d" = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun -normal-window -kb-cancel 'Alt+d'";
+          "Alt+d" = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun -kb-cancel 'Alt+Return'";
 
           "Ctrl+Alt+Backspace" = "reload";
           "Ctrl+Alt+Delete" = "exit";
 
-          "${mod}+Print" = "exec grim -t png -g \"$(slurp -d)\" - | swappy -f -";
-          Print = "exec ${screenshot}/bin/screenshot";
+          Print = "exec grim -t png -g \"$(slurp -d)\" - | swappy -f -";
           Pause = "exec grim -c -t png - | wl-copy && notify-send -t 1000 \"screenshot copied\"";
+          "${mod}+Print" = "exec ${screenshot}/bin/screenshot";
 
           "${mod}+Shift+l" = "exec swaylock";
           "${mod}+w" = "exec pkill -SIGUSR1 waybar";
