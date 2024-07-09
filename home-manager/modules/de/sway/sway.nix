@@ -159,7 +159,7 @@
 
           "${mod}+Print" = "exec grim -t png -g \"$(slurp -d)\" - | swappy -f -";
           Print = "exec ${screenshot}/bin/screenshot";
-          Pause = "exec grim -c -t png - | wl-copy";
+          Pause = "exec grim -c -t png - | wl-copy && notify-send -t 1000 \"screenshot copied\"";
 
           "${mod}+Shift+l" = "exec swaylock";
           "${mod}+w" = "exec pkill -SIGUSR1 waybar";
