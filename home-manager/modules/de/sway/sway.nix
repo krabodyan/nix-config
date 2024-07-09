@@ -143,7 +143,10 @@
           volume = import ./scripts/volume.nix { inherit pkgs; };
           microphone = import ./scripts/microphone.nix { inherit pkgs; };
           brightness = import ./scripts/brightness.nix { inherit pkgs; };
-          screenshot = import ./scripts/screenshot.nix { inherit pkgs; };
+          screenshot = import ./scripts/screenshot.nix {
+            inherit pkgs;
+            colors = config.colors;
+          };
         in
         {
           "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";

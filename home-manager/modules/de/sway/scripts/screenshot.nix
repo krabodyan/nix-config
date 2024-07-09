@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, colors, ... }:
 let
   grim = "${pkgs.grim}/bin/grim";
   send = ''
@@ -9,11 +9,11 @@ let
   '';
 in
 pkgs.writeShellScriptBin "screenshot" ''
-  ${grim} -t png - | ${pkgs.swayimg}/bin/swayimg - &
-  size=$(${pkgs.slurp}/bin/slurp)
+  ${grim} -t png - | ${pkgs.swayimg}/bin/swayimg --config info.mode=off - &
+  size="$(${pkgs.slurp}/bin/slurp -b ${colors.bg}cc -c ${colors.accent})"
   status=$?
   if [ $status -eq 0 ]; then
-    ${grim} -t png -g "$size" - | ${pkgs.wl-clipboard}/bin/wl-copy
+    ${grim} -t png -g $size - | ${pkgs.wl-clipboard}/bin/wl-copy
     ${send} "screenshot copied"
   else
     ${send} "screenshot canceled"
