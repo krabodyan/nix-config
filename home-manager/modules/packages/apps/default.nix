@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./foot.nix
@@ -9,7 +9,7 @@
     ./64gram.nix
     ./zathura.nix
     #./zoom.nix
-    #./protonvpn.nix
+    ./protonvpn.nix
     #./office.nix
     #./ide.nix
     ./swayimg.nix

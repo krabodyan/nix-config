@@ -45,12 +45,12 @@
             app_id = "floaterm";
           };
         }
-        # {
-        #   command = "border pixel 2";
-        #   criteria = {
-        #     app_id = ".*";
-        #   };
-        # }
+        {
+          command = "border pixel 2";
+          criteria = {
+            app_id = ".*";
+          };
+        }
       ];
 
       output."eDP-1" = {
@@ -143,6 +143,7 @@
           volume = import ./scripts/volume.nix { inherit pkgs; };
           microphone = import ./scripts/microphone.nix { inherit pkgs; };
           brightness = import ./scripts/brightness.nix { inherit pkgs; };
+          screenshot = import ./scripts/screenshot.nix { inherit pkgs; };
         in
         {
           "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";
@@ -153,8 +154,9 @@
           "Ctrl+Alt+Backspace" = "reload";
           "Ctrl+Alt+Delete" = "exit";
 
-          Print = "exec grim -t png -g \"$(slurp -d)\" - | swappy -f -";
-          Pause = "exec grim -c -t png - | wl-copy"; # swappy -f -";
+          "${mod}+Print" = "exec grim -t png -g \"$(slurp -d)\" - | swappy -f -";
+          Print = "exec ${screenshot}/bin/screenshot";
+          Pause = "exec grim -c -t png - | wl-copy";
 
           "${mod}+Shift+l" = "exec swaylock";
           "${mod}+w" = "exec pkill -SIGUSR1 waybar";
