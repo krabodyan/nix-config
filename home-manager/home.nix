@@ -3,7 +3,7 @@
   home = {
     username = "krabodyan";
     homeDirectory = "/home/krabodyan";
-    stateVersion = "24.05";
+    stateVersion = "24.11";
   };
 
   news.display = "silent";
