@@ -157,7 +157,9 @@
           "Ctrl+Alt+Backspace" = "reload";
           "Ctrl+Alt+Delete" = "exit";
 
-          Print = "exec grim -t png -g \"$(slurp -d)\" - | swappy -f -";
+          Print =
+            with config.colors;
+            "exec grim -t png -g \"$(slurp -b ${bg}d9 -c ${accent})\" - | swappy -f -";
           Pause = "exec grim -c -t png - | wl-copy && notify-send -t 1000 \"screenshot copied\"";
           "${mod}+Print" = "exec ${screenshot}/bin/screenshot";
 
