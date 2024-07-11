@@ -20,7 +20,9 @@
       command = "${nil}/bin/nil";
     };
     pylsp = {
-      command = "${python312Packages.python-lsp-server}/bin/pylsp";
+      command = "${pkgs.basedpyright}/bin/basedpyright-langserver";
+      args = [ "--stdio" ];
+      # command = "${python312Packages.python-lsp-server}/bin/pylsp";
     };
   };
   language = [

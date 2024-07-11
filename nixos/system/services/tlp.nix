@@ -21,4 +21,5 @@
       RUNTIME_PM_DRIVER_DENYLIST = "nouveau nvidia";
     };
   };
+  systemd.services.tlp.enable = false;
 }

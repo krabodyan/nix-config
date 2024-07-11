@@ -7,7 +7,6 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      grep = "${pkgs.ripgrep}/bin/rg";
       ls = "${pkgs.eza}/bin/eza --icons -F -H --group-directories-first -1 -L 1";
       tree = "${pkgs.eza}/bin/eza -F -H --icons --group-directories-first --tree -L 4";
     };
