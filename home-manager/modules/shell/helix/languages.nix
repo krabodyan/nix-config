@@ -6,16 +6,16 @@
     timeout = 360;
   };
   language-server = with pkgs; {
-    ruff = {
-      command = "${ruff-lsp}/bin/ruff-lsp";
-      settings_section = "_";
-    };
-    ruff.settings._.globalSettings = {
-      organizeImports = true;
-      fixAll = true;
-      codeAction.disableRuleComment.enable = false;
-      codeAction.fixViolation.enable = false;
-    };
+    # ruff = {
+    #   command = "${ruff-lsp}/bin/ruff-lsp";
+    #   settings_section = "_";
+    # };
+    # ruff.settings._.globalSettings = {
+    #   organizeImports = true;
+    #   fixAll = true;
+    #   codeAction.disableRuleComment.enable = false;
+    #   codeAction.fixViolation.enable = false;
+    # };
     nil = {
       command = "${nil}/bin/nil";
     };
@@ -39,7 +39,7 @@
       comment-token = "#";
       language-servers = [
         "pylsp"
-        "ruff"
+        # "ruff"
       ];
       formatter = {
         command = "${pkgs.black}/bin/black";
