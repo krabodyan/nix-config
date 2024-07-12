@@ -157,9 +157,9 @@
           "Ctrl+Alt+Backspace" = "reload";
           "Ctrl+Alt+Delete" = "exit";
 
-          "Pause" = "exec ${screenshot}/bin/screenshot swayimg";
           "Print" = "exec ${screenshot}/bin/screenshot";
-          "${mod}+Print" = "exec wl-paste | swappy -f -";
+          "${mod}+Print" = "exec ${screenshot}/bin/screenshot swayimg";
+          "${mod}+Shift+Print" = "exec wl-paste | swappy -f -";
 
           "${mod}+Shift+l" = "exec swaylock";
           "${mod}+w" = "exec pkill -SIGUSR1 waybar";
