@@ -157,12 +157,8 @@
           "Ctrl+Alt+Backspace" = "reload";
           "Ctrl+Alt+Delete" = "exit";
 
-          # "Print" =
-          #   with config.colors;
-          #   "exec grim -t png -g \"$(slurp -b ${bg}d9 -c ${accent})\" - | swappy -f -";
-
-          "Pause" = "exec ${screenshot}/bin/screenshot";
-          "Print" = "exec ${screenshot}/bin/screenshot default";
+          "Pause" = "exec ${screenshot}/bin/screenshot swayimg";
+          "Print" = "exec ${screenshot}/bin/screenshot";
           "${mod}+Print" = "exec wl-paste | swappy -f -";
 
           "${mod}+Shift+l" = "exec swaylock";

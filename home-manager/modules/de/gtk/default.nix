@@ -76,9 +76,6 @@
         [General]
         theme=Catppuccin-${variant}-${accent}
       '';
-
-      # The important bit is here, links the theme directory from the package to a directory under `~/.config`
-      # where Kvantum should find it.
       "Kvantum/Catppuccin-${variant}-${accent}".source = "${kvantumThemePackage}/share/Kvantum/Catppuccin-${variant}-${accent}";
     };
 }

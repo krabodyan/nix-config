@@ -13,11 +13,10 @@ let
 in
 
 pkgs.writeShellScriptBin "screenshot" ''
-  if [ "$1" = "default" ]; then
-    ${grim} -g "$(${slurp})" - | ${copy} && ${send} "screenshot copied"
-    exit 0
+  if [ "$1" = "swayimg" ]; then
+    ${grim} - | ${swayimg} - &
+    PID=$!
   fi
-  ${grim} - | ${swayimg} - &
   size=$(${slurp})
   status=$?
   if [ $status -eq 0 ]; then
@@ -26,5 +25,8 @@ pkgs.writeShellScriptBin "screenshot" ''
   else
     ${send} "screenshot canceled"
   fi
-  pkill swayimg
+
+  if [ "$1" = "swayimg" ]; then
+    kill $PID
+  fi
 ''
