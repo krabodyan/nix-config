@@ -1,7 +1,9 @@
 {
   imports = [ ./tlp.nix ];
 
-  systemd.coredump.enable = false;
+  systemd.coredump.extraConfig = ''
+    Storage=none
+  '';
 
   services = {
     printing.enable = false;

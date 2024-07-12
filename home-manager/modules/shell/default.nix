@@ -12,5 +12,8 @@
     ./ripgrep.nix
   ];
 
-  home.packages = with pkgs; [ xdg-utils ];
+  home.packages = with pkgs; [
+    xdg-utils
+    php
+  ];
 }

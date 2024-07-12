@@ -157,11 +157,13 @@
           "Ctrl+Alt+Backspace" = "reload";
           "Ctrl+Alt+Delete" = "exit";
 
-          Print =
-            with config.colors;
-            "exec grim -t png -g \"$(slurp -b ${bg}d9 -c ${accent})\" - | swappy -f -";
-          Pause = "exec grim -c -t png - | wl-copy && notify-send -t 1000 \"screenshot copied\"";
-          "${mod}+Print" = "exec ${screenshot}/bin/screenshot";
+          # "Print" =
+          #   with config.colors;
+          #   "exec grim -t png -g \"$(slurp -b ${bg}d9 -c ${accent})\" - | swappy -f -";
+
+          "Pause" = "exec ${screenshot}/bin/screenshot";
+          "Print" = "exec ${screenshot}/bin/screenshot default";
+          "${mod}+Print" = "exec wl-paste | swappy -f -";
 
           "${mod}+Shift+l" = "exec swaylock";
           "${mod}+w" = "exec pkill -SIGUSR1 waybar";
