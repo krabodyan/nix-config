@@ -216,6 +216,7 @@
           F4 = "exec ${microphone}/bin/microphone";
           XF86MonBrightnessUp = "exec ${brightness}/bin/brightness up";
           XF86MonBrightnessDown = "exec ${brightness}/bin/brightness down";
+          "${mod}+Tab" = "exec ${brightness}/bin/brightness toggle";
         };
     };
   };
