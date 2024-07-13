@@ -171,10 +171,10 @@
           "${mod}+Right" = "focus right";
           "${mod}+Up" = "focus up";
 
-          "${mod}+Shift+Left" = "move left";
-          "${mod}+Shift+Right" = "move right";
-          "${mod}+Shift+Up" = "move up";
-          "${mod}+Shift+Down" = "move down";
+          "${mod}+Shift+Up" = "move up 20px";
+          "${mod}+Shift+Down" = "move down 20px";
+          "${mod}+Shift+Left" = "move left 20px";
+          "${mod}+Shift+Right" = "move right 20px";
 
           "${mod}+Shift+s" = "layout tabbed";
           "${mod}+s" = "layout toggle";
@@ -200,10 +200,10 @@
           "${mod}+Shift+6" = "move container to workspace number 6";
           "${mod}+Shift+7" = "move container to workspace number 7";
 
-          "${mod}+Ctrl+Right" = "resize shrink width 10 px";
-          "${mod}+Ctrl+Left" = "resize grow   width 10 px";
-          "${mod}+Ctrl+Up" = "resize shrink height 10 px";
-          "${mod}+Ctrl+Down" = "resize grow   height 10 px";
+          "${mod}+Ctrl+Up" = "resize shrink height 20 px";
+          "${mod}+Ctrl+Down" = "resize grow height 20 px";
+          "${mod}+Ctrl+Right" = "resize shrink width 20 px";
+          "${mod}+Ctrl+Left" = "resize grow width 20 px";
 
           "${mod}+p" = "output \"eDP-1\" power off";
           "${mod}+Shift+p" = "output \"eDP-1\" power on";
