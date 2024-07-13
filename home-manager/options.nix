@@ -22,14 +22,13 @@
 
         bg-rgba = "rgba(30, 30, 46, 1)";
         bg = "1E1E2E";
-        border-unfocused = "1E1E2E"; # 1c1c2b";
+        border-unfocused = "00000000"; # 1c1c2b";
         bg-dark = "161621";
         bg-bright = "32324d";
 
-        fg = "a6aee2";
+        fg = "a0aae3";
         fg-dark = "616991";
         fg-bright = "a6adc8";
-        fg-lavender = "7e86b3";
 
         black = "222222";
         red = "FC7971";

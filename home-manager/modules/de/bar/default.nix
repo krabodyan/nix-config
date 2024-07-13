@@ -119,7 +119,7 @@
       #battery,
       #workspaces button
       {
-        color: #${fg-lavender};
+        color: #${fg};
         padding: 0;
         margin: 5px 0;
       }

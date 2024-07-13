@@ -19,7 +19,7 @@
       dim_inactive_colors.unfocused #000000FF
       dim_inactive_colors.urgent #900000FF
       scratchpad_minimize disable
-      titlebar_border_thickness 1
+      titlebar_border_thickness 0
       default_border pixel 1
     '';
     config = {
@@ -43,7 +43,7 @@
 
       window.commands = [
         {
-          command = "floating enable;move position 509 486";
+          command = "floating enable;move position 509 536";
           criteria = {
             app_id = "floaterm";
           };
@@ -99,10 +99,10 @@
         with helpers;
         let
           unfocused = {
-            background = mkHex bg;
+            background = mkHex bg-dark;
             border = mkHex border-unfocused;
             childBorder = mkHex border-unfocused;
-            indicator = mkHex bg;
+            indicator = mkHex bg-dark;
             text = mkHex fg-dark;
           };
           focused = {
