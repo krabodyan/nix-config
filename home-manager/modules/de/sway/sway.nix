@@ -12,12 +12,15 @@
     xwayland = true;
     package = pkgs.swayfx;
     extraConfig = ''
-      blur off
       corner_radius 10
+      blur off
       shadows off
+      default_dim_inactive 0.16
+      dim_inactive_colors.unfocused #000000FF
+      dim_inactive_colors.urgent #900000FF
       scratchpad_minimize disable
-      titlebar_border_thickness 2
-      default_border pixel 2
+      titlebar_border_thickness 1
+      default_border pixel 1
     '';
     config = {
       modifier = "Mod4";
@@ -40,13 +43,13 @@
 
       window.commands = [
         {
-          command = "floating enable";
+          command = "floating enable;move position 509 486";
           criteria = {
             app_id = "floaterm";
           };
         }
         {
-          command = "border pixel 2";
+          command = "border pixel 1";
           criteria = {
             app_id = ".*";
           };

@@ -1,9 +1,10 @@
 {
   imports = [ ./tlp.nix ];
-
-  systemd.coredump.extraConfig = ''
-    Storage=none
-  '';
+  systemd.coredump.enable = false;
+  # systemd.coredump.extraConfig = ''
+  #   ProcessSizeMax=0
+  #   Storage=none
+  # '';
 
   services = {
     printing.enable = false;

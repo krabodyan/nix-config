@@ -2,6 +2,7 @@
 {
   xdg = {
     mimeApps.enable = true;
+    configFile."mimeapps.list".force = true;
     portal = {
       enable = true;
       xdgOpenUsePortal = false;

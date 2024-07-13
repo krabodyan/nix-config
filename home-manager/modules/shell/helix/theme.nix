@@ -10,7 +10,7 @@
 
     "constructor" = "blue";
 
-    "constant.builtin" = "mauve";
+    "constant.builtin" = "lavender";
     "constant.numeric" = "peach";
     "constant.character" = mkHex cyan;
     "constant.character.escape" = "maroon";
@@ -31,7 +31,7 @@
       fg = "maroon";
       modifiers = [ "italic" ];
     };
-    "variable.builtin" = "mauve";
+    "variable.builtin" = "lavender";
     "variable.other.member" = "blue";
 
     "label" = "sapphire"; # used for lifetimes
@@ -41,7 +41,7 @@
     "punctuation.special" = "peach";
 
     "keyword" = {
-      fg = "mauve";
+      fg = "lavender";
       modifiers = [ "italic" ];
     };
     "operator" = "teal";
@@ -56,7 +56,7 @@
     };
     "function.macro" = "peach";
 
-    "tag" = "mauve";
+    "tag" = "lavender";
 
     "namespace" = {
       fg = "text";
@@ -70,12 +70,12 @@
       modifiers = [ "bold" ];
     };
     "markup.heading.1" = "lavender";
-    "markup.heading.2" = "mauve";
+    "markup.heading.2" = "lavender";
     "markup.heading.3" = "green";
     "markup.heading.4" = "yellow";
     "markup.heading.5" = "pink";
     "markup.heading.6" = "teal";
-    "markup.list" = "mauve";
+    "markup.list" = "lavender";
     "markup.bold" = {
       modifiers = [ "bold" ];
     };
@@ -148,7 +148,7 @@
       modifiers = [ "bold" ];
     };
     "ui.bufferline.active" = {
-      fg = "mauve";
+      fg = "lavender";
       bg = "surface0";
       modifiers = [ "bold" ];
     };

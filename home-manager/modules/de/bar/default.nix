@@ -7,7 +7,7 @@
       position = "right";
       layer = "top";
       # mode = "invisible";
-      start_hidden = false;
+      start_hidden = true;
       width = 26;
       height = 360;
       spacing = 0;
@@ -106,7 +106,8 @@
       }
 
       window#waybar {
-        background-color: #${bg};
+        background-color: transparent; 
+        /* #${bg}; */
         border-radius: 8px;
         /* border: solid 2px #${accent} */
       }
@@ -118,7 +119,7 @@
       #battery,
       #workspaces button
       {
-        color: #${fg-bright};
+        color: #${fg-lavender};
         padding: 0;
         margin: 5px 0;
       }

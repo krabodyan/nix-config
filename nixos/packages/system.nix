@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    home-manager
     compsize
     ffmpeg-full
     python3Full
@@ -24,6 +23,5 @@
     acpi
     ntfs3g
 
-    temurin-jre-bin-17 # minecraft
   ];
 }

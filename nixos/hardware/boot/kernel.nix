@@ -12,6 +12,9 @@
       "kernel.printk" = 2;
       "kernel.nmi_watchdog" = 0;
 
+      "kernel.core_pattern" = "|/bin/false";
+      "fs.suid_dumpable" = 0;
+
       "kernel.sched_cfs_bandwidth_slice_us" = 3000;
       "vm.max_map_count" = 2147483642;
 

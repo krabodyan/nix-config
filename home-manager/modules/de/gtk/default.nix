@@ -21,7 +21,7 @@
 
     theme = {
       package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];
+        accents = [ "lavender" ];
         size = "compact";
         tweaks = [
           "rimless"
@@ -29,7 +29,7 @@
         ];
         variant = "mocha";
       };
-      name = "catppuccin-mocha-mauve-compact+rimless,normal";
+      name = "catppuccin-mocha-lavender-compact+rimless,normal";
     };
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
     gtk3.extraConfig = {
@@ -68,7 +68,7 @@
   xdg.configFile =
     let
       variant = "Mocha";
-      accent = "Mauve";
+      accent = "Lavender";
       kvantumThemePackage = pkgs.catppuccin-kvantum.override { inherit variant accent; };
     in
     {

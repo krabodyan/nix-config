@@ -15,5 +15,6 @@
   home.packages = with pkgs; [
     xdg-utils
     php
+    temurin-jre-bin-17 # minecraft
   ];
 }
