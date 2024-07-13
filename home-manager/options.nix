@@ -30,7 +30,7 @@
         fg-dark = "616991";
         fg-bright = "a6adc8";
 
-        black = "1e1e2e";
+        black = "000000";
         red = "FC7971";
         green = "00FF6A";
         yellow = "f9e2af";

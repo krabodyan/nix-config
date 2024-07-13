@@ -48,27 +48,28 @@
 
       colors = with config.colors; {
         alpha = "${opacity}";
-        background = "${bg}"; # "2e3440"; #"1b1d22";
-        foreground = "${fg}"; # "eaf2f1";
+        background = "${bg}";
+        foreground = "${fg}";
         flash = "${fg-bright}";
         flash-alpha = 0.7;
 
-        regular0 = "${black}"; # чорний
-        regular1 = "${red}"; # червоний
-        regular2 = "${green}"; # зелений
-        regular3 = "${yellow}"; # жовтий
-        regular4 = "${blue}"; # синій
-        regular5 = "${magenta}"; # пурпурний
-        regular6 = "${cyan}"; # бірюзовий
-        regular7 = "${fg-bright}"; # "bfd0f2"; #"eaf2f1";  # білий
-        #bright0="696d77";   # яскраво-чорний
-        #bright1="ff657a";   # яскраво-червоний
-        #bright2="66ff00";   # яскраво-зелений
-        #bright3="fbe74a";   # яскраво-жовтий
-        #bright4="30d5c8";   # яскраво-синій
-        #bright5="bf00c0";   # яскраво-пурпурний
-        #bright6="9cd1bb";   # яскраво-бірюзовий
-        #bright7="${fg-bright}"; #"bfd0f2";#"eaf2f1";   # яскраво-білий
+        regular0 = "${black}";
+        regular1 = "${red}";
+        regular2 = "${green}";
+        regular3 = "${yellow}";
+        regular4 = "${blue}";
+        regular5 = "${magenta}";
+        regular6 = "${cyan}";
+        regular7 = "${fg-bright}";
+        bright0 = "${black}";
+        bright1 = "${red}";
+        bright2 = "${green}";
+        bright3 = "${yellow}";
+        bright4 = "${blue}";
+        bright5 = "${magenta}";
+        bright6 = "${cyan}";
+        bright7 = "${fg-bright}";
+
       };
     };
   };
