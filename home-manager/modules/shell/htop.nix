@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 {
-  home.packages = with pkgs; [ nvtopPackages.intel ];
+  home.packages = with pkgs; [
+    nvtopPackages.intel
+    gpustat
+  ];
   xdg.configFile."htop/htoprc".force = true;
   programs.htop = {
     enable = true;
