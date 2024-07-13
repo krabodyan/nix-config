@@ -43,7 +43,7 @@
 
       window.commands = [
         {
-          command = "floating enable;move position 509 536";
+          command = "floating enable;move position 509 520";
           criteria = {
             app_id = "floaterm";
           };

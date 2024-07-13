@@ -7,7 +7,7 @@
     ./fish.nix
     ./htop.nix
     ./git.nix
-    ./ufetch.nix
+    ./pfetch.nix
     ./tmux.nix
     ./ripgrep.nix
   ];
