@@ -40,7 +40,7 @@
         modules = [
           ./nixos/configuration.nix
           inputs.disko.nixosModules.default
-          (import ./disko.nix { device = "/dev/sda"; })
+          (import ./disko.nix { device = "/dev/nvme0n1"; })
         ];
       };
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
