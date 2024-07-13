@@ -25,7 +25,7 @@
       scratchpad_minimize disable
 
       titlebar_border_thickness 0
-      default_border pixel 2
+      default_border pixel 1
     '';
     config = {
       modifier = "Mod4";
@@ -48,13 +48,7 @@
 
       window.commands = [
         {
-          command = "floating enable;move position 509 520";
-          criteria = {
-            app_id = "floaterm";
-          };
-        }
-        {
-          command = "border pixel 2";
+          command = "border pixel 1";
           criteria = {
             app_id = ".*";
           };
@@ -95,7 +89,7 @@
       };
 
       seat.seat0 = {
-        xcursor_theme = "GoogleDot-Blue";
+        xcursor_theme = "${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}";
         hide_cursor = "10000";
       };
 
@@ -158,14 +152,14 @@
         in
         {
           "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";
-          "${mod}+Shift+Return" = "exec ${pkgs.foot}/bin/foot -a floaterm";
-          "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot -a floaterm ${pkgs.yazi}/bin/yazi";
+          "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot ${pkgs.yazi}/bin/yazi";
           "${mod}+d" = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun -kb-cancel 'Alt+Return'";
 
           "Ctrl+Alt+Backspace" = "reload";
           "Ctrl+Alt+Delete" = "exit";
 
           "Print" = "exec ${screenshot}/bin/screenshot";
+          "Pause" = "exec ${screenshot}/bin/screenshot full";
           "${mod}+Print" = "exec ${screenshot}/bin/screenshot swayimg";
           "${mod}+Shift+Print" = "exec wl-paste | swappy -f -";
 

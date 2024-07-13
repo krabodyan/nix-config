@@ -8,11 +8,16 @@ let
     -h string:x-canonical-private-synchronous:swaynotify \
   '';
   slurp = "${pkgs.slurp}/bin/slurp -b ${colors.bg}d9 -c ${colors.accent}";
-  copy = "${pkgs.wl-clipboard}/bin/wl-copy";
+  copy = "${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
   swayimg = "${pkgs.swayimg}/bin/swayimg --config info.mode=off";
 in
 
 pkgs.writeShellScriptBin "screenshot" ''
+  if [ "$1" = "full" ]; then
+    ${grim} - | ${copy}
+    ${send} "screenshot copied"
+    exit 0
+  fi
   if [ "$1" = "swayimg" ]; then
     ${grim} - | ${swayimg} - &
     PID=$!

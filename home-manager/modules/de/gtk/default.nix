@@ -7,7 +7,6 @@
   home.packages = with pkgs; [
     dconf
     libsForQt5.qtstyleplugins
-    papirus-icon-theme
     qt6Packages.qt6gtk2
   ];
 
@@ -17,7 +16,10 @@
     font.name = "Roboto Bold 10";
     font.package = pkgs.roboto;
 
-    iconTheme.name = "Papirus-Dark";
+    iconTheme = {
+      package = pkgs.catppuccin-papirus-folders.override { accent = "lavender"; };
+      name = "Papirus-Dark";
+    };
 
     theme = {
       package = pkgs.catppuccin-gtk.override {

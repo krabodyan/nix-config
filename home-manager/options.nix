@@ -16,7 +16,7 @@
     colors = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
       default = {
-        opacity = "1";
+        opacity = "0.9";
         accent = "b4befe";
         accent-rgba = "rgba(180, 190, 254, 0.7)";
 
