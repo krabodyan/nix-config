@@ -18,7 +18,7 @@ pkgs.writeShellScriptBin "brightness" ''
   max_brightness=$(cat /sys/class/backlight/intel_backlight/max_brightness)
   b=$((current_brightness * 100 / max_brightness))
   if [ "$1" = "toggle" ]; then
-    if [[ $current_brightness -lt 50 ]]; then
+    if [[ $current_brightness -eq 0 ]]; then
       ${bctl} set 100%
     else
       ${bctl} set 0%
