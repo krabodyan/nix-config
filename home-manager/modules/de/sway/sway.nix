@@ -13,14 +13,19 @@
     package = pkgs.swayfx;
     extraConfig = ''
       corner_radius 10
-      blur off
-      shadows off
-      default_dim_inactive 0.16
+
+      blur disable
+
+      shadows disable
+
+      default_dim_inactive 0.13
       dim_inactive_colors.unfocused #000000FF
-      dim_inactive_colors.urgent #900000FF
+      dim_inactive_colors.urgent #000000FF
+
       scratchpad_minimize disable
+
       titlebar_border_thickness 0
-      default_border pixel 1
+      default_border pixel 2
     '';
     config = {
       modifier = "Mod4";
@@ -49,7 +54,7 @@
           };
         }
         {
-          command = "border pixel 1";
+          command = "border pixel 2";
           criteria = {
             app_id = ".*";
           };

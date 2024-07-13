@@ -4,8 +4,8 @@ let
   send = ''
     ${pkgs.libnotify}/bin/notify-send \
     -t 1000 \
-    -a hypr-notify \
-    -h string:x-canonical-private-synchronous:hyprnotify \
+    -a swaynotify \
+    -h string:x-canonical-private-synchronous:swaynotify \
   '';
   slurp = "${pkgs.slurp}/bin/slurp -b ${colors.bg}d9 -c ${colors.accent}";
   copy = "${pkgs.wl-clipboard}/bin/wl-copy";

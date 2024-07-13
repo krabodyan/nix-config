@@ -22,7 +22,7 @@
 
         bg-rgba = "rgba(30, 30, 46, 1)";
         bg = "1E1E2E";
-        border-unfocused = "00000000"; # 1c1c2b";
+        border-unfocused = "00000000";
         bg-dark = "161621";
         bg-bright = "32324d";
 

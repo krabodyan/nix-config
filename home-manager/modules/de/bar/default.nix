@@ -107,9 +107,7 @@
 
       window#waybar {
         background-color: transparent; 
-        /* #${bg}; */
         border-radius: 8px;
-        /* border: solid 2px #${accent} */
       }
 
       #language,
