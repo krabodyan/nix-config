@@ -18,9 +18,9 @@
 
       shadows disable
 
-      default_dim_inactive 0.13
-      dim_inactive_colors.unfocused #000000FF
-      dim_inactive_colors.urgent #000000FF
+      default_dim_inactive 0.0
+      # dim_inactive_colors.unfocused #000000FF
+      # dim_inactive_colors.urgent #000000FF
 
       scratchpad_minimize disable
 

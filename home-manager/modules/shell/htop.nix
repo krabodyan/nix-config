@@ -9,12 +9,17 @@
       leftMeters [
         (bar "LeftCPUs")
         (text "Blank")
-        (text "Memory")
         (text "Blank")
         (bar "CPU")
         (bar "Memory")
       ]
-      // rightMeters [ (bar "RightCPUs") ]
+      // rightMeters [
+        (bar "RightCPUs")
+        (text "Blank")
+        (text "Blank")
+        (text "Blank")
+        (text "LoadAverage")
+      ]
       // {
         tree_view = false;
         hide_kernel_threads = true;
