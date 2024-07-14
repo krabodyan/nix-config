@@ -1,10 +1,7 @@
 { pkgs }:
 {
-  file_watch_support = true;
+  file_watch_support = false;
 
-  server = {
-    timeout = 360;
-  };
   language-server = with pkgs; {
     # ruff = {
     #   command = "${ruff-lsp}/bin/ruff-lsp";
@@ -20,9 +17,9 @@
       command = "${nil}/bin/nil";
     };
     pylsp = {
-      command = "${pkgs.basedpyright}/bin/basedpyright-langserver";
-      args = [ "--stdio" ];
-      # command = "${python312Packages.python-lsp-server}/bin/pylsp";
+      # command = "${pkgs.basedpyright}/bin/basedpyright-langserver";
+      # args = [ "--stdio" ];
+      command = "${python312Packages.python-lsp-server}/bin/pylsp";
     };
   };
   language = [

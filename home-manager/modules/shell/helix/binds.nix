@@ -5,11 +5,6 @@ let
     "C-c" = "normal_mode";
     "C-7" = "toggle_comments";
     "C-/" = "toggle_comments";
-    "A-x" = "extend_line_up";
-    "S-x" = [
-      "extend_line_up"
-      "extend_to_line_bounds"
-    ];
     "C-A-up" = [
       "goto_line_end"
       "extend_line_below"
@@ -43,6 +38,11 @@ let
   };
   special = {
     tab = ":buffer-next";
+    "A-x" = "extend_line_up";
+    "S-x" = [
+      "extend_line_up"
+      "extend_to_line_bounds"
+    ];
     "S-q" = ":buffer-close";
     esc = [
       "collapse_selection"
