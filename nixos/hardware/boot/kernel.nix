@@ -33,11 +33,11 @@
       #"acpi=force"
       #"reboot=acpi"
       "nohibernate"
-      "ibt=off"
+      # "ibt=off"
       "rootfstype=btrfs"
     ];
     # supportedFilesystems = [ "btrfs" ];
-    # kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_cachyos;
     extraModprobeConfig = ''
       options i915 enable_guc=2
       options i915 enable_fbc=1

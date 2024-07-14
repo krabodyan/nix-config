@@ -128,7 +128,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -270,7 +270,7 @@
           "type": "checkbox",
           "label": "Enable YouTube logo",
           "name": "logo",
-          "value": "0",
+          "value": "1",
           "default": "1",
           "options": null
         },
@@ -278,7 +278,7 @@
           "type": "checkbox",
           "label": "Enable black bars",
           "name": "oled",
-          "value": "0",
+          "value": "1",
           "default": "0",
           "options": null
         }
@@ -291,7 +291,7 @@
     "name": "YouTube Catppuccin",
     "originalDigest": "1c51defb488e9edde9d838ca16ceb61380e2bcca",
     "_id": "7d7e9f5b-b0c8-4f58-b67f-d920e8e9bc63",
-    "_rev": 1720834870892,
+    "_rev": 1720969485444,
     "id": 20
   },
   {
@@ -319,7 +319,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -466,7 +466,7 @@
     "name": "ChatGPT Catppuccin",
     "originalDigest": "94af19ad204cb2a94d520bb87ad24b6634ed4658",
     "_id": "36b56fcd-a908-4957-9a1d-92d32dc207e0",
-    "_rev": 1720834917305,
+    "_rev": 1720969427050,
     "id": 21
   },
   {
@@ -494,7 +494,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -641,7 +641,7 @@
     "name": "Arch Wiki Catppuccin",
     "originalDigest": "618824d4a255f3319a0e0abd6aaaea1bb5497708",
     "_id": "9615e41e-a2ff-4638-b702-cf3bb2f683f6",
-    "_rev": 1720834953335,
+    "_rev": 1720969544748,
     "id": 22
   },
   {
@@ -669,7 +669,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -811,7 +811,7 @@
           "type": "checkbox",
           "label": "Zen Mode",
           "name": "zenMode",
-          "value": null,
+          "value": "1",
           "default": "0",
           "options": null
         }
@@ -824,7 +824,7 @@
     "name": "DeepL Catppuccin",
     "originalDigest": "59508e7ccb4ae1e645863020fd2c94f3a3799c91",
     "_id": "ab97b3f3-d7a5-415d-8ed3-dca5ce36be96",
-    "_rev": 1720834949584,
+    "_rev": 1720969540583,
     "id": 23
   },
   {
@@ -852,7 +852,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -999,7 +999,7 @@
     "name": "GitHub Catppuccin",
     "originalDigest": "2b8e8258ef6310232bcc0ce5e858e6cb14a67519",
     "_id": "1e2c75e5-c7ff-4de8-852a-3a0a765f90b9",
-    "_rev": 1720834913424,
+    "_rev": 1720969434121,
     "id": 24
   },
   {
@@ -1027,7 +1027,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -1174,7 +1174,7 @@
     "name": "Gmail Catppuccin",
     "originalDigest": "a487b4429028060ebfe61354430bf09a6b8c8cb8",
     "_id": "39996364-99ef-4b05-a69e-e2a6d5527b20",
-    "_rev": 1720834943733,
+    "_rev": 1720969534292,
     "id": 25
   },
   {
@@ -1202,7 +1202,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -1349,7 +1349,7 @@
     "name": "Google Drive Catppuccin",
     "originalDigest": "583c9358b3daef81857016d6753c0a6feb40168c",
     "_id": "0e6d0eac-0408-4967-b31a-fd62d718b0e1",
-    "_rev": 1720834939047,
+    "_rev": 1720969525689,
     "id": 26
   },
   {
@@ -1377,7 +1377,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -1524,7 +1524,7 @@
     "name": "Google Catppuccin",
     "originalDigest": "e7fbe19de0da7147f380de8abdca9ff97ee0328a",
     "_id": "4ab05a8e-35e4-4ffd-91aa-a1ffa5a50372",
-    "_rev": 1720834902035,
+    "_rev": 1720969438226,
     "id": 27
   },
   {
@@ -1552,7 +1552,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -1699,7 +1699,7 @@
     "name": "Home Manager Options Search Catppuccin",
     "originalDigest": "6e1d2884ce30a772e517a32a020c47dae033d81b",
     "_id": "a1443b04-30c7-41c1-bb89-6289141c8fdd",
-    "_rev": 1720834888186,
+    "_rev": 1720969441936,
     "id": 28
   },
   {
@@ -1727,7 +1727,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -1874,7 +1874,7 @@
     "name": "NixOS Search Catppuccin",
     "originalDigest": "0ffb84c79403190c93980bc4f7f6f25d05cbc6cb",
     "_id": "2000c1ea-9aa3-4748-80b5-f5558e645511",
-    "_rev": 1720834934317,
+    "_rev": 1720969521076,
     "id": 29
   },
   {
@@ -1902,7 +1902,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -2049,7 +2049,7 @@
     "name": "PyPI Catppuccin",
     "originalDigest": "b0d3641e3687b00bbd798e20d5e0c97006a83776",
     "_id": "bd162dc2-b78a-4541-a6c3-411a573f1f19",
-    "_rev": 1720834930309,
+    "_rev": 1720969516267,
     "id": 30
   },
   {
@@ -2077,7 +2077,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -2224,7 +2224,7 @@
     "name": "Stylus Catppuccin",
     "originalDigest": "50af00bb5033c2ddbed017a737bf7a144fd0dbdb",
     "_id": "896e56bc-9450-4868-babf-ef9f89e6c1f4",
-    "_rev": 1720834877227,
+    "_rev": 1720969453943,
     "id": 31
   },
   {
@@ -2252,7 +2252,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -2281,7 +2281,7 @@
           "type": "select",
           "label": "Dark Flavor",
           "name": "darkFlavor",
-          "value": "frappe",
+          "value": "mocha",
           "default": "mocha",
           "options": [
             {
@@ -2407,7 +2407,7 @@
     "name": "Wikipedia Catppuccin",
     "originalDigest": "ec96502219a9e872a38c861f78bdaa04d23b01a9",
     "_id": "a00bb211-f60d-4e19-a63e-1eef5ae7495d",
-    "_rev": 1720834924454,
+    "_rev": 1720969449980,
     "id": 32
   },
   {
@@ -2435,7 +2435,7 @@
           "type": "select",
           "label": "Light Flavor",
           "name": "lightFlavor",
-          "value": null,
+          "value": "mocha",
           "default": "latte",
           "options": [
             {
@@ -2582,7 +2582,182 @@
     "name": "NixOS Wiki Catppuccin",
     "originalDigest": "fe95598010fea1eff39fb5a6513b1001966cbc28",
     "_id": "b857e2cd-3a49-4551-a711-273f958a42fa",
-    "_rev": 1720834882733,
+    "_rev": 1720969446068,
     "id": 33
+  },
+  {
+    "enabled": true,
+    "installDate": 1720969412390,
+    "sections": [
+      {
+        "code": ""
+      }
+    ],
+    "sourceCode": "/* ==UserStyle==\n@name Twitch Catppuccin\n@namespace github.com/catppuccin/userstyles/styles/twitch\n@homepageURL https://github.com/catppuccin/userstyles/tree/main/styles/twitch\n@version 1.3.1\n@updateURL https://github.com/catppuccin/userstyles/raw/main/styles/twitch/catppuccin.user.css\n@supportURL https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Atwitch\n@description Soothing pastel theme for Twitch\n@author Catppuccin\n@license MIT\n\n@preprocessor less\n@var select lightFlavor \"Light Flavor\" [\"latte:Latte*\", \"frappe:Frappé\", \"macchiato:Macchiato\", \"mocha:Mocha\"]\n@var select darkFlavor \"Dark Flavor\" [\"latte:Latte\", \"frappe:Frappé\", \"macchiato:Macchiato\", \"mocha:Mocha*\"]\n@var select accentColor \"Accent\" [\"rosewater:Rosewater\", \"flamingo:Flamingo\", \"pink:Pink\", \"mauve:Mauve*\", \"red:Red\", \"maroon:Maroon\", \"peach:Peach\", \"yellow:Yellow\", \"green:Green\", \"teal:Teal\", \"blue:Blue\", \"sapphire:Sapphire\", \"sky:Sky\", \"lavender:Lavender\", \"subtext0:Gray\"]\n==/UserStyle== */\n\n@-moz-document domain(\"twitch.tv\") {\n  .tw-root--theme-dark {\n    #catppuccin(@darkFlavor, @accentColor);\n  }\n  .tw-root--theme-light {\n    #catppuccin(@lightFlavor, @accentColor);\n  }\n\n  #catppuccin(@lookup, @accent) {\n    @rosewater: @catppuccin[@@lookup][@rosewater];\n    @flamingo: @catppuccin[@@lookup][@flamingo];\n    @pink: @catppuccin[@@lookup][@pink];\n    @mauve: @catppuccin[@@lookup][@mauve];\n    @red: @catppuccin[@@lookup][@red];\n    @maroon: @catppuccin[@@lookup][@maroon];\n    @peach: @catppuccin[@@lookup][@peach];\n    @yellow: @catppuccin[@@lookup][@yellow];\n    @green: @catppuccin[@@lookup][@green];\n    @teal: @catppuccin[@@lookup][@teal];\n    @sky: @catppuccin[@@lookup][@sky];\n    @sapphire: @catppuccin[@@lookup][@sapphire];\n    @blue: @catppuccin[@@lookup][@blue];\n    @lavender: @catppuccin[@@lookup][@lavender];\n    @text: @catppuccin[@@lookup][@text];\n    @subtext1: @catppuccin[@@lookup][@subtext1];\n    @subtext0: @catppuccin[@@lookup][@subtext0];\n    @overlay2: @catppuccin[@@lookup][@overlay2];\n    @overlay1: @catppuccin[@@lookup][@overlay1];\n    @overlay0: @catppuccin[@@lookup][@overlay0];\n    @surface2: @catppuccin[@@lookup][@surface2];\n    @surface1: @catppuccin[@@lookup][@surface1];\n    @surface0: @catppuccin[@@lookup][@surface0];\n    @base: @catppuccin[@@lookup][@base];\n    @mantle: @catppuccin[@@lookup][@mantle];\n    @crust: @catppuccin[@@lookup][@crust];\n    @accent-color: @catppuccin[@@lookup][@@accent];\n\n    color-scheme: if(@lookup = latte, light, dark);\n\n    ::selection {\n      background-color: fade(@accent-color, 30%);\n    }\n\n    input,\n    textarea {\n      &::placeholder {\n        color: @subtext0 !important;\n      }\n    }\n\n    body {\n      background-color: @base;\n    }\n\n    &,\n    .tw-dialog-layer {\n      --color-background-input-focus: @crust;\n      --color-background-interactable-hover: @surface0;\n      --color-background-interactable-alpha-hover: @surface0;\n      --color-background-button-text-default: null !important;\n      --color-background-pill-subtle: @subtext0;\n      --color-text-input-placeholder: @text;\n      --color-border-input: @base;\n      --color-text-button-primary: @crust;\n      --color-text-overlay: @base;\n      --color-text-base: @subtext1;\n      --color-text-alt: @text;\n      --color-text-alt-2: @text;\n      --color-text-interactable-selected: @crust;\n      --color-background-alt-2: @crust;\n      --color-text-tag: @text;\n      --color-background-button-secondary-default: @crust;\n      --color-background-button-secondary-hover: @surface0;\n      --color-background-tag-default: @mantle;\n      --color-background-tag-hover: @crust;\n      --color-background-float: @mantle;\n      --color-background-body: @base;\n      --color-background-base: @mantle;\n      --color-background-alt: @mantle;\n      --color-background-input: @crust;\n      --color-brand-muted-cupcake: @pink;\n      --color-brand-muted-mint: @green;\n      --color-brand-muted-sky: @sky;\n      --color-brand-muted-blush: @peach;\n      --color-brand-muted-canary: @peach;\n      --color-brand-muted-lavender: @lavender;\n      --color-brand-muted-mustard: @yellow;\n      --color-brand-muted-emerald: @green;\n      --color-brand-muted-coral: @peach;\n      --color-brand-muted-ocean: @blue;\n      --color-brand-accent-grape: @mauve;\n      --color-brand-accent-dragonfruit: @flamingo;\n      --color-brand-accent-carrot: @peach;\n      --color-brand-accent-sun: @peach;\n      --color-brand-accent-lime: @green;\n      --color-brand-accent-turquoise: @sky;\n      --color-brand-accent-eggplant: @mauve;\n      --color-brand-accent-wine: @flamingo;\n      --color-brand-accent-slime: @green;\n      --color-brand-accent-seafoam: @green;\n      --color-brand-accent-cherry: @red;\n      --color-brand-accent-marine: @blue;\n      --color-brand-accent-seaweed: @teal;\n      --color-brand-accent-fiji: @green;\n      --color-brand-accent-blueberry: @blue;\n      --color-brand-accent-arctic: @sky;\n      --color-brand-accent-highlighter: @yellow;\n      --color-brand-accent-flamingo: @flamingo;\n      --color-brand-accent-ruby: @red;\n      --color-brand-accent-punch: @flamingo;\n      --color-brand-accent-creamsicle: @yellow;\n      --color-red: @maroon;\n      --color-red-darker: @red;\n      --color-orange: @peach;\n      --color-yellow: @yellow;\n      --color-green: @green;\n      --color-green-darker: @green;\n      --color-blue: @blue;\n      --color-prime-blue: @blue;\n      --color-magenta: @flamingo;\n      --color-error: @red;\n      --color-warn: @yellow;\n      --color-success: @green;\n      --color-white: @text;\n      --color-black: @crust;\n      --color-info: @blue;\n      --color-twitch-purple: @accent-color;\n      --color-twitch-purple-4: @accent-color;\n      --color-twitch-purple-5: @accent-color;\n      --color-twitch-purple-6: @accent-color;\n      --color-twitch-purple-7: @accent-color;\n      --color-twitch-purple-8: @accent-color;\n      --color-twitch-purple-9: @accent-color;\n      --color-twitch-purple-10: @accent-color;\n      --color-twitch-purple-11: @accent-color;\n      --color-twitch-purple-12: @accent-color;\n      --color-orange-7: @yellow;\n      --color-orange-8: @yellow;\n      --color-orange-9: @yellow;\n      --color-orange-10: @yellow;\n      --color-orange-11: @yellow;\n      --color-orange-12: @yellow;\n      --color-orange-13: @yellow;\n      --color-yellow-6: @peach;\n      --color-yellow-7: @peach;\n      --color-yellow-8: @peach;\n      --color-yellow-9: @peach;\n      --color-yellow-10: @peach;\n      --color-yellow-11: @peach;\n      --color-yellow-12: @peach;\n      --color-yellow-13: @peach;\n      --color-yellow-14: @peach;\n      --color-yellow-15: @peach;\n      --color-green-5: @green;\n      --color-green-6: @green;\n      --color-green-7: @green;\n      --color-green-8: @green;\n      --color-green-9: @green;\n      --color-green-10: @green;\n      --color-green-11: @green;\n      --color-green-12: @green;\n      --color-green-13: @green;\n      --color-green-14: @green;\n      --color-green-15: @teal;\n      --color-cyan-9: @sapphire;\n      --color-cyan-10: @sapphire;\n      --color-cyan-11: @sapphire;\n      --color-cyan-12: @sapphire;\n      --color-cyan-13: @sapphire;\n      --color-cyan-14: @sapphire;\n      --color-cyan-15: @sky;\n      --color-blue-4: @blue;\n      --color-blue-5: @blue;\n      --color-blue-6: @blue;\n      --color-blue-7: @blue;\n      --color-blue-8: @blue;\n      --color-blue-9: @blue;\n      --color-blue-10: @sky;\n      --color-blue-11: @sky;\n      --color-magenta-5: @flamingo;\n      --color-magenta-6: @flamingo;\n      --color-magenta-7: @flamingo;\n      --color-magenta-8: @flamingo;\n      --color-magenta-9: @flamingo;\n      --color-magenta-10: @flamingo;\n      --color-magenta-11: @pink;\n      --color-magenta-12: @pink;\n      --color-red-4: @accent-color;\n      --color-red-5: @accent-color;\n      --color-red-6: @accent-color;\n      --color-red-7: @accent-color;\n      --color-red-8: @accent-color;\n      --color-red-9: @accent-color;\n      --color-red-10: @accent-color;\n      --color-red-11: @peach;\n      --color-red-12: @peach;\n      --color-twitter: @blue;\n      --color-facebook: @blue;\n      --color-reddit: @peach;\n      --color-snapchat: @yellow;\n      --color-instagram: @blue;\n      --color-youtube: @red;\n      --color-paypal: @blue;\n      --color-paypal-blue: @blue;\n      --color-paypal-yellow: @yellow;\n      --color-venmo: @blue;\n      --color-vk: @blue;\n      --color-amazon: @yellow;\n      --color-background-button-text-hover: @surface0;\n      --color-text-accessible-red: @accent-color;\n      --color-border-input-checkbox: @subtext0;\n      --color-border-input-checkbox-hover: @text;\n      --color-text-label: @text;\n      --color-border-input-hover: @surface0;\n      --color-opac-b-14: @crust;\n      --color-text-button-overlay: @text !important;\n      --color-background-range-overlay-fill: @text !important;\n      --color-text-button-overlay-hover: @text !important;\n      --color-text-tooltip: @base !important;\n      --color-background-tooltip: @text !important;\n      --color-hinted-grey-2: @surface0;\n      --color-hinted-grey-15: @text;\n      --color-background-overlay-alt: @mantle;\n      --color-background-button-overlay-primary-hover: @subtext1;\n      --color-background-button-overlay-text-hover: @crust;\n      --color-border-overlay: @surface0;\n      --color-background-button-disabled: @surface0;\n      --color-text-button-disabled: @subtext0;\n    }\n\n    &,\n    [class*=\"ScTokenOverrideCSSVars\"] {\n      --color-text-link: @blue;\n      --color-text-link-active: @sky;\n      --color-text-link-focus: @sky;\n      --color-text-link-hover: @sky;\n      --color-text-link-visited: @lavender;\n    }\n\n    &,\n    [class*=\"ScAccentRegionCssVars\"] {\n      --color-accent: @accent-color;\n    }\n    /* Hardcoded accent color */\n    [style=\"color: rgb(160, 84, 255);\"] {\n      color: @accent-color !important;\n    }\n\n    /* Full screened video player title & description */\n\n    p[data-test-selector=\"stream-info-card-component__subtitle\"],\n    p[data-test-selector=\"stream-info-card-component__description\"] {\n      color: @text !important;\n    }\n\n    /* `Pinned message` popup */\n\n    div.pinned-chat__pinned-by svg {\n      color: @text;\n    }\n\n    p.pinned-chat__message {\n      span {\n        color: @text !important;\n      }\n\n      a {\n        color: @accent-color;\n      }\n    }\n\n    /* `Intended for certain audiences` label */\n\n    div[data-a-target=\"content-classification-warning-disclosure-overlay\"] p {\n      color: @text;\n    }\n\n    /* `Hype Train` popup */\n\n    div.hype-train-progress-bar-info-view__level-container p,\n    div.hype-train-approaching-view__leftSide p,\n    div.hype-train-expanded-layout p,\n    div.hype-train-expanded-layout svg {\n      color: @text;\n    }\n\n    path[d=\"m18 17 4-4V2H6v15h4v4l4-4h4zM12 6h2v6h-2V6zm7 0h-2v6h2V6z\"] {\n      fill: @mantle;\n    }\n\n    /* `Is video buffering?` warning */\n\n    div.low-latency-notification p {\n      color: @text;\n    }\n\n    /* `Includes paid promotion` label */\n\n    div.disclosure-card p,\n    div.disclosure-card svg {\n      color: @text;\n    }\n\n    /* Raiding popup */\n\n    div[data-test-selector=\"raid-banner\"] {\n      color: @text;\n    }\n\n    /* `Predict with Channel Points` popup */\n\n    div[data-test-selector=\"expanded-content\"] p,\n    p[data-test-selector=\"community-prediction-highlight-header__top-predictors\"],\n    p[data-test-selector=\"community-prediction-highlight-body__outcome-title\"] {\n      color: @text;\n    }\n\n    /* TODO: ensure that the poll does not default to this */\n    div[data-test-selector=\"header-content\"] p {\n      color: @text !important;\n    }\n\n    div.channel-points-icon svg,\n    div[data-test-selector=\"header-content\"] span,\n    div[data-test-selector=\"community-prediction-highlight-body__outcome-points\"]\n      span {\n      color: @accent-color;\n    }\n\n    button[data-test-selector=\"community-prediction-highlight-header__how-to-play\"],\n    button[data-test-selector=\"community-prediction-highlight-header__terms-and-conditions\"],\n    button[data-test-selector=\"community-prediction-highlight-header__send-feedback\"],\n    button[data-test-selector=\"community-prediction-highlight-header__dismiss-message\"] {\n      color: @text;\n    }\n\n    /* ??? */\n\n    div.happening-now-disable-prompt p {\n      color: @text !important;\n    }\n\n    /* Gifting sub popup */\n\n    div.mystery-gift-chat-banner {\n      span {\n        color: @accent-color;\n      }\n\n      p {\n        color: @text;\n      }\n    }\n\n    /* VOD metadata */\n\n    div.tw-media-card-stat {\n      color: @text;\n    }\n\n    /* DMCA warning */\n\n    div.muted-segments-alert__content p {\n      color: @text;\n    }\n\n    /* VOD time labels */\n\n    div.vod-seekbar-time-labels p {\n      color: @text !important;\n    }\n\n    /* VOD timestamp */\n\n    div.vod-seekbar-preview-overlay__wrapper p {\n      color: @text !important;\n    }\n\n    /* Seekbar segment */\n\n    div[data-test-selector=\"seekbar-interaction-area__interactionArea\"]\n      span[data-test-selector=\"seekbar-segment__segment\"] {\n      background: @accent-color !important;\n    }\n\n    /* Seekbar DMCA muted segment */\n\n    div[data-test-selector=\"seekbar-interaction-area__interactionArea\"]\n      span[data-test-selector=\"seekbar-segment__segment\"][style*=\"background-color: rgba(212, 73, 73, 0.5);\"] {\n      background: @red !important;\n    }\n\n    /* Seekbar buffered segment */\n\n    div[data-test-selector=\"seekbar-interaction-area__interactionArea\"]\n      span[data-test-selector=\"seekbar-segment__segment\"][style*=\"background-color: rgba(255, 255, 255, 0.85);\"] {\n      background: @overlay2 !important;\n    }\n\n    /* Recent VOD title */\n\n    div.player-overlay-background h4 {\n      color: @subtext0 !important;\n    }\n\n    a.offline-recommendations-video-card p {\n      color: @text;\n    }\n\n    /* Offline screen follow panel */\n\n    div[data-test-selector=\"follow-panel-overlay\"] p {\n      color: @text !important;\n    }\n\n    div[data-test-selector=\"follow-panel-overlay\"] button div {\n      color: @crust !important;\n    }\n\n    /* Front page warning sign */\n\n    div.content-overlay-gate__content[data-a-target=\"player-overlay-content-gate\"]\n      div.content-overlay-icon\n      svg {\n      color: @red;\n    }\n\n    /* Front page age warning */\n\n    div.content-overlay-gate__content[data-a-target=\"player-overlay-content-gate\"]\n      p.content-overlay-gate__allow-pointers {\n      color: @red !important;\n    }\n\n    /* Front page age selector */\n\n    div[data-a-target=\"player-overlay-age-gate-form\"] select {\n      color: @text;\n    }\n\n    /* Following usercard */\n\n    div[data-a-target=\"user-card-modal\"] p {\n      color: @text !important;\n    }\n\n    /* PiP username */\n\n    div.mini-overlay__title span {\n      color: @text;\n    }\n\n    /* Viewercard username */\n\n    div.viewer-card-header__display-name h4 {\n      color: @accent-color !important;\n    }\n\n    /* Viewercard metadata */\n\n    div.viewer-card-header__display-name svg:not(button svg) {\n      color: @subtext1;\n    }\n\n    div.viewer-card-header__display-name p {\n      color: @text !important;\n    }\n\n    /* Extension name */\n\n    div[aria-describedby=\"popover-extensions-body\"] h6 {\n      color: @text;\n    }\n\n    /* Extension description */\n\n    div.extensions-popover-view-layout__body p {\n      color: @text;\n    }\n\n    /* Extension service buttons */\n\n    div.extensions-popover-view-layout__body svg {\n      color: @subtext0;\n    }\n\n    div.extensions-popover-view-layout__body div {\n      color: @text;\n    }\n\n    /* Extension overlay */\n\n    .extension-view__iframe {\n      color-scheme: light;\n    }\n\n    .carousel-metadata {\n      background: @crust;\n    }\n    .carousel-metadata--fadeout {\n      background: @crust;\n    }\n    .chat-line__timestamp {\n      color: @subtext0;\n    }\n    .chat-line__message-body--highlighted {\n      background-color: @accent-color;\n      color: @crust;\n      border-color: @accent-color;\n    }\n    .chat-scrollable-area__message-container {\n      background-color: @mantle;\n    }\n    .side-nav-card__link:hover {\n      background: @surface0 !important;\n    }\n    .footer {\n      background: @crust;\n    }\n    .whispers-list-item--selected,\n    .whispers-list-item:hover {\n      background-color: @surface0;\n    }\n    .thread-header__title-bar-container--focused {\n      background-color: @mantle;\n    }\n    .thread-header__title-bar-container {\n      background: @mantle;\n    }\n    .thread-header__click-area:focus .thread-header__title-bar-container {\n      background-color: @mantle;\n    }\n    .navigation-link {\n      color: @text;\n\n      &:hover,\n      .active {\n        color: @accent-color;\n      }\n    }\n    .navigation-link__active-indicator {\n      background-color: @accent-color !important;\n    }\n    .chat-room {\n      background: @mantle;\n    }\n    div.pinned-chat__highlight-card div.highlight {\n      background: @mantle;\n    }\n\n    h4,\n    h5 {\n      color: @text;\n    }\n\n    .server-message-alert {\n      border-color: @red !important;\n      border-left-color: @red !important;\n    }\n\n    .server-message-alert__icon {\n      color: @red !important;\n    }\n\n    /* Predictions */\n    .fixed-prediction-button {\n      color: @mantle !important;\n\n      .channel-points-icon svg {\n        color: @mantle !important;\n      }\n\n      &.fixed-prediction-button--disabled {\n        color: @text !important;\n\n        .channel-points-icon svg {\n          color: @text !important;\n        }\n      }\n    }\n    [style*=\"rgb(255, 255, 255)\"] {\n      color: @base !important;\n    }\n    [style=\"color: rgb(56, 122, 255);\"] {\n      color: @blue !important;\n    }\n    [style=\"color: rgb(245, 0, 155);\"] {\n      color: @pink !important;\n    }\n    .fixed-prediction-button--blue,\n    [style*=\"background-color: rgb(56, 122, 255);\"],\n    [style*=\"background: rgb(56, 122, 255);\"] {\n      background-color: @blue !important;\n    }\n    .fixed-prediction-button--pink,\n    [style*=\"background-color: rgb(245, 0, 155);\"],\n    [style*=\"background: rgb(245, 0, 155);\"] {\n      background-color: @pink !important;\n    }\n\n    input[disabled] {\n      background-color: @surface0;\n    }\n    .chat-wysiwyg-input__placeholder {\n      color: @subtext0;\n    }\n\n    button[aria-label=\"Play\"],\n    button[aria-label=\"Pause\"] {\n      + div svg {\n        color: @subtext0;\n      }\n    }\n\n    [data-a-target=\"video-ad-label\"],\n    [data-a-target=\"video-ad-countdown\"] {\n      color: @text !important;\n    }\n\n    /* Verified badge checkmark */\n    path[fill=\"#fff\"] {\n      fill: @crust !important;\n    }\n\n    /* Override for logo icon */\n    .tw-animated-glitch-logo {\n      --color-white: @crust;\n    }\n\n    /* Modals */\n    .modal__content {\n      color: @text;\n    }\n  }\n}\n\n@-moz-document domain(\"dashboard.twitch.tv\") {\n  .tw-root--theme-dark {\n    #catppuccin(@darkFlavor);\n  }\n  .tw-root--theme-light {\n    #catppuccin(@lightFlavor);\n  }\n\n  #catppuccin(@lookup) {\n    @base: @catppuccin[@@lookup][@base];\n    @mantle: @catppuccin[@@lookup][@mantle];\n    .simplebar-content {\n      background-color: @mantle;\n    }\n    .scrollable-area--suppress-scroll-x > .simplebar-scroll-content,\n    .scrollable-area--suppress-scroll-x\n      > .simplebar-scroll-content\n      > .simplebar-content {\n      background-color: @base;\n    }\n  }\n}\n\n/* prettier-ignore */\n@catppuccin: {\n  @latte:     { @rosewater: #dc8a78; @flamingo: #dd7878; @pink: #ea76cb; @mauve: #8839ef; @red: #d20f39; @maroon: #e64553; @peach: #fe640b; @yellow: #df8e1d; @green: #40a02b; @teal: #179299; @sky: #04a5e5; @sapphire: #209fb5; @blue: #1e66f5; @lavender: #7287fd; @text: #4c4f69; @subtext1: #5c5f77; @subtext0: #6c6f85; @overlay2: #7c7f93; @overlay1: #8c8fa1; @overlay0: #9ca0b0; @surface2: #acb0be; @surface1: #bcc0cc; @surface0: #ccd0da; @base: #eff1f5; @mantle: #e6e9ef; @crust: #dce0e8; };\n  @frappe:    { @rosewater: #f2d5cf; @flamingo: #eebebe; @pink: #f4b8e4; @mauve: #ca9ee6; @red: #e78284; @maroon: #ea999c; @peach: #ef9f76; @yellow: #e5c890; @green: #a6d189; @teal: #81c8be; @sky: #99d1db; @sapphire: #85c1dc; @blue: #8caaee; @lavender: #babbf1; @text: #c6d0f5; @subtext1: #b5bfe2; @subtext0: #a5adce; @overlay2: #949cbb; @overlay1: #838ba7; @overlay0: #737994; @surface2: #626880; @surface1: #51576d; @surface0: #414559; @base: #303446; @mantle: #292c3c; @crust: #232634; };\n  @macchiato: { @rosewater: #f4dbd6; @flamingo: #f0c6c6; @pink: #f5bde6; @mauve: #c6a0f6; @red: #ed8796; @maroon: #ee99a0; @peach: #f5a97f; @yellow: #eed49f; @green: #a6da95; @teal: #8bd5ca; @sky: #91d7e3; @sapphire: #7dc4e4; @blue: #8aadf4; @lavender: #b7bdf8; @text: #cad3f5; @subtext1: #b8c0e0; @subtext0: #a5adcb; @overlay2: #939ab7; @overlay1: #8087a2; @overlay0: #6e738d; @surface2: #5b6078; @surface1: #494d64; @surface0: #363a4f; @base: #24273a; @mantle: #1e2030; @crust: #181926; };\n  @mocha:     { @rosewater: #f5e0dc; @flamingo: #f2cdcd; @pink: #f5c2e7; @mauve: #cba6f7; @red: #f38ba8; @maroon: #eba0ac; @peach: #fab387; @yellow: #f9e2af; @green: #a6e3a1; @teal: #94e2d5; @sky: #89dceb; @sapphire: #74c7ec; @blue: #89b4fa; @lavender: #b4befe; @text: #cdd6f4; @subtext1: #bac2de; @subtext0: #a6adc8; @overlay2: #9399b2; @overlay1: #7f849c; @overlay0: #6c7086; @surface2: #585b70; @surface1: #45475a; @surface0: #313244; @base: #1e1e2e; @mantle: #181825; @crust: #11111b; };\n}\n\n// vim:ft=less\n",
+    "usercssData": {
+      "name": "Twitch Catppuccin",
+      "namespace": "github.com/catppuccin/userstyles/styles/twitch",
+      "homepageURL": "https://github.com/catppuccin/userstyles/tree/main/styles/twitch",
+      "version": "1.3.1",
+      "updateURL": "https://github.com/catppuccin/userstyles/raw/main/styles/twitch/catppuccin.user.css",
+      "supportURL": "https://github.com/catppuccin/userstyles/issues?q=is%3Aopen+is%3Aissue+label%3Atwitch",
+      "description": "Soothing pastel theme for Twitch",
+      "author": "Catppuccin",
+      "license": "MIT",
+      "preprocessor": "less",
+      "vars": {
+        "lightFlavor": {
+          "type": "select",
+          "label": "Light Flavor",
+          "name": "lightFlavor",
+          "value": "mocha",
+          "default": "latte",
+          "options": [
+            {
+              "name": "latte",
+              "label": "Latte",
+              "value": "latte"
+            },
+            {
+              "name": "frappe",
+              "label": "Frappé",
+              "value": "frappe"
+            },
+            {
+              "name": "macchiato",
+              "label": "Macchiato",
+              "value": "macchiato"
+            },
+            {
+              "name": "mocha",
+              "label": "Mocha",
+              "value": "mocha"
+            }
+          ]
+        },
+        "darkFlavor": {
+          "type": "select",
+          "label": "Dark Flavor",
+          "name": "darkFlavor",
+          "value": null,
+          "default": "mocha",
+          "options": [
+            {
+              "name": "latte",
+              "label": "Latte",
+              "value": "latte"
+            },
+            {
+              "name": "frappe",
+              "label": "Frappé",
+              "value": "frappe"
+            },
+            {
+              "name": "macchiato",
+              "label": "Macchiato",
+              "value": "macchiato"
+            },
+            {
+              "name": "mocha",
+              "label": "Mocha",
+              "value": "mocha"
+            }
+          ]
+        },
+        "accentColor": {
+          "type": "select",
+          "label": "Accent",
+          "name": "accentColor",
+          "value": "lavender",
+          "default": "mauve",
+          "options": [
+            {
+              "name": "rosewater",
+              "label": "Rosewater",
+              "value": "rosewater"
+            },
+            {
+              "name": "flamingo",
+              "label": "Flamingo",
+              "value": "flamingo"
+            },
+            {
+              "name": "pink",
+              "label": "Pink",
+              "value": "pink"
+            },
+            {
+              "name": "mauve",
+              "label": "Mauve",
+              "value": "mauve"
+            },
+            {
+              "name": "red",
+              "label": "Red",
+              "value": "red"
+            },
+            {
+              "name": "maroon",
+              "label": "Maroon",
+              "value": "maroon"
+            },
+            {
+              "name": "peach",
+              "label": "Peach",
+              "value": "peach"
+            },
+            {
+              "name": "yellow",
+              "label": "Yellow",
+              "value": "yellow"
+            },
+            {
+              "name": "green",
+              "label": "Green",
+              "value": "green"
+            },
+            {
+              "name": "teal",
+              "label": "Teal",
+              "value": "teal"
+            },
+            {
+              "name": "blue",
+              "label": "Blue",
+              "value": "blue"
+            },
+            {
+              "name": "sapphire",
+              "label": "Sapphire",
+              "value": "sapphire"
+            },
+            {
+              "name": "sky",
+              "label": "Sky",
+              "value": "sky"
+            },
+            {
+              "name": "lavender",
+              "label": "Lavender",
+              "value": "lavender"
+            },
+            {
+              "name": "subtext0",
+              "label": "Gray",
+              "value": "subtext0"
+            }
+          ]
+        }
+      }
+    },
+    "author": "Catppuccin",
+    "description": "Soothing pastel theme for Twitch",
+    "url": "https://github.com/catppuccin/userstyles/tree/main/styles/twitch",
+    "updateUrl": "https://github.com/catppuccin/userstyles/raw/main/styles/twitch/catppuccin.user.css",
+    "name": "Twitch Catppuccin",
+    "originalDigest": "2e8eba94902efff70ce8831ca61ec036ea7baa3e",
+    "_id": "0a0ee36d-9a02-48d8-ab2d-e913d8c0bf40",
+    "_rev": 1720969412390,
+    "id": 34
   }
 ]

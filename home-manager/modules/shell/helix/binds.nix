@@ -1,7 +1,10 @@
 let
   binds = {
     "C-x" = ":q";
-    "C-s" = ":w";
+    "C-s" = [
+      ":w"
+      "normal_mode"
+    ];
     "C-c" = "normal_mode";
     "C-7" = "toggle_comments";
     "C-/" = "toggle_comments";

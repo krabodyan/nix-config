@@ -12,13 +12,11 @@
       leftMeters [
         (bar "LeftCPUs")
         (text "Blank")
-        (text "Blank")
         (bar "CPU")
         (bar "Memory")
       ]
       // rightMeters [
         (bar "RightCPUs")
-        (text "Blank")
         (text "Blank")
         (text "Blank")
         (text "LoadAverage")
