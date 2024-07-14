@@ -10,23 +10,22 @@
     checkConfig = false;
     wrapperFeatures.gtk = true;
     xwayland = true;
-    package = pkgs.swayfx;
+    # package = pkgs.swayfx;
     extraConfig = ''
-      corner_radius 10
-
-      blur disable
-
-      shadows disable
-
-      default_dim_inactive 0.0
-      # dim_inactive_colors.unfocused #000000FF
-      # dim_inactive_colors.urgent #000000FF
-
-      scratchpad_minimize disable
-
       titlebar_border_thickness 0
       default_border pixel 1
     '';
+    # corner_radius 10
+
+    # blur disable
+
+    # shadows disable
+
+    # default_dim_inactive 0.0
+    # # dim_inactive_colors.unfocused #000000FF
+    # # dim_inactive_colors.urgent #000000FF
+
+    # scratchpad_minimize disable
     config = {
       modifier = "Mod4";
       terminal = "foot";
@@ -111,7 +110,7 @@
             text = mkHex fg-dark;
           };
           focused = {
-            background = mkHex bg;
+            background = mkHex bg + "E6";
             border = mkHex accent;
             childBorder = mkHex accent;
             indicator = mkHex fg;
