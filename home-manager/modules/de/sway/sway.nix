@@ -48,6 +48,12 @@
 
       window.commands = [
         {
+          command = "floating enable";
+          criteria = {
+            app_id = "floaterm";
+          };
+        }
+        {
           command = "border pixel 1";
           criteria = {
             app_id = ".*";
@@ -152,6 +158,7 @@
         in
         {
           "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";
+          "${mod}+Shift+Return" = "exec ${pkgs.foot}/bin/foot -a floaterm";
           "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot ${pkgs.yazi}/bin/yazi";
           "${mod}+d" = "exec ${pkgs.rofi-wayland}/bin/rofi -show drun -kb-cancel 'Alt+Return'";
 
