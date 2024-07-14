@@ -106,7 +106,7 @@
             background = mkHex bg-dark;
             border = mkHex border-unfocused;
             childBorder = mkHex border-unfocused;
-            indicator = mkHex bg-dark;
+            indicator = mkHex border-unfocused;
             text = mkHex fg-dark;
           };
           focused = {

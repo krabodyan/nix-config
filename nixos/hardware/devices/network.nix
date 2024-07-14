@@ -13,11 +13,7 @@
         #static domain_name_servers=8.8.8.8
       '';
     };
-    # nameservers = [
-    # "1.1.1.1"
-    # "8.8.8.8"
-    # "8.8.4.4"
-    # ];
+    nameservers = [ "1.1.1.1" ];
     useDHCP = true;
     firewall.enable = false;
     hostName = "nixos";
