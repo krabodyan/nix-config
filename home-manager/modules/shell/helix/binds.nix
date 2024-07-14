@@ -55,6 +55,11 @@ let
 in
 {
   normal = binds // special;
-  insert = binds;
+  insert = binds // {
+    ret = [
+      "insert_newline"
+      "commit_undo_checkpoint"
+    ];
+  };
   select = binds // special;
 }
