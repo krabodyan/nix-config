@@ -3,21 +3,21 @@
   file_watch_support = false;
 
   language-server = with pkgs; {
-    # ruff = {
-    #   command = "${ruff-lsp}/bin/ruff-lsp";
-    #   settings_section = "_";
-    # };
-    # ruff.settings._.globalSettings = {
-    #   organizeImports = true;
-    #   fixAll = true;
-    #   codeAction.disableRuleComment.enable = false;
-    #   codeAction.fixViolation.enable = false;
-    # };
-    nil = {
+    ruff = {
+      command = "${ruff-lsp}/bin/ruff-lsp";
+      settings_section = "_";
+    };
+    ruff.settings._.globalSettings = {
+      organizeImports = true;
+      fixAll = true;
+      codeAction.disableRuleComment.enable = false;
+      codeAction.fixViolation.enable = false;
+    };
+    nix = {
       command = "${nil}/bin/nil";
     };
-    pylsp = {
-      # command = "${pkgs.basedpyright}/bin/basedpyright-langserver";
+    python = {
+      # command = "${pkgs.pyright}/bin/pyright-langserver";
       # args = [ "--stdio" ];
       command = "${python312Packages.python-lsp-server}/bin/pylsp";
     };
@@ -27,7 +27,7 @@
       name = "nix";
       auto-format = true;
       comment-token = "#";
-      language-servers = [ "nil" ];
+      language-servers = [ "nix" ];
       formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
     }
     {
@@ -35,8 +35,8 @@
       auto-format = true;
       comment-token = "#";
       language-servers = [
-        "pylsp"
-        # "ruff"
+        "python"
+        "ruff"
       ];
       formatter = {
         command = "${pkgs.black}/bin/black";
