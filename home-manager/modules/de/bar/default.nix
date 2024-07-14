@@ -9,24 +9,19 @@
       # mode = "invisible";
       # start_hidden = true;
       width = 26;
-      # height = 360;
+      height = 360;
       spacing = 0;
       margin = "0";
       padding = "0";
-      margin-top = 370;
-      margin-bottom = 370;
-      margin-right = 0;
-      margin-left = 0;
+      # margin-right = 0;
+      # margin-left = 0;
 
       modules-left = [
         "battery"
         "network"
         "tray"
       ];
-      modules-center = [
-        "sway/workspaces"
-        "sway/window"
-      ];
+      modules-center = [ "sway/workspaces" ];
       modules-right = [
         "sway/language"
         "clock"
@@ -49,10 +44,6 @@
           "5" = [ ];
         };
         window-rewrite = { };
-      };
-
-      "sway/window" = {
-        format = "";
       };
 
       tray = {
@@ -114,25 +105,10 @@
         margin: 0;
       }
 
-      window#waybar,
-      window#waybar.solo {
-        background: rgba(30, 30, 46, 1);
+      window#waybar {
+        background-color: transparent; 
+        border-radius: 8px;
       }
-
-      window#waybar.stacked,
-      window#waybar.tabbed {
-        background: red;
-      }
-
-      window#waybar.foot {
-        background: rgba(30, 30, 46, 0.9);
-      }
-
-      window#waybar.empty,
-      window#waybar.tiled,
-      window#waybar.floating {
-        background: transparent;
-      }      
 
       #language,
       #tray,
@@ -148,6 +124,7 @@
 
       #clock {
         font-size: 10px;
+        margin-bottom: 10px;
       }
 
       #language {
@@ -156,6 +133,7 @@
 
       #battery {
         font-size: 10px;
+        margin-top: 10px;
       }
 
       #workspaces button,
@@ -173,7 +151,7 @@
 
       tooltip,
       #tray menu {
-        border: solid #${accent} 2px;
+        border: solid #${accent} 1px;
         border-radius: 8px;
         padding: 8px 0;
         background-color: #${bg};
