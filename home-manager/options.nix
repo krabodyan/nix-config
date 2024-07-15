@@ -34,7 +34,7 @@
         red = "f38ba8";
         green = "21d98e";
         yellow = "f9e2af";
-        blue = "649dfa";
+        blue = "89b4fa";
         magenta = "cba6f7";
         cyan = "74c7ec";
         orange = "eba0ac";
