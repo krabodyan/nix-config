@@ -278,7 +278,7 @@
           "type": "checkbox",
           "label": "Enable black bars",
           "name": "oled",
-          "value": "1",
+          "value": "0",
           "default": "0",
           "options": null
         }
@@ -291,7 +291,7 @@
     "name": "YouTube Catppuccin",
     "originalDigest": "1c51defb488e9edde9d838ca16ceb61380e2bcca",
     "_id": "7d7e9f5b-b0c8-4f58-b67f-d920e8e9bc63",
-    "_rev": 1720969485444,
+    "_rev": 1720988120480,
     "id": 20
   },
   {
@@ -811,7 +811,7 @@
           "type": "checkbox",
           "label": "Zen Mode",
           "name": "zenMode",
-          "value": "1",
+          "value": "0",
           "default": "0",
           "options": null
         }
@@ -824,7 +824,7 @@
     "name": "DeepL Catppuccin",
     "originalDigest": "59508e7ccb4ae1e645863020fd2c94f3a3799c91",
     "_id": "ab97b3f3-d7a5-415d-8ed3-dca5ce36be96",
-    "_rev": 1720969540583,
+    "_rev": 1721043986253,
     "id": 23
   },
   {
