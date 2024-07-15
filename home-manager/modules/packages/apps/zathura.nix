@@ -27,7 +27,7 @@
         notification-warning-bg = mkHex pink;
         notification-error-bg = mkHex red;
         notification-bg = mkHex bg;
-        notification-fg = mkHex lightgreen;
+        notification-fg = mkHex green;
       };
   };
   xdg.mimeApps.defaultApplications = {

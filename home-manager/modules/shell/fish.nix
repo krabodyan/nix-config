@@ -29,7 +29,7 @@
     interactiveShellInit = with config.colors; ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       set -g fish_color_normal ${fg}
-      set -g fish_color_command ${lightgreen}
+      set -g fish_color_command ${green}
       set -g fish_color_keyword -i ${yellow}
       set -g fish_color_quote -i ${yellow}
       set -g fish_color_redirection ${blue}
@@ -40,14 +40,14 @@
       set -g fish_color_comment -i ${fg-dark}
       set -g fish_color_selection --background=${bg-dark}
       set -g fish_color_search_match --background=${bg-dark}
-      set -g fish_color_operator ${lightgreen}
+      set -g fish_color_operator ${green}
       set -g fish_color_escape ${pink}
       set -g fish_color_autosuggestion ${fg-dark}
       set -g fish_color_valid_path ${blue}
       set -g fish_color_cancel ${red}
 
       set -g fish_pager_color_progress ${fg-dark}
-      set -g fish_pager_color_prefix ${lightgreen}
+      set -g fish_pager_color_prefix ${green}
       set -g fish_pager_color_completion ${fg}
       set -g fish_pager_color_description -i ${fg-dark}
       set -g fish_pager_color_selected_background --background=${fg-dark}

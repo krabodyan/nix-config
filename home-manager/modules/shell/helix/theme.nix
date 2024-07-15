@@ -265,8 +265,8 @@
 
     error = mkHex red;
     warning = mkHex yellow;
-    info = mkHex lightgreen;
-    hint = mkHex lightgreen;
+    info = mkHex green;
+    hint = mkHex green;
 
     palette = {
       rosewater = "#f5e0dc";

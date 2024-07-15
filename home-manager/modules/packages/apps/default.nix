@@ -10,7 +10,7 @@
     ./zathura.nix
     #./zoom.nix
     ./protonvpn.nix
-    #./office.nix
+    ./office.nix
     #./ide.nix
     ./swayimg.nix
     ./vscode.nix

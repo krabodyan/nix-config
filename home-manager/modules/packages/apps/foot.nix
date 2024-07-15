@@ -59,7 +59,7 @@
         regular3 = "${yellow}";
         regular4 = "${blue}";
         regular5 = "${magenta}";
-        regular6 = "${cyan}";
+        regular6 = "${accent}";
         regular7 = "${fg-bright}";
         bright0 = "${black}";
         bright1 = "${red}";
@@ -67,7 +67,7 @@
         bright3 = "${yellow}";
         bright4 = "${blue}";
         bright5 = "${magenta}";
-        bright6 = "${cyan}";
+        bright6 = "${accent}";
         bright7 = "${fg-bright}";
 
       };

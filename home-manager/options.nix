@@ -31,16 +31,15 @@
         fg-bright = "a6adc8";
 
         black = "45475a";
-        red = "FC7971";
-        green = "00FF6A";
+        red = "f38ba8";
+        green = "21d98e";
         yellow = "f9e2af";
-        blue = "63e7ff";
-        magenta = "bd94eb";
-        cyan = "00FFDE";
-        orange = "ef9f76";
-        pink = "ff1181";
-        peach = "fa8967";
-        lightgreen = "00FF96";
+        blue = "89b4fa";
+        magenta = "cba6f7";
+        cyan = "74c7ec";
+        orange = "eba0ac";
+        pink = "f5c2e7";
+        peach = "f2cdcd";
       };
     };
   };
