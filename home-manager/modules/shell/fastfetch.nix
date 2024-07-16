@@ -18,10 +18,10 @@
         keyWidth = 8;
       };
       modules = [
-        # {
-        #   key = " ";
-        #   type = "custom";
-        # }
+        {
+          key = " ";
+          type = "custom";
+        }
         {
           key = "╭────╮";
           type = "custom";
