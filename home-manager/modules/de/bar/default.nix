@@ -30,9 +30,9 @@
       "sway/workspaces" = {
         format = "<span font='SymbolsNerdFont 9.5'>{icon}</span>";
         format-icons = {
-          default = "󰊠"; # "󱓻";
-          focused = "󰮯"; # "󱓻";
-          persistent = ""; # "󱓼";
+          default = ""; # "󰊠"; # "󱓻";
+          focused = ""; # "󰮯"; # "󱓻";
+          persistent = ""; # ""; # "󱓼";
         };
         tooltip = false;
         disable-scroll = true;
@@ -70,18 +70,18 @@
       };
 
       network = {
-        format-wifi = "<span font='SymbolsNerdFont'>󰤨</span>";
-        format-ethernet = "<span font='SymbolsNerdFont'>󰤨</span>";
-        format-linked = "<span font='SymbolsNerdFont'>󰤨</span>";
-        format-disconnected = "<span font='SymbolsNerdFont'>󰤭</span>";
-        format-disabled = "<span font='SymbolsNerdFont'>󰤭</span>";
+        format-wifi = "<span font='SymbolsNerdFont 7'>󰤨</span>";
+        format-ethernet = "<span font='SymbolsNerdFont 7'>󰤨</span>";
+        format-linked = "<span font='SymbolsNerdFont 7'>󰤨</span>";
+        format-disconnected = "<span font='SymbolsNerdFont 7'>󰤭</span>";
+        format-disabled = "<span font='SymbolsNerdFont 7'>󰤭</span>";
         tooltip-format = "{ifname}: {ipaddr}/{cidr}";
         tooltip-format-disconnected = "disconnected";
         tooltip-format-disabled = "disabled";
       };
 
       battery = {
-        format = "<span font='SymbolsNerdFont'>{icon}</span>";
+        format = "<span font='SymbolsNerdFont 7'>{icon}</span>";
         format-alt = "{capacity}";
         format-icons = [
           ""
@@ -123,16 +123,16 @@
       }
 
       #clock {
-        font-size: 10px;
+        font-size: 9.5px;
         margin-bottom: 10px;
       }
 
       #language {
-        font-size: 10px;
+        font-size: 9.5px;
       }
 
       #battery {
-        font-size: 10px;
+        font-size: 8px;
         margin-top: 10px;
       }
 

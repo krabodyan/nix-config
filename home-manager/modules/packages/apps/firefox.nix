@@ -24,6 +24,33 @@
       "media.ffmpeg.encoder.enabled" = true;
       "security.sandbox.content.level" = 0;
       "widget.wayland.opaque-region.enabled" = false;
+
+      "svg.context-properties.content.enabled" = true;
+      "layout.css.color-mix.enabled" = true;
+      "layout.css.light-dark.enabled" = true;
+      "browser.tabs.tabMinWidth" = 66;
+      "browser.tabs.tabClipWidth" = 86;
+      "fp.tweak.autohide-bookmarks" = true;
+      "fp.tweak.macos-button" = false;
+      "fp.tweak.rounded-corners" = true;
+      "fp.tweak.sidebar-enabled" = false;
+
+      "layout.spellcheckDefault" = 0;
+      "app.update.auto" = false;
+      "app.update.service.enabled" = false;
+      "browser.tabs.insertAfterCurrent" = true;
+      "browser.in-content.dark-mode" = true;
+      "ui.systemUsesDarkTheme" = 1;
+      "browser.startup.page" = 3;
+      "datareporting.healthreport.uploadEnabled" = false;
+      "media.peerconnection.enabled" = false;
+      "browser.search.suggest.enabled.private" = true;
+      "geo.enabled" = false;
+      "geo.wifi.uri" = "";
+      "browser.search.geoip.url" = "";
+      "browser.send_pings.require_same_host" = true;
+      "toolkit.telemetry.enabled" = false;
+      "default-browser-agent.enabled" = false;
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
       DisablePocket = true;
