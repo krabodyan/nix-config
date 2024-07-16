@@ -47,7 +47,7 @@
         pkgs = nixpkgs.legacyPackages.${system};
         extraSpecialArgs = {
           inherit system inputs;
-          helpers = import ./lib;
+          helpers = import ./lib/helpers.nix;
         };
         modules = [ ./home-manager/home.nix ];
       };

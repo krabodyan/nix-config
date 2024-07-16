@@ -40,7 +40,7 @@
         "workspace 3" = [ { app_id = "^vesktop$"; } ];
         "workspace 4" = [
           { class = "^steam$"; }
-          { class = "^DesktopEditors$"; }
+          # { class = "^DesktopEditors$"; }
         ];
         "workspace 6" = [ { app_id = "^(chromium-browser)(.*)$"; } ];
       };
