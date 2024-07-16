@@ -5,8 +5,8 @@
       logo = {
         type = "raw";
         source = "$HOME/nix-config/home-manager/modules/etc/fetch.sixel";
-        width = 25;
-        height = 12;
+        width = 20;
+        height = 10;
         padding = {
           top = 0;
           left = 0;
@@ -18,10 +18,6 @@
         keyWidth = 8;
       };
       modules = [
-        {
-          key = " ";
-          type = "custom";
-        }
         {
           key = "╭────╮";
           type = "custom";
