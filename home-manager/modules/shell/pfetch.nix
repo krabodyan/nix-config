@@ -5,7 +5,7 @@
     sessionVariables = {
       PF_COLOR = 0;
       PF_SEP = " ";
-      PF_INFO = "ascii title os de pkgs uptime";
+      PF_INFO = "ascii title os de shell editor uptime";
     };
   };
 }

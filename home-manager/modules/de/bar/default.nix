@@ -28,11 +28,11 @@
       ];
 
       "sway/workspaces" = {
-        format = "<span font='SymbolsNerdFont 9.5'>{icon}</span>";
+        format = "<span font='SymbolsNerdFont 10.5'>{icon}</span>";
         format-icons = {
           default = ""; # "󰊠"; # "󱓻";
           focused = ""; # "󰮯"; # "󱓻";
-          persistent = ""; # ""; # "󱓼";
+          persistent = ""; # ""; # ""; # "󱓼";
         };
         tooltip = false;
         disable-scroll = true;
@@ -136,13 +136,15 @@
         margin-top: 10px;
       }
 
-      #workspaces button,
-      #workspaces button.persistent {
+      #workspaces button {
         color: #${fg-dark};
+      }
+      #workspaces button.persistent {
+        color: #${bg-bright};
       }
 
       #workspaces button.focused {
-        color: #${fg};
+        color: #${accent};
       }
 
       #workspaces button.urgent {

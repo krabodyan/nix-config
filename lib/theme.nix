@@ -24,7 +24,7 @@
         bg = "1E1E2E";
         border-unfocused = "00000000";
         bg-dark = "161621";
-        bg-bright = "32324d";
+        bg-bright = "393959";
 
         fg = "a0aae3";
         fg-dark = "616991";
