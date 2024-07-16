@@ -51,6 +51,7 @@ let
       "collapse_selection"
       "keep_primary_selection"
     ];
+    f = "file_picker_in_current_buffer_directory";
     p = "paste_clipboard_after";
     P = "paste_clipboard_before";
     y = "yank_main_selection_to_clipboard";

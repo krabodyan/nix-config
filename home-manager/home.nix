@@ -9,7 +9,7 @@
   news.display = "silent";
   imports = [
     ./modules
-    ./options.nix
+    ../lib/theme.nix
   ];
 
   xdg = {
