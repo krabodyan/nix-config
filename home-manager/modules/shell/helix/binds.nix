@@ -4,8 +4,12 @@ let
     "C-s" = [
       ":w"
       "normal_mode"
+      "commit_undo_checkpoint"
     ];
-    "C-c" = "normal_mode";
+    "C-c" = [
+      "normal_mode"
+      "commit_undo_checkpoint"
+    ];
     "C-7" = "toggle_comments";
     "C-/" = "toggle_comments";
     "C-A-up" = [

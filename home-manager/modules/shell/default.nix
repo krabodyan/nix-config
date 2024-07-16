@@ -10,6 +10,7 @@
     ./pfetch.nix
     ./tmux.nix
     ./ripgrep.nix
+    ./fastfetch.nix
   ];
 
   home.packages = with pkgs; [
