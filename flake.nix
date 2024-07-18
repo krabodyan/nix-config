@@ -31,6 +31,7 @@
     }@inputs:
     let
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -43,13 +44,18 @@
           (import ./disko.nix { device = "/dev/nvme0n1"; })
         ];
       };
+
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
+        inherit pkgs;
         extraSpecialArgs = {
           inherit system inputs;
           helpers = import ./lib/helpers.nix;
         };
         modules = [ ./home-manager/home.nix ];
+      };
+
+      devShells.${system}.default = pkgs.mkShell {
+        buildInputs = [ (pkgs.python3.withPackages (ps: [ ps.libtorrent-rasterbar ])) ];
       };
     };
 }

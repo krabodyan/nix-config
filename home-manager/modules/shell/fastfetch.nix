@@ -1,10 +1,11 @@
+{ config, ... }:
 {
   programs.fastfetch = {
     enable = true;
     settings = {
       logo = {
         type = "raw";
-        source = "$HOME/nix-config/home-manager/modules/etc/fetch.sixel";
+        source = "${config.home.homeDirectory}/nix-config/home-manager/modules/etc/fetch.sixel";
         width = 22;
         height = 9;
         padding = {
