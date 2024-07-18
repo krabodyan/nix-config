@@ -31,8 +31,8 @@
         format = "<span font='SymbolsNerdFont 10.5'>{icon}</span>";
         format-icons = {
           default = ""; # "󰊠"; # "󱓻";
-          focused = ""; # "󰮯"; # "󱓻";
-          persistent = ""; # ""; # ""; # "󱓼";
+          # focused = ""; # "󰮯"; # "󱓻";
+          # persistent = ""; # ""; # ""; # "󱓼";
         };
         tooltip = false;
         disable-scroll = true;

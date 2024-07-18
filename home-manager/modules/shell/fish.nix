@@ -57,7 +57,7 @@
       set fish_greeting
 
       function fish_prompt
-        printf "\033[1;34m\033[4 q%s ➜ \033[0m" (prompt_pwd)
+        printf "\033[1;34m\033[4 q%s 󰧞 \033[0m" (prompt_pwd)
       end
 
       set -U __done_notification_duration 4000

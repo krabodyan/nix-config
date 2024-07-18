@@ -22,7 +22,7 @@
           font-bold-italic = "${font}:style=Bold Italic";
 
           box-drawings-uses-font-glyphs = false;
-          pad = "30x20";
+          pad = "24x18";
           dpi-aware = "yes";
           resize-by-cells = false;
           resize-delay-ms = 0;

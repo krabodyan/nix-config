@@ -47,6 +47,7 @@
     "image/svg" = "swayimg.desktop";
     "image/jpg" = "swayimg.desktop";
     "image/heic" = "swayimg.desktop";
+    "image/avif" = "swayimg.desktop";
     "image/heif" = "swayimg.desktop";
   };
 }

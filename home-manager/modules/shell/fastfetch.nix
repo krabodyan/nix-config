@@ -6,8 +6,8 @@
       logo = {
         type = "raw";
         source = "${config.home.homeDirectory}/nix-config/home-manager/modules/etc/fetch.sixel";
-        width = 22;
-        height = 9;
+        width = 15;
+        height = 8;
         padding = {
           top = 0;
           left = 0;

@@ -29,7 +29,6 @@
     system-config-printer
     pavucontrol
     zathura
-    wf-recorder
     adwsteamgtk
   ];
 }
