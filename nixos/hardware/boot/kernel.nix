@@ -29,14 +29,9 @@
     };
 
     kernelParams = [
-      #"apm=power_off"
-      #"acpi=force"
-      #"reboot=acpi"
       "nohibernate"
-      # "ibt=off"
       "rootfstype=btrfs"
     ];
-    # supportedFilesystems = [ "btrfs" ];
     # kernelPackages = pkgs.linuxPackages_cachyos;
     extraModprobeConfig = ''
       options i915 enable_guc=2
@@ -68,7 +63,7 @@
       "usbhid"
     ];
     # initrd.kernelModules = [ ];
-    initrd.compressor = pkg: "${pkg.lz4}/bin/lz4";
+    # initrd.compressor = pkg: "${pkg.lz4}/bin/lz4";
     kernelModules = [ ]; # "v4l2loopback" ]; # "i915" "uinput" ];
     # extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
   };
