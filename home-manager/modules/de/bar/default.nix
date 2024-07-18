@@ -99,7 +99,7 @@
         min-height: 0;
         border: none;
         font-family: JetBrainsMono Nerd Font;
-        font-weight: bold;
+        font-weight: 700;
         font-size: 11px;
         padding: 0;
         margin: 0;
@@ -123,12 +123,12 @@
       }
 
       #clock {
-        font-size: 9.5px;
+        font-size: 10px;
         margin-bottom: 10px;
       }
 
       #language {
-        font-size: 9.5px;
+        font-size: 10px;
       }
 
       #battery {
