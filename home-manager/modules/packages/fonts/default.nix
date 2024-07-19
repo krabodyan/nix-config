@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     corefonts
+    font-awesome
     noto-fonts
     noto-fonts-emoji
     roboto
@@ -19,7 +20,7 @@
       serif = [ "Roboto Medium" ];
       sansSerif = [ "Roboto Medium" ];
       monospace = [ config.font ];
-      emoji = [ "Noto Color Emoji" ];
+      emoji = [ "Font Awesome 6 Free" ];
     };
   };
   xdg.configFile."fontconfig/fonts.conf".source = ./fonts.conf;
