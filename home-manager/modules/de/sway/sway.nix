@@ -172,17 +172,18 @@
           "${mod}+Shift+l" = "exec swaylock";
           "${mod}+w" = "exec pkill -SIGUSR1 waybar";
 
-          "${mod}+Left" = "focus left";
-          "${mod}+Down" = "focus down";
-          "${mod}+Right" = "focus right";
-          "${mod}+Up" = "focus up";
+          "${mod}+l" = "focus left";
+          "${mod}+k" = "focus down";
+          "${mod}+j" = "focus right";
+          "${mod}+i" = "focus up";
 
           "${mod}+Shift+Up" = "move up 20px";
           "${mod}+Shift+Down" = "move down 20px";
           "${mod}+Shift+Left" = "move left 20px";
           "${mod}+Shift+Right" = "move right 20px";
 
-          "${mod}+Shift+s" = "layout tabbed";
+          "${mod}+Tab" = "focus next";
+          "${mod}+c" = "layout tabbed";
           "${mod}+s" = "layout toggle";
           "${mod}+t" = "fullscreen";
           "${mod}+e" = "splitv";
@@ -221,7 +222,7 @@
           F4 = "exec ${microphone}/bin/microphone";
           XF86MonBrightnessUp = "exec ${brightness}/bin/brightness up";
           XF86MonBrightnessDown = "exec ${brightness}/bin/brightness down";
-          "${mod}+Tab" = "exec ${brightness}/bin/brightness toggle";
+          "Alt+Tab" = "exec ${brightness}/bin/brightness toggle";
         };
     };
   };
