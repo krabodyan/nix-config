@@ -154,6 +154,10 @@
             inherit pkgs;
             colors = config.colors;
           };
+          left = "j";
+          right = "l";
+          up = "i";
+          down = "k";
         in
         {
           "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";
@@ -169,18 +173,23 @@
           "${mod}+Print" = "exec ${screenshot}/bin/screenshot swayimg";
           "${mod}+Shift+Print" = "exec wl-paste | swappy -f -";
 
-          "${mod}+Shift+l" = "exec swaylock";
+          "Ctrl+Alt+l" = "exec swaylock";
           "${mod}+w" = "exec pkill -SIGUSR1 waybar";
 
-          "${mod}+l" = "focus left";
-          "${mod}+k" = "focus down";
-          "${mod}+j" = "focus right";
-          "${mod}+i" = "focus up";
+          "${mod}+${up}" = "focus up";
+          "${mod}+${down}" = "focus down";
+          "${mod}+${left}" = "focus left";
+          "${mod}+${right}" = "focus right";
 
-          "${mod}+Shift+Up" = "move up 20px";
-          "${mod}+Shift+Down" = "move down 20px";
-          "${mod}+Shift+Left" = "move left 20px";
-          "${mod}+Shift+Right" = "move right 20px";
+          "${mod}+Ctrl+${up}" = "move up 20px";
+          "${mod}+Ctrl+${down}" = "move down 20px";
+          "${mod}+Ctrl+${left}" = "move left 20px";
+          "${mod}+Ctrl+${right}" = "move right 20px";
+
+          "${mod}+Shift+${up}" = "resize grow height 20 px";
+          "${mod}+Shift+${down}" = "resize shrink height 20 px";
+          "${mod}+Shift+${left}" = "resize grow width 20 px";
+          "${mod}+Shift+${right}" = "resize shrink width 20 px";
 
           "${mod}+Tab" = "focus next";
           "${mod}+c" = "layout tabbed";
@@ -206,11 +215,6 @@
           "${mod}+Shift+5" = "move container to workspace number 5";
           "${mod}+Shift+6" = "move container to workspace number 6";
           "${mod}+Shift+7" = "move container to workspace number 7";
-
-          "${mod}+Ctrl+Up" = "resize shrink height 20 px";
-          "${mod}+Ctrl+Down" = "resize grow height 20 px";
-          "${mod}+Ctrl+Right" = "resize shrink width 20 px";
-          "${mod}+Ctrl+Left" = "resize grow width 20 px";
 
           "${mod}+p" = "output \"eDP-1\" power off";
           "${mod}+Shift+p" = "output \"eDP-1\" power on";
