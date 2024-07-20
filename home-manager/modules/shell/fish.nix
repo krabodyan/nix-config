@@ -28,6 +28,9 @@
     '';
     interactiveShellInit = with config.colors; ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+
+      bind \cf accept-autosuggestion
+
       set -g fish_color_normal ${fg}
       set -g fish_color_command ${green}
       set -g fish_color_keyword -i ${yellow}

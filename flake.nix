@@ -55,7 +55,19 @@
       };
 
       devShells.${system}.default = pkgs.mkShell {
-        buildInputs = [ (pkgs.python3.withPackages (ps: [ ps.libtorrent-rasterbar ])) ];
+        buildInputs = [
+          (pkgs.python3.withPackages (
+            ps: with ps; [
+              libtorrent-rasterbar
+              selenium
+              uvloop
+              uvicorn
+              fastapi
+              aiogram
+              matplotlib
+            ]
+          ))
+        ];
       };
     };
 }
