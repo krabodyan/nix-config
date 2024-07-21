@@ -20,9 +20,9 @@
       if test (tty) = "/dev/tty1"
         if test -e /dev/dri/card0 || test -e /dev/dri/card2
           set -x WLR_DRM_DEVICES /dev/dri/card1
-          dbus-run-session sway --unsupported-gpu > /dev/null 2>&1
+          exec dbus-run-session sway --unsupported-gpu > /dev/null 2>&1
         else
-          dbus-run-session sway > /dev/null 2>&1
+          exec dbus-run-session sway > /dev/null 2>&1
         end
       end
     '';

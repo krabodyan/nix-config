@@ -50,9 +50,6 @@
         alpha = "${opacity}";
         background = "${bg}";
         foreground = "${fg}";
-        flash = "${fg-bright}";
-        flash-alpha = 0.7;
-
         regular0 = "${black}";
         regular1 = "${red}";
         regular2 = "${green}";
@@ -69,7 +66,6 @@
         bright5 = "${magenta}";
         bright6 = "${accent}";
         bright7 = "${fg-bright}";
-
       };
     };
   };
