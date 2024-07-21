@@ -21,6 +21,10 @@
       # args = [ "--stdio" ];
       command = "${python312Packages.python-lsp-server}/bin/pylsp";
     };
+    json = {
+      command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
+      args = [ "--stdio" ];
+    };
   };
   language = [
     {
@@ -47,6 +51,11 @@
           "-"
         ];
       };
+    }
+    {
+      name = "json";
+      auto-format = true;
+      language-servers = [ "json" ];
     }
   ];
 }
