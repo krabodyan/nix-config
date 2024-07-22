@@ -3,7 +3,7 @@
   home.packages = [ pkgs.libnotify ];
   services.mako = with config.colors; {
     enable = true;
-    font = "${config.font} Bold 10";
+    font = "${config.font} Bold 11";
     sort = "-time";
     layer = "overlay";
     anchor = "bottom-center";
@@ -15,7 +15,7 @@
     padding = "12,0";
     borderSize = 2;
     borderColor = "#${accent}";
-    borderRadius = 12;
+    borderRadius = 8;
     icons = true;
     iconPath = "${pkgs.papirus-icon-theme}/share/icons/Papirus-Dark";
     maxIconSize = 32;

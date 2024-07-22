@@ -19,7 +19,7 @@
       in
       {
         "*" = {
-          font = "${config.font} Bold 10";
+          font = "${config.font} Bold 11";
           bg = mkLiteral "#${bg}"; # 99
           fg = mkLiteral "#${fg-dark}";
           red = mkLiteral "#${red}";
@@ -37,7 +37,7 @@
           width = mkLiteral "364px";
           height = mkLiteral "134px";
           y-offset = -30;
-          border-radius = 12;
+          border-radius = 6;
           border = 2;
           border-color = mkLiteral "#${accent}";
           background-color = mkLiteral "@bg";
@@ -63,19 +63,17 @@
             "prompt"
             "entry"
           ];
-          border-radius = 10;
         };
 
         prompt = {
           text-color = mkLiteral "@fg-bright";
           background-color = mkLiteral "transparent";
           enabled = true;
-          border-radius = 0;
         };
 
         entry = {
           text-color = mkLiteral "@fg-bright";
-          border-radius = 17;
+          border-radius = 5;
           border = 2;
           border-color = mkLiteral "#${accent}";
           background-color = mkLiteral "transparent";

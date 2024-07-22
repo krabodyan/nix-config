@@ -60,10 +60,8 @@
             ps: with ps; [
               libtorrent-rasterbar
               selenium
-              uvloop
-              uvicorn
               fastapi
-              aiogram
+              requests
               matplotlib
             ]
           ))

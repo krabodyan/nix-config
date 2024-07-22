@@ -11,6 +11,7 @@
       fonts = [
         "NerdFontsSymbolsOnly"
         "JetBrainsMono"
+        "IosevkaTerm"
       ];
     })
   ];

@@ -81,7 +81,7 @@
       };
 
       battery = {
-        format = "<span font='SymbolsNerdFont 7'>{icon}</span>";
+        format = "<span font='SymbolsNerdFont 9'>{icon}</span>";
         format-alt = "{capacity}";
         format-icons = [
           ""
@@ -98,8 +98,8 @@
         all: unset;
         min-height: 0;
         border: none;
-        font-family: JetBrainsMono Nerd Font;
-        font-weight: 700;
+        font-family: IosevkaTerm Nerd Font;
+        font-weight: 800;
         font-size: 11px;
         padding: 0;
         margin: 0;
@@ -107,7 +107,6 @@
 
       window#waybar {
         background-color: transparent; 
-        border-radius: 8px;
       }
 
       #language,
@@ -123,22 +122,22 @@
       }
 
       #clock {
-        font-size: 10px;
+        font-size: 11px;
         margin-bottom: 10px;
       }
 
       #language {
-        font-size: 10px;
+        font-size: 11px;
       }
 
       #battery {
-        font-size: 8px;
         margin-top: 10px;
       }
 
       #workspaces button {
         color: #${fg-dark};
       }
+
       #workspaces button.persistent {
         color: #${bg-bright};
       }
@@ -151,18 +150,27 @@
         color: #${red};
       }
 
+      tooltip label {
+        color: #${fg};
+        padding: 5px;
+        font-size: 14px;
+      }
+
       tooltip,
       #tray menu {
-        border: solid #${accent} 1px;
-        border-radius: 8px;
-        padding: 8px 0;
+        border: solid #${accent} 2px;
+        border-radius: 4px;
         background-color: #${bg};
+      }
+
+      #tray * {
+        padding: 10px;
+        font-size: 14px;
       }
 
       #tray menu menuitem {
         border-radius: 6px;
-        padding: 4px 10px;
-        margin: 0 8px;
+        padding: 4px 11px;
       }
 
       #tray menu menuitem:hover {

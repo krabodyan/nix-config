@@ -192,8 +192,11 @@
       bg = "rosewater";
     };
     "ui.cursor.match" = {
-      fg = "peach";
-      modifiers = [ "bold" ];
+      fg = "lavender";
+      # modifiers = [
+      #   "underline"
+      #   "bold"
+      # ];
     };
 
     "ui.cursor.primary.normal" = {
