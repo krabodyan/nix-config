@@ -44,7 +44,7 @@
       set -g fish_color_selection --background=${bg-dark}
       set -g fish_color_search_match --background=${bg-dark}
       set -g fish_color_operator ${green}
-      set -g fish_color_escape ${pink}
+      # set -g fish_color_escape ${pink}
       set -g fish_color_autosuggestion ${fg-dark}
       set -g fish_color_valid_path ${accent} --bold
       set -g fish_color_cancel ${red}

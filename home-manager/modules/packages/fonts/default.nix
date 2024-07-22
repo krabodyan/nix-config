@@ -10,7 +10,6 @@
     (nerdfonts.override {
       fonts = [
         "NerdFontsSymbolsOnly"
-        "JetBrainsMono"
         "IosevkaTerm"
       ];
     })
@@ -21,7 +20,7 @@
       serif = [ "Roboto Medium" ];
       sansSerif = [ "Roboto Medium" ];
       monospace = [ config.font ];
-      emoji = [ "Font Awesome 6 Free" ];
+      emoji = [ "Font Awesome" ];
     };
   };
   xdg.configFile."fontconfig/fonts.conf".source = ./fonts.conf;

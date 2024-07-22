@@ -6,7 +6,7 @@
       logo = {
         type = "raw";
         source = "${config.home.homeDirectory}/nix-config/home-manager/modules/etc/fetch.sixel";
-        width = 15;
+        width = 16;
         height = 8;
         padding = {
           top = 0;
@@ -43,10 +43,6 @@
           type = "uptime";
           format = "{2}h {3}m";
         }
-        # {
-        #   key = "│ {#36}ed {#keys}│";
-        #   type = "editor";
-        # }
         {
           key = "╰────╯";
           type = "custom";

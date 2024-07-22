@@ -81,7 +81,7 @@
       };
 
       battery = {
-        format = "<span font='SymbolsNerdFont 9'>{icon}</span>";
+        format = "<span font='SymbolsNerdFont 8'>{icon}</span>";
         format-alt = "{capacity}";
         format-icons = [
           ""
@@ -163,14 +163,18 @@
         background-color: #${bg};
       }
 
+      #tray menu {
+        padding: 8px 0;
+      }
+
       #tray * {
-        padding: 10px;
-        font-size: 14px;
+        font-size: 13.5px;
       }
 
       #tray menu menuitem {
-        border-radius: 6px;
-        padding: 4px 11px;
+        border-radius: 4px;
+        margin: 2px 10px;
+        padding: 3px 8px;
       }
 
       #tray menu menuitem:hover {

@@ -16,7 +16,7 @@
       "8.8.8.8"
       "8.8.4.4"
     ];
-    useDHCP = true;
+    # useDHCP = true;
     firewall.enable = false;
     hostName = "nixos";
 

@@ -10,7 +10,7 @@
     settings = {
       main =
         let
-          font = "${config.font}:size=11:style:Medium";
+          font = "${config.font}:size=12:style:Medium";
         in
         {
           term = "xterm-256color";
@@ -19,7 +19,7 @@
           inherit font;
           font-bold = "${font}:style=Bold";
           font-italic = "${font}:style=Italic";
-          font-bold-italic = "${font}:style=Bold Italic";
+          font-bold-italic = "${font}:style=Bold:style=Italic";
 
           box-drawings-uses-font-glyphs = false;
           pad = "24x18";

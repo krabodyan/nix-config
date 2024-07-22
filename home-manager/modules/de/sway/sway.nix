@@ -154,10 +154,10 @@
             inherit pkgs;
             colors = config.colors;
           };
-          left = "j";
+          left = "h";
           right = "l";
-          up = "i";
-          down = "k";
+          up = "k";
+          down = "j";
         in
         {
           "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";
