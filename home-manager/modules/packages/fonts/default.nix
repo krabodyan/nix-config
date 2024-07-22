@@ -20,7 +20,7 @@
       serif = [ "Roboto Medium" ];
       sansSerif = [ "Roboto Medium" ];
       monospace = [ config.font ];
-      emoji = [ "Font Awesome" ];
+      emoji = [ "FontAwesome" ];
     };
   };
   xdg.configFile."fontconfig/fonts.conf".source = ./fonts.conf;

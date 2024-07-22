@@ -4,11 +4,6 @@
     ./cursor.nix
     ./qtct.nix
   ];
-  home.packages = with pkgs; [
-    dconf
-    libsForQt5.qtstyleplugins
-    qt6Packages.qt6gtk2
-  ];
 
   gtk = {
     enable = true;
@@ -17,7 +12,10 @@
     font.package = pkgs.roboto;
 
     iconTheme = {
-      package = pkgs.catppuccin-papirus-folders.override { accent = "lavender"; };
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "lavender";
+      };
       name = "Papirus-Dark";
     };
 
@@ -46,18 +44,6 @@
       gtk-dialogs-use-header = false;
       gtk-enable-event-sounds = 0;
       gtk-enable-input-feedback-sounds = 0;
-    };
-  };
-
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
-      "org/gnome/desktop/default-applications/terminal" = {
-        exec = "foot";
-      };
     };
   };
 
