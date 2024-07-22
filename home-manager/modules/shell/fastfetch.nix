@@ -39,6 +39,10 @@
           format = "{1}";
         }
         {
+          key = "│ {#36}ed {#keys}│";
+          type = "editor";
+        }
+        {
           key = "│ {#36}up {#keys}│";
           type = "uptime";
           format = "{2}h {3}m";

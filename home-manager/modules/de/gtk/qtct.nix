@@ -9,7 +9,7 @@
     style=kvantum-dark
 
     [Fonts]
-    fixed="IosevkaTerm Nerd Font,12,-1,5,57,0,0,0,0,0,Medium"
+    fixed="IosevkaTerm Nerd Font,10,-1,5,57,0,0,0,0,0,Medium"
     general="Roboto Medium,12,-1,5,50,0,0,0,0,0"
 
     [Interface]
@@ -43,7 +43,7 @@
     style=kvantum-dark
 
     [Fonts]
-    fixed="IosevkaTerm Nerd Font,12,-1,5,500,0,0,0,0,0,0,0,0,0,0,1"
+    fixed="IosevkaTerm Nerd Font,10,-1,5,500,0,0,0,0,0,0,0,0,0,0,1"
     general="Roboto Medium,12,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 
     [Interface]

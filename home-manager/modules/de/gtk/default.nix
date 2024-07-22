@@ -8,8 +8,11 @@
   gtk = {
     enable = true;
 
-    font.name = "Roboto Bold 10";
-    font.package = pkgs.roboto;
+    font = {
+      name = "Roboto Bold";
+      size = 10;
+      package = pkgs.roboto;
+    };
 
     iconTheme = {
       package = pkgs.catppuccin-papirus-folders.override {
@@ -33,17 +36,14 @@
     };
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
     gtk3.extraConfig = {
-      gtk-decoration-layout = ":menu";
-      gtk-dialogs-use-header = false;
       gtk-enable-event-sounds = 0;
       gtk-enable-input-feedback-sounds = 0;
       gtk-application-prefer-dark-theme = 1;
     };
     gtk4.extraConfig = {
-      gtk-decoration-layout = ":menu";
-      gtk-dialogs-use-header = false;
       gtk-enable-event-sounds = 0;
       gtk-enable-input-feedback-sounds = 0;
+      gtk-application-prefer-dark-theme = 1;
     };
   };
 
