@@ -34,7 +34,7 @@
       set -g fish_color_normal ${fg}
       set -g fish_color_command ${green}
       set -g fish_color_keyword -i ${yellow}
-      set -g fish_color_quote -i ${yellow}
+      set -g fish_color_quote ${yellow}
       set -g fish_color_redirection ${blue}
       set -g fish_color_end ${blue}
       set -g fish_color_error ${red}
@@ -44,7 +44,6 @@
       set -g fish_color_selection --background=${bg-dark}
       set -g fish_color_search_match --background=${bg-dark}
       set -g fish_color_operator ${green}
-      # set -g fish_color_escape ${pink}
       set -g fish_color_autosuggestion ${fg-dark}
       set -g fish_color_valid_path ${accent} --bold
       set -g fish_color_cancel ${red}

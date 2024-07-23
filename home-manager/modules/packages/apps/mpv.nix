@@ -1,6 +1,6 @@
-{ pkgs, ... }:
+{ config, ... }:
 {
-  xdg.configFile."mpv/mpv.conf".text = ''
+  xdg.configFile."mpv/mpv.conf".text = with config.colors; ''
     gpu-context=wayland
     vo=gpu
     profile=fast
@@ -9,12 +9,18 @@
     keep-open=yes
     fullscreen=no
     sid=0
-    # initial-audio-sync
-    # ytdl-format=bestvideo[height<=?1080][ext=mp4][vcodec^=avc1]+bestaudio[ext=m4a]
-    # script-opts=ytdl_hook-ytdl_path=${pkgs.yt-dlp}/bin/yt-dlp
+    initial-audio-sync
+
     audio-file-auto-exts=mkv
     audio-file-auto=fuzzy
     audio-file-paths=RUS Sound
+
+    osd-font='${config.font}'
+    osd-font-size=40
+    osd-border-color='#${bg}'
+    osd-border-size=2
+    osd-color='#${accent}'
+    osd-shadow-color='#${accent}'
   '';
   programs.mpv = {
     enable = true;

@@ -2,7 +2,7 @@
 cwd = { fg = "#616991" }
 
 # Hovered
-hovered         = { fg = "#1e1e2e", bg = "#89b4fa" }
+hovered         = { fg = "#1e1e2e", bg = "#b4befe" }
 preview_hovered = { underline = false }
 
 # Find
@@ -12,17 +12,17 @@ find_position = { fg = "#f5c2e7", bg = "reset", italic = true }
 # Marker
 marker_copied   = { fg = "#a6e3a1", bg = "#a6e3a1" }
 marker_cut      = { fg = "#f38ba8", bg = "#f38ba8" }
-marker_selected = { fg = "#89b4fa", bg = "#89b4fa" }
+marker_selected = { fg = "#b4befe", bg = "#b4befe" }
 
 # Tab
 tab_active   = { fg = "#1e1e2e", bg = "#cdd6f4" }
-tab_inactive = { fg = "#cdd6f4", bg = "#45475a" }
+tab_inactive = { fg = "#cdd6f4", bg = "#393959" }
 tab_width    = 1
 
 # Count
 count_copied   = { fg = "#1e1e2e", bg = "#a6e3a1" }
 count_cut      = { fg = "#1e1e2e", bg = "#f38ba8" }
-count_selected = { fg = "#1e1e2e", bg = "#89b4fa" }
+count_selected = { fg = "#1e1e2e", bg = "#b4befe" }
 
 # Border
 border_symbol = "│" # "╎"
@@ -34,38 +34,38 @@ syntect_theme = "~/.config/bat/themes/catppuccin.tmTheme"
 [status]
 separator_open  = ""
 separator_close = ""
-separator_style = { fg = "#45475a", bg = "#45475a" }
+separator_style = { fg = "#393959", bg = "#393959" }
 
 # Mode
-mode_normal = { fg = "#1e1e2e", bg = "#89b4fa", bold = true }
+mode_normal = { fg = "#1e1e2e", bg = "#b4befe", bold = true }
 mode_select = { fg = "#1e1e2e", bg = "#a6e3a1", bold = true }
 mode_unset  = { fg = "#1e1e2e", bg = "#f2cdcd", bold = true }
 
 # Progress
 progress_label  = { fg = "#ffffff", bold = true }
-progress_normal = { fg = "#89b4fa", bg = "#45475a" }
-progress_error  = { fg = "#f38ba8", bg = "#45475a" }
+progress_normal = { fg = "#b4befe", bg = "#393959" }
+progress_error  = { fg = "#f38ba8", bg = "#393959" }
 
 # Permissions
-permissions_t = { fg = "#89b4fa" }
+permissions_t = { fg = "#b4befe" }
 permissions_r = { fg = "#f9e2af" }
 permissions_w = { fg = "#f38ba8" }
 permissions_x = { fg = "#a6e3a1" }
 permissions_s = { fg = "#7f849c" }
 
 [input]
-border   = { fg = "#89b4fa" }
+border   = { fg = "#b4befe" }
 title    = {}
 value    = {}
 selected = { reversed = true }
 
 [select]
-border   = { fg = "#89b4fa" }
+border   = { fg = "#b4befe" }
 active   = { fg = "#f5c2e7" }
 inactive = {}
 
 [tasks]
-border  = { fg = "#89b4fa" }
+border  = { fg = "#b4befe" }
 title   = {}
 hovered = { underline = true }
 
@@ -82,7 +82,7 @@ on      = { fg = "#f5c2e7" }
 exec    = { fg = "#94e2d5" }
 desc    = { fg = "#9399b2" }
 hovered = { bg = "#585b70", bold = true }
-footer  = { fg = "#45475a", bg = "#cdd6f4" }
+footer  = { fg = "#393959", bg = "#cdd6f4" }
 
 [filetype]
 
@@ -105,19 +105,19 @@ rules = [
 
 	# Fallback
 	{ name = "*", fg = "#cdd6f4" },
-	{ name = "*/", fg = "#89b4fa" }
+	{ name = "*/", fg = "#b4befe" }
 ]
 
 [icon]
 prepend_rules = [
-	{ name = ".SRCINFO", text = "󰣇", fg = "#89b4fa" },
+	{ name = ".SRCINFO", text = "󰣇", fg = "#b4befe" },
 	{ name = ".Xauthority", text = "", fg = "#fab387" },
 	{ name = ".Xresources", text = "", fg = "#fab387" },
 	{ name = ".babelrc", text = "", fg = "#f9e2af" },
 	{ name = ".bash_profile", text = "", fg = "#a6e3a1" },
 	{ name = ".bashrc", text = "", fg = "#a6e3a1" },
-	{ name = ".dockerignore", text = "󰡨", fg = "#89b4fa" },
-	{ name = ".ds_store", text = "", fg = "#45475a" },
+	{ name = ".dockerignore", text = "󰡨", fg = "#b4befe" },
+	{ name = ".ds_store", text = "", fg = "#393959" },
 	{ name = ".editorconfig", text = "", fg = "#f5e0dc" },
 	{ name = ".env", text = "", fg = "#f9e2af" },
 	{ name = ".eslintignore", text = "", fg = "#585b70" },
@@ -130,12 +130,12 @@ prepend_rules = [
 	{ name = ".gtkrc-2.0", text = "", fg = "#f5e0dc" },
 	{ name = ".gvimrc", text = "", fg = "#a6e3a1" },
 	{ name = ".justfile", text = "", fg = "#7f849c" },
-	{ name = ".luaurc", text = "", fg = "#89b4fa" },
-	{ name = ".mailmap", text = "󰊢", fg = "#45475a" },
+	{ name = ".luaurc", text = "", fg = "#b4befe" },
+	{ name = ".mailmap", text = "󰊢", fg = "#393959" },
 	{ name = ".npmignore", text = "", fg = "#f38ba8" },
 	{ name = ".npmrc", text = "", fg = "#f38ba8" },
 	{ name = ".nvmrc", text = "", fg = "#a6e3a1" },
-	{ name = ".prettierrc", text = "", fg = "#89b4fa" },
+	{ name = ".prettierrc", text = "", fg = "#b4befe" },
 	{ name = ".settings.json", text = "", fg = "#6c7086" },
 	{ name = ".vimrc", text = "", fg = "#a6e3a1" },
 	{ name = ".xinitrc", text = "", fg = "#fab387" },
@@ -144,7 +144,7 @@ prepend_rules = [
 	{ name = ".zshenv", text = "", fg = "#a6e3a1" },
 	{ name = ".zshrc", text = "", fg = "#a6e3a1" },
 	{ name = "FreeCAD.conf", text = "", fg = "#f38ba8" },
-	{ name = "PKGBUILD", text = "", fg = "#89b4fa" },
+	{ name = "PKGBUILD", text = "", fg = "#b4befe" },
 	{ name = "PrusaSlicer.ini", text = "", fg = "#fab387" },
 	{ name = "PrusaSlicerGcodeViewer.ini", text = "", fg = "#fab387" },
 	{ name = "QtProject.conf", text = "", fg = "#a6e3a1" },
@@ -157,19 +157,19 @@ prepend_rules = [
 	{ name = "build", text = "", fg = "#a6e3a1" },
 	{ name = "build.gradle", text = "", fg = "#585b70" },
 	{ name = "build.zig.zon", text = "", fg = "#fab387" },
-	{ name = "cantorrc", text = "", fg = "#89b4fa" },
-	{ name = "checkhealth", text = "󰓙", fg = "#89b4fa" },
+	{ name = "cantorrc", text = "", fg = "#b4befe" },
+	{ name = "checkhealth", text = "󰓙", fg = "#b4befe" },
 	{ name = "cmakelists.txt", text = "", fg = "#7f849c" },
 	{ name = "commit_editmsg", text = "", fg = "#fab387" },
-	{ name = "compose.yaml", text = "󰡨", fg = "#89b4fa" },
-	{ name = "compose.yml", text = "󰡨", fg = "#89b4fa" },
+	{ name = "compose.yaml", text = "󰡨", fg = "#b4befe" },
+	{ name = "compose.yml", text = "󰡨", fg = "#b4befe" },
 	{ name = "config", text = "", fg = "#7f849c" },
-	{ name = "containerfile", text = "󰡨", fg = "#89b4fa" },
+	{ name = "containerfile", text = "󰡨", fg = "#b4befe" },
 	{ name = "copying", text = "", fg = "#f9e2af" },
 	{ name = "copying.lesser", text = "", fg = "#f9e2af" },
-	{ name = "docker-compose.yaml", text = "󰡨", fg = "#89b4fa" },
-	{ name = "docker-compose.yml", text = "󰡨", fg = "#89b4fa" },
-	{ name = "dockerfile", text = "󰡨", fg = "#89b4fa" },
+	{ name = "docker-compose.yaml", text = "󰡨", fg = "#b4befe" },
+	{ name = "docker-compose.yml", text = "󰡨", fg = "#b4befe" },
+	{ name = "dockerfile", text = "󰡨", fg = "#b4befe" },
 	{ name = "ext_typoscript_setup.txt", text = "", fg = "#fab387" },
 	{ name = "favicon.ico", text = "", fg = "#f9e2af" },
 	{ name = "fp-info-cache", text = "", fg = "#f5e0dc" },
@@ -193,15 +193,15 @@ prepend_rules = [
 	{ name = "i3blocks.conf", text = "", fg = "#f5e0dc" },
 	{ name = "i3status.conf", text = "", fg = "#f5e0dc" },
 	{ name = "justfile", text = "", fg = "#7f849c" },
-	{ name = "kalgebrarc", text = "", fg = "#89b4fa" },
-	{ name = "kdeglobals", text = "", fg = "#89b4fa" },
-	{ name = "kdenlive-layoutsrc", text = "", fg = "#89b4fa" },
-	{ name = "kdenliverc", text = "", fg = "#89b4fa" },
+	{ name = "kalgebrarc", text = "", fg = "#b4befe" },
+	{ name = "kdeglobals", text = "", fg = "#b4befe" },
+	{ name = "kdenlive-layoutsrc", text = "", fg = "#b4befe" },
+	{ name = "kdenliverc", text = "", fg = "#b4befe" },
 	{ name = "kritadisplayrc", text = "", fg = "#cba6f7" },
 	{ name = "kritarc", text = "", fg = "#cba6f7" },
 	{ name = "license", text = "", fg = "#f9e2af" },
 	{ name = "lxde-rc.xml", text = "", fg = "#9399b2" },
-	{ name = "lxqt.conf", text = "", fg = "#89b4fa" },
+	{ name = "lxqt.conf", text = "", fg = "#b4befe" },
 	{ name = "makefile", text = "", fg = "#7f849c" },
 	{ name = "mix.lock", text = "", fg = "#7f849c" },
 	{ name = "mpv.conf", text = "", fg = "#1e1e2e" },
@@ -239,7 +239,7 @@ prepend_rules = [
 	{ name = "*.3gp", text = "", fg = "#fab387" },
 	{ name = "*.3mf", text = "󰆧", fg = "#7f849c" },
 	{ name = "*.7z", text = "", fg = "#fab387" },
-	{ name = "*.Dockerfile", text = "󰡨", fg = "#89b4fa" },
+	{ name = "*.Dockerfile", text = "󰡨", fg = "#b4befe" },
 	{ name = "*.a", text = "", fg = "#f5e0dc" },
 	{ name = "*.aac", text = "", fg = "#74c7ec" },
 	{ name = "*.ai", text = "", fg = "#f9e2af" },
@@ -248,7 +248,7 @@ prepend_rules = [
 	{ name = "*.android", text = "", fg = "#a6e3a1" },
 	{ name = "*.ape", text = "", fg = "#74c7ec" },
 	{ name = "*.apk", text = "", fg = "#a6e3a1" },
-	{ name = "*.app", text = "", fg = "#45475a" },
+	{ name = "*.app", text = "", fg = "#393959" },
 	{ name = "*.applescript", text = "", fg = "#7f849c" },
 	{ name = "*.asc", text = "󰦝", fg = "#6c7086" },
 	{ name = "*.ass", text = "󰨖", fg = "#f9e2af" },
@@ -262,17 +262,17 @@ prepend_rules = [
 	{ name = "*.bib", text = "󱉟", fg = "#f9e2af" },
 	{ name = "*.bicep", text = "", fg = "#74c7ec" },
 	{ name = "*.bicepparam", text = "", fg = "#7f849c" },
-	{ name = "*.bin", text = "", fg = "#45475a" },
+	{ name = "*.bin", text = "", fg = "#393959" },
 	{ name = "*.blade.php", text = "", fg = "#f38ba8" },
 	{ name = "*.blend", text = "󰂫", fg = "#fab387" },
-	{ name = "*.blp", text = "󰺾", fg = "#89b4fa" },
+	{ name = "*.blp", text = "󰺾", fg = "#b4befe" },
 	{ name = "*.bmp", text = "", fg = "#7f849c" },
 	{ name = "*.brep", text = "󰻫", fg = "#a6e3a1" },
 	{ name = "*.bz", text = "", fg = "#fab387" },
 	{ name = "*.bz2", text = "", fg = "#fab387" },
 	{ name = "*.bz3", text = "", fg = "#fab387" },
 	{ name = "*.bzl", text = "", fg = "#a6e3a1" },
-	{ name = "*.c", text = "", fg = "#89b4fa" },
+	{ name = "*.c", text = "", fg = "#b4befe" },
 	{ name = "*.c++", text = "", fg = "#f38ba8" },
 	{ name = "*.cache", text = "", fg = "#f5e0dc" },
 	{ name = "*.cast", text = "", fg = "#fab387" },
@@ -302,7 +302,7 @@ prepend_rules = [
 	{ name = "*.cshtml", text = "󱦗", fg = "#585b70" },
 	{ name = "*.cson", text = "", fg = "#f9e2af" },
 	{ name = "*.csproj", text = "󰪮", fg = "#585b70" },
-	{ name = "*.css", text = "", fg = "#89b4fa" },
+	{ name = "*.css", text = "", fg = "#b4befe" },
 	{ name = "*.csv", text = "", fg = "#a6e3a1" },
 	{ name = "*.cts", text = "", fg = "#74c7ec" },
 	{ name = "*.cu", text = "", fg = "#a6e3a1" },
@@ -315,8 +315,8 @@ prepend_rules = [
 	{ name = "*.dart", text = "", fg = "#585b70" },
 	{ name = "*.db", text = "", fg = "#f5e0dc" },
 	{ name = "*.dconf", text = "", fg = "#f5e0dc" },
-	{ name = "*.desktop", text = "", fg = "#45475a" },
-	{ name = "*.diff", text = "", fg = "#45475a" },
+	{ name = "*.desktop", text = "", fg = "#393959" },
+	{ name = "*.diff", text = "", fg = "#393959" },
 	{ name = "*.dll", text = "", fg = "#11111b" },
 	{ name = "*.doc", text = "󰈬", fg = "#585b70" },
 	{ name = "*.docx", text = "󰈬", fg = "#585b70" },
@@ -333,7 +333,7 @@ prepend_rules = [
 	{ name = "*.ejs", text = "", fg = "#f9e2af" },
 	{ name = "*.el", text = "", fg = "#7f849c" },
 	{ name = "*.elc", text = "", fg = "#7f849c" },
-	{ name = "*.elf", text = "", fg = "#45475a" },
+	{ name = "*.elf", text = "", fg = "#393959" },
 	{ name = "*.elm", text = "", fg = "#74c7ec" },
 	{ name = "*.eln", text = "", fg = "#7f849c" },
 	{ name = "*.env", text = "", fg = "#f9e2af" },
@@ -343,7 +343,7 @@ prepend_rules = [
 	{ name = "*.erb", text = "", fg = "#313244" },
 	{ name = "*.erl", text = "", fg = "#f38ba8" },
 	{ name = "*.ex", text = "", fg = "#7f849c" },
-	{ name = "*.exe", text = "", fg = "#45475a" },
+	{ name = "*.exe", text = "", fg = "#393959" },
 	{ name = "*.exs", text = "", fg = "#7f849c" },
 	{ name = "*.f#", text = "", fg = "#74c7ec" },
 	{ name = "*.f3d", text = "󰻫", fg = "#a6e3a1" },
@@ -429,8 +429,8 @@ prepend_rules = [
 	{ name = "*.kbx", text = "󰯄", fg = "#6c7086" },
 	{ name = "*.kdb", text = "", fg = "#a6e3a1" },
 	{ name = "*.kdbx", text = "", fg = "#a6e3a1" },
-	{ name = "*.kdenlive", text = "", fg = "#89b4fa" },
-	{ name = "*.kdenlivetitle", text = "", fg = "#89b4fa" },
+	{ name = "*.kdenlive", text = "", fg = "#b4befe" },
+	{ name = "*.kdenlivetitle", text = "", fg = "#b4befe" },
 	{ name = "*.kicad_dru", text = "", fg = "#f5e0dc" },
 	{ name = "*.kicad_mod", text = "", fg = "#f5e0dc" },
 	{ name = "*.kicad_pcb", text = "", fg = "#f5e0dc" },
@@ -448,7 +448,7 @@ prepend_rules = [
 	{ name = "*.kts", text = "", fg = "#6c7086" },
 	{ name = "*.lck", text = "", fg = "#bac2de" },
 	{ name = "*.leex", text = "", fg = "#7f849c" },
-	{ name = "*.less", text = "", fg = "#45475a" },
+	{ name = "*.less", text = "", fg = "#393959" },
 	{ name = "*.lff", text = "", fg = "#f5e0dc" },
 	{ name = "*.lhs", text = "", fg = "#7f849c" },
 	{ name = "*.lib", text = "", fg = "#11111b" },
@@ -459,13 +459,13 @@ prepend_rules = [
 	{ name = "*.lrc", text = "󰨖", fg = "#f9e2af" },
 	{ name = "*.lua", text = "", fg = "#74c7ec" },
 	{ name = "*.luac", text = "", fg = "#74c7ec" },
-	{ name = "*.luau", text = "", fg = "#89b4fa" },
-	{ name = "*.m", text = "", fg = "#89b4fa" },
+	{ name = "*.luau", text = "", fg = "#b4befe" },
+	{ name = "*.m", text = "", fg = "#b4befe" },
 	{ name = "*.m3u", text = "󰲹", fg = "#f38ba8" },
 	{ name = "*.m3u8", text = "󰲹", fg = "#f38ba8" },
 	{ name = "*.m4a", text = "", fg = "#74c7ec" },
 	{ name = "*.m4v", text = "", fg = "#fab387" },
-	{ name = "*.magnet", text = "", fg = "#45475a" },
+	{ name = "*.magnet", text = "", fg = "#393959" },
 	{ name = "*.makefile", text = "", fg = "#7f849c" },
 	{ name = "*.markdown", text = "", fg = "#f5e0dc" },
 	{ name = "*.material", text = "󰔉", fg = "#f38ba8" },
@@ -486,7 +486,7 @@ prepend_rules = [
 	{ name = "*.mp3", text = "", fg = "#74c7ec" },
 	{ name = "*.mp4", text = "", fg = "#fab387" },
 	{ name = "*.mpp", text = "", fg = "#74c7ec" },
-	{ name = "*.msf", text = "", fg = "#89b4fa" },
+	{ name = "*.msf", text = "", fg = "#b4befe" },
 	{ name = "*.mts", text = "", fg = "#74c7ec" },
 	{ name = "*.mustache", text = "", fg = "#fab387" },
 	{ name = "*.nfo", text = "", fg = "#f9e2af" },
@@ -494,15 +494,15 @@ prepend_rules = [
 	{ name = "*.nix", text = "", fg = "#74c7ec" },
 	{ name = "*.nswag", text = "", fg = "#a6e3a1" },
 	{ name = "*.nu", text = ">", fg = "#a6e3a1" },
-	{ name = "*.o", text = "", fg = "#45475a" },
+	{ name = "*.o", text = "", fg = "#393959" },
 	{ name = "*.obj", text = "󰆧", fg = "#7f849c" },
 	{ name = "*.ogg", text = "", fg = "#6c7086" },
 	{ name = "*.opus", text = "", fg = "#6c7086" },
 	{ name = "*.org", text = "", fg = "#94e2d5" },
 	{ name = "*.otf", text = "", fg = "#f5e0dc" },
-	{ name = "*.out", text = "", fg = "#45475a" },
+	{ name = "*.out", text = "", fg = "#393959" },
 	{ name = "*.part", text = "", fg = "#94e2d5" },
-	{ name = "*.patch", text = "", fg = "#45475a" },
+	{ name = "*.patch", text = "", fg = "#393959" },
 	{ name = "*.pck", text = "", fg = "#7f849c" },
 	{ name = "*.pcm", text = "", fg = "#6c7086" },
 	{ name = "*.pdf", text = "", fg = "#585b70" },
@@ -524,14 +524,14 @@ prepend_rules = [
 	{ name = "*.psd1", text = "󰨊", fg = "#7f849c" },
 	{ name = "*.psm1", text = "󰨊", fg = "#7f849c" },
 	{ name = "*.pub", text = "󰷖", fg = "#f9e2af" },
-	{ name = "*.pxd", text = "", fg = "#89b4fa" },
-	{ name = "*.pxi", text = "", fg = "#89b4fa" },
+	{ name = "*.pxd", text = "", fg = "#b4befe" },
+	{ name = "*.pxi", text = "", fg = "#b4befe" },
 	{ name = "*.py", text = "", fg = "#f9e2af" },
 	{ name = "*.pyc", text = "", fg = "#f9e2af" },
 	{ name = "*.pyd", text = "", fg = "#f9e2af" },
 	{ name = "*.pyi", text = "", fg = "#f9e2af" },
 	{ name = "*.pyo", text = "", fg = "#f9e2af" },
-	{ name = "*.pyx", text = "", fg = "#89b4fa" },
+	{ name = "*.pyx", text = "", fg = "#b4befe" },
 	{ name = "*.qm", text = "", fg = "#74c7ec" },
 	{ name = "*.qml", text = "", fg = "#a6e3a1" },
 	{ name = "*.qrc", text = "", fg = "#a6e3a1" },
@@ -605,7 +605,7 @@ prepend_rules = [
 	{ name = "*.test.jsx", text = "", fg = "#74c7ec" },
 	{ name = "*.test.ts", text = "", fg = "#74c7ec" },
 	{ name = "*.test.tsx", text = "", fg = "#585b70" },
-	{ name = "*.tex", text = "", fg = "#45475a" },
+	{ name = "*.tex", text = "", fg = "#393959" },
 	{ name = "*.tf", text = "", fg = "#585b70" },
 	{ name = "*.tfvars", text = "", fg = "#585b70" },
 	{ name = "*.tgz", text = "", fg = "#fab387" },
@@ -643,7 +643,7 @@ prepend_rules = [
 	{ name = "*.woff2", text = "", fg = "#f5e0dc" },
 	{ name = "*.wrl", text = "󰆧", fg = "#7f849c" },
 	{ name = "*.wrz", text = "󰆧", fg = "#7f849c" },
-	{ name = "*.x", text = "", fg = "#89b4fa" },
+	{ name = "*.x", text = "", fg = "#b4befe" },
 	{ name = "*.xaml", text = "󰙳", fg = "#585b70" },
 	{ name = "*.xcf", text = "", fg = "#585b70" },
 	{ name = "*.xcplayground", text = "", fg = "#fab387" },

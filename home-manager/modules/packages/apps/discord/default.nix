@@ -9,7 +9,7 @@ in
     * {
         font-family: "${config.font}" !important;
         font-size: 15px !important;
-        font-weight: 800 !important;
+        font-weight: 500 !important;
     }
   '';
 }

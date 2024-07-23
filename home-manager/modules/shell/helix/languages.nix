@@ -5,21 +5,14 @@
   language-server = with pkgs; {
     ruff = {
       command = "${ruff-lsp}/bin/ruff-lsp";
-      settings_section = "_";
-    };
-    ruff.settings._.globalSettings = {
-      organizeImports = true;
-      fixAll = true;
-      codeAction.disableRuleComment.enable = false;
-      codeAction.fixViolation.enable = false;
     };
     nix = {
       command = "${nil}/bin/nil";
     };
     python = {
-      # command = "${pkgs.pyright}/bin/pyright-langserver";
-      # args = [ "--stdio" ];
-      command = "${python312Packages.python-lsp-server}/bin/pylsp";
+      command = "${pkgs.pyright}/bin/pyright-langserver";
+      args = [ "--stdio" ];
+      # command = "${python312Packages.python-lsp-server}/bin/pylsp";
     };
     json = {
       command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
