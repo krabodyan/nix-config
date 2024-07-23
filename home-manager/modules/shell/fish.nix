@@ -37,6 +37,8 @@
       bind \ek up-or-search
       bind \e\[B true
       bind \ej down-or-search
+      bind \ef forward-char
+      bind \cf forward-word
       bind \b nextd-or-forward-word
       bind \f prevd-or-backward-word
 

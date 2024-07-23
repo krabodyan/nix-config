@@ -122,8 +122,8 @@
 
       input = {
         "type:keyboard" = {
-          xkb_layout = "us,ru,ua";
-          xkb_options = "grp:alt_shift_toggle";
+          xkb_layout = "us,ua,ru";
+          xkb_options = "grp:alt_space_toggle";
           repeat_rate = "35";
           repeat_delay = "400";
         };
@@ -156,8 +156,8 @@
           down = "j";
         in
         {
-          "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";
-          "${mod}+Shift+Return" = "exec ${pkgs.foot}/bin/foot -a floaterm";
+          "${mod}+u" = "exec ${pkgs.foot}/bin/foot";
+          "${mod}+Shift+u" = "exec ${pkgs.foot}/bin/foot -a floaterm";
           "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot ${pkgs.yazi}/bin/yazi";
           "${mod}+d" = "exec pidof rofi && pkill rofi || ${pkgs.rofi-wayland}/bin/rofi -show drun -kb-cancel 'Alt+Return'";
 
