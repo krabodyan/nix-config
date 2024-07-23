@@ -28,7 +28,7 @@
       ];
 
       "sway/workspaces" = {
-        format = "<span font='SymbolsNerdFont 10.5'>{icon}</span>";
+        format = "<span font='SymbolsNerdFont 10'>{icon}</span>";
         format-icons = {
           default = ""; # "󰊠"; # "󱓻";
           # focused = ""; # "󰮯"; # "󱓻";
@@ -82,7 +82,7 @@
       };
 
       battery = {
-        format = "<span font='SymbolsNerdFont 10'>{icon}</span>";
+        format = "<span font='SymbolsNerdFont 9'>{icon}</span>";
         format-alt = "{capacity}";
         tooltip-format = "{time} | {capacity} %";
         tooltip-format-full = "{capacity} %";
@@ -131,16 +131,10 @@
       }
 
       #clock {
-        font-size: 11px;
         margin-bottom: 10px;
       }
 
-      #language {
-        font-size: 11px;
-      }
-
       #battery {
-        font-size: 11px;
         margin-top: 10px;
       }
 
