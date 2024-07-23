@@ -37,10 +37,23 @@
       bind \ek up-or-search
       bind \e\[B true
       bind \ej down-or-search
+
+      bind --erase --preset \ef
+      bind --erase --preset \cf
+
+      # alt + f / ctrl + f
       bind \ef forward-char
       bind \cf forward-word
-      bind \b nextd-or-forward-word
-      bind \f prevd-or-backward-word
+
+      bind --erase --preset \f
+      bind --erase --preset \b
+
+      # alt + left right
+      bind \f nextd-or-forward-word
+      bind \b prevd-or-backward-word
+
+      # ctrl + j
+      bind --erase --preset \n
 
       set -g fish_color_normal ${fg}
       set -g fish_color_command ${green}

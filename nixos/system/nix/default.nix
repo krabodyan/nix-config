@@ -18,7 +18,7 @@
         "flakes"
       ];
       builders-use-substitutes = true;
-      max-jobs = 12;
+      max-jobs = 6;
       cores = 0;
       trusted-users = [
         "krabodyan"
