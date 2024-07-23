@@ -9,7 +9,7 @@
       # mode = "invisible";
       # start_hidden = true;
       width = 26;
-      height = 360;
+      height = 340;
       spacing = 0;
       margin = "0";
       padding = "0";
@@ -81,15 +81,20 @@
       };
 
       battery = {
-        format = "<span font='SymbolsNerdFont 8'>{icon}</span>";
+        format = "<span font='SymbolsNerdFont 10'>{icon}</span>";
         format-alt = "{capacity}";
         format-icons = [
-          ""
-          ""
-          ""
-          ""
-          ""
+          "󰂃"
+          "󰁽"
+          "󰂀"
+          "󰂂"
+          "󰂄"
         ];
+        interval = 120;
+        states = {
+          warning = 30;
+          critical = 15;
+        };
       };
     };
 
@@ -131,7 +136,16 @@
       }
 
       #battery {
+        font-size: 10px;
         margin-top: 10px;
+      }
+
+      #battery.critical {
+        color: #${red};
+      }
+
+      #battery.warning {
+        color: #${orange};
       }
 
       #workspaces button {
