@@ -37,6 +37,8 @@
       bind \ek up-or-search
       bind \e\[B true
       bind \ej down-or-search
+      bind \b nextd-or-forward-word
+      bind \f prevd-or-backward-word
 
       set -g fish_color_normal ${fg}
       set -g fish_color_command ${green}
