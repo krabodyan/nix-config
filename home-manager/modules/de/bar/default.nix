@@ -32,7 +32,7 @@
         format-icons = {
           default = ""; # "󰊠"; # "󱓻";
           # focused = ""; # "󰮯"; # "󱓻";
-          # persistent = ""; # ""; # ""; # "󱓼";
+          persistent = ""; # ""; # "󱓼";
         };
         tooltip = false;
         disable-scroll = true;
@@ -70,26 +70,27 @@
       };
 
       network = {
-        format-wifi = "<span font='SymbolsNerdFont 7'>󰤨</span>";
-        format-ethernet = "<span font='SymbolsNerdFont 7'>󰤨</span>";
-        format-linked = "<span font='SymbolsNerdFont 7'>󰤨</span>";
-        format-disconnected = "<span font='SymbolsNerdFont 7'>󰤭</span>";
-        format-disabled = "<span font='SymbolsNerdFont 7'>󰤭</span>";
+        format-wifi = "<span font='SymbolsNerdFont 8'>󰤥</span>";
+        format-ethernet = "<span font='SymbolsNerdFont 8'>󰤨</span>";
+        format-disconnected = "<span font='SymbolsNerdFont 8'>󰤭</span>";
+        format-disabled = "<span font='SymbolsNerdFont 8'>󰤭</span>";
         tooltip-format = "{ifname}: {ipaddr}/{cidr}";
         tooltip-format-disconnected = "disconnected";
         tooltip-format-disabled = "disabled";
       };
 
       battery = {
-        format = "<span font='SymbolsNerdFont 10'>{icon}</span>";
+        format = "<span font='SymbolsNerdFont 9'>{icon}</span>";
         format-alt = "{capacity}";
-        format-icons = [
-          "󰂃"
-          "󰁽"
-          "󰂀"
-          "󰂂"
-          "󰂄"
-        ];
+        format-icons = {
+          discharging = [
+            "󰂃"
+            "󰁽"
+            "󰂀"
+            "󰁹"
+          ];
+          charging = [ "󰂄" ];
+        };
         interval = 120;
         states = {
           warning = 30;
@@ -115,13 +116,12 @@
       }
 
       #language,
-      #tray,
       #clock,
       #network,
       #battery,
       #workspaces button
       {
-        color: #${fg};
+        color: #676d91;
         padding: 0;
         margin: 5px 0;
       }
@@ -136,7 +136,6 @@
       }
 
       #battery {
-        font-size: 10px;
         margin-top: 10px;
       }
 
@@ -153,11 +152,11 @@
       }
 
       #workspaces button.persistent {
-        color: #${bg-bright};
+        color: #${fg-dark};
       }
 
       #workspaces button.focused {
-        color: #${accent};
+        color: #${fg};
       }
 
       #workspaces button.urgent {
@@ -175,6 +174,12 @@
         border: solid #${accent} 2px;
         border-radius: 4px;
         background-color: #${bg};
+      }
+
+      #tray {
+        padding: 0;
+        color: #${fg};
+        margin: 5px 0;
       }
 
       #tray menu {

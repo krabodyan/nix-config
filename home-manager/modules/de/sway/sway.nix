@@ -14,19 +14,14 @@
     extraConfig = ''
       title_align center
       titlebar_border_thickness 0
-      default_border pixel 1
+      default_border pixel 2
     '';
-    # corner_radius 10
-
-    # blur disable
-
-    # shadows disable
-
-    # default_dim_inactive 0.0
-    # # dim_inactive_colors.unfocused #000000FF
-    # # dim_inactive_colors.urgent #000000FF
-
-    # scratchpad_minimize disable
+    #   corner_radius 6
+    #   blur disable
+    #   shadows disable
+    #   default_dim_inactive 0.0
+    #   scratchpad_minimize disable
+    # '';
     config = {
       modifier = "Mod4";
       terminal = "foot";
@@ -69,7 +64,7 @@
       gaps = {
         smartBorders = "on";
         smartGaps = true;
-        inner = 8;
+        inner = 5;
         outer = 0;
       };
 
