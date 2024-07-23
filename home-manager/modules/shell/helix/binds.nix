@@ -68,6 +68,10 @@ in
       "insert_newline"
       "commit_undo_checkpoint"
     ];
+    "A-h" = "move_char_left";
+    "A-l" = "move_char_right";
+    "A-j" = "move_line_down";
+    "A-k" = "move_line_up";
   };
   select = binds // special;
 }

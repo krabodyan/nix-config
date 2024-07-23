@@ -12,6 +12,7 @@
     xwayland = true;
     # package = pkgs.swayfx;
     extraConfig = ''
+      title_align center
       titlebar_border_thickness 0
       default_border pixel 1
     '';

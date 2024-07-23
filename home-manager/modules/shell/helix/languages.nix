@@ -10,9 +10,9 @@
       command = "${nil}/bin/nil";
     };
     python = {
-      command = "${pkgs.pyright}/bin/pyright-langserver";
-      args = [ "--stdio" ];
-      # command = "${python312Packages.python-lsp-server}/bin/pylsp";
+      # command = "${pkgs.pyright}/bin/pyright-langserver";
+      # args = [ "--stdio" ];
+      command = "${python312Packages.python-lsp-server}/bin/pylsp";
     };
     json = {
       command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";

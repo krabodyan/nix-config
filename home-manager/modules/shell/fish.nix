@@ -29,7 +29,14 @@
     interactiveShellInit = with config.colors; ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
 
-      bind \cf accept-autosuggestion
+      bind \e\[C true
+      bind \el forward-char
+      bind \e\[D true
+      bind \eh backward-char
+      bind \e\[A true
+      bind \ek up-or-search
+      bind \e\[B true
+      bind \ej down-or-search
 
       set -g fish_color_normal ${fg}
       set -g fish_color_command ${green}
@@ -42,7 +49,7 @@
       set -g fish_color_param ${fg}
       set -g fish_color_comment -i ${fg-dark}
       set -g fish_color_selection --background=${bg-dark}
-      set -g fish_color_search_match --background=${bg-dark}
+      set -g fish_color_search_match --background=${fg-dark}
       set -g fish_color_operator ${green}
       set -g fish_color_autosuggestion ${fg-dark}
       set -g fish_color_valid_path ${accent} --bold

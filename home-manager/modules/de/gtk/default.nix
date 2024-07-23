@@ -4,7 +4,7 @@
     ./cursor.nix
     ./qtct.nix
   ];
-
+  home.packages = [ pkgs.dconf ];
   gtk = {
     enable = true;
 
