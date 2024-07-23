@@ -9,7 +9,7 @@
       # mode = "invisible";
       # start_hidden = true;
       width = 26;
-      height = 340;
+      height = 360;
       spacing = 0;
       margin = "0";
       padding = "0";
@@ -85,6 +85,7 @@
         format = "<span font='SymbolsNerdFont 10'>{icon}</span>";
         format-alt = "{capacity}";
         tooltip-format = "{time} | {capacity} %";
+        tooltip-format-full = "{capacity} %";
         format-icons = rec {
           discharging = [
             "󰂃"
