@@ -7,7 +7,7 @@
     sort = "-time";
     layer = "overlay";
     anchor = "bottom-center";
-    backgroundColor = "#${bg}ff"; # e6
+    backgroundColor = "#${bg}ff";
     progressColor = "over #${accent}";
     textColor = "#${fg}";
     width = 400;
@@ -17,7 +17,7 @@
     borderColor = "#${accent}";
     borderRadius = 8;
     icons = true;
-    iconPath = "${pkgs.papirus-icon-theme}/share/icons/Papirus-Dark";
+    iconPath = "${config.gtk.iconTheme.package}/share/icons/${config.gtk.iconTheme.name}";
     maxIconSize = 32;
     defaultTimeout = 3000;
     extraConfig = ''
