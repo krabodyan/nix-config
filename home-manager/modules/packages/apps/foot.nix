@@ -46,6 +46,11 @@
         blink = "no";
       };
 
+      key-bindings = {
+        scrollback-up-line = "Control+k";
+        scrollback-down-line = "Control+l";
+      };
+
       colors = with config.colors; {
         alpha = "${opacity}";
         background = "${bg}";
