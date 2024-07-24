@@ -192,6 +192,7 @@
           "${mod}+s" = "layout toggle";
           "${mod}+f" = "floating toggle";
           "${mod}+Tab" = "focus next";
+          "${mod}+Shift+Tab" = "focus prev";
           "${mod}+Shift+r" = "splith";
           "${mod}+r" = "splitv";
 

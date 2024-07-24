@@ -40,19 +40,6 @@
         bind -M default \cc kill-whole-line
       end
 
-      function fish_mode_prompt
-        switch $fish_bind_mode
-          case insert
-            set_color green
-          case default
-            set_color red
-          case visual
-            set_color yellow
-        end
-        echo '󰧞 '
-        set_color normal
-      end
-
       set -g fish_key_bindings fish_hybrid_key_bindings
       set -g fish_color_normal ${fg}
       set -g fish_color_command ${green}
@@ -81,8 +68,24 @@
       set -g fish_prompt_pwd_full_dirs 0
       set fish_greeting
 
+      function fish_mode_prompt
+      end
+
+      function my_mode_prompt
+        switch $fish_bind_mode
+          case insert
+            set_color cyan
+          case default
+            set_color red
+          case visual
+            set_color yellow
+        end
+        echo '󰧞'
+        set_color normal
+      end
+
       function fish_prompt
-        printf "\033[1;34m\033[4 q%s \033[0m" (prompt_pwd)
+        printf "\033[1;34m\033[4 q%s %s" (prompt_pwd) (my_mode_prompt)
       end
 
       set -U __done_notification_duration 4000
