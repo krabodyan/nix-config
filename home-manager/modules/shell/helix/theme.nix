@@ -10,7 +10,7 @@
 
     "constructor" = "blue";
 
-    "constant.builtin" = "lavender";
+    "constant.builtin" = "mauve";
     "constant.numeric" = "peach";
     "constant.character" = mkHex cyan;
     "constant.character.escape" = "maroon";
@@ -41,7 +41,7 @@
     "punctuation.special" = "peach";
 
     "keyword" = {
-      fg = "lavender";
+      fg = "mauve";
       modifiers = [ "italic" ];
     };
     "operator" = "teal";
@@ -286,7 +286,7 @@
       sapphire = "#74c7ec";
       blue = "#89b4fa";
       lavender = "#b4befe";
-      text = "#cdd6f4";
+      text = "#d1d8ff";
       subtext1 = "#bac2de";
       subtext0 = "#a6adc8";
       overlay2 = "#9399b2";
