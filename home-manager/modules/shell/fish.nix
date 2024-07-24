@@ -38,6 +38,9 @@
         bind -M visual \eh backward-word
         bind -M visual \el forward-word
         bind -M default \cc kill-whole-line
+        bind -M default \cd delete-char
+        bind -M insert \cd delete-char
+        bind -M visual \cd forward-char
       end
 
       set -g fish_key_bindings fish_hybrid_key_bindings
