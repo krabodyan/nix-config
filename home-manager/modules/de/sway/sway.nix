@@ -123,7 +123,7 @@
       input = {
         "type:keyboard" = {
           xkb_layout = "us,ua,ru";
-          xkb_options = "grp:alt_space_toggle";
+          xkb_options = "grp:alt_caps_toggle";
           repeat_rate = "35";
           repeat_delay = "400";
         };

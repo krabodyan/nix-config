@@ -53,14 +53,14 @@
 
       "sway/language" = {
         tooltip = false;
-        format = "{}"; # "<span style='italic'>{}</span>";
-        format-en = "us"; # "🇬🇧";
+        format = "{shortDescription}";
+        format-us = "en"; # "🇬🇧";
         format-ru = "ru"; # "🇷🇺";
-        format-ua = "ua"; # "🇺🇦";
+        format-ua = "uk"; # "🇺🇦";
       };
 
       clock = {
-        format = "{:%H\n%M}"; # "<span style='italic'>{:%H:%M}</span>";
+        format = "{:%H\n%M}";
         tooltip-format = "{calendar}";
         format-alt = "{:%d\n%m}";
         actions = {
@@ -126,7 +126,7 @@
       #battery,
       #workspaces button
       {
-        color: #6c7299;
+        color: #757ba6;
         padding: 0;
         margin: 5px 0;
       }
