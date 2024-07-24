@@ -29,33 +29,31 @@
     interactiveShellInit = with config.colors; ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
 
-      bind \e\[C true
-      bind \el forward-char
-      bind \e\[D true
-      bind \eh backward-char
-      bind \e\[A true
-      bind \ek up-or-search
-      bind \e\[B true
-      bind \ej down-or-search
+      function fish_hybrid_key_bindings
+        fish_vi_key_bindings
+        bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
+        bind -M default U redo
+        bind -M default \eh backward-word
+        bind -M default \el forward-word
+        bind -M visual \eh backward-word
+        bind -M visual \el forward-word
+        bind -M default \cc kill-whole-line
+      end
 
-      bind --erase --preset \ef
-      bind --erase --preset \cf
-      bind --erase --preset \ed
+      function fish_mode_prompt
+        switch $fish_bind_mode
+          case insert
+            set_color green
+          case default
+            set_color red
+          case visual
+            set_color yellow
+        end
+        echo '󰧞 '
+        set_color normal
+      end
 
-      # alt + d/f
-      bind \ed forward-char
-      bind \cf forward-word
-
-      bind --erase --preset \f
-      bind --erase --preset \b
-
-      # alt + left right
-      bind \f nextd-or-forward-word
-      bind \b prevd-or-backward-word
-
-      # ctrl + j
-      bind --erase --preset \n
-
+      set -g fish_key_bindings fish_hybrid_key_bindings
       set -g fish_color_normal ${fg}
       set -g fish_color_command ${green}
       set -g fish_color_keyword -i ${yellow}
@@ -66,7 +64,7 @@
       set -g fish_color_warn ${orange}
       set -g fish_color_param ${fg}
       set -g fish_color_comment -i ${fg-dark}
-      set -g fish_color_selection --background=${bg-dark}
+      set -g fish_color_selection --background=${fg-dark}
       set -g fish_color_search_match --background=${fg-dark}
       set -g fish_color_operator ${green}
       set -g fish_color_autosuggestion ${fg-dark}
@@ -84,7 +82,7 @@
       set fish_greeting
 
       function fish_prompt
-        printf "\033[1;34m\033[4 q%s 󰧞 \033[0m" (prompt_pwd)
+        printf "\033[1;34m\033[4 q%s \033[0m" (prompt_pwd)
       end
 
       set -U __done_notification_duration 4000

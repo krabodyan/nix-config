@@ -6,10 +6,6 @@ let
       "normal_mode"
       "commit_undo_checkpoint"
     ];
-    "C-c" = [
-      "normal_mode"
-      "commit_undo_checkpoint"
-    ];
     "C-7" = "toggle_comments";
     "C-/" = "toggle_comments";
     "C-A-up" = [
@@ -59,11 +55,19 @@ let
     p = "paste_clipboard_after";
     P = "paste_clipboard_before";
     y = "yank_main_selection_to_clipboard";
+    "C-c" = [
+      "insert_mode"
+      "commit_undo_checkpoint"
+    ];
   };
 in
 {
   normal = binds // special;
   insert = binds // {
+    "C-c" = [
+      "normal_mode"
+      "commit_undo_checkpoint"
+    ];
     ret = [
       "insert_newline"
       "commit_undo_checkpoint"
