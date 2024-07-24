@@ -40,9 +40,10 @@
 
       bind --erase --preset \ef
       bind --erase --preset \cf
+      bind --erase --preset \ed
 
-      # alt + f / ctrl + f
-      bind \ef forward-char
+      # alt + d/f
+      bind \ed forward-char
       bind \cf forward-word
 
       bind --erase --preset \f

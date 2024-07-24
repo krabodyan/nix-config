@@ -156,9 +156,8 @@
           down = "j";
         in
         {
-          "${mod}+o" = "exec ${pkgs.foot}/bin/foot";
-          "${mod}+Shift+o" = "exec ${pkgs.foot}/bin/foot -a floaterm";
-          "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot ${pkgs.yazi}/bin/yazi";
+          "${mod}+e" = "exec ${pkgs.foot}/bin/foot";
+          "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot -a floaterm";
           "${mod}+d" = "exec pidof rofi && pkill rofi || ${pkgs.rofi-wayland}/bin/rofi -show drun -kb-cancel 'Alt+Return'";
 
           "Ctrl+Alt+Backspace" = "reload";
@@ -187,14 +186,14 @@
           "${mod}+Shift+${left}" = "resize grow width 20 px";
           "${mod}+Shift+${right}" = "resize shrink width 20 px";
 
-          "${mod}+Tab" = "focus next";
+          "${mod}+q" = "kill";
+          "${mod}+t" = "fullscreen";
           "${mod}+c" = "layout tabbed";
           "${mod}+s" = "layout toggle";
-          "${mod}+t" = "fullscreen";
-          "${mod}+e" = "splitv";
-          "${mod}+r" = "splith";
           "${mod}+f" = "floating toggle";
-          "${mod}+q" = "kill";
+          "${mod}+Tab" = "focus next";
+          "${mod}+Shift+r" = "splith";
+          "${mod}+r" = "splitv";
 
           "${mod}+1" = "workspace number 1";
           "${mod}+2" = "workspace number 2";
