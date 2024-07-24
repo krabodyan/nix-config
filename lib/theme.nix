@@ -32,7 +32,7 @@
 
         black = "45475a";
         red = "f38ba8";
-        green = "21d98e";
+        green = "6fe2b9";
         yellow = "f9e2af";
         blue = "89b4fa";
         magenta = "cba6f7";
