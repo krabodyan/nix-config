@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 {
-  home.packages = with pkgs; [
-    eza
-    any-nix-shell
-  ];
   programs.fish = {
     enable = true;
     shellAliases = {
@@ -58,7 +54,7 @@
       set -g fish_color_search_match --background=${fg-dark}
       set -g fish_color_operator ${green}
       set -g fish_color_autosuggestion ${fg-dark}
-      set -g fish_color_valid_path ${accent} --bold
+      set -g fish_color_valid_path ${blue} --bold
       set -g fish_color_cancel ${red}
 
       set -g fish_pager_color_progress ${fg-dark}
@@ -77,18 +73,18 @@
       function my_mode_prompt
         switch $fish_bind_mode
           case insert
-            set_color cyan
+            set_color ${accent}
           case default
-            set_color red
+            set_color ${red}
           case visual
-            set_color yellow
+            set_color ${yellow}
         end
         echo '󰧞'
         set_color normal
       end
 
       function fish_prompt
-        printf "\033[1;34m\033[4 q%s %s" (prompt_pwd) (my_mode_prompt)
+        printf "\033[4 q%s %s" (set_color ${accent} --bold; echo $(prompt_pwd)) (my_mode_prompt)
       end
 
       set -U __done_notification_duration 4000
