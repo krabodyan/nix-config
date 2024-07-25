@@ -17,6 +17,10 @@
       display = {
         separator = "";
         keyWidth = 8;
+        color = {
+          output = "blue";
+          keys = "blue";
+        };
       };
       modules = [
         {
@@ -24,26 +28,26 @@
           type = "custom";
         }
         {
-          key = "│ {#36}os {#keys}│";
+          key = "│ os {#keys}│";
           type = "os";
           format = "{2}";
         }
         {
-          key = "│ {#36}wm {#keys}│";
+          key = "│ wm {#keys}│";
           type = "wm";
           format = "{2}";
         }
         {
-          key = "│ {#36}sh {#keys}│";
+          key = "│ sh {#keys}│";
           type = "shell";
           format = "{1}";
         }
         {
-          key = "│ {#36}ed {#keys}│";
+          key = "│ ed {#keys}│";
           type = "editor";
         }
         {
-          key = "│ {#36}up {#keys}│";
+          key = "│ up {#keys}│";
           type = "uptime";
           format = "{2}h {3}m";
         }

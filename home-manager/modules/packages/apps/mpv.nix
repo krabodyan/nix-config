@@ -30,10 +30,10 @@
       l            seek        3
       k            add volume  5
       j            add volume -5
-      UP           ignore
-      DOWN         ignore
-      RIGHT        ignore
-      LEFT         ignore
+      UP           add volume  5
+      DOWN         add volume -5
+      RIGHT        seek        3
+      LEFT         seek       -3
       s            ignore
     '';
   };
