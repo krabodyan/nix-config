@@ -15,7 +15,7 @@
     };
     colors = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
-      default = rec {
+      default = {
         opacity = "0.9";
         accent = "b4befe";
         accent-rgba = "rgba(180, 190, 254, 0.7)";
@@ -49,6 +49,9 @@
         brblue = "b4befe";
         brmagenta = "f5c2e7";
         brcyan = "9dabfe";
+
+        surface0 = "313244";
+        rosewater = "f5e0dc";
       };
     };
   };
