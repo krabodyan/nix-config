@@ -35,7 +35,7 @@
       };
     defaultOptions = [
       "--pointer ' '"
-      "--marker ' '"
+      "--marker ' '"
       "--prompt '󰅂 '"
       "--border none"
       "--ellipsis ''"
