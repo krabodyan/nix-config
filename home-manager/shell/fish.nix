@@ -11,10 +11,6 @@
         name = "done";
         inherit (pkgs.fishPlugins.done) src;
       }
-      {
-        name = "fzf-fish";
-        inherit (pkgs.fishPlugins.fzf-fish) src;
-      }
     ];
     loginShellInit = ''
       if test (tty) = "/dev/tty1"
@@ -28,7 +24,7 @@
     '';
     interactiveShellInit = with config.colors; ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-
+      zoxide init --cmd cd fish | source
       function fish_hybrid_key_bindings
         fish_vi_key_bindings
         bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'

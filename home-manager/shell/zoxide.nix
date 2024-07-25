@@ -2,12 +2,12 @@
 {
   programs.fzf = {
     enable = true;
-    enableFishIntegration = true;
+    # enableFishIntegration = true;
     colors =
       with config.colors;
       with helpers;
       {
-        "bg+" = mkHex bg;
+        "bg+" = "-1";
         bg = "-1";
         spinner = mkHex accent;
         hl = mkHex accent;
@@ -18,19 +18,21 @@
         pointer = mkHex accent;
         marker = mkHex accent;
         prompt = mkHex accent;
-        "hl+" = mkHex red;
+        "hl+" = mkHex green;
         border = "-1";
         gutter = "-1";
       };
     defaultOptions = [
-      "--pointer '󰧞'"
-      "--marker '󰧞'"
-      "--prompt '~ '"
+      "--pointer ' '"
+      "--marker ' '"
+      "--prompt '󰅂 '"
       "--border none"
       "--ellipsis ''"
       "--no-scrollbar"
       "--no-separator"
-      "--height '60%'"
+      "--height 10"
+      "--info hidden"
+      "--reverse"
     ];
   };
   programs.zoxide = {
