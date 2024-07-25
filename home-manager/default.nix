@@ -8,7 +8,9 @@
   programs.home-manager.enable = true;
   news.display = "silent";
   imports = [
-    ./modules
+    ./de
+    ./packages
+    ./shell
     ../lib/theme.nix
   ];
 

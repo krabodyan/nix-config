@@ -61,7 +61,7 @@
           inherit system inputs;
           helpers = import ./lib/helpers.nix;
         };
-        modules = [ ./home-manager/home.nix ];
+        modules = [ ./home-manager ];
       };
 
       devShells.${system}.default = pkgs.mkShell {

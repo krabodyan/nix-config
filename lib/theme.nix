@@ -7,11 +7,11 @@
     };
     background-image = lib.mkOption {
       type = lib.types.str;
-      default = "${config.home.homeDirectory}/nix-config/home-manager/modules/etc/background.jpg";
+      default = "${config.home.homeDirectory}/nix-config/home-manager/etc/background.jpg";
     };
     swaylock-image = lib.mkOption {
       type = lib.types.str;
-      default = "${config.home.homeDirectory}/nix-config/home-manager/modules/etc/swaylock.jpg";
+      default = "${config.home.homeDirectory}/nix-config/home-manager/etc/swaylock.jpg";
     };
     colors = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
