@@ -73,7 +73,7 @@
       network = {
         format-wifi = "<span font='SymbolsNerdFont 8'>󰤨</span>";
         format-ethernet = "<span font='SymbolsNerdFont 8'>󰤨</span>";
-        format-linked = "<span font='SymbolsNerdFont 8'>󰤩</span>";
+        format-linked = "<span font='SymbolsNerdFont 8'>󰤨</span>";
         format-disconnected = "<span font='SymbolsNerdFont 8'>󰤭</span>";
         format-disabled = "<span font='SymbolsNerdFont 8'>󰤭</span>";
         tooltip-format = "{ifname}: {ipaddr}/{cidr}";
