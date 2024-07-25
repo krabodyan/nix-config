@@ -27,14 +27,14 @@
         bg-bright = "393959";
 
         fg = "a0aae3";
-        fg-dark = "5a5f80";
+        fg-dark = "596080";
         fg-bright = "a6adc8";
 
         orange = "eba0ac";
         pink = "f5c2e7";
         peach = "f2cdcd";
 
-        black = fg-dark;
+        black = "62698c";
         red = "f38ba8";
         green = "6fe2b9";
         yellow = "f9e2af";
@@ -42,7 +42,7 @@
         magenta = "f5c2e7";
         cyan = "89b4fa";
 
-        brblack = "666c91";
+        brblack = "7178a1";
         brred = "f38ba8";
         brgreen = "99ffb3";
         bryellow = "f9e2af";
