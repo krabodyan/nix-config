@@ -11,6 +11,10 @@
         name = "done";
         inherit (pkgs.fishPlugins.done) src;
       }
+      {
+        name = "fzf";
+        inherit (pkgs.fishPlugins.fzf-fish) src;
+      }
     ];
     loginShellInit = ''
       if test (tty) = "/dev/tty1"
@@ -25,6 +29,7 @@
     interactiveShellInit = with config.colors; ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       zoxide init --cmd cd fish | source
+
       function fish_hybrid_key_bindings
         fish_vi_key_bindings
         bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
@@ -34,12 +39,11 @@
         bind -M visual \eh backward-word
         bind -M visual \el forward-word
         bind -M default \cc kill-whole-line
-        bind -M default \cd delete-char
-        bind -M insert \cd delete-char
-        bind -M visual \cd forward-char
+        bind -M insert \ef _fzf_search_directory
       end
 
       set -g fish_key_bindings fish_hybrid_key_bindings
+
       set -g fish_color_normal ${fg}
       set -g fish_color_command ${green}
       set -g fish_color_keyword -i ${yellow}
@@ -65,7 +69,9 @@
 
       set -g fish_prompt_pwd_dir_length 3
       set -g fish_prompt_pwd_full_dirs 0
+
       set fish_greeting
+
 
       function fish_mode_prompt
       end
@@ -73,11 +79,17 @@
       function my_mode_prompt
         switch $fish_bind_mode
           case insert
-            set_color ${accent}
+            set_color ${bg-bright}
           case default
             set_color ${red}
           case visual
-            set_color ${yellow}
+            set_color ${green}
+          case replace_one
+            set_color ${magenta}
+          case replace
+            set_color ${magenta}
+          case '*'
+            set_color ${bg}
         end
         echo '󰧞'
         set_color normal
@@ -90,6 +102,8 @@
       set -U __done_notification_duration 4000
       set -U __done_notification_urgency_level low
       set -U __done_notification_urgency_level_failure critical
+
+      set -g fzf_fd_opts --color never --type file 
     '';
   };
 }

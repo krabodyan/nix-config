@@ -1,5 +1,16 @@
 { config, helpers, ... }:
 {
+  programs.fd = {
+    enable = true;
+    hidden = false;
+    extraOptions = [
+      "--color"
+      "never"
+      "--type"
+      "file"
+    ];
+    inherit (config.programs.git) ignores;
+  };
   programs.fzf = {
     enable = true;
     # enableFishIntegration = true;
@@ -24,13 +35,13 @@
       };
     defaultOptions = [
       "--pointer ' '"
-      "--marker ' '"
+      "--marker ' '"
       "--prompt '󰅂 '"
       "--border none"
       "--ellipsis ''"
       "--no-scrollbar"
       "--no-separator"
-      "--height 10"
+      "--height 7"
       "--info hidden"
       "--reverse"
     ];

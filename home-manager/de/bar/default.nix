@@ -166,7 +166,6 @@
       tooltip label {
         color: #${fg};
         padding: 5px;
-        font-size: 14px;
       }
 
       tooltip,
@@ -186,8 +185,9 @@
         padding: 8px 0;
       }
 
+      tooltip label,
       #tray * {
-        font-size: 13.5px;
+        font-size: 13px;
       }
 
       #tray menu menuitem {

@@ -39,7 +39,7 @@
         green = "6fe2b9";
         yellow = "f9e2af";
         blue = "b4befe";
-        magenta = "f5c2e7";
+        magenta = "d094f7";
         cyan = "89b4fa";
 
         brblack = "7178a1";
@@ -47,7 +47,7 @@
         brgreen = "99ffb3";
         bryellow = "f9e2af";
         brblue = "b4befe";
-        brmagenta = "f5c2e7";
+        brmagenta = "daa1ff";
         brcyan = "9dabfe";
 
         surface0 = "313244";

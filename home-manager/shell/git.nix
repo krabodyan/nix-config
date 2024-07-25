@@ -49,6 +49,7 @@
       };
     };
     ignores = [
+      "*.bak"
       # c commons
       "__pycache__"
       "compile_commands.json"

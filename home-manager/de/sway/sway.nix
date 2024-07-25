@@ -168,7 +168,7 @@
           "${mod}+Print" = "exec ${screenshot}/bin/screenshot swayimg";
           "${mod}+Shift+Print" = "exec wl-paste | swappy -f -";
 
-          "Ctrl+Alt+l" = "exec swaylock";
+          "${mod}+Shift+0" = "exec swaylock";
           "${mod}+w" = "exec pkill -SIGUSR1 waybar";
 
           "${mod}+${up}" = "focus up";

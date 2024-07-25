@@ -20,5 +20,6 @@
     temurin-jre-bin-17 # minecraft
     dust
     duf
+    eza
   ];
 }

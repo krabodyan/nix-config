@@ -1,5 +1,5 @@
 {
-  description = "   snowy place  󱄅  full of flakes  ";
+  description = "I 󰋑   ";
 
   nixConfig = {
     extra-substituters = [
