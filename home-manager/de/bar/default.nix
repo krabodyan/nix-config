@@ -93,7 +93,7 @@
             "󰂀"
             "󰂂"
           ];
-          charging = [ "󰠠" ];
+          charging = [ "" ];
           plugged = [ "󰁹" ];
           full = plugged;
         };
