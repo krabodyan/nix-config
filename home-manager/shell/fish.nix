@@ -36,7 +36,7 @@
         end
 
         if test $status -eq 0
-            commandline --current-token --replace -- (string escape -- $file_paths_selected | string join ' ')
+            commandline --current-token --replace -- "$(string escape -- $file_paths_selected)"
         end
 
         commandline --function repaint
