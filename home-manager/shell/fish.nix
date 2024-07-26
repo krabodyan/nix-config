@@ -75,6 +75,8 @@
 
       function fish_mode_prompt
       end
+      function fish_right_prompt
+      end
 
       function fish_prompt
         switch $fish_bind_mode

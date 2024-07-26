@@ -10,8 +10,8 @@
         height = 8;
         padding = {
           top = 0;
-          left = 0;
-          right = 0;
+          left = 3;
+          right = 3;
         };
       };
       display = {

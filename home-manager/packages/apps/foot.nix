@@ -25,7 +25,7 @@
           pad = "24x18";
           dpi-aware = "yes";
           resize-by-cells = false;
-          resize-delay-ms = 0;
+          resize-delay-ms = 1000;
           initial-window-size-pixels = "1200x800";
           underline-offset = "5px";
           underline-thickness = "1px";
@@ -33,7 +33,7 @@
 
       scrollback = {
         indicator-position = "none";
-        lines = 250;
+        lines = 2000;
       };
 
       url = {
