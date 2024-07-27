@@ -7,7 +7,7 @@
     hwdec=vaapi
     volume=50
     keep-open=yes
-    fullscreen=no
+    fullscreen=yes
     sid=0
 
     audio-file-auto-exts=mkv

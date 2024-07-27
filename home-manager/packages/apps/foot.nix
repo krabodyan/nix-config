@@ -10,16 +10,16 @@
     settings = {
       main =
         let
-          font = "${config.font}:size=12:style:Medium";
+          font = "${config.font}:size=12";
         in
         {
           term = "xterm-256color";
           shell = "${pkgs.fish}/bin/fish";
 
-          inherit font;
-          font-bold = "${font}:style=Bold";
-          font-italic = "${font}:style=Italic";
-          font-bold-italic = "${font}:style=Bold:style=Italic";
+          font = "${font}:weight=Medium";
+          font-bold = "${font}:weight=Bold";
+          font-italic = "${font}:slant=Italic";
+          font-bold-italic = "${font}:weight=Bold:slant=Italic";
 
           box-drawings-uses-font-glyphs = false;
           pad = "24x18";
@@ -45,6 +45,7 @@
         style = "underline";
         blink = "no";
       };
+      mouse.alternate-scroll-mode = false;
 
       key-bindings = {
         scrollback-up-line = "Mod1+Shift+k";

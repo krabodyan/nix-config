@@ -1,6 +1,4 @@
 {
-  description = "I 󰋑   ";
-
   nixConfig = {
     extra-substituters = [
       "https://helix.cachix.org"
@@ -11,6 +9,8 @@
       "mur.cachix.org-1:VncNRWnvAh+Pl71texI+mPOiwTB5267t029meC4HBC0="
     ];
   };
+
+  description = "I 󰋑   ";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
