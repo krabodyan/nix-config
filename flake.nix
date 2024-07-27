@@ -49,6 +49,7 @@
           inherit self system inputs;
         };
         modules = [
+          ./lib/theme.nix
           ./nixos/configuration.nix
           inputs.disko.nixosModules.default
           (import ./disko.nix { device = "/dev/nvme0n1"; })
@@ -65,7 +66,7 @@
       };
 
       devShells.${system}.default = pkgs.mkShell {
-        buildInputs = [
+        packages = [
           (pkgs.python3.withPackages (
             ps: with ps; [
               libtorrent-rasterbar
