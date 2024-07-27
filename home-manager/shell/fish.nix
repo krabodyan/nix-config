@@ -3,20 +3,11 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      f = "open_file_hx";
       ls = "${pkgs.eza}/bin/eza --icons -F -H --group-directories-first -1 -L 1";
       tree = "${pkgs.eza}/bin/eza -F -H --icons --group-directories-first --tree -L 4";
       ci = "__zoxide_zi";
     };
     functions = {
-      open_file_hx = ''
-        set -l file (fd | fzf)
-        if test -n "$file"
-            hx $file
-        else
-            return 1
-        end  
-      '';
       _fzf_search_directory = ''
         set -f fd_cmd ${pkgs.fd}/bin/fd
         set -f --append fd_cmd $fzf_fd_opts
@@ -76,6 +67,7 @@
         bind -M visual \el forward-word
         bind -M default \cc kill-whole-line
         bind -M insert \ef _fzf_search_directory
+        bind -M insert \el forward-char
       end
 
       set -g fish_key_bindings fish_hybrid_key_bindings
@@ -136,6 +128,7 @@
 
       set -g fzf_fd_opts --color never --type file 
 
+      printf '\e[?45l'
     '';
   };
 }

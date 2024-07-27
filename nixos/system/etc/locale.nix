@@ -16,5 +16,6 @@
         LC_TELEPHONE = locale;
         LC_TIME = locale;
       };
+      supportedLocales = [ "${locale}/UTF-8" ];
     };
 }
