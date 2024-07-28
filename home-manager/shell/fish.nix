@@ -59,13 +59,14 @@
 
       function fish_hybrid_key_bindings
         fish_vi_key_bindings
+        bind -M default \cd kill-whole-line
+        bind -M default \cc 'set fish_bind_mode insert; commandline -f repaint'
         bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
         bind -M default U redo
         bind -M default \eh backward-word
         bind -M default \el forward-word
         bind -M visual \eh backward-word
         bind -M visual \el forward-word
-        bind -M default \cc kill-whole-line
         bind -M insert \ef _fzf_search_directory
         bind -M insert \el forward-char
       end

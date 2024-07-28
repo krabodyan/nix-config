@@ -50,6 +50,7 @@
         scrollback-up-line = "Mod1+Shift+k";
         scrollback-down-line = "Mod1+Shift+j";
       };
+      mouse.alternate-scroll-mode = false;
 
       colors = with config.colors; {
         alpha = "${opacity}";
