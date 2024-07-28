@@ -63,6 +63,7 @@
         bind -M default \cc 'set fish_bind_mode insert; commandline -f repaint'
         bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
         bind -M default U redo
+        bind -M default i true
         bind -M default \eh backward-word
         bind -M default \el forward-word
         bind -M visual \eh backward-word
