@@ -45,7 +45,6 @@
         style = "underline";
         blink = "no";
       };
-      mouse.alternate-scroll-mode = false;
 
       key-bindings = {
         scrollback-up-line = "Mod1+Shift+k";
