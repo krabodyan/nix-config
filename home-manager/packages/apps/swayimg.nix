@@ -1,4 +1,9 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  helpers,
+  ...
+}:
 {
   home.packages = [ pkgs.swayimg ];
   xdg.configFile."swayimg/config".text = with config.colors; ''
@@ -40,14 +45,17 @@
     recursive = no
     all = yes
   '';
-  xdg.mimeApps.defaultApplications = {
-    "image/jpeg" = "swayimg.desktop";
-    "image/png" = "swayimg.desktop";
-    "image/webp" = "swayimg.desktop";
-    "image/svg" = "swayimg.desktop";
-    "image/jpg" = "swayimg.desktop";
-    "image/heic" = "swayimg.desktop";
-    "image/avif" = "swayimg.desktop";
-    "image/heif" = "swayimg.desktop";
+  xdg.mimeApps.defaultApplications = helpers.mkAssociations {
+    types = [
+      "image/png"
+      "image/jpeg"
+      "image/webp"
+      "image/webp"
+      "image/svg"
+      "image/heic"
+      "image/avif"
+      "image/heif"
+    ];
+    desktop = "swayimg.desktop";
   };
 }

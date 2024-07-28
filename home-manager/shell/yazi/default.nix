@@ -1,9 +1,11 @@
+{ helpers, ... }:
 {
-  xdg.mimeApps = {
-    defaultApplications = {
-      "inode/directory" = [ "yazi.desktop" ];
-      "application/x-gnome-saved-search" = [ "yazi.desktop" ];
-    };
+  xdg.mimeApps.defaultApplications = helpers.mkAssociations {
+    types = [
+      "inode/directory"
+      "application/x-gnome-saved-search"
+    ];
+    desktop = "yazi.desktop";
   };
   programs.yazi = {
     enable = true;

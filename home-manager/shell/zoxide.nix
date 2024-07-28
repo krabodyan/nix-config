@@ -13,7 +13,6 @@
   };
   programs.fzf = {
     enable = true;
-    # enableFishIntegration = true;
     colors =
       with config.colors;
       with helpers;
