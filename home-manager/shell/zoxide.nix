@@ -44,6 +44,7 @@
       "--height 7"
       "--info hidden"
       "--reverse"
+      "--bind 'tab:toggle-down,btab:toggle-up'"
     ];
   };
   programs.zoxide = {
