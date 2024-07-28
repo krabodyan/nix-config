@@ -128,6 +128,7 @@
       set -U __done_notification_urgency_level_failure critical
 
       set -g fzf_fd_opts --color never --type file 
+      set -g fzf_directory_opts --bind 'tab:toggle-down,btab:toggle-up'
 
       printf '\e[?45l'
     '';
