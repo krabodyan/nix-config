@@ -1,4 +1,6 @@
 {
+  description = "my flake";
+
   nixConfig = {
     extra-substituters = [
       "https://helix.cachix.org"
@@ -9,8 +11,6 @@
       "mur.cachix.org-1:VncNRWnvAh+Pl71texI+mPOiwTB5267t029meC4HBC0="
     ];
   };
-
-  description = "I 󰋑   ";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -65,18 +65,17 @@
         modules = [ ./home-manager ];
       };
 
-      devShells.${system}.default = pkgs.mkShell {
-        packages = [
-          (pkgs.python3.withPackages (
-            ps: with ps; [
-              libtorrent-rasterbar
-              selenium
-              fastapi
-              requests
-              matplotlib
-            ]
-          ))
-        ];
+      devShells.${system} = {
+        default = pkgs.mkShell {
+          packages = [
+            (pkgs.python3.withPackages (
+              ps: with ps; [
+                libtorrent-rasterbar
+                requests
+              ]
+            ))
+          ];
+        };
       };
     };
 }

@@ -5,7 +5,7 @@
     configFile."mimeapps.list".force = true;
     portal = {
       enable = true;
-      xdgOpenUsePortal = true;
+      xdgOpenUsePortal = false;
       config.common.default = "wlr";
       extraPortals = with pkgs; [
         xdg-desktop-portal-wlr
