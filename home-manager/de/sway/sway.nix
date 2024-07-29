@@ -123,7 +123,7 @@
       input = {
         "type:keyboard" = {
           xkb_layout = "us,ua,ru";
-          xkb_options = "grp:alt_caps_toggle";
+          xkb_options = "ctrl:nocaps,grp:alt_caps_toggle";
           repeat_rate = "35";
           repeat_delay = "400";
         };
@@ -192,7 +192,7 @@
           "${mod}+s" = "layout toggle";
           "${mod}+f" = "floating toggle";
           "${mod}+Tab" = "focus next";
-          "${mod}+Shift+Tab" = "focus mode_toggle";
+          "Alt+Tab" = "focus mode_toggle";
           "${mod}+Shift+r" = "splith";
           "${mod}+r" = "splitv";
 
@@ -222,7 +222,7 @@
           F4 = "exec ${microphone}/bin/microphone";
           XF86MonBrightnessUp = "exec ${brightness}/bin/brightness up";
           XF86MonBrightnessDown = "exec ${brightness}/bin/brightness down";
-          "Alt+Tab" = "exec ${brightness}/bin/brightness toggle";
+          "Alt+Escape" = "exec ${brightness}/bin/brightness toggle";
         };
     };
   };
