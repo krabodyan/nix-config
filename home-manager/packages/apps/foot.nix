@@ -43,6 +43,8 @@
 
       cursor = {
         style = "underline";
+        unfocused-style = "unchanged";
+        underline-thickness = "2px";
         blink = "no";
       };
 
@@ -50,7 +52,7 @@
         scrollback-up-line = "Mod1+Shift+k";
         scrollback-down-line = "Mod1+Shift+j";
       };
-      mouse.alternate-scroll-mode = false;
+      # mouse.alternate-scroll-mode = false;
 
       colors = with config.colors; {
         alpha = "${opacity}";
