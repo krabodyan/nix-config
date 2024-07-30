@@ -27,8 +27,8 @@
           resize-by-cells = false;
           resize-delay-ms = 1000;
           initial-window-size-pixels = "1200x800";
-          underline-offset = "5px";
-          underline-thickness = "1px";
+          underline-offset = "7px";
+          underline-thickness = "2px";
         };
 
       scrollback = {

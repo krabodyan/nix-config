@@ -3,14 +3,17 @@
   programs.tmux = {
     enable = true;
     shell = "${pkgs.fish}/bin/fish";
+    extraConfig = ''
+      set -g prefix C-k
+      set -g update-environment "DISPLAY WAYLAND_DISPLAY SWAYSOCK SSH_AUTH_SOCK"
+      set -g default-terminal "tmux-256color"
+      set -sg terminal-overrides ",*:RGB"
+      set -ga terminal-overrides ',*:Ss=\033[4 q:Se=\033[4 q'
+    '';
     plugins = [
       {
         plugin = pkgs.tmuxPlugins.catppuccin;
         extraConfig = ''
-          set -g prefix C-k
-          set -g update-environment "DISPLAY WAYLAND_DISPLAY SWAYSOCK SSH_AUTH_SOCK"
-          set -g default-terminal "tmux-256color"
-          set -sg terminal-overrides ",*:RGB"
           set -g @catppuccin_flavour 'mocha'
 
           set -g @catppuccin_window_default_text "#W"
