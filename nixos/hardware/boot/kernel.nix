@@ -33,11 +33,11 @@
       "rootfstype=btrfs"
     ];
     # kernelPackages = pkgs.linuxPackages_cachyos;
-    extraModprobeConfig = ''
-      options i915 enable_guc=2
-      options i915 enable_fbc=1
-      options i915 fastboot=1 
-    '';
+    # extraModprobeConfig = ''
+    #   options i915 enable_guc=2
+    #   options i915 enable_fbc=1
+    #   options i915 fastboot=1 
+    # '';
     blacklistedKernelModules = [
       "adfs"
       "affs"
