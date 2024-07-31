@@ -35,53 +35,51 @@
       name = "catppuccin-mocha-lavender-compact+rimless,normal";
     };
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    gtk3.extraConfig = {
-      gtk-enable-event-sounds = 0;
-      gtk-enable-input-feedback-sounds = 0;
-      gtk-application-prefer-dark-theme = 1;
+
+    gtk3 = {
+      extraConfig = {
+        gtk-enable-event-sounds = 0;
+        gtk-enable-input-feedback-sounds = 0;
+        gtk-application-prefer-dark-theme = 1;
+      };
+      extraCss = with config.colors; ''
+        menu,
+        tooltip {
+          background-color: #${surface0};
+          border-radius: 5px;
+          text-shadow: none;
+        }
+
+        tooltip {
+          background-color: #${surface1};
+        }
+
+        menu menuitem:hover {
+          background-color: #${surface1};
+          border-radius: 5px;
+          text-shadow: none;
+        }
+
+        .titlebar,
+        messagedialog.csd decoration,
+        .titlebar .background,
+        decoration,
+        window,
+        window.background
+        {
+            border-radius: 0;
+        }
+
+        decoration, decoration:backdrop
+        {
+            box-shadow: none;
+        }
+      '';
     };
-    gtk3.extraCss = ''
-      * {
-        border-radius: 4px;
-      }
 
-      .titlebar,
-      .titlebar .background,
-      decoration,
-      window,
-      window.background
-      {
-          border-radius: 0;
-      }
-
-      decoration, decoration:backdrop
-      {
-          box-shadow: none;
-      }
-    '';
-    gtk4.extraCss = ''
-      * {
-        border-radius: 4px;
-      }
-
-      .titlebar,
-      .titlebar .background,
-      decoration,
-      window,
-      window.background
-      {
-          border-radius: 0;
-      }
-
-      decoration, decoration:backdrop
-      {
-          box-shadow: none;
-      }
-    '';
-    gtk4.extraConfig = {
-      gtk-enable-event-sounds = 0;
-      gtk-enable-input-feedback-sounds = 0;
-      gtk-application-prefer-dark-theme = 1;
+    gtk4 = {
+      extraConfig = config.gtk.gtk3.extraConfig;
+      extraCss = config.gtk.gtk3.extraCss;
     };
   };
 

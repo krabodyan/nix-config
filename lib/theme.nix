@@ -50,7 +50,9 @@
         brmagenta = "daa1ff";
         brcyan = "9dabfe";
 
-        surface0 = "313244";
+        surface0 = "242536";
+        surface1 = "363747";
+        mantle = "181825";
         rosewater = "f5e0dc";
       };
     };
