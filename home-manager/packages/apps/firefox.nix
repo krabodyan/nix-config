@@ -5,6 +5,7 @@
     package = pkgs.firefox-wayland;
     profiles.krabodyan.settings = {
       "general.autoScroll" = false;
+      "browser.urlbar.autoFill" = false;
       "media.webspeech.synth.enabled" = false;
       "privacy.webrtc.legacyGlobalIndicator" = false;
       "ui.key.menuAccessKeyFocuses" = false;

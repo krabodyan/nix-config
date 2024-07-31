@@ -40,6 +40,44 @@
       gtk-enable-input-feedback-sounds = 0;
       gtk-application-prefer-dark-theme = 1;
     };
+    gtk3.extraCss = ''
+      * {
+        border-radius: 4px;
+      }
+
+      .titlebar,
+      .titlebar .background,
+      decoration,
+      window,
+      window.background
+      {
+          border-radius: 0;
+      }
+
+      decoration, decoration:backdrop
+      {
+          box-shadow: none;
+      }
+    '';
+    gtk4.extraCss = ''
+      * {
+        border-radius: 4px;
+      }
+
+      .titlebar,
+      .titlebar .background,
+      decoration,
+      window,
+      window.background
+      {
+          border-radius: 0;
+      }
+
+      decoration, decoration:backdrop
+      {
+          box-shadow: none;
+      }
+    '';
     gtk4.extraConfig = {
       gtk-enable-event-sounds = 0;
       gtk-enable-input-feedback-sounds = 0;

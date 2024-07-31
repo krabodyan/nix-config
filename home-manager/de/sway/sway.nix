@@ -48,12 +48,12 @@
             app_id = "floaterm";
           };
         }
-        # {
-        #   command = "border pixel 2";
-        #   criteria = {
-        #     app_id = ".*";
-        #   };
-        # }
+        {
+          command = "border pixel 2";
+          criteria = {
+            app_id = ".*";
+          };
+        }
       ];
 
       output."eDP-1" = {

@@ -72,6 +72,7 @@
               ps: with ps; [
                 libtorrent-rasterbar
                 requests
+                aiogram
               ]
             ))
           ];
