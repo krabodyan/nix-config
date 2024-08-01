@@ -52,6 +52,7 @@
 
         surface0 = "242536";
         surface1 = "363747";
+        surface2 = "3a3d52";
         mantle = "181825";
         rosewater = "f5e0dc";
       };

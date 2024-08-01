@@ -55,6 +55,7 @@
       "image/heic"
       "image/avif"
       "image/heif"
+      "image/svg+xml"
     ];
     desktop = "swayimg.desktop";
   };

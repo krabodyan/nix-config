@@ -1,5 +1,7 @@
+{ pkgs, ... }:
 {
   security.sudo.enable = false;
+  environment.systemPackages = [ pkgs.doas-sudo-shim ];
   security.doas = {
     enable = true;
     extraRules = [

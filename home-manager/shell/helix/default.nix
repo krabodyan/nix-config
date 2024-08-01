@@ -10,6 +10,7 @@
   home.sessionVariables = {
     EDITOR = "hx";
   };
+  # home.packages = with pkgs; [ rust-analyzer ];
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${system}.helix;

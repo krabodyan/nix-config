@@ -27,7 +27,7 @@
           resize-by-cells = false;
           resize-delay-ms = 300;
           initial-window-size-pixels = "1200x800";
-          underline-offset = "7px";
+          underline-offset = "8px";
           underline-thickness = "2px";
         };
 
@@ -65,7 +65,7 @@
         regular4 = "${blue}";
         regular5 = "${magenta}";
         regular6 = "${cyan}";
-        regular7 = "${fg}";
+        regular7 = "${fg-dark}";
         bright0 = "${brblack}";
         bright1 = "${brred}";
         bright2 = "${brgreen}";

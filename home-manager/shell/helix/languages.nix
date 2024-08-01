@@ -10,8 +10,6 @@
       command = "${nil}/bin/nil";
     };
     python = {
-      # command = "${pkgs.pyright}/bin/pyright-langserver";
-      # args = [ "--stdio" ];
       command = "${python312Packages.python-lsp-server}/bin/pylsp";
     };
     json = {
@@ -23,14 +21,17 @@
     {
       name = "nix";
       auto-format = true;
-      comment-token = "#";
       language-servers = [ "nix" ];
       formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
     }
     {
+      name = "rust";
+      auto-format = true;
+      formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
+    }
+    {
       name = "python";
       auto-format = true;
-      comment-token = "#";
       language-servers = [
         "python"
         "ruff"

@@ -84,18 +84,22 @@
       set -g fish_color_warn ${orange}
       set -g fish_color_param ${fg}
       set -g fish_color_comment -i ${fg-dark}
-      set -g fish_color_selection --background=${fg-dark}
+      set -g fish_color_selection ${fg-dark} --background=${blue}
       set -g fish_color_search_match --background=${fg-dark}
       set -g fish_color_operator ${green}
       set -g fish_color_autosuggestion ${fg-dark}
       set -g fish_color_valid_path ${blue} --bold
       set -g fish_color_cancel ${red}
 
-      set -g fish_pager_color_progress ${fg-dark}
-      set -g fish_pager_color_prefix ${green}
-      set -g fish_pager_color_completion ${fg}
+      set -g fish_pager_color_secondary ${red}
+      set -g fish_pager_color_progress ${red}
+      set -g fish_pager_color_prefix ${fg}
+      set -g fish_pager_color_completion ${fg-dark}
       set -g fish_pager_color_description -i ${fg-dark}
-      set -g fish_pager_color_selected_background --background=${fg-dark}
+      set -g fish_pager_color_selected_prefix -u ${accent}
+      set -g fish_pager_color_selected_completion -u ${accent}
+      set -g fish_pager_color_selected_description -i ${fg}
+      set -g fish_pager_color_selected_background -u
 
       set -g fish_prompt_pwd_dir_length 3
       set -g fish_prompt_pwd_full_dirs 0

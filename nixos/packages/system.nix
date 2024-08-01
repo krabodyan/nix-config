@@ -22,6 +22,5 @@
     jq
     acpi
     ntfs3g
-
   ];
 }

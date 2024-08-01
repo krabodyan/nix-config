@@ -21,5 +21,8 @@
     dust
     duf
     eza
+    cmus
+    rustup
+    exiftool
   ];
 }
