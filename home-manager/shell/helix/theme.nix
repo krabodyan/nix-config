@@ -10,7 +10,7 @@
     "type.builtin" = "mauve";
     "type.enum" = "yellow";
 
-    "constructor" = "blue";
+    "constructor" = "yellow";
 
     "constant.builtin" = "red";
     "constant.numeric" = "peach";
