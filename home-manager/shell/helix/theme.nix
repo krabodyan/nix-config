@@ -6,13 +6,15 @@
       fg = "yellow";
       modifiers = [ "italic" ];
     };
-    "type.enum.variant" = "teal";
+
+    "type.builtin" = "mauve";
+    "type.enum" = "yellow";
 
     "constructor" = "blue";
 
-    "constant.builtin" = "mauve";
+    "constant.builtin" = "red";
     "constant.numeric" = "peach";
-    "constant.character" = mkHex cyan;
+    "constant.character" = "teal";
     "constant.character.escape" = "maroon";
 
     "string" = "green";
@@ -31,13 +33,13 @@
       fg = "maroon";
       modifiers = [ "italic" ];
     };
-    "variable.builtin" = "lavender";
+    "variable.builtin" = "red";
     "variable.other.member" = "blue";
 
     "label" = "sapphire"; # used for lifetimes
 
     "punctuation" = "overlay2";
-    "punctuation.bracket" = "red";
+    "punctuation.bracket" = "green";
     "punctuation.special" = "peach";
 
     "keyword" = {
@@ -50,16 +52,16 @@
       fg = "blue";
       modifiers = [ "italic" ];
     };
-    "function.builtin" = {
-      fg = "peach";
-      modifiers = [ "italic" ];
-    };
-    "function.macro" = "peach";
+    # "function.builtin" = {
+    #   fg = "peach";
+    #   modifiers = [ "italic" ];
+    # };
+    # "function.macro" = "peach";
 
     "tag" = "lavender";
 
     "namespace" = {
-      fg = "text";
+      fg = "yellow";
       modifiers = [ "italic" ];
     };
 
@@ -171,8 +173,8 @@
     };
     "ui.virtual.indent-guide" = "surface0";
     "ui.virtual.inlay-hint" = {
-      fg = "surface1";
-      bg = "mantle";
+      fg = mkHex fg-dark;
+      # bg = "mantle";
     };
     "ui.virtual.jump-label" = {
       fg = "rosewater";
@@ -192,7 +194,7 @@
       bg = "rosewater";
     };
     "ui.cursor.match" = {
-      fg = "lavender";
+      fg = "red";
       # modifiers = [
       #   "underline"
       #   "bold"
