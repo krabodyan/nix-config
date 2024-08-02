@@ -22,7 +22,7 @@
     duf
     eza
     cmus
-    rustup
+    # rustup
     exiftool
   ];
 }

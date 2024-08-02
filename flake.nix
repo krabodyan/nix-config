@@ -30,6 +30,7 @@
       url = "github:duvetfall/mur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
   outputs =
@@ -41,7 +42,8 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      overlays = [ (import inputs.rust-overlay) ];
+      pkgs = import nixpkgs { inherit system overlays; };
     in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -66,7 +68,26 @@
       };
 
       devShells.${system} = {
-        default = pkgs.mkShell {
+        default =
+          let
+            rust = pkgs.rust-bin.stable.latest.default.override {
+              extensions = [
+                "rust-src"
+                "rust-analyzer"
+              ];
+            };
+          in
+          pkgs.mkShell {
+            buildInputs =
+              [ rust ]
+              ++ (with pkgs; [
+                pkg-config
+                openssl
+              ]);
+            PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+          };
+
+        python = pkgs.mkShell {
           packages = [
             (pkgs.python3.withPackages (
               ps: with ps; [
