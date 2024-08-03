@@ -20,7 +20,7 @@
   lsp = {
     display-messages = true;
     display-inlay-hints = true;
-    snippets = true;
+    snippets = false;
   };
 
   indent-guides = {
@@ -51,11 +51,12 @@
     left = [
       "mode"
       "file-base-name"
-      "file-modification-indicator"
+      # "separator"
       "diagnostics"
       "read-only-indicator"
+      "file-modification-indicator"
     ];
-    separator = " │ ";
+    separator = " ";
     mode = {
       normal = "normal";
       insert = "insert";

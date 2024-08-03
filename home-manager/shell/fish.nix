@@ -70,6 +70,10 @@
         bind -M visual \el forward-word
         bind -M insert \ef _fzf_search_directory
         bind -M insert \el forward-char
+        bind -M insert \cZ cancel-commandline
+        bind -M default \cZ cancel-commandline
+        bind -M visual \cZ cancel-commandline
+        bind -M insert \ed kill-whole-line repaint
       end
 
       set -g fish_key_bindings fish_hybrid_key_bindings

@@ -7,7 +7,7 @@
     ./discord
     ./firefox.nix
     ./ayugram.nix
-    ./zathura.nix
+    # ./zathura.nix
     #./zoom.nix
     ./protonvpn.nix
     ./office.nix
@@ -22,6 +22,7 @@
     pcmanfm
     qbittorrent
     solaar
+    evince
     gcolor3
     obs-studio
     kooha
@@ -29,7 +30,6 @@
     system-config-printer
     pavucontrol
     pulsemixer
-    zathura
     adwsteamgtk
   ];
 }

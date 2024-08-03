@@ -26,8 +26,8 @@
     }
     {
       name = "rust";
-      auto-format = true;
-      formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
+      # auto-format = true;
+      # formatter.command = "${pkgs.rustfmt}/bin/rustfmt";
     }
     {
       name = "python";
