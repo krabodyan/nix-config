@@ -3,8 +3,8 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ls = "${pkgs.eza}/bin/eza --icons -F -H --group-directories-first -1 -L 1";
-      tree = "${pkgs.eza}/bin/eza -F -H --icons --group-directories-first --tree -L 4";
+      ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
+      tree = "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
       ci = "__zoxide_zi";
     };
     functions = {

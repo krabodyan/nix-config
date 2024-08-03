@@ -6,7 +6,7 @@
     group_imports = "One"
     wrap_comments = true
     use_field_init_shorthand = true
-    use_small_heuristics = "Max"
+    use_small_heuristics = "Off"
     hard_tabs = true
     tab_spaces = 1
     fn_call_width = 30

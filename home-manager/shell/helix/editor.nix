@@ -1,7 +1,7 @@
 {
   insert-final-newline = true;
   mouse = false;
-  line-number = "relative";
+  # line-number = "relative";
   cursorline = true;
   color-modes = true;
   scrolloff = 10;
@@ -44,14 +44,15 @@
 
   statusline = {
     right = [
-      "version-control"
+      # "version-control"
       "spinner"
     ];
-    center = [ "diagnostics" ];
+    center = [ ];
     left = [
       "mode"
       "file-base-name"
       "file-modification-indicator"
+      "diagnostics"
       "read-only-indicator"
     ];
     separator = " │ ";

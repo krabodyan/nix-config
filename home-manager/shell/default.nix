@@ -12,7 +12,7 @@
     ./ripgrep.nix
     ./fastfetch.nix
     ./zoxide.nix
-    ./rustfmt.nix
+    # ./rustfmt.nix
   ];
 
   home.packages = with pkgs; [
