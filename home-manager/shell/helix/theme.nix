@@ -39,14 +39,14 @@
     "label" = "sapphire"; # used for lifetimes
 
     "punctuation" = "overlay2";
-    "punctuation.bracket" = "green";
+    "punctuation.bracket" = "sky";
     "punctuation.special" = "peach";
 
     "keyword" = {
       fg = "mauve";
       modifiers = [ "italic" ];
     };
-    "operator" = "teal";
+    "operator" = "sky";
 
     "function" = {
       fg = "blue";

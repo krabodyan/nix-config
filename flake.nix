@@ -70,7 +70,7 @@
       devShells.${system} = {
         default =
           let
-            rust = pkgs.rust-bin.stable.latest.default.override {
+            rust = pkgs.rust-bin.nightly.latest.default.override {
               extensions = [
                 "rust-src"
                 "rust-analyzer"
