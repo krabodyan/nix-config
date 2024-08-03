@@ -38,6 +38,14 @@ let
       "replace_with_yanked"
       "insert_mode"
     ];
+    "A-f" = [
+      "goto_line_end"
+      "move_char_right"
+    ];
+    "A-s" = [
+      "goto_line_start"
+      "move_char_right"
+    ];
   };
   special = {
     tab = ":buffer-next";
