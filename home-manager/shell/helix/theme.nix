@@ -200,14 +200,14 @@
       #   "bold"
       # ];
     };
-
     "ui.cursor.primary.normal" = {
       fg = "base";
       bg = "lavender";
+      # modifiers = [ "reversed" ];
     };
     "ui.cursor.primary.insert" = {
-      fg = "base";
-      bg = "green";
+      bg = "base";
+      fg = "lavender";
     };
     "ui.cursor.primary.select" = {
       fg = "base";

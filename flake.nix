@@ -42,8 +42,7 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      overlays = [ (import inputs.rust-overlay) ];
-      pkgs = import nixpkgs { inherit system overlays; };
+      pkgs = import nixpkgs { inherit system; };
     in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -70,6 +69,8 @@
       devShells.${system} = {
         default =
           let
+            overlays = [ (import inputs.rust-overlay) ];
+            pkgs = import nixpkgs { inherit system overlays; };
             rust = pkgs.rust-bin.nightly.latest.default.override {
               extensions = [
                 "rust-src"
