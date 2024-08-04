@@ -45,7 +45,7 @@
         brblack = "7178a1";
         brred = "f38ba8";
         brgreen = "99ffb3";
-        bryellow = "f9e2af";
+        bryellow = "f9e8c0";
         brblue = "b4befe";
         brmagenta = "daa1ff";
         brcyan = "9dabfe";

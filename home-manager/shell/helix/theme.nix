@@ -12,7 +12,7 @@
 
     "constructor" = "yellow";
 
-    "constant.builtin" = "red";
+    "constant.builtin" = "maroon";
     "constant.numeric" = "peach";
     "constant.character" = "teal";
     "constant.character.escape" = "maroon";
@@ -30,10 +30,10 @@
 
     "variable" = "text";
     "variable.parameter" = {
-      fg = "maroon";
-      modifiers = [ "italic" ];
+      fg = "red";
+      # modifiers = [ "italic" ];
     };
-    "variable.builtin" = "red";
+    "variable.builtin" = "maroon";
     "variable.other.member" = "blue";
 
     "label" = "sapphire"; # used for lifetimes
@@ -281,7 +281,7 @@
       red = "#f38ba8";
       maroon = "#eba0ac";
       peach = "#fab387";
-      yellow = "#f9e2af";
+      yellow = mkHex bryellow; # "#f9e2af";
       green = mkHex brgreen;
       teal = "#94e2d5";
       sky = "#89dceb";
