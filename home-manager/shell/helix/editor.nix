@@ -16,9 +16,10 @@
   popup-border = "none";
   text-width = 90;
   indent-heuristic = "tree-sitter";
+
   inline-diagnostics = {
     cursor-line = "hint";
-    other-lines = "error";
+    other-lines = "warning";
   };
 
   lsp = {
