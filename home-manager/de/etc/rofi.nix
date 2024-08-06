@@ -19,7 +19,7 @@
       in
       {
         "*" = {
-          font = "${config.font} Bold 11";
+          font = "${config.font} Bold 11.5";
           bg = mkLiteral "#${bg}"; # 99
           fg = mkLiteral "#${fg-dark}";
           red = mkLiteral "#${red}";
