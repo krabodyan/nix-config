@@ -1,6 +1,6 @@
 { pkgs }:
 {
-  file_watch_support = false;
+  file_watch_support = true;
 
   language-server = with pkgs; {
     ruff = {

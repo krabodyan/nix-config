@@ -137,6 +137,11 @@
       fg = "text";
       bg = "surface0";
     };
+
+    "ui.picker.header" = {
+      fg = mkHex fg-dark;
+    };
+
     "ui.window" = {
       fg = "crust";
     };
