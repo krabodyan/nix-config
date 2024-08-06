@@ -88,7 +88,7 @@
         tooltip-format-full = "{capacity} %";
         format-icons = rec {
           discharging = [
-            "󰂃"
+            "󰁺"
             "󰁽"
             "󰂀"
             "󰂂"

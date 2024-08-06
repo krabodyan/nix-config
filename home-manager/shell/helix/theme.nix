@@ -30,7 +30,7 @@
 
     "variable" = "text";
     "variable.parameter" = {
-      fg = "text";
+      fg = "pink";
       # modifiers = [ "italic" ];
     };
     "variable.builtin" = "maroon";
@@ -50,7 +50,7 @@
 
     "function" = {
       fg = "blue";
-      modifiers = [ "italic" ];
+      # modifiers = [ "italic" ];
     };
     # "function.builtin" = {
     #   fg = "peach";

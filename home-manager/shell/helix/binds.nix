@@ -42,6 +42,8 @@ let
       "goto_line_end"
       "move_char_right"
     ];
+    "A-+" = "increment";
+    "A-minus" = "decrement";
     "A-s" = [
       "goto_line_start"
       "move_char_right"
@@ -49,6 +51,7 @@ let
   };
   special = {
     tab = ":buffer-next";
+    "S-tab" = ":buffer-previous";
     "A-x" = "extend_line_up";
     "S-x" = [
       "extend_line_up"
