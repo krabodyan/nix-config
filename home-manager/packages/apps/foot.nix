@@ -10,7 +10,7 @@
     settings = {
       main =
         let
-          font = "${config.font}:size=13:fontfeatures=ss14:fontfeatures=ss12";
+          font = "${config.font}:size=12:fontfeatures=ss12:fontfeatures=ss14";
         in
         {
           term = "xterm-256color";
@@ -23,7 +23,7 @@
 
           box-drawings-uses-font-glyphs = false;
           pad = "24x18";
-          dpi-aware = "yes";
+          dpi-aware = true;
           resize-by-cells = false;
           resize-delay-ms = 300;
           initial-window-size-pixels = "1200x800";
