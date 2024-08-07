@@ -10,7 +10,7 @@
     settings = {
       main =
         let
-          font = "${config.font}:size=18.5:fontfeatures=ss12:fontfeatures=ss14";
+          font = "${config.font}:size=13";
         in
         {
           term = "xterm-256color";
@@ -23,11 +23,13 @@
 
           box-drawings-uses-font-glyphs = false;
           pad = "24x18";
-          # dpi-aware = true;
+          dpi-aware = true;
           resize-by-cells = false;
           resize-delay-ms = 300;
+          # line-height = "33px";
+          # horizontal-letter-offset = "2px";
           initial-window-size-pixels = "1200x800";
-          underline-offset = "8px";
+          underline-offset = "10px";
           underline-thickness = "2px";
         };
 

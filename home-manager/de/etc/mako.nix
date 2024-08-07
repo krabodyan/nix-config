@@ -3,7 +3,7 @@
   home.packages = [ pkgs.libnotify ];
   services.mako = with config.colors; {
     enable = true;
-    font = "${config.font} Bold 11.5";
+    font = "${config.font} SemiBold 11.5";
     sort = "-time";
     layer = "overlay";
     anchor = "bottom-center";
