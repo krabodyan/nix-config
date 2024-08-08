@@ -1,5 +1,7 @@
 let
   binds = {
+    "C-l" = ":lsp-stop";
+    "C-A-l" = ":lsp-restart";
     "C-x" = ":q";
     "C-s" = [
       ":w"

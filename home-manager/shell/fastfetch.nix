@@ -7,7 +7,7 @@
         type = "raw";
         source = "${config.home.homeDirectory}/nix-config/home-manager/etc/fetch.sixel";
         width = 16;
-        height = 8;
+        height = 9;
         padding = {
           top = 0;
           left = 2;

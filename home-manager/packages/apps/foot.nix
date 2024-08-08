@@ -10,18 +10,18 @@
     settings = {
       main =
         let
-          font = "${config.font}:size=13";
+          font = "${config.font}:size=11:fontfeatures=cv04:fontfeatures=cv14:fontfeatures=ss02:fontfeatures=cv18:fontfeatures=cv16";
         in
         {
           term = "xterm-256color";
           shell = "${pkgs.fish}/bin/fish";
 
-          font = "${font}:weight=Medium";
-          font-bold = "${font}:weight=Bold";
+          font = "${font}:weight=Regular";
+          font-bold = "${font}:weight=SemiBold";
           font-italic = "${font}:slant=Italic";
-          font-bold-italic = "${font}:weight=Bold:slant=Italic";
+          font-bold-italic = "${font}:weight=SemiBold:slant=Italic";
 
-          box-drawings-uses-font-glyphs = false;
+          box-drawings-uses-font-glyphs = true;
           pad = "24x18";
           dpi-aware = true;
           resize-by-cells = false;

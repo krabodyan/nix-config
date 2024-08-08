@@ -9,7 +9,7 @@
   completion-replace = false;
   preview-completion-insert = true;
   completion-timeout = 5;
-  completion-trigger-len = 1;
+  completion-trigger-len = 3;
 
   undercurl = false;
   bufferline = "multiple";
