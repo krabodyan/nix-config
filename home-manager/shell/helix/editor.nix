@@ -9,7 +9,7 @@
   completion-replace = false;
   preview-completion-insert = true;
   completion-timeout = 5;
-  completion-trigger-len = 3;
+  completion-trigger-len = 2;
 
   undercurl = false;
   bufferline = "multiple";
@@ -19,7 +19,7 @@
 
   inline-diagnostics = {
     cursor-line = "hint";
-    other-lines = "warning";
+    other-lines = "error";
   };
 
   lsp = {
