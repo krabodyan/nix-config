@@ -85,6 +85,8 @@ in
       "insert_newline"
       "commit_undo_checkpoint"
     ];
+    "A-o" = "open_below";
+    "A-O" = "open_above";
     "A-h" = "move_char_left";
     "A-l" = "move_char_right";
     "A-j" = "move_line_down";
