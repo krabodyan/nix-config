@@ -21,7 +21,7 @@
           font-italic = "${font}:slant=Italic";
           font-bold-italic = "${font}:weight=SemiBold:slant=Italic";
 
-          box-drawings-uses-font-glyphs = true;
+          box-drawings-uses-font-glyphs = false;
           pad = "24x18";
           dpi-aware = true;
           resize-by-cells = false;
