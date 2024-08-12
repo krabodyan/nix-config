@@ -10,11 +10,11 @@
         "stable": "stable"
       },
       "locked": {
-        "lastModified": 1722992271,
-        "narHash": "sha256-uYNdvaGDSk/Ga/VIxE0DKjy3qenwaK+tTgEHtHUihvM=",
+        "lastModified": 1723338143,
+        "narHash": "sha256-BVUpXcipa/STvH3E5VJ5SxcpFQ1oTsg797BWEaGG8SM=",
         "owner": "duvetfall",
         "repo": "mur",
-        "rev": "e5d12dfb1ee352192186b6208f68e4ef5e738ee0",
+        "rev": "c725c64fc406fd90df1beb02968460030df798f4",
         "type": "github"
       },
       "original": {
@@ -263,11 +263,11 @@
     },
     "stable": {
       "locked": {
-        "lastModified": 1722869614,
-        "narHash": "sha256-7ojM1KSk3mzutD7SkrdSflHXEujPvW1u7QuqWoTLXQU=",
+        "lastModified": 1722987190,
+        "narHash": "sha256-68hmex5efCiM2aZlAAEcQgmFI4ZwWt8a80vOeB/5w3A=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "883180e6550c1723395a3a342f830bfc5c371f6b",
+        "rev": "21cc704b5e918c5fbf4f9fff22b4ac2681706d90",
         "type": "github"
       },
       "original": {
