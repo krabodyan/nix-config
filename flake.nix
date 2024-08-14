@@ -79,13 +79,12 @@
             };
           in
           pkgs.mkShell {
-            buildInputs =
-              [ rust ]
-              ++ (with pkgs; [
-                pkg-config
-                openssl
-              ]);
-            PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+            buildInputs = [ rust ];
+            nativeBuildInputs = with pkgs; [
+              pkg-config
+              openssl.dev
+              alsa-lib.dev
+            ];
             RUST_BACKTRACE = 1;
           };
 
