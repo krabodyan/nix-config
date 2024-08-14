@@ -110,7 +110,7 @@
         min-height: 0;
         border: none;
         font-family: ${config.font};
-        font-weight: bold;
+        font-weight: 700;
         font-size: 11px;
         padding: 0;
         margin: 0;
@@ -185,9 +185,12 @@
         padding: 8px 0;
       }
 
-      tooltip label,
-      #tray * {
+      tooltip label {
         font-size: 14px;
+      }
+
+      #tray * {
+        font-size: 13px;
       }
 
       #tray menu menuitem {
