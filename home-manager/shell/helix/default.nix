@@ -19,7 +19,7 @@
     languages = import ./languages.nix { inherit pkgs; };
     themes = import ./theme.nix {
       inherit config;
-      mkHex = helpers.mkHex;
+      inherit (helpers) mkHex;
     };
   };
 }

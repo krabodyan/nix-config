@@ -15,7 +15,9 @@
     enable = true;
     colors =
       with config.colors;
-      with helpers;
+      let
+        inherit (helpers) mkHex;
+      in
       {
         "bg+" = "-1";
         bg = "-1";

@@ -96,8 +96,8 @@
 
       colors =
         with config.colors;
-        with helpers;
         let
+          inherit (helpers) mkHex;
           unfocused = {
             background = mkHex bg-dark;
             border = mkHex border-unfocused;

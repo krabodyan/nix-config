@@ -4,7 +4,9 @@
     enable = true;
     options =
       with config.colors;
-      with helpers;
+      let
+        inherit (helpers) mkHex;
+      in
       {
         database = "sqlite";
         selection-clipboard = "clipboard";
