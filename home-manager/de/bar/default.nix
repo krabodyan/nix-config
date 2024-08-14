@@ -109,8 +109,8 @@
         all: unset;
         min-height: 0;
         border: none;
-        font-family: IosevkaTerm Nerd Font;
-        font-weight: 800;
+        font-family: ${config.font};
+        font-weight: bold;
         font-size: 11px;
         padding: 0;
         margin: 0;
@@ -187,7 +187,7 @@
 
       tooltip label,
       #tray * {
-        font-size: 13px;
+        font-size: 14px;
       }
 
       #tray menu menuitem {
