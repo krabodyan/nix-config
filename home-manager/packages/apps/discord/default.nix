@@ -8,8 +8,14 @@ in
     @import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css");
     * {
         font-family: "${config.font}" !important;
-        font-size: 13px !important;
-        font-weight: 500 !important;
+        font-feature-settings: 
+          "ss02",
+          "cv14",
+          "cv18",
+          "cv04",
+          "cv16";
+        font-size: 14px !important;
+        font-weight: 600 !important;
     }
   '';
 }
