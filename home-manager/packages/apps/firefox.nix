@@ -60,5 +60,6 @@
       DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
       SearchBar = "unified"; # alternative: "separate"
     };
+    profiles.krabodyan.extraConfig = '''';
   };
 }
