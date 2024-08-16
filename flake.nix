@@ -88,18 +88,6 @@
             ];
             RUST_BACKTRACE = 1;
           };
-
-        python = pkgs.mkShell {
-          packages = [
-            (pkgs.python3.withPackages (
-              ps: with ps; [
-                libtorrent-rasterbar
-                requests
-                aiogram
-              ]
-            ))
-          ];
-        };
       };
     };
 }
