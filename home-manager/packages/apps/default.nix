@@ -11,7 +11,7 @@
     #./zoom.nix
     ./protonvpn.nix
     ./office.nix
-    #./ide.nix
+    # ./ide.nix
     ./swayimg.nix
     ./vscode.nix
   ];
