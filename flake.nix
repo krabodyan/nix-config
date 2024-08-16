@@ -84,6 +84,7 @@
               pkg-config
               openssl.dev
               alsa-lib.dev
+              libpulseaudio.dev
             ];
             RUST_BACKTRACE = 1;
           };

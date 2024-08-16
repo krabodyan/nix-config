@@ -2,8 +2,7 @@
 {
   console = {
     earlySetup = true;
-    font = "${pkgs.terminus_font}/share/consolefonts/ter-v22b.psf.gz";
-    packages = [ pkgs.terminus_font ];
+    font = "${pkgs.powerline-fonts}/share/consolefonts/ter-powerline-v22n.psf.gz";
     keyMap = "us";
     colors = with config.colors; [
       bg-dark
