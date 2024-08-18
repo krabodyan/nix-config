@@ -5,7 +5,7 @@
     settings = {
       logo = {
         type = "raw";
-        source = "${config.home.homeDirectory}/nix-config/home-manager/etc/fetch.sixel";
+        source = "${config.home.homeDirectory}/nix-config/assets/fetch.sixel";
         width = 16;
         height = 9;
         padding = {
