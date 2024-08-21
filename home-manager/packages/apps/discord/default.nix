@@ -13,7 +13,8 @@ in
           "cv14",
           "cv18",
           "cv04",
-          "cv16";
+          "cv16",
+          "zero";
         font-size: 14px !important;
         font-weight: 600 !important;
     }

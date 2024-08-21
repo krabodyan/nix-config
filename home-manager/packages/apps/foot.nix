@@ -10,7 +10,7 @@
     settings = {
       main =
         let
-          font = "${config.font}:size=11:fontfeatures=cv04:fontfeatures=cv14:fontfeatures=ss02:fontfeatures=cv18:fontfeatures=cv16";
+          font = "${config.font}:size=11:fontfeatures=cv04:fontfeatures=cv14:fontfeatures=ss02:fontfeatures=cv18:fontfeatures=cv16:fontfeatures=zero";
         in
         {
           term = "xterm-256color";

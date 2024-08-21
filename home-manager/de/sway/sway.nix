@@ -169,7 +169,7 @@
           "${mod}+Shift+Print" = "exec wl-paste | swappy -f -";
 
           "${mod}+Shift+0" = "exec swaylock";
-          "${mod}+w" = "exec pkill -SIGUSR1 waybar";
+          # "${mod}+w" = "exec pkill -SIGUSR1 waybar";
 
           "${mod}+${up}" = "focus up";
           "${mod}+${down}" = "focus down";
