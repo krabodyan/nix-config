@@ -31,7 +31,7 @@
         # { command = "/usr/bin/env QT_QPA_PLATFORMTHEME=gtk3 ${pkgs._64gram}/bin/telegram-desktop"; }
       ];
       assigns = {
-        "workspace 1" = [ { app_id = "^com.ayugram.desktop$"; } ];
+        "workspace 1" = [ { app_id = "^org.telegram.desktop$"; } ];
         "workspace 2" = [ { app_id = "^firefox$"; } ];
         "workspace 3" = [ { app_id = "^vesktop$"; } ];
         "workspace 4" = [
@@ -222,7 +222,7 @@
           F4 = "exec ${microphone}/bin/microphone";
           XF86MonBrightnessUp = "exec ${brightness}/bin/brightness up";
           XF86MonBrightnessDown = "exec ${brightness}/bin/brightness down";
-          "Alt+Escape" = "exec ${brightness}/bin/brightness toggle";
+          "${mod}+x" = "exec ${brightness}/bin/brightness toggle";
         };
     };
   };
