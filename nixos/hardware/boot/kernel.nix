@@ -14,6 +14,7 @@
 
       "kernel.core_pattern" = "|/bin/false";
       "fs.suid_dumpable" = 0;
+      "kernel.dmesg_restrict" = 1;
 
       "kernel.sched_cfs_bandwidth_slice_us" = 3000;
       "vm.max_map_count" = 2147483642;
