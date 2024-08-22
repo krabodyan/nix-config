@@ -10,16 +10,15 @@
     [general]
     scale = optimal
     fullscreen = yes
-    antialiasing = no
     transparency = grid
     background = #${bg}
     slideshow = no
 
     [font]
     name = ${config.font}
-    size = 12
-    color = #${fg}
-    shadow = #000000
+    size = 14
+    color = #${fg}00
+    shadow = #000000a0
 
     [keys]
     left = rotate_left

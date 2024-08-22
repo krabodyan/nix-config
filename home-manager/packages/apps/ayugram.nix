@@ -6,7 +6,7 @@
 }:
 {
   home.packages = [
-    # inputs.ayugram-pkgs.packages.${system}.ayugram-desktop
+    # inputs.ayugram-desktop.packages.${system}.default
     pkgs.telegram-desktop
   ];
   xdg.desktopEntries."org.telegram.desktop" = {
