@@ -28,7 +28,7 @@
     kooha
     gimp
     system-config-printer
-    pavucontrol
+    pwvucontrol
     pulsemixer
     adwsteamgtk
   ];

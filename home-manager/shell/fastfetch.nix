@@ -16,7 +16,7 @@
       };
       display = {
         separator = "";
-        keyWidth = 8;
+        key.width = 8;
         color = {
           output = "blue";
           keys = "blue";

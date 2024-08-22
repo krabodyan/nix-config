@@ -1,16 +1,16 @@
 {
   description = "my flake";
 
-  # nixConfig = {
-  #   extra-substituters = [
-  #     "https://helix.cachix.org"
-  #     "https://mur.cachix.org"
-  #   ];
-  #   extra-trusted-public-keys = [
-  #     "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
-  #     "mur.cachix.org-1:VncNRWnvAh+Pl71texI+mPOiwTB5267t029meC4HBC0="
-  #   ];
-  # };
+  nixConfig = {
+    extra-substituters = [
+      "https://helix.cachix.org"
+      "https://mur.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
+      "mur.cachix.org-1:VncNRWnvAh+Pl71texI+mPOiwTB5267t029meC4HBC0="
+    ];
+  };
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

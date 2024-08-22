@@ -10,11 +10,11 @@
         "stable": "stable"
       },
       "locked": {
-        "lastModified": 1723338143,
-        "narHash": "sha256-BVUpXcipa/STvH3E5VJ5SxcpFQ1oTsg797BWEaGG8SM=",
+        "lastModified": 1724201861,
+        "narHash": "sha256-k3eU0T1zl1nQwh3FFNsCCz/e/rZeuFZmRIgjXHURxyM=",
         "owner": "duvetfall",
         "repo": "mur",
-        "rev": "c725c64fc406fd90df1beb02968460030df798f4",
+        "rev": "6fd4bf922af2601a032da8f98dc6515661d46bba",
         "type": "github"
       },
       "original": {
@@ -110,11 +110,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1724100338,
-        "narHash": "sha256-NAhc/wMVno4DSM9RW6a9R5LGskCScjSm7bwWlFNy9Pg=",
+        "lastModified": 1724200909,
+        "narHash": "sha256-+nUWRR6mV+EV6pG51tgTG7CckGrHcp3Fq6zz0OzcA9w=",
         "owner": "helix-editor",
         "repo": "helix",
-        "rev": "e2904794749ccc709a238a10e6ee364411c2b820",
+        "rev": "38e6fcd5c51478635ffa405815c7b9bbeadc35a9",
         "type": "github"
       },
       "original": {
@@ -263,11 +263,11 @@
     },
     "stable": {
       "locked": {
-        "lastModified": 1723688146,
-        "narHash": "sha256-sqLwJcHYeWLOeP/XoLwAtYjr01TISlkOfz+NG82pbdg=",
+        "lastModified": 1724098845,
+        "narHash": "sha256-D5HwjQw/02fuXbR4LCTo64koglP2j99hkDR79/3yLOE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c3d4ac725177c030b1e289015989da2ad9d56af0",
+        "rev": "f1bad50880bae73ff2d82fafc22010b4fc097a9c",
         "type": "github"
       },
       "original": {
