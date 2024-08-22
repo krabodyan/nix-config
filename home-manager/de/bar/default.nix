@@ -1,7 +1,34 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 {
   programs.waybar = {
     enable = true;
+    package =
+      (pkgs.waybar.override {
+        cavaSupport = false;
+        hyprlandSupport = false;
+        jackSupport = false;
+        evdevSupport = false;
+        pulseSupport = false;
+        sndioSupport = false;
+        wireplumberSupport = false;
+        pipewireSupport = false;
+        inputSupport = false;
+        udevSupport = false;
+        mprisSupport = false;
+        mpdSupport = false;
+        runTests = false;
+        enableManpages = false;
+        upowerSupport = false;
+        withMediaPlayer = false;
+      }).overrideAttrs
+        (_: {
+          src = pkgs.fetchFromGitHub {
+            owner = "Alexays";
+            repo = "Waybar";
+            rev = "26329b660af3169b9daad533017964f35ba98726";
+            hash = "sha256-oH1wbZ51fSEq1+mOSj0EVl+r01orO739+7zkA19i8Dw=";
+          };
+        });
 
     settings.mainBar = {
       position = "right";

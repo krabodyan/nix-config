@@ -30,6 +30,10 @@
       url = "github:duvetfall/mur";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    waybar = {
+      url = "github:Alexays/Waybar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 

@@ -26,9 +26,8 @@
       modifier = "Mod4";
       terminal = "foot";
       startup = [
-        { command = "${pkgs.waybar}/bin/waybar"; }
+        { command = "waybar"; }
         { command = "${pkgs.swaykbdd}/bin/swaykbdd"; }
-        # { command = "/usr/bin/env QT_QPA_PLATFORMTHEME=gtk3 ${pkgs._64gram}/bin/telegram-desktop"; }
       ];
       assigns = {
         "workspace 1" = [ { app_id = "^org.telegram.desktop$"; } ];
@@ -169,7 +168,7 @@
           "${mod}+Shift+Print" = "exec wl-paste | swappy -f -";
 
           "${mod}+Shift+0" = "exec swaylock";
-          # "${mod}+w" = "exec pkill -SIGUSR1 waybar";
+          "${mod}+w" = "exec pkill -SIGUSR1 waybar";
 
           "${mod}+${up}" = "focus up";
           "${mod}+${down}" = "focus down";
