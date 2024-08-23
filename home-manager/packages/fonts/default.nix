@@ -10,8 +10,9 @@
     (nerdfonts.override {
       fonts = [
         "NerdFontsSymbolsOnly"
-        "IosevkaTerm"
-        "JetBrainsMono"
+        # "IosevkaTerm"
+        # "JetBrainsMono"
+        "FiraCode"
       ];
     })
   ];

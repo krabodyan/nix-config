@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   home.packages = [ pkgs.xdg-terminal-exec ];
   xdg.configFile."xdg-terminals.list".text = ''
@@ -10,7 +15,16 @@
     settings = {
       main =
         let
-          font = "${config.font}:size=11:fontfeatures=cv04:fontfeatures=cv14:fontfeatures=ss02:fontfeatures=cv18:fontfeatures=cv16:fontfeatures=zero";
+          features = [
+            "cv04"
+            "cv14"
+            "ss02"
+            "cv18"
+            "cv16"
+            "zero"
+          ];
+          formattedFeatures = lib.concatStringsSep ":fontfeatures=" features;
+          font = "${config.font}:size=11:fontfeatures=${formattedFeatures}";
         in
         {
           term = "xterm-256color";

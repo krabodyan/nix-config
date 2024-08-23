@@ -3,7 +3,7 @@
   options = {
     font = lib.mkOption {
       type = lib.types.str;
-      default = "JetBrainsMono Nerd Font"; # "IosevkaTerm Nerd Font";
+      default = "FiraCode Nerd Font"; # "IosevkaTerm Nerd Font";
     };
     background-image = lib.mkOption {
       type = lib.types.str;
