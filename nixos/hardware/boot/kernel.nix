@@ -14,7 +14,7 @@
 
       "kernel.core_pattern" = "|/bin/false";
       "fs.suid_dumpable" = 0;
-      "kernel.dmesg_restrict" = 1;
+      "kernel.dmesg_restrict" = 0;
 
       "kernel.sched_cfs_bandwidth_slice_us" = 3000;
       "vm.max_map_count" = 2147483642;
@@ -33,7 +33,7 @@
       "nohibernate"
       "rootfstype=btrfs"
     ];
-    # kernelPackages = pkgs.linuxPackages_cachyos;
+    # kernelPackages = pkgs.linuxPackages_latest;
     # extraModprobeConfig = ''
     #   options i915 enable_guc=2
     #   options i915 enable_fbc=1
@@ -64,6 +64,7 @@
       "usbhid"
     ];
     # initrd.kernelModules = [ ];
+    initrd.verbose = false;
     # initrd.compressor = pkg: "${pkg.lz4}/bin/lz4";
     kernelModules = [ ]; # "v4l2loopback" ]; # "i915" "uinput" ];
     # extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
