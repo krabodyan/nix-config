@@ -2,11 +2,20 @@
   inputs,
   system,
   pkgs,
+  lib,
   ...
 }:
 {
   home.packages = [
-    # inputs.ayugram-desktop.packages.${system}.default
+    # (pkgs.callPackage ./ayugram2.nix {
+    #   inherit lib;
+    #   inherit (pkgs)
+    #     fetchFromGitHub
+    #     stdenv
+    #     telegram-desktop
+    #     nix-update-script
+    #     ;
+    # })
     pkgs.telegram-desktop
   ];
   xdg.desktopEntries."org.telegram.desktop" = {
