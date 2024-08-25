@@ -33,7 +33,7 @@
     userEmail = "krabraketa@example.com";
     extraConfig = {
       init = {
-        defaultbranch = "main";
+        defaultbranch = "master";
       };
       branch = {
         sort = "-committerdate";
