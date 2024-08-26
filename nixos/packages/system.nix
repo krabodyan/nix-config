@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    compsize
+    # compsize
     ffmpeg-full
     python3Full
 

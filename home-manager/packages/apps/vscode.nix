@@ -5,8 +5,8 @@
     extensions = with pkgs.vscode-extensions; [
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
-      ms-python.python
-      ms-python.vscode-pylance
+      # ms-python.python
+      # ms-python.vscode-pylance
     ];
   };
 }

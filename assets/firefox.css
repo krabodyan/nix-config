@@ -62,8 +62,8 @@
 /* ==============================================================================*/
 
 :root {
-    --urlbar-collapsed-width: 300px;
-    --urlbar-open-width: 300px; /* Only when disable-centering-of-URLbar is enabled */
+    --urlbar-collapsed-width: 250px;
+    --urlbar-open-width: 250px; /* Only when disable-centering-of-URLbar is enabled */
 }
 
 #navigator-toolbox {
@@ -284,49 +284,18 @@ toolbarspring,
     }
 }
 
-/* Hide unimportant buttons until hover */
-:root {
-    --in-transition: font-size .2s, padding .2s, margin .2s, max-width .2s, opacity .2s .15s;
-    --out-transition: font-size .2s, padding .2s, margin .2s, max-width .2s, opacity .07s;
-}
-#urlbar-container:hover #urlbar-input-container > box:not(#page-action-buttons),
-#urlbar-container:hover #page-action-buttons > *,
-#urlbar-container:hover #userContext-label {
-    transition: var(--in-transition) !important;
-    max-width: 200px;
-}
-@media (-moz-bool-pref: "onebar.disable-autohide-of-URLbar-icons") {
-    #urlbar-container {
-        min-width: var(--urlbar-open-width) !important;
-    }
-}
-@media (not (-moz-bool-pref: "onebar.disable-autohide-of-URLbar-icons")) {
-    #urlbar-container:not(:hover) :where(
-        toolbarbutton,
-        #userContext-label,
-        #star-button-box,
-        .verifiedDomain,
-        #tracking-protection-icon-container,
-        #pageAction-urlbar-_testpilot-containers,
-        #pageActionButton,
-    ) {
-        font-size: 0 !important;
-        max-width: 0 !important;
-        padding-inline: 0 !important;
-        margin-inline: 0 !important;
-        opacity: 0 !important;
-        transition: var(--out-transition) !important;
-    }
-    @media (-moz-bool-pref: "onebar.hide-all-URLbar-icons") {
-        #urlbar-container:not(:hover) :where(#page-action-buttons, #identity-box) > * {
-            font-size: 0 !important;
-            max-width: 0 !important;
-            padding-inline: 0 !important;
-            margin-inline: 0 !important;
-            opacity: 0 !important;
-            transition: var(--out-transition) !important;
-        }
-    }
+#urlbar-container :where(
+    toolbarbutton,
+    #page-action-buttons, 
+    #identity-box,
+    #userContext-label,
+    #star-button-box,
+    .verifiedDomain,
+    #tracking-protection-icon-container,
+    #pageAction-urlbar-_testpilot-containers,
+    #pageActionButton,
+) {
+    display: none;
 }
 #urlbar-container #urlbar[focused="true"] #urlbar-input-container > box,
 #urlbar-container #urlbar[focused="true"] #page-action-buttons > * {

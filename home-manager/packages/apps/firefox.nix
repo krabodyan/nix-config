@@ -28,15 +28,11 @@
         "security.sandbox.content.level" = 0;
         "widget.wayland.opaque-region.enabled" = false;
 
-        # "svg.context-properties.content.enabled" = true;
-        # "layout.css.color-mix.enabled" = true;
-        # "layout.css.light-dark.enabled" = true;
-        # "browser.tabs.tabMinWidth" = 66;
-        # "browser.tabs.tabClipWidth" = 86;
-        # "fp.tweak.autohide-bookmarks" = true;
-        # "fp.tweak.macos-button" = false;
-        # "fp.tweak.rounded-corners" = true;
-        # "fp.tweak.sidebar-enabled" = false;
+        "svg.context-properties.content.enabled" = true;
+        "layout.css.color-mix.enabled" = true;
+        "layout.css.light-dark.enabled" = true;
+        "browser.tabs.tabMinWidth" = 66;
+        "browser.tabs.tabClipWidth" = 86;
 
         "layout.spellcheckDefault" = 0;
         "app.update.auto" = false;
@@ -61,7 +57,7 @@
         "onebar.hide-all-URLbar-icons" = true;
         "onebar.hide-all-tabs-button" = true;
         "onebar.hide-navigation-buttons" = true;
-        "onebar.hide-unified-extensions-button" = true;
+        "onebar.hide-unified-extensions-button" = false;
         DisableTelemetry = true;
         DisableFirefoxStudies = true;
         DisablePocket = true;
