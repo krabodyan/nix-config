@@ -3,7 +3,7 @@
   home.packages = [ pkgs.libnotify ];
   services.mako = with config.colors; {
     enable = true;
-    font = "${config.font} Medium 10";
+    font = "${config.font} Medium 10.5";
     sort = "-time";
     layer = "overlay";
     anchor = "bottom-center";
