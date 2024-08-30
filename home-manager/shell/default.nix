@@ -17,6 +17,8 @@
 
   home.packages = with pkgs; [
     xdg-utils
+    iotop
+    iftop
     # php
     # temurin-jre-bin-17 # minecraft
     dust
