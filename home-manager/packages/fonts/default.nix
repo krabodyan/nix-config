@@ -5,8 +5,9 @@
     font-awesome
     noto-fonts
     noto-fonts-emoji
-    roboto
     noto-fonts-cjk-sans
+    roboto
+    twemoji-color-font
     (nerdfonts.override {
       fonts = [
         "NerdFontsSymbolsOnly"
@@ -21,7 +22,11 @@
       serif = [ "Roboto Medium" ];
       sansSerif = [ "Roboto Medium" ];
       monospace = [ config.font ];
-      emoji = [ "FontAwesome" ];
+      emoji = [
+        "SymbolsNerdFont"
+        "FontAwesome"
+        "Noto Color Emoji"
+      ];
     };
   };
   xdg.configFile."fontconfig/fonts.conf".source = ./fonts.conf;
