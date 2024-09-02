@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = [ pkgs.chromium ];
+  # home.packages = [ pkgs.chromium ];
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-wayland;

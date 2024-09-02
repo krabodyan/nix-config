@@ -8,7 +8,7 @@
     ./firefox.nix
     ./ayugram.nix
     # ./zathura.nix
-    #./zoom.nix
+    ./zoom.nix
     ./protonvpn.nix
     ./office.nix
     # ./ide.nix
@@ -28,7 +28,7 @@
     kooha
     gimp
     system-config-printer
-    pwvucontrol
+    pavucontrol
     pulsemixer
     adwsteamgtk
   ];
