@@ -7,6 +7,11 @@
   ...
 }:
 {
+  home.packages = with pkgs; [
+    yaml-language-server
+    docker-compose-language-service
+    dockerfile-language-server-nodejs
+  ];
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${system}.helix;
