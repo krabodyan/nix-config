@@ -4,11 +4,11 @@
   nixConfig = {
     extra-substituters = [
       "https://helix.cachix.org"
-      "https://kaeeraa.cachix.org"
+      "https://cache.garnix.io"
     ];
     extra-trusted-public-keys = [
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
-      "kaeeraa.cachix.org-1:S3CnhT12akYQf4Ph7fndLgqo2os4ket3OTP2amrzJRs="
+      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
     ];
   };
 
@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helix.url = "github:helix-editor/helix";
-    ayugram-desktop.url = "git+https://github.com/kaeeraa/ayugram-desktop?submodules=1";
+    ayugram.url = "github:kaeeraa/ayugram-desktop/release";
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 

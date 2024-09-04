@@ -1,43 +1,24 @@
 {
   inputs,
   system,
-  pkgs,
-  lib,
   ...
 }:
+let
+  client = inputs.ayugram.packages.${system}.ayugram-desktop;
+  name = "com.ayugram.desktop";
+  exec = "ayugram-desktop";
+in
 {
   home.packages = [
-    # (pkgs.callPackage ./ayugram2.nix {
-    #   inherit lib;
-    #   inherit (pkgs)
-    #     fetchFromGitHub
-    #     stdenv
-    #     telegram-desktop
-    #     nix-update-script
-    #     ;
-    # })
-    pkgs.materialgram
+    client
   ];
-  xdg.desktopEntries."io.github.kukuruzka165.materialgram" = {
+
+  xdg.desktopEntries.${name} = {
     name = "Telegram Desktop";
-    exec = "env QT_QPA_PLATFORMTHEME=gtk3 materialgram -- %u";
+    exec = "env QT_QPA_PLATFORMTHEME=gtk3 ${exec} -- %u";
   };
   xdg.mimeApps.defaultApplications = {
-    "x-scheme-handler/tg" = [ "io.github.kukuruzka165.materialgram.desktop" ];
+    "x-scheme-handler/tg" = [ "${name}.desktop" ];
   };
-  # xdg.desktopEntries."org.telegram.desktop" = {
-  #   name = "Telegram Desktop";
-  #   exec = "env QT_QPA_PLATFORMTHEME=gtk3 telegram-desktop -- %u";
-  # };
-  # xdg.mimeApps.defaultApplications = {
-  #   "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
-  # };
-  # home.packages = [ pkgs._64gram ];
-  # xdg.desktopEntries."org.telegram.desktop" = {
-  #   name = "Telegram Desktop";
-  #   exec = "env QT_QPA_PLATFORMTHEME=gtk3 telegram-desktop -- %u";
-  # };
-  # xdg.mimeApps.defaultApplications = {
-  #   "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
-  # };
+
 }
