@@ -105,7 +105,7 @@
             text = mkHex fg-dark;
           };
           focused = {
-            background = mkHex bg + "E6";
+            background = mkHex bg; # + "E6";
             border = mkHex accent;
             childBorder = mkHex accent;
             indicator = mkHex fg;

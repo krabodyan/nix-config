@@ -61,7 +61,7 @@
       };
 
       devShells.${system} = {
-        default =
+        rust =
           let
             overlays = [ (import inputs.rust-overlay) ];
             pkgs = import nixpkgs { inherit system overlays; };
@@ -82,6 +82,19 @@
             ];
             RUST_BACKTRACE = 1;
           };
+      };
+      python = pkgs.mkShell {
+        packages = [
+          (pkgs.python312.withPackages (
+            python-pkgs: with python-pkgs; [
+              numpy
+              matplotlib
+              scikit-learn
+              pandas
+              seaborn
+            ]
+          ))
+        ];
       };
     };
 }

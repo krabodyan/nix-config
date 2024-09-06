@@ -71,7 +71,7 @@
       # mouse.alternate-scroll-mode = false;
 
       colors = with config.colors; {
-        alpha = "${opacity}";
+        # alpha = "${opacity}";
         background = "${bg}";
         foreground = "${fg}";
         regular0 = "${black}";

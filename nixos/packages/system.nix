@@ -3,7 +3,6 @@
   environment.systemPackages = with pkgs; [
     # compsize
     ffmpeg-full
-    python3Full
 
     git
     gcc
