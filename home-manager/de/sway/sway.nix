@@ -30,7 +30,7 @@
         { command = "${pkgs.swaykbdd}/bin/swaykbdd"; }
       ];
       assigns = {
-        "workspace 1" = [ { app_id = "^org.telegram.desktop$"; } ];
+        "workspace 1" = [ { app_id = "^com.ayugram$"; } ];
         "workspace 2" = [ { app_id = "^firefox$"; } ];
         "workspace 3" = [ { app_id = "^vesktop$"; } ];
         "workspace 4" = [
@@ -122,7 +122,7 @@
       input = {
         "type:keyboard" = {
           xkb_layout = "us,ua,ru";
-          xkb_options = "ctrl:nocaps,grp:alt_caps_toggle";
+          xkb_options = "grp:alt_caps_toggle";
           repeat_rate = "35";
           repeat_delay = "400";
         };

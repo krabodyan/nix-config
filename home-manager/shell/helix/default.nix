@@ -8,7 +8,6 @@
 }:
 {
   home.packages = with pkgs; [
-    yaml-language-server
     docker-compose-language-service
     dockerfile-language-server-nodejs
   ];

@@ -25,10 +25,6 @@
       formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
     }
     {
-      name = "yaml";
-      formatter.command = "${pkgs.yamlfmt}/bin/yamlfmt";
-    }
-    {
       name = "rust";
       auto-pairs = {
         "(" = ")";
