@@ -19,6 +19,7 @@
     xdg-utils
     iotop
     iftop
+    python3
     # php
     # temurin-jre-bin-17 # minecraft
     dust

@@ -7,7 +7,7 @@
     ./discord
     ./firefox.nix
     ./ayugram.nix
-    # ./zathura.nix
+    ./zathura.nix
     ./zoom.nix
     ./protonvpn.nix
     ./office.nix
@@ -22,10 +22,10 @@
     pcmanfm
     qbittorrent
     solaar
-    evince
     gcolor3
     obs-studio
     kooha
+    # krita
     gimp
     system-config-printer
     pavucontrol
