@@ -12,7 +12,7 @@
     ./ripgrep.nix
     ./fastfetch.nix
     ./zoxide.nix
-    # ./rustfmt.nix
+    ./rustfmt.nix
   ];
 
   home.packages = with pkgs; [
@@ -20,12 +20,13 @@
     iotop
     iftop
     python3
+    ffmpeg
     # php
     # temurin-jre-bin-17 # minecraft
     dust
+    dua
     duf
     eza
-    cmus
     exiftool
   ];
 }

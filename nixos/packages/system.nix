@@ -2,9 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     # compsize
-    ffmpeg-full
-
-    git
     gcc
     inxi
     wget
@@ -16,9 +13,7 @@
     file
     lshw
     usbutils
-    ncdu
     pciutils
-    jq
     acpi
     ntfs3g
   ];

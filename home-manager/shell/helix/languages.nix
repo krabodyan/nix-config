@@ -26,6 +26,7 @@
     }
     {
       name = "rust";
+      # auto-format = false;
       auto-pairs = {
         "(" = ")";
         "{" = "}";

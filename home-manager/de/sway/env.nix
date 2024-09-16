@@ -7,6 +7,7 @@
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "Sway";
     XDG_SCREENSHOTS_DIR = "~/pictures";
+    RUST_BACKTRACE = 1;
     # WLR_RENDERER = "vulkan";
     #"WLR_RENDERER_ALLOW_SOFTWARE,1"
     # WLR_DRM_NO_ATOMIC = 1;

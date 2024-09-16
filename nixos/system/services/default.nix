@@ -10,7 +10,7 @@
   '';
   services = {
     printing.enable = false;
-    earlyoom.enable = false;
+    earlyoom.enable = true;
     nscd.enableNsncd = false;
     dbus = {
       enable = true;
