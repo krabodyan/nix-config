@@ -76,7 +76,10 @@
             };
           in
           pkgs.mkShell {
-            buildInputs = [ rust ];
+            buildInputs = [
+              rust
+              pkgs.llvmPackages.clang
+            ];
             nativeBuildInputs = with pkgs; [
               pkg-config
               openssl.dev
@@ -85,6 +88,7 @@
               postgresql.dev
             ];
             RUST_BACKTRACE = 1;
+            LIBCLANG_PATH = "${pkgs.libclang.lib}/lib";
           };
       };
       python = pkgs.mkShell {

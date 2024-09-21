@@ -53,6 +53,12 @@
             app_id = ".*";
           };
         }
+        {
+          command = "floating enable; sticky enable; resize set 800 px 800 px; move position 1080 30";
+          criteria = {
+            app_id = "org.pulseaudio.pavucontrol";
+          };
+        }
       ];
 
       output."eDP-1" = {
