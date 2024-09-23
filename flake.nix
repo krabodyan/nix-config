@@ -90,19 +90,32 @@
             RUST_BACKTRACE = 1;
             LIBCLANG_PATH = "${pkgs.libclang.lib}/lib";
           };
-      };
-      python = pkgs.mkShell {
-        packages = [
-          (pkgs.python312.withPackages (
-            python-pkgs: with python-pkgs; [
-              numpy
-              matplotlib
-              scikit-learn
-              pandas
-              seaborn
-            ]
-          ))
-        ];
+        python = pkgs.mkShell {
+          packages = [
+            (pkgs.python312.withPackages (
+              python-pkgs: with python-pkgs; [
+                numpy
+                matplotlib
+                scikit-learn
+                pandas
+                seaborn
+                certifi
+                (buildPythonPackage rec {
+                  pname = "ucimlrepo";
+                  version = "0.0.7";
+                  src = fetchPypi {
+                    inherit pname version;
+                    sha256 = "sha256-TP8/noFDZ91glW2pmazkcxlyN7n85MB+mmied7T/tZo=";
+                  };
+                  doCheck = false;
+                  propagatedBuildInputs = [
+                    numpy
+                  ];
+                })
+              ]
+            ))
+          ];
+        };
       };
     };
 }
