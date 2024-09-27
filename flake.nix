@@ -99,7 +99,9 @@
                 scikit-learn
                 pandas
                 seaborn
+                requests
                 certifi
+                tabulate
                 (buildPythonPackage rec {
                   pname = "ucimlrepo";
                   version = "0.0.7";

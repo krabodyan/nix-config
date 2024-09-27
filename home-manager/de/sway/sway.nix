@@ -35,6 +35,7 @@
         "workspace 3" = [ { app_id = "^vesktop$"; } ];
         "workspace 4" = [
           { class = "^steam$"; }
+          { class = "^zoom$"; }
           # { class = "^DesktopEditors$"; }
         ];
         "workspace 6" = [ { app_id = "^(chromium-browser)(.*)$"; } ];
@@ -54,7 +55,13 @@
           };
         }
         {
-          command = "floating enable; sticky enable; resize set 800 px 800 px; move position 1080 30";
+          command = "floating enable";
+          criteria = {
+            class = "^zoom$";
+          };
+        }
+        {
+          command = "floating enable; resize set 800 px 800 px; move position 1080 30";
           criteria = {
             app_id = "org.pulseaudio.pavucontrol";
           };

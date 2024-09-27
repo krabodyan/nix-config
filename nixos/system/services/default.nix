@@ -9,7 +9,7 @@
     DefaultTimeoutStopSec=15s
   '';
   services = {
-    printing.enable = false;
+    printing.enable = true;
     earlyoom.enable = true;
     nscd.enableNsncd = false;
     dbus = {

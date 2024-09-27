@@ -1,0 +1,51 @@
+file_watch_support = true
+
+[[language]]
+auto-format = true
+language-servers = ["nix"]
+name = "nix"
+
+[language.formatter]
+command = "nixfmt"
+
+[[language]]
+name = "rust"
+
+[language.auto-pairs]
+"\"" = "\""
+"(" = ")"
+"<" = ">"
+"[" = "]"
+"`" = "`"
+"{" = "}"
+
+[[language]]
+name = "python"
+auto-format = true
+language-servers = ["ruff", "pylsp"]
+
+
+[language.formatter]
+args = ["--line-length", "88", "--quiet", "-"]
+command = "black"
+
+[[language]]
+auto-format = true
+language-servers = ["json"]
+name = "json"
+
+[language-server]
+[language-server.json]
+args = ["--stdio"]
+command = "vscode-json-language-server"
+
+[language-server.nix]
+command = "nil"
+
+# [language-server.python]
+# args = ["--stdio"]
+# command = "pyright-langserver"
+# config = { }
+
+# [language-server.ruff]
+# command = "ruff-lsp"
