@@ -12,7 +12,7 @@ find_position = { fg = "#f5c2e7", bg = "reset", italic = true }
 # Marker
 marker_copied   = { fg = "#a6e3a1", bg = "#a6e3a1" }
 marker_cut      = { fg = "#f38ba8", bg = "#f38ba8" }
-marker_selected = { fg = "#b4befe", bg = "#b4befe" }
+marker_selected = { fg = "#6fe2b9", bg = "#6fe2b9" }
 
 # Tab
 tab_active   = { fg = "#1e1e2e", bg = "#cdd6f4" }

@@ -28,10 +28,12 @@
       };
       preview = {
         image_filter = "nearest";
-        image_quality = 50;
-        sixel_fraction = 20;
+        image_quality = 80;
+        sixel_fraction = 10;
       };
     };
   };
   xdg.configFile."yazi/theme.toml".source = ./yazi.toml;
+  xdg.configFile."yazi/keymap.toml".source = ./keymap.toml;
+  xdg.configFile."yazi/plugins/compress.yazi/init.lua".source = ./compress.lua;
 }

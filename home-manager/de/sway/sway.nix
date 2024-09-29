@@ -93,7 +93,7 @@
       fonts = {
         names = [ config.font ];
         style = "Medium";
-        size = 10.0;
+        size = 10.5;
       };
 
       focus = {
