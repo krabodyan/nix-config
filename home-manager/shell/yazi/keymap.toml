@@ -1,7 +1,7 @@
 [[manager.prepend_keymap]]
 on = "<Space>"
-run = [ "select --state=none" ]
-desc = "Toggle the current selection state"
+run = [ "cd --interactive" ]
+desc = "cd interactive"
 
 [[manager.prepend_keymap]]
 on   = [ "c", "a" ]
