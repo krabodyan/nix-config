@@ -6,26 +6,28 @@
   xdg.configFile."zellij/config.kdl".text = with config.colors; ''
     themes {
       default {
-        bg "#${bg}"
-        fg "#${fg}"
+        bg "#${surface2}"
+        fg "#${surface2}"
         red "#${red}"
-        green "#${green}"
+        green "#${accent}"
         blue "#${cyan}"
         yellow "#${yellow}"
         magenta "#${magenta}"
-        orange "#${orange}"
-        cyan "#${cyan}"
+        orange "#${green}"
+        cyan "#${blue}"
         black "#${bg}"
-        white "#${fg}"
+        white "#${surface2}"
       }
     }
 
     keybinds {
-      unbind "Alt l" "Alt h"
+      unbind "Alt l" "Alt h" "Ctrl s"
       normal {
         bind "Ctrl k" { SwitchToMode "tab"; }
+        bind "Ctrl j" { SwitchToMode "scroll"; }
       }
       tab {
+        bind "Ctrl c" { SwitchToMode "normal"; }
         bind "h" "Left" { MoveFocusOrTab "Left"; }
         bind "l" "Right" { MoveFocusOrTab "Right"; }
         bind "p" { SwitchFocus; }
