@@ -7,8 +7,7 @@
     ./fish.nix
     ./htop.nix
     ./git.nix
-    ./pfetch.nix
-    ./tmux.nix
+    ./zellij.nix
     ./ripgrep.nix
     ./fastfetch.nix
     ./zoxide.nix
@@ -22,7 +21,6 @@
     python3
     ffmpeg
     # php
-    # temurin-jre-bin-17 # minecraft
     dust
     dua
     duf

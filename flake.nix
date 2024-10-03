@@ -102,6 +102,7 @@
                 requests
                 certifi
                 tabulate
+                termcolor
                 (buildPythonPackage rec {
                   pname = "ucimlrepo";
                   version = "0.0.7";
@@ -112,6 +113,18 @@
                   doCheck = false;
                   propagatedBuildInputs = [
                     numpy
+                  ];
+                })
+                (buildPythonPackage rec {
+                  pname = "blosum";
+                  version = "2.0.3";
+                  src = fetchPypi {
+                    inherit pname version;
+                    sha256 = "sha256-b+5ol1wEIR/Hwpj1jL8eWwIeooeeUUVtk0I46J6irps=";
+                  };
+                  doCheck = false;
+                  propagatedBuildInputs = [
+                    # numpy
                   ];
                 })
               ]

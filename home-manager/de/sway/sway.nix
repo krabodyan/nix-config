@@ -38,7 +38,7 @@
           { class = "^zoom$"; }
           # { class = "^DesktopEditors$"; }
         ];
-        "workspace 6" = [ { app_id = "^(chromium-browser)(.*)$"; } ];
+        # "workspace 6" = [ { app_id = "^(chromium-browser)(.*)$"; } ];
       };
 
       window.commands = [
