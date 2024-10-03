@@ -10,6 +10,7 @@ let
 in
 pkgs.writeShellScriptBin "microphone" ''
   ${pamixer} --default-source -t
+  pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga &
   if ${pamixer} --default-source --get-mute | grep -q "true"; then
     ${send} "󰍭 $(${pamixer} --default-source --get-volume-human)"
   else
