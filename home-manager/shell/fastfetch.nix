@@ -45,6 +45,7 @@
         {
           key = "│ ed {#keys}│";
           type = "editor";
+          format = "{2}";
         }
         {
           key = "│ up {#keys}│";

@@ -23,7 +23,7 @@
     keybinds {
       unbind "Alt l" "Alt h" "Ctrl s"
       normal {
-        bind "Ctrl k" { SwitchToMode "tab"; }
+        bind "Alt i" { SwitchToMode "tab"; }
         bind "Ctrl j" { SwitchToMode "scroll"; }
       }
       tab {
