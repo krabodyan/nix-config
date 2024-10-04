@@ -13,7 +13,7 @@
     "constructor" = "yellow";
 
     "constant.builtin" = "maroon";
-    "constant.numeric" = "peach";
+    "constant.numeric" = "red";
     "constant.character" = "teal";
     "constant.character.escape" = "maroon";
 
@@ -56,7 +56,7 @@
     #   fg = "peach";
     #   modifiers = [ "italic" ];
     # };
-    # "function.macro" = "peach";
+    "function.macro" = "red";
 
     "tag" = "lavender";
 
