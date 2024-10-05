@@ -16,4 +16,5 @@
   xdg.configFile."yazi/theme.toml".source = ./theme.toml;
   xdg.configFile."yazi/keymap.toml".source = ./keymap.toml;
   xdg.configFile."yazi/plugins/ouch.yazi/init.lua".source = ./plugins/ouch.lua;
+  xdg.configFile."yazi/plugins/compress.yazi/init.lua".source = ./plugins/compress.lua;
 }
