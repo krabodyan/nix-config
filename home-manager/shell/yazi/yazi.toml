@@ -2,7 +2,7 @@
 enabled = false
 
 [manager]
-linemode = "mtime"
+linemode = "none"
 ratio = [0, 1, 1]
 show_hidden = false
 sort_by = "alphabetical"
