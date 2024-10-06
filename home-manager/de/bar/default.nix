@@ -154,7 +154,7 @@
       #network,
       #battery
       {
-        color: #${subtext0};
+        color: #${overlay2};
         padding: 0;
         margin: 5px 0;
       }

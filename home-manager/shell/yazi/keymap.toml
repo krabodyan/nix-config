@@ -8,3 +8,8 @@ run = [ '''
 on = [ "c", "a" ]
 run = "plugin compress"
 desc = "Compress to archive"
+
+[[manager.prepend_keymap]]
+on = "Space"
+run = "select --state=none"
+desc = "Toggle the current selection state"

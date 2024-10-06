@@ -46,7 +46,7 @@
         brblack = fg-dark;
         brred = "e67e81";
         brgreen = "92f2b3";
-        bryellow = "f9e8c0";
+        bryellow = "f9e2af";
         brblue = "80cfed";
         brmagenta = "ec91f2";
         brcyan = "75e6e3";

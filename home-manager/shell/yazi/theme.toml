@@ -1,239 +1,156 @@
-[completion]
-[completion.active]
-bg = "#424242"
-fg = "#a988b0"
-
-[completion.border]
-fg = "#99a2d9"
-
-[completion.inactive]
-fg = "#ccc6c6"
-
-[[filetype.rules]]
-fg = "#70bbcc"
-mime = "image/*"
-
-[[filetype.rules]]
-fg = "#d9bc8c"
-mime = "video/*"
-
-[[filetype.rules]]
-fg = "#d9bc8c"
-mime = "audio/*"
-
-[[filetype.rules]]
-fg = "#a988b0"
-mime = "application/zip"
-
-[[filetype.rules]]
-fg = "#a988b0"
-mime = "application/gzip"
-
-[[filetype.rules]]
-fg = "#a988b0"
-mime = "application/x-tar"
-
-[[filetype.rules]]
-fg = "#a988b0"
-mime = "application/x-bzip"
-
-[[filetype.rules]]
-fg = "#a988b0"
-mime = "application/x-bzip2"
-
-[[filetype.rules]]
-fg = "#a988b0"
-mime = "application/x-7z-compressed"
-
-[[filetype.rules]]
-fg = "#a988b0"
-mime = "application/x-rar"
-
-[[filetype.rules]]
-fg = "#a988b0"
-mime = "application/xz"
-
-[[filetype.rules]]
-fg = "#7bcc8f"
-mime = "application/doc"
-
-[[filetype.rules]]
-fg = "#7bcc8f"
-mime = "application/pdf"
-
-[[filetype.rules]]
-fg = "#7bcc8f"
-mime = "application/rtf"
-
-[[filetype.rules]]
-fg = "#7bcc8f"
-mime = "application/vnd.*"
-
-[[filetype.rules]]
-bold = true
-fg = "#99a2d9"
-mime = "inode/directory"
-
-[[filetype.rules]]
-fg = "#ccc6c6"
-mime = "*"
-
-[help]
-[help.desc]
-fg = "#ccc6c6"
-
-[help.footer]
-fg = "#ccc6c6"
-
-[help.hovered]
-bg = "#424242"
-fg = "#ccc6c6"
-
-[help.on]
-fg = "#a988b0"
-
-[help.run]
-fg = "#70bbcc"
-
-[input]
-[input.border]
-fg = "#99a2d9"
-
-[input.selected]
-bg = "#424242"
-
-[input.title]
-fg = "#ccc6c6"
-
-[input.value]
-fg = "#ccc6c6"
-
 [manager]
-syntect_theme = "/nix/store/z29n8dss6dn1zcfnj31dwhnw7pmahlkg-untitled/base16-untitled.tmTheme"
-[manager.border_style]
-fg = "#8c8888"
+cwd = { fg = "{{ teal }}" }
 
-[manager.cwd]
-fg = "#70bbcc"
+# Hovered
+hovered         = { reversed = true }
+preview_hovered = { underline = true }
 
-[manager.find_keyword]
-bold = true
-fg = "#7bcc8f"
+# Find
+find_keyword  = { fg = "{{ yellow }}", bold = true, italic = true, underline = true }
+find_position = { fg = "{{ pink }}", bg = "reset", bold = true, italic = true }
 
-[manager.find_position]
-fg = "#ccc6c6"
+# Marker
+marker_copied   = { fg = "{{ green }}", bg = "{{ green }}" }
+marker_cut      = { fg = "{{ red }}", bg = "{{ red }}" }
+marker_marked   = { fg = "{{ teal }}", bg = "{{ teal }}" }
+marker_selected = { fg = "{{ yellow }}", bg = "{{ yellow }}" }
 
-[manager.hovered]
-bg = "#424242"
-bold = true
-fg = "#ccc6c6"
+# Tab
+tab_active   = { reversed = true }
+tab_inactive = {}
+tab_width    = 1
 
-[manager.marker_copied]
-bg = "#d9bc8c"
-fg = "#d9bc8c"
+# Count
+count_copied   = { fg = "{{ base }}", bg = "{{ green }}" }
+count_cut      = { fg = "{{ base }}", bg = "{{ red }}" }
+count_selected = { fg = "{{ base }}", bg = "{{ yellow }}" }
 
-[manager.marker_cut]
-bg = "#cc7073"
-fg = "#cc7073"
+# Border
+border_symbol = "│"
+border_style  = { fg = "{{ overlay1 }}" }
 
-[manager.marker_selected]
-bg = "#7bcc8f"
-fg = "#7bcc8f"
+# : }}}
 
-[manager.preview_hovered]
-bg = "#424242"
-bold = true
-fg = "#ccc6c6"
 
-[manager.tab_active]
-bg = "#99a2d9"
-fg = "#151515"
-
-[manager.tab_inactive]
-bg = "#1f1f1f"
-fg = "#ccc6c6"
-
-[select]
-[select.active]
-fg = "#a988b0"
-
-[select.border]
-fg = "#99a2d9"
-
-[select.inactive]
-fg = "#ccc6c6"
+# : Status {{{
 
 [status]
-[status.mode_normal]
-bg = "#99a2d9"
-bold = true
-fg = "#151515"
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "{{ surface1 }}", bg = "{{ surface1 }}" }
 
-[status.mode_select]
-bg = "#7bcc8f"
-bold = true
-fg = "#151515"
+# Mode
+mode_normal = { fg = "{{ base }}", bg = "{{ blue }}", bold = true }
+mode_select = { fg = "{{ base }}", bg = "{{ green }}", bold = true }
+mode_unset  = { fg = "{{ base }}", bg = "{{ flamingo }}", bold = true }
 
-[status.mode_unset]
-bg = "#bbb6b6"
-bold = true
-fg = "#151515"
+# Progress
+progress_label  = { fg = "#ffffff", bold = true }
+progress_normal = { fg = "{{ blue }}", bg = "{{ surface1 }}" }
+progress_error  = { fg = "{{ red }}", bg = "{{ surface1 }}" }
 
-[status.permissions_r]
-fg = "#d9bc8c"
+# Permissions
+permissions_t = { fg = "{{ blue }}" }
+permissions_r = { fg = "{{ yellow }}" }
+permissions_w = { fg = "{{ red }}" }
+permissions_x = { fg = "{{ green }}" }
+permissions_s = { fg = "{{ overlay1 }}" }
 
-[status.permissions_s]
-fg = "#70bbcc"
+# : }}}
 
-[status.permissions_t]
-fg = "#99a2d9"
 
-[status.permissions_w]
-fg = "#cc7073"
+# : Select {{{
 
-[status.permissions_x]
-fg = "#7bcc8f"
+[select]
+border   = { fg = "{{ blue }}" }
+active   = { fg = "{{ pink }}", bold = true }
+inactive = {}
 
-[status.progress_error]
-bg = "#151515"
-fg = "#cc7073"
+# : }}}
 
-[status.progress_label]
-bg = "#151515"
-fg = "#ccc6c6"
 
-[status.progress_normal]
-bg = "#151515"
-fg = "#ccc6c6"
+# : Input {{{
 
-[status.separator_style]
-bg = "#1f1f1f"
-fg = "#1f1f1f"
+[input]
+border   = { fg = "{{ blue }}" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+# : }}}
+
+
+# : Completion {{{
+
+[completion]
+border = { fg = "{{ blue }}" }
+
+# : }}}
+
+
+# : Tasks {{{
 
 [tasks]
-[tasks.border]
-fg = "#99a2d9"
+border  = { fg = "{{ blue }}" }
+title   = {}
+hovered = { fg = "{{ pink }}", underline = true }
 
-[tasks.hovered]
-bg = "#424242"
-fg = "#ccc6c6"
+# : }}}
 
-[tasks.title]
-fg = "#ccc6c6"
+
+# : Which {{{
 
 [which]
-[which.cand]
-fg = "#70bbcc"
+mask            = { bg = "{{ surface0 }}" }
+cand            = { fg = "{{ teal }}" }
+rest            = { fg = "{{ overlay2 }}" }
+desc            = { fg = "{{ pink }}" }
+separator       = "  "
+separator_style = { fg = "{{ surface2 }}" }
 
-[which.desc]
-fg = "#ccc6c6"
+# : }}}
 
-[which.mask]
-bg = "#333333"
 
-[which.rest]
-fg = "#bbb6b6"
+# : Help {{{
 
-[which.separator_style]
-fg = "#8c8888"
+[help]
+on      = { fg = "{{ teal }}" }
+run     = { fg = "{{ pink }}" }
+hovered = { reversed = true, bold = true }
+footer  = { fg = "{{ surface1 }}", bg = "{{ text }}" }
 
+# : }}}
+
+
+# : Notify {{{
+
+[notify]
+title_info  = { fg = "{{ green }}" }
+title_warn  = { fg = "{{ yellow }}" }
+title_error = { fg = "{{ red }}" }
+
+# : }}}
+
+
+# : File-specific styles {{{
+
+[filetype]
+
+rules = [
+	# Images
+	{ mime = "image/*", fg = "{{ teal }}" },
+
+	# Media
+	{ mime = "{audio,video}/*", fg = "{{ yellow }}" },
+
+	# Archives
+	{ mime = "application/*zip", fg = "{{ pink }}" },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "{{ pink }}" },
+
+	# Documents
+	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "{{ green }}" },
+
+	# Fallback
+	{ name = "*", fg = "{{ text }}" },
+	{ name = "*/", fg = "{{ blue }}" }
+]
