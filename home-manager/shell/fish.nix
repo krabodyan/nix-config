@@ -92,7 +92,7 @@
       set -g fish_color_search_match --background=${fg-dark}
       set -g fish_color_operator ${green}
       set -g fish_color_autosuggestion ${fg-dark}
-      set -g fish_color_valid_path ${blue} --bold
+      set -g fish_color_valid_path ${fg}
       set -g fish_color_cancel ${red}
 
       set -g fish_pager_color_secondary ${red}

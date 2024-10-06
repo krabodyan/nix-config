@@ -121,8 +121,8 @@
             background = mkHex bg;
             border = mkHex accent;
             childBorder = mkHex accent;
-            indicator = mkHex fg;
-            text = mkHex fg;
+            indicator = mkHex subtext0;
+            text = mkHex subtext0;
           };
         in
         {

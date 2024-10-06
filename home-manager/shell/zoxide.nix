@@ -30,7 +30,7 @@
         pointer = mkHex accent;
         marker = mkHex accent;
         prompt = mkHex accent;
-        "hl+" = mkHex green;
+        "hl+" = mkHex red;
         border = "-1";
         gutter = "-1";
       };

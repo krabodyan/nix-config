@@ -23,7 +23,7 @@
             "cv16"
           ];
           formattedFeatures = lib.concatStringsSep ":fontfeatures=" features;
-          font = "${config.font}:size=9.5:fontfeatures=${formattedFeatures}";
+          font = "${config.font}:size=10:fontfeatures=${formattedFeatures}";
         in
         {
           term = "xterm-256color";
