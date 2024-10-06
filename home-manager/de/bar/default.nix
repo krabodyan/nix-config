@@ -152,7 +152,13 @@
       #language,
       #clock,
       #network,
-      #battery,
+      #battery
+      {
+        color: #${subtext0};
+        padding: 0;
+        margin: 5px 0;
+      }
+
       #workspaces button
       {
         color: #${overlay0};

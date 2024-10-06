@@ -160,6 +160,7 @@ toolbarspring,
 
 /* Toolbar */
 #nav-bar {
+    border: none !important;
     background: none !important;
     /* Set max-width so the tabs list dropdown isn't hidden */
     max-width: calc(100vw - ((2 * var(--toolbarbutton-inner-padding) + 16px) + (var(--toolbarbutton-outer-padding) * 2)) - var(--tab-block-margin)) !important;

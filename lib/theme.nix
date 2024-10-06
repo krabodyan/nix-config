@@ -20,7 +20,7 @@
 
         bg = "151515";
         bg-dark = "0f0f0f";
-        bg-bright = "1a1a1a";
+        bg-bright = "1c1c1c";
 
         surface0 = "1f1f1f";
         surface1 = "303030";
