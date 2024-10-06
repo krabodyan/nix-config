@@ -68,18 +68,20 @@ let
     p = "paste_clipboard_after";
     P = "paste_clipboard_before";
     y = "yank_main_selection_to_clipboard";
-    "C-c" = [
-      "insert_mode"
-      "commit_undo_checkpoint"
-    ];
   };
 in
 {
-  normal = binds // special;
+  normal =
+    binds
+    // special
+    // {
+      "C-c" = [
+        "insert_mode"
+      ];
+    };
   insert = binds // {
     "C-c" = [
       "normal_mode"
-      "commit_undo_checkpoint"
     ];
     ret = [
       "insert_newline"
@@ -92,5 +94,12 @@ in
     "A-j" = "move_line_down";
     "A-k" = "move_line_up";
   };
-  select = binds // special;
+  select =
+    binds
+    // special
+    // {
+      "C-c" = [
+        "normal_mode"
+      ];
+    };
 }

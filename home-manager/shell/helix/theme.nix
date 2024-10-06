@@ -1,6 +1,6 @@
 { config, mkHex }:
 {
-  catppuccin_mocha = with config.colors; {
+  catppuccin_mocha = {
     "attribute" = "yellow";
     "type" = {
       fg = "yellow";
@@ -24,21 +24,20 @@
     "string.special.path" = "pink";
 
     "comment" = {
-      fg = mkHex fg-dark;
+      fg = "comment";
       modifiers = [ "italic" ];
     };
 
     "variable" = "text";
     "variable.parameter" = {
       fg = "pink";
-      # modifiers = [ "italic" ];
     };
     "variable.builtin" = "maroon";
     "variable.other.member" = "blue";
 
     "label" = "sapphire"; # used for lifetimes
 
-    "punctuation" = "overlay2";
+    "punctuation" = "overlay0";
     "punctuation.bracket" = "sky";
     "punctuation.special" = "peach";
 
@@ -58,7 +57,7 @@
     # };
     "function.macro" = "red";
 
-    "tag" = "lavender";
+    "tag" = "accent";
 
     "namespace" = {
       fg = "yellow";
@@ -92,34 +91,31 @@
       ];
     };
     "markup.link.text" = "blue";
-    "markup.raw" = "flamingo";
+    "markup.raw" = "yellow";
 
     "diff.plus" = "green";
     "diff.minus" = "red";
     "diff.delta" = "blue";
 
-    # User Interface
-    # --------------
     "ui.background" = { };
 
     "ui.linenr" = {
       fg = "surface1";
     };
     "ui.linenr.selected" = {
-      fg = "lavender";
+      fg = "accent";
     };
-
     "ui.statusline" = {
-      fg = "subtext1";
-      bg = "cursorline";
+      fg = "overlay1";
+      bg = "base";
     };
     "ui.statusline.inactive" = {
-      fg = "surface2";
-      bg = "cursorline";
+      fg = "overlay0";
+      bg = "surface2";
     };
     "ui.statusline.normal" = {
       fg = "base";
-      bg = "lavender";
+      bg = "blue";
       modifiers = [ "bold" ];
     };
     "ui.statusline.insert" = {
@@ -129,7 +125,7 @@
     };
     "ui.statusline.select" = {
       fg = "base";
-      bg = "flamingo";
+      bg = "red";
       modifiers = [ "bold" ];
     };
 
@@ -139,26 +135,29 @@
     };
 
     "ui.picker.header" = {
-      fg = mkHex fg-dark;
+      fg = "comment";
     };
 
     "ui.window" = {
-      fg = "crust";
+      fg = "text";
     };
+
     "ui.help" = {
       fg = "overlay2";
       bg = "surface0";
     };
 
     "ui.bufferline" = {
-      fg = "subtext0";
+      fg = "comment";
       modifiers = [ "bold" ];
     };
+
     "ui.bufferline.active" = {
-      fg = "lavender";
-      bg = "surface0";
+      fg = "subtext0";
+      bg = "surface2";
       modifiers = [ "bold" ];
     };
+
     "ui.bufferline.background" = {
       bg = "base";
     };
@@ -178,16 +177,16 @@
     };
     "ui.virtual.indent-guide" = "surface0";
     "ui.virtual.inlay-hint" = {
-      fg = mkHex fg-dark;
+      fg = "comment";
       # bg = "mantle";
     };
     "ui.virtual.jump-label" = {
-      fg = "rosewater";
+      fg = "red";
       modifiers = [ "bold" ];
     };
 
     "ui.selection" = {
-      bg = "surface1";
+      bg = "surface2";
     };
 
     "ui.cursor" = {
@@ -196,7 +195,7 @@
     };
     "ui.cursor.primary" = {
       fg = "base";
-      bg = "rosewater";
+      bg = "accent";
     };
     "ui.cursor.match" = {
       fg = "red";
@@ -207,33 +206,33 @@
     };
     "ui.cursor.primary.normal" = {
       fg = "base";
-      bg = "lavender";
+      bg = "blue";
       # modifiers = [ "reversed" ];
     };
     "ui.cursor.primary.insert" = {
       bg = "base";
-      fg = "lavender";
+      fg = "text";
     };
     "ui.cursor.primary.select" = {
       fg = "base";
-      bg = "flamingo";
+      bg = "red";
     };
 
     "ui.cursor.normal" = {
       fg = "base";
-      bg = "secondary_cursor_normal";
+      bg = "overlay2";
     };
     "ui.cursor.insert" = {
       fg = "base";
-      bg = "secondary_cursor_insert";
+      bg = "comment";
     };
     "ui.cursor.select" = {
       fg = "base";
-      bg = "secondary_cursor";
+      bg = "overlay2";
     };
 
     "ui.cursorline.primary" = {
-      bg = "cursorline";
+      bg = "surface0";
     };
     "ui.highlight" = {
       bg = "surface1";
@@ -270,42 +269,42 @@
       };
     };
     "diagnostic.unnecessary" = {
-      fg = mkHex fg-dark;
+      fg = "comment";
     };
 
-    error = mkHex red;
-    warning = mkHex yellow;
-    info = mkHex green;
-    hint = mkHex green;
+    error = "red";
+    warning = "yellow";
+    info = "green";
+    hint = "green";
 
-    palette = {
-      rosewater = "#f5e0dc";
-      flamingo = "#f2cdcd";
-      pink = "#f5c2e7";
-      mauve = "#cba6f7";
-      red = "#f38ba8";
-      maroon = "#eba0ac";
-      peach = "#fab387";
-      yellow = mkHex bryellow; # "#f9e2af";
-      green = mkHex brgreen;
+    palette = with config.colors; {
+      # rosewater = "#f5e0dc";
+      # flamingo = "#f2cdcd";
       teal = "#94e2d5";
       sky = "#89dceb";
       sapphire = "#74c7ec";
-      blue = "#89b4fa";
-      lavender = "#b4befe";
-      text = "#d1d8ff";
-      subtext1 = "#bac2de";
-      subtext0 = "#a6adc8";
-      overlay2 = "#9399b2";
-      overlay1 = "#7f849c";
-      overlay0 = "#6c7086";
-      surface2 = "#585b70";
-      surface1 = "#45475a";
-      surface0 = "#313244";
-      base = "#1e1e2e";
+
+      accent = mkHex accent;
+      pink = mkHex pink;
+      mauve = mkHex magenta;
+      red = mkHex red;
+      peach = mkHex peach;
+      yellow = mkHex yellow;
+      green = mkHex green;
+      blue = mkHex blue;
+      text = mkHex fg;
+      comment = mkHex fg-dark;
+      subtext0 = mkHex subtext0;
+      overlay2 = mkHex overlay2;
+      overlay1 = mkHex overlay1;
+      overlay0 = mkHex overlay0;
+      surface2 = mkHex surface2;
+      surface1 = mkHex surface1;
+      surface0 = mkHex surface0;
+      base = mkHex bg;
       mantle = "#181825";
       crust = "#11111b";
-      cursorline = "#2a2b3c";
+      cursorline = mkHex surface1;
       secondary_cursor = "#b5a6a8";
       secondary_cursor_normal = "#878ec0";
       secondary_cursor_insert = "#7ea87f";

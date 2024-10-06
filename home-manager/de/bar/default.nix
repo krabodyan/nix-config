@@ -155,7 +155,7 @@
       #battery,
       #workspaces button
       {
-        color: #757ba6;
+        color: #${overlay0};
         padding: 0;
         margin: 5px 0;
       }
@@ -176,16 +176,8 @@
         color: #${orange};
       }
 
-      #workspaces button {
-        color: #${fg-dark};
-      }
-
-      #workspaces button.persistent {
-        color: #${fg-dark};
-      }
-
       #workspaces button.focused {
-        color: #${fg};
+        color: #${subtext0};
       }
 
       #workspaces button.urgent {
@@ -199,6 +191,7 @@
 
       tooltip,
       #tray menu {
+        margin-right: 8px;
         border: solid #${accent} 2px;
         border-radius: 4px;
         background-color: #${bg};

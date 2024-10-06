@@ -112,13 +112,13 @@
           inherit (helpers) mkHex;
           unfocused = {
             background = mkHex bg-dark;
-            border = mkHex border-unfocused;
-            childBorder = mkHex border-unfocused;
-            indicator = mkHex border-unfocused;
+            border = "#00000000";
+            childBorder = "#00000000";
+            indicator = "#00000000";
             text = mkHex fg-dark;
           };
           focused = {
-            background = mkHex bg; # + "E6";
+            background = mkHex bg;
             border = mkHex accent;
             childBorder = mkHex accent;
             indicator = mkHex fg;

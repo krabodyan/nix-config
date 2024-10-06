@@ -30,7 +30,7 @@
         show_cpu_frequency = true;
         show_cpu_temperature = true;
         cpu_count_from_one = true;
-        color_scheme = 3;
+        color_scheme = 6;
         delay = 5;
 
         fields = with fields; [

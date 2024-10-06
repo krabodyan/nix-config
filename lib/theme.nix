@@ -15,44 +15,45 @@
     };
     colors = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
-      default = {
-        opacity = "0.9";
-        accent = "b4befe";
-        accent-rgba = "rgba(180, 190, 254, 0.7)";
+      default = rec {
+        accent = fg;
 
-        bg-rgba = "rgba(30, 30, 46, 1)";
-        bg = "1E1E2E";
-        border-unfocused = "00000000";
-        bg-dark = "161621";
-        bg-bright = "393959";
+        bg = "151515";
+        bg-dark = "0f0f0f";
+        bg-bright = "1a1a1a";
 
-        fg = "a0aae3";
-        fg-dark = "596080";
-        fg-bright = "a6adc8";
+        surface0 = "1f1f1f";
+        surface1 = "303030";
+        surface2 = "383838";
+
+        fg = "e6dede";
+        fg-dark = "474747";
+        fg-bright = "f5ecec";
+
+        subtext0 = "bfb9b9";
+        overlay2 = "a3a3a3";
+        overlay1 = "858585";
+        overlay0 = "575757";
+
+        black = fg-dark;
+        red = "cc7073";
+        green = "83d9a0";
+        yellow = "f9e2af";
+        blue = "80beed";
+        magenta = "cc86d1";
+        cyan = "77d9d7";
+
+        brblack = fg-dark;
+        brred = "e67e81";
+        brgreen = "92f2b3";
+        bryellow = "f9e8c0";
+        brblue = "80cfed";
+        brmagenta = "ec91f2";
+        brcyan = "75e6e3";
 
         orange = "eba0ac";
         pink = "f5c2e7";
         peach = "f2cdcd";
-
-        black = "62698c";
-        red = "f38ba8";
-        green = "6fe2b9";
-        yellow = "f9e2af";
-        blue = "b4befe";
-        magenta = "d094f7";
-        cyan = "89b4fa";
-
-        brblack = "7178a1";
-        brred = "f38ba8";
-        brgreen = "99ffb3";
-        bryellow = "f9e8c0";
-        brblue = "b4befe";
-        brmagenta = "daa1ff";
-        brcyan = "9dabfe";
-
-        surface0 = "242536";
-        surface1 = "363747";
-        surface2 = "3a3d52";
         mantle = "181825";
         rosewater = "f5e0dc";
       };

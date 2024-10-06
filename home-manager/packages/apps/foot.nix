@@ -21,10 +21,9 @@
             "ss02"
             "cv18"
             "cv16"
-            "zero"
           ];
           formattedFeatures = lib.concatStringsSep ":fontfeatures=" features;
-          font = "${config.font}:size=11:fontfeatures=${formattedFeatures}";
+          font = "${config.font}:size=14.5:fontfeatures=${formattedFeatures}";
         in
         {
           term = "xterm-256color";
@@ -37,7 +36,7 @@
 
           box-drawings-uses-font-glyphs = false;
           pad = "24x18";
-          dpi-aware = true;
+          # dpi-aware = true;
           resize-by-cells = false;
           resize-delay-ms = 300;
           # line-height = "33px";
@@ -68,10 +67,8 @@
         scrollback-up-line = "Mod1+Shift+k";
         scrollback-down-line = "Mod1+Shift+j";
       };
-      # mouse.alternate-scroll-mode = false;
 
       colors = with config.colors; {
-        # alpha = "${opacity}";
         background = "${bg}";
         foreground = "${fg}";
         regular0 = "${black}";
