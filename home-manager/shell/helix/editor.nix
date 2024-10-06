@@ -50,9 +50,10 @@
   statusline = {
     right = [
       # "version-control"
+    ];
+    center = [
       "spinner"
     ];
-    center = [ ];
     left = [
       "mode"
       "file-base-name"

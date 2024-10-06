@@ -23,7 +23,7 @@
             "cv16"
           ];
           formattedFeatures = lib.concatStringsSep ":fontfeatures=" features;
-          font = "${config.font}:size=14.5:fontfeatures=${formattedFeatures}";
+          font = "${config.font}:size=9.5:fontfeatures=${formattedFeatures}";
         in
         {
           term = "xterm-256color";
@@ -36,7 +36,7 @@
 
           box-drawings-uses-font-glyphs = false;
           pad = "24x18";
-          # dpi-aware = true;
+          dpi-aware = true;
           resize-by-cells = false;
           resize-delay-ms = 300;
           # line-height = "33px";

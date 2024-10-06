@@ -1,6 +1,6 @@
 { config, mkHex }:
 {
-  catppuccin_mocha = {
+  paradise = {
     "attribute" = "yellow";
     "type" = {
       fg = "yellow";
@@ -12,10 +12,10 @@
 
     "constructor" = "yellow";
 
-    "constant.builtin" = "maroon";
+    "constant.builtin" = "red";
     "constant.numeric" = "red";
     "constant.character" = "teal";
-    "constant.character.escape" = "maroon";
+    "constant.character.escape" = "teal";
 
     "string" = "green";
     "string.regexp" = "pink";
@@ -32,7 +32,7 @@
     "variable.parameter" = {
       fg = "pink";
     };
-    "variable.builtin" = "maroon";
+    "variable.builtin" = "red";
     "variable.other.member" = "blue";
 
     "label" = "sapphire"; # used for lifetimes
@@ -143,19 +143,22 @@
     };
 
     "ui.help" = {
-      fg = "overlay2";
+      fg = "overlay0";
       bg = "surface0";
     };
 
     "ui.bufferline" = {
       fg = "comment";
+      bg = "surface0";
       modifiers = [ "bold" ];
     };
 
     "ui.bufferline.active" = {
       fg = "subtext0";
-      bg = "surface2";
-      modifiers = [ "bold" ];
+      bg = "surface0";
+      modifiers = [
+        "bold"
+      ];
     };
 
     "ui.bufferline.background" = {
@@ -175,7 +178,7 @@
     "ui.virtual.ruler" = {
       bg = "surface0";
     };
-    "ui.virtual.indent-guide" = "surface0";
+    "ui.virtual.indent-guide" = "surface1";
     "ui.virtual.inlay-hint" = {
       fg = "comment";
       # bg = "mantle";
@@ -304,7 +307,6 @@
       base = mkHex bg;
       mantle = "#181825";
       crust = "#11111b";
-      cursorline = mkHex surface1;
       secondary_cursor = "#b5a6a8";
       secondary_cursor_normal = "#878ec0";
       secondary_cursor_insert = "#7ea87f";

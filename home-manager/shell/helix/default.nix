@@ -23,7 +23,7 @@
     package = inputs.helix.packages.${system}.helix;
     defaultEditor = true;
     settings = {
-      theme = "catppuccin_mocha";
+      theme = "paradise";
       editor = import ./editor.nix;
       keys = import ./binds.nix;
     };
