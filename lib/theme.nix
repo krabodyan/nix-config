@@ -16,7 +16,7 @@
     colors = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
       default = rec {
-        accent = fg;
+        accent = subtext0;
 
         bg = "151515";
         bg-dark = "0f0f0f";
