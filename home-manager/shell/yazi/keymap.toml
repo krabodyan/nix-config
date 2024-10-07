@@ -5,6 +5,13 @@ run = [ '''
 ''', "yank" ]
 
 [[manager.prepend_keymap]]
+on  = [ "c", "e" ]
+run = [ '''
+	shell 'ouch d -y "$@"' --confirm
+''' ]
+desc = "Extract here with ouch"
+
+[[manager.prepend_keymap]]
 on = [ "c", "a" ]
 run = "plugin compress"
 desc = "Compress to archive"

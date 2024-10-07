@@ -10,22 +10,18 @@
   ];
   home.packages = with pkgs; [
     dconf
-    colloid-kde
   ];
   gtk = {
     enable = true;
-
     font = {
       name = "Roboto Bold";
       size = 10;
       package = pkgs.roboto;
     };
-
     iconTheme = {
       package = pkgs.tela-icon-theme;
       name = "Tela-black-dark";
     };
-
     theme = {
       package = pkgs.graphite-gtk-theme.override {
         colorVariants = [ "dark" ];
@@ -88,6 +84,7 @@
   };
 
   qt = {
-    enable = false;
+    enable = true;
+    platformTheme.name = "qtct";
   };
 }

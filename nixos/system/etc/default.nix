@@ -1,6 +1,5 @@
 {
   imports = [
-    ./fonts.nix
     ./console.nix
     ./docs.nix
     ./time.nix

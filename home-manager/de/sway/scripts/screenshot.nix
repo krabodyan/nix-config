@@ -9,7 +9,7 @@ let
   '';
   slurp = "${pkgs.slurp}/bin/slurp -b ${colors.bg}d9 -c ${colors.accent}";
   copy = "${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
-  swayimg = "${pkgs.swayimg}/bin/swayimg --config info.mode=off";
+  swayimg = "${pkgs.swayimg}/bin/swayimg --config info.show=no";
 in
 
 pkgs.writeShellScriptBin "screenshot" ''

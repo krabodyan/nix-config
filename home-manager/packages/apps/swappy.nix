@@ -6,38 +6,27 @@
   ];
   xdg.configFile."satty/config.toml".text = with config.colors; ''
     [general]
-    # Start Satty in fullscreen mode
     fullscreen = true
-    # Exit directly after copy/save action
     early-exit = true
-    # Select the tool on startup [possible values: pointer, crop, line, arrow, rectangle, text, marker, blur, brush]
     initial-tool = "arrow"
-    # Configure the command to be called on copy, for example `wl-copy`
     copy-command = "wl-copy"
-    # Increase or decrease the size of the annotations
-    annotation-size-factor = 2
-    # Filename to use for saving action. Omit to disable saving to file. Might contain format specifiers: https://docs.rs/chrono/latest/chrono/format/strftime/index.html
+    annotation-size-factor = 0.2
     output-filename = "/tmp/scr-%Y-%m-%d_%H:%M:%S.png"
-    # After copying the screenshot, save it to a file as well
     save-after-copy = false
-    # Hide toolbars by default
     default-hide-toolbars = false
-    # The primary highlighter to use, the other is accessible by holding CTRL at the start of a highlight [possible values: block, freehand]
     primary-highlighter = "block"
-    disable-notifications = false
+    disable-notifications = true
 
-    # Font to use for text annotations
     [font]
     family = "Roboto"
     style = "Bold"
 
-    # custom colours for the colour palette
     [color-palette]
     first= "#${red}"
     second= "#${yellow}"
-    third= "#${bg}"
+    third= "#${fg}"
     fourth= "#${blue}"
-    fifth= "#${fg-bright}"
+    fifth= "#${pink}"
     custom= "#${green}"    
   '';
   xdg.configFile."swappy/config".text = ''
