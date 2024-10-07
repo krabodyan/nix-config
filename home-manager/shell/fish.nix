@@ -132,9 +132,10 @@
         set_color normal
       end
 
-      set -U __done_notification_duration 4000
       set -U __done_sway_ignore_visible 1
-      set -U __done_notification_command "pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga & notify-send \$title \$message"
+      set -U __done_notification_urgency_level low
+      set -U __done_notification_urgency_level_failure critical
+      # set -U __done_notification_command "pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga & notify-send --urgency=\$urgency --app-name=fish --expire-time=4000 \$title \$message"
 
       set -g fzf_fd_opts --color never --type file 
       # set -g fzf_directory_opts --bind 'tab:toggle-down,btab:toggle-up'
