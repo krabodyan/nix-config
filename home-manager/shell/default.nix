@@ -4,7 +4,7 @@
     ./bat
     ./yazi
     ./helix
-    ./fish.nix
+    ./fish
     ./htop.nix
     ./git.nix
     ./zellij.nix

@@ -37,7 +37,6 @@
       [urgency=critical]
       border-color=#${red}
       default-timeout=12000
-      format=<b>ERROR: %s</b>\n%b
     '';
   };
 }
