@@ -86,6 +86,7 @@
               alsa-lib.dev
               libpulseaudio.dev
               postgresql.dev
+              fontconfig.dev
             ];
             RUST_BACKTRACE = 1;
             LIBCLANG_PATH = "${pkgs.libclang.lib}/lib";
@@ -100,6 +101,7 @@
                 pandas
                 seaborn
                 requests
+                openpyxl
                 certifi
                 tabulate
                 termcolor

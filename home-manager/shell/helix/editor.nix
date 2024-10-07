@@ -49,7 +49,7 @@
 
   statusline = {
     right = [
-      "version-control"
+      # "version-control"
       "spinner"
     ];
     center =

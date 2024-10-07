@@ -106,7 +106,7 @@
       fg = "accent";
     };
     "ui.statusline" = {
-      fg = "overlay1";
+      fg = "subtext0";
       bg = "base";
     };
     "ui.statusline.inactive" = {
@@ -149,7 +149,7 @@
 
     "ui.bufferline" = {
       fg = "comment";
-      bg = "surface0";
+      bg = "base";
       modifiers = [ "bold" ];
     };
 

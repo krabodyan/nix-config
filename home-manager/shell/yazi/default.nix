@@ -111,7 +111,7 @@
     	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#${bryellow}" },
     	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#${pink}" },
     	{ name = "*", fg = "#${fg}" },
-    	{ name = "*/", fg = "#${bryellow}" }
+    	{ name = "*/", fg = "#${fg}" }
     ]
 
     [icon]
