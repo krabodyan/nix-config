@@ -13,35 +13,160 @@
         "textStroke": 0,
         "engine": "dynamicTheme",
         "stylesheet": "",
-        "darkSchemeBackgroundColor": "#1e1e2e",
-        "darkSchemeTextColor": "#cdd6f4",
+        "darkSchemeBackgroundColor": "#151515",
+        "darkSchemeTextColor": "#e6dede",
         "lightSchemeBackgroundColor": "#dcdad7",
         "lightSchemeTextColor": "#181a1b",
         "scrollbarColor": "",
-        "selectionColor": "#b4befe",
+        "selectionColor": "#e6dede",
         "styleSystemControls": false,
         "lightColorScheme": "Default",
-        "darkColorScheme": "Catppuccin",
+        "darkColorScheme": "Default",
         "immediateModify": false
     },
     "presets": [],
-    "customThemes": [],
+    "customThemes": [
+        {
+            "url": [
+                "*.officeapps.live.com"
+            ],
+            "theme": {
+                "mode": 1,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "cssFilter",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            },
+            "builtIn": true
+        },
+        {
+            "url": [
+                "*.sharepoint.com"
+            ],
+            "theme": {
+                "mode": 1,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "cssFilter",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            },
+            "builtIn": true
+        },
+        {
+            "url": [
+                "docs.google.com"
+            ],
+            "theme": {
+                "mode": 1,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "cssFilter",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            },
+            "builtIn": true
+        },
+        {
+            "url": [
+                "onedrive.live.com"
+            ],
+            "theme": {
+                "mode": 1,
+                "brightness": 100,
+                "contrast": 100,
+                "grayscale": 0,
+                "sepia": 0,
+                "useFont": false,
+                "fontFamily": "Open Sans",
+                "textStroke": 0,
+                "engine": "cssFilter",
+                "stylesheet": "",
+                "darkSchemeBackgroundColor": "#181a1b",
+                "darkSchemeTextColor": "#e8e6e3",
+                "lightSchemeBackgroundColor": "#dcdad7",
+                "lightSchemeTextColor": "#181a1b",
+                "scrollbarColor": "",
+                "selectionColor": "auto",
+                "styleSystemControls": false,
+                "lightColorScheme": "Default",
+                "darkColorScheme": "Default",
+                "immediateModify": false
+            },
+            "builtIn": true
+        }
+    ],
     "enabledByDefault": true,
-    "enabledFor": [],
+    "enabledFor": [
+        "pastebin.com"
+    ],
     "disabledFor": [
         "nixos.wiki",
         "mail.google.com",
         "home-manager-options.extranix.com",
         "images.google.com",
-        "search.nixos.org",
         "github.imc.re",
-        "github.com",
         "chatgpt.com",
         "192.168.100.102:8000",
         "www.twitch.tv",
         "www.google.com",
         "www.youtube.com",
-        "192.168.1.212:8000"
+        "192.168.1.212:8000",
+        "gachi.gay",
+        "suno.com",
+        "192.168.100.104:8000",
+        "192.168.100.105:8000",
+        "gist.github.com",
+        "rust-analyzer.github.io",
+        "coolors.co",
+        "meet.google.com",
+        "docs.google.com",
+        "ca.diia.gov.ua",
+        "www.instagram.com",
+        "web.postman.co"
     ],
     "changeBrowserTheme": false,
     "syncSettings": true,
@@ -60,14 +185,20 @@
         "longitude": null
     },
     "previewNewDesign": true,
+    "previewNewestDesign": false,
     "enableForPDF": true,
     "enableForProtectedPages": false,
     "enableContextMenus": false,
-    "detectDarkTheme": false,
+    "detectDarkTheme": true,
+    "displayedNews": [
+        "thanks-2023"
+    ],
     "readNews": [
         "thanks-2023"
     ],
-    "displayedNews": [
-        "thanks-2023"
-    ]
+    "installation": {
+        "date": 1726554463850,
+        "reason": "update",
+        "version": "4.9.89"
+    }
 }

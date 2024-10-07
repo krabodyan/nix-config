@@ -8,6 +8,7 @@
   news.display = "silent";
   imports = [
     ./de
+    ./test.nix
     ./packages
     ./shell
     ../lib/theme.nix

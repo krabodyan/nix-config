@@ -4,7 +4,9 @@
         "autoUpdateNotification": true,
         "useQuickCss": true,
         "themeLinks": [],
-        "enabledThemes": [],
+        "enabledThemes": [
+            "stylix.theme.css"
+        ],
         "enableReactDevtools": false,
         "frameless": false,
         "transparent": false,
@@ -402,9 +404,6 @@
             "RoleColorEverywhere": {
                 "enabled": false
             },
-            "SearchReply": {
-                "enabled": false
-            },
             "SecretRingToneEnabler": {
                 "enabled": false
             },
@@ -580,6 +579,22 @@
             },
             "AlwaysExpandRoles": {
                 "enabled": false
+            },
+            "AccountPanelServerProfile": {
+                "enabled": false
+            },
+            "CopyFileContents": {
+                "enabled": false
+            },
+            "StickerPaste": {
+                "enabled": false
+            },
+            "VolumeBooster": {
+                "enabled": false,
+                "multiplier": 1
+            },
+            "FullSearchContext": {
+                "enabled": false
             }
         },
         "notifications": {
@@ -592,8 +607,8 @@
             "authenticated": false,
             "url": "https://api.vencord.dev/",
             "settingsSync": false,
-            "settingsSyncVersion": 1725054013199
+            "settingsSyncVersion": 1728205043219
         }
     },
-    "quickCss": "@import url(\"https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css\");\n* {\n    font-family: \"JetBrainsMono Nerd Font\" !important;\n    font-feature-settings: \n      \"ss02\",\n      \"cv14\",\n      \"cv18\",\n      \"cv04\",\n      \"cv16\",\n      \"zero\";\n    font-size: 14px !important;\n    font-weight: 600 !important;\n}\n"
+    "quickCss": "* {\n  font-family: \"JetBrainsMono Nerd Font\" !important;\n  font-feature-settings: \n    \"ss02\",\n    \"cv14\",\n    \"cv18\",\n    \"cv04\",\n    \"cv16\",\n    \"zero\";\n  font-size: 14px !important;\n  font-weight: 600 !important;\n}\n:root {\n  --base00: #151515; /* Black */\n  --base01: #1c1c1c; /* Bright Black */\n  --base02: #575757; /* Grey */\n  --base03: #474747; /* Brighter Grey */\n  --base04: #a3a3a3; /* Bright Grey */\n  --base05: #bfb9b9; /* White */\n  --base06: #f5ecec; /* Brighter White */\n  --base07: #f5ecec; /* Bright White */\n  --base08: #e67e81; /* Red */\n  --base09: #eba0ac; /* Orange */\n  --base0A: #f9e2af; /* Yellow */\n  --base0B: #92f2b3; /* Green */\n  --base0C: #77d9d7; /* Cyan */\n  --base0D: #80beed; /* Blue */\n  --base0E: #f5c2e7; /* Purple */\n  --base0F: #cc86d1; /* Magenta */\n\n  --primary-630: var(--base00); /* Autocomplete background */\n  --primary-660: var(--base00); /* Search input background */\n}\n\n.theme-light, .theme-dark {\n  --search-popout-option-fade: none; /* Disable fade for search popout */\n  --bg-overlay-2: var(--base00); /* These 2 are needed for proper threads coloring */\n  --home-background: var(--base00);\n  --background-primary: var(--base00);\n  --background-secondary: var(--base01);\n  --background-secondary-alt: var(--base01);\n  --channeltextarea-background: var(--base01);\n  --background-tertiary: var(--base00);\n  --background-accent: var(--base0E);\n  --background-floating: var(--base01);\n  --background-modifier-hover: var(--base00);\n  --background-modifier-selected: var(--base00);\n  --text-normal: var(--base05);\n  --text-secondary: var(--base03);\n  --text-muted: var(--base04);\n  --text-link: var(--base0C);\n  --interactive-normal: var(--base05);\n  --interactive-hover: var(--base05);\n  --interactive-active: var(--base07);\n  --interactive-muted: var(--base03);\n  --channels-default: var(--base04);\n  --channel-icon: var(--base04);\n  --header-primary: var(--base06);\n  --header-secondary: var(--base04);\n  --scrollbar-thin-track: transparent;\n  --scrollbar-auto-track: transparent;\n}\n"
 }
