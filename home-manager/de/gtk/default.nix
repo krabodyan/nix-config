@@ -34,13 +34,25 @@
       };
       name = "Graphite-Dark";
     };
-    gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+    gtk2 = {
+      configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+      extraConfig = ''
+        gtk-xft-antialias=1
+        gtk-xft-hinting=1;
+        gtk-xft-hintstyle="hintslight"
+        gtk-xft-rgba="rgb"
+      '';
+    };
 
     gtk3 = {
       extraConfig = {
         gtk-enable-event-sounds = 0;
         gtk-enable-input-feedback-sounds = 0;
         gtk-application-prefer-dark-theme = 1;
+        gtk-xft-antialias = 1;
+        gtk-xft-hinting = 1;
+        gtk-xft-hintstyle = "hintslight";
+        gtk-xft-rgba = "rgb";
       };
       extraCss = with config.colors; ''
         menu,

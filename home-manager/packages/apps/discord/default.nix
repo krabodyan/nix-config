@@ -22,14 +22,14 @@ in
       --base01: #${bg-bright}; /* Bright Black */
       --base02: #${red}; /* Grey */
       --base03: #${fg-dark}; /* Brighter Grey */
-      --base04: #${overlay1}; /* Bright Grey */
-      --base05: #${fg}; /* White */
-      --base06: #${fg-bright}; /* Brighter White */
+      --base04: #${overlay0}; /* Bright Grey */
+      --base05: #${subtext0}; /* White */
+      --base06: #${fg}; /* Brighter White */
       --base07: #${fg-bright}; /* Bright White */
-      --base08: #${red}; /* Red */
+      --base08: #${brred}; /* Red */
       --base09: #${orange}; /* Orange */
-      --base0A: #${yellow}; /* Yellow */
-      --base0B: #${green}; /* Green */
+      --base0A: #${bryellow}; /* Yellow */
+      --base0B: #${brgreen}; /* Green */
       --base0C: #${cyan}; /* Cyan */
       --base0D: #${blue}; /* Blue */
       --base0E: #${pink}; /* Purple */
@@ -50,7 +50,7 @@ in
       --background-tertiary: var(--base00);
       --background-accent: var(--base0E);
       --background-floating: var(--base01);
-      --background-modifier-hover: #{{base00-hex}}4c; /* 30% of base00 */
+      --background-modifier-hover: #${bg}4c;
       --background-modifier-selected: var(--base00);
       --text-normal: var(--base05);
       --text-secondary: var(--base03);
