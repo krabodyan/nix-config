@@ -6,11 +6,11 @@
   ];
   xdg.configFile =
     let
-      colors = ''
+      colors = with config.colors; ''
         [ColorScheme]
-        active_colors=#ffe6dede, #ff1c1c1c, #ff1c1c1c, #ff151515, #ff383838, #ffa3a3a3, #ffe6dede, #ffe6dede, #ffe6dede, #ff151515, #ff1c1c1c, #ff151515, #ff2e2e2e, #ffa3a3a3, #ff83d9a0, #ffcc7073, #ff151515, #ffe6dede, #0f0f0f, #e6dede, #80151515
-        disabled_colors=#ff808080, #ff1c1c1c, #ff1c1c1c, #ff151515, #ff424242, #ff6e738d, #ff808080, #ffe6dede, #ff808080, #ff151515, #ff1c1c1c, #ff151515, #ff2e2e2e, #ff808080, #ff83d9a0, #ffcc7073, #ff151515, #ffe6dede, #ff0f0f0f, #ffe6dede, #80151515
-        inactive_colors=#ffe6dede, #ff1c1c1c, #ff1c1c1c, #ff151515, #ff424242, #ff6e738d, #ffe6dede, #ffe6dede, #ffe6dede, #ff151515, #ff1c1c1c, #ff151515, #ff2e2e2e, #ffa3a3a3, #ff83d9a0, #ffcc7073, #ff151515, #ffe6dede, #ff0f0f0f, #ffe6dede, #80151515
+        active_colors=#ff${fg}, #ff${bg-bright}, #ff${bg-bright}, #ff${bg}, #ff${surface2}, #ff${overlay2}, #ff${fg}, #ff${fg}, #ff${fg}, #ff${bg}, #ff${bg-bright}, #ff${bg}, #ff${surface0}, #ff${overlay2}, #ff${green}, #ff${red}, #ff${bg}, #ff${fg}, #${bg-dark}, #${fg}, #80${bg}
+        disabled_colors=#ff${overlay1}, #ff${bg-bright}, #ff${bg-bright}, #ff${bg}, #ff${fg-dark}, #ff${overlay0}, #ff${overlay1}, #ff${fg}, #ff${overlay1}, #ff${bg}, #ff${bg-bright}, #ff${bg}, #ff${surface0}, #ff${overlay1}, #ff${green}, #ff${red}, #ff${bg}, #ff${fg}, #ff${bg-dark}, #ff${fg}, #80${bg}
+        inactive_colors=#ff${fg}, #ff${bg-bright}, #ff${bg-bright}, #ff${bg}, #ff${fg-dark}, #ff${overlay0}, #ff${fg}, #ff${fg}, #ff${fg}, #ff${bg}, #ff${bg-bright}, #ff${bg}, #ff${surface0}, #ff${overlay2}, #ff${green}, #ff${red}, #ff${bg}, #ff${fg}, #ff${bg-dark}, #ff${fg}, #80${bg}
       '';
     in
     {
