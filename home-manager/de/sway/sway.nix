@@ -178,7 +178,7 @@
           "Print" = "exec ${screenshot}/bin/screenshot";
           "Pause" = "exec ${screenshot}/bin/screenshot full";
           "${mod}+Print" = "exec ${screenshot}/bin/screenshot swayimg";
-          "${mod}+Shift+Print" = "exec wl-paste | swappy -f -";
+          "${mod}+Shift+Print" = "exec wl-paste | satty -f -";
 
           "${mod}+Shift+0" = "exec swaylock";
           "${mod}+w" = "exec pkill -SIGUSR1 waybar";
