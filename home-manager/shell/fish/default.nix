@@ -88,7 +88,7 @@
       set -g fish_color_warn ${orange}
       set -g fish_color_param ${fg}
       set -g fish_color_comment -i ${fg-dark}
-      set -g fish_color_selection ${fg-dark} --background=${blue}
+      set -g fish_color_selection ${fg-dark} --background=${fg}
       set -g fish_color_search_match --background=${fg-dark}
       set -g fish_color_operator ${green}
       set -g fish_color_autosuggestion ${fg-dark}

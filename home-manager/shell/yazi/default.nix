@@ -107,11 +107,11 @@
     [filetype]
 
     rules = [
-    	{ mime = "application/*zip", fg = "#${bryellow}" },
-    	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#${bryellow}" },
+    	{ mime = "application/*zip", fg = "#${orange}" },
+    	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#${red}" },
     	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#${pink}" },
     	{ name = "*", fg = "#${fg}" },
-    	{ name = "*/", fg = "#${fg}" }
+    	{ name = "*/", fg = "#${yellow}" }
     ]
 
     [icon]

@@ -19,6 +19,9 @@ name = "rust"
 "`" = "`"
 "{" = "}"
 
+[language-server.rust-analyzer]
+config = { cargo = { allFeatures = true } }
+
 [[language]]
 name = "python"
 auto-format = true

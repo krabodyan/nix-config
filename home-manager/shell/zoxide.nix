@@ -1,5 +1,6 @@
 { config, helpers, ... }:
 {
+  home.sessionVariables.LS_COLORS = "di=1;33";
   programs.fd = {
     enable = true;
     hidden = false;
@@ -17,20 +18,21 @@
       with config.colors;
       let
         inherit (helpers) mkHex;
+        fg = mkHex config.colors.fg;
       in
       {
         "bg+" = "-1";
         bg = "-1";
-        spinner = mkHex accent;
-        hl = mkHex accent;
+        spinner = fg;
+        hl = fg;
         fg = mkHex fg-dark;
-        "fg+" = mkHex fg;
-        header = mkHex accent;
-        info = mkHex blue;
-        pointer = mkHex accent;
-        marker = mkHex accent;
-        prompt = mkHex accent;
-        "hl+" = mkHex red;
+        "fg+" = fg;
+        header = fg;
+        info = fg;
+        pointer = fg;
+        marker = fg;
+        prompt = fg;
+        "hl+" = mkHex yellow;
         border = "-1";
         gutter = "-1";
       };
