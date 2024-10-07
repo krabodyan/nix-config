@@ -1,9 +1,6 @@
 { pkgs, config, ... }:
-let
-  Vesktop = pkgs.vesktop; # pkgs.callPackage ./overlay.nix {};
-in
 {
-  home.packages = [ Vesktop ];
+  home.packages = [ pkgs.vesktop ];
   xdg.configFile."vesktop/settings/quickCss.css".text = with config.colors; ''
     * {
       font-family: "${config.font}" !important;
@@ -20,11 +17,11 @@ in
     :root {
       --base00: #${bg}; /* Black */
       --base01: #${bg-bright}; /* Bright Black */
-      --base02: #${red}; /* Grey */
+      --base02: #${overlay0}; /* Grey */
       --base03: #${fg-dark}; /* Brighter Grey */
-      --base04: #${overlay0}; /* Bright Grey */
+      --base04: #${overlay2}; /* Bright Grey */
       --base05: #${subtext0}; /* White */
-      --base06: #${fg}; /* Brighter White */
+      --base06: #${fg-bright}; /* Brighter White */
       --base07: #${fg-bright}; /* Bright White */
       --base08: #${brred}; /* Red */
       --base09: #${orange}; /* Orange */
@@ -50,7 +47,7 @@ in
       --background-tertiary: var(--base00);
       --background-accent: var(--base0E);
       --background-floating: var(--base01);
-      --background-modifier-hover: #${bg}4c;
+      --background-modifier-hover: var(--base00);
       --background-modifier-selected: var(--base00);
       --text-normal: var(--base05);
       --text-secondary: var(--base03);

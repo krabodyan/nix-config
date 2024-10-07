@@ -43,28 +43,28 @@
 
       window.commands = [
         {
+          command = "floating enable; resize set 1000 px 800 px";
+          criteria.app_id = "xdg-desktop-portal-gtk";
+        }
+        {
+          command = "floating enable; resize set 1000 px 800 px";
+          criteria.title = "^Виберіть файли$";
+        }
+        {
           command = "floating enable";
-          criteria = {
-            app_id = "floaterm";
-          };
+          criteria.app_id = "floaterm";
         }
         {
           command = "border pixel 2";
-          criteria = {
-            app_id = ".*";
-          };
+          criteria.app_id = ".*";
         }
         {
           command = "floating enable";
-          criteria = {
-            class = "^zoom$";
-          };
+          criteria.class = "^zoom$";
         }
         {
           command = "floating enable; resize set 800 px 800 px; move position 1080 30";
-          criteria = {
-            app_id = "org.pulseaudio.pavucontrol";
-          };
+          criteria.app_id = "org.pulseaudio.pavucontrol";
         }
       ];
 
