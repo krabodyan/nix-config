@@ -3,12 +3,12 @@
     enable = true;
     arguments = [
       "--max-columns-preview"
-      "--colors=line:fg:blue"
+      "--colors=line:fg:red"
       "--colors=line:style:bold"
-      "--colors=path:fg:green"
+      "--colors=path:fg:magenta"
       "--colors=path:style:bold"
-      "--colors=match:fg:65,65,102"
-      "--colors=match:bg:180,190,254"
+      "--colors=match:fg:black"
+      "--colors=match:bg:white"
       "--ignore-case"
       "--context=1"
       "--glob=!.git/*"
