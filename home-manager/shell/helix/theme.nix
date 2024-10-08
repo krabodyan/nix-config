@@ -201,11 +201,11 @@
     };
     # matching bracket
     "ui.cursor.match" = {
-      # fg = "red";
-      modifiers = [
-        # "underline"
-        "bold"
-      ];
+      fg = "red";
+      # modifiers = [
+      #   "underline"
+      # "bold"
+      # ];
     };
     "ui.cursor.primary.normal" = {
       fg = "base";

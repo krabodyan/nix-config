@@ -46,9 +46,8 @@
         }
         
         shared_except "locked" {
-          bind "Ctrl q" { Quit; }
+          bind "Ctrl 9" { Quit; }
           bind "Alt n" { NewTab; }
-          bind "Alt x" { CloseTab; SwitchToMode "Normal"; }
           bind "Ctrl j" { SwitchToMode "scroll"; }
           bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
           bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }
@@ -59,8 +58,6 @@
           bind "Alt 7" { GoToTab 7; SwitchToMode "Normal"; }
           bind "Alt 8" { GoToTab 8; SwitchToMode "Normal"; }
           bind "Alt 9" { GoToTab 9; SwitchToMode "Normal"; }
-          bind "Ctrl h" { GoToPreviousTab; }
-          bind "Ctrl l" { GoToNextTab; }
         }
       }
 
@@ -77,7 +74,6 @@
       disable_session_metadata true
       ui {
         pane_frames {
-          rounded_corners true
           hide_session_name true
         }
       }

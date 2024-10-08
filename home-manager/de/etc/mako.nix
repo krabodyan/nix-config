@@ -16,8 +16,8 @@
     borderSize = 2;
     borderColor = "#${border}";
     borderRadius = 8;
-    icons = true;
-    iconPath = "${config.gtk.iconTheme.package}/share/icons/${config.gtk.iconTheme.name}";
+    icons = false;
+    # iconPath = "${config.gtk.iconTheme.package}/share/icons/${config.gtk.iconTheme.name}";
     maxIconSize = 32;
     defaultTimeout = 3000;
     extraConfig = ''

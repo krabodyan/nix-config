@@ -57,18 +57,14 @@
       extraCss = with config.colors; ''
         menu,
         tooltip {
-          background-color: #${surface1};
+          background-color: #${surface2};
           border-radius: 5px;
           text-shadow: none;
         }
 
-        tooltip {
-          background-color: #${surface2};
-        }
-
         menu menuitem:hover {
-          color: #${fg}
-          background-color: #${surface2};
+          color: #${fg};
+          background-color: #${overlay0};
           border-radius: 5px;
           text-shadow: none;
         }

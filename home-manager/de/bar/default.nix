@@ -228,7 +228,7 @@
       }
 
       #tray menu menuitem:hover {
-        background-color: #${bg-bright};
+        background-color: #${surface2};
       }
     '';
   };
