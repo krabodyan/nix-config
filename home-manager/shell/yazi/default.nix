@@ -52,7 +52,7 @@
     separator_close = ""
     separator_style = { fg = "#${surface1}", bg = "#${surface1}" }
 
-    mode_normal = { fg = "#${bg}", bg = "#${mode_normal}", bold = true }
+    mode_normal = { fg = "#${bg}", bg = "#${yazi_select}", bold = true }
     mode_select = { fg = "#${bg}", bg = "#${mode_select}", bold = true }
     mode_unset  = { fg = "#${bg}", bg = "#${mode_insert}", bold = true }
 
@@ -111,7 +111,7 @@
     	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#${red}" },
     	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#${pink}" },
     	{ name = "*", fg = "#${fg}" },
-    	{ name = "*/", fg = "#${pink}" }
+    	{ name = "*/", fg = "#${yazi_select}" }
     ]
 
     [icon]

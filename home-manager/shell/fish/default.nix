@@ -97,7 +97,7 @@
 
       set -g fish_pager_color_secondary ${red}
       set -g fish_pager_color_progress ${red}
-      set -g fish_pager_color_prefix ${overlay1}
+      set -g fish_pager_color_prefix ${overlay2}
       set -g fish_pager_color_completion ${fg-dark}
       set -g fish_pager_color_description -i ${fg-dark}
       set -g fish_pager_color_selected_prefix -u ${select}
@@ -118,15 +118,11 @@
           case insert
             set_color --bold ${fg}
           case default
-            set_color --bold ${pink}
-          case visual
             set_color --bold ${red}
-          case replace_one
-            set_color --bold ${blue}
-          case replace
-            set_color --bold ${magenta}
+          case visual
+            set_color --bold ${green}
           case '*'
-            set_color --bold ${bg}
+            set_color --bold ${magenta}
         end
         printf "\033[4 q%s 󰧞 " (prompt_pwd) 
         set_color normal

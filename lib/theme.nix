@@ -19,9 +19,10 @@
         select = "ffeec7";
         border = "ffeec7";
 
-        mode_normal = pink;
-        mode_insert = fg;
+        mode_normal = blue;
+        mode_insert = green;
         mode_select = red;
+        yazi_select = pink;
 
         bg = "151515";
         bg-dark = "0f0f0f";

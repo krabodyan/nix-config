@@ -115,17 +115,17 @@
     };
     "ui.statusline.normal" = {
       fg = "base";
-      bg = "blue";
+      bg = "mode_normal";
       modifiers = [ "bold" ];
     };
     "ui.statusline.insert" = {
       fg = "base";
-      bg = "green";
+      bg = "mode_insert";
       modifiers = [ "bold" ];
     };
     "ui.statusline.select" = {
       fg = "base";
-      bg = "red";
+      bg = "mode_select";
       modifiers = [ "bold" ];
     };
 
@@ -197,7 +197,7 @@
     };
     "ui.cursor.primary" = {
       fg = "base";
-      bg = "cursor";
+      bg = "mode_normal";
     };
     # matching bracket
     "ui.cursor.match" = {
@@ -305,7 +305,6 @@
       surface1 = mkHex surface1;
       surface0 = mkHex surface0;
       base = mkHex bg;
-      cursor = mkHex pink;
       mode_normal = mkHex mode_normal;
       mode_select = mkHex mode_select;
       mode_insert = mkHex mode_insert;
