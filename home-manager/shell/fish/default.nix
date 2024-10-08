@@ -97,13 +97,13 @@
 
       set -g fish_pager_color_secondary ${red}
       set -g fish_pager_color_progress ${red}
-      set -g fish_pager_color_prefix ${overlay2}
+      set -g fish_pager_color_prefix ${fg-dark}
       set -g fish_pager_color_completion ${fg-dark}
       set -g fish_pager_color_description -i ${fg-dark}
-      set -g fish_pager_color_selected_prefix -u ${select}
-      set -g fish_pager_color_selected_completion -u ${select}
+      set -g fish_pager_color_selected_prefix ${fg}
+      set -g fish_pager_color_selected_completion ${fg}
       set -g fish_pager_color_selected_description -i ${fg}
-      set -g fish_pager_color_selected_background -u
+      set -g fish_pager_color_selected_background ${bg}
 
       set -g fish_prompt_pwd_dir_length 3
       set -g fish_prompt_pwd_full_dirs 0
