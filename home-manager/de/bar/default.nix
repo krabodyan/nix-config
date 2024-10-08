@@ -198,7 +198,7 @@
       tooltip,
       #tray menu {
         margin-right: 8px;
-        border: solid #${accent} 2px;
+        border: solid #${border} 2px;
         border-radius: 4px;
         background-color: #${bg};
       }

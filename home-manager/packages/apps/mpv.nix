@@ -19,8 +19,8 @@
     osd-font-size=40
     osd-border-color='#${bg-bright}'
     osd-border-size=2
-    osd-color='#${accent}'
-    osd-shadow-color='#${accent}'
+    osd-color='#${fg}'
+    osd-shadow-color='#${fg}'
   '';
   programs.mpv = {
     enable = true;

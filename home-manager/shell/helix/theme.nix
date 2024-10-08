@@ -57,7 +57,7 @@
     # };
     "function.macro" = "red";
 
-    "tag" = "accent";
+    "tag" = "sapphire";
 
     "namespace" = {
       fg = "yellow";
@@ -70,13 +70,13 @@
       fg = "peach";
       modifiers = [ "bold" ];
     };
-    "markup.heading.1" = "lavender";
-    "markup.heading.2" = "lavender";
+    "markup.heading.1" = "sky";
+    "markup.heading.2" = "sky";
     "markup.heading.3" = "green";
     "markup.heading.4" = "yellow";
     "markup.heading.5" = "pink";
     "markup.heading.6" = "teal";
-    "markup.list" = "lavender";
+    "markup.list" = "sky";
     "markup.bold" = {
       modifiers = [ "bold" ];
     };
@@ -103,7 +103,7 @@
       fg = "surface1";
     };
     "ui.linenr.selected" = {
-      fg = "accent";
+      fg = "subtext0";
     };
     "ui.statusline" = {
       fg = "subtext0";
@@ -181,7 +181,6 @@
     "ui.virtual.indent-guide" = "surface1";
     "ui.virtual.inlay-hint" = {
       fg = "comment";
-      # bg = "mantle";
     };
     "ui.virtual.jump-label" = {
       fg = "red";
@@ -194,31 +193,31 @@
 
     "ui.cursor" = {
       fg = "base";
-      bg = "secondary_cursor";
+      bg = "overlay2";
     };
     "ui.cursor.primary" = {
       fg = "base";
-      bg = "accent";
+      bg = "cursor";
     };
+    # matching bracket
     "ui.cursor.match" = {
-      fg = "red";
-      # modifiers = [
-      #   "underline"
-      #   "bold"
-      # ];
+      # fg = "red";
+      modifiers = [
+        # "underline"
+        "bold"
+      ];
     };
     "ui.cursor.primary.normal" = {
       fg = "base";
-      bg = "blue";
-      # modifiers = [ "reversed" ];
+      bg = "mode_normal";
     };
     "ui.cursor.primary.insert" = {
       bg = "base";
-      fg = "text";
+      fg = "mode_insert";
     };
     "ui.cursor.primary.select" = {
       fg = "base";
-      bg = "red";
+      bg = "mode_select";
     };
 
     "ui.cursor.normal" = {
@@ -233,11 +232,11 @@
       fg = "base";
       bg = "overlay2";
     };
-
     "ui.cursorline.primary" = {
       bg = "surface0";
     };
     "ui.highlight" = {
+      fg = "yellow";
       bg = "surface1";
       modifiers = [ "bold" ];
     };
@@ -249,6 +248,10 @@
       fg = "text";
       bg = "surface1";
       modifiers = [ "bold" ];
+    };
+    "ui.menu.scroll" = {
+      bg = "surface0";
+      fg = "surface2";
     };
 
     "diagnostic.error" = {
@@ -281,13 +284,10 @@
     hint = "green";
 
     palette = with config.colors; {
-      # rosewater = "#f5e0dc";
-      # flamingo = "#f2cdcd";
-      teal = "#94e2d5";
-      sky = "#89dceb";
-      sapphire = "#74c7ec";
 
-      accent = mkHex accent;
+      teal = mkHex teal;
+      sky = mkHex sky;
+      sapphire = mkHex sapphire;
       pink = mkHex pink;
       mauve = mkHex magenta;
       red = mkHex red;
@@ -305,11 +305,10 @@
       surface1 = mkHex surface1;
       surface0 = mkHex surface0;
       base = mkHex bg;
-      mantle = "#181825";
-      crust = "#11111b";
-      secondary_cursor = "#b5a6a8";
-      secondary_cursor_normal = "#878ec0";
-      secondary_cursor_insert = "#7ea87f";
+      cursor = mkHex pink;
+      mode_normal = mkHex mode_normal;
+      mode_select = mkHex mode_select;
+      mode_insert = mkHex mode_insert;
     };
   };
 }

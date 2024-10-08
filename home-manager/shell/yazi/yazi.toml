@@ -3,7 +3,7 @@ enabled = false
 
 [manager]
 linemode = "none"
-ratio = [0, 1, 1]
+ratio = [0, 2, 3]
 show_hidden = false
 sort_by = "alphabetical"
 sort_dir_first = true

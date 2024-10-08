@@ -23,7 +23,7 @@
   xdg.configFile."yazi/plugins/compress.yazi/init.lua".source = ./plugins/compress.lua;
   xdg.configFile."yazi/theme.toml".text = with config.colors; ''
     [manager]
-    cwd = { fg = "#${accent}" }
+    cwd = { fg = "#${fg}" }
 
     hovered         = { reversed = true }
     preview_hovered = { underline = false }
@@ -32,17 +32,17 @@
     find_position = { fg = "#${red}" }
 
     marker_copied   = { fg = "#${green}", bg = "#${green}" }
-    marker_cut      = { fg = "#${cyan}", bg = "#${cyan}" }
-    marker_marked   = { fg = "#${red}", bg = "#${red}" }
-    marker_selected = { fg = "#${yellow}", bg = "#${yellow}" }
+    marker_cut      = { fg = "#${red}", bg = "#${red}" }
+    marker_marked   = { fg = "#${overlay0}", bg = "#${overlay0}" }
+    marker_selected = { fg = "#${overlay0}", bg = "#${overlay0}" }
 
-    tab_active   = { reversed = true }
-    tab_inactive = {}
+    tab_active   = { fg = "#${bg}", bg = "#${select}" }
+    tab_inactive = { fg = "#${fg}", bg = "#${bg}" }
     tab_width    = 2
 
     count_copied   = { fg = "#${bg}", bg = "#${green}" }
     count_cut      = { fg = "#${bg}", bg = "#${red}" }
-    count_selected = { fg = "#${bg}", bg = "#${yellow}" }
+    count_selected = { fg = "#${bg}", bg = "#${pink}" }
 
     border_symbol = "│"
     border_style  = { fg = "#${fg-dark}" }
@@ -52,11 +52,11 @@
     separator_close = ""
     separator_style = { fg = "#${surface1}", bg = "#${surface1}" }
 
-    mode_normal = { fg = "#${bg}", bg = "#${fg}", bold = true }
-    mode_select = { fg = "#${bg}", bg = "#${red}", bold = true }
-    mode_unset  = { fg = "#${bg}", bg = "#${blue}", bold = true }
+    mode_normal = { fg = "#${bg}", bg = "#${mode_normal}", bold = true }
+    mode_select = { fg = "#${bg}", bg = "#${mode_select}", bold = true }
+    mode_unset  = { fg = "#${bg}", bg = "#${mode_insert}", bold = true }
 
-    progress_label  = { fg = "#${fg}", bold = true }
+    progress_label  = { fg = "#${fg}", bg = "#${surface1}", bold = true }
     progress_normal = { fg = "#${green}", bg = "#${surface1}" }
     progress_error  = { fg = "#${red}", bg = "#${surface1}" }
 
@@ -67,21 +67,21 @@
     permissions_s = { fg = "#${overlay1}" }
 
     [select]
-    border   = { fg = "#${accent}" }
+    border   = { fg = "#${border}" }
     active   = { fg = "#${red}", bold = true }
     inactive = {}
 
     [input]
-    border   = { fg = "#${accent}" }
+    border   = { fg = "#${border}" }
     title    = {}
     value    = {}
     selected = { reversed = true }
 
     [completion]
-    border = { fg = "#${accent}" }
+    border = { fg = "#${border}" }
 
     [tasks]
-    border  = { fg = "#${accent}" }
+    border  = { fg = "#${border}" }
     title   = {}
     hovered = { fg = "#${red}", underline = true }
 
@@ -111,7 +111,7 @@
     	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#${red}" },
     	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#${pink}" },
     	{ name = "*", fg = "#${fg}" },
-    	{ name = "*/", fg = "#${yellow}" }
+    	{ name = "*/", fg = "#${pink}" }
     ]
 
     [icon]

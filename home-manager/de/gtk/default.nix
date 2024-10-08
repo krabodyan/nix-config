@@ -20,7 +20,7 @@
     };
     iconTheme = {
       package = pkgs.tela-icon-theme;
-      name = "Tela-black-dark";
+      name = "Tela-yellow-dark";
     };
     theme = {
       package = pkgs.graphite-gtk-theme.override {
@@ -28,7 +28,7 @@
         themeVariants = [ "default" ];
         tweaks = [
           "rimless"
-          "normal"
+          # "normal"
           "darker"
         ];
       };

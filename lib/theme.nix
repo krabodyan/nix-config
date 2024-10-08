@@ -16,7 +16,12 @@
     colors = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
       default = rec {
-        accent = subtext0;
+        select = "ffeec7";
+        border = "ffeec7";
+
+        mode_normal = pink;
+        mode_insert = fg;
+        mode_select = red;
 
         bg = "151515";
         bg-dark = "0f0f0f";
@@ -26,11 +31,11 @@
         surface1 = "303030";
         surface2 = "383838";
 
-        fg = "e6dede";
+        fg = "f2f1ea";
         fg-dark = "474747";
-        fg-bright = "f5ecec";
+        fg-bright = "fffff7";
 
-        subtext0 = "bfb9b9";
+        subtext0 = "bfbfb9";
         overlay2 = "a3a3a3";
         overlay1 = "858585";
         overlay0 = "575757";
@@ -46,7 +51,7 @@
         brblack = fg-dark;
         brred = "e67e81";
         brgreen = "92f2b3";
-        bryellow = "f9e2af";
+        bryellow = "ffeec7";
         brblue = "80cfed";
         brmagenta = "ec91f2";
         brcyan = "75e6e3";
@@ -56,6 +61,9 @@
         peach = "f2cdcd";
         mantle = "181825";
         rosewater = "f5e0dc";
+        teal = "94e2d5";
+        sky = "89dceb";
+        sapphire = "74c7ec";
       };
     };
   };

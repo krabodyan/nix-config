@@ -97,11 +97,11 @@
 
       set -g fish_pager_color_secondary ${red}
       set -g fish_pager_color_progress ${red}
-      set -g fish_pager_color_prefix ${fg}
+      set -g fish_pager_color_prefix ${overlay1}
       set -g fish_pager_color_completion ${fg-dark}
       set -g fish_pager_color_description -i ${fg-dark}
-      set -g fish_pager_color_selected_prefix -u ${accent}
-      set -g fish_pager_color_selected_completion -u ${accent}
+      set -g fish_pager_color_selected_prefix -u ${select}
+      set -g fish_pager_color_selected_completion -u ${select}
       set -g fish_pager_color_selected_description -i ${fg}
       set -g fish_pager_color_selected_background -u
 
@@ -116,13 +116,13 @@
       function fish_prompt
         switch $fish_bind_mode
           case insert
-            set_color --bold ${accent}
+            set_color --bold ${fg}
           case default
-            set_color --bold ${red}
-          case visual
-            set_color --bold ${yellow}
-          case replace_one
             set_color --bold ${pink}
+          case visual
+            set_color --bold ${red}
+          case replace_one
+            set_color --bold ${blue}
           case replace
             set_color --bold ${magenta}
           case '*'

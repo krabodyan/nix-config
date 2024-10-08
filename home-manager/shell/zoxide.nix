@@ -1,6 +1,6 @@
 { config, helpers, ... }:
 {
-  home.sessionVariables.LS_COLORS = "di=1;33";
+  home.sessionVariables.LS_COLORS = "di=1;36";
   programs.fd = {
     enable = true;
     hidden = false;
@@ -27,12 +27,12 @@
         hl = fg;
         fg = mkHex fg-dark;
         "fg+" = fg;
-        header = fg;
-        info = fg;
-        pointer = fg;
+        header = mkHex fg-dark;
+        info = mkHex fg-dark;
+        pointer = mkHex fg-dark;
         marker = fg;
         prompt = fg;
-        "hl+" = mkHex yellow;
+        "hl+" = fg;
         border = "-1";
         gutter = "-1";
       };

@@ -39,7 +39,7 @@
           y-offset = -30;
           border-radius = 6;
           border = 2;
-          border-color = mkLiteral "#${accent}";
+          border-color = mkLiteral "#${border}";
           background-color = mkLiteral "@bg";
         };
 
@@ -75,7 +75,7 @@
           text-color = mkLiteral "@fg-bright";
           border-radius = 5;
           border = 2;
-          border-color = mkLiteral "#${accent}";
+          border-color = mkLiteral "#${border}";
           background-color = mkLiteral "transparent";
           placeholder = "";
           cursor = mkLiteral "underline";

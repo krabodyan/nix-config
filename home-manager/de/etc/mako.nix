@@ -8,13 +8,13 @@
     layer = "overlay";
     anchor = "bottom-center";
     backgroundColor = "#${bg}ff";
-    progressColor = "over #${accent}";
+    progressColor = "over #${border}";
     textColor = "#${fg}";
     width = 400;
     height = 110;
     padding = "12,0";
     borderSize = 2;
-    borderColor = "#${accent}";
+    borderColor = "#${border}";
     borderRadius = 8;
     icons = true;
     iconPath = "${config.gtk.iconTheme.package}/share/icons/${config.gtk.iconTheme.name}";
@@ -27,12 +27,6 @@
 
       [grouped=1]
       format=<b>%s [%g]</b>\n%b
-
-      [urgency=low]
-      border-color=#${accent}
-
-      [urgency=normal]
-      border-color=#${accent}
 
       [urgency=critical]
       border-color=#${red}

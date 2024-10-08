@@ -119,8 +119,8 @@
           };
           focused = {
             background = mkHex bg;
-            border = mkHex accent;
-            childBorder = mkHex accent;
+            border = mkHex border;
+            childBorder = mkHex border;
             indicator = mkHex subtext0;
             text = mkHex subtext0;
           };
@@ -150,7 +150,7 @@
 
       workspaceLayout = "default";
       bars = [ ];
-
+      workspaceAutoBackAndForth = true;
       bindkeysToCode = true;
       keybindings =
         let
