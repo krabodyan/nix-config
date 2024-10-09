@@ -60,10 +60,10 @@
     progress_normal = { fg = "#${green}", bg = "#${surface1}" }
     progress_error  = { fg = "#${red}", bg = "#${surface1}" }
 
-    permissions_t = { fg = "#${blue}" }
-    permissions_r = { fg = "#${yellow}" }
-    permissions_w = { fg = "#${red}" }
-    permissions_x = { fg = "#${green}" }
+    permissions_t = { fg = "#${overlay1}" }
+    permissions_r = { fg = "#${select}" }
+    permissions_w = { fg = "#${overlay1}" }
+    permissions_x = { fg = "#${select}" }
     permissions_s = { fg = "#${overlay1}" }
 
     [select]

@@ -17,10 +17,7 @@
       CPU_BOOST_ON_BAT = 0;
       CPU_HWP_DYN_BOOST_ON_AC = 1;
       CPU_HWP_DYN_BOOST_ON_BAT = 0;
-      # RUNTIME_PM_ON_AC = "auto";
-      # RUNTIME_PM_ON_BAT = "auto";
       RUNTIME_PM_BLACKLIST = "01:00.1";
-      RUNTIME_PM_DRIVER_DENYLIST = "nouveau nvidia";
       SOUND_POWER_SAVE_ON_AC = 0;
       SOUND_POWER_SAVE_CONTROLLER = "N";
       SOUND_POWER_SAVE_ON_BAT = 0;

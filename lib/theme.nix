@@ -16,7 +16,7 @@
     colors = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
       default = rec {
-        select = "ffeec7";
+        select = pink;
         border = "ffeec7";
 
         mode_normal = blue;
