@@ -9,7 +9,7 @@
       in
       {
         font = config.font;
-        image = config.swaylock-image;
+        # image = config.swaylock-image;
         daemonize = true;
 
         color = bg;

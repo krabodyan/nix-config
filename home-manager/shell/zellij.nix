@@ -7,7 +7,7 @@
     with config.colors;
     let
       back = surface2;
-      front = fg;
+      front = border;
     in
     ''
       themes {
@@ -46,7 +46,7 @@
         }
         
         shared_except "locked" {
-          bind "Ctrl 9" { Quit; }
+          bind "Ctrl p" { Quit; }
           bind "Alt n" { NewTab; }
           bind "Ctrl j" { SwitchToMode "scroll"; }
           bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }

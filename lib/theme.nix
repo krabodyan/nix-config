@@ -17,7 +17,7 @@
       type = lib.types.attrsOf lib.types.str;
       default = rec {
         select = pink;
-        border = "ffeec7";
+        border = "ffdef6"; # "ffeec7";
 
         mode_normal = blue;
         mode_insert = green;
@@ -50,7 +50,7 @@
         cyan = "77d9d7";
 
         brblack = fg-dark;
-        brred = "e67e81";
+        brred = "f38ba8";
         brgreen = "92f2b3";
         bryellow = "ffeec7";
         brblue = "80cfed";
