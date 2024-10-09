@@ -35,7 +35,7 @@
     ];
     kernelPackages = pkgs.linuxPackages_latest;
     extraModprobeConfig = ''
-      options snd-hda-intel snoop=0 power_save=0
+      options snd-hda-intel power_save=0 pm_blacklist=true
     '';
     blacklistedKernelModules = [
       "adfs"
