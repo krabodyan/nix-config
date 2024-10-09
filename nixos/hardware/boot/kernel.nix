@@ -34,7 +34,9 @@
       "rootfstype=btrfs"
     ];
     kernelPackages = pkgs.linuxPackages_latest;
-    # extraModprobeConfig = '''';
+    extraModprobeConfig = ''
+      options snd-hda-intel snoop=0 power_save=0
+    '';
     blacklistedKernelModules = [
       "adfs"
       "affs"
@@ -61,7 +63,6 @@
     ];
     # initrd.kernelModules = [ ];
     initrd.verbose = false;
-    # initrd.compressor = pkg: "${pkg.lz4}/bin/lz4";
     kernelModules = [ ]; # "v4l2loopback" ]; # "i915" "uinput" ];
     # extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
   };
