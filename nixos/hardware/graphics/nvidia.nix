@@ -14,17 +14,17 @@
     modesetting.enable = true;
     powerManagement.enable = true;
     powerManagement.finegrained = false;
-    nvidiaSettings = true;
+    nvidiaSettings = false;
     open = false;
-    # package = config.boot.kernelPackages.nvidiaPackages.stable;
-    package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-      version = "545.29.02";
-      sha256_64bit = "sha256-RncPlaSjhvBFUCOzWdXSE3PAfRPCIrWAXyJMdLPKuIU=";
-      sha256_aarch64 = "sha256-G0/GiObf/BZMkzzET8HQjdIcvCSqB1uhsinro2HLK9k=";
-      openSha256 = "sha256-wvRdHguGLxS0mR06P5Qi++pDJBCF8pJ8hr4T8O6TJIo=";
-      settingsSha256 = "sha256-zj173HCZJaxAbVV/A2sbJ9IPdT1+3yrwyxD+AQdkSD8=";
-      persistencedSha256 = "sha256-d0Q3Lk80JqkS1B54Mahu2yY/WocOqFFbZVBh+ToGhaE=";
-    };
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+    #   version = "545.29.02";
+    #   sha256_64bit = "sha256-RncPlaSjhvBFUCOzWdXSE3PAfRPCIrWAXyJMdLPKuIU=";
+    #   sha256_aarch64 = "sha256-G0/GiObf/BZMkzzET8HQjdIcvCSqB1uhsinro2HLK9k=";
+    #   openSha256 = "sha256-wvRdHguGLxS0mR06P5Qi++pDJBCF8pJ8hr4T8O6TJIo=";
+    #   settingsSha256 = "sha256-zj173HCZJaxAbVV/A2sbJ9IPdT1+3yrwyxD+AQdkSD8=";
+    #   persistencedSha256 = "sha256-d0Q3Lk80JqkS1B54Mahu2yY/WocOqFFbZVBh+ToGhaE=";
+    # };
     prime = {
       offload = {
         enable = true;

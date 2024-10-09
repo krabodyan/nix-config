@@ -33,12 +33,8 @@
       "nohibernate"
       "rootfstype=btrfs"
     ];
-    # kernelPackages = pkgs.linuxPackages_latest;
-    # extraModprobeConfig = ''
-    #   options i915 enable_guc=2
-    #   options i915 enable_fbc=1
-    #   options i915 fastboot=1 
-    # '';
+    kernelPackages = pkgs.linuxPackages_latest;
+    # extraModprobeConfig = '''';
     blacklistedKernelModules = [
       "adfs"
       "affs"

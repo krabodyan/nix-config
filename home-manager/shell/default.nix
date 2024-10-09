@@ -13,7 +13,6 @@
     ./zoxide.nix
     ./rustfmt.nix
   ];
-
   home.packages = with pkgs; [
     jq # fish done
     xdg-utils
@@ -21,11 +20,9 @@
     iftop
     python3
     ffmpeg
-    # php
     dust
     dua
     duf
-    eza
     exiftool
   ];
 }
