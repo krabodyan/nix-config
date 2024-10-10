@@ -48,7 +48,7 @@
         }
         {
           command = "floating enable; resize set 1000 px 800 px";
-          criteria.title = "^Виберіть файли$";
+          criteria.title = "^Виберіть файли|Вивантаження файлу$";
         }
         {
           command = "floating enable";

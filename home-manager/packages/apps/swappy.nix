@@ -10,7 +10,7 @@
     early-exit = true
     initial-tool = "arrow"
     copy-command = "wl-copy"
-    annotation-size-factor = 0.2
+    annotation-size-factor = 0.5
     output-filename = "/tmp/scr-%Y-%m-%d_%H:%M:%S.png"
     save-after-copy = false
     default-hide-toolbars = false
