@@ -1,6 +1,8 @@
+{ config, ... }:
 {
   home.sessionVariables = {
     # WLR_NO_HARDWARE_CURSORS = 1; # grim + slurp cursor bug, dont use
+    FLAKE = "${config.home.homeDirectory}/flake";
     MOZ_ENABLE_WAYLAND = 1;
     SDL_VIDEODRIVER = "wayland,x11,windows";
     CLUTTER_BACKEND = "wayland";

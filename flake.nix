@@ -57,7 +57,7 @@
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {
-          inherit system inputs;
+          inherit self system inputs;
           helpers = import ./lib/helpers.nix;
         };
         modules = [ ./home-manager ];
@@ -93,7 +93,7 @@
           };
         python = pkgs.mkShell {
           packages = [
-            (pkgs.python312.withPackages (
+            (pkgs.python311.withPackages (
               python-pkgs: with python-pkgs; [
                 numpy
                 matplotlib
@@ -104,6 +104,7 @@
                 openpyxl
                 certifi
                 tabulate
+                keras
                 termcolor
                 (buildPythonPackage rec {
                   pname = "ucimlrepo";

@@ -2,7 +2,6 @@
 {
   imports = [
     ./ld.nix
-    ./nh.nix
   ];
   nixpkgs.hostPlatform = lib.mkDefault system;
   nix = {

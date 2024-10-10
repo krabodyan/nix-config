@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  self,
+  lib,
+  config,
+  ...
+}:
 {
   options = {
     font = lib.mkOption {
@@ -7,11 +12,7 @@
     };
     background-image = lib.mkOption {
       type = lib.types.str;
-      default = "${config.home.homeDirectory}/nix-config/assets/background.jpg";
-    };
-    swaylock-image = lib.mkOption {
-      type = lib.types.str;
-      default = "${config.home.homeDirectory}/nix-config/assets/swaylock.jpg";
+      default = "${config.home.homeDirectory}/flake/assets/background.jpg";
     };
     colors = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;

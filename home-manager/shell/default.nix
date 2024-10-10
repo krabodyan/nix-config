@@ -15,6 +15,7 @@
   ];
   home.packages = with pkgs; [
     jq # fish done
+    nh
     xdg-utils
     iotop
     iftop
