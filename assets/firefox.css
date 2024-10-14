@@ -13,6 +13,7 @@
     --urlbar-open-width: 350px; /* Only when disable-centering-of-URLbar is enabled */
 }
 
+
 #navigator-toolbox {
     display: flex;
     flex-wrap: wrap;
