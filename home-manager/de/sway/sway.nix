@@ -31,7 +31,10 @@
       ];
       assigns = {
         "workspace 1" = [ { app_id = "^com.ayugram$"; } ];
-        "workspace 2" = [ { app_id = "^firefox$"; } ];
+        "workspace 2" = [
+          { app_id = "^firefox$"; }
+          { app_id = "^floorp$"; }
+        ];
         "workspace 3" = [ { app_id = "^vesktop$"; } ];
         "workspace 4" = [
           { class = "^steam$"; }

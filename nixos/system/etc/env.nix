@@ -10,7 +10,7 @@
         gst-libav
       ]
     );
-    NIXOS_OZONE_WL = "1";
+    # NIXOS_OZONE_WL = "1";
     VDPAU_DRIVER = "va_gl";
     GST_VAAPI_ALL_DRIVERS = "1";
   };
