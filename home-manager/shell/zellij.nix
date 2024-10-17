@@ -46,7 +46,6 @@
         }
         
         shared_except "locked" {
-          bind "Ctrl p" { Quit; }
           bind "Alt n" { NewTab; }
           bind "Ctrl j" { SwitchToMode "scroll"; }
           bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }

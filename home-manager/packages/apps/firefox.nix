@@ -1,10 +1,26 @@
-{ pkgs, ... }:
+{ pkgs, helpers, ... }:
 {
   home.packages = with pkgs; [
     chromedriver
     chromium
     floorp
   ];
+  xdg.mimeApps.defaultApplications = helpers.mkAssociations {
+    types = [
+      "x-scheme-handler/http"
+      "x-scheme-handler/https"
+      "x-scheme-handler/chrome"
+      "text/html"
+      "application/xhtml+xml"
+      "application/x-extension-xht"
+      "application/x-extension-htm"
+      "application/x-extension-html"
+      "application/x-extension-shtml"
+      "application/x-extension-xhtml"
+    ];
+    desktop = "floorp.desktop";
+  };
+
   # programs.firefox = {
   #   enable = false;
   #   package = pkgs.firefox-wayland;

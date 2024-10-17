@@ -35,7 +35,7 @@
           { app_id = "^firefox$"; }
           { app_id = "^floorp$"; }
         ];
-        "workspace 3" = [ { app_id = "^vesktop$"; } ];
+        "workspace 3" = [ { class = "^vesktop$"; } ];
         "workspace 4" = [
           { class = "^steam$"; }
           { class = "^zoom$"; }
