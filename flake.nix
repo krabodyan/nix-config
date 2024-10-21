@@ -96,6 +96,7 @@
             (pkgs.python311.withPackages (
               python-pkgs: with python-pkgs; [
                 numpy
+                networkx
                 matplotlib
                 scikit-learn
                 pandas

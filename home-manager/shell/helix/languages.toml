@@ -8,6 +8,7 @@ name = "nix"
 [language.formatter]
 command = "nixfmt"
 
+
 [[language]]
 name = "rust"
 
@@ -18,6 +19,9 @@ name = "rust"
 "[" = "]"
 "`" = "`"
 "{" = "}"
+
+[language-server.rust-analyzer.config]
+check.command = "clippy"
 
 
 [[language]]

@@ -13,6 +13,7 @@
     black
     ruff
     nil
+    vscode-langservers-extracted
     nixfmt-rfc-style
     python312Packages.python-lsp-server
   ];

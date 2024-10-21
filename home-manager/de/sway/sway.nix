@@ -38,10 +38,10 @@
         "workspace 3" = [ { class = "^vesktop$"; } ];
         "workspace 4" = [
           { class = "^steam$"; }
-          { class = "^zoom$"; }
-          # { class = "^DesktopEditors$"; }
         ];
-        # "workspace 6" = [ { app_id = "^(chromium-browser)(.*)$"; } ];
+        "workspace 5" = [
+          { class = "^zoom$"; }
+        ];
       };
 
       window.commands = [

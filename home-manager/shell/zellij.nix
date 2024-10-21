@@ -19,7 +19,7 @@
           blue "#${cyan}"
           yellow "#${yellow}"
           magenta "#${magenta}"
-          orange "#${green}"
+          orange "#${red}"
           cyan "#${blue}"
           black "#${bg}"
           white "#${back}"
