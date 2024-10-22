@@ -153,7 +153,7 @@
 
       workspaceLayout = "default";
       bars = [ ];
-      workspaceAutoBackAndForth = true;
+      workspaceAutoBackAndForth = false;
       bindkeysToCode = true;
       keybindings =
         let
@@ -206,8 +206,9 @@
           "${mod}+c" = "layout tabbed";
           "${mod}+s" = "layout toggle";
           "${mod}+f" = "floating toggle";
-          "${mod}+Tab" = "focus next";
-          "Alt+Tab" = "focus mode_toggle";
+          "Alt+Tab" = "focus next";
+          "Alt+Shift+Tab" = "focus mode_toggle";
+          "${mod}+Tab" = "workspace back_and_forth";
           "${mod}+Shift+r" = "splith";
           "${mod}+r" = "splitv";
 
