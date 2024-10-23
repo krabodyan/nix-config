@@ -48,12 +48,13 @@ let
     ];
     "A-+" = "increment";
     "A-minus" = "decrement";
-    "A-s" = [
+  };
+  special = {
+    "a" = [
       "goto_line_start"
       # "move_char_right"
     ];
-  };
-  special = {
+    "A-S-f" = "file_picker_in_current_buffer_directory";
     "A-x" = "extend_line_up";
     "S-x" = [
       "extend_line_up"
@@ -64,10 +65,9 @@ let
       "collapse_selection"
       "keep_primary_selection"
     ];
-    f = "file_picker_in_current_buffer_directory";
     p = "paste_clipboard_after";
     P = "paste_clipboard_before";
-    y = "yank_main_selection_to_clipboard";
+    Y = "yank_main_selection_to_clipboard";
   };
 in
 {
@@ -82,6 +82,10 @@ in
   insert = binds // {
     "C-c" = [
       "normal_mode"
+    ];
+    "A-a" = [
+      "goto_line_start"
+      # "move_char_right"
     ];
     ret = [
       "insert_newline"
