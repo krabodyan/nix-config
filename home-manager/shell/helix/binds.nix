@@ -1,8 +1,8 @@
 let
   binds = {
     "A-space" = "buffer_picker";
+    "A-e" = ":buffer-next";
     "C-A-p" = ":lsp-stop";
-    "C-S-A-p" = ":lsp-restart";
     "C-x" = ":q";
     "C-s" = [
       ":w"
@@ -50,7 +50,7 @@ let
     "A-minus" = "decrement";
     "A-s" = [
       "goto_line_start"
-      "move_char_right"
+      # "move_char_right"
     ];
   };
   special = {
@@ -106,7 +106,5 @@ in
         "collapse_selection"
         "insert_mode"
       ];
-      "A-j" = "shrink_selection";
-      "A-k" = "expand_selection";
     };
 }
