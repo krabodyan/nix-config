@@ -26,8 +26,8 @@
   gtk = {
     enable = true;
     font = {
-      name = "Roboto Bold";
-      size = 10;
+      name = "Roboto Medium";
+      size = 11;
       package = pkgs.roboto;
     };
     iconTheme = {
@@ -50,7 +50,7 @@
       configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
       extraConfig = ''
         gtk-xft-antialias=1
-        gtk-xft-hinting=1;
+        gtk-xft-hinting=1
         gtk-xft-hintstyle="hintslight"
         gtk-xft-rgba="rgb"
       '';

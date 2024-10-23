@@ -18,11 +18,11 @@
     python312Packages.python-lsp-server
   ];
 
-  xdg.desktopEntries."Helix" = {
-    name = "Helix";
-    exec = "foot hx %F";
-    terminal = true;
-  };
+  # xdg.desktopEntries."Helix" = {
+  #   name = "Helix";
+  #   exec = "foot hx %F";
+  #   terminal = true;
+  # };
 
   xdg.mimeApps.defaultApplications = helpers.mkAssociations {
     types = [
