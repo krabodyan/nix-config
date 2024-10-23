@@ -38,6 +38,20 @@
       "text/x-c++src"
       "text/comma-separated-values"
       "text/csv"
+      "text/x-cmake"
+      "text/markdown"
+      "text/rhtml"
+      "text/x-tex"
+      "text/x-java"
+      "text/x-ruby"
+      "inode/x-empty"
+      "text/x-readme"
+      "text/x-markdown"
+      "application/json"
+      "application/x-ruby"
+      "application/x-yaml"
+      "application/x-shellscript"
+      "application/x-docbook+xml"
     ];
     desktop = "Helix.desktop";
   };

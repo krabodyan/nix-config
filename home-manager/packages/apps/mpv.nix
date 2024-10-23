@@ -1,5 +1,62 @@
-{ config, ... }:
+{ config, helpers, ... }:
 {
+  xdg.mimeApps.defaultApplications = helpers.mkAssociations {
+    types = [
+      "video/3gp"
+      "video/3gpp"
+      "video/3gpp2"
+      "video/avi"
+      "video/divx"
+      "video/dv"
+      "video/fli"
+      "video/flv"
+      "video/mp2t"
+      "video/mp4"
+      "video/mp4v-es"
+      "video/mpeg"
+      "video/msvideo"
+      "video/ogg"
+      "video/quicktime"
+      "video/vnd.divx"
+      "video/vnd.mpegurl"
+      "video/vnd.rn-realvideo"
+      "video/webm"
+      "video/x-avi"
+      "video/x-flv"
+      "video/x-m4v"
+      "video/x-matroska"
+      "video/x-mpeg2"
+      "video/x-ms-asf"
+      "video/x-msvideo"
+      "video/x-ms-wmv"
+      "video/x-ms-wmx"
+      "video/x-ogm"
+      "video/x-ogm+ogg"
+      "video/x-theora"
+      "video/x-theora+ogg"
+      "audio/aac"
+      "audio/mp4"
+      "audio/mpeg"
+      "audio/mpegurl"
+      "audio/ogg"
+      "audio/vnd.rn-realaudio"
+      "audio/vorbis"
+      "audio/x-flac"
+      "audio/x-mp3"
+      "audio/x-mpegurl"
+      "audio/x-ms-wma"
+      "audio/x-musepack"
+      "audio/x-oggflac"
+      "audio/x-pn-realaudio"
+      "audio/x-scpls"
+      "audio/x-speex"
+      "audio/x-vorbis"
+      "audio/x-vorbis+ogg"
+      "audio/x-wav"
+    ];
+    desktop = "mpv.desktop";
+  };
+
   xdg.configFile."mpv/mpv.conf".text = with config.colors; ''
     gpu-context=wayland
     vo=gpu
