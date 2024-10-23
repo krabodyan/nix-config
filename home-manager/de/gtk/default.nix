@@ -8,9 +8,21 @@
     ./cursor.nix
     ./qtct.nix
   ];
-  home.packages = with pkgs; [
-    dconf
-  ];
+  home.packages = [ pkgs.dconf ];
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
+      "org/gnome/desktop/wm/preferences" = {
+        button-layout = "";
+      };
+      "org/gnome/desktop/applications/terminal" = {
+        exec = "foot";
+      };
+    };
+  };
   gtk = {
     enable = true;
     font = {

@@ -1,11 +1,13 @@
 let
   binds = {
+    "A-space" = "buffer_picker";
     "C-A-p" = ":lsp-stop";
     "C-S-A-p" = ":lsp-restart";
     "C-x" = ":q";
     "C-s" = [
       ":w"
       "normal_mode"
+      "collapse_selection"
       "commit_undo_checkpoint"
     ];
     "C-7" = "toggle_comments";
@@ -52,8 +54,6 @@ let
     ];
   };
   special = {
-    tab = ":buffer-next";
-    "S-tab" = ":buffer-previous";
     "A-x" = "extend_line_up";
     "S-x" = [
       "extend_line_up"
@@ -99,7 +99,14 @@ in
     // special
     // {
       "C-c" = [
+        "collapse_selection"
         "normal_mode"
       ];
+      "i" = [
+        "collapse_selection"
+        "insert_mode"
+      ];
+      "A-j" = "shrink_selection";
+      "A-k" = "expand_selection";
     };
 }

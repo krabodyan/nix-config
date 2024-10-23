@@ -47,6 +47,18 @@
     wrap-at-text-width = true;
   };
 
+  gutters = {
+    layout = [
+      "diff"
+      "diagnostics"
+      "line-numbers"
+      "spacer"
+    ];
+  };
+  smart-tab = {
+    enable = true;
+    # supersede-menu = true;
+  };
   statusline = {
     right = [
       # "version-control"
