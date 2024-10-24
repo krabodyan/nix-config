@@ -27,7 +27,7 @@
     enable = true;
     font = {
       name = "Roboto Medium";
-      size = 11;
+      size = 10;
       package = pkgs.roboto;
     };
     iconTheme = {

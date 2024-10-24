@@ -65,9 +65,11 @@ let
       "collapse_selection"
       "keep_primary_selection"
     ];
-    p = "paste_clipboard_after";
-    P = "paste_clipboard_before";
-    Y = "yank_main_selection_to_clipboard";
+    # "p" = "paste_after";
+    # "P" = "paste_before";
+    "S-p" = "paste_clipboard_before";
+    "S-P" = "paste_clipboard_after";
+    "S-y" = "yank_main_selection_to_clipboard";
   };
 in
 {

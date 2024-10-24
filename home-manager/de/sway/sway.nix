@@ -28,6 +28,9 @@
       startup = [
         { command = "waybar"; }
         { command = "${pkgs.swaykbdd}/bin/swaykbdd"; }
+        { command = "ayugram-desktop"; }
+        { command = "floorp"; }
+        { command = "vesktop"; }
       ];
       assigns = {
         "workspace 1" = [ { app_id = "^com.ayugram$"; } ];
