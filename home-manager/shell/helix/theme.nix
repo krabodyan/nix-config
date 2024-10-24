@@ -37,7 +37,7 @@
 
     "label" = "sapphire"; # used for lifetimes
 
-    "punctuation" = "overlay0";
+    "punctuation" = "overlay1";
     "punctuation.bracket" = "sky";
     "punctuation.special" = "peach";
 

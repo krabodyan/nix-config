@@ -1,7 +1,7 @@
 {
   imports = [
     ./tlp.nix
-    ./docker.nix
+    # ./docker.nix
   ];
   systemd.coredump.enable = false;
   systemd.extraConfig = ''

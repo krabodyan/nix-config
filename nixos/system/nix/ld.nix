@@ -83,7 +83,6 @@
       libtiff
       libudev0-shim
       libunwind
-      libusb
       libusb1
       libuuid
       libva

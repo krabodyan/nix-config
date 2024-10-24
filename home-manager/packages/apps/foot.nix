@@ -30,12 +30,12 @@
           term = "xterm-256color";
           shell = "${pkgs.fish}/bin/fish";
 
-          font = "${font}:weight=Regular";
-          font-bold = "${font}:weight=SemiBold";
-          font-italic = "${font}:slant=Italic";
-          font-bold-italic = "${font}:weight=SemiBold:slant=Italic";
+          font = "${font}:weight=SemiBold";
+          font-bold = "${font}:weight=Bold";
+          font-italic = "${font}:weight=SemiBold:slant=Italic";
+          font-bold-italic = "${font}:weight=Bold:slant=Italic";
 
-          box-drawings-uses-font-glyphs = false;
+          # box-drawings-uses-font-glyphs = false;
           pad = "24x18";
           dpi-aware = false;
           resize-by-cells = false;
