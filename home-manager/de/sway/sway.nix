@@ -28,7 +28,7 @@
       startup = [
         { command = "waybar"; }
         { command = "${pkgs.swaykbdd}/bin/swaykbdd"; }
-        { command = "ayugram-desktop"; }
+        { command = "env QT_QPA_PLATFORMTHEME=gtk3 ayugram-desktop"; }
         { command = "floorp"; }
         { command = "vesktop"; }
       ];

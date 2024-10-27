@@ -96,6 +96,7 @@
             (pkgs.python311.withPackages (
               python-pkgs: with python-pkgs; [
                 numpy
+                tqdm
                 networkx
                 matplotlib
                 scikit-learn
@@ -125,6 +126,15 @@
                   src = fetchPypi {
                     inherit pname version;
                     sha256 = "sha256-b+5ol1wEIR/Hwpj1jL8eWwIeooeeUUVtk0I46J6irps=";
+                  };
+                  doCheck = false;
+                })
+                (buildPythonPackage rec {
+                  pname = "idx2numpy";
+                  version = "1.2.3";
+                  src = fetchPypi {
+                    inherit pname version;
+                    sha256 = "sha256-VZtXio9ppBr1TPFcjfxDq584Dgp9YCqEvauvUqz7vT4=";
                   };
                   doCheck = false;
                   propagatedBuildInputs = [

@@ -1,16 +1,9 @@
-{
-  pkgs,
-  config,
-  ...
-}:
-{
+{ pkgs, config, ... }: {
   xdg = {
     enable = true;
     userDirs =
-      let
-        appendToHomeDir = path: "${config.home.homeDirectory}/${path}";
-      in
-      {
+      let appendToHomeDir = path: "${config.home.homeDirectory}/${path}";
+      in {
         enable = true;
         desktop = appendToHomeDir "desktop";
         documents = appendToHomeDir "documents";
@@ -21,12 +14,9 @@
         templates = appendToHomeDir "templates";
         videos = appendToHomeDir "videos";
       };
-
     mime.enable = true;
     mimeApps.enable = true;
-    configFile = {
-      "mimeapps.list".force = true;
-    };
+    configFile = { "mimeapps.list".force = true; };
     portal = {
       enable = true;
       xdgOpenUsePortal = true;

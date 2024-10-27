@@ -28,7 +28,7 @@
 
       keybinds clear-defaults=true {
         normal {
-          bind "Alt r" { SwitchToMode "RenameTab"; TabNameInput 0; }
+          bind "Ctrl r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         }
         
         scroll {
@@ -46,7 +46,7 @@
         }
         
         shared_except "locked" {
-          bind "Alt n" { NewTab; }
+          bind "Ctrl n" { NewTab; }
           bind "Ctrl j" { SwitchToMode "scroll"; }
           bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
           bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }

@@ -25,7 +25,7 @@
       position = "right";
       layer = "top";
       # mode = "invisible";
-      start_hidden = true;
+      # start_hidden = true;
       width = 26;
       height = 360;
       spacing = 0;

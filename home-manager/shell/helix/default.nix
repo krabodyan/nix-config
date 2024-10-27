@@ -1,12 +1,4 @@
-{
-  pkgs,
-  config,
-  inputs,
-  system,
-  helpers,
-  ...
-}:
-{
+{ pkgs, config, inputs, system, helpers, ... }: {
   home.packages = with pkgs; [
     docker-compose-language-service
     dockerfile-language-server-nodejs
@@ -14,7 +6,8 @@
     ruff
     nil
     vscode-langservers-extracted
-    nixfmt-rfc-style
+    # nixfmt-rfc-style
+    nixfmt-classic
     python312Packages.python-lsp-server
   ];
 
