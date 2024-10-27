@@ -2,6 +2,8 @@ let
   binds = {
     "A-space" = "buffer_picker";
     "A-e" = ":buffer-next";
+    "A-q" = ":buffer-previous";
+    "C-q" = ":buffer-close";
     "C-A-p" = ":lsp-stop";
     "C-x" = ":q";
     "C-s" =
@@ -46,13 +48,12 @@ let
     "A-S-f" = "file_picker_in_current_buffer_directory";
     "A-x" = "extend_line_up";
     "S-x" = [ "extend_line_up" "extend_to_line_bounds" ];
-    "S-q" = ":buffer-close";
     esc = [ "collapse_selection" "keep_primary_selection" ];
-    # "p" = "paste_after";
-    # "P" = "paste_before";
-    # "S-p" = "paste_clipboard_before";
-    # "S-P" = "paste_clipboard_after";
-    "S-y" = "yank_main_selection_to_clipboard";
+    p = ":clipboard-paste-after";
+    P = ":clipboard-paste-before";
+    R = ":clipboard-paste-replace";
+    y = ":clipboard-yank-join";
+    Y = ":clipboard-yank";
   };
 in {
   normal = binds // special // { "C-c" = [ "insert_mode" ]; };
