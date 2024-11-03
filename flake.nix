@@ -22,6 +22,7 @@
     };
     helix.url = "github:helix-editor/helix";
     ayugram.url = "github:kaeeraa/ayugram-desktop/release";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -120,9 +121,6 @@
                       "sha256-VZtXio9ppBr1TPFcjfxDq584Dgp9YCqEvauvUqz7vT4=";
                   };
                   doCheck = false;
-                  propagatedBuildInputs = [
-                    # numpy
-                  ];
                 })
               ]))
           ];

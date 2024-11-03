@@ -1,10 +1,4 @@
-{
-  pkgs,
-  config,
-  helpers,
-  ...
-}:
-{
+{ pkgs, config, helpers, ... }: {
   wayland.windowManager.sway = {
     enable = true;
     checkConfig = false;
@@ -29,22 +23,15 @@
         { command = "waybar"; }
         { command = "${pkgs.swaykbdd}/bin/swaykbdd"; }
         { command = "env QT_QPA_PLATFORMTHEME=gtk3 ayugram-desktop"; }
-        { command = "floorp"; }
+        { command = "zen"; }
         { command = "vesktop"; }
       ];
       assigns = {
-        "workspace 1" = [ { app_id = "^com.ayugram$"; } ];
-        "workspace 2" = [
-          { app_id = "^firefox$"; }
-          { app_id = "^floorp$"; }
-        ];
-        "workspace 3" = [ { class = "^vesktop$"; } ];
-        "workspace 4" = [
-          { class = "^steam$"; }
-        ];
-        "workspace 5" = [
-          { class = "^zoom$"; }
-        ];
+        "workspace 1" = [{ app_id = "^com.ayugram$"; }];
+        "workspace 2" = [{ app_id = "^zen-alpha$"; }];
+        "workspace 3" = [ { class = "^vesktop$"; } { app_id = "^vesktop$"; } ];
+        "workspace 4" = [{ class = "^steam$"; }];
+        "workspace 5" = [{ class = "^zoom$"; }];
       };
 
       window.commands = [
@@ -54,7 +41,8 @@
         }
         {
           command = "floating enable; resize set 1000 px 800 px";
-          criteria.title = "^Виберіть файли|Вивантаження файлу|File Upload|Відкрити документ$";
+          criteria.title =
+            "^Виберіть файли|Вивантаження файлу|File Upload|Відкрити документ$";
         }
         {
           command = "floating enable";
@@ -69,7 +57,8 @@
           criteria.class = "^zoom$";
         }
         {
-          command = "floating enable; resize set 800 px 800 px; move position 1080 30";
+          command =
+            "floating enable; resize set 800 px 800 px; move position 1080 30";
           criteria.app_id = "org.pulseaudio.pavucontrol";
         }
       ];
@@ -108,12 +97,13 @@
       };
 
       seat.seat0 = {
-        xcursor_theme = "${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}";
+        xcursor_theme = "${config.home.pointerCursor.name} ${
+            builtins.toString config.home.pointerCursor.size
+          }";
         hide_cursor = "10000";
       };
 
-      colors =
-        with config.colors;
+      colors = with config.colors;
         let
           inherit (helpers) mkHex;
           unfocused = {
@@ -130,8 +120,7 @@
             indicator = mkHex subtext0;
             text = mkHex subtext0;
           };
-        in
-        {
+        in {
           focused = focused;
           focusedInactive = unfocused;
           unfocused = unfocused;
@@ -145,9 +134,7 @@
           repeat_rate = "35";
           repeat_delay = "400";
         };
-        "type:touchpad" = {
-          events = "disabled";
-        };
+        "type:touchpad" = { events = "disabled"; };
         "type:pointer" = {
           accel_profile = "flat";
           pointer_accel = "0";
@@ -158,91 +145,91 @@
       bars = [ ];
       workspaceAutoBackAndForth = false;
       bindkeysToCode = true;
-      keybindings =
-        let
-          mod = config.wayland.windowManager.sway.config.modifier;
-          volume = import ./scripts/volume.nix { inherit pkgs; };
-          microphone = import ./scripts/microphone.nix { inherit pkgs; };
-          brightness = import ./scripts/brightness.nix { inherit pkgs; };
-          screenshot = import ./scripts/screenshot.nix {
-            inherit pkgs;
-            colors = config.colors;
-          };
-          left = "h";
-          right = "l";
-          up = "k";
-          down = "j";
-        in
-        {
-          "${mod}+e" = "exec ${pkgs.foot}/bin/foot";
-          "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot -a floaterm";
-          "${mod}+d" = "exec pidof rofi && pkill rofi || ${pkgs.rofi-wayland}/bin/rofi -show drun -kb-cancel 'Alt+Return'";
-
-          "Ctrl+Alt+Backspace" = "reload";
-          "Ctrl+Alt+Delete" = "exit";
-
-          "Print" = "exec ${screenshot}/bin/screenshot";
-          "Pause" = "exec ${screenshot}/bin/screenshot full";
-          "${mod}+Print" = "exec ${screenshot}/bin/screenshot swayimg";
-          "${mod}+Shift+Print" = "exec wl-paste | satty -f -";
-
-          "${mod}+Shift+0" = "exec swaylock";
-          "${mod}+w" = "exec pkill -SIGUSR1 waybar";
-
-          "${mod}+${up}" = "focus up";
-          "${mod}+${down}" = "focus down";
-          "${mod}+${left}" = "focus left";
-          "${mod}+${right}" = "focus right";
-
-          "${mod}+Ctrl+${up}" = "move up 20px";
-          "${mod}+Ctrl+${down}" = "move down 20px";
-          "${mod}+Ctrl+${left}" = "move left 20px";
-          "${mod}+Ctrl+${right}" = "move right 20px";
-
-          "${mod}+Shift+${up}" = "resize grow height 20 px";
-          "${mod}+Shift+${down}" = "resize shrink height 20 px";
-          "${mod}+Shift+${left}" = "resize grow width 20 px";
-          "${mod}+Shift+${right}" = "resize shrink width 20 px";
-
-          "${mod}+q" = "kill";
-          "${mod}+t" = "fullscreen";
-          "${mod}+c" = "layout tabbed";
-          "${mod}+s" = "layout toggle";
-          "${mod}+f" = "floating toggle";
-          "Alt+Tab" = "focus next";
-          "Alt+Shift+Tab" = "focus mode_toggle";
-          "${mod}+Tab" = "workspace back_and_forth";
-          "${mod}+Shift+r" = "splith";
-          "${mod}+r" = "splitv";
-
-          "${mod}+1" = "workspace number 1";
-          "${mod}+2" = "workspace number 2";
-          "${mod}+3" = "workspace number 3";
-          "${mod}+4" = "workspace number 4";
-          "${mod}+5" = "workspace number 5";
-          "${mod}+6" = "workspace number 6";
-          "${mod}+7" = "workspace number 7";
-
-          "${mod}+Shift+1" = "move container to workspace number 1";
-          "${mod}+Shift+2" = "move container to workspace number 2";
-          "${mod}+Shift+3" = "move container to workspace number 3";
-          "${mod}+Shift+4" = "move container to workspace number 4";
-          "${mod}+Shift+5" = "move container to workspace number 5";
-          "${mod}+Shift+6" = "move container to workspace number 6";
-          "${mod}+Shift+7" = "move container to workspace number 7";
-
-          "${mod}+p" = "output \"eDP-1\" power off";
-          "${mod}+Shift+p" = "output \"eDP-1\" power on";
-
-          XF86TouchpadToggle = "input type:touchpad events toggle enabled disabled";
-          XF86AudioRaiseVolume = "exec ${volume}/bin/volume up";
-          XF86AudioLowerVolume = "exec ${volume}/bin/volume down";
-          XF86AudioMute = "exec ${volume}/bin/volume mute";
-          F4 = "exec ${microphone}/bin/microphone";
-          XF86MonBrightnessUp = "exec ${brightness}/bin/brightness up";
-          XF86MonBrightnessDown = "exec ${brightness}/bin/brightness down";
-          "${mod}+x" = "exec ${brightness}/bin/brightness toggle";
+      keybindings = let
+        mod = config.wayland.windowManager.sway.config.modifier;
+        volume = import ./scripts/volume.nix { inherit pkgs; };
+        microphone = import ./scripts/microphone.nix { inherit pkgs; };
+        brightness = import ./scripts/brightness.nix { inherit pkgs; };
+        screenshot = import ./scripts/screenshot.nix {
+          inherit pkgs;
+          colors = config.colors;
         };
+        left = "h";
+        right = "l";
+        up = "k";
+        down = "j";
+      in {
+        "${mod}+e" = "exec ${pkgs.foot}/bin/foot";
+        "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot -a floaterm";
+        "${mod}+d" =
+          "exec pidof rofi && pkill rofi || ${pkgs.rofi-wayland}/bin/rofi -show drun -kb-cancel 'Alt+Return'";
+
+        "Ctrl+Alt+Backspace" = "reload";
+        "Ctrl+Alt+Delete" = "exit";
+
+        "Print" = "exec ${screenshot}/bin/screenshot";
+        "Pause" = "exec ${screenshot}/bin/screenshot full";
+        "${mod}+Print" = "exec ${screenshot}/bin/screenshot swayimg";
+        "${mod}+Shift+Print" = "exec wl-paste | satty -f -";
+
+        "${mod}+Shift+0" = "exec swaylock";
+        "${mod}+w" = "exec pkill -SIGUSR1 waybar";
+
+        "${mod}+${up}" = "focus up";
+        "${mod}+${down}" = "focus down";
+        "${mod}+${left}" = "focus left";
+        "${mod}+${right}" = "focus right";
+
+        "${mod}+Ctrl+${up}" = "move up 20px";
+        "${mod}+Ctrl+${down}" = "move down 20px";
+        "${mod}+Ctrl+${left}" = "move left 20px";
+        "${mod}+Ctrl+${right}" = "move right 20px";
+
+        "${mod}+Shift+${up}" = "resize grow height 20 px";
+        "${mod}+Shift+${down}" = "resize shrink height 20 px";
+        "${mod}+Shift+${left}" = "resize grow width 20 px";
+        "${mod}+Shift+${right}" = "resize shrink width 20 px";
+
+        "${mod}+q" = "kill";
+        "${mod}+t" = "fullscreen";
+        "${mod}+c" = "layout tabbed";
+        "${mod}+s" = "layout toggle";
+        "${mod}+f" = "floating toggle";
+        "Alt+Tab" = "focus next";
+        "Alt+Shift+Tab" = "focus mode_toggle";
+        "${mod}+Tab" = "workspace back_and_forth";
+        "${mod}+Shift+r" = "splith";
+        "${mod}+r" = "splitv";
+
+        "${mod}+1" = "workspace number 1";
+        "${mod}+2" = "workspace number 2";
+        "${mod}+3" = "workspace number 3";
+        "${mod}+4" = "workspace number 4";
+        "${mod}+5" = "workspace number 5";
+        "${mod}+6" = "workspace number 6";
+        "${mod}+7" = "workspace number 7";
+
+        "${mod}+Shift+1" = "move container to workspace number 1";
+        "${mod}+Shift+2" = "move container to workspace number 2";
+        "${mod}+Shift+3" = "move container to workspace number 3";
+        "${mod}+Shift+4" = "move container to workspace number 4";
+        "${mod}+Shift+5" = "move container to workspace number 5";
+        "${mod}+Shift+6" = "move container to workspace number 6";
+        "${mod}+Shift+7" = "move container to workspace number 7";
+
+        "${mod}+p" = ''output "eDP-1" power off'';
+        "${mod}+Shift+p" = ''output "eDP-1" power on'';
+
+        XF86TouchpadToggle =
+          "input type:touchpad events toggle enabled disabled";
+        XF86AudioRaiseVolume = "exec ${volume}/bin/volume up";
+        XF86AudioLowerVolume = "exec ${volume}/bin/volume down";
+        XF86AudioMute = "exec ${volume}/bin/volume mute";
+        F4 = "exec ${microphone}/bin/microphone";
+        XF86MonBrightnessUp = "exec ${brightness}/bin/brightness up";
+        XF86MonBrightnessDown = "exec ${brightness}/bin/brightness down";
+        "${mod}+x" = "exec ${brightness}/bin/brightness toggle";
+      };
     };
   };
 }

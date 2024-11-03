@@ -1,9 +1,9 @@
-{ pkgs, helpers, ... }:
-{
+{ pkgs, helpers, system, inputs, ... }: {
   home.packages = with pkgs; [
     chromedriver
     chromium
-    floorp
+    # floorp
+    inputs.zen-browser.packages."${system}".specific
   ];
   xdg.mimeApps.defaultApplications = helpers.mkAssociations {
     types = [
@@ -22,7 +22,7 @@
       "application/x-extension-shtml"
       "application/x-extension-xhtml"
     ];
-    desktop = "floorp.desktop";
+    desktop = "zen.desktop";
   };
 
   # programs.firefox = {

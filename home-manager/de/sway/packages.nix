@@ -1,9 +1,3 @@
-{ pkgs, ... }:
-{
-  home.packages = with pkgs; [
-    wlr-randr
-    wev
-    xwayland
-    wl-clipboard
-  ];
+{ pkgs, ... }: {
+  home.packages = with pkgs; [ grim slurp wlr-randr wev xwayland wl-clipboard ];
 }
