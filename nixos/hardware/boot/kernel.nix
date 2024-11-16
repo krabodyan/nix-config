@@ -1,11 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  modulesPath,
-  ...
-}:
-{
+{ config, lib, pkgs, modulesPath, ... }: {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
   boot = {
     kernel.sysctl = {
@@ -29,10 +22,7 @@
       "net.ipv4.icmp_echo_ignore_all" = 1;
     };
 
-    kernelParams = [
-      "nohibernate"
-      "rootfstype=btrfs"
-    ];
+    kernelParams = [ "nohibernate" "rootfstype=btrfs" ];
     # kernelPackages = pkgs.linuxPackages_latest;
     extraModprobeConfig = ''
       options snd-hda-intel power_save=0 pm_blacklist=true
@@ -55,12 +45,8 @@
       "omfs"
       "ufs"
     ];
-    initrd.availableKernelModules = [
-      "xhci_pci"
-      "thunderbolt"
-      "nvme"
-      "usbhid"
-    ];
+    initrd.availableKernelModules =
+      [ "xhci_pci" "thunderbolt" "nvme" "usbhid" ];
     # initrd.kernelModules = [ ];
     initrd.verbose = false;
     kernelModules = [ ]; # "v4l2loopback" ]; # "i915" "uinput" ];
@@ -74,6 +60,7 @@
 
   hardware = {
     enableRedistributableFirmware = true;
-    cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    cpu.intel.updateMicrocode =
+      lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
 }

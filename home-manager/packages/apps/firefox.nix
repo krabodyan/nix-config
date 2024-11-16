@@ -3,7 +3,7 @@
     chromedriver
     chromium
     # floorp
-    inputs.zen-browser.packages."${system}".specific
+    # inputs.zen-browser.packages."${system}".specific
   ];
   xdg.mimeApps.defaultApplications = helpers.mkAssociations {
     types = [
@@ -22,7 +22,7 @@
       "application/x-extension-shtml"
       "application/x-extension-xhtml"
     ];
-    desktop = "zen.desktop";
+    desktop = "chromium.desktop";
   };
 
   # programs.firefox = {

@@ -1,8 +1,5 @@
 {
-  imports = [
-    ./tlp.nix
-    # ./docker.nix
-  ];
+  imports = [ ./tlp.nix ./docker.nix ];
   systemd.coredump.enable = false;
   systemd.extraConfig = ''
     DefaultTimeoutStartSec=15s

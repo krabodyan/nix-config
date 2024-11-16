@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   programs.fish = {
     enable = true;
     shellAliases = {
       ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
-      tree = "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
+      tree =
+        "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
       ci = "__zoxide_zi";
     };
     functions = {
@@ -57,26 +57,29 @@
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       ${pkgs.zoxide}/bin/zoxide init --cmd cd fish | source
 
-      function fish_hybrid_key_bindings
-        fish_vi_key_bindings
-        bind -M default \cd kill-whole-line
-        bind -M default \cc 'set fish_bind_mode insert; commandline -f repaint'
-        bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
-        bind -M default U redo
-        bind -M default i true
-        bind -M default \eh backward-word
-        bind -M default \el forward-word
-        bind -M visual \eh backward-word
-        bind -M visual \el forward-word
-        bind -M insert \ef _fzf_search_directory
-        bind -M insert \el forward-char
-        bind -M insert \cZ cancel-commandline
-        bind -M default \cZ cancel-commandline
-        bind -M visual \cZ cancel-commandline
-        bind -M insert \ed kill-whole-line repaint
-      end
+      # function fish_hybrid_key_bindings
+      #   fish_vi_key_bindings
+      #   bind -M default \cd kill-whole-line
+      #   bind -M default \cc 'set fish_bind_mode insert; commandline -f repaint'
+      #   bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
+      #   bind -M default U redo
+      #   bind -M default i true
+      #   bind -M default \eh backward-word
+      #   bind -M default \el forward-word
+      #   bind -M visual \eh backward-word
+      #   bind -M visual \el forward-word
+      #   bind -M insert \ef _fzf_search_directory
+      #   bind -M insert \el forward-char
+      #   bind -M insert \cZ cancel-commandline
+      #   bind -M default \cZ cancel-commandline
+      #   bind -M visual \cZ cancel-commandline
+      #   bind -M insert \ed kill-whole-line repaint
+      # end
 
-      set -g fish_key_bindings fish_hybrid_key_bindings
+      # set -g fish_key_bindings fish_hybrid_key_bindings
+
+      bind -M insert \ef forward-char
+      bind -M insert \cf _fzf_search_directory
 
       set -g fish_color_normal ${fg}
       set -g fish_color_command ${green}
@@ -120,9 +123,9 @@
           case default
             set_color --bold ${red}
           case visual
-            set_color --bold ${green}
-          case '*'
             set_color --bold ${magenta}
+          case '*'
+            set_color --bold ${green}
         end
         printf "\033[4 q%s 󰧞 " (prompt_pwd) 
         set_color normal

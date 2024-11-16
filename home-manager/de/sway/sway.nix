@@ -23,15 +23,15 @@
         { command = "waybar"; }
         { command = "${pkgs.swaykbdd}/bin/swaykbdd"; }
         { command = "env QT_QPA_PLATFORMTHEME=gtk3 ayugram-desktop"; }
-        { command = "zen"; }
+        { command = "chromium"; }
         { command = "vesktop"; }
       ];
       assigns = {
         "workspace 1" = [{ app_id = "^com.ayugram$"; }];
-        "workspace 2" = [{ app_id = "^zen-alpha$"; }];
+        "workspace 2" =
+          [ { app_id = "^zen-alpha$"; } { app_id = "^chromium-browser$"; } ];
         "workspace 3" = [ { class = "^vesktop$"; } { app_id = "^vesktop$"; } ];
-        "workspace 4" = [{ class = "^steam$"; }];
-        "workspace 5" = [{ class = "^zoom$"; }];
+        "workspace 4" = [ { class = "^steam$"; } { class = "^zoom$"; } ];
       };
 
       window.commands = [

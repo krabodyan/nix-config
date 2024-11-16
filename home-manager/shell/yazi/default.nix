@@ -3,10 +3,10 @@
     types = [ "inode/directory" "application/x-gnome-saved-search" ];
     desktop = "yazi.desktop";
   };
-  home.packages = with pkgs; [ ouch poppler ];
+  home.packages = with pkgs; [ ouch ];
   programs.yazi = {
     enable = true;
-    package = pkgs.yazi-unwrapped;
+    # package = pkgs.yazi-unwrapped;
     enableFishIntegration = true;
   };
   xdg.configFile."yazi/yazi.toml".source = ./yazi.toml;
