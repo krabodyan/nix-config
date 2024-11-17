@@ -22,11 +22,10 @@
     };
     helix.url = "github:helix-editor/helix";
     ayugram.url = "github:kaeeraa/ayugram-desktop/release";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # rust-overlay = {
+    #   url = "github:oxalica/rust-overlay";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -54,21 +53,21 @@
       };
 
       devShells.${system} = {
-        rust = let
-          overlays = [ (import inputs.rust-overlay) ];
-          pkgs = import nixpkgs { inherit system overlays; };
-          rust = pkgs.rust-bin.nightly.latest.default.override {
-            extensions = [ "rust-src" "rust-analyzer" ];
-          };
-        in pkgs.mkShell {
-          buildInputs = [ rust pkgs.llvmPackages.clang ];
+        # rust = let
+        # overlays = [ (import inputs.rust-overlay) ];
+        # pkgs = import nixpkgs { inherit system overlays; };
+        # rust = pkgs.rust-bin.nightly.latest.default.override {
+        #   extensions = [ "rust-src" "rust-analyzer" ];
+        # };
+        rust = pkgs.mkShell {
+          buildInputs = [ pkgs.llvmPackages.clang ];
           nativeBuildInputs = with pkgs; [
             pkg-config
             openssl.dev
-            alsa-lib.dev
-            libpulseaudio.dev
-            postgresql.dev
-            fontconfig.dev
+            # alsa-lib.dev
+            # libpulseaudio.dev
+            # postgresql.dev
+            # fontconfig.dev
           ];
           RUST_BACKTRACE = 1;
           LIBCLANG_PATH = "${pkgs.libclang.lib}/lib";

@@ -1,15 +1,11 @@
-{ config, ... }:
-{
-  programs.zellij = {
-    enable = true;
-  };
-  xdg.configFile."zellij/config.kdl".text =
-    with config.colors;
+{ config, ... }: {
+  programs.zellij = { enable = true; };
+  xdg.configFile."zellij/config.kdl".text = with config.colors;
     let
       back = surface2;
       front = border;
-    in
-    ''
+    in ''
+      default_shell "fish"
       themes {
         default {
           bg "#${back}"

@@ -1,5 +1,4 @@
-{ pkgs, config, ... }:
-{
+{ pkgs, config, ... }: {
   home.packages = [ pkgs.libnotify ];
   services.mako = with config.colors; {
     enable = true;
@@ -21,6 +20,7 @@
     maxIconSize = 32;
     defaultTimeout = 3000;
     extraConfig = ''
+      on-button-left=dismiss
       text-alignment=center
       group-by=app-name
       outer-margin=32,0

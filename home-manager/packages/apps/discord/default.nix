@@ -1,5 +1,4 @@
-{ pkgs, config, ... }:
-{
+{ pkgs, config, ... }: {
   home.packages = [ pkgs.vesktop ];
   xdg.configFile."vesktop/settings/quickCss.css".text = with config.colors; ''
     * {
@@ -23,13 +22,13 @@
       --base05: #${subtext0}; /* White */
       --base06: #${fg-bright}; /* Brighter White */
       --base07: #${fg-bright}; /* Bright White */
-      --base08: #${brred}; /* Red */
+      --base08: #${red}; /* Red */
       --base09: #${orange}; /* Orange */
       --base0A: #${bryellow}; /* Yellow */
       --base0B: #${brgreen}; /* Green */
       --base0C: #${cyan}; /* Cyan */
       --base0D: #${blue}; /* Blue */
-      --base0E: #${pink}; /* Purple */
+      --base0E: #${brred}; /* Purple */
       --base0F: #${magenta}; /* Magenta */
 
       --primary-630: var(--base00); /* Autocomplete background */

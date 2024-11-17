@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   # let
   #   rust = pkgs.rust-bin.nightly.latest.default.override {
   #     extensions = [
@@ -9,11 +8,7 @@
   #   };
   # in
   # {
-  #   home.packages = with pkgs; [
-  #     rust
-  #     pkg-config
-  #     openssl
-  #   ];
+  home.packages = with pkgs; [ rustup ];
   xdg.configFile."rustfmt/rustfmt.toml".text = ''
     chain_width = 55
     comment_width = 100

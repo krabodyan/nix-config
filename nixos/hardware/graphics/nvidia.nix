@@ -1,5 +1,4 @@
 { config, ... }: {
-  imports = [ ./intel-only.nix ];
   services.xserver.videoDrivers = [ "nvidia" ];
   boot.blacklistedKernelModules = [ "nouveau" ];
   # boot.extraModprobeConfig = ''
