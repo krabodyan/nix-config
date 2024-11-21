@@ -1,51 +1,36 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
-{
+{ config, lib, pkgs, ... }: {
   home.packages = [ pkgs.xdg-terminal-exec ];
   xdg.configFile."xdg-terminals.list".text = ''
-    org.codeberg.dnkl.foot.desktop
+    foot.desktop
   '';
   programs.foot = {
     enable = true;
     server.enable = false;
     settings = {
-      main =
-        let
-          features = [
-            "cv04"
-            "cv14"
-            "ss02"
-            "cv18"
-            "cv16"
-            "zero"
-          ];
-          formattedFeatures = lib.concatStringsSep ":fontfeatures=" features;
-          font = "${config.font}:size=14.5:fontfeatures=${formattedFeatures}";
-        in
-        {
-          term = "xterm-256color";
-          shell = "${pkgs.fish}/bin/fish";
+      main = let
+        features = [ "cv04" "cv14" "ss02" "cv18" "cv16" "zero" ];
+        formattedFeatures = lib.concatStringsSep ":fontfeatures=" features;
+        font = "${config.font}:size=14.5:fontfeatures=${formattedFeatures}";
+      in {
+        term = "xterm-256color";
+        shell = "${pkgs.fish}/bin/fish";
 
-          font = "${font}:weight=SemiBold";
-          font-bold = "${font}:weight=Bold";
-          font-italic = "${font}:weight=SemiBold:slant=Italic";
-          font-bold-italic = "${font}:weight=Bold:slant=Italic";
+        font = "${font}:weight=SemiBold";
+        font-bold = "${font}:weight=Bold";
+        font-italic = "${font}:weight=SemiBold:slant=Italic";
+        font-bold-italic = "${font}:weight=Bold:slant=Italic";
 
-          # box-drawings-uses-font-glyphs = false;
-          pad = "24x18";
-          dpi-aware = false;
-          resize-by-cells = false;
-          resize-delay-ms = 300;
-          # line-height = "33px";
-          # horizontal-letter-offset = "2px";
-          initial-window-size-pixels = "1200x800";
-          underline-offset = "10px";
-          underline-thickness = "2px";
-        };
+        # box-drawings-uses-font-glyphs = false;
+        pad = "24x18";
+        dpi-aware = false;
+        resize-by-cells = false;
+        resize-delay-ms = 300;
+        # line-height = "33px";
+        # horizontal-letter-offset = "2px";
+        initial-window-size-pixels = "1200x800";
+        underline-offset = "10px";
+        underline-thickness = "2px";
+      };
 
       scrollback = {
         indicator-position = "none";
