@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   programs.waybar = {
     enable = true;
     package = pkgs.waybar.override ({
@@ -34,16 +33,9 @@
       # margin-right = 0;
       # margin-left = 0;
 
-      modules-left = [
-        "battery"
-        "network"
-        "tray"
-      ];
+      modules-left = [ "battery" "network" "tray" ];
       modules-center = [ "sway/workspaces" ];
-      modules-right = [
-        "sway/language"
-        "clock"
-      ];
+      modules-right = [ "sway/language" "clock" ];
 
       "sway/workspaces" = {
         format = "<span font='SymbolsNerdFont 10'>{icon}</span>";
@@ -78,9 +70,13 @@
       };
 
       clock = {
-        format = "{:%H\n%M}";
+        format = ''
+          {:%H
+          %M}'';
         tooltip-format = "{calendar}";
-        format-alt = "{:%d\n%m}";
+        format-alt = ''
+          {:%d
+          %m}'';
         actions = {
           on-scroll-up = "shift_up";
           on-scroll-down = "shift_down";
@@ -106,12 +102,7 @@
         tooltip-format = "{time} | {capacity} %";
         tooltip-format-full = "{capacity} %";
         format-icons = rec {
-          discharging = [
-            "󰁺"
-            "󰁽"
-            "󰂀"
-            "󰂂"
-          ];
+          discharging = [ "󰁺" "󰁽" "󰂀" "󰂂" ];
           charging = [ "" ];
           plugged = [ "󰁹" ];
           full = plugged;

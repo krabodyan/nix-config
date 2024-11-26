@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   imports = [
     ./bat
     ./yazi
@@ -16,6 +15,7 @@
   home.packages = with pkgs; [
     jq # fish done
     nh
+    eza
     xdg-utils
     iotop
     iftop

@@ -47,14 +47,7 @@
     wrap-at-text-width = true;
   };
 
-  gutters = {
-    layout = [
-      "diff"
-      "diagnostics"
-      "line-numbers"
-      "spacer"
-    ];
-  };
+  gutters = { layout = [ "diff" "diagnostics" "line-numbers" "spacer" ]; };
   smart-tab = {
     enable = true;
     # supersede-menu = true;
@@ -64,9 +57,7 @@
       # "version-control"
       "spinner"
     ];
-    center =
-      [
-      ];
+    center = [ ];
     left = [
       "mode"
       "file-base-name"

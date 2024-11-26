@@ -1,5 +1,4 @@
-{ config, mkHex }:
-{
+{ config, mkHex }: {
   paradise = {
     "attribute" = "yellow";
     "type" = {
@@ -29,9 +28,7 @@
     };
 
     "variable" = "text";
-    "variable.parameter" = {
-      fg = "pink";
-    };
+    "variable.parameter" = { fg = "pink"; };
     "variable.builtin" = "red";
     "variable.other.member" = "blue";
 
@@ -77,18 +74,11 @@
     "markup.heading.5" = "pink";
     "markup.heading.6" = "teal";
     "markup.list" = "sky";
-    "markup.bold" = {
-      modifiers = [ "bold" ];
-    };
-    "markup.italic" = {
-      modifiers = [ "italic" ];
-    };
+    "markup.bold" = { modifiers = [ "bold" ]; };
+    "markup.italic" = { modifiers = [ "italic" ]; };
     "markup.link.url" = {
       fg = "blue";
-      modifiers = [
-        "italic"
-        "underlined"
-      ];
+      modifiers = [ "italic" "underlined" ];
     };
     "markup.link.text" = "blue";
     "markup.raw" = "yellow";
@@ -99,12 +89,8 @@
 
     "ui.background" = { };
 
-    "ui.linenr" = {
-      fg = "surface1";
-    };
-    "ui.linenr.selected" = {
-      fg = "subtext0";
-    };
+    "ui.linenr" = { fg = "surface1"; };
+    "ui.linenr.selected" = { fg = "subtext0"; };
     "ui.statusline" = {
       fg = "subtext0";
       bg = "base";
@@ -134,13 +120,9 @@
       bg = "surface0";
     };
 
-    "ui.picker.header" = {
-      fg = "comment";
-    };
+    "ui.picker.header" = { fg = "comment"; };
 
-    "ui.window" = {
-      fg = "text";
-    };
+    "ui.window" = { fg = "text"; };
 
     "ui.help" = {
       fg = "overlay0";
@@ -156,14 +138,10 @@
     "ui.bufferline.active" = {
       fg = "subtext0";
       bg = "surface0";
-      modifiers = [
-        "bold"
-      ];
+      modifiers = [ "bold" ];
     };
 
-    "ui.bufferline.background" = {
-      bg = "base";
-    };
+    "ui.bufferline.background" = { bg = "base"; };
 
     "ui.text" = "text";
     "ui.text.focus" = {
@@ -171,25 +149,17 @@
       bg = "surface0";
       modifiers = [ "bold" ];
     };
-    "ui.text.inactive" = {
-      fg = "overlay1";
-    };
+    "ui.text.inactive" = { fg = "overlay1"; };
     "ui.virtual" = "overlay0";
-    "ui.virtual.ruler" = {
-      bg = "surface0";
-    };
+    "ui.virtual.ruler" = { bg = "surface0"; };
     "ui.virtual.indent-guide" = "surface1";
-    "ui.virtual.inlay-hint" = {
-      fg = "comment";
-    };
+    "ui.virtual.inlay-hint" = { fg = "comment"; };
     "ui.virtual.jump-label" = {
       fg = "red";
       modifiers = [ "bold" ];
     };
 
-    "ui.selection" = {
-      bg = "surface2";
-    };
+    "ui.selection" = { bg = "surface2"; };
 
     "ui.cursor" = {
       fg = "base";
@@ -232,9 +202,7 @@
       fg = "base";
       bg = "overlay2";
     };
-    "ui.cursorline.primary" = {
-      bg = "surface0";
-    };
+    "ui.cursorline.primary" = { bg = "surface0"; };
     "ui.highlight" = {
       fg = "yellow";
       bg = "surface1";
@@ -254,29 +222,11 @@
       fg = "surface2";
     };
 
-    "diagnostic.error" = {
-      underline = {
-        style = "curl";
-      };
-    };
-    "diagnostic.warning" = {
-      underline = {
-        style = "curl";
-      };
-    };
-    "diagnostic.info" = {
-      underline = {
-        style = "curl";
-      };
-    };
-    "diagnostic.hint" = {
-      underline = {
-        style = "curl";
-      };
-    };
-    "diagnostic.unnecessary" = {
-      fg = "comment";
-    };
+    "diagnostic.error" = { underline = { style = "curl"; }; };
+    "diagnostic.warning" = { underline = { style = "curl"; }; };
+    "diagnostic.info" = { underline = { style = "curl"; }; };
+    "diagnostic.hint" = { underline = { style = "curl"; }; };
+    "diagnostic.unnecessary" = { fg = "comment"; };
 
     error = "red";
     warning = "yellow";

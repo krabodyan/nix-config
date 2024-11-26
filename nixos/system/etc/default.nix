@@ -1,9 +1,4 @@
 {
-  imports = [
-    ./console.nix
-    ./docs.nix
-    ./time.nix
-    ./locale.nix
-    ./env.nix
-  ];
+  imports =
+    [ ./console.nix ./docs.nix ./time.nix ./locale.nix ./env.nix ./fonts.nix ];
 }

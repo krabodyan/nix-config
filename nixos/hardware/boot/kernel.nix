@@ -23,10 +23,10 @@
     };
 
     kernelParams = [ "nohibernate" "rootfstype=btrfs" ];
-    kernelPackages = pkgs.linuxPackages_latest;
-    extraModprobeConfig = ''
-      options snd-hda-intel power_save=0 pm_blacklist=true
-    '';
+    # kernelPackages = pkgs.linuxPackages_latest;
+    # extraModprobeConfig = ''
+    #   options snd-hda-intel power_save=0 pm_blacklist=true
+    # '';
     blacklistedKernelModules = [
       "adfs"
       "affs"
