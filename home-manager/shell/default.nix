@@ -19,6 +19,7 @@
     xdg-utils
     iotop
     iftop
+    termusic
     python3
     ffmpeg
     dust

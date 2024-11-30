@@ -109,7 +109,7 @@ end
 
 if set -q __done_enabled
     set -g __done_initial_window_id ''
-    set -q __done_min_cmd_duration; or set -g __done_min_cmd_duration 5000
+    set -q __done_min_cmd_duration; or set -g __done_min_cmd_duration 500
     set -q __done_notify_sound; or set -g __done_notify_sound 0
     set -q __done_sway_ignore_visible; or set -g __done_sway_ignore_visible 0
     set -q __done_tmux_pane_format; or set -g __done_tmux_pane_format '[#{window_index}]'

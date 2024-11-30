@@ -23,7 +23,7 @@
     };
 
     kernelParams = [ "nohibernate" "rootfstype=btrfs" ];
-    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_11;
     # extraModprobeConfig = ''
     #   options snd-hda-intel power_save=0 pm_blacklist=true
     # '';

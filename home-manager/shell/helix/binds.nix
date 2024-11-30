@@ -46,6 +46,7 @@ let
       # "move_char_right"
     ];
     "A-C-f" = "file_picker_in_current_buffer_directory";
+    # "A-S-f" = "file_picker_in_current_buffer_directory";
     "A-x" = "extend_line_up";
     "S-x" = [ "extend_line_up" "extend_to_line_bounds" ];
     esc = [ "collapse_selection" "keep_primary_selection" ];

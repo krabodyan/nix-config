@@ -24,7 +24,7 @@
 
       keybinds clear-defaults=true {
         normal {
-          bind "Ctrl r" { SwitchToMode "RenameTab"; TabNameInput 0; }
+          bind "Ctrl k" { SwitchToMode "RenameTab"; TabNameInput 0; }
         }
         
         scroll {

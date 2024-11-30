@@ -23,7 +23,7 @@
         { command = "waybar"; }
         { command = "${pkgs.swaykbdd}/bin/swaykbdd"; }
         { command = "env QT_QPA_PLATFORMTHEME=gtk3 ayugram-desktop"; }
-        { command = "google-chrome"; }
+        { command = "google-chrome-stable"; }
         { command = "vesktop"; }
       ];
       assigns = {
@@ -61,7 +61,7 @@
         }
         {
           command =
-            "floating enable; resize set 800 px 800 px; move position 1080 30";
+            "floating enable; resize set 400 px 800 px; move position 1480 30";
           criteria.app_id = "org.pulseaudio.pavucontrol";
         }
       ];
