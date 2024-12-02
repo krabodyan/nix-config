@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.nix-ld = {
     enable = true;
     package = pkgs.nix-ld-rs;
@@ -93,7 +92,6 @@
       libxcrypt
       libxkbcommon
       libxml2
-      libstdcxx5
 
       lsof
       mesa

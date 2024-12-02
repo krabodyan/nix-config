@@ -7,7 +7,8 @@
     noto-fonts-cjk-sans
     roboto
     twemoji-color-font
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" "JetBrainsMono" ]; })
+    nerd-fonts.symbols-only
+    nerd-fonts.jetbrains-mono
   ];
 
   fonts.fontDir.enable = true;
