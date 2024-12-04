@@ -26,5 +26,8 @@
     dua
     duf
     exiftool
+
+    postgresql
+    ngrok
   ];
 }

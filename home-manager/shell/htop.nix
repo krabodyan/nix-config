@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  home.packages = with pkgs; [ nvtopPackages.nvidia gpustat ];
+  home.packages = with pkgs; [ gpustat ];
   xdg.configFile."htop/htoprc".force = true;
   programs.htop = {
     enable = true;
