@@ -44,10 +44,6 @@
     separator_close = ""
     separator_style = { fg = "#${surface1}", bg = "#${surface1}" }
 
-    mode_normal = { fg = "#${bg}", bg = "#${yazi_select}", bold = true }
-    mode_select = { fg = "#${bg}", bg = "#${mode_select}", bold = true }
-    mode_unset  = { fg = "#${bg}", bg = "#${mode_insert}", bold = true }
-
     progress_label  = { fg = "#${fg}", bg = "#${surface1}", bold = true }
     progress_normal = { fg = "#${green}", bg = "#${surface1}" }
     progress_error  = { fg = "#${red}", bg = "#${surface1}" }
@@ -57,6 +53,14 @@
     perm_write = { fg = "#${overlay1}" }
     perm_exec  = { fg = "#${select}" }
     perm_sep   = { fg = "#${overlay1}" }
+
+    [mode]
+    normal_main = { fg = "#${bg}", bg = "#${yazi_select}", bold = true }
+    select_main = { fg = "#${bg}", bg = "#${mode_select}", bold = true }
+    unset_main  = { fg = "#${bg}", bg = "#${mode_insert}", bold = true }
+    normal_alt = { fg = "#${yazi_select}", bg = "#${surface1}", bold = true }
+    select_alt = { fg = "#${mode_select}", bg = "#${surface1}", bold = true }
+    unset_alt  = { fg = "#${mode_insert}", bg = "#${surface1}", bold = true }
 
     [select]
     border   = { fg = "#${border}" }

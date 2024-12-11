@@ -2,11 +2,15 @@
   description = "my flake";
 
   nixConfig = {
-    extra-substituters =
-      [ "https://helix.cachix.org" "https://cache.garnix.io" ];
+    extra-substituters = [
+      "https://helix.cachix.org"
+      "https://cache.garnix.io"
+      "https://yazi.cachix.org"
+    ];
     extra-trusted-public-keys = [
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+      "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
     ];
   };
 
@@ -22,16 +26,16 @@
     };
     helix.url = "github:helix-editor/helix";
     ayugram.url = "github:kaeeraa/ayugram-desktop/release";
-    # rust-overlay = {
-    #   url = "github:oxalica/rust-overlay";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    # yazi.url = "github:sxyazi/yazi";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs { inherit system; };
+      pkgs = import nixpkgs {
+        inherit system;
+        # overlays = [ inputs.yazi.overlays.yazi ];
+      };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit self system inputs; };
