@@ -6,7 +6,6 @@
   home.packages = with pkgs; [ ouch ];
   programs.yazi = {
     enable = true;
-    # package = pkgs.yazi-unwrapped;
     enableFishIntegration = true;
   };
   xdg.configFile."yazi/yazi.toml".source = ./yazi.toml;
@@ -53,11 +52,11 @@
     progress_normal = { fg = "#${green}", bg = "#${surface1}" }
     progress_error  = { fg = "#${red}", bg = "#${surface1}" }
 
-    permissions_t = { fg = "#${overlay1}" }
-    permissions_r = { fg = "#${select}" }
-    permissions_w = { fg = "#${overlay1}" }
-    permissions_x = { fg = "#${select}" }
-    permissions_s = { fg = "#${overlay1}" }
+    perm_type  = { fg = "#${overlay1}" }
+    perm_read  = { fg = "#${select}" }
+    perm_write = { fg = "#${overlay1}" }
+    perm_exec  = { fg = "#${select}" }
+    perm_sep   = { fg = "#${overlay1}" }
 
     [select]
     border   = { fg = "#${border}" }
@@ -80,7 +79,7 @@
 
     [which]
     mask            = { bg = "#${surface0}" }
-    cand            = { fg = "#${blue}" }
+    # cand            = { fg = "#${blue}" }
     rest            = { fg = "#${overlay2}" }
     desc            = { fg = "#${pink}" }
     separator       = "  "

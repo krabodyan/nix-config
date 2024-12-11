@@ -31,6 +31,7 @@
         "workspace 2" = [
           { app_id = "^zen-alpha$"; }
           { app_id = "^chromium-browser$"; }
+          { app_id = "^firefox$"; }
           { app_id = "^google-chrome$"; }
         ];
         "workspace 3" = [ { class = "^vesktop$"; } { app_id = "^vesktop$"; } ];

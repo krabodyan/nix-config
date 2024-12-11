@@ -21,7 +21,8 @@
       SOUND_POWER_SAVE_ON_AC = 0;
       SOUND_POWER_SAVE_CONTROLLER = "N";
       SOUND_POWER_SAVE_ON_BAT = 0;
-      RUNTIME_PM_DRIVER_BLACKLIST = "amdgpu mei_me nouveau nvidia pcieport radeon snd_hda_intel";
+      RUNTIME_PM_DRIVER_BLACKLIST =
+        "amdgpu mei_me nouveau nvidia pcieport radeon snd_hda_intel";
     };
   };
   # systemd.services.tlp.enable = false;

@@ -27,6 +27,7 @@
     duf
     exiftool
 
+    mangohud
     postgresql
     ngrok
   ];
