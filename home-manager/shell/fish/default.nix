@@ -57,7 +57,9 @@
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
       ${pkgs.zoxide}/bin/zoxide init --cmd cd fish | source
 
-      bind -M insert \ef forward-char
+      bind -M insert \ef end-of-line
+      bind -M default \ef end-of-line
+      bind -M insert \ea beginning-of-line
       bind -M insert \cf _fzf_search_directory
 
       set -g fish_color_normal ${fg}
