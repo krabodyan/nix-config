@@ -49,7 +49,6 @@ let
     "A-f" = [ "goto_line_end" "move_char_right" ];
     "A-+" = "increment";
     "A-minus" = "decrement";
-    "A-O" = [ "open_above" "move_line_up" ];
   };
   special = {
     "a" = [
@@ -70,13 +69,14 @@ let
 in {
   normal = binds // special // { "C-c" = [ "insert_mode" ]; };
   insert = binds // {
-    "C-c" = [ "normal_mode" ];
+    "C-c" = "normal_mode";
     "A-a" = [
       "goto_line_start"
       # "move_char_right"
     ];
     ret = [ "insert_newline" "commit_undo_checkpoint" ];
     "A-o" = "open_below";
+    "A-O" = "open_above";
     "A-h" = "move_char_left";
     "A-l" = "move_char_right";
     "A-j" = "move_line_down";
