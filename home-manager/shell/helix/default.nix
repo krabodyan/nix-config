@@ -9,13 +9,8 @@
     # nixfmt-rfc-style
     nixfmt-classic
     python312Packages.python-lsp-server
+    (import ./yazi-picker.nix { inherit pkgs; })
   ];
-
-  # xdg.desktopEntries."Helix" = {
-  #   name = "Helix";
-  #   exec = "foot hx %F";
-  #   terminal = true;
-  # };
 
   xdg.mimeApps.defaultApplications = helpers.mkAssociations {
     types = [

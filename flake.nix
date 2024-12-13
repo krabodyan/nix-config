@@ -5,12 +5,12 @@
     extra-substituters = [
       "https://helix.cachix.org"
       "https://cache.garnix.io"
-      "https://yazi.cachix.org"
+      # "https://yazi.cachix.org"
     ];
     extra-trusted-public-keys = [
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-      "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
+      # "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
     ];
   };
 
@@ -70,7 +70,7 @@
             openssl.dev
             # alsa-lib.dev
             # libpulseaudio.dev
-            # postgresql.dev
+            postgresql.dev
             # fontconfig.dev
           ];
           RUST_BACKTRACE = 1;

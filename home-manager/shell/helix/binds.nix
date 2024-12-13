@@ -1,6 +1,16 @@
 let
   binds = {
-    "A-space" = "buffer_picker";
+    "C-space" = "buffer_picker";
+    "A-space" = [
+      ":new"
+      ":insert-output __yazi_picker"
+      "select_all"
+      "split_selection_on_newline"
+      "goto_file"
+      "goto_last_modified_file"
+      ":buffer-close!"
+    ];
+
     "A-e" = ":buffer-next";
     "A-q" = ":buffer-previous";
     "C-q" = ":buffer-close";
@@ -39,6 +49,7 @@ let
     "A-f" = [ "goto_line_end" "move_char_right" ];
     "A-+" = "increment";
     "A-minus" = "decrement";
+    "A-O" = [ "open_above" "move_line_up" ];
   };
   special = {
     "a" = [
@@ -66,7 +77,6 @@ in {
     ];
     ret = [ "insert_newline" "commit_undo_checkpoint" ];
     "A-o" = "open_below";
-    "A-O" = "open_above";
     "A-h" = "move_char_left";
     "A-l" = "move_char_right";
     "A-j" = "move_line_down";

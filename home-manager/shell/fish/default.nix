@@ -5,7 +5,7 @@
       ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
       tree =
         "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
-      ci = "__zoxide_zi";
+      c = "__zoxide_zi";
     };
     functions = {
       _fzf_search_directory = ''
