@@ -9,6 +9,7 @@
       title_align center
       titlebar_border_thickness 0
       default_border pixel 2
+      for_window [all] allow_tearing yes
     '';
     #   corner_radius 6
     #   blur disable
@@ -70,6 +71,8 @@
       output."eDP-1" = {
         bg = "${config.background-image} fill";
         mode = "1920x1080@144.000Hz";
+        allow_tearing = "off";
+        max_render_time = "off";
       };
 
       gaps = {
