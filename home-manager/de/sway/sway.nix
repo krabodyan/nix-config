@@ -4,19 +4,17 @@
     checkConfig = false;
     wrapperFeatures.gtk = true;
     xwayland = true;
-    # package = pkgs.swayfx;
+    package = pkgs.swayfx;
     extraConfig = ''
       title_align center
       titlebar_border_thickness 0
       default_border pixel 2
-      for_window [all] allow_tearing yes
+      corner_radius 0
+      blur disable
+      shadows disable
+      default_dim_inactive 0.0
+      scratchpad_minimize disable
     '';
-    #   corner_radius 6
-    #   blur disable
-    #   shadows disable
-    #   default_dim_inactive 0.0
-    #   scratchpad_minimize disable
-    # '';
     config = {
       modifier = "Mod4";
       terminal = "foot";
@@ -71,8 +69,8 @@
       output."eDP-1" = {
         bg = "${config.background-image} fill";
         mode = "1920x1080@144.000Hz";
-        allow_tearing = "off";
-        max_render_time = "off";
+        # allow_tearing = "off";
+        # max_render_time = "off";
       };
 
       gaps = {
