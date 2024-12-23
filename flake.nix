@@ -5,11 +5,13 @@
     extra-substituters = [
       "https://helix.cachix.org"
       "https://cache.garnix.io"
+      "https://nixpkgs-wayland.cachix.org"
       # "https://yazi.cachix.org"
     ];
     extra-trusted-public-keys = [
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+      "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
       # "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
     ];
   };
@@ -26,6 +28,9 @@
     };
     helix.url = "github:helix-editor/helix";
     ayugram.url = "github:kaeeraa/ayugram-desktop/release";
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+
+    # nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
     # yazi.url = "github:sxyazi/yazi";
   };
 
@@ -34,7 +39,7 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        # overlays = [ inputs.yazi.overlays.yazi ];
+        overlays = [ inputs.nixpkgs-wayland.overlay ];
       };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -68,6 +73,7 @@
           nativeBuildInputs = with pkgs; [
             pkg-config
             openssl.dev
+            luajit
             # alsa-lib.dev
             # libpulseaudio.dev
             postgresql.dev
@@ -75,6 +81,35 @@
           ];
           RUST_BACKTRACE = 1;
           LIBCLANG_PATH = "${pkgs.libclang.lib}/lib";
+        };
+        dwl = pkgs.mkShell {
+          packages = [ pkgs.gnumake ];
+          nativeBuildInputs = with pkgs; [
+            pkg-config
+            wayland-scanner.dev
+            wayland-protocols
+            wlroots
+            wayland
+            xwayland
+            xorg.xcbutilwm
+            libxkbcommon
+            libinput
+            xorg.libxcb
+            pixman
+            libinput
+
+            xorg.libX11
+            xorg.libXinerama
+            xorg.libXft
+          ];
+          makeFlags = [
+            "PKG_CONFIG=${pkgs.stdenv.cc.targetPrefix}pkg-config"
+            "WAYLAND_SCANNER=wayland-scanner"
+            "PREFIX=$(out)"
+            "MANDIR=$(man)/share/man"
+            ''XWAYLAND="-DXWAYLAND"''
+            ''XLIBS="xcb xcb-icccm"''
+          ];
         };
         python = pkgs.mkShell {
           packages = [

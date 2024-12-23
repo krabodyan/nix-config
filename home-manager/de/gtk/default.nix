@@ -1,26 +1,12 @@
-{
-  config,
-  pkgs,
-  ...
-}:
-{
-  imports = [
-    ./cursor.nix
-    ./qtct.nix
-  ];
+{ config, pkgs, ... }: {
+  imports = [ ./cursor.nix ./qtct.nix ];
   home.packages = [ pkgs.dconf ];
   dconf = {
     enable = true;
     settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
-      "org/gnome/desktop/wm/preferences" = {
-        button-layout = "";
-      };
-      "org/gnome/desktop/applications/terminal" = {
-        exec = "foot";
-      };
+      "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
+      "org/gnome/desktop/wm/preferences" = { button-layout = ""; };
+      "org/gnome/desktop/applications/terminal" = { exec = "foot"; };
     };
   };
   gtk = {
@@ -53,6 +39,7 @@
         gtk-xft-hinting=1
         gtk-xft-hintstyle="hintslight"
         gtk-xft-rgba="rgb"
+        gtk-dialogs-use-header=false
       '';
     };
 
@@ -65,6 +52,7 @@
         gtk-xft-hinting = 1;
         gtk-xft-hintstyle = "hintslight";
         gtk-xft-rgba = "rgb";
+        gtk-dialogs-use-header = false;
       };
       extraCss = with config.colors; ''
         menu,
@@ -89,6 +77,17 @@
         window.background
         {
             border-radius: 0;
+        }
+
+        window.csd,             /* gtk4? */
+        window.csd decoration { /* gtk3 */
+          box-shadow: none;
+        }
+
+        headerbar.default-decoration {
+          /* You may need to tweak these values depending on your GTK theme */
+          margin-bottom: 50px;
+          margin-top: -100px;
         }
 
         decoration, decoration:backdrop

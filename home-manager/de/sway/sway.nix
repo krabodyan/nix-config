@@ -154,13 +154,6 @@
       bindkeysToCode = true;
       keybindings = let
         mod = config.wayland.windowManager.sway.config.modifier;
-        volume = import ./scripts/volume.nix { inherit pkgs; };
-        microphone = import ./scripts/microphone.nix { inherit pkgs; };
-        brightness = import ./scripts/brightness.nix { inherit pkgs; };
-        screenshot = import ./scripts/screenshot.nix {
-          inherit pkgs;
-          colors = config.colors;
-        };
         left = "h";
         right = "l";
         up = "k";
@@ -174,9 +167,9 @@
         "Ctrl+Alt+Backspace" = "reload";
         "Ctrl+Alt+Delete" = "exit";
 
-        "Print" = "exec ${screenshot}/bin/screenshot";
-        "Pause" = "exec ${screenshot}/bin/screenshot full";
-        "${mod}+Print" = "exec ${screenshot}/bin/screenshot swayimg";
+        "Print" = "exec __screenshot";
+        "Pause" = "exec __screenshot full";
+        "${mod}+Print" = "exec __screenshot swayimg";
         "${mod}+Shift+Print" = "exec wl-paste | satty -f -";
 
         "${mod}+Shift+0" = "exec swaylock";
@@ -229,13 +222,13 @@
 
         XF86TouchpadToggle =
           "input type:touchpad events toggle enabled disabled";
-        XF86AudioRaiseVolume = "exec ${volume}/bin/volume up";
-        XF86AudioLowerVolume = "exec ${volume}/bin/volume down";
-        XF86AudioMute = "exec ${volume}/bin/volume mute";
-        F4 = "exec ${microphone}/bin/microphone";
-        XF86MonBrightnessUp = "exec ${brightness}/bin/brightness up";
-        XF86MonBrightnessDown = "exec ${brightness}/bin/brightness down";
-        "${mod}+x" = "exec ${brightness}/bin/brightness toggle";
+        XF86AudioRaiseVolume = "exec __volume up";
+        XF86AudioLowerVolume = "exec __volume down";
+        XF86AudioMute = "exec __volume mute";
+        F4 = "exec __microphone";
+        XF86MonBrightnessUp = "exec __brightness up";
+        XF86MonBrightnessDown = "exec __brightness down";
+        "${mod}+x" = "exec __brightness toggle";
       };
     };
   };

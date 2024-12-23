@@ -7,8 +7,7 @@ let
     -h string:x-canonical-private-synchronous:swaynotify \
   '';
   bctl = "${pkgs.brightnessctl}/bin/brightnessctl";
-in
-pkgs.writeShellScriptBin "brightness" ''
+in pkgs.writeShellScriptBin "__brightness" ''
   if [ "$1" = "up" ]; then
     ${bctl} set 5%+
   elif [ "$1" = "down" ]; then

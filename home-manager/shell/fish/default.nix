@@ -1,11 +1,12 @@
 { config, pkgs, ... }: {
+  home.packages = [ pkgs.zoxide ];
   programs.fish = {
     enable = true;
     shellAliases = {
       ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
       tree =
         "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
-      c = "__zoxide_zi";
+      j = "__zoxide_zi";
     };
     functions = {
       _fzf_search_directory = ''
@@ -33,10 +34,31 @@
         commandline --function repaint
       '';
     };
-    plugins = [
+    plugins = let
+      zoxide = pkgs.fishPlugins.buildFishPlugin rec {
+        pname = "zoxide.fish";
+        version = "1.0";
+
+        src = pkgs.fetchFromGitHub {
+          owner = "Susensio";
+          repo = pname;
+          rev = "b1aebcc484ea500a2acbfea85a7dcddc8a25f198";
+          sha256 = "sha256-9hqq4hjsXhmDr06zdx+TokpZeMpzn0tNKtb8v1ghZsI=";
+        };
+
+        meta = {
+          description = "zoxide plugin fish";
+          homepage = "https://github.com/kidonng/zoxide.fish";
+        };
+      };
+    in [
       {
         name = "done";
         src = ./plugins/done;
+      }
+      {
+        name = "zoxide.fish";
+        inherit (zoxide) src;
       }
       {
         name = "fzf";
@@ -55,8 +77,7 @@
     '';
     interactiveShellInit = with config.colors; ''
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-      ${pkgs.zoxide}/bin/zoxide init --cmd cd fish | source
-
+      set --universal zoxide_cmd cd
       bind -M insert \ef end-of-line
       bind -M default \ef end-of-line
       bind -M insert \ea beginning-of-line

@@ -11,7 +11,7 @@
     QT_QPA_PLATFORM = "wayland;xcb";
     _JAVA_AWT_WM_NONEREPARENTING = 1;
     XDG_SESSION_TYPE = "wayland";
-    XDG_SESSION_DESKTOP = "Sway";
+    # XDG_SESSION_DESKTOP = "Sway";
     XDG_SCREENSHOTS_DIR = "~/pictures";
     # __GL_THREADED_OPTIMIZATIONS = 0;
     QT_AUTO_SCREEN_SCALE_FACTOR = 1;

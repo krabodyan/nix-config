@@ -1,8 +1,1 @@
-{
-  imports = [
-    ./etc
-    ./bar
-    ./gtk
-    ./sway
-  ];
-}
+{ imports = [ ./etc ./bar ./gtk ./sway ./river ./scripts ]; }

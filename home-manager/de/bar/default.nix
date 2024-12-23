@@ -34,7 +34,7 @@
       # margin-left = 0;
 
       modules-left = [ "battery" "network" "tray" ];
-      modules-center = [ "sway/workspaces" ];
+      modules-center = [ "sway/workspaces" "river/tags" ];
       modules-right = [ "sway/language" "clock" ];
 
       "sway/workspaces" = {
@@ -140,7 +140,8 @@
         margin: 5px 0;
       }
 
-      #workspaces button
+      #workspaces button,
+      #tags button
       {
         color: #${overlay0};
         padding: 0;
@@ -163,11 +164,13 @@
         color: #${orange};
       }
 
-      #workspaces button.focused {
+      #workspaces button.focused,
+      #tags button.focused {
         color: #${subtext0};
       }
 
-      #workspaces button.urgent {
+      #workspaces button.urgent,
+      #tags button.urgent {
         color: #${red};
       }
 

@@ -10,9 +10,8 @@ let
   slurp = "${pkgs.slurp}/bin/slurp -b ${colors.bg}d9 -c ${colors.select}";
   copy = "${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
   swayimg = "${pkgs.swayimg}/bin/swayimg --config info.show=no";
-in
 
-pkgs.writeShellScriptBin "screenshot" ''
+in pkgs.writeShellScriptBin "__screenshot" ''
   if [ "$1" = "full" ]; then
     ${grim} - | ${copy}
     ${send} "screenshot copied"

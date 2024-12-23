@@ -7,7 +7,7 @@ let
     -a swaynotify \
     -h string:x-canonical-private-synchronous:swaynotify \
   '';
-in pkgs.writeShellScriptBin "volume" ''
+in pkgs.writeShellScriptBin "__volume" ''
   if [ "$1" = "mute" ]; then
     ${pamixer} -t
   fi
