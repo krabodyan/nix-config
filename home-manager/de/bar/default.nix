@@ -3,6 +3,7 @@
     enable = true;
     package = pkgs.waybar.override ({
       cavaSupport = false;
+      swaySupport = false;
       hyprlandSupport = false;
       jackSupport = false;
       evdevSupport = false;
@@ -24,7 +25,7 @@
       position = "right";
       layer = "top";
       # mode = "invisible";
-      # start_hidden = true;
+      start_hidden = true;
       width = 26;
       height = 360;
       spacing = 0;
@@ -34,39 +35,17 @@
       # margin-left = 0;
 
       modules-left = [ "battery" "network" "tray" ];
-      modules-center = [ "sway/workspaces" "river/tags" ];
-      modules-right = [ "sway/language" "clock" ];
-
-      "sway/workspaces" = {
-        format = "<span font='SymbolsNerdFont 10'>{icon}</span>";
-        format-icons = {
-          default = ""; # "󰊠"; # "󱓻";
-          # focused = ""; # "󰮯"; # "󱓻";
-          persistent = ""; # ""; # "󱓼";
-        };
-        tooltip = false;
-        disable-scroll = true;
-        persistent-workspaces = {
-          "1" = [ ];
-          "2" = [ ];
-          "3" = [ ];
-          "4" = [ ];
-          "5" = [ ];
-        };
-        window-rewrite = { };
-      };
+      modules-center = [ "river/tags" ];
+      modules-right = [ "clock" ];
 
       tray = {
         icon-size = 10;
         spacing = 8;
       };
 
-      "sway/language" = {
-        tooltip = false;
-        format = "{shortDescription}";
-        format-us = "en"; # "🇬🇧";
-        format-ru = "ru"; # "🇷🇺";
-        format-ua = "uk"; # "🇺🇦";
+      "river/tags" = {
+        num-tags = 5;
+        tag-labels = [ "" "" "" "" "" "" ];
       };
 
       clock = {

@@ -67,12 +67,8 @@
     ];
     loginShellInit = ''
       if test (tty) = "/dev/tty1"
-        if test -e /dev/dri/card0 || test -e /dev/dri/card2
-          set -x WLR_DRM_DEVICES /dev/dri/card1
-          exec dbus-run-session sway --unsupported-gpu > /dev/null 2>&1
-        else
-          exec dbus-run-session sway > /dev/null 2>&1
-        end
+        set -x WLR_DRM_DEVICES /dev/dri/card1
+        exec dbus-run-session river
       end
     '';
     interactiveShellInit = with config.colors; ''
@@ -133,7 +129,6 @@
         set_color normal
       end
 
-      set -U __done_sway_ignore_visible 1
       set -U __done_sound_command "pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga"
 
       set -g fzf_fd_opts --color never --type file 

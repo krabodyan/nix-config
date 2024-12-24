@@ -1,11 +1,10 @@
 #!/bin/sh
 
 riverctl background-color 0x0f0f0f
+swaybg -m fill -i ~/flake/assets/background.jpg &
 # riverctl border-color-focused 0x303030
 riverctl border-color-unfocused 0x0f0f0f
 # riverctl border-width 4
-
-# swaybg -m fill -i ~/flake/assets/background.jpg &
 
 riverctl map -layout 0 normal Super Q close
 riverctl map -layout 0 normal Super+Shift Delete exit
@@ -51,7 +50,7 @@ riverctl input "pointer-1133-50504-Logitech_USB_Receiver_Mouse" pointer-accel 0
 riverctl map-pointer normal Super BTN_LEFT move-view
 riverctl map-pointer normal Super BTN_RIGHT resize-view
 
-for i in $(seq 1 9)
+for i in $(seq 1 7)
 do
   tags=$((1 << ($i - 1)))
   riverctl map -layout 0 normal Super $i set-focused-tags $tags
@@ -135,3 +134,5 @@ riverctl map -layout 0 normal Super+Shift L send-layout-cmd wideriver "--layout 
 riverctl map -layout 0 normal Super+Shift J send-layout-cmd wideriver "--layout bottom"
 riverctl map -layout 0 normal Super+Shift H send-layout-cmd wideriver "--layout left"
 
+# riverctl map -layout 0 normal Super R spawn "pkill -SIGUSR1 waybar"
+# waybar &

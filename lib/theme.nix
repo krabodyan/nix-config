@@ -44,7 +44,7 @@
         magenta = "cc86d1";
         cyan = "77d9d7";
 
-        brblack = fg-dark;
+        brblack = overlay0;
         brred = "f38ba8";
         brgreen = "92f2b3";
         bryellow = "ffeec7";
