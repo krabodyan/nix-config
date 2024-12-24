@@ -81,7 +81,7 @@ riverctl map -layout 0 normal Super       Print spawn "__screenshot swayimg";
 riverctl map -layout 0 normal Super+Shift Print spawn "wl-paste | satty -f -";
 
 
-array=("Виберіть файли" "Відкрити файли" "Вивантаження файлу" "File Upload" "Відкрити документ" "Зберегти файл")
+array=("Виберіть файли" "Відкрити файли" "Вивантаження файлу" "File Upload" "Відкрити документ" "Зберегти файл" "Open File")
 for item in "${array[@]}"; do
   riverctl rule-add -title "$item" float
   riverctl rule-add -title "$item" dimensions 1000 800
