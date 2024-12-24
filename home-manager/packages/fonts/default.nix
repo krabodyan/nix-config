@@ -1,6 +1,4 @@
-{ pkgs, config, ... }:
-
-{
+{ pkgs, config, ... }: {
   home.packages = with pkgs; [
     corefonts
     font-awesome
@@ -9,12 +7,9 @@
     noto-fonts-cjk-sans
     roboto
     twemoji-color-font
-    (nerdfonts.override {
-      fonts = [
-        "NerdFontsSymbolsOnly"
-        "JetBrainsMono"
-      ];
-    })
+    nerd-fonts.symbols-only
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.iosevka-term
   ];
 
   fonts.fontconfig = {
@@ -23,11 +18,7 @@
       serif = [ "Roboto Medium" ];
       sansSerif = [ "Roboto Medium" ];
       monospace = [ config.font ];
-      emoji = [
-        "SymbolsNerdFont"
-        "FontAwesome"
-        "Noto Color Emoji"
-      ];
+      emoji = [ "SymbolsNerdFont" "FontAwesome" "Noto Color Emoji" ];
     };
   };
   xdg.configFile."fontconfig/fonts.conf".source = ./fonts.conf;

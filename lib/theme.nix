@@ -2,7 +2,8 @@
   options = {
     font = lib.mkOption {
       type = lib.types.str;
-      default = "JetBrainsMono Nerd Font";
+      default = "IosevkaTerm Nerd Font";
+      # default = "JetBrainsMono Nerd Font";
     };
     background-image = lib.mkOption {
       type = lib.types.str;
@@ -27,7 +28,7 @@
         surface1 = "303030";
         surface2 = "383838";
 
-        fg = "f2f1ea";
+        fg = "f7f6ef";
         fg-dark = "474747";
         fg-bright = "fffff7";
 

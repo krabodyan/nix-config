@@ -1,5 +1,4 @@
-{ pkgs, config, ... }:
-{
+{ pkgs, config, ... }: {
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
@@ -12,14 +11,11 @@
       display-clipboard = "";
       drun-display-format = "{name}";
     };
-    theme =
-      with config.colors;
-      let
-        inherit (config.lib.formats.rasi) mkLiteral;
-      in
-      {
+    theme = with config.colors;
+      let inherit (config.lib.formats.rasi) mkLiteral;
+      in {
         "*" = {
-          font = "${config.font} SemiBold 10.5";
+          font = "${config.font} SemiBold 11";
           bg = mkLiteral "#${bg}"; # 99
           fg = mkLiteral "#${fg-dark}";
           red = mkLiteral "#${red}";
@@ -45,10 +41,7 @@
 
         mainbox = {
           background-color = mkLiteral "@bg";
-          children = map mkLiteral [
-            "inputbar"
-            "listview"
-          ];
+          children = map mkLiteral [ "inputbar" "listview" ];
         };
 
         listview = {
@@ -59,10 +52,7 @@
 
         inputbar = {
           text-color = mkLiteral "@fg-bright";
-          children = map mkLiteral [
-            "prompt"
-            "entry"
-          ];
+          children = map mkLiteral [ "prompt" "entry" ];
         };
 
         prompt = {

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }: {
+{ config, pkgs, ... }: {
   home.packages = [ pkgs.xdg-terminal-exec ];
   xdg.configFile."xdg-terminals.list".text = ''
     foot.desktop
@@ -8,9 +8,9 @@
     server.enable = false;
     settings = {
       main = let
-        features = [ "cv04" "cv14" "ss02" "cv18" "cv16" "zero" ];
-        formattedFeatures = lib.concatStringsSep ":fontfeatures=" features;
-        font = "${config.font}:size=14.5:fontfeatures=${formattedFeatures}";
+        # features = [ "ss20" ];
+        # fontfeatures = lib.concatStringsSep ":fontfeatures=" features;
+        font = "${config.font}:size=16";
       in {
         term = "xterm-256color";
         shell = "${pkgs.fish}/bin/fish";

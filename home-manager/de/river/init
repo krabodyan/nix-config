@@ -2,7 +2,8 @@
 
 riverctl background-color 0x0f0f0f
 swaybg -m fill -i ~/flake/assets/background.jpg &
-# riverctl border-color-focused 0x303030
+riverctl border-color-focused 0x303030
+riverctl border-color-urgent 0x303030
 riverctl border-color-unfocused 0x0f0f0f
 # riverctl border-width 4
 
@@ -47,8 +48,8 @@ riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events disabl
 riverctl input "pointer-1133-50504-Logitech_USB_Receiver_Mouse" accel-profile flat
 riverctl input "pointer-1133-50504-Logitech_USB_Receiver_Mouse" pointer-accel 0
 
-riverctl map-pointer normal Super BTN_LEFT move-view
-riverctl map-pointer normal Super BTN_RIGHT resize-view
+riverctl map-pointer normal Super+Shift BTN_LEFT move-view
+riverctl map-pointer normal Super+Shift BTN_RIGHT resize-view
 
 for i in $(seq 1 7)
 do
@@ -94,7 +95,7 @@ riverctl rule-add -app-id "com.ayugram" tags 1
 riverctl rule-add -app-id "google-chrome" tags 2
 riverctl rule-add -app-id "vesktop" tags 4
 riverctl rule-add -app-id "steam" tags 8
-riverctl rule-add -app-id "steam" csd
+# riverctl rule-add -app-id "steam" ssd
 riverctl rule-add -app-id "steam" no-float
 riverctl rule-add -app-id "zoom" tags 8
 riverctl rule-add -app-id 'floaterm' float
@@ -110,11 +111,11 @@ wideriver \
   --ratio-master                 0.50        \
   --count-wide-left              0           \
   --ratio-wide                   0.35        \
+  --inner-gaps                   0           \
+  --outer-gaps                   0           \
   --border-color-focused         0x303030    \
   --border-color-focused-monocle 0x303030    \
   --border-color-unfocused       0x0f0f0f    \
-  --inner-gaps                   0           \
-  --outer-gaps                   0           \
   --border-width                 2           \
   --border-width-monocle         2           \
   --border-width-smart-gaps      0           \

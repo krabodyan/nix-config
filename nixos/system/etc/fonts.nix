@@ -9,6 +9,7 @@
     twemoji-color-font
     nerd-fonts.symbols-only
     nerd-fonts.jetbrains-mono
+    nerd-fonts.iosevka-term
   ];
 
   fonts.fontDir.enable = true;
