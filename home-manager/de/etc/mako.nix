@@ -2,7 +2,7 @@
   home.packages = [ pkgs.libnotify ];
   services.mako = with config.colors; {
     enable = true;
-    font = "${config.font} Bold 11";
+    font = "${config.font} SemiBold 11";
     sort = "-time";
     layer = "overlay";
     anchor = "bottom-center";
@@ -31,6 +31,9 @@
       [urgency=critical]
       border-color=#${red}
       default-timeout=12000
+
+      [app-name="foot"]
+      on-notify=exec pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga
     '';
   };
 }

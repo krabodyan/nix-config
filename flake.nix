@@ -85,30 +85,21 @@
         dwl = pkgs.mkShell {
           packages = [ pkgs.gnumake ];
           nativeBuildInputs = with pkgs; [
-            pkg-config
-            wayland-scanner.dev
-            wayland-protocols
-            wlroots
-            wayland
-            xwayland
-            xorg.xcbutilwm
-            libxkbcommon
-            libinput
-            xorg.libxcb
+            fcft
+            freetype
             pixman
-            libinput
-
-            xorg.libX11
-            xorg.libXinerama
-            xorg.libXft
-          ];
-          makeFlags = [
-            "PKG_CONFIG=${pkgs.stdenv.cc.targetPrefix}pkg-config"
-            "WAYLAND_SCANNER=wayland-scanner"
-            "PREFIX=$(out)"
-            "MANDIR=$(man)/share/man"
-            ''XWAYLAND="-DXWAYLAND"''
-            ''XLIBS="xcb xcb-icccm"''
+            libxkbcommon
+            fontconfig
+            wayland
+            meson
+            ninja
+            ncurses
+            scdoc
+            tllist
+            wayland-protocols
+            wayland-scanner
+            pkg-config
+            utf8proc
           ];
         };
         python = pkgs.mkShell {

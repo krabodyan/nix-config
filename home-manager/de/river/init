@@ -13,7 +13,7 @@ riverctl map -layout 0 normal Super+Shift Delete exit
 riverctl map -layout 0 normal Super E spawn foot
 riverctl map -layout 0 normal Super+Shift E spawn "foot -a floaterm"
 
-riverctl map -layout 0 normal Super D spawn "pidof rofi && pkill rofi || rofi -show drun -kb-cancel 'Alt+Return'"
+riverctl map -layout 0 normal Super D spawn "pidof rofi && pkill rofi || (riverctl keyboard-layout -options grp:alt_caps_toggle us,ua,ru && rofi -show drun -kb-cancel 'Alt+Return')"
 
 riverctl map -layout 0 normal Super J focus-view next
 riverctl map -layout 0 normal Alt tab focus-view next

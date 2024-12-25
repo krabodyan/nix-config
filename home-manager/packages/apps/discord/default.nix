@@ -3,15 +3,8 @@
   xdg.configFile."vesktop/settings/quickCss.css".text = with config.colors; ''
     * {
       font-family: "${config.font}" !important;
-      font-feature-settings: 
-        "ss02",
-        "cv14",
-        "cv18",
-        "cv04",
-        "cv16",
-        "zero";
-      font-size: 14px !important;
-      font-weight: 600 !important;
+      font-weight: bold !important;
+      font-size: 15px !important;
     }
     :root {
       --base00: #${bg}; /* Black */

@@ -9,5 +9,13 @@
     ./xdg.nix
     ./env.nix
   ];
-  home.packages = with pkgs; [ grim slurp wlr-randr wev xwayland wl-clipboard ];
+  home.packages = with pkgs; [
+    grim
+    slurp
+    wlr-randr
+    wev
+    xwayland
+    wl-clipboard
+    lswt
+  ];
 }

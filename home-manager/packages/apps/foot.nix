@@ -22,14 +22,20 @@
 
         # box-drawings-uses-font-glyphs = false;
         pad = "24x18";
-        dpi-aware = false;
-        resize-by-cells = false;
+        dpi-aware = "no";
+        resize-by-cells = "no";
         resize-delay-ms = 300;
         # line-height = "33px";
         # horizontal-letter-offset = "2px";
         initial-window-size-pixels = "1200x800";
         underline-offset = "10px";
         underline-thickness = "2px";
+      };
+
+      desktop-notifications = {
+        command =
+          "notify-send --app-name foot  --urgency \${urgency} --expire-time \${expire-time} \${title} \${body}";
+        inhibit-when-focused = "yes";
       };
 
       scrollback = {
