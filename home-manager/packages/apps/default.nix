@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   imports = [
     ./foot.nix
     ./mpv.nix
@@ -19,17 +18,14 @@
   nixpkgs.config.allowUnfreePredicate = (_: true);
 
   home.packages = with pkgs; [
-    pcmanfm
     qbittorrent
     solaar
     gcolor3
     obs-studio
-    kooha
     # krita
     gimp
     system-config-printer
     pavucontrol
-    pulsemixer
     adwsteamgtk
   ];
 }

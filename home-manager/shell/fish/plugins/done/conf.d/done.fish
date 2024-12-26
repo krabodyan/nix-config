@@ -49,10 +49,11 @@ if set -q __done_enabled
                 set urgency 2
             end
 
-            printf "\x1b]99;i=1:d=0;$title\x1b\\"
-            printf "\x1b]99;i=1:d=0:u=$urgency;\x1b\\"
-            printf "\x1b]99;i=1:d=0:w=$duration;\x1b\\"
-            printf "\x1b]99;i=1:e=1:d=1:p=body;$message\x1b\\"
+            set id (date +%s%N)
+            printf "\x1b]99;i=$id:d=0;$title\x1b\\"
+            printf "\x1b]99;i=$id:d=0:u=$urgency;\x1b\\"
+            printf "\x1b]99;i=$id:d=0:w=$duration;\x1b\\"
+            printf "\x1b]99;i=$id:e=1:d=1:p=body;$message\x1b\\"
         end
     end
 end

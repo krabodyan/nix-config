@@ -29,8 +29,6 @@
     helix.url = "github:helix-editor/helix";
     ayugram.url = "github:kaeeraa/ayugram-desktop/release";
     # nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
-
-    # nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
     # yazi.url = "github:sxyazi/yazi";
   };
 

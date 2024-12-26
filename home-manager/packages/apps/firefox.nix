@@ -3,7 +3,7 @@
     [
       # chromedriver
       # chromium
-      google-chrome
+      # google-chrome
       # floorp
       # inputs.zen-browser.packages."${system}".specific
     ];
@@ -24,11 +24,11 @@
       "application/x-extension-shtml"
       "application/x-extension-xhtml"
     ];
-    desktop = "google-chrome.desktop";
+    desktop = "firefox.desktop";
   };
 
   programs.firefox = {
-    enable = false;
+    enable = true;
     package = pkgs.firefox-wayland;
     profiles.krabodyan = {
       settings = {

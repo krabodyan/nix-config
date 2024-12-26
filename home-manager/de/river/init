@@ -2,8 +2,8 @@
 
 riverctl background-color 0x0f0f0f
 swaybg -m fill -i ~/flake/assets/background.jpg &
-riverctl border-color-focused 0x303030
-riverctl border-color-urgent 0x303030
+riverctl border-color-focused 0x383838
+riverctl border-color-urgent 0x383838
 riverctl border-color-unfocused 0x0f0f0f
 # riverctl border-width 4
 
@@ -12,6 +12,7 @@ riverctl map -layout 0 normal Super+Shift Delete exit
 
 riverctl map -layout 0 normal Super E spawn foot
 riverctl map -layout 0 normal Super+Shift E spawn "foot -a floaterm"
+riverctl map -layout 0 normal Super R spawn "pidof pavucontrol && pkill pavucontrol || pavucontrol"
 
 riverctl map -layout 0 normal Super D spawn "pidof rofi && pkill rofi || (riverctl keyboard-layout -options grp:alt_caps_toggle us,ua,ru && rofi -show drun -kb-cancel 'Alt+Return')"
 
@@ -81,24 +82,26 @@ riverctl map -layout 0 normal Super       Print spawn "__screenshot swayimg";
 riverctl map -layout 0 normal Super+Shift Print spawn "wl-paste | satty -f -";
 
 
-array=("Виберіть файли" "Відкрити файли" "Вивантаження файлу" "File Upload" "Відкрити документ" "Зберегти файл" "Open File")
+array=("Виберіть файли" "Відкрити файли" "Вивантаження файлу" "File Upload" "Відкрити документ" "Зберегти файл" "Open File" "Зберегти зображення")
 for item in "${array[@]}"; do
   riverctl rule-add -title "$item" float
   riverctl rule-add -title "$item" dimensions 1000 800
 done
 
-riverctl rule-add -app-id "xdg-desktop-portal-gtk" float
-riverctl rule-add -app-id "xdg-desktop-portal-gtk" dimensions 1000 800
-
-
+riverctl rule-add -app-id "*" ssd
 riverctl rule-add -app-id "com.ayugram" tags 1
 riverctl rule-add -app-id "google-chrome" tags 2
+riverctl rule-add -app-id "firefox" tags 2
 riverctl rule-add -app-id "vesktop" tags 4
 riverctl rule-add -app-id "steam" tags 8
-# riverctl rule-add -app-id "steam" ssd
 riverctl rule-add -app-id "steam" no-float
 riverctl rule-add -app-id "zoom" tags 8
 riverctl rule-add -app-id 'floaterm' float
+riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
+riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' position 1390 30
+riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' dimensions 500 800
+riverctl rule-add -app-id "xdg-desktop-portal-gtk" float
+riverctl rule-add -app-id "xdg-desktop-portal-gtk" dimensions 1000 800
 
 riverctl default-layout wideriver
 
@@ -113,8 +116,8 @@ wideriver \
   --ratio-wide                   0.35        \
   --inner-gaps                   0           \
   --outer-gaps                   0           \
-  --border-color-focused         0x303030    \
-  --border-color-focused-monocle 0x303030    \
+  --border-color-focused         0x383838    \
+  --border-color-focused-monocle 0x383838    \
   --border-color-unfocused       0x0f0f0f    \
   --border-width                 2           \
   --border-width-monocle         2           \

@@ -8,7 +8,7 @@
   services = {
     printing.enable = true;
     earlyoom.enable = true;
-    nscd.enableNsncd = false;
+    # nscd.enableNsncd = false;
     dbus = {
       enable = true;
       implementation = "broker";

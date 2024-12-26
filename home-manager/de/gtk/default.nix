@@ -21,16 +21,13 @@
       name = "Tela-yellow-dark";
     };
     theme = {
-      package = pkgs.graphite-gtk-theme.override {
-        colorVariants = [ "dark" ];
-        themeVariants = [ "default" ];
-        tweaks = [
-          "rimless"
-          # "normal"
-          "darker"
-        ];
-      };
-      name = "Graphite-Dark";
+      # package = pkgs.fluent-gtk-theme.override {
+      #   themeVariants = [ "grey" ];
+      #   colorVariants = [ "dark" ];
+      #   sizeVariants = [ "standard" ];
+      #   tweaks = [ "noborder" "square" "solid" ];
+      # };
+      name = "paradise-gtk";
     };
     gtk2 = {
       configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
@@ -54,31 +51,7 @@
         gtk-xft-rgba = "rgb";
         gtk-dialogs-use-header = false;
       };
-      extraCss = with config.colors; ''
-        menu,
-        tooltip {
-          background-color: #${surface2};
-          border-radius: 5px;
-          text-shadow: none;
-        }
-
-        menu menuitem:hover {
-          color: #${fg};
-          background-color: #${overlay0};
-          border-radius: 5px;
-          text-shadow: none;
-        }
-
-        .titlebar,
-        messagedialog.csd decoration,
-        .titlebar .background,
-        decoration,
-        window,
-        window.background
-        {
-            border-radius: 0;
-        }
-
+      extraCss = ''
         window.csd,             /* gtk4? */
         window.csd decoration { /* gtk3 */
           box-shadow: none;
@@ -90,9 +63,14 @@
           margin-top: -100px;
         }
 
-        decoration, decoration:backdrop
+        .titlebar,
+        messagedialog.csd decoration,
+        .titlebar .background,
+        decoration,
+        window,
+        window.background
         {
-            box-shadow: none;
+            border-radius: 0;
         }
       '';
     };
