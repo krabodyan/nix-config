@@ -1,7 +1,7 @@
 { config, ... }: {
   home.sessionVariables = {
     GTK_USE_PORTAL = 1;
-    NIXOS_OZONE_WL = "1";
+    NIXOS_OZONE_WL = 1;
     # WLR_NO_HARDWARE_CURSORS = 1; # grim + slurp cursor bug, dont use
     FLAKE = "${config.home.homeDirectory}/flake";
     MOZ_ENABLE_WAYLAND = 1;

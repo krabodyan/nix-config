@@ -8,7 +8,7 @@
   #   };
   # in
   # {
-  home.packages = with pkgs; [ rustup ];
+  # home.packages = with pkgs; [ rustup ];
   xdg.configFile."rustfmt/rustfmt.toml".text = ''
     chain_width = 55
     comment_width = 100

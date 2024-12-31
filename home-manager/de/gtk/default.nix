@@ -27,7 +27,7 @@
       #   sizeVariants = [ "standard" ];
       #   tweaks = [ "noborder" "square" "solid" ];
       # };
-      name = "paradise-gtk";
+      name = "shell-grey-Dark";
     };
     gtk2 = {
       configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";

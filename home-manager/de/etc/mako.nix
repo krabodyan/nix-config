@@ -19,8 +19,8 @@
     # iconPath = "${config.gtk.iconTheme.package}/share/icons/${config.gtk.iconTheme.name}";
     maxIconSize = 32;
     defaultTimeout = 3000;
+    # on-button-left=dismiss
     extraConfig = ''
-      on-button-left=dismiss
       text-alignment=center
       group-by=app-name
       outer-margin=32,0

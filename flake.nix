@@ -28,6 +28,10 @@
     };
     helix.url = "github:helix-editor/helix";
     ayugram.url = "github:kaeeraa/ayugram-desktop/release";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     # yazi.url = "github:sxyazi/yazi";
   };
@@ -60,45 +64,24 @@
       };
 
       devShells.${system} = {
-        # rust = let
-        # overlays = [ (import inputs.rust-overlay) ];
-        # pkgs = import nixpkgs { inherit system overlays; };
-        # rust = pkgs.rust-bin.nightly.latest.default.override {
-        #   extensions = [ "rust-src" "rust-analyzer" ];
-        # };
-        rust = pkgs.mkShell {
-          buildInputs = [ pkgs.llvmPackages.clang ];
+        rust = let
+          overlays = [ (import inputs.rust-overlay) ];
+          pkgs = import nixpkgs { inherit system overlays; };
+          rust = pkgs.rust-bin.nightly.latest.default.override {
+            extensions = [ "rust-src" "rust-analyzer" ];
+          };
+        in pkgs.mkShell {
+          buildInputs = [ pkgs.llvmPackages.clang rust ];
           nativeBuildInputs = with pkgs; [
             pkg-config
             openssl.dev
-            luajit
             # alsa-lib.dev
             # libpulseaudio.dev
-            postgresql.dev
+            # postgresql.dev
             # fontconfig.dev
           ];
           RUST_BACKTRACE = 1;
           LIBCLANG_PATH = "${pkgs.libclang.lib}/lib";
-        };
-        dwl = pkgs.mkShell {
-          packages = [ pkgs.gnumake ];
-          nativeBuildInputs = with pkgs; [
-            fcft
-            freetype
-            pixman
-            libxkbcommon
-            fontconfig
-            wayland
-            meson
-            ninja
-            ncurses
-            scdoc
-            tllist
-            wayland-protocols
-            wayland-scanner
-            pkg-config
-            utf8proc
-          ];
         };
         python = pkgs.mkShell {
           packages = [

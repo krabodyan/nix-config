@@ -25,9 +25,9 @@
     kernelParams = [ "nohibernate" "rootfstype=btrfs" ];
     kernelPackages = pkgs.linuxPackages_6_11;
     # kernelPackages = pkgs.linuxPackages_latest;
-    # extraModprobeConfig = ''
-    #   options snd-hda-intel power_save=0 pm_blacklist=true
-    # '';
+    extraModprobeConfig = ''
+      options i915 enable_guc=3
+    '';
     blacklistedKernelModules = [
       "adfs"
       "affs"
