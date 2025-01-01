@@ -60,6 +60,7 @@
       mouse_mode false
       simplified_ui true
       pane_frames false
+      support_kitty_keyboard_protocol false
       default_layout "compact"
       copy_command "wl-copy"
       copy_clipboard "primary"
