@@ -10,14 +10,14 @@
       main = let
         # features = [ "ss20" ];
         # fontfeatures = lib.concatStringsSep ":fontfeatures=" features;
-        font = "${config.font}:size=16";
+        font = "${config.font}:size=18";
       in {
         term = "xterm-256color";
         shell = "${pkgs.fish}/bin/fish";
 
-        font = "${font}:weight=SemiBold";
+        font = "${font}:weight=Regular";
         font-bold = "${font}:weight=Bold";
-        font-italic = "${font}:weight=SemiBold:slant=Italic";
+        font-italic = "${font}:weight=Regular:slant=Italic";
         font-bold-italic = "${font}:weight=Bold:slant=Italic";
 
         # box-drawings-uses-font-glyphs = false;
