@@ -116,14 +116,15 @@
 
       function fish_prompt
         switch $fish_bind_mode
+          # set_color --bold
           case insert
-            set_color --bold ${fg}
+            set_color ${fg}
           case default
-            set_color --bold ${red}
+            set_color ${red}
           case visual
-            set_color --bold ${magenta}
+            set_color ${magenta}
           case '*'
-            set_color --bold ${green}
+            set_color ${green}
         end
         printf "\033[4 q%s 󰧞 " (prompt_pwd) 
         set_color normal
