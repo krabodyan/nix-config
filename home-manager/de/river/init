@@ -3,8 +3,8 @@
 riverctl background-color 0x0f0f0f
 swaybg -m fill -i ~/flake/assets/background.jpg &
 
-focused=0x292929
-border=0x151515
+focused=0x333333
+border=0x0f0f0f
 
 riverctl border-color-focused $focused
 riverctl border-color-urgent $border
@@ -30,28 +30,27 @@ riverctl map -layout 0 normal Super+Shift J swap down
 riverctl map -layout 0 normal Super+Shift K swap up
 riverctl map -layout 0 normal Super+Shift L swap right
 
-riverctl map -layout 0 normal Alt tab focus-view next
-riverctl map -layout 0 normal Super m focus-view next
+# riverctl map -layout 0 normal Alt tab focus-view next
+# riverctl map -layout 0 normal Super o focus-view next
+# riverctl map -layout 0 normal Super o focus-view previous
 
 riverctl map -layout 0 normal Super space focus-view next
 riverctl map -layout 0 normal Super+Shift focus-view previous
 
+riverctl map -layout 0 normal Super S send-layout-cmd wideriver "--layout monocle"
+
+riverctl map -layout 0 normal Super bracketright send-layout-cmd wideriver "--ratio +0.03"
+riverctl map -layout 0 normal Super bracketleft send-layout-cmd wideriver "--ratio -0.03"
+
+riverctl map -layout 0 normal Super Right send-layout-cmd wideriver "--count +1"
+riverctl map -layout 0 normal Super Left send-layout-cmd wideriver "--count -1"
+
+riverctl map -layout 0 normal Super+Alt K send-layout-cmd wideriver "--layout top"
+riverctl map -layout 0 normal Super+Alt L send-layout-cmd wideriver "--layout right"
+riverctl map -layout 0 normal Super+Alt J send-layout-cmd wideriver "--layout bottom"
+riverctl map -layout 0 normal Super+Alt H send-layout-cmd wideriver "--layout left"
+
 riverctl map -layout 0 normal Super tab focus-previous-tags
-
-# riverctl map -layout 0 normal Super+Alt H move left 100
-# riverctl map -layout 0 normal Super+Alt J move down 100
-# riverctl map -layout 0 normal Super+Alt K move up 100
-# riverctl map -layout 0 normal Super+Alt L move right 100
-
-# riverctl map -layout 0 normal Super+Alt+Control H snap left
-# riverctl map -layout 0 normal Super+Alt+Control J snap down
-# riverctl map -layout 0 normal Super+Alt+Control K snap up
-# riverctl map -layout 0 normal Super+Alt+Control L snap right
-
-# riverctl map -layout 0 normal Super+Alt+Shift H resize horizontal -100
-# riverctl map -layout 0 normal Super+Alt+Shift J resize vertical 100
-# riverctl map -layout 0 normal Super+Alt+Shift K resize vertical -100
-# riverctl map -layout 0 normal Super+Alt+Shift L resize horizontal 100
 
 riverctl hide-cursor timeout 7000
 riverctl set-repeat 40 330
@@ -141,19 +140,6 @@ wideriver \
   --border-width-smart-gaps      0           \
   --log-threshold                error       \
  > "/tmp/wideriver.${XDG_VTNR}.${USER}.log" 2>&1 &
-
-riverctl map -layout 0 normal Super S send-layout-cmd wideriver "--layout monocle"
-
-riverctl map -layout 0 normal Super I send-layout-cmd wideriver "--ratio -0.03"
-riverctl map -layout 0 normal Super O send-layout-cmd wideriver "--ratio +0.03"
-
-riverctl map -layout 0 normal Super Right send-layout-cmd wideriver "--count +1"
-riverctl map -layout 0 normal Super Left send-layout-cmd wideriver "--count -1"
-
-riverctl map -layout 0 normal Super+Alt K send-layout-cmd wideriver "--layout top"
-riverctl map -layout 0 normal Super+Alt L send-layout-cmd wideriver "--layout right"
-riverctl map -layout 0 normal Super+Alt J send-layout-cmd wideriver "--layout bottom"
-riverctl map -layout 0 normal Super+Alt H send-layout-cmd wideriver "--layout left"
 
 # riverctl map -layout 0 normal Super R spawn "pkill -SIGUSR1 waybar"
 # waybar &

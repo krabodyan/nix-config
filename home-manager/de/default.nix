@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./etc
-    ./bar
+    # ./bar
     ./gtk
     # ./sway
     ./river
