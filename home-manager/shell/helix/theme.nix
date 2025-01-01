@@ -57,7 +57,7 @@
     "tag" = "sapphire";
 
     "namespace" = {
-      fg = "yellow";
+      fg = "fg";
       modifiers = [ "italic" ];
     };
 
@@ -234,7 +234,6 @@
     hint = "green";
 
     palette = with config.colors; {
-
       teal = mkHex teal;
       sky = mkHex sky;
       sapphire = mkHex sapphire;

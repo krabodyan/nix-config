@@ -38,9 +38,9 @@
         overlay0 = "575757";
 
         black = fg-dark;
-        red = "cc7073";
-        green = "83d9a0";
-        yellow = "f9e2af";
+        red = "eb756e";
+        green = "67e692";
+        yellow = "f9e289";
         blue = "80beed";
         magenta = "cc86d1";
         cyan = "77d9d7";
