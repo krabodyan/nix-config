@@ -18,16 +18,25 @@ riverctl map -layout 0 normal Super E spawn foot
 riverctl map -layout 0 normal Super+Shift E spawn "foot -a floaterm"
 riverctl map -layout 0 normal Super R spawn "pidof pavucontrol && pkill pavucontrol || pavucontrol"
 
-riverctl map -layout 0 normal Super D spawn "pidof rofi && pkill rofi || (riverctl keyboard-layout -options grp:alt_caps_toggle us,ru,ua && rofi -show drun -kb-cancel 'Alt+Return')"
+riverctl map -layout 0 normal Super D spawn "pidof rofi && pkill rofi || (riverctl keyboard-layout -options grp:caps_toggle us,ru,ua && rofi -show drun -kb-cancel 'Alt+Return')"
 
-riverctl map -layout 0 normal Super J focus-view next
+riverctl map -layout 0 normal Super H focus-view left
+riverctl map -layout 0 normal Super J focus-view down
+riverctl map -layout 0 normal Super K focus-view up
+riverctl map -layout 0 normal Super L focus-view right
+
+riverctl map -layout 0 normal Super+Shift H swap left
+riverctl map -layout 0 normal Super+Shift J swap down
+riverctl map -layout 0 normal Super+Shift K swap up
+riverctl map -layout 0 normal Super+Shift L swap right
+
 riverctl map -layout 0 normal Alt tab focus-view next
-riverctl map -layout 0 normal Super K focus-view previous
-riverctl map -layout 0 normal Super space zoom
-riverctl map -layout 0 normal Super tab focus-previous-tags
+riverctl map -layout 0 normal Super m focus-view next
 
-riverctl map -layout 0 normal Super+Alt J swap next
-riverctl map -layout 0 normal Super+Alt K swap previous
+riverctl map -layout 0 normal Super space focus-view next
+riverctl map -layout 0 normal Super+Shift focus-view previous
+
+riverctl map -layout 0 normal Super tab focus-previous-tags
 
 # riverctl map -layout 0 normal Super+Alt H move left 100
 # riverctl map -layout 0 normal Super+Alt J move down 100
@@ -46,8 +55,8 @@ riverctl map -layout 0 normal Super+Alt K swap previous
 
 riverctl hide-cursor timeout 7000
 riverctl set-repeat 40 330
-riverctl keyboard-layout -options grp:alt_caps_toggle us,ru,ua
-riverctl map -layout 0 normal Super W keyboard-layout -options grp:alt_caps_toggle us,ru,ua
+riverctl keyboard-layout -options grp:caps_toggle us,ru,ua
+riverctl map -layout 0 normal Super W keyboard-layout -options grp:caps_toggle us,ru,ua
 
 riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events disabled
 riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" pointer-accel 0.3
@@ -135,16 +144,16 @@ wideriver \
 
 riverctl map -layout 0 normal Super S send-layout-cmd wideriver "--layout monocle"
 
-riverctl map -layout 0 normal Super H send-layout-cmd wideriver "--ratio -0.03"
-riverctl map -layout 0 normal Super L send-layout-cmd wideriver "--ratio +0.03"
+riverctl map -layout 0 normal Super I send-layout-cmd wideriver "--ratio -0.03"
+riverctl map -layout 0 normal Super O send-layout-cmd wideriver "--ratio +0.03"
 
 riverctl map -layout 0 normal Super Right send-layout-cmd wideriver "--count +1"
 riverctl map -layout 0 normal Super Left send-layout-cmd wideriver "--count -1"
 
-riverctl map -layout 0 normal Super+Shift K send-layout-cmd wideriver "--layout top"
-riverctl map -layout 0 normal Super+Shift L send-layout-cmd wideriver "--layout right"
-riverctl map -layout 0 normal Super+Shift J send-layout-cmd wideriver "--layout bottom"
-riverctl map -layout 0 normal Super+Shift H send-layout-cmd wideriver "--layout left"
+riverctl map -layout 0 normal Super+Alt K send-layout-cmd wideriver "--layout top"
+riverctl map -layout 0 normal Super+Alt L send-layout-cmd wideriver "--layout right"
+riverctl map -layout 0 normal Super+Alt J send-layout-cmd wideriver "--layout bottom"
+riverctl map -layout 0 normal Super+Alt H send-layout-cmd wideriver "--layout left"
 
 # riverctl map -layout 0 normal Super R spawn "pkill -SIGUSR1 waybar"
 # waybar &
