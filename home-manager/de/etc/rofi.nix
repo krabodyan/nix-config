@@ -10,6 +10,8 @@
       display-drun = "";
       display-clipboard = "";
       drun-display-format = "{name}";
+      sort = true;
+      sorting-method = "fzf";
     };
     theme = with config.colors;
       let inherit (config.lib.formats.rasi) mkLiteral;

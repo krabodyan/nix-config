@@ -4,13 +4,11 @@
   nixConfig = {
     extra-substituters = [
       "https://helix.cachix.org"
-      "https://cache.garnix.io"
       # "https://nixpkgs-wayland.cachix.org"
       # "https://yazi.cachix.org"
     ];
     extra-trusted-public-keys = [
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       # "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
       # "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
     ];
@@ -27,7 +25,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helix.url = "github:helix-editor/helix";
-    ayugram.url = "github:kaeeraa/ayugram-desktop/release";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";

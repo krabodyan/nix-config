@@ -5,7 +5,7 @@
     ./swappy.nix
     ./discord
     ./firefox.nix
-    ./ayugram.nix
+    ./telegram.nix
     ./zathura.nix
     ./zoom.nix
     ./protonvpn.nix

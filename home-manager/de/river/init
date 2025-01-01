@@ -39,8 +39,8 @@ riverctl map -layout 0 normal Super+Shift focus-view previous
 
 riverctl map -layout 0 normal Super S send-layout-cmd wideriver "--layout monocle"
 
-riverctl map -layout 0 normal Super bracketright send-layout-cmd wideriver "--ratio +0.03"
-riverctl map -layout 0 normal Super bracketleft send-layout-cmd wideriver "--ratio -0.03"
+riverctl map -layout 0 normal Super O send-layout-cmd wideriver "--ratio +0.03"
+riverctl map -layout 0 normal Super I send-layout-cmd wideriver "--ratio -0.03"
 
 riverctl map -layout 0 normal Super Right send-layout-cmd wideriver "--count +1"
 riverctl map -layout 0 normal Super Left send-layout-cmd wideriver "--count -1"
@@ -90,7 +90,7 @@ riverctl map -layout 0 normal None  F4                    spawn '__microphone'
 riverctl map -layout 0 normal None  XF86MonBrightnessUp   spawn '__brightness up'
 riverctl map -layout 0 normal None  XF86MonBrightnessDown spawn '__brightness down'
 riverctl map -layout 0 normal Super X                     spawn '__brightness toggle'
-riverctl map -layout 0 normal Super P                     spawn 'notify-send --expire-time 2000 "$(date +"%d %B %H:%M")"'
+riverctl map -layout 0 normal Super Y                     spawn 'notify-send --expire-time 2000 "$(date +"%d %B %H:%M")"'
 
 riverctl map -layout 0 normal None        Print spawn "__screenshot"
 riverctl map -layout 0 normal None        Pause spawn "__screenshot full";
@@ -105,7 +105,7 @@ for item in "${array[@]}"; do
 done
 
 riverctl rule-add -app-id "*" ssd
-riverctl rule-add -app-id "com.ayugram" tags 1
+riverctl rule-add -app-id "org.telegram.desktop" tags 1
 riverctl rule-add -app-id "google-chrome" tags 2
 riverctl rule-add -app-id "firefox" tags 2
 riverctl rule-add -app-id "vesktop" tags 4
