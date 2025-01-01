@@ -12,7 +12,7 @@
     ./office.nix
     # ./ide.nix
     ./swayimg.nix
-    ./vscode.nix
+    # ./vscode.nix
   ];
 
   nixpkgs.config.allowUnfreePredicate = (_: true);
