@@ -68,7 +68,7 @@
           overlays = [ (import inputs.rust-overlay) ];
           pkgs = import nixpkgs { inherit system overlays; };
           rust = pkgs.rust-bin.nightly.latest.default.override {
-            extensions = [ "rust-src" "rust-analyzer" ];
+            extensions = [ "rust-src" "rust-analyzer" "miri" ];
           };
         in pkgs.mkShell {
           buildInputs = [ pkgs.llvmPackages.clang rust ];
@@ -88,53 +88,17 @@
             (pkgs.python311.withPackages (python-pkgs:
               with python-pkgs; [
                 numpy
-                nltk
-                wordcloud
-                prettytable
-                xlrd
-                tqdm
-                networkx
                 matplotlib
-                scikit-learn
-                pandas
-                seaborn
-                requests
-                openpyxl
-                certifi
-                tabulate
-                keras
-                termcolor
-                (buildPythonPackage rec {
-                  pname = "ucimlrepo";
-                  version = "0.0.7";
-                  src = fetchPypi {
-                    inherit pname version;
-                    sha256 =
-                      "sha256-TP8/noFDZ91glW2pmazkcxlyN7n85MB+mmied7T/tZo=";
-                  };
-                  doCheck = false;
-                  propagatedBuildInputs = [ numpy ];
-                })
-                (buildPythonPackage rec {
-                  pname = "blosum";
-                  version = "2.0.3";
-                  src = fetchPypi {
-                    inherit pname version;
-                    sha256 =
-                      "sha256-b+5ol1wEIR/Hwpj1jL8eWwIeooeeUUVtk0I46J6irps=";
-                  };
-                  doCheck = false;
-                })
-                (buildPythonPackage rec {
-                  pname = "idx2numpy";
-                  version = "1.2.3";
-                  src = fetchPypi {
-                    inherit pname version;
-                    sha256 =
-                      "sha256-VZtXio9ppBr1TPFcjfxDq584Dgp9YCqEvauvUqz7vT4=";
-                  };
-                  doCheck = false;
-                })
+                # (buildPythonPackage rec {
+                #   pname = "idx2numpy";
+                #   version = "1.2.3";
+                #   src = fetchPypi {
+                #     inherit pname version;
+                #     sha256 =
+                #       "sha256-VZtXio9ppBr1TPFcjfxDq584Dgp9YCqEvauvUqz7vT4=";
+                #   };
+                #   doCheck = false;
+                # })
               ]))
           ];
         };
