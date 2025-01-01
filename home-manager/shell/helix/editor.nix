@@ -49,7 +49,7 @@
 
   gutters = { layout = [ "diff" "diagnostics" "line-numbers" "spacer" ]; };
   smart-tab = {
-    enable = true;
+    enable = false;
     # supersede-menu = true;
   };
   statusline = {

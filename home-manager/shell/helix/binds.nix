@@ -59,7 +59,7 @@ let
     # "A-S-f" = "file_picker_in_current_buffer_directory";
     "A-x" = "extend_line_up";
     "S-x" = [ "extend_line_up" "extend_to_line_bounds" ];
-    esc = [ "collapse_selection" "keep_primary_selection" ];
+    "esc" = [ "collapse_selection" "keep_primary_selection" ];
     p = ":clipboard-paste-after";
     P = ":clipboard-paste-before";
     R = ":clipboard-paste-replace";
@@ -69,12 +69,14 @@ let
 in {
   normal = binds // special // { "C-c" = [ "insert_mode" ]; };
   insert = binds // {
+    "tab" = [ "move_next_word_end" "collapse_selection" "move_char_right" ];
+    "S-tab" = [ "move_prev_word_start" "collapse_selection" ];
     "C-c" = "normal_mode";
     "A-a" = [
       "goto_line_start"
       # "move_char_right"
     ];
-    ret = [ "insert_newline" "commit_undo_checkpoint" ];
+    "ret" = [ "insert_newline" "commit_undo_checkpoint" ];
     "A-o" = "open_below";
     "A-S-o" = "open_above";
     "A-h" = "move_char_left";
