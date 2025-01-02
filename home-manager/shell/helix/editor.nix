@@ -12,7 +12,7 @@
   completion-trigger-len = 2;
 
   undercurl = false;
-  # bufferline = "multiple";
+  bufferline = "multiple";
   popup-border = "none";
   text-width = 140;
   indent-heuristic = "tree-sitter";
