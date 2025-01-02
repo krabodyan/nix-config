@@ -172,6 +172,7 @@
     # matching bracket
     "ui.cursor.match" = {
       fg = "red";
+      bg = "surface1";
       # modifiers = [
       #   "underline"
       # "bold"

@@ -42,6 +42,7 @@
         }
         
         shared_except "locked" {
+          bind "Ctrl k" { EditScrollback; }
           bind "Ctrl n" { NewTab; }
           bind "Ctrl j" { SwitchToMode "scroll"; }
           bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
@@ -61,6 +62,8 @@
       simplified_ui true
       pane_frames false
       support_kitty_keyboard_protocol false
+      session_serialization false
+      pane_viewport_serialization false
       default_layout "compact"
       copy_command "wl-copy"
       copy_clipboard "primary"
