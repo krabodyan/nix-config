@@ -8,6 +8,7 @@ let
       "split_selection_on_newline"
       "goto_file"
       "goto_last_modified_file"
+      ":buffer-close!"
     ];
     "A-y" = "save_selection"; # save to jumplist
     "A-e" = ":buffer-next";
