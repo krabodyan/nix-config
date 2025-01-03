@@ -39,8 +39,8 @@ riverctl map -layout 0 normal Super+Shift focus-view previous
 
 riverctl map -layout 0 normal Super S send-layout-cmd wideriver "--layout monocle"
 
-riverctl map -layout 0 normal Super O send-layout-cmd wideriver "--ratio +0.03"
-riverctl map -layout 0 normal Super I send-layout-cmd wideriver "--ratio -0.03"
+riverctl map -layout 0 normal Super O send-layout-cmd wideriver "--ratio +0.02"
+riverctl map -layout 0 normal Super I send-layout-cmd wideriver "--ratio -0.02"
 
 riverctl map -layout 0 normal Super Right send-layout-cmd wideriver "--count +1"
 riverctl map -layout 0 normal Super Left send-layout-cmd wideriver "--count -1"
@@ -126,7 +126,7 @@ riverctl default-layout wideriver
 wideriver \
   --layout                       left        \
   --layout-alt                   monocle     \
-  --stack                        dwindle     \
+  --stack                        even        \
   --no-smart-gaps                            \
   --count-master                 1           \
   --ratio-master                 0.50        \
