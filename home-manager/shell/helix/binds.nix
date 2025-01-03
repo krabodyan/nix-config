@@ -8,7 +8,6 @@ let
       "split_selection_on_newline"
       "goto_file"
       "goto_last_modified_file"
-      ":buffer-close!"
     ];
     "A-y" = "save_selection"; # save to jumplist
     "A-e" = ":buffer-next";
@@ -52,8 +51,6 @@ let
   };
   special = {
     "tab" = "no_op";
-    "A-l" = [ "move_next_word_end" "collapse_selection" "move_char_right" ];
-    "A-h" = [ "move_prev_word_start" "collapse_selection" ];
     "C-f" = "file_picker_in_current_buffer_directory";
     "A-x" = "extend_line_up";
     "S-x" = [ "extend_line_up" "extend_to_line_bounds" ];
@@ -65,7 +62,11 @@ let
     Y = ":clipboard-yank";
   };
 in {
-  normal = binds // special // { "A-d" = [ "insert_mode" ]; };
+  normal = binds // special // {
+    "A-d" = [ "insert_mode" ];
+    "A-l" = [ "move_next_word_end" "collapse_selection" "move_char_right" ];
+    "A-h" = [ "move_prev_word_start" "collapse_selection" ];
+  };
   insert = binds // {
     "A-d" = "normal_mode";
     "ret" = [ "insert_newline" "commit_undo_checkpoint" ];
@@ -77,6 +78,8 @@ in {
     "A-k" = "move_line_up";
   };
   select = binds // special // {
+    "A-l" = [ "move_next_word_end" "move_char_right" ];
+    "A-h" = [ "move_prev_word_start" ];
     "A-d" = [ "collapse_selection" "normal_mode" ];
     "i" = [ "collapse_selection" "insert_mode" ];
   };

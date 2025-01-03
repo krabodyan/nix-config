@@ -12,6 +12,7 @@
       dates = [ "weekly" ];
     };
     settings = {
+      warn-dirty = false;
       experimental-features = [ "nix-command" "flakes" ];
       builders-use-substitutes = true;
       max-jobs = 12;
