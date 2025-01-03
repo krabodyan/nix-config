@@ -3,7 +3,11 @@
   systemd.coredump.enable = false;
   systemd.extraConfig = ''
     DefaultTimeoutStartSec=15s
+    TimeoutStartSec=15s
     DefaultTimeoutStopSec=15s
+    TimeoutStopSec=15s
+    DefaultTimeoutAbortSec=20sec
+    TimeoutAbortSec=20sec
   '';
   services = {
     printing.enable = false;

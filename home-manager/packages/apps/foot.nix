@@ -16,9 +16,9 @@
         shell = "${pkgs.fish}/bin/fish";
 
         font = "${font}:weight=Regular";
-        font-bold = "${font}:weight=Bold";
+        font-bold = "${font}:weight=SemiBold";
         font-italic = "${font}:weight=Regular:slant=Italic";
-        font-bold-italic = "${font}:weight=Bold:slant=Italic";
+        font-bold-italic = "${font}:weight=SemiBold:slant=Italic";
 
         # box-drawings-uses-font-glyphs = false;
         pad = "20x16";
@@ -28,8 +28,8 @@
         # line-height = "33px";
         # horizontal-letter-offset = "2px";
         initial-window-size-pixels = "1200x800";
-        underline-offset = "10px";
-        underline-thickness = "2px";
+        underline-offset = "12px";
+        underline-thickness = "1px";
       };
 
       desktop-notifications = {
