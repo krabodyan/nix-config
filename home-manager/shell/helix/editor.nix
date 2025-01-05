@@ -17,6 +17,7 @@
   text-width = 140;
   indent-heuristic = "tree-sitter";
 
+  end-of-line-diagnostics = "hint";
   inline-diagnostics = {
     cursor-line = "hint";
     other-lines = "error";

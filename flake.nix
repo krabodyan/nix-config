@@ -85,6 +85,7 @@
             (pkgs.python311.withPackages (python-pkgs:
               with python-pkgs; [
                 numpy
+                tkinter
                 matplotlib
                 # (buildPythonPackage rec {
                 #   pname = "idx2numpy";

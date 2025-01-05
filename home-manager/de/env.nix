@@ -3,6 +3,7 @@
     XDG_SESSION_DESKTOP = "river";
     XDG_CURRENT_DESKTOP = "river";
     XDG_SESSION_TYPE = "wayland";
+    EGL_PLATFORM = "wayland";
     SDL_VIDEODRIVER = "wayland,x11,windows";
     CLUTTER_BACKEND = "wayland";
     GDK_BACKEND = "wayland,x11,*";

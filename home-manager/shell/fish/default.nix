@@ -76,6 +76,8 @@
       set --universal zoxide_cmd cd
       bind -M insert \ef end-of-line
       bind -M default \ef end-of-line
+      bind -M insert \f 'clear; commandline -f repaint'
+      bind -M default \f 'clear; commandline -f repaint'
       bind -M insert \ea beginning-of-line
       bind -M insert \cf _fzf_search_directory
 

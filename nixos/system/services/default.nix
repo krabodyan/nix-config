@@ -10,6 +10,7 @@
     TimeoutAbortSec=20sec
   '';
   services = {
+    logind.killUserProcesses = true;
     printing.enable = false;
     earlyoom.enable = true;
     # nscd.enableNsncd = false;
