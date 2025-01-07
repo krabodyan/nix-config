@@ -111,6 +111,8 @@
         "browser.warnOnQuit" = false;
         "browser.warnOnQuitShortcut" = false;
         "browser.download.always_ask_before_handling_new_types" = true;
+        "browser.gesture.swipe.left" = "cmd_scrollLeft";
+        "browser.gesture.swipe.right" = "cmd_scrollRight";
         DisableTelemetry = true;
         DisableFirefoxStudies = true;
         DisablePocket = true;

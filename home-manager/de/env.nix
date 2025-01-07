@@ -17,6 +17,7 @@
     XDG_SCREENSHOTS_DIR = "~/pictures";
     FLAKE = "${config.home.homeDirectory}/flake";
     MOZ_ENABLE_WAYLAND = 1;
+    MOZ_DISABLE_RDD_SANDBOX = 1;
     # WLR_NO_HARDWARE_CURSORS = 1; # grim + slurp cursor bug, dont use
   };
 }

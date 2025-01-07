@@ -12,7 +12,6 @@
       "kernel.sched_cfs_bandwidth_slice_us" = 3000;
       "vm.max_map_count" = 2147483642;
 
-      "net.ipv4.ping_group_range" = "1000 1000";
       "net.ipv4.tcp_fastopen" = 3;
       "net.core.default_qdisc" = "cake";
       "net.ipv4.tcp_congestion_control" = "bbr";
