@@ -57,7 +57,7 @@
     "tag" = "sapphire";
 
     "namespace" = {
-      fg = "fg";
+      fg = "text";
       modifiers = [ "italic" ];
     };
 
