@@ -13,6 +13,7 @@
     grim
     slurp
     wlr-randr
+    wl-gammactl
     wev
     xwayland
     wl-clipboard
