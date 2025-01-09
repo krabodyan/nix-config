@@ -14,7 +14,7 @@
   undercurl = false;
   bufferline = "multiple";
   popup-border = "none";
-  text-width = 140;
+  text-width = 145;
   indent-heuristic = "tree-sitter";
 
   end-of-line-diagnostics = "hint";

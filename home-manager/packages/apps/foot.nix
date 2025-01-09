@@ -25,6 +25,7 @@
         dpi-aware = "no";
         resize-by-cells = "no";
         resize-delay-ms = 300;
+        resize-keep-grid = "no";
         # line-height = "33px";
         # horizontal-letter-offset = "2px";
         initial-window-size-pixels = "1200x800";
