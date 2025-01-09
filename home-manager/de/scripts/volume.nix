@@ -23,6 +23,5 @@ in pkgs.writeShellScriptBin "__volume" ''
     ${pamixer} -d 5
   fi
 
-  pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga &
   ${send} -h "int:value:$(${pamixer} --get-volume)" "󰕾 $(${pamixer} --get-volume-human)"
 ''

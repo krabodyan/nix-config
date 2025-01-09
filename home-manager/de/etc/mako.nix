@@ -35,6 +35,9 @@
 
       [app-name="foot"]
       on-notify=exec pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga
+
+      [app-name="swaynotify"]
+      on-notify=exec pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga
     '';
   };
 }

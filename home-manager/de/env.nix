@@ -18,6 +18,7 @@
     FLAKE = "${config.home.homeDirectory}/flake";
     MOZ_ENABLE_WAYLAND = 1;
     MOZ_DISABLE_RDD_SANDBOX = 1;
+    NIXPKGS_ALLOW_UNFREE = 1;
     # WLR_NO_HARDWARE_CURSORS = 1; # grim + slurp cursor bug, dont use
   };
 }
