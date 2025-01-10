@@ -68,7 +68,8 @@
     loginShellInit = ''
       if test (tty) = "/dev/tty1"
         set -x WLR_DRM_DEVICES /dev/dri/card1
-        exec dbus-run-session -- river
+        dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
+        exec river
       end
     '';
     interactiveShellInit = with config.colors; ''
