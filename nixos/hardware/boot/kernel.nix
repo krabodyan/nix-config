@@ -22,9 +22,8 @@
       "net.ipv4.icmp_echo_ignore_all" = 1;
     };
 
-    kernelParams = [ "nohibernate" "rootfstype=btrfs" ];
+    kernelParams = [ "nohibernate" "rootfstype=btrfs" "raid=noautodetect" ];
     # kernelPackages = pkgs.linuxPackages_6_11;
-    # kernelPackages = pkgs.linuxPackages_latest;
     extraModprobeConfig = ''
       options i915 enable_guc=3
     '';
