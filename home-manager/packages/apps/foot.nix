@@ -55,9 +55,9 @@
       };
 
       key-bindings = {
-        scrollback-up-line = "Mod1+Shift+k";
-        scrollback-down-line = "Mod1+Shift+j";
-        show-urls-launch = "Mod1+Shift+o";
+        scrollback-up-line = "Mod1+Control+k";
+        scrollback-down-line = "Mod1+Control+j";
+        show-urls-launch = "Mod1+Control+o";
       };
 
       colors = with config.colors; {
