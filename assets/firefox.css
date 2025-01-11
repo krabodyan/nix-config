@@ -1,319 +1,258 @@
-
-
-/* 1.7.0
-- repository has been moved from codeberg.org to git.gay
-- onebar.hide-navigation-buttons has been changed to onebar.disable-hiding-navigation-buttons, better default
-- don't shrink top bar's height in single tab
-- https truncate fix
-- tweaks
+/*
+*  Hi~
+*
+*  The theme Another Oneline uses code from
+*  👉 https://github.com/JarnotMaciej/Essence 👈 Thank you~~ 🤗
 */
 
-:root {
-    --urlbar-collapsed-width: 300px;
-    --urlbar-open-width: 350px; /* Only when disable-centering-of-URLbar is enabled */
+/* Just comment the lines or blocks for the elements you WANT to see */
+
+/* Menu button */
+#PanelUI-button {
+  -moz-box-ordinal-group: 0 !important;
+  /* order: -2 !important; */
+  /* margin: 2px !important; */
+  /* display: none !important; /* uncomment this line to hide the menu button */
 }
 
-
-#navigator-toolbox {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    position: relative !important;
+#unified-extensions-button {
+  -moz-box-ordinal-group: 0 !important;
+  /* order: -2 !important; */
+  /* display: none !important; /* uncomment this line to hide the menu button */
 }
 
-
-/* Hide flexible spaces */
-toolbarspring,
-[id^="wrapper-customizableui-special-spring"] {
-    display: none !important;
-}
-
-
-/* Tabs */
-#titlebar {
-    width: 0;
-    flex-grow: 1;
-    overflow: hidden;
-    padding-left: var(--tab-block-margin);
-}
-#toolbar-menubar[inactive="true"] { /* Prevent duplicate window controls */
-    display: none !important;
-}
-#TabsToolbar {
-    display: flex !important;
-    align-items: center;
-}
-.toolbar-items {
-    flex-grow: 1 !important;
-}
-#TabsToolbar-customization-target {
-    display: flex !important;
-    margin-block: auto !important;
-    align-items: center;
-}
-#tabbrowser-tabs {
-    overflow: hidden !important;
-    width: 0 !important;
-    flex: 1 !important;
-}
-.tabbrowser-tab {
-    min-height: calc(var(--tab-min-height) - 2px) !important;
-}
-.tab-background { /* Just thought it looked nicer */
-    margin-block: calc(2px + var(--tab-block-margin)) !important;
-    box-shadow: none !important;
-    transition: background-color .2s;
-}
-
-@media (-moz-bool-pref: "onebar.hide-all-tabs-button") {
-    @media not (max-width: 700px) {
-        #alltabs-button {
-            display: none !important;
-        }
-    }
-}
-
-
-/* Navigation buttons */
-#back-button,
-#forward-button {
-    display: none !important;
-}
-}
-@media not (-moz-bool-pref: "onebar.disable-hiding-navigation-buttons") {
-    #urlbar-container ~ :is(#back-button, #forward-button) {
-        display: none !important;
-    }
-    /* In the customize menu */
-    :is(#wrapper-back-button, #wrapper-forward-button) {
-        opacity: 1 !important;
-    }
-    #wrapper-urlbar-container ~ :is(#wrapper-back-button, #wrapper-forward-button) {
-        opacity: .5 !important;
-    }
-
-    /* Add note in customize menu for nav buttons */
-    #customization-header::after {
-        content: "To hide the back & forward buttons, drag them to the right of the URL bar";
-        background-color: blue;
-        color: white;
-        border-radius: 4px;
-        padding: .4em .7em;
-        margin-top: 1em;
-        display: block;
-        width: max-content;
-    }
-}
-:root[customizing] .urlbar-input-box {
-    visibility: visible !important;
-}
-:root[customizing] .urlbar-input-box::before {
-    content: "https://";
-    margin-block: auto;
-}
-:root[customizing] #urlbar-input {
-    display: none !important;
-}
-
-
-
-
-
-/* Single Tab, *properties* also copy & pasted into "Small Window Fixes" */
-@media (not (-moz-bool-pref: "onebar.disable-single-tab")) {
-    #titlebar #tabbrowser-tabs .tabbrowser-tab:only-of-type {
-        width: max-content !important;
-        -moz-box-flex: unset !important;
-        max-width: unset !important;
-        margin-inline-end: auto !important;
-        --toolbar-bgcolor: transparent !important;
-        --tab-selected-bgimage: transparent !important;
-    }
-    .tabbrowser-tab:only-of-type .tab-text {
-       font-weight: 600 !important;
-    }
-    .tabbrowser-tab:only-of-type .tab-close-button,
-    #tabbrowser-tabs:not([closebuttons="activetab"]) ~ #alltabs-button {
-        display: none !important;
-    }
-    .tabbrowser-tab:only-of-type .tab-background {
-        opacity: 0;
-    }
-}
-
-
-
-/* Match button sizes to toolbar buttons */
-#TabsToolbar {
-    --toolbarbutton-inner-padding: 8px !important;
-}
-#TabsToolbar toolbarbutton {
-    margin: 0 !important;
-}
-
-
-#alltabs-button {
-    order: -1;
-}
+/* Window control buttons (min, resize and close) */
 .titlebar-buttonbox-container {
-    order: -100 !important;
+  display: none !important;
+  margin-right: 12px !important;
 }
 
-/* Toolbar */
+/* Page back and foward buttons */
+#back-button,
+#reload-button,
+#stop-button,
+#tabs-newtab-button,
+#forward-button {
+  display: none !important
+}
+
+/* Extensions button */
+/* #unified-extensions-button { */
+/* display: none !important */
+/* } */
+
+/* Extension name inside URL bar */
+#identity-box.extensionPage #identity-icon-label {
+  visibility: collapse !important
+}
+
+/* All tabs (v-like) button */
+#alltabs-button {
+  display: none !important
+}
+
+/* URL bar icons */
+/* #identity-permission-box, */
+#star-button-box,
+#identity-icon-box,
+#picture-in-picture-button,
+#tracking-protection-icon-container,
+#reader-mode-button,
+#translations-button {
+  display: none !important
+}
+
+/* "This time search with:..." */
+#urlbar .search-one-offs {
+  display: none !important
+}
+
+/* Space before and after tabs */
+.titlebar-spacer {
+  display: none;
+}
+
 #nav-bar {
-    border: none !important;
-    background: none !important;
-    /* Set max-width so the tabs list dropdown isn't hidden */
-    max-width: calc(100vw - ((2 * var(--toolbarbutton-inner-padding) + 16px) + (var(--toolbarbutton-outer-padding) * 2)) - var(--tab-block-margin)) !important;
-    position: static !important;
-}
-#urlbar-container {
-    min-width: var(--urlbar-collapsed-width) !important;
-    z-index: 10;
-    transition: background-color .2s, width .2s, min-width .2s;
-    position: static !important;
-    width: unset !important;
-}
-#urlbar {
-    position: relative !important;
-    top: unset !important;
-    align-self: flex-start !important;
-    margin-block: auto !important;
-}
-#urlbar[breakout-extend] {
-    position: absolute !important;
-    inset-inline: 20vw !important;
-    width: unset !important;
-}
-@media (-moz-bool-pref: "onebar.disable-centering-of-URLbar") {
-    #urlbar-container {
-        position: relative !important;
-    }
-    #urlbar[breakout-extend] {
-        /* width: 100% !important; */
-        inset-inline: 0 !important;
-    }
-    #urlbar[breakout-extend] .urlbar-input-box {
-        min-width: 400px !important;
-    }
-    #urlbar-container:focus-within, #urlbar-container:hover {
-        min-width: var(--urlbar-open-width) !important;
-    }
-}
-#urlbar-input-container {
-    display: flex !important;
-}
-#urlbar-input-container > :not(.urlbar-input-box) {
-    order: 2;
-}
-.urlbar-input-box {
-    flex-grow: 1 !important;
-    padding-left: .5em !important;
-    width: 100px !important;
-    min-width: 50px !important;
-    transition: width .2s;
-}
-#urlbar-input:not(:focus-within) {
-    mask: linear-gradient(to right, black calc(100% - 20px), transparent);
-}
-#urlbar-background {
-    transition: border .2s;
-}
-#urlbar:hover:not([focused="true"]) > #urlbar-background {
-    --toolbar-field-border-color: var(--toolbar-field-focus-border-color)
+  border: none !important;
+  background: none !important;
 }
 
-/* Truncate https:// when collapsed */
-@media (not (-moz-bool-pref: "onebar.disable-https-truncate")) and (not (-moz-bool-pref: "browser.urlbar.trimHttps")) {
-    #urlbar-input {
-        transition: margin .1s;
-    }
-    .verifiedDomain ~ .urlbar-input-box:not(:focus-within) #urlbar-input:not([style*="--urlbar-scheme-size: 0"]) {
-        --https-size: calc(var(--urlbar-scheme-size) - 4ch);
-        margin-left: calc(0ch - var(--https-size)) !important;
-        mask: linear-gradient(to right, transparent var(--https-size), black calc(var(--https-size) + 1ch) calc(100% - 3ch), transparent) !important;
-    }
-}
+/* --- ~END~ element visibility section --- */
 
-/* Hide unimportant buttons until hover */
+/* Navbar size calc */
 :root {
-    --in-transition: font-size .2s, padding .2s, margin .2s, max-width .2s, opacity .2s .15s;
-    --out-transition: font-size .2s, padding .2s, margin .2s, max-width .2s, opacity .07s;
-}
-#urlbar-container:hover #urlbar-input-container > box:not(#page-action-buttons),
-#urlbar-container:hover #page-action-buttons > *,
-#urlbar-container:hover #userContext-label {
-    transition: var(--in-transition) !important;
-    max-width: 200px;
-}
-@media (-moz-bool-pref: "onebar.disable-autohide-of-URLbar-icons") {
-    #urlbar-container {
-        min-width: var(--urlbar-open-width) !important;
-    }
-}
-@media (not (-moz-bool-pref: "onebar.disable-autohide-of-URLbar-icons")) {
-    #urlbar-container:not(:hover) :where(
-        toolbarbutton,
-        #userContext-label,
-        #star-button-box,
-        .verifiedDomain,
-        #tracking-protection-icon-container,
-        #pageAction-urlbar-_testpilot-containers,
-        #pageActionButton,
-    ) {
-        font-size: 0 !important;
-        max-width: 0 !important;
-        padding-inline: 0 !important;
-        margin-inline: 0 !important;
-        opacity: 0 !important;
-        transition: var(--out-transition) !important;
-    }
-    @media (-moz-bool-pref: "onebar.hide-all-URLbar-icons") {
-        #urlbar-container:not(:hover) :where(#page-action-buttons, #identity-box) > * {
-            font-size: 0 !important;
-            max-width: 0 !important;
-            padding-inline: 0 !important;
-            margin-inline: 0 !important;
-            opacity: 0 !important;
-            transition: var(--out-transition) !important;
-        }
-    }
-}
-#urlbar-container #urlbar[focused="true"] #urlbar-input-container > box,
-#urlbar-container #urlbar[focused="true"] #page-action-buttons > * {
-    font-size: 0 !important;
-    max-width: 0 !important;
-    padding-inline: 0 !important;
-    margin-inline: 0 !important;
-    opacity: 0 !important;
-    transition: var(--out-transition) !important;
+  --tab-border-radius: 6px !important;
+  /*  Tab border radius -- Changes the tabs rounding  */
+  /*  Default: 6px  */
+  --NavbarWidth: 43;
+  /*  Default values: 36 - 43  */
+  --TabsHeight: 36;
+  /*  Minimum: 30  */
+  /*  Default: 36  */
+  --TabsBorder: 8;
+  /*  Doesnt do anything on small layout  */
+  /*  Default: 8  */
+  --NavbarHeightSmall: calc(var(--TabsHeight) + var(--TabsBorder))
+    /*  Only on small layout  */
+    /*  Default: calc(var(--TabsHeight) + var(--TabsBorder))  */
+    /*  Default as a number: 44  */
 }
 
-/* Other Buttons */
+@media screen and (min-width:1325px)
+/*  Only the tabs space will grow from here  */
+  {
+  :root #nav-bar {
+    margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px) !important;
+    height: calc(var(--TabsHeight) * 1px + var(--TabsBorder) * 1px)
+  }
 
-.toolbarbutton-icon {
-    transition: background-color .1s;
+  #TabsToolbar {
+    margin-right: calc(1325px / 100 * var(--NavbarWidth)) !important
+  }
+
+  #nav-bar {
+    margin-left: calc(100vw - calc(1325px / 100 * var(--NavbarWidth))) !important;
+    vertical-align: center !important
+  }
+
+  #urlbar-container {
+    min-width: 0px !important;
+    flex: auto !important
+  }
+
+  toolbarspring {
+    display: none !important
+  }
 }
 
-#nav-bar #search-container {
-    min-width: 32px !important;
-    transition: min-width .2s;
+@media screen and (min-width:950px) and (max-width:1324px)
+/*  Both the tabs space and the navbar will grow  */
+  {
+  :root #nav-bar {
+    margin-top: calc(var(--TabsHeight) * -1px - var(--TabsBorder) * 1px) !important;
+    height: calc(var(--Tabs ight) * 1px + var(--TabsBorder) * 1px)
+  }
+
+  #TabsToolbar {
+    margin-right: calc(var(--NavbarWidth) * 1vw) !important
+  }
+
+  #nav-bar {
+    margin-left: calc(100vw - calc(var(--NavbarWidth) * 1vw)) !important;
+    vertical-align: center !important
+  }
+
+  #urlbar-container {
+    min-width: 0px !important;
+    flex: auto !important
+  }
+
+  toolbarspring {
+    display: none !important
+  }
+
+  #TabsToolbar,
+  #nav-bar {
+    transition: margin-top .25s !important
+  }
 }
 
-.titlebar-spacer,
-#identity-icon-label {
-    display: none;
+@media screen and (max-width:949px)
+/*  The window is not enough wide for a one line layout  */
+  {
+  :root #nav-bar {
+    padding: 0 5px 0 5px !important;
+    height: calc(var(--NavbarHeightSmall) * 1px) !important
+  }
+
+  toolbarspring {
+    display: none !important;
+  }
+
+  #TabsToolbar,
+  #nav-bar {
+    transition: margin-top .25s !important
+  }
 }
 
-@media (-moz-bool-pref: "onebar.hide-unified-extensions-button") {
-    #unified-extensions-button, #unified-extensions-button > .toolbarbutton-icon{
-        width: 0px !important;
-        padding: 0px !important;
-    }
+#nav-bar,
+#PersonalToolbar {
+  background-color: #0000 !important;
+  background-image: none !important;
+  box-shadow: none !important
 }
 
-/* Wrap other toolbars to bottom */
-#nav-bar ~ * {
-    width: 100vw !important;
+#nav-bar {
+  margin-left: 3px;
 }
 
+.tab-background,
+.tab-stack {
+  min-height: calc(var(--TabsHeight) * 1px) !important
+}
+
+/*  Removes urlbar border/background  */
+#urlbar-background {
+  border: none !important;
+  outline: none !important;
+  transition: .15s !important;
+}
+
+/*  Removes the background from the urlbar while not in use  */
+/* #urlbar:not(:hover):not([breakout][breakout-extend])>#urlbar-background { */
+/* box-shadow: none !important; */
+/* background: #0000 !important; */
+/* } */
+
+/*  Removes annoying border  */
+#navigator-toolbox {
+  border: none !important
+}
+
+/* Fades window while not in focus */
+#navigator-toolbox-background:-moz-window-inactive {
+  filter: contrast(90%)
+}
+
+/* Remove fullscreen warning border */
+#fullscreen-warning {
+  border: none !important;
+  background: -moz-Dialog !important;
+}
+
+/*  Tabs close button  */
+.tabbrowser-tab:not(:hover) .tab-close-button {
+  opacity: 0% !important;
+  /* transition: 0.3s !important; */
+  /* display: -moz-box !important; */
+}
+
+.tab-close-button[selected]:not(:hover) {
+  opacity: 0% !important;
+  /* transition: 0.3s !important; */
+  /* display: -moz-box !important; */
+}
+
+.tabbrowser-tab:hover .tab-close-button {
+  opacity: 0%;
+  /* transition: 0.3s !important; */
+  /* background: none !important; */
+  /* cursor: pointer; */
+  /* display: -moz-box !important; */
+}
+
+.tab-close-button:hover {
+  opacity: 100% !important;
+  /* transition: 0.1s !important; */
+  /* background: none !important; */
+  cursor: pointer;
+  display: -moz-box !important;
+}
+
+.tab-close-button[selected]:hover {
+  opacity: 100% !important;
+  /* transition: 0.3s !important; */
+  /* background: none !important; */
+  cursor: pointer;
+  display: -moz-box !important;
+}

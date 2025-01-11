@@ -33,6 +33,7 @@
     profiles.krabodyan = {
       settings = {
         "general.autoScroll" = false;
+        "widget.use-xdg-desktop-portal.file-picker" = 1;
         "browser.urlbar.autoFill" = false;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "media.webspeech.synth.enabled" = false;
@@ -121,7 +122,7 @@
           "default-off"; # alternatives: "always", "never" or "default-on"
         SearchBar = "unified"; # alternative: "separate"
       };
-      # userChrome = builtins.readFile ../../../assets/firefox.css;
+      userChrome = builtins.readFile ../../../assets/firefox.css;
     };
   };
 }
