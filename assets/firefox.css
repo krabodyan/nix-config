@@ -195,7 +195,7 @@
 #urlbar-background {
   border: none !important;
   outline: none !important;
-  transition: .15s !important;
+  /* transition: .15s !important; */
 }
 
 /*  Removes the background from the urlbar while not in use  */
