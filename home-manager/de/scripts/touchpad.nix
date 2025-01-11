@@ -3,8 +3,6 @@ let
   send = ''
     ${pkgs.libnotify}/bin/notify-send \
     -t 1000 \
-    -a swaynotify \
-    -h string:x-canonical-private-synchronous:swaynotify \
   '';
   toggle = ''
     riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events \
