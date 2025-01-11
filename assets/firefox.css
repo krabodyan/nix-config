@@ -16,6 +16,15 @@
 /* display: none !important; /* uncomment this line to hide the menu button */
 /* } */
 
+.tab-background {
+  margin-bottom: 0 !important;
+  border-radius: 5px 5px 0 0 !important;
+}
+
+.tabbrowser-tab {
+  padding-top: 2px !important;
+}
+
 #tabs-newtab-button,
 #reload-button,
 #stop-button,
@@ -85,8 +94,6 @@
 
 /* Navbar size calc */
 :root {
-  --tab-border-radius: 6px !important;
-  /*  Tab border radius -- Changes the tabs rounding  */
   /*  Default: 6px  */
   --NavbarWidth: 43;
   /*  Default values: 36 - 43  */
