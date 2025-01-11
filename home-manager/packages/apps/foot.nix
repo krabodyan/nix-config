@@ -26,8 +26,6 @@
         resize-by-cells = "no";
         resize-delay-ms = 300;
         resize-keep-grid = "no";
-        # line-height = "33px";
-        # horizontal-letter-offset = "2px";
         initial-window-size-pixels = "1200x800";
         underline-offset = "12px";
         underline-thickness = "1px";
@@ -59,6 +57,7 @@
       key-bindings = {
         scrollback-up-line = "Mod1+Shift+k";
         scrollback-down-line = "Mod1+Shift+j";
+        show-urls-launch = "Mod1+Shift+o";
       };
 
       colors = with config.colors; {

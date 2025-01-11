@@ -32,21 +32,16 @@
     userName = "krabodyan";
     userEmail = "krabraketa@example.com";
     extraConfig = {
-      init = {
-        defaultbranch = "master";
-      };
-      branch = {
-        sort = "-committerdate";
-      };
-      pull = {
-        rebase = true;
-      };
+      init = { defaultbranch = "master"; };
+      branch = { sort = "-committerdate"; };
+      pull = { rebase = true; };
+      rebase.autoStash = true;
       push = {
+        autoSetupRemote = true;
         default = "simple";
       };
-      safe = {
-        directory = "*";
-      };
+      diff.algorithm = "histogram";
+      safe = { directory = "*"; };
     };
     ignores = [
       "*.bak"
