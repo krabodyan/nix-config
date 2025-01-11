@@ -8,17 +8,21 @@
 /* Just comment the lines or blocks for the elements you WANT to see */
 
 /* Menu button */
-#PanelUI-button {
-  -moz-box-ordinal-group: 0 !important;
-  /* order: -2 !important; */
-  /* margin: 2px !important; */
-  /* display: none !important; /* uncomment this line to hide the menu button */
-}
+/* #PanelUI-button, */
+/* #unified-extensions-button { */
+/* -moz-box-ordinal-group: 0 !important; */
+/* order: -2 !important; */
+/* margin: 2px !important; */
+/* display: none !important; /* uncomment this line to hide the menu button */
+/* } */
 
+#tabs-newtab-button,
+#reload-button,
+#stop-button,
+#tabs-newtab-button,
+#PanelUI-button,
 #unified-extensions-button {
-  -moz-box-ordinal-group: 0 !important;
-  /* order: -2 !important; */
-  /* display: none !important; /* uncomment this line to hide the menu button */
+  opacity: 20% !important;
 }
 
 /* Window control buttons (min, resize and close) */
@@ -29,9 +33,9 @@
 
 /* Page back and foward buttons */
 #back-button,
-#reload-button,
-#stop-button,
-#tabs-newtab-button,
+/* #reload-button, */
+/* #stop-button, */
+/* #tabs-newtab-button, */
 #forward-button {
   display: none !important
 }
@@ -192,11 +196,11 @@
 }
 
 /*  Removes urlbar border/background  */
-#urlbar-background {
-  border: none !important;
-  outline: none !important;
-  /* transition: .15s !important; */
-}
+/* #urlbar-background { */
+/* border: none !important; */
+/* outline: none !important; */
+/* transition: 0s !important; */
+/* } */
 
 /*  Removes the background from the urlbar while not in use  */
 /* #urlbar:not(:hover):not([breakout][breakout-extend])>#urlbar-background { */
