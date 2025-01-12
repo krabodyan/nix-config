@@ -70,7 +70,8 @@
         window,
         window.background
         {
-            border-radius: 0;
+          box-shadow: none;
+          border-radius: 0;
         }
       '';
     };
