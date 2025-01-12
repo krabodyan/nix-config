@@ -128,7 +128,7 @@ wideriver \
   --layout                       left        \
   --layout-alt                   monocle     \
   --stack                        even        \
-  --no-smart-gaps                            \
+  --smart-gaps                               \
   --count-master                 1           \
   --ratio-master                 0.50        \
   --count-wide-left              0           \
