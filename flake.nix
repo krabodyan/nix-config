@@ -68,6 +68,7 @@
             extensions = [ "rust-src" "rust-analyzer" "miri" ];
           };
         in pkgs.mkShell {
+          DEV_SHELL_NAME = "rust";
           buildInputs = [ pkgs.llvmPackages.clang rust ];
           nativeBuildInputs = with pkgs; [
             pkg-config
@@ -81,6 +82,7 @@
           LIBCLANG_PATH = "${pkgs.libclang.lib}/lib";
         };
         python = pkgs.mkShell {
+          DEV_SHELL_NAME = "python";
           packages = [
             (pkgs.python311.withPackages (python-pkgs:
               with python-pkgs; [

@@ -1,5 +1,5 @@
 { config, pkgs, ... }: {
-  home.packages = [ pkgs.zoxide ];
+  home.packages = with pkgs; [ nix-your-shell ];
   programs.fish = {
     enable = true;
     shellAliases = {
@@ -73,7 +73,13 @@
       end
     '';
     interactiveShellInit = with config.colors; ''
-      ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+      function nix-shell --description "Start an interactive shell based on a Nix expression"
+          nix-your-shell  fish nix-shell -- $argv
+      end
+
+      function nix --description "Reproducible and declarative configuration management"
+          nix-your-shell  fish nix -- $argv
+      end
       set --universal zoxide_cmd cd
       bind -M insert \ef end-of-line
       bind -M default \ef end-of-line
@@ -109,8 +115,8 @@
       set -g fish_pager_color_selected_description -i ${fg}
       set -g fish_pager_color_selected_background ${bg}
 
-      set -g fish_prompt_pwd_dir_length 3
-      set -g fish_prompt_pwd_full_dirs 0
+      set -g fish_prompt_pwd_dir_length 1
+      set -g fish_prompt_pwd_full_dirs 1
 
       set fish_greeting
 
@@ -138,7 +144,12 @@
           case '*'
             set_color ${green}
         end
-        printf "\033[4 q%s 󰧞 " (prompt_pwd) 
+        if test -z "$IN_NIX_SHELL"
+          printf "\033[4 q%s 󰧞 " (prompt_pwd) 
+        else
+          set -q DEV_SHELL_NAME; or set -l DEV_SHELL_NAME "nix-shell"
+          printf "\033[36m$DEV_SHELL_NAME\033[0m\033[4 q %s 󰧞 " (prompt_pwd)
+        end
         set_color normal
       end
 
