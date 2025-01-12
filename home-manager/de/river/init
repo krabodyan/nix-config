@@ -138,8 +138,8 @@ wideriver \
   --border-color-focused         $focused    \
   --border-color-focused-monocle $focused    \
   --border-color-unfocused       $border     \
-  --border-width                 2           \
-  --border-width-monocle         2           \
+  --border-width                 1           \
+  --border-width-monocle         1           \
   --border-width-smart-gaps      0           \
   --log-threshold                error       \
  > "/tmp/wideriver.${XDG_VTNR}.${USER}.log" 2>&1 &

@@ -1,5 +1,4 @@
 { config, helpers, ... }: {
-  home.sessionVariables.LS_COLORS = "di=1;36";
   programs.fd = {
     enable = true;
     hidden = false;
