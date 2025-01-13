@@ -51,6 +51,8 @@
       "vgcore.*"
       ".cache"
       "*.gc??"
+      "target"
+      "node_modules"
       # locked files
       "*~"
       # nix buid

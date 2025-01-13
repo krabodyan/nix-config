@@ -6,7 +6,6 @@
     ruff
     nil
     vscode-langservers-extracted
-    # nixfmt-rfc-style
     nixfmt-classic
     python312Packages.python-lsp-server
     (import ./yazi-picker.nix { inherit pkgs; })
@@ -59,5 +58,8 @@
       inherit config;
       inherit (helpers) mkHex;
     };
+    ignores = let add_ignore = ext: "*.${ext}";
+    in [ "target" "icons" "venv" "node_modules" "__pycache__" ]
+    ++ map add_ignore [ "png" "svg" "jpeg" "jpg" "mov" "mp4" "mkv" ];
   };
 }
