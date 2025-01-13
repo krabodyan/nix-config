@@ -60,26 +60,56 @@
         modules = [ ./home-manager ];
       };
 
-      devShells.${system} = {
-        rust = let
+      devShells.${system} = let
+        rust-pkg = (import nixpkgs {
+          inherit system;
           overlays = [ (import inputs.rust-overlay) ];
-          pkgs = import nixpkgs { inherit system overlays; };
-          rust = pkgs.rust-bin.nightly.latest.default.override {
-            extensions = [ "rust-src" "rust-analyzer" "miri" ];
-          };
-        in pkgs.mkShell {
+        }).rust-bin.nightly.latest.default.override {
+          extensions = [ "rust-src" "rust-analyzer" "miri" ];
+        };
+      in {
+        rust = pkgs.mkShell {
           DEV_SHELL_NAME = "rust";
-          buildInputs = [ pkgs.llvmPackages.clang rust ];
+          RUST_BACKTRACE = 1;
+          nativeBuildInputs = with pkgs; [ pkg-config ];
+          buildInputs = with pkgs; [
+            rust-pkg
+            openssl
+            # llvmPackages.clang
+            # alsa-lib
+            # libpulseaudio
+            # postgresql
+            # fontconfig
+          ];
+          # LIBCLANG_PATH = "${pkgs.libclang.lib}/lib";
+        };
+        tauri = pkgs.mkShell {
+          DEV_SHELL_NAME = "tauri";
+          RUST_BACKTRACE = 1;
+          GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
           nativeBuildInputs = with pkgs; [
             pkg-config
-            openssl.dev
-            # alsa-lib.dev
-            # libpulseaudio.dev
-            # postgresql.dev
-            # fontconfig.dev
+            gobject-introspection
+            cargo-tauri
+            nodejs
+            svelte-language-server
+            typescript-language-server
           ];
-          RUST_BACKTRACE = 1;
-          LIBCLANG_PATH = "${pkgs.libclang.lib}/lib";
+          buildInputs = with pkgs; [
+            rust-pkg
+            openssl
+            at-spi2-atk
+            atkmm
+            cairo
+            gdk-pixbuf
+            glib
+            gtk3
+            harfbuzz
+            librsvg
+            libsoup_3
+            pango
+            webkitgtk_4_1
+          ];
         };
         python = pkgs.mkShell {
           DEV_SHELL_NAME = "python";
