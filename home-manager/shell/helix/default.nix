@@ -1,7 +1,7 @@
 { pkgs, config, inputs, system, helpers, ... }: {
   home.packages = with pkgs; [
-    docker-compose-language-service
-    dockerfile-language-server-nodejs
+    # docker-compose-language-service
+    # dockerfile-language-server-nodejs
     black
     ruff
     nil

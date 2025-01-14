@@ -1,6 +1,6 @@
 { config, mkHex }: {
   paradise = {
-    "attribute" = "yellow";
+    # "attribute" = "yellow";
     "type" = {
       fg = "yellow";
       modifiers = [ "italic" ];
@@ -155,8 +155,8 @@
     "ui.virtual.indent-guide" = "surface1";
     "ui.virtual.inlay-hint" = { fg = "comment"; };
     "ui.virtual.jump-label" = {
-      fg = "red";
-      modifiers = [ "bold" ];
+      fg = "yellow";
+      underline = { style = "curl"; };
     };
 
     "ui.selection" = { bg = "surface2"; };

@@ -26,7 +26,7 @@
   lsp = {
     display-messages = true;
     display-inlay-hints = true;
-    snippets = false;
+    snippets = true;
   };
 
   indent-guides = {

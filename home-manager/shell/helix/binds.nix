@@ -1,6 +1,7 @@
 let
   binds = {
     "C-space" = "buffer_picker";
+    "A-s" = "goto_word";
     "A-space" = [
       ":new"
       ":insert-output __yazi_picker"
