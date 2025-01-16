@@ -3,6 +3,7 @@
     # docker-compose-language-service
     # dockerfile-language-server-nodejs
     black
+    biome
     ruff
     nil
     vscode-langservers-extracted

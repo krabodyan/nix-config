@@ -1,5 +1,7 @@
-file_watch_support = true
+file_watch_support = false
 
+
+# NIX --------------------------
 [[language]]
 auto-format = true
 language-servers = ["nix"]
@@ -8,7 +10,11 @@ name = "nix"
 [language.formatter]
 command = "nixfmt"
 
+[language-server.nix]
+command = "nil"
 
+
+# RUST --------------------------
 [[language]]
 name = "rust"
 
@@ -24,33 +30,30 @@ name = "rust"
 check.command = "clippy"
 
 
+# PYTHON --------------------------
 [[language]]
 name = "python"
 auto-format = true
 language-servers = ["ruff", "pylsp"]
 
-
 [language.formatter]
 args = ["--line-length", "88", "--quiet", "-"]
 command = "black"
 
+
+# JSON --------------------------
 [[language]]
-auto-format = true
-language-servers = ["json"]
 name = "json"
+language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome"]
 
 [language-server]
-[language-server.json]
-args = ["--stdio"]
-command = "vscode-json-language-server"
+biome = { command = "biome", args = ["lsp-proxy"] }
 
-[language-server.nix]
-command = "nil"
+[[language-server.vscode-json-language-server.config.json.schemas]]
+fileMatch = ["tsconfig.json", "tsconfig.*.json"]
+url = "https://json.schemastore.org/tsconfig.json"
 
-# [language-server.python]
-# args = ["--stdio"]
-# command = "pyright-langserver"
-# config = { }
+[[language-server.vscode-json-language-server.config.json.schemas]]
+fileMatch = [ "package.json" ]
+url = "https://json.schemastore.org/package.json"
 
-# [language-server.ruff]
-# command = "ruff-lsp"
