@@ -1,5 +1,6 @@
 let
   binds = {
+    "C-S-f" = ":sh foot -d error -a floaterm yazi";
     "C-space" = "buffer_picker";
     "A-s" = "goto_word";
     "A-space" = [

@@ -1,5 +1,9 @@
 file_watch_support = false
 
+# SVELTE --------------------------
+[[language]]
+name = "svelte"
+comment-token = "//"
 
 # NIX --------------------------
 [[language]]
