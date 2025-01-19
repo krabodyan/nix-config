@@ -4,6 +4,7 @@ file_watch_support = false
 [[language]]
 name = "svelte"
 comment-token = "//"
+block-comment-tokens = {start = "<!--", end = "-->"}
 
 # NIX --------------------------
 [[language]]
