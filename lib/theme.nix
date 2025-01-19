@@ -38,11 +38,11 @@
         overlay0 = "575757";
 
         black = fg-dark;
-        red = "eb756e";
+        red = "EF8993";
         green = "67e692";
         yellow = "f9e289";
         blue = "80beed";
-        magenta = "cc86d1";
+        magenta = "DC8EC1";
         cyan = "77d9d7";
 
         brblack = overlay0;
