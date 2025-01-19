@@ -92,6 +92,7 @@
             gobject-introspection
             cargo-tauri
             nodejs
+            pnpm
             svelte-language-server
             typescript-language-server
           ];
