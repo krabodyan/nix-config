@@ -1,11 +1,8 @@
-{ pkgs, config, ... }:
-{
-  home.packages = [
-    pkgs.swappy
-    pkgs.satty
-  ];
+{ pkgs, config, ... }: {
+  home.packages = [ pkgs.swappy pkgs.satty ];
   xdg.configFile."satty/config.toml".text = with config.colors; ''
     [general]
+    corner-roundness = 4
     fullscreen = true
     early-exit = true
     initial-tool = "arrow"
@@ -22,12 +19,14 @@
     style = "Bold"
 
     [color-palette]
-    first= "#${red}"
-    second= "#${yellow}"
-    third= "#${fg}"
-    fourth= "#${blue}"
-    fifth= "#${pink}"
-    custom= "#${green}"    
+    palette = [
+      "#${red}",
+      "#${yellow}",
+      "#${fg}",
+      "#${blue}",
+      "#${pink}",
+      "#${green}"
+    ]
   '';
   xdg.configFile."swappy/config".text = ''
     [Default]
