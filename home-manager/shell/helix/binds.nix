@@ -1,7 +1,7 @@
 let
   binds = {
+    "C-c" = "completion";
     "C-S-f" = ":sh foot -d error -a floaterm yazi";
-    "C-c" = "toggle_block_comments";
     "C-space" = "buffer_picker";
     "A-s" = "goto_word";
     "A-space" = [
@@ -13,6 +13,7 @@ let
       "goto_last_modified_file"
       ":buffer-close!"
     ];
+
     "A-y" = "save_selection"; # save to jumplist
     "A-e" = ":buffer-next";
     "A-q" = ":buffer-previous";
@@ -21,8 +22,10 @@ let
     "C-x" = ":q";
     "C-s" =
       [ ":w" "normal_mode" "collapse_selection" "commit_undo_checkpoint" ];
-    "C-7" = "toggle_comments";
-    "C-/" = "toggle_comments";
+
+    "C-/" = "toggle_comments"; # 7 ?
+    "C-?" = "toggle_block_comments";
+
     "C-A-up" = [
       "goto_line_end"
       "extend_line_below"

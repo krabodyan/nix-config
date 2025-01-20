@@ -1,4 +1,4 @@
-{ config, mkHex }: {
+{ colors, mkHex }: {
   paradise = {
     # "attribute" = "yellow";
     "type" = {
@@ -234,7 +234,7 @@
     info = "green";
     hint = "green";
 
-    palette = with config.colors; {
+    palette = with colors; {
       teal = mkHex teal;
       sky = mkHex sky;
       sapphire = mkHex sapphire;

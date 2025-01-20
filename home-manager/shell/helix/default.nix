@@ -56,11 +56,30 @@
       keys = import ./binds.nix;
     };
     themes = import ./theme.nix {
-      inherit config;
+      inherit (config) colors;
       inherit (helpers) mkHex;
     };
     ignores = let add_ignore = ext: "*.${ext}";
     in [ "target" "icons" "venv" "node_modules" "__pycache__" ]
-    ++ map add_ignore [ "png" "svg" "jpeg" "jpg" "mov" "mp4" "mkv" ];
+    ++ map add_ignore [
+      "png"
+      "svg"
+      "jpeg"
+      "jpg"
+      "mov"
+      "mp4"
+      "mkv"
+      "mp4"
+      # --end media formats
+      "doc"
+      "docx"
+      "pptx"
+      "xls"
+      "xlsx"
+      # --end office
+      "pdf"
+      "csv"
+      "drawio"
+    ];
   };
 }

@@ -5,17 +5,21 @@
   cursorline = true;
   color-modes = true;
   scrolloff = 10;
+  scroll-lines = 1;
+
+  continue-comments = false;
 
   completion-replace = false;
   preview-completion-insert = true;
-  completion-timeout = 5;
+  completion-timeout = 250;
   completion-trigger-len = 2;
 
   undercurl = false;
   bufferline = "multiple";
-  popup-border = "none";
+  popup-border = "all";
   text-width = 145;
   indent-heuristic = "tree-sitter";
+  jump-label-alphabet = "fjdkslweruiopmcvn";
 
   end-of-line-diagnostics = "hint";
   inline-diagnostics = {
@@ -25,6 +29,7 @@
 
   lsp = {
     display-messages = true;
+    display-progress-messages = true;
     display-inlay-hints = true;
     snippets = true;
   };
