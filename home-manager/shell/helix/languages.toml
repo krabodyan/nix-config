@@ -18,6 +18,12 @@ command = "nixfmt"
 [language-server.nix]
 command = "nil"
 
+# TS -----------------------
+[[language]]
+name = "typescript"
+language-servers = [ "typescript-language-server" ]
+formatter = { command = 'pnpm', args = ["prettier", "--parser", "typescript"] }
+auto-format = true
 
 # RUST --------------------------
 [[language]]
@@ -51,14 +57,12 @@ command = "black"
 name = "json"
 language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome"]
 
-[language-server]
-biome = { command = "biome", args = ["lsp-proxy"] }
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
 
-[[language-server.vscode-json-language-server.config.json.schemas]]
-fileMatch = ["tsconfig.json", "tsconfig.*.json"]
-url = "https://json.schemastore.org/tsconfig.json"
-
-[[language-server.vscode-json-language-server.config.json.schemas]]
-fileMatch = [ "package.json" ]
-url = "https://json.schemastore.org/package.json"
+[language-server.vscode-json-language-server.config.json]
+validate = { enable = true }
+format = { enable = true }
+schemas = [{ fileMatch = ["tsconfig.json", "tsconfig.*.json"], url = "https://json.schemastore.org/tsconfig.json" }, { fileMatch = [ "package.json" ], url = "https://json.schemastore.org/package.json" }]
 

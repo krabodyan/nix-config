@@ -11,7 +11,7 @@
 
   completion-replace = false;
   preview-completion-insert = true;
-  completion-timeout = 250;
+  completion-timeout = 5;
   completion-trigger-len = 2;
 
   undercurl = false;
@@ -29,7 +29,7 @@
 
   lsp = {
     display-messages = true;
-    display-progress-messages = true;
+    # display-progress-messages = true;
     display-inlay-hints = true;
     snippets = true;
   };

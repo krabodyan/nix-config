@@ -60,7 +60,7 @@
       inherit (helpers) mkHex;
     };
     ignores = let add_ignore = ext: "*.${ext}";
-    in [ "target" "icons" "venv" "node_modules" "__pycache__" ]
+    in [ "target" "icons" "venv" "node_modules" "__pycache__" "build" ]
     ++ map add_ignore [
       "png"
       "svg"
@@ -70,6 +70,7 @@
       "mp4"
       "mkv"
       "mp4"
+      "ttf"
       # --end media formats
       "doc"
       "docx"
