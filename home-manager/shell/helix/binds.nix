@@ -1,9 +1,12 @@
 let
   binds = {
+    "C-f" = "file_picker_in_current_buffer_directory";
     "C-c" = "completion";
     "C-S-f" = ":sh foot -d error -a floaterm yazi";
     "C-space" = "buffer_picker";
-    "A-s" = "goto_word";
+    "A-s" = [ "normal_mode" "goto_word" ];
+    "A-a" = "split_selection_on_newline";
+    "A-w" = "rotate_view";
     "A-space" = [
       ":new"
       ":insert-output __yazi_picker"
@@ -58,7 +61,6 @@ let
   };
   special = {
     "tab" = "no_op";
-    "C-f" = "file_picker_in_current_buffer_directory";
     "A-x" = "extend_line_up";
     "S-x" = [ "extend_line_up" "extend_to_line_bounds" ];
     "esc" = [ "collapse_selection" "keep_primary_selection" ];

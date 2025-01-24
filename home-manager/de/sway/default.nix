@@ -1,1 +1,1 @@
-{ imports = [ ./env.nix ./sway.nix ]; }
+{ imports = [ ./sway.nix ]; }

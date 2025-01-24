@@ -38,7 +38,7 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ inputs.nixpkgs-wayland.overlay ];
+        # overlays = [ inputs.nixpkgs-wayland.overlay ];
       };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {

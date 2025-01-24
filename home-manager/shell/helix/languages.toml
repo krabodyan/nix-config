@@ -6,6 +6,7 @@ name = "svelte"
 comment-token = "//"
 block-comment-tokens = {start = "<!--", end = "-->"}
 
+
 # NIX --------------------------
 [[language]]
 auto-format = true
