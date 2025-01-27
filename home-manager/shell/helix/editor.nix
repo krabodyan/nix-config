@@ -19,7 +19,7 @@
   popup-border = "all";
   text-width = 145;
   indent-heuristic = "tree-sitter";
-  jump-label-alphabet = "fjdkslweruiopmcvn";
+  jump-label-alphabet = "fjdkslweruiopmaqcvnzxtyghb";
 
   end-of-line-diagnostics = "hint";
   inline-diagnostics = {

@@ -5,6 +5,7 @@ let
     "C-S-f" = ":sh foot -d error -a floaterm yazi";
     "C-space" = "buffer_picker";
     "A-s" = [ "normal_mode" "goto_word" ];
+    "C-A-s" = [ "normal_mode" "extend_to_word" ];
     "A-a" = "split_selection_on_newline";
     "A-w" = "rotate_view";
     "A-space" = [
