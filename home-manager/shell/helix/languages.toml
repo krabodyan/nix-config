@@ -23,7 +23,14 @@ command = "nil"
 [[language]]
 name = "typescript"
 language-servers = [ "typescript-language-server" ]
-formatter = { command = 'pnpm', args = ["prettier", "--parser", "typescript"] }
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+
+[[language]]
+name = "tsx"
+language-servers = [ "typescript-language-server" ]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
 
 # RUST --------------------------
@@ -41,7 +48,6 @@ name = "rust"
 [language-server.rust-analyzer.config]
 check.command = "clippy"
 
-
 # PYTHON --------------------------
 [[language]]
 name = "python"
@@ -52,6 +58,10 @@ language-servers = ["ruff", "pylsp"]
 args = ["--line-length", "88", "--quiet", "-"]
 command = "black"
 
+# HTML ------------------------------------
+[[language]]
+name = "html"
+formatter = { command = 'prettier', args = ["--parser", "html"] }
 
 # JSON --------------------------
 [[language]]

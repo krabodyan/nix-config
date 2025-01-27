@@ -95,6 +95,7 @@
             pnpm
             svelte-language-server
             typescript-language-server
+            nodePackages.prettier
           ];
           buildInputs = with pkgs; [
             rust-pkg
