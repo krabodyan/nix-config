@@ -1,7 +1,7 @@
 {
 	"name": "Vimium C",
-	"@time": "27.01.2025, 09:10:06",
-	"time": 1737961806363,
+	"@time": "27.01.2025, 12:43:19",
+	"time": 1737974599285,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
@@ -24,7 +24,7 @@
 		"map <c-u> goForward",
 		"map \\ passNextKey",
 		"map <a-s> LinkHints.activate",
-		"map <a-f> LinkHints.activateOpenInNewTab",
+		"map <a-a> LinkHints.activateOpenInNewTab",
 		"map j scrollDown",
 		"map k scrollUp",
 		"map l scrollLeft",
