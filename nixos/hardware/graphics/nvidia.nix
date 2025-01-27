@@ -1,12 +1,6 @@
 { config, ... }: {
   services.xserver.videoDrivers = [ "nvidia" ];
   boot.blacklistedKernelModules = [ "nouveau" ];
-  # boot.extraModprobeConfig = ''
-  #   options nvidia NVreg_PreserveVideoMemoryAllocations=1
-  #   options nvidia NVreg_TemporaryFilePath=/tmp
-  # '';
-
-  # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -14,16 +8,7 @@
     powerManagement.finegrained = false;
     nvidiaSettings = false;
     open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.production;
-    # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-    #   version = "545.29.02";
-    #   sha256_64bit = "sha256-RncPlaSjhvBFUCOzWdXSE3PAfRPCIrWAXyJMdLPKuIU=";
-    #   sha256_aarch64 = "sha256-G0/GiObf/BZMkzzET8HQjdIcvCSqB1uhsinro2HLK9k=";
-    #   openSha256 = "sha256-wvRdHguGLxS0mR06P5Qi++pDJBCF8pJ8hr4T8O6TJIo=";
-    #   settingsSha256 = "sha256-zj173HCZJaxAbVV/A2sbJ9IPdT1+3yrwyxD+AQdkSD8=";
-    #   persistencedSha256 =
-    #     "sha256-d0Q3Lk80JqkS1B54Mahu2yY/WocOqFFbZVBh+ToGhaE=";
-    # };
+    package = config.boot.kernelPackages.nvidiaPackages.latest;
     prime = {
       offload = {
         enable = true;

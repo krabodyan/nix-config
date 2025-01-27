@@ -24,9 +24,9 @@
     find_position = { fg = "#${red}" }
 
     marker_copied   = { fg = "#${green}", bg = "#${green}" }
-    marker_cut      = { fg = "#${red}", bg = "#${red}" }
-    marker_marked   = { fg = "#${overlay0}", bg = "#${overlay0}" }
-    marker_selected = { fg = "#${overlay0}", bg = "#${overlay0}" }
+    marker_cut      = { fg = "#${blue}", bg = "#${blue}" }
+    marker_marked   = { fg = "#${mode_select}", bg = "#${mode_select}" }
+    marker_selected = { fg = "#${magenta}", bg = "#${magenta}" }
 
     tab_active   = { fg = "#${bg}", bg = "#${select}" }
     tab_inactive = { fg = "#${fg}", bg = "#${bg}" }

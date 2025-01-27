@@ -37,7 +37,7 @@
   indent-guides = {
     render = true;
     # character = "╎";
-    skip-levels = 2;
+    skip-levels = 1;
   };
 
   true-color = false;
