@@ -4,12 +4,12 @@
   nixConfig = {
     extra-substituters = [
       "https://helix.cachix.org"
-      "https://nixpkgs-wayland.cachix.org"
+      # "https://nixpkgs-wayland.cachix.org"
       # "https://yazi.cachix.org"
     ];
     extra-trusted-public-keys = [
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
-      "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
+      # "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
       # "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
     ];
   };
@@ -29,7 +29,7 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    # nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     # yazi.url = "github:sxyazi/yazi";
   };
 
@@ -42,7 +42,7 @@
       };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit self system inputs; };
+        specialArgs = { inherit self inputs; };
         modules = [
           ./lib/theme.nix
           ./nixos/configuration.nix
@@ -53,11 +53,11 @@
 
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = {
-          inherit self system inputs;
-          helpers = import ./lib/helpers.nix;
-        };
-        modules = [ ./home-manager ];
+        extraSpecialArgs = { inherit self inputs; };
+        modules = [
+          ./home-manager
+          { _module.args.helpers = import ./lib/helpers.nix; }
+        ];
       };
 
       devShells.${system} = let

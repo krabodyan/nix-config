@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, system, helpers, ... }: {
+{ pkgs, config, inputs, helpers, ... }: {
   home.packages = with pkgs; [
     # docker-compose-language-service
     # dockerfile-language-server-nodejs
@@ -48,7 +48,7 @@
   xdg.configFile."helix/languages.toml".source = ./languages.toml;
   programs.helix = {
     enable = true;
-    package = inputs.helix.packages.${system}.helix;
+    package = inputs.helix.packages.${pkgs.system}.helix;
     defaultEditor = true;
     settings = {
       theme = "paradise";

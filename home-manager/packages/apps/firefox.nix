@@ -1,12 +1,4 @@
-{ pkgs, helpers, system, inputs, ... }: {
-  home.packages = with pkgs;
-    [
-      # chromedriver
-      # chromium
-      # google-chrome
-      # floorp
-      # inputs.zen-browser.packages."${system}".specific
-    ];
+{ pkgs, helpers, ... }: {
   xdg.mimeApps.defaultApplications = helpers.mkAssociations {
     types = [
       "x-scheme-handler/http"
