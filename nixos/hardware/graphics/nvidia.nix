@@ -7,7 +7,7 @@
     powerManagement.enable = true;
     powerManagement.finegrained = false;
     nvidiaSettings = false;
-    open = false;
+    open = true;
     package = config.boot.kernelPackages.nvidiaPackages.latest;
     prime = {
       offload = {
