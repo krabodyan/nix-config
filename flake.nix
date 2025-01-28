@@ -26,8 +26,9 @@
     };
     helix.url = "github:helix-editor/helix";
     rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url =
+        "github:oxalica/rust-overlay?rev=9a55a224af34b4f74526c261aeccd8d40af5e4f2";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     # nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     # yazi.url = "github:sxyazi/yazi";
@@ -42,7 +43,7 @@
       };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit self inputs; };
+        specialArgs = { inherit self inputs system; };
         modules = [
           ./lib/theme.nix
           ./nixos/configuration.nix
@@ -65,6 +66,10 @@
           inherit system;
           overlays = [ (import inputs.rust-overlay) ];
         }).rust-bin.nightly.latest.default.override {
+          targets = [
+            # "wasm32-unknown-unknown"
+            "x86_64-unknown-linux-gnu"
+          ];
           extensions = [ "rust-src" "rust-analyzer" "miri" ];
         };
       in {
@@ -72,16 +77,7 @@
           DEV_SHELL_NAME = "rust";
           RUST_BACKTRACE = 1;
           nativeBuildInputs = with pkgs; [ pkg-config ];
-          buildInputs = with pkgs; [
-            rust-pkg
-            openssl
-            # llvmPackages.clang
-            # alsa-lib
-            # libpulseaudio
-            # postgresql
-            # fontconfig
-          ];
-          # LIBCLANG_PATH = "${pkgs.libclang.lib}/lib";
+          buildInputs = with pkgs; [ rust-pkg openssl ];
         };
         tauri = pkgs.mkShell {
           DEV_SHELL_NAME = "tauri";
@@ -93,7 +89,10 @@
             cargo-tauri
             nodejs
             pnpm
-            svelte-language-server
+
+            # dioxus-cli
+            # trunk # for wasm
+
             typescript-language-server
             nodePackages.prettier
           ];

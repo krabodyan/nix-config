@@ -1,5 +1,6 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [ nix-your-shell ];
+  home.sessionPath = [ "$HOME/.cargo/bin" ];
   programs.fish = {
     enable = true;
     shellAliases = {

@@ -47,6 +47,7 @@ name = "rust"
 
 [language-server.rust-analyzer.config]
 check.command = "clippy"
+procMacro.enable = "false"
 
 # PYTHON --------------------------
 [[language]]
