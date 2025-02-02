@@ -17,7 +17,7 @@ name = "nix"
 command = "nixfmt"
 
 [language-server.nix]
-command = "nil"
+command = "nixd"
 
 # TS -----------------------
 [[language]]

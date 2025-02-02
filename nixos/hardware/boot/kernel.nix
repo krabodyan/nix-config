@@ -9,8 +9,9 @@
       "fs.suid_dumpable" = 0;
       "kernel.dmesg_restrict" = 0;
 
-      "kernel.sched_cfs_bandwidth_slice_us" = 3000;
-      "vm.max_map_count" = 2147483642;
+      # "kernel.sched_cfs_bandwidth_slice_us" = 3000;
+      # "vm.max_map_count" = 2147483642;
+      "vm.min_free_kbytes" = 1048576;
 
       "net.ipv4.tcp_fastopen" = 3;
       "net.core.default_qdisc" = "cake";
@@ -23,7 +24,7 @@
     };
 
     kernelParams = [ "nohibernate" "rootfstype=btrfs" "raid=noautodetect" ];
-    # kernelPackages = pkgs.linuxPackages_6_11;
+    # kernelPackages = pkgs.linuxPackages_zen;
     extraModprobeConfig = ''
       options i915 enable_guc=3
     '';

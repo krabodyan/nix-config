@@ -92,9 +92,6 @@
 
             # dioxus-cli
             # trunk # for wasm
-
-            typescript-language-server
-            nodePackages.prettier
           ];
           buildInputs = with pkgs; [
             rust-pkg

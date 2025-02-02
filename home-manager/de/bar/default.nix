@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar.override ({
+    package = pkgs.waybar.override {
       cavaSupport = false;
       swaySupport = false;
       hyprlandSupport = false;
@@ -19,7 +19,7 @@
       enableManpages = false;
       upowerSupport = false;
       withMediaPlayer = false;
-    });
+    };
 
     settings.mainBar = {
       position = "right";

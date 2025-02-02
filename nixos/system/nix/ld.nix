@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   programs.nix-ld = {
-    enable = true;
+    enable = false;
     package = pkgs.nix-ld-rs;
     libraries = with pkgs; [
       # Without these it silently fails

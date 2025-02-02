@@ -68,7 +68,7 @@
     ];
     loginShellInit = ''
       if test (tty) = "/dev/tty1"
-        set -x WLR_DRM_DEVICES /dev/dri/card1
+        set -x WLR_DRM_DEVICES /dev/dri/card1:/dev/dri/card2
         dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
         exec river
       end

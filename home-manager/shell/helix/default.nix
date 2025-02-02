@@ -5,10 +5,12 @@
     black
     biome
     ruff
-    nil
+    nixd
     vscode-langservers-extracted
     nixfmt-classic
     python312Packages.python-lsp-server
+    typescript-language-server
+    nodePackages.prettier
     (import ./yazi-picker.nix { inherit pkgs; })
   ];
 
