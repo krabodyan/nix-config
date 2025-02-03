@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }: {
+{ config, lib, pkgs, pkgs-stable, modulesPath, ... }: {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
   boot = {
     kernel.sysctl = {
@@ -24,7 +24,7 @@
     };
 
     kernelParams = [ "nohibernate" "rootfstype=btrfs" "raid=noautodetect" ];
-    # kernelPackages = pkgs.linuxPackages_zen;
+    # kernelPackages = pkgs-stable.linuxPackages_zen;
     extraModprobeConfig = ''
       options i915 enable_guc=3
     '';
@@ -57,6 +57,7 @@
   services.udev.extraRules = ''
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", TAG+="uaccess"
     ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTR{power/wakeup}="disabled"
+    SUBSYSTEM=="drm", KERNEL=="card*", ATTRS{device}=="0x9a68", SYMLINK+="dri/igpu"
   '';
 
   hardware = {
