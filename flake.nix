@@ -16,6 +16,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,11 +35,12 @@
     # yazi.url = "github:sxyazi/yazi";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
+        config.allowUnfree = true;
         # overlays = [ inputs.nixpkgs-wayland.overlay ];
       };
     in {
@@ -54,7 +56,13 @@
 
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit self inputs; };
+        extraSpecialArgs = {
+          inherit self inputs;
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
         modules = [
           ./home-manager
           { _module.args.helpers = import ./lib/helpers.nix; }
