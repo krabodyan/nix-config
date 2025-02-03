@@ -27,7 +27,8 @@ let
     "C-s" =
       [ ":w" "normal_mode" "collapse_selection" "commit_undo_checkpoint" ];
 
-    "C-/" = "toggle_comments"; # 7 ?
+    "C-/" = "toggle_comments";
+    "C-7" = "toggle_comments";
     "C-?" = "toggle_block_comments";
 
     "C-A-up" = [
