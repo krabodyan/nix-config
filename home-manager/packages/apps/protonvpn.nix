@@ -1,4 +1,1 @@
-{ pkgs, ... }:
-{
-  home.packages = [ pkgs.protonvpn-cli_2 ];
-}
+{ pkgs, ... }: { home.packages = [ pkgs.protonvpn-cli_2 ]; }

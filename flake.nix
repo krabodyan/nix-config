@@ -54,6 +54,8 @@
         ];
       };
 
+      formatter.${system} = pkgs.nixfmt-classic;
+
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = {

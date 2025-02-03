@@ -1,5 +1,4 @@
-{ config, helpers, ... }:
-{
+{ config, helpers, ... }: {
   xdg.mimeApps.defaultApplications = helpers.mkAssociations {
     types = [
       "video/3gp"

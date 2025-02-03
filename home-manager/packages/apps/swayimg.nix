@@ -1,10 +1,4 @@
-{
-  pkgs,
-  config,
-  helpers,
-  ...
-}:
-{
+{ pkgs, config, helpers, ... }: {
   home.packages = [ pkgs.swayimg ];
   xdg.configFile."swayimg/config".text = with config.colors; ''
     [general]

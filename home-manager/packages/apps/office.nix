@@ -1,4 +1,1 @@
-{ pkgs, ... }:
-{
-  home.packages = [ pkgs.onlyoffice-bin ];
-}
+{ pkgs, ... }: { home.packages = [ pkgs.onlyoffice-bin ]; }

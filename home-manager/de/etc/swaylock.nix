@@ -1,13 +1,9 @@
-{ config, ... }:
-{
+{ config, ... }: {
   programs.swaylock = {
     enable = true;
-    settings =
-      with config.colors;
-      let
-        t = "00000000";
-      in
-      {
+    settings = with config.colors;
+      let t = "00000000";
+      in {
         font = config.font;
         # image = config.swaylock-image;
         daemonize = true;

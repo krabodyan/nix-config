@@ -1,8 +1,1 @@
-{
-  imports = [
-    ./boot
-    ./graphics
-    ./devices
-    ./disks.nix
-  ];
-}
+{ imports = [ ./boot ./graphics ./devices ./disks.nix ]; }
