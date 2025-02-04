@@ -1,8 +1,8 @@
-{ pkgs, config, ... }: {
+{ pkgs, theme, ... }: {
   home.packages = [ pkgs.libnotify ];
-  services.mako = with config.colors; {
+  services.mako = with theme; {
     enable = true;
-    font = "${config.font} SemiBold 11";
+    font = "${font} SemiBold 11";
     sort = "-time";
     layer = "overlay";
     anchor = "bottom-center";

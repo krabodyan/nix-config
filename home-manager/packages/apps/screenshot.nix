@@ -1,6 +1,6 @@
-{ pkgs, config, ... }: {
+{ config, pkgs, theme, ... }: {
   home.packages = [ pkgs.satty ];
-  xdg.configFile."satty/config.toml".text = with config.colors; ''
+  xdg.configFile."satty/config.toml".text = with theme; ''
     [general]
     corner-roundness = 4
     fullscreen = true

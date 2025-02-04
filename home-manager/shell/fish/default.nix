@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ theme, pkgs, ... }: {
   home.packages = with pkgs; [ nix-your-shell ];
   home.sessionPath = [ "$HOME/.cargo/bin" ];
   programs.fish = {
@@ -73,7 +73,7 @@
         exec river
       end
     '';
-    interactiveShellInit = with config.colors; ''
+    interactiveShellInit = with theme; ''
       function nix-shell --description "Start an interactive shell based on a Nix expression"
           nix-your-shell  fish nix-shell -- $argv
       end

@@ -1,4 +1,4 @@
-{ pkgs, config, inputs, helpers, ... }: {
+{ pkgs, theme, inputs, helpers, ... }: {
   home.packages = with pkgs; [
     # docker-compose-language-service
     # dockerfile-language-server-nodejs
@@ -58,7 +58,7 @@
       keys = import ./binds.nix;
     };
     themes = import ./theme.nix {
-      inherit (config) colors;
+      inherit theme;
       inherit (helpers) mkHex;
     };
     ignores = let add_ignore = ext: "*.${ext}";

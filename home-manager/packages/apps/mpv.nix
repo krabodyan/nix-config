@@ -1,4 +1,4 @@
-{ config, helpers, ... }: {
+{ theme, helpers, ... }: {
   xdg.mimeApps.defaultApplications = helpers.mkAssociations {
     types = [
       "video/3gp"
@@ -56,7 +56,7 @@
     desktop = "mpv.desktop";
   };
 
-  xdg.configFile."mpv/mpv.conf".text = with config.colors; ''
+  xdg.configFile."mpv/mpv.conf".text = with theme; ''
     gpu-context=wayland
     vo=gpu
     profile=fast
@@ -71,7 +71,7 @@
     audio-file-auto=fuzzy
     audio-file-paths=RUS Sound
 
-    osd-font='${config.font}'
+    osd-font='${theme.font}'
     osd-font-size=40
     osd-border-color='#${bg-bright}'
     osd-border-size=2

@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ config, pkgs, theme, ... }: {
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
@@ -13,11 +13,11 @@
       sort = true;
       sorting-method = "fzf";
     };
-    theme = with config.colors;
+    theme = with theme;
       let inherit (config.lib.formats.rasi) mkLiteral;
       in {
         "*" = {
-          font = "${config.font} SemiBold 11";
+          font = "${theme.font} SemiBold 11";
           bg = mkLiteral "#${bg}"; # 99
           fg = mkLiteral "#${fg-dark}";
           red = mkLiteral "#${red}";

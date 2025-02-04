@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ theme, pkgs, ... }: {
   home.packages = [ pkgs.xdg-terminal-exec ];
   xdg.configFile."xdg-terminals.list".text = ''
     foot.desktop
@@ -10,7 +10,7 @@
       main = let
         # features = [ "ss20" ];
         # fontfeatures = lib.concatStringsSep ":fontfeatures=" features;
-        font = "${config.font}:size=18";
+        font = "${theme.font}:size=18";
       in {
         term = "xterm-256color";
         shell = "${pkgs.fish}/bin/fish";
@@ -60,7 +60,7 @@
         show-urls-launch = "Mod1+Control+o";
       };
 
-      colors = with config.colors; {
+      colors = with theme; {
         background = "${bg}";
         foreground = "${fg}";
         regular0 = "${black}";

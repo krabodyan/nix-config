@@ -1,11 +1,11 @@
-{ config, ... }: {
+{ theme, ... }: {
   programs.swaylock = {
     enable = true;
-    settings = with config.colors;
+    settings = with theme;
       let t = "00000000";
       in {
-        font = config.font;
-        # image = config.swaylock-image;
+        inherit font;
+        # image = swaylock-image;
         daemonize = true;
 
         color = bg;

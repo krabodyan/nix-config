@@ -31,7 +31,7 @@
   programs.git = {
     enable = true;
     userName = "krabodyan";
-    userEmail = "krabraketa@example.com";
+    userEmail = "krabraketa@gmail.com";
     extraConfig = {
       init = { defaultbranch = "master"; };
       branch = { sort = "-committerdate"; };

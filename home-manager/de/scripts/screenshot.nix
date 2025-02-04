@@ -1,4 +1,4 @@
-{ pkgs, colors, ... }:
+{ pkgs, theme, ... }:
 let
   grim = "${pkgs.grim}/bin/grim -t png";
   send = ''
@@ -7,7 +7,7 @@ let
     -a swaynotify \
     -h string:x-canonical-private-synchronous:swaynotify \
   '';
-  slurp = "${pkgs.slurp}/bin/slurp -b ${colors.bg}d9 -c ${colors.select}";
+  slurp = "${pkgs.slurp}/bin/slurp -b ${theme.bg}d9 -c ${theme.select}";
   copy = "${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
   swayimg = "${pkgs.swayimg}/bin/swayimg --config info.show=no";
 
