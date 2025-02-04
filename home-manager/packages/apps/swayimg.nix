@@ -1,6 +1,6 @@
-{ pkgs, config, helpers, ... }: {
+{ pkgs, theme, helpers, ... }: {
   home.packages = [ pkgs.swayimg ];
-  xdg.configFile."swayimg/config".text = with config.colors; ''
+  xdg.configFile."swayimg/config".text = with theme; ''
     [general]
     size = fullscreen
 
@@ -11,7 +11,7 @@
     slideshow = no
 
     [font]
-    name = ${config.font}
+    name = ${font}
     size = 14
     color = #${fg}ff
     shadow = #000000a0

@@ -1,67 +1,57 @@
-{ lib, config, ... }: {
-  options = {
-    font = lib.mkOption {
-      type = lib.types.str;
-      default = "IosevkaTerm Nerd Font";
-      # default = "JetBrainsMono Nerd Font";
-    };
-    background-image = lib.mkOption {
-      type = lib.types.str;
-      default = "${config.home.homeDirectory}/flake/assets/background.jpg";
-    };
-    colors = lib.mkOption {
-      type = lib.types.attrsOf lib.types.str;
-      default = rec {
-        select = pink;
-        border = "ffdef6"; # "ffeec7";
+{ config, ... }: {
+  _module.args.theme = rec {
+    background-image =
+      "${config.home.homeDirectory}/flake/assets/background.jpg";
+    font = "IosevkaTerm Nerd Font";
 
-        mode_normal = blue;
-        mode_insert = green;
-        mode_select = red;
-        yazi_select = pink;
+    select = pink;
+    border = "ffdef6";
 
-        bg = "151515";
-        bg-dark = "0f0f0f";
-        bg-bright = "1c1c1c";
+    mode_normal = blue;
+    mode_insert = green;
+    mode_select = red;
+    yazi_select = pink;
 
-        surface0 = "1f1f1f";
-        surface1 = "303030";
-        surface2 = "383838";
+    bg = "151515";
+    bg-dark = "0f0f0f";
+    bg-bright = "1c1c1c";
 
-        fg = "f7f6ef";
-        fg-dark = "474747";
-        fg-bright = "fffff7";
+    surface0 = "1f1f1f";
+    surface1 = "303030";
+    surface2 = "383838";
 
-        subtext0 = "bfbfb9";
-        overlay2 = "a3a3a3";
-        overlay1 = "858585";
-        overlay0 = "575757";
+    fg = "f7f6ef";
+    fg-dark = "474747";
+    fg-bright = "fffff7";
 
-        black = fg-dark;
-        red = "EF8993";
-        green = "67e692";
-        yellow = "f9e289";
-        blue = "80beed";
-        magenta = "DC8EC1";
-        cyan = "77d9d7";
+    subtext0 = "bfbfb9";
+    overlay2 = "a3a3a3";
+    overlay1 = "858585";
+    overlay0 = "575757";
 
-        brblack = overlay0;
-        brred = "f38ba8";
-        brgreen = "92f2b3";
-        bryellow = "ffeec7";
-        brblue = "80cfed";
-        brmagenta = "ec91f2";
-        brcyan = "75e6e3";
+    black = fg-dark;
+    red = "EF8993";
+    green = "67e692";
+    yellow = "f9e289";
+    blue = "80beed";
+    magenta = "DC8EC1";
+    cyan = "77d9d7";
 
-        orange = "eba0ac";
-        pink = "f5c2e7";
-        peach = "f2cdcd";
-        mantle = "181825";
-        rosewater = "f5e0dc";
-        teal = "94e2d5";
-        sky = "89dceb";
-        sapphire = "74c7ec";
-      };
-    };
+    brblack = overlay0;
+    brred = "f38ba8";
+    brgreen = "92f2b3";
+    bryellow = "ffeec7";
+    brblue = "80cfed";
+    brmagenta = "ec91f2";
+    brcyan = "75e6e3";
+
+    orange = "eba0ac";
+    pink = "f5c2e7";
+    peach = "f2cdcd";
+    mantle = "181825";
+    rosewater = "f5e0dc";
+    teal = "94e2d5";
+    sky = "89dceb";
+    sapphire = "74c7ec";
   };
 }

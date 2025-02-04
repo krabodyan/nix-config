@@ -1,4 +1,4 @@
-{ config, helpers, ... }: {
+{ config, theme, helpers, ... }: {
   programs.fd = {
     enable = true;
     hidden = false;
@@ -7,23 +7,21 @@
   };
   programs.fzf = {
     enable = true;
-    colors = with config.colors;
-      let
-        inherit (helpers) mkHex;
-        fg = mkHex config.colors.fg;
+    colors = with theme;
+      let inherit (helpers) mkHex;
       in {
         "bg+" = "-1";
         bg = "-1";
-        spinner = fg;
-        hl = fg;
+        spinner = mkHex fg;
+        hl = mkHex fg;
         fg = mkHex fg-dark;
-        "fg+" = fg;
+        "fg+" = mkHex fg;
         header = mkHex fg-dark;
         info = mkHex fg-dark;
         pointer = mkHex fg-dark;
-        marker = fg;
-        prompt = fg;
-        "hl+" = fg;
+        marker = mkHex fg;
+        prompt = mkHex fg;
+        "hl+" = mkHex fg;
         border = "-1";
         gutter = "-1";
       };

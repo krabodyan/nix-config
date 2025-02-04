@@ -25,7 +25,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    helix.url = "github:helix-editor/helix";
+    helix.url = "github:helix-editor/helix?ref=command-line";
     rust-overlay = {
       url =
         "github:oxalica/rust-overlay?rev=9a55a224af34b4f74526c261aeccd8d40af5e4f2";
@@ -35,7 +35,7 @@
     # yazi.url = "github:sxyazi/yazi";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
+  outputs = { nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -43,9 +43,13 @@
         config.allowUnfree = true;
         # overlays = [ inputs.nixpkgs-wayland.overlay ];
       };
+      pkgs-stable = import nixpkgs-stable {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit self inputs system; };
+        specialArgs = { inherit inputs system pkgs-stable; };
         modules = [
           ./lib/theme.nix
           ./nixos/configuration.nix
@@ -58,17 +62,8 @@
 
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = {
-          inherit self inputs;
-          pkgs-stable = import nixpkgs-stable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        };
-        modules = [
-          ./home-manager
-          { _module.args.helpers = import ./lib/helpers.nix; }
-        ];
+        extraSpecialArgs = { inherit inputs pkgs-stable; };
+        modules = [ ./home-manager ./lib/theme.nix ./lib/helpers.nix ];
       };
 
       devShells.${system} = let
@@ -99,7 +94,6 @@
             cargo-tauri
             nodejs
             pnpm
-
             # dioxus-cli
             # trunk # for wasm
           ];

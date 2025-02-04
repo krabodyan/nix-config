@@ -1,6 +1,6 @@
-{ config, ... }: {
+{ theme, ... }: {
   programs.zellij = { enable = true; };
-  xdg.configFile."zellij/config.kdl".text = with config.colors;
+  xdg.configFile."zellij/config.kdl".text = with theme;
     let
       back = surface2;
       front = border;

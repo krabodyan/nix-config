@@ -1,7 +1,7 @@
-{ pkgs, config, ... }: {
+{ config, pkgs, theme, ... }: {
   home.packages = with pkgs; [ kdePackages.qt6ct libsForQt5.qt5ct ];
   xdg.configFile = let
-    colors = with config.colors; ''
+    colors = with theme; ''
       [ColorScheme]
       active_colors=#ff${fg}, #ff${bg-bright}, #ff${bg-bright}, #ff${bg}, #ff${surface2}, #ff${overlay2}, #ff${fg}, #ff${fg}, #ff${fg}, #ff${bg}, #ff${bg-bright}, #ff${bg}, #ff${surface0}, #ff${overlay2}, #ff${green}, #ff${red}, #ff${bg}, #ff${fg}, #${bg-dark}, #${fg}, #80${bg}
       disabled_colors=#ff${overlay1}, #ff${bg-bright}, #ff${bg-bright}, #ff${bg}, #ff${fg-dark}, #ff${overlay0}, #ff${overlay1}, #ff${fg}, #ff${overlay1}, #ff${bg}, #ff${bg-bright}, #ff${bg}, #ff${surface0}, #ff${overlay1}, #ff${green}, #ff${red}, #ff${bg}, #ff${fg}, #ff${bg-dark}, #ff${fg}, #80${bg}
@@ -19,7 +19,7 @@
       style=Fusion
 
       [Fonts]
-      fixed="${config.font},12,-1,5,57,0,0,0,0,0,Medium"
+      fixed="${theme.font},12,-1,5,57,0,0,0,0,0,Medium"
       general="Roboto Medium,12,-1,5,50,0,0,0,0,0"
 
       [Interface]
@@ -53,7 +53,7 @@
       style=Fusion
 
       [Fonts]
-      fixed="${config.font},12,-1,5,57,0,0,0,0,0,Medium"
+      fixed="${theme.font},12,-1,5,57,0,0,0,0,0,Medium"
       general="Roboto Medium,12,-1,5,50,0,0,0,0,0"
 
       [Interface]

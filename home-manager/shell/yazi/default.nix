@@ -1,4 +1,4 @@
-{ config, helpers, pkgs, ... }: {
+{ theme, helpers, pkgs, ... }: {
   xdg.mimeApps.defaultApplications = helpers.mkAssociations {
     types = [ "inode/directory" "application/x-gnome-saved-search" ];
     desktop = "yazi.desktop";
@@ -16,7 +16,7 @@
     "yazi/plugins/smart-paste.yazi/init.lua".source = ./plugins/smart-paste.lua;
     "yazi/plugins/compress.yazi/init.lua".source = ./plugins/compress.lua;
 
-    "yazi/theme.toml".text = with config.colors; ''
+    "yazi/theme.toml".text = with theme; ''
       [manager]
       cwd = { fg = "#${fg}" }
 
