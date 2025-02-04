@@ -2,21 +2,19 @@ let
   binds = {
     "C-f" = "file_picker_in_current_buffer_directory";
     "C-c" = "completion";
-    "C-S-f" = ":sh foot -d error -a floaterm yazi";
+    "A-space" = ":open %sh{ __yazi_picker }";
+    "C-b" = ''
+      :noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}
+    '';
+    # "C-S-b" = ''
+    #   :sh gh browse %{filename:git_rel}:%{linenumber} -c=%sh{git rev-parse HEAD}
+    # '';
+
     "C-space" = "buffer_picker";
     "A-s" = [ "normal_mode" "goto_word" ];
     "C-A-s" = [ "normal_mode" "extend_to_word" ];
     "A-a" = "split_selection_on_newline";
     "A-w" = "rotate_view";
-    "A-space" = [
-      ":new"
-      ":insert-output __yazi_picker"
-      "select_all"
-      "split_selection_on_newline"
-      "goto_file"
-      "goto_last_modified_file"
-      ":buffer-close!"
-    ];
 
     "A-y" = "save_selection"; # save to jumplist
     "A-e" = ":buffer-next";
@@ -46,6 +44,7 @@ let
       "open_above"
       "normal_mode"
       "replace_with_yanked"
+      "collapse_selection"
       "insert_mode"
     ];
     "C-S-down" = [
@@ -55,6 +54,7 @@ let
       "open_above"
       "normal_mode"
       "replace_with_yanked"
+      "collapse_selection"
       "insert_mode"
     ];
     "A-f" = [ "goto_line_end" "move_char_right" ];
@@ -74,7 +74,7 @@ let
   };
 in {
   normal = binds // special // {
-    "A-d" = [ "insert_mode" ];
+    "A-d" = [ "collapse_selection" "insert_mode" ];
     "A-l" = [ "move_next_word_end" "collapse_selection" "move_char_right" ];
     "A-h" = [ "move_prev_word_start" "collapse_selection" ];
   };

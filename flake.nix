@@ -25,7 +25,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    helix.url = "github:helix-editor/helix";
+    helix.url = "github:helix-editor/helix?ref=command-line";
     rust-overlay = {
       url =
         "github:oxalica/rust-overlay?rev=9a55a224af34b4f74526c261aeccd8d40af5e4f2";

@@ -1,4 +1,5 @@
-{
+{ pkgs, ... }: {
+  home.packages = [ pkgs.gh ];
   programs.gitui = {
     enable = true;
     theme = ''
