@@ -2,17 +2,15 @@
   imports = [
     ./foot.nix
     ./mpv.nix
-    ./swappy.nix
-    ./discord
+    ./screenshot.nix
+    ./discord.nix
     ./firefox.nix
     ./telegram.nix
-    ./zathura.nix
+    ./pdf.nix
     ./zoom.nix
     ./protonvpn.nix
     ./office.nix
-    # ./ide.nix
     ./swayimg.nix
-    # ./vscode.nix
   ];
 
   nixpkgs.config.allowUnfreePredicate = (_: true);
