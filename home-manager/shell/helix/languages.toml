@@ -22,16 +22,35 @@ command = "nixd"
 # TS -----------------------
 [[language]]
 name = "typescript"
-language-servers = [ "typescript-language-server" ]
+language-servers = [{ except-features = ["format"], name = "typescript-language-server" }, "eslint"]
+roots = ["package-lock.json", "tsconfig.json", ".prettierrc.json"]
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
-
 
 [[language]]
 name = "tsx"
-language-servers = [ "typescript-language-server" ]
+language-servers = [{ except-features = ["format"], name = "typescript-language-server" }, "eslint"]
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+format = { enable = true }
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+
+[language-server.eslint.config.codeAction]
+disableRuleComment = { enable = true, location = "separateLine" }
+showDocumentation = { enable = false }
 
 # RUST --------------------------
 [[language]]
