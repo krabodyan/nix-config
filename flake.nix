@@ -4,12 +4,12 @@
   nixConfig = {
     extra-substituters = [
       "https://helix.cachix.org"
-      # "https://nixpkgs-wayland.cachix.org"
+      "https://nixpkgs-wayland.cachix.org"
       # "https://yazi.cachix.org"
     ];
     extra-trusted-public-keys = [
       "helix.cachix.org-1:ejp9KQpR1FBI2onstMQ34yogDm4OgU2ru6lIwPvuCVs="
-      # "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
+      "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
       # "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
     ];
   };
@@ -31,7 +31,7 @@
         "github:oxalica/rust-overlay?rev=9a55a224af34b4f74526c261aeccd8d40af5e4f2";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     # yazi.url = "github:sxyazi/yazi";
   };
 

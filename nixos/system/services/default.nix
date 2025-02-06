@@ -1,8 +1,5 @@
 {
-  imports = [
-    ./tlp.nix
-    # ./docker.nix
-  ];
+  imports = [ ./tlp.nix ./docker.nix ];
   systemd.coredump.enable = false;
   systemd.extraConfig = ''
     DefaultTimeoutStartSec=15s
@@ -15,8 +12,14 @@
   services = {
     logind.killUserProcesses = true;
     printing.enable = false;
-    earlyoom.enable = true;
-    # nscd.enableNsncd = false;
+    systembus-notify.enable = true;
+    earlyoom = {
+      enable = true;
+      freeMemThreshold = 3;
+      freeMemKillThreshold = 2;
+      enableNotifications = true;
+      extraArgs = [ "--prefer" "'^firefox$'" "--avoid" "'^steam$'" ];
+    };
     dbus = {
       enable = true;
       implementation = "broker";

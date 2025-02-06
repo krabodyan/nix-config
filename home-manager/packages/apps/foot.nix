@@ -42,10 +42,7 @@
         lines = 2000;
       };
 
-      url = {
-        launch = "xdg-open \${url}";
-        protocols = "http, https, ftp, ftps, file";
-      };
+      url = { launch = "xdg-open \${url}"; };
 
       cursor = {
         style = "underline";
