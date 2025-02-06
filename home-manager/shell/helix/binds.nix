@@ -30,15 +30,22 @@ let
     "C-?" = "toggle_block_comments";
 
     "C-A-up" = [
+      "normal_mode"
       "goto_line_end"
       "extend_line_below"
       "delete_selection"
       "move_line_up"
       "paste_before"
     ];
-    "C-A-down" =
-      [ "goto_line_end" "extend_line_below" "delete_selection" "paste_after" ];
+    "C-A-down" = [
+      "normal_mode"
+      "goto_line_end"
+      "extend_line_below"
+      "delete_selection"
+      "paste_after"
+    ];
     "C-S-up" = [
+      "normal_mode"
       "extend_line"
       "yank"
       "open_above"
@@ -48,6 +55,7 @@ let
       "insert_mode"
     ];
     "C-S-down" = [
+      "normal_mode"
       "extend_line"
       "yank"
       "move_line_down"

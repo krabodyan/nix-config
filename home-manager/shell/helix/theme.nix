@@ -1,5 +1,17 @@
 { theme, mkHex }: {
   paradise = {
+
+    "diagnostic.error" = { underline.style = "curl"; };
+    "diagnostic.warning" = { underline.style = "curl"; };
+    "diagnostic.info" = { underline.style = "curl"; };
+    "diagnostic.hint" = { underline.style = "curl"; };
+    "diagnostic.unnecessary" = { fg = "comment"; };
+
+    error = "red";
+    warning = "yellow";
+    info = "green";
+    hint = "green";
+
     # "attribute" = "yellow";
     "type" = {
       fg = "yellow";
@@ -155,8 +167,9 @@
     "ui.virtual.indent-guide" = "surface1";
     "ui.virtual.inlay-hint" = { fg = "comment"; };
     "ui.virtual.jump-label" = {
-      fg = "yellow";
-      underline = { style = "curl"; };
+      bg = "surface2";
+      fg = "blue";
+      modifiers = [ "bold" "italic" ];
     };
 
     "ui.selection" = { bg = "surface2"; };
@@ -222,17 +235,6 @@
       bg = "surface0";
       fg = "surface2";
     };
-
-    "diagnostic.error" = { underline = { style = "curl"; }; };
-    "diagnostic.warning" = { underline = { style = "curl"; }; };
-    "diagnostic.info" = { underline = { style = "curl"; }; };
-    "diagnostic.hint" = { underline = { style = "curl"; }; };
-    "diagnostic.unnecessary" = { fg = "comment"; };
-
-    error = "red";
-    warning = "yellow";
-    info = "green";
-    hint = "green";
 
     palette = with theme; {
       teal = mkHex teal;
