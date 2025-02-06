@@ -130,7 +130,7 @@ wideriver \
   --layout                       left        \
   --layout-alt                   monocle     \
   --stack                        even        \
-  --smart-gaps                               \
+  --no-smart-gaps                            \
   --count-master                 1           \
   --ratio-master                 0.50        \
   --count-wide-left              0           \
@@ -141,8 +141,8 @@ wideriver \
   --border-color-focused-monocle $focused    \
   --border-color-unfocused       $border     \
   --border-width                 2           \
-  --border-width-monocle         0           \
-  --border-width-smart-gaps      0           \
+  --border-width-monocle         2           \
+  --border-width-smart-gaps      2           \
   --log-threshold                error       \
  > "/tmp/wideriver.${XDG_VTNR}.${USER}.log" 2>&1 &
 
