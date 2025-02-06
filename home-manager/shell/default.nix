@@ -26,9 +26,10 @@
     dua
     duf
     exiftool
+    inetutils
 
     mangohud
     postgresql
-    ngrok
+    # ngrok
   ];
 }
