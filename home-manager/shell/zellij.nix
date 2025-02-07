@@ -22,7 +22,7 @@
 
       keybinds clear-defaults=true {   
         scroll {
-          bind "Ctrl j" "Ctrl k" { SwitchToMode "normal"; }
+          bind "Ctrl j" { SwitchToMode "normal"; }
           bind "j" "Down" { ScrollDown; }
           bind "k" "Up" { ScrollUp; }
         }
@@ -36,6 +36,11 @@
           bind "w" { FocusNextPane; SwitchToMode "normal"; }
           bind "o" { Resize "increase"; }
           bind "i" { Resize "decrease"; }
+          bind "q" { CloseFocus; SwitchToMode "normal"; }
+
+          bind "Ctrl l" { GoToNextTab; }
+          bind "Ctrl h" { GoToPreviousTab;  }
+          bind "n" { NewTab; SwitchToMode "normal"; }
           
           bind "Alt l" { NewPane "Right"; SwitchToMode "Normal"; }
           bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
@@ -56,12 +61,10 @@
         }
         
         shared_except "locked" {
-          bind "Ctrl Alt l" { SwitchToMode "locked"; }
-          bind "Ctrl r" { SwitchToMode "RenameTab"; TabNameInput 0; }
+          bind "Ctrl Alt k" { SwitchToMode "locked"; }
+          bind "Ctrl Alt r" { SwitchToMode "RenameTab"; TabNameInput 0; }
           bind "Ctrl w" { SwitchToMode "pane"; }
-          bind "Ctrl j" "Ctrl k" { SwitchToMode "scroll"; }
-
-          bind "Ctrl n" { NewTab; }
+          bind "Ctrl j" { SwitchToMode "scroll"; }
           
           bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
           bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }
