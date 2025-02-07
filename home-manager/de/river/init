@@ -150,4 +150,5 @@ wideriver \
 # riverctl map -layout 0 normal Super R spawn "pkill -SIGUSR1 waybar"
 # waybar &
 #
+dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
 systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS

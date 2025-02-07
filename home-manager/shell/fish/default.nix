@@ -69,7 +69,6 @@
     loginShellInit = ''
       if test (tty) = "/dev/tty1"
         set -x WLR_DRM_DEVICES /dev/dri/igpu
-        dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
         exec river
       end
     '';
