@@ -16,6 +16,7 @@
   nixpkgs.config.allowUnfreePredicate = (_: true);
 
   home.packages = with pkgs; [
+    fritzing
     qbittorrent
     solaar
     gcolor3
