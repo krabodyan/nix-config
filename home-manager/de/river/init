@@ -4,6 +4,7 @@ riverctl background-color 0x0f0f0f
 swaybg -m fill -i ~/flake/assets/background.jpg &
 
 focused=0x333333
+monocle=0x151515
 border=0x0f0f0f
 
 riverctl border-color-focused $focused
@@ -138,7 +139,7 @@ wideriver \
   --inner-gaps                   0           \
   --outer-gaps                   0           \
   --border-color-focused         $focused    \
-  --border-color-focused-monocle $focused    \
+  --border-color-focused-monocle $monocle    \
   --border-color-unfocused       $border     \
   --border-width                 2           \
   --border-width-monocle         2           \
