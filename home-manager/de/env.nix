@@ -1,5 +1,7 @@
 { config, ... }: {
   home.sessionVariables = {
+    TERMCMD = "foot -a floaterm";
+    GDK_DEBUG = "portals";
     XDG_SESSION_DESKTOP = "river";
     XDG_CURRENT_DESKTOP = "river";
     XDG_SESSION_TYPE = "wayland";
