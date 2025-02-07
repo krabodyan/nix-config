@@ -58,6 +58,15 @@
 
         locked {
           bind "Ctrl Alt k" { SwitchToMode "normal"; }
+          bind "Alt 1" { GoToTab 1; }
+          bind "Alt 2" { GoToTab 2; }
+          bind "Alt 3" { GoToTab 3; }
+          bind "Alt 4" { GoToTab 4; }
+          bind "Alt 5" { GoToTab 5; }
+          bind "Alt 6" { GoToTab 6; }
+          bind "Alt 7" { GoToTab 7; }
+          bind "Alt 8" { GoToTab 8; }
+          bind "Alt 9" { GoToTab 9; }
         }
         
         shared_except "locked" {
@@ -65,7 +74,7 @@
           bind "Ctrl Alt r" { SwitchToMode "RenameTab"; TabNameInput 0; }
           bind "Ctrl w" { SwitchToMode "pane"; }
           bind "Ctrl j" { SwitchToMode "scroll"; }
-          
+
           bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
           bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }
           bind "Alt 3" { GoToTab 3; SwitchToMode "Normal"; }
