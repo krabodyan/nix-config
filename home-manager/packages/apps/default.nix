@@ -8,7 +8,6 @@
     ./telegram.nix
     ./pdf.nix
     ./zoom.nix
-    ./protonvpn.nix
     ./office.nix
     ./swayimg.nix
   ];
