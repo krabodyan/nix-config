@@ -1,7 +1,7 @@
 { theme, ... }: {
   programs.zellij = { enable = true; };
   xdg.configFile."zellij/config.kdl".text = with theme;
-    let back = surface2;
+    let back = surface0;
     in ''
       default_shell "fish"
       themes {
@@ -9,7 +9,7 @@
           bg "#${back}"
           fg "#${back}"
           red "#${red}"
-          green "#${green}"
+          green "#${overlay0}"
           blue "#${cyan}"
           yellow "#${yellow}"
           magenta "#${magenta}"
@@ -57,7 +57,7 @@
         }
 
         locked {
-          bind "Ctrl Alt l" { SwitchToMode "normal"; }
+          bind "Ctrl Alt k" { SwitchToMode "normal"; }
         }
         
         shared_except "locked" {
