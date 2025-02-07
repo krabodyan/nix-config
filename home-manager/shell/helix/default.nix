@@ -6,6 +6,7 @@
     biome
     ruff
     nixd
+    fish-lsp
     vscode-langservers-extracted
     nixfmt-classic
     python312Packages.python-lsp-server
