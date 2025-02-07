@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-let termfilechooser = (pkgs.callPackage ./termfilechooser.nix { });
-in {
+{ config, pkgs, ... }: {
   xdg = {
     enable = true;
     userDirs =
@@ -18,23 +16,13 @@ in {
       };
     mime.enable = true;
     mimeApps.enable = true;
-    configFile = {
-      "mimeapps.list".force = true;
-      "xdg-desktop-portal-termfilechooser/config".text = ''
-        [filechooser]
-        cmd=${termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
-        default_dir=$HOME
-      '';
-    };
+    configFile = { "mimeapps.list".force = true; };
     portal = {
       enable = true;
       xdgOpenUsePortal = true;
       config.common.default = "wlr";
-      config.common."org.freedesktop.impl.portal.FileChooser" =
-        [ "xdg-desktop-portal-termfilechooser" ];
       extraPortals = with pkgs; [
         xdg-desktop-portal-gtk
-        termfilechooser
         xdg-desktop-portal-wlr
       ];
     };
