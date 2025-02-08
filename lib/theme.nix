@@ -12,14 +12,14 @@
     mode_select = red;
     yazi_select = pink;
 
-    bg = "0f0f0f";
-    bg-dark = "0a0a0a";
-    bg-bright = "171717";
+    bg = "0A0A0A";
+    bg-dark = "000000";
+    bg-bright = "0f0f0f";
 
-    surface0 = "1f1f1f";
-    surface1 = "2b2b2b";
-    surface2 = "333333";
-    surface3 = "3d3d3d";
+    surface0 = "1a1a1a";
+    surface1 = "262626";
+    surface2 = "2e2e2e";
+    surface3 = "383838";
 
     fg = "f7f6ef";
     fg-dark = "474747";

@@ -168,7 +168,7 @@
     "ui.virtual.inlay-hint" = { fg = "comment"; };
     "ui.virtual.jump-label" = {
       bg = "surface2";
-      fg = "blue";
+      fg = "pink";
       modifiers = [ "bold" "italic" ];
     };
 
