@@ -32,11 +32,14 @@
         }
 
         pane {
-          bind "Esc" "Ctrl c" "Ctrl w" { SwitchToMode "normal"; }
+          bind "Alt w" { SwitchToMode "normal"; }
           bind "w" { FocusNextPane; SwitchToMode "normal"; }
           bind "o" { Resize "increase"; }
           bind "i" { Resize "decrease"; }
           bind "q" { CloseFocus; SwitchToMode "normal"; }
+          bind "f" { ToggleFocusFullscreen; SwitchToMode "normal"; }
+          bind "d" { ToggleFloatingPanes; SwitchToMode "normal"; }
+          bind "e" { EditScrollback; SwitchToMode "Normal"; }
 
           bind "Ctrl l" { GoToNextTab; }
           bind "Ctrl h" { GoToPreviousTab;  }
@@ -50,10 +53,15 @@
           bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
           bind "Alt k" { NewPane "Up"; SwitchToMode "Normal"; }
           bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
+
+          bind "Alt Shift l" { MovePane "right"; SwitchToMode "Normal"; }
+          bind "Alt Shift h" { MovePane "left"; SwitchToMode "Normal"; }
+          bind "Alt Shift j" { MovePane "down"; SwitchToMode "Normal"; }
+          bind "Alt Shift k" { MovePane "up"; SwitchToMode "Normal"; }        
         }
         
         shared_except "normal" "locked" {
-          bind "Enter" "Esc" { SwitchToMode "Normal"; }
+          bind "Esc" "Ctrl c" { SwitchToMode "Normal"; }
         }
 
         locked {
@@ -72,8 +80,8 @@
         shared_except "locked" {
           bind "Ctrl Alt k" { SwitchToMode "locked"; }
           bind "Ctrl Alt r" { SwitchToMode "RenameTab"; TabNameInput 0; }
-          bind "Ctrl w" { SwitchToMode "pane"; }
-          bind "Ctrl j" { SwitchToMode "scroll"; }
+          bind "Alt w" { SwitchToMode "pane"; }
+          bind "Alt e" { SwitchToMode "scroll"; }
 
           bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
           bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }
@@ -88,7 +96,7 @@
       }
 
       on_force_close "quit"
-      mouse_mode false
+      mouse_mode true
       simplified_ui true
       support_kitty_keyboard_protocol false
       session_serialization false
