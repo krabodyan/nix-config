@@ -91,10 +91,10 @@ in {
     "ret" = [ "insert_newline" "commit_undo_checkpoint" ];
     "A-o" = "open_below";
     "A-p" = "open_above";
-    "A-h" = "move_char_left";
-    "A-l" = "move_char_right";
-    "A-j" = "move_line_down";
-    "A-k" = "move_line_up";
+    # "A-h" = "move_char_left";
+    # "A-l" = "move_char_right";
+    # "A-j" = "move_line_down";
+    # "A-k" = "move_line_up";
   };
   select = binds // special // {
     "A-l" = [ "move_next_word_end" "move_char_right" ];

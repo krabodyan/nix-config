@@ -107,7 +107,7 @@
       fg = "subtext0";
       bg = "base";
     };
-    "ui.statusline.inactive" = {
+    "ui.statusline.active" = {
       fg = "overlay0";
       bg = "surface2";
     };
@@ -129,7 +129,7 @@
 
     "ui.popup" = {
       fg = "text";
-      bg = "surface0";
+      bg = "bg-bright";
     };
 
     "ui.picker.header" = { fg = "comment"; };
@@ -138,7 +138,7 @@
 
     "ui.help" = {
       fg = "overlay0";
-      bg = "surface0";
+      bg = "bg-bright";
     };
 
     "ui.bufferline" = {
@@ -216,7 +216,7 @@
       fg = "base";
       bg = "overlay2";
     };
-    "ui.cursorline.primary" = { bg = "surface0"; };
+    "ui.cursorline.primary" = { bg = "bg-bright"; };
     "ui.highlight" = {
       fg = "yellow";
       bg = "surface1";
@@ -224,15 +224,15 @@
     };
     "ui.menu" = {
       fg = "overlay2";
-      bg = "surface0";
+      bg = "bg-bright";
     };
     "ui.menu.selected" = {
       fg = "text";
       bg = "surface1";
-      modifiers = [ "bold" ];
+      # modifiers = [ "bold" ];
     };
     "ui.menu.scroll" = {
-      bg = "surface0";
+      bg = "bg-bright";
       fg = "surface2";
     };
 
@@ -257,6 +257,7 @@
       surface1 = mkHex surface1;
       surface0 = mkHex surface0;
       base = mkHex bg;
+      bg-bright = mkHex bg-bright;
       mode_normal = mkHex mode_normal;
       mode_select = mkHex mode_select;
       mode_insert = mkHex mode_insert;

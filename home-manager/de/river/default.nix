@@ -1,9 +1,9 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ swaybg wideriver ];
+{ pkgs, theme, ... }: {
+  home.packages = with pkgs; [ swaybg wideriver lswt ];
   wayland.windowManager.river = {
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
-    extraConfig = builtins.readFile ./init;
+    extraConfig = import ./init.nix { inherit theme; };
   };
 }

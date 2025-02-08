@@ -1,5 +1,5 @@
-{ colors }:
-with colors; ''
+{ theme }:
+with theme; ''
   #!/bin/sh
 
   riverctl background-color 0x${bg}
@@ -138,7 +138,7 @@ with colors; ''
     --border-width-monocle         2           \
     --border-width-smart-gaps      2           \
     --log-threshold                error       \
-    > /dev/null
+    > /dev/null &
    # > "/tmp/wideriver.$\{XDG_VTNR}.$\{USER}.log" 2>&1 &
 
   dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork

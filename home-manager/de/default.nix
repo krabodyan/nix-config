@@ -17,6 +17,5 @@
     wev
     xwayland
     wl-clipboard
-    lswt
   ];
 }

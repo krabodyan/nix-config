@@ -12,22 +12,23 @@
     mode_select = red;
     yazi_select = pink;
 
-    bg = "151515";
-    bg-dark = "0f0f0f";
-    bg-bright = "1c1c1c";
+    bg = "0f0f0f";
+    bg-dark = "0a0a0a";
+    bg-bright = "171717";
 
     surface0 = "1f1f1f";
-    surface1 = "303030";
-    surface2 = "383838";
+    surface1 = "2b2b2b";
+    surface2 = "333333";
+    surface3 = "3d3d3d";
 
     fg = "f7f6ef";
     fg-dark = "474747";
     fg-bright = "fffff7";
 
-    subtext0 = "bfbfb9";
-    overlay2 = "a3a3a3";
+    overlay0 = "4d4d4d";
     overlay1 = "858585";
-    overlay0 = "575757";
+    overlay2 = "a3a3a3";
+    subtext0 = "bfbfb9";
 
     black = fg-dark;
     red = "EF8993";
