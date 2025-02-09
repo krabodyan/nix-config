@@ -100,6 +100,7 @@ in {
     "A-l" = [ "move_next_word_end" "move_char_right" ];
     "A-h" = [ "move_prev_word_start" ];
     "A-d" = [ "collapse_selection" "normal_mode" ];
+    "A-v" = "flip_selections";
     "i" = [ "collapse_selection" "insert_mode" ];
   };
 }

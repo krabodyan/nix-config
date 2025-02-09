@@ -134,7 +134,7 @@
 
     "ui.picker.header" = { fg = "comment"; };
 
-    "ui.window" = { fg = "text"; };
+    "ui.window" = { fg = "overlay0"; };
 
     "ui.help" = {
       fg = "overlay0";
@@ -167,9 +167,9 @@
     "ui.virtual.indent-guide" = "surface1";
     "ui.virtual.inlay-hint" = { fg = "comment"; };
     "ui.virtual.jump-label" = {
-      bg = "surface2";
-      fg = "pink";
-      modifiers = [ "bold" "italic" ];
+      bg = "teal";
+      fg = "base";
+      # modifiers = [ "bold" "italic" ];
     };
 
     "ui.selection" = { bg = "surface2"; };
@@ -232,8 +232,8 @@
       # modifiers = [ "bold" ];
     };
     "ui.menu.scroll" = {
-      bg = "bg-bright";
-      fg = "surface2";
+      # bg = "red";
+      fg = "overlay0";
     };
 
     palette = with theme; {

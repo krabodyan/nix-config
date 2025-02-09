@@ -19,14 +19,13 @@
     xdg-utils
     iotop
     iftop
-    termusic
+    # termusic
     python3
     ffmpeg
     dust
     dua
     duf
     exiftool
-    inetutils
 
     mangohud
     postgresql

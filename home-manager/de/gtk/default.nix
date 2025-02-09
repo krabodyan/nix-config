@@ -17,8 +17,8 @@
       package = pkgs.roboto;
     };
     iconTheme = {
-      package = pkgs.tela-icon-theme;
-      name = "Tela-yellow-dark";
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
     };
     theme = {
       # package = pkgs.fluent-gtk-theme.override {

@@ -82,13 +82,14 @@
           DEV_SHELL_NAME = "rust";
           RUST_BACKTRACE = 1;
           nativeBuildInputs = with pkgs; [ pkg-config ];
-          buildInputs = with pkgs; [ rust-pkg openssl ];
+          buildInputs = with pkgs; [ rust-pkg openssl cargo-watch ];
         };
         tauri = pkgs.mkShell {
           DEV_SHELL_NAME = "tauri";
           RUST_BACKTRACE = 1;
           GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
           nativeBuildInputs = with pkgs; [
+            cargo-watch
             pkg-config
             gobject-introspection
             cargo-tauri

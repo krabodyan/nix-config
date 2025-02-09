@@ -153,7 +153,6 @@
         set_color normal
       end
 
-      # set -U __done_sound_command "pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga"
       set -U __done_min_cmd_duration 5000
 
       set -g fzf_fd_opts --color never --type file 
