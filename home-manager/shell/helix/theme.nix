@@ -104,28 +104,28 @@
     "ui.linenr" = { fg = "surface1"; };
     "ui.linenr.selected" = { fg = "subtext0"; };
     "ui.statusline" = {
-      fg = "subtext0";
+      fg = "overlay0";
       bg = "base";
     };
     "ui.statusline.active" = {
       fg = "overlay0";
-      bg = "surface2";
+      bg = "base";
     };
-    "ui.statusline.normal" = {
-      fg = "base";
-      bg = "mode_normal";
-      modifiers = [ "bold" ];
-    };
-    "ui.statusline.insert" = {
-      fg = "base";
-      bg = "mode_insert";
-      modifiers = [ "bold" ];
-    };
-    "ui.statusline.select" = {
-      fg = "base";
-      bg = "mode_select";
-      modifiers = [ "bold" ];
-    };
+    # "ui.statusline.normal" = {
+    #   fg = "base";
+    #   # bg = "mode_normal";
+    #   modifiers = [ "bold" ];
+    # };
+    # "ui.statusline.insert" = {
+    #   fg = "base";
+    #   # bg = "mode_insert";
+    #   modifiers = [ "bold" ];
+    # };
+    # "ui.statusline.select" = {
+    #   fg = "base";
+    #   # bg = "mode_select";
+    #   modifiers = [ "bold" ];
+    # };
 
     "ui.popup" = {
       fg = "text";
@@ -184,7 +184,7 @@
     };
     # matching bracket
     "ui.cursor.match" = {
-      fg = "red";
+      fg = "yellow";
       bg = "surface1";
       modifiers = [ "underline" ];
     };

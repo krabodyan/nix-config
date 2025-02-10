@@ -63,23 +63,21 @@
   };
   statusline = {
     right = [
-      # "version-control"
-      "spinner"
-    ];
-    center = [ ];
-    left = [
-      "mode"
-      "file-base-name"
-      # "separator"
+      # "mode"
       "diagnostics"
       "read-only-indicator"
       "file-modification-indicator"
+      "file-base-name"
+      # "separator"
+      # "spinner"
     ];
+    center = [ ];
+    left = [ ];
     separator = " ";
-    mode = {
-      normal = "normal";
-      insert = "insert";
-      select = "select";
-    };
+    # mode = {
+    #   normal = "-- normal --";
+    #   insert = "-- insert --";
+    #   select = "-- select --";
+    # };
   };
 }

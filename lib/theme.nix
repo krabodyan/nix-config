@@ -7,9 +7,9 @@
     select = pink;
     border = "ffdef6";
 
-    mode_normal = blue;
     mode_insert = yellow;
-    mode_select = red;
+    mode_normal = red;
+    mode_select = blue;
     yazi_select = pink;
 
     bg = "0A0A0A";
