@@ -1,5 +1,5 @@
 { theme, ... }: {
-  programs.zellij = { enable = true; };
+  programs.zellij.enable = true;
   xdg.configFile."zellij/config.kdl".text = with theme;
     let back = surface0;
     in ''
@@ -22,13 +22,13 @@
 
       keybinds clear-defaults=true {   
         scroll {
-          bind "Esc" "Ctrl c" "s" { SwitchToMode "normal"; }
+          bind "Ctrl c" "s" { SwitchToMode "normal"; }
           bind "j" "Down" { ScrollDown; }
           bind "k" "Up" { ScrollUp; }
         }
         
         renametab {
-          bind "Esc" "Ctrl c" { UndoRenameTab; SwitchToMode "normal"; }
+          bind "Ctrl c" { UndoRenameTab; SwitchToMode "normal"; }
         }
 
         pane {
@@ -66,7 +66,7 @@
         
         shared_except "normal" "locked" {
           bind "Ctrl q" { Quit; }
-          bind "Esc" "Ctrl c" { SwitchToMode "Normal"; }
+          bind "Ctrl c" { SwitchToMode "Normal"; }
         }
 
         locked {
