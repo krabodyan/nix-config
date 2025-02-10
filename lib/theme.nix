@@ -8,7 +8,7 @@
     border = "ffdef6";
 
     mode_normal = blue;
-    mode_insert = green;
+    mode_insert = yellow;
     mode_select = red;
     yazi_select = pink;
 
@@ -26,9 +26,9 @@
     fg-bright = "fffff7";
 
     overlay0 = "4d4d4d";
-    overlay1 = "858585";
-    overlay2 = "a3a3a3";
-    subtext0 = "bfbfb9";
+    overlay1 = "666666";
+    overlay2 = "808080";
+    subtext0 = "a6a6a1";
 
     black = fg-dark;
     red = "EF8993";

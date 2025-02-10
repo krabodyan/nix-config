@@ -21,17 +21,20 @@
   indent-heuristic = "tree-sitter";
   jump-label-alphabet = "fjdkshlweruiopmaqcvngbzxty";
 
-  end-of-line-diagnostics = "hint";
+  end-of-line-diagnostics = "warning";
   inline-diagnostics = {
-    cursor-line = "hint";
+    cursor-line = "warning";
     other-lines = "error";
   };
 
   lsp = {
+    enable = true;
     display-messages = true;
-    # display-progress-messages = true;
+    display-progress-messages = false;
     display-inlay-hints = true;
+    display-signature-help-docs = false;
     snippets = true;
+    auto-signature-help = false;
   };
 
   indent-guides = {
@@ -44,7 +47,7 @@
 
   cursor-shape = {
     normal = "block";
-    insert = "bar";
+    insert = "block"; # bar
     select = "block";
   };
 

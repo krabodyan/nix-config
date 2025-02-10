@@ -167,8 +167,8 @@
     "ui.virtual.indent-guide" = "surface1";
     "ui.virtual.inlay-hint" = { fg = "comment"; };
     "ui.virtual.jump-label" = {
-      bg = "teal";
-      fg = "base";
+      bg = "surface2";
+      fg = "teal";
       # modifiers = [ "bold" "italic" ];
     };
 
@@ -186,18 +186,15 @@
     "ui.cursor.match" = {
       fg = "red";
       bg = "surface1";
-      # modifiers = [
-      #   "underline"
-      # "bold"
-      # ];
+      modifiers = [ "underline" ];
     };
     "ui.cursor.primary.normal" = {
       fg = "base";
       bg = "mode_normal";
     };
     "ui.cursor.primary.insert" = {
-      bg = "base";
-      fg = "mode_insert";
+      fg = "base";
+      bg = "mode_insert";
     };
     "ui.cursor.primary.select" = {
       fg = "base";
@@ -210,7 +207,7 @@
     };
     "ui.cursor.insert" = {
       fg = "base";
-      bg = "comment";
+      bg = "overlay2";
     };
     "ui.cursor.select" = {
       fg = "base";
