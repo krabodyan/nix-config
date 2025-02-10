@@ -94,6 +94,7 @@ with theme; ''
   riverctl map -layout 0 normal None        Pause spawn "__screenshot full";
   riverctl map -layout 0 normal Super       Print spawn "__screenshot swayimg";
   riverctl map -layout 0 normal Super+Shift Print spawn "wl-paste | satty -f -";
+  riverctl map -layout 0 normal Super+Shift 0     spawn "swaylock"
 
 
   array=("Виберіть файли" "Відкрити файли" "Зберегти відео" "Вивантаження файлу" "File Upload" "Відкрити документ" "Зберегти файл" "Open File" "Зберегти зображення")

@@ -2,7 +2,9 @@
   programs.swaylock = {
     enable = true;
     settings = with theme;
-      let t = "00000000";
+      let
+        t = "00000000";
+        fg = overlay1;
       in {
         inherit font;
         # image = swaylock-image;
@@ -11,23 +13,26 @@
         color = bg;
         inside-color = t;
         line-color = fg;
-        key-hl-color = fg;
+        line-caps-lock-color = red;
         separator-color = t;
-        bs-hl-color = pink;
+        key-hl-color = fg;
+        caps-lock-key-hl-color = bg;
+        bs-hl-color = fg;
+        caps-lock-bs-hl-color = bg;
 
         inside-clear-color = t;
-        inside-caps-lock-color = t;
+        inside-caps-lock-color = red;
         inside-ver-color = t;
         inside-wrong-color = t;
 
         ring-color = t;
-        ring-clear-color = yellow;
+        ring-clear-color = fg;
         ring-caps-lock-color = red;
-        ring-ver-color = cyan;
+        ring-ver-color = fg;
         ring-wrong-color = red;
 
         text-color = fg;
-        text-caps-lock-color = fg;
+        text-caps-lock-color = bg;
         text-clear-color = fg;
         text-ver-color = fg;
         text-wrong-color = fg;
