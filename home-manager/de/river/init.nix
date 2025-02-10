@@ -8,13 +8,14 @@ with theme; ''
   focused=0x${surface1}
   monocle=0x${bg}
   border=0x${bg-dark}
+  timeout=5000
 
   riverctl border-color-focused $focused
   riverctl border-color-urgent $border
   riverctl border-color-unfocused $border
   # riverctl border-width 4
 
-  riverctl map -layout 0 normal Super Q close
+  riverctl map -layout 0 normal Super       Q      close
   riverctl map -layout 0 normal Super+Shift Delete exit
 
   riverctl map -layout 0 normal Super E       spawn "foot"
@@ -35,8 +36,8 @@ with theme; ''
   riverctl map -layout 0 normal Super+Shift K swap up
   riverctl map -layout 0 normal Super+Shift L swap right
 
-  riverctl map -layout 0 normal Super space focus-view next
-  riverctl map -layout 0 normal Alt tab focus-view next
+  riverctl map -layout 0 normal Super space  focus-view next
+  riverctl map -layout 0 normal Alt   tab    focus-view next
   riverctl map -layout 0 normal Super Return zoom
 
   riverctl map -layout 0 normal Super S send-layout-cmd wideriver "--layout monocle"
@@ -45,7 +46,7 @@ with theme; ''
   riverctl map -layout 0 normal Super I send-layout-cmd wideriver "--ratio -0.02"
 
   riverctl map -layout 0 normal Super Right send-layout-cmd wideriver "--count +1"
-  riverctl map -layout 0 normal Super Left send-layout-cmd wideriver "--count -1"
+  riverctl map -layout 0 normal Super Left  send-layout-cmd wideriver "--count -1"
 
   riverctl map -layout 0 normal Super+Alt K send-layout-cmd wideriver "--layout top"
   riverctl map -layout 0 normal Super+Alt L send-layout-cmd wideriver "--layout right"
@@ -54,7 +55,10 @@ with theme; ''
 
   riverctl map -layout 0 normal Super tab focus-previous-tags
 
-  riverctl hide-cursor timeout 7000
+  riverctl map -layout 0 normal Super     c hide-cursor timeout $timeout
+  riverctl map -layout 0 normal Super+Alt c hide-cursor timeout 0
+  riverctl hide-cursor timeout $timeout
+
   riverctl set-repeat 40 330
   riverctl keyboard-layout -options grp:caps_toggle us,ru,ua
   riverctl map -layout 0 normal Super W keyboard-layout -options grp:caps_toggle us,ru,ua
