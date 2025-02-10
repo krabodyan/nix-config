@@ -5,7 +5,7 @@ with theme; ''
   riverctl background-color 0x${bg}
   swaybg -m fill -i ~/flake/assets/background.jpg &
 
-  focused=0x${surface0}
+  focused=0x${surface1}
   monocle=0x${bg}
   border=0x${bg-dark}
 
