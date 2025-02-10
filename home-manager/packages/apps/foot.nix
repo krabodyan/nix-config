@@ -10,7 +10,7 @@
       main = let
         # features = [ "ss20" ];
         # fontfeatures = lib.concatStringsSep ":fontfeatures=" features;
-        font = "${theme.font}:size=18";
+        font = "${theme.font}:size=17";
       in {
         term = "xterm-256color";
         shell = "${pkgs.fish}/bin/fish";
