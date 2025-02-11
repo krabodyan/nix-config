@@ -48,6 +48,7 @@
 
     orange = "eba0ac";
     pink = "f5c2e7";
+    brpink = "ffcaf0";
     peach = "f2cdcd";
     mantle = "181825";
     rosewater = "f5e0dc";

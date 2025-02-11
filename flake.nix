@@ -33,9 +33,10 @@
     };
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     # yazi.url = "github:sxyazi/yazi";
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
+  outputs = { nixpkgs, nixpkgs-stable, home-manager, nix-colors, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -49,7 +50,7 @@
       };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs system pkgs-stable; };
+        specialArgs = { inherit inputs system pkgs-stable nix-colors; };
         modules = [
           ./lib/theme.nix
           ./nixos/configuration.nix

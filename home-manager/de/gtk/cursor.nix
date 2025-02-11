@@ -1,8 +1,6 @@
 { pkgs, ... }: {
   home = {
     pointerCursor = {
-      # package = pkgs.bibata-cursors;
-      # name = "Bibata-Modern-Ice";
       package = pkgs.stdenv.mkDerivation {
         name = "GoogleDot-Paradise";
         version = "1.0.0";

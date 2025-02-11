@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ inputs, theme, config, pkgs, ... }: {
   imports = [ ./cursor.nix ./qtct.nix ];
   home.packages = [ pkgs.dconf ];
   dconf = {
@@ -20,14 +20,35 @@
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
-    theme = {
-      # package = pkgs.fluent-gtk-theme.override {
-      #   themeVariants = [ "grey" ];
-      #   colorVariants = [ "dark" ];
-      #   sizeVariants = [ "standard" ];
-      #   tweaks = [ "noborder" "square" "solid" ];
-      # };
-      name = "shell-grey-Dark";
+    theme = let
+      colorScheme = {
+        slug = "paradise";
+        name = "paradise";
+        author = "krabodyan";
+        palette = with theme; {
+          base00 = bg; # Фон (самый темный)
+          base01 = surface0; # Темная поверхность
+          base02 = bg; # Средняя поверхность
+          base03 = overlay0; # Тусклый текст, элементы UI
+          base04 = subtext0; # Чуть ярче, для вторичного текста
+          base05 = fg; # Обычный текст
+          base06 = fg-bright; # Яркий текст
+          base07 = rosewater; # Самый светлый цвет, почти белый
+          base08 = red; # Красный (ошибки, предупреждения)
+          base09 = orange; # Оранжевый (вариативный акцент)
+          base0A = yellow; # Желтый (предупреждения, метки)
+          base0B = green; # Зеленый (успешные операции)
+          base0C = blue; # Голубой (вариативный акцент)
+          base0D = brpink; # Синий (ссылки, подсветка) # фокуc
+          base0E = magenta; # Фиолетовый (спец. выделения)
+          base0F = peach; # Редко используемый акцент
+        };
+      };
+      inherit (inputs.nix-colors.lib-contrib { inherit pkgs; })
+        gtkThemeFromScheme;
+    in {
+      name = colorScheme.slug;
+      package = gtkThemeFromScheme { scheme = colorScheme; };
     };
     gtk2 = {
       configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
