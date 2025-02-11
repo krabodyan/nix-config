@@ -15,7 +15,7 @@
     # "attribute" = "yellow";
     "type" = {
       fg = "yellow";
-      modifiers = [ "italic" ];
+      # modifiers = [ "italic" ];
     };
 
     "type.builtin" = "mauve";
@@ -36,7 +36,7 @@
 
     "comment" = {
       fg = "comment";
-      modifiers = [ "italic" ];
+      # modifiers = [ "italic" ];
     };
 
     "variable" = "text";
@@ -52,7 +52,7 @@
 
     "keyword" = {
       fg = "mauve";
-      modifiers = [ "italic" ];
+      # modifiers = [ "italic" ];
     };
     "operator" = "sky";
 
@@ -70,7 +70,7 @@
 
     "namespace" = {
       fg = "text";
-      modifiers = [ "italic" ];
+      # modifiers = [ "italic" ];
     };
 
     "special" = "red";
@@ -90,7 +90,10 @@
     "markup.italic" = { modifiers = [ "italic" ]; };
     "markup.link.url" = {
       fg = "blue";
-      modifiers = [ "italic" "underlined" ];
+      modifiers = [
+        # "italic"
+        "underlined"
+      ];
     };
     "markup.link.text" = "blue";
     "markup.raw" = "yellow";
