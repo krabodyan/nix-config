@@ -1,5 +1,8 @@
 { theme, ... }: {
-  programs.zellij.enable = true;
+  programs.zellij = {
+    enable = true;
+    enableFishIntegration = false;
+  };
   xdg.configFile."zellij/config.kdl".text = with theme;
     let back = surface0;
     in ''

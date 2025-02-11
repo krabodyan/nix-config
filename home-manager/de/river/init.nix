@@ -55,8 +55,8 @@ with theme; ''
 
   riverctl map -layout 0 normal Super tab focus-previous-tags
 
-  riverctl map -layout 0 normal Super     c hide-cursor timeout $timeout
-  riverctl map -layout 0 normal Super+Alt c hide-cursor timeout 0
+  riverctl map -layout 0 normal Super     b hide-cursor timeout $timeout
+  riverctl map -layout 0 normal Super+Alt b hide-cursor timeout 0
   riverctl hide-cursor timeout $timeout
 
   riverctl set-repeat 40 330
