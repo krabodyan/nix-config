@@ -115,12 +115,17 @@ with theme; ''
   riverctl rule-add -app-id "steam" tags 16
   riverctl rule-add -app-id "steam" no-float
   riverctl rule-add -app-id "zoom" tags 8
+  riverctl rule-add -app-id "ONLYOFFICE Desktop Editors" tags 8
+
   riverctl rule-add -app-id 'floaterm' float
+
   riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
   riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' position 1390 30
   riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' dimensions 500 800
+
   riverctl rule-add -app-id "xdg-desktop-portal-gtk" float
   riverctl rule-add -app-id "xdg-desktop-portal-gtk" dimensions 1000 800
+
   riverctl rule-add -title "Медіапереглядач" no-fullscreen
   riverctl rule-add -title "Медіапереглядач" float
 
