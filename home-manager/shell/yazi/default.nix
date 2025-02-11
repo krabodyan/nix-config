@@ -12,9 +12,18 @@
     "yazi/yazi.toml".source = ./yazi.toml;
     "yazi/keymap.toml".source = ./keymap.toml;
 
-    "yazi/plugins/ouch.yazi/init.lua".source = ./plugins/ouch.lua;
-    "yazi/plugins/smart-paste.yazi/init.lua".source = ./plugins/smart-paste.lua;
-    "yazi/plugins/compress.yazi/init.lua".source = ./plugins/compress.lua;
+    "yazi/plugins/ouch.yazi/main.lua".source = builtins.fetchurl {
+      url =
+        "https://raw.githubusercontent.com/ndtoan96/ouch.yazi/refs/heads/main/main.lua";
+      sha256 = "sha256:12s7ybq7sl7fv3pnni3i0m4jw5gw6sabmwgflkggyd0p8m6kw62f";
+    };
+
+    "yazi/plugins/smart-paste.yazi/main.lua".source = ./plugins/smart-paste.lua;
+    "yazi/plugins/compress.yazi/main.lua".source = builtins.fetchurl {
+      url =
+        "https://raw.githubusercontent.com/KKV9/compress.yazi/refs/heads/main/init.lua";
+      sha256 = "sha256:0yhg6nvp31k4r6wb8lxqs78cjy34y18a2rhsa9na9r67v5fygw3s";
+    };
 
     "yazi/theme.toml".text = with theme; ''
       [manager]
