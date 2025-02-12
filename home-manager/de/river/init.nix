@@ -1,5 +1,9 @@
 { theme }:
-with theme; ''
+with theme;
+let
+  kbd =
+    "riverctl keyboard-layout -options grp:caps_toggle,shift:both_capslock us,ru,ua";
+in ''
   #!/bin/sh
 
   riverctl background-color 0x${bg}
@@ -24,7 +28,7 @@ with theme; ''
   riverctl map -layout 0 normal Shift F1      spawn "pidof wl-gammactl && pkill wl-gammactl || wl-gammactl -c 1.3"
   riverctl map -layout 0 normal Shift F2      spawn "pidof wl-gammactl && pkill wl-gammactl || wl-gammactl -g 1.1 -c 1.8"
   riverctl map -layout 0 normal Shift F3      spawn "pidof wl-gammactl && pkill wl-gammactl || wl-gammactl -g 1.3 -c 2"
-  riverctl map -layout 0 normal Super D       spawn "pidof rofi && pkill rofi || (riverctl keyboard-layout -options grp:caps_toggle us,ru,ua && rofi -show drun -kb-cancel 'Alt+Return')"
+  riverctl map -layout 0 normal Super D       spawn "pidof rofi && pkill rofi || (${kbd} && rofi -show drun -kb-cancel 'Alt+Return')"
 
   riverctl map -layout 0 normal Super H focus-view left
   riverctl map -layout 0 normal Super J focus-view down
@@ -60,8 +64,8 @@ with theme; ''
   riverctl hide-cursor timeout $timeout
 
   riverctl set-repeat 40 330
-  riverctl keyboard-layout -options grp:caps_toggle us,ru,ua
-  riverctl map -layout 0 normal Super W keyboard-layout -options grp:caps_toggle us,ru,ua
+  ${kbd}
+  riverctl map -layout 0 normal Super W spawn "${kbd}"
 
   riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events disabled
   riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" scroll-factor 0.2

@@ -4,13 +4,15 @@
       "${config.home.homeDirectory}/flake/assets/background.jpg";
     font = "IosevkaTerm Nerd Font";
 
-    select = pink;
+    select = brpink;
+
     border = "ffdef6";
 
     mode_insert = yellow;
     mode_normal = red;
-    mode_select = blue;
-    yazi_select = pink;
+    mode_select = brmagenta;
+
+    yazi_select = brpink;
 
     bg = "0A0A0A";
     bg-dark = "000000";

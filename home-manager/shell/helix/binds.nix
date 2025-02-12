@@ -6,9 +6,9 @@ let
     "C-b" = ''
       :noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}
     '';
-    # "C-S-b" = ''
-    #   :sh gh browse %{filename:git_rel}:%{linenumber} -c=%sh{git rev-parse HEAD}
-    # '';
+    "C-S-b" = ''
+      :sh gh browse %{filename:git_rel}:%{linenumber} -c=%sh{git rev-parse HEAD}
+    '';
 
     "C-space" = "buffer_picker";
     "A-s" = [ "normal_mode" "goto_word" ];

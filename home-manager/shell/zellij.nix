@@ -19,7 +19,7 @@
           orange "#${red}"
           cyan "#${blue}"
           black "#${bg}"
-          white "#${back}"
+          white "#${back}" 
         }
       }
 

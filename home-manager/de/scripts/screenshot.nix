@@ -12,6 +12,7 @@ let
   swayimg = "${pkgs.swayimg}/bin/swayimg --config info.show=no";
 
 in pkgs.writeShellScriptBin "__screenshot" ''
+  makoctl dismiss
   if [ "$1" = "full" ]; then
     ${grim} - | ${copy}
     ${send} "screenshot copied"

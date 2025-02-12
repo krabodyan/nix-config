@@ -64,7 +64,7 @@
     #   fg = "peach";
     #   modifiers = [ "italic" ];
     # };
-    "function.macro" = "red";
+    "function.macro" = "blue";
 
     "tag" = "sapphire";
 
@@ -171,7 +171,7 @@
     "ui.virtual.inlay-hint" = { fg = "comment"; };
     "ui.virtual.jump-label" = {
       bg = "surface2";
-      fg = "teal";
+      fg = "sky";
       # modifiers = [ "bold" "italic" ];
     };
 
@@ -187,9 +187,9 @@
     };
     # matching bracket
     "ui.cursor.match" = {
-      fg = "yellow";
+      # fg = "yellow";
       bg = "surface1";
-      modifiers = [ "underline" ];
+      # modifiers = [ "underlined" ];
     };
     "ui.cursor.primary.normal" = {
       fg = "base";

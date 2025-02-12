@@ -23,7 +23,7 @@
 
   end-of-line-diagnostics = "warning";
   inline-diagnostics = {
-    cursor-line = "warning";
+    cursor-line = "hint";
     other-lines = "error";
   };
 

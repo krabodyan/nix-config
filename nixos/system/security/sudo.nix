@@ -15,6 +15,16 @@
         cmd = "intel_gpu_top";
         noPass = true;
       }
+      {
+        users = [ "krabodyan" ];
+        cmd = "iotop";
+        noPass = true;
+      }
+      {
+        users = [ "krabodyan" ];
+        cmd = "iftop";
+        noPass = true;
+      }
     ];
   };
 }

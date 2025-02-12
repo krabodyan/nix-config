@@ -20,7 +20,6 @@
     solaar
     gcolor3
     obs-studio
-    # krita
     gimp
     system-config-printer
     pavucontrol

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, ... }: {
   xdg = {
     enable = true;
     userDirs =
@@ -17,14 +17,5 @@
     mime.enable = true;
     mimeApps.enable = true;
     configFile = { "mimeapps.list".force = true; };
-    portal = {
-      enable = true;
-      xdgOpenUsePortal = true;
-      config.common.default = "gtk";
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-wlr
-      ];
-    };
   };
 }

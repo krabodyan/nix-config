@@ -1,13 +1,12 @@
 { theme, pkgs, ... }: {
   home.packages = with pkgs; [ nix-your-shell ];
-  home.sessionPath = [ "$HOME/.cargo/bin" ];
   programs.fish = {
     enable = true;
     shellAliases = {
       ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
       tree =
         "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
-      j = "__zoxide_zi";
+      c = "__zoxide_zi";
     };
     functions = {
       _fzf_search_directory = ''
@@ -74,11 +73,11 @@
     '';
     interactiveShellInit = with theme; ''
       function nix-shell --description "Start an interactive shell based on a Nix expression"
-          nix-your-shell  fish nix-shell -- $argv
+          nix-your-shell fish nix-shell -- $argv
       end
 
       function nix --description "Reproducible and declarative configuration management"
-          nix-your-shell  fish nix -- $argv
+          nix-your-shell fish nix -- $argv
       end
       set --universal zoxide_cmd cd
       bind -M insert \ef end-of-line
@@ -123,7 +122,7 @@
       function fish_mode_prompt
       end
 
-      function update_cwd_osc --on-variable PWD --description 'Notify terminals when $PWD changes'
+      function update_cwd_osc --on-variable PWD --description 'Notify terminals when \$PWD changes'
           if status --is-command-substitution || set -q INSIDE_EMACS
               return
           end
