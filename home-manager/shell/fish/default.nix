@@ -20,10 +20,10 @@
 
         if string match --quiet -- "*/" $unescaped_exp_token && test -d "$unescaped_exp_token"
             set --append fd_cmd --base-directory=$unescaped_exp_token
-            set --prepend fzf_arguments --prompt="$unescaped_exp_token> " --preview="_fzf_preview_file $expanded_token{}"
+            set --prepend fzf_arguments --prompt="$unescaped_exp_token> "
             set -f file_paths_selected $unescaped_exp_token($fd_cmd 2>/dev/null | _fzf_wrapper $fzf_arguments)
         else
-            set --prepend fzf_arguments --query="$unescaped_exp_token" --preview='_fzf_preview_file {}'
+            set --prepend fzf_arguments --query="$unescaped_exp_token"
             set -f file_paths_selected ($fd_cmd 2>/dev/null | _fzf_wrapper $fzf_arguments)
         end
 
@@ -79,6 +79,7 @@
       function nix --description "Reproducible and declarative configuration management"
           nix-your-shell fish nix -- $argv
       end
+
       set --universal zoxide_cmd cd
       bind -M insert \ef end-of-line
       bind -M default \ef end-of-line
@@ -86,6 +87,8 @@
       bind -M default \f 'clear; commandline -f repaint'
       bind -M insert \ea beginning-of-line
       bind -M insert \cf _fzf_search_directory
+      bind -M visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
+      bind -M default -m insert p "fish_clipboard_paste; commandline -f repaint-mode"
 
       set -g fish_color_normal ${fg}
       set -g fish_color_command ${green}
@@ -97,7 +100,7 @@
       set -g fish_color_warn ${orange}
       set -g fish_color_param ${fg}
       set -g fish_color_comment -i ${fg-dark}
-      set -g fish_color_selection ${fg-dark} --background=${fg}
+      set -g fish_color_selection --background=${surface2}
       set -g fish_color_search_match --background=${fg-dark}
       set -g fish_color_operator ${green}
       set -g fish_color_autosuggestion ${fg-dark}
@@ -135,19 +138,27 @@
         switch $fish_bind_mode
           # set_color --bold
           case insert
+            printf "\033]12;#${fg}\007"
             set_color ${fg}
+            printf "\033[4 q"
           case default
-            set_color ${red}
+            printf "\033]12;#${mode_normal}\007"
+            set_color ${mode_normal}
+            printf "\033[2 q"
           case visual
-            set_color ${magenta}
+            printf "\033]12;#${mode_select}\007"
+            set_color ${mode_select}
+            printf "\033[2 q"
           case '*'
+            printf "\033]12;#${green}\007"
             set_color ${green}
+            printf "\033[4 q"
         end
         if test -z "$IN_NIX_SHELL"
-          printf "\033[4 q%s 󰧞 " (prompt_pwd) 
+          printf "%s 󰧞 " (prompt_pwd) 
         else
           set -q DEV_SHELL_NAME; or set -l DEV_SHELL_NAME "nix-shell"
-          printf "\033[36m$DEV_SHELL_NAME\033[0m\033[4 q %s 󰧞 " (prompt_pwd)
+          printf "\033[36m$DEV_SHELL_NAME\033[0m %s 󰧞 " (prompt_pwd)
         end
         set_color normal
       end
