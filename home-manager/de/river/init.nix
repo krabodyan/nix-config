@@ -9,7 +9,7 @@ in ''
   riverctl background-color 0x${bg}
   swaybg -m fill -i ~/flake/assets/background.jpg &
 
-  focused=0x${surface1}
+  focused=0x${surface2}
   monocle=0x${bg}
   border=0x${bg-dark}
   timeout=5000
