@@ -41,8 +41,10 @@ in ''
   riverctl map -layout 0 normal Super+Shift L swap right
 
   riverctl map -layout 0 normal Super space  focus-view next
+  riverctl map -layout 0 normal Super+Shift  space zoom
   riverctl map -layout 0 normal Alt   tab    focus-view next
-  riverctl map -layout 0 normal Super Return zoom
+  riverctl map -layout 0 normal Super Return spawn "riverctl swap next && riverctl focus-view previous"
+  riverctl map -layout 0 normal Super+Shift Return spawn "exit" # idc
 
   riverctl map -layout 0 normal Super S send-layout-cmd wideriver "--layout monocle"
 
