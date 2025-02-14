@@ -18,7 +18,7 @@
       # modifiers = [ "italic" ];
     };
 
-    "type.builtin" = "mauve";
+    "type.builtin" = "red";
     "type.enum" = "yellow";
 
     "constructor" = "yellow";
@@ -44,14 +44,14 @@
     "variable.builtin" = "red";
     "variable.other.member" = "text";
 
-    "label" = "sapphire"; # used for lifetimes
+    "label" = "red"; # used for lifetimes
 
     "punctuation" = "overlay1";
     "punctuation.bracket" = "sky";
     "punctuation.special" = "peach";
 
     "keyword" = {
-      fg = "mauve";
+      fg = "magenta";
       # modifiers = [ "italic" ];
     };
     "operator" = "sky";
@@ -238,7 +238,7 @@
       sky = mkHex sky;
       sapphire = mkHex sapphire;
       pink = mkHex pink;
-      mauve = mkHex magenta;
+      magenta = mkHex brmagenta;
       red = mkHex red;
       peach = mkHex peach;
       yellow = mkHex yellow;

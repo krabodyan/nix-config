@@ -37,22 +37,21 @@
     green = "67e692";
     yellow = "f9e289";
     blue = "80beed";
-    magenta = "DC8EC1";
+    magenta = "ee7cec";
     cyan = "77d9d7";
 
     brblack = overlay0;
-    brred = "f38ba8";
-    brgreen = "92f2b3";
+    brred = "ff96b4";
+    brgreen = "99f7ba";
     bryellow = "ffeec7";
-    brblue = "80cfed";
-    brmagenta = "ec91f2";
+    brblue = cyan;
+    brmagenta = "f5a5fa";
     brcyan = "75e6e3";
 
     orange = "eba0ac";
-    pink = "f5c2e7";
+    pink = "f595db";
     brpink = "ffcaf0";
     peach = "f2cdcd";
-    mantle = "181825";
     rosewater = "f5e0dc";
     teal = "94e2d5";
     sky = "89dceb";

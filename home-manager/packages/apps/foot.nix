@@ -74,7 +74,7 @@
         bright3 = "${bryellow}";
         bright4 = "${brblue}";
         bright5 = "${brmagenta}";
-        bright6 = "${brcyan}";
+        bright6 = "${brpink}";
         bright7 = "${fg-bright}";
       };
     };
