@@ -36,6 +36,7 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        config.allowUnfreePredicate = (_: true);
         overlays = [ inputs.nixpkgs-wayland.overlay ];
       };
       pkgs-stable = import nixpkgs-stable {

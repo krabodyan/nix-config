@@ -12,8 +12,6 @@
     ./swayimg.nix
   ];
 
-  nixpkgs.config.allowUnfreePredicate = (_: true);
-
   home.packages = with pkgs; [
     fritzing
     qbittorrent
@@ -22,7 +20,5 @@
     obs-studio
     gimp
     system-config-printer
-    pavucontrol
-    adwsteamgtk
   ];
 }

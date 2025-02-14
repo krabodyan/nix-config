@@ -29,6 +29,8 @@
 
     mangohud
     postgresql
+
+    pulsemixer
     # ngrok
   ];
 }
