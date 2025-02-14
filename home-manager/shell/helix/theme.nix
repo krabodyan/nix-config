@@ -40,9 +40,9 @@
     };
 
     "variable" = "text";
-    "variable.parameter" = { fg = "pink"; };
+    "variable.parameter" = "text";
     "variable.builtin" = "red";
-    "variable.other.member" = "blue";
+    "variable.other.member" = "text";
 
     "label" = "sapphire"; # used for lifetimes
 
@@ -130,32 +130,42 @@
     #   modifiers = [ "bold" ];
     # };
 
+    # popup = space
     "ui.popup" = {
-      fg = "text";
-      bg = "bg-bright";
+      fg = "overlay0";
+      bg = "base";
     };
+    "ui.popup.info" = {
+      fg = "text";
+      bg = "base";
+    };
+    # ui.menu = autocomplete
+    "ui.menu" = {
+      fg = "overlay0";
+      bg = "base";
+    };
+    "ui.menu.selected" = {
+      fg = "text";
+      # bg = "surface2";
+    };
+    "ui.menu.scroll" = { fg = "surface2"; };
 
     "ui.picker.header" = { fg = "comment"; };
-
-    "ui.window" = { fg = "overlay0"; };
-
+    "ui.window" = { fg = "surface1"; };
     "ui.help" = {
       fg = "overlay0";
       bg = "bg-bright";
     };
-
     "ui.bufferline" = {
       fg = "comment";
       bg = "base";
       modifiers = [ "bold" ];
     };
-
     "ui.bufferline.active" = {
       fg = "subtext0";
       bg = "surface0";
       modifiers = [ "bold" ];
     };
-
     "ui.bufferline.background" = { bg = "base"; };
 
     "ui.text" = "text";
@@ -188,7 +198,7 @@
     # matching bracket
     "ui.cursor.match" = {
       # fg = "yellow";
-      bg = "surface1";
+      # bg = "surface1";
       # modifiers = [ "underlined" ];
     };
     "ui.cursor.primary.normal" = {
@@ -221,19 +231,6 @@
       fg = "yellow";
       bg = "surface1";
       modifiers = [ "bold" ];
-    };
-    "ui.menu" = {
-      fg = "overlay2";
-      bg = "bg-bright";
-    };
-    "ui.menu.selected" = {
-      fg = "text";
-      bg = "surface1";
-      # modifiers = [ "bold" ];
-    };
-    "ui.menu.scroll" = {
-      # bg = "red";
-      fg = "overlay0";
     };
 
     palette = with theme; {

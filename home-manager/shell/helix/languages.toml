@@ -67,7 +67,8 @@ name = "rust"
 
 [language-server.rust-analyzer.config]
 check.command = "clippy"
-procMacro.enable = "false"
+procMacro.enable = false
+inlayHints.parameterHints.enable = false
 
 # PYTHON --------------------------
 [[language]]

@@ -21,10 +21,10 @@
   indent-heuristic = "tree-sitter";
   jump-label-alphabet = "fjdkshlweruiopmaqcvngbzxty";
 
-  end-of-line-diagnostics = "warning";
+  end-of-line-diagnostics = "hint";
   inline-diagnostics = {
     cursor-line = "hint";
-    other-lines = "error";
+    #   other-lines = "error";
   };
 
   lsp = {
@@ -33,8 +33,8 @@
     display-progress-messages = false;
     display-inlay-hints = true;
     display-signature-help-docs = false;
-    snippets = true;
-    auto-signature-help = false;
+    snippets = false;
+    auto-signature-help = true;
   };
 
   indent-guides = {
@@ -69,7 +69,7 @@
       "file-modification-indicator"
       "file-base-name"
       # "separator"
-      # "spinner"
+      "spinner"
     ];
     center = [ ];
     left = [ ];

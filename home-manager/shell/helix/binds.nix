@@ -74,6 +74,7 @@ let
     "A-x" = "extend_line_up";
     "S-x" = [ "extend_line_up" "extend_to_line_bounds" ];
     "esc" = [ "collapse_selection" "keep_primary_selection" ];
+    a = [ "append_mode" "collapse_selection" ];
     p = ":clipboard-paste-after";
     P = ":clipboard-paste-before";
     R = ":clipboard-paste-replace";
