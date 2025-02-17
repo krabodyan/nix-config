@@ -8,15 +8,17 @@
     roboto
     twemoji-color-font
     nerd-fonts.symbols-only
-    nerd-fonts.jetbrains-mono
+    # nerd-fonts.jetbrains-mono
     nerd-fonts.iosevka-term
+    # nerd-fonts.iosevka
+    # iosevka
   ];
 
   fonts.fontDir.enable = true;
   fonts.fontconfig = {
     enable = true;
     antialias = true;
-    hinting.enable = false;
+    hinting.enable = true;
     cache32Bit = true;
     defaultFonts = {
       serif = [ "Roboto Medium" ];

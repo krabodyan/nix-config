@@ -1,16 +1,24 @@
-{ theme, pkgs, ... }: {
-  home.packages = [ pkgs.xdg-terminal-exec ];
-  xdg.configFile."xdg-terminals.list".text = ''
-    foot.desktop
-  '';
+{ theme, pkgs, lib, ... }: {
   programs.foot = {
     enable = true;
     server.enable = false;
     settings = {
       main = let
-        # features = [ "ss20" ];
-        # fontfeatures = lib.concatStringsSep ":fontfeatures=" features;
-        font = "${theme.font}:size=17";
+        features = [
+          "ss12"
+          # "ss14"
+          # "VSAH=3"
+          # "VSAG=3"
+          # "VSAB=11"
+          # "cv03=1"
+          # "cv05=1"
+          # "cv06=1"
+          # "cv09=1"
+          # "cv10=2"
+          # "cv19=2"
+        ];
+        fontfeatures = lib.concatStringsSep ":fontfeatures=" features;
+        font = "${theme.font}:size=17:fontfeatures=${fontfeatures}";
       in {
         term = "xterm-256color";
         shell = "${pkgs.fish}/bin/fish";

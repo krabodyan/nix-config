@@ -1,7 +1,5 @@
 { inputs, ... }: {
-  imports = [ ./system.nix ./steam.nix ];
-
-  nixpkgs.config = { allowUnfree = true; };
+  imports = [ ./system.nix ./steam.nix ./fonts.nix ];
 
   environment.etc.nixpkgs.source = inputs.nixpkgs;
 }
