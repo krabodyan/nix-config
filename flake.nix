@@ -35,18 +35,17 @@
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        config.allowUnfree = true;
-        config.allowUnfreePredicate = (_: true);
         overlays = [ inputs.nixpkgs-wayland.overlay ];
       };
-      pkgs-stable = import nixpkgs-stable {
-        inherit system;
-        config.allowUnfree = true;
-      };
+      pkgs-stable = import nixpkgs-stable { inherit system; };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs system pkgs-stable nix-colors; };
         modules = [
+          {
+            nixpkgs.config.allowUnfree = true;
+            # nixpkgs.config.allowUnfreePredicate = (_: true);
+          }
           ./lib/theme.nix
           ./nixos/configuration.nix
           inputs.disko.nixosModules.default
@@ -59,7 +58,15 @@
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit inputs pkgs-stable; };
-        modules = [ ./home-manager ./lib/theme.nix ./lib/helpers.nix ];
+        modules = [
+          {
+            nixpkgs.config.allowUnfree = true;
+            # nixpkgs.config.allowUnfreePredicate = (_: true);
+          }
+          ./home-manager
+          ./lib/theme.nix
+          ./lib/helpers.nix
+        ];
       };
 
       devShells.${system} = let
