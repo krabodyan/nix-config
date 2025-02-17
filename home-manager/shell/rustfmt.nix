@@ -2,9 +2,9 @@
   xdg.configFile."rustfmt/rustfmt.toml".text = ''
     edition = "2021"
     chain_width = 55
-    max_width = 70
+    max_width = 80
     comment_width = 100
-    fn_call_width = 45
+    fn_call_width = 55
     # array_width = 
     binop_separator = "Front"
     group_imports = "StdExternalCrate"
