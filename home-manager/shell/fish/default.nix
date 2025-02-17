@@ -89,6 +89,7 @@
       bind -M insert \cf _fzf_search_directory
       bind -M visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
       bind -M default -m insert p "fish_clipboard_paste; commandline -f repaint-mode"
+      bind -M insert \cS 'zellij; commandline -f repaint'
 
       set -g fish_color_normal ${fg}
       set -g fish_color_command ${green}

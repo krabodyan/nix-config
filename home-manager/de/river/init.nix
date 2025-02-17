@@ -1,15 +1,13 @@
 { theme }:
 with theme;
-let
-  kbd =
-    "riverctl keyboard-layout -options grp:caps_toggle,shift:both_capslock us,ru,ua";
+let kbd = "riverctl keyboard-layout -options grp:caps_toggle us,ru,ua";
 in ''
   #!/bin/sh
 
   riverctl background-color 0x${bg}
   swaybg -m fill -i ~/flake/assets/background.jpg &
 
-  focused=0x${surface2}
+  focused=0x${surface1}
   monocle=0x${bg}
   border=0x${bg-dark}
   timeout=5000
@@ -125,12 +123,12 @@ in ''
 
   riverctl rule-add -app-id 'floaterm' float
 
-  riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
-  riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' position 1390 30
-  riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' dimensions 500 800
+  # riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
+  # riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' position 1390 30
+  # riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' dimensions 500 800
 
   riverctl rule-add -app-id "xdg-desktop-portal-gtk" float
-  riverctl rule-add -app-id "xdg-desktop-portal-gtk" dimensions 1000 800
+  # riverctl rule-add -app-id "xdg-desktop-portal-gtk" dimensions 1000 800
 
   riverctl rule-add -title "Медіапереглядач" no-fullscreen
   riverctl rule-add -title "Медіапереглядач" float
@@ -159,5 +157,7 @@ in ''
    # > "/tmp/wideriver.$\{XDG_VTNR}.$\{USER}.log" 2>&1 &
 
   dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
+  systemctl --user set-environment XDG_CURRENT_DESKTOP=river
   systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
+  dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river DBUS_SESSION_BUS_ADDRESS
 ''

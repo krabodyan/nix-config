@@ -1,35 +1,28 @@
 let
+  toggle = "A-d";
   binds = {
     "C-f" = "file_picker_in_current_buffer_directory";
     "C-c" = "completion";
-    "A-space" = ":open %sh{ __yazi_picker }";
-    "C-b" = ''
-      :noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}
-    '';
-    "C-S-b" = ''
-      :sh gh browse %{filename:git_rel}:%{linenumber} -c=%sh{git rev-parse HEAD}
-    '';
+    # "C-b" = ''
+    #   :noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}
+    # '';
+    # "C-S-b" = ''
+    #   :sh gh browse %{filename:git_rel}:%{linenumber} -c=%sh{git rev-parse HEAD}
+    # '';
+    # "A-w" = "rotate_view;
+    "A-f" = [ "goto_line_end" "move_char_right" ];
+    "A-a" = [ "normal_mode" "goto_word" ];
 
-    "C-space" = "buffer_picker";
-    "A-s" = [ "normal_mode" "goto_word" ];
-    "C-A-s" = [ "normal_mode" "extend_to_word" ];
-    "A-a" = "split_selection_on_newline";
-    "A-w" = "rotate_view";
-
-    "A-y" = "save_selection"; # save to jumplist
+    "A-s" =
+      [ ":w" "normal_mode" "collapse_selection" "commit_undo_checkpoint" ];
     "A-e" = ":buffer-next";
     "A-q" = ":buffer-previous";
-    "C-q" = ":buffer-close";
-    "C-A-p" = ":lsp-stop";
-    "C-x" = ":q";
-    "C-s" =
-      [ ":w" "normal_mode" "collapse_selection" "commit_undo_checkpoint" ];
 
-    "C-/" = "toggle_comments";
-    "C-7" = "toggle_comments";
-    "C-?" = "toggle_block_comments";
+    "A-/" = "toggle_comments";
+    "A-7" = "toggle_comments";
+    "A-?" = "toggle_block_comments";
 
-    "C-A-up" = [
+    "A-S-k" = [
       "normal_mode"
       "goto_line_end"
       "extend_line_below"
@@ -37,14 +30,14 @@ let
       "move_line_up"
       "paste_before"
     ];
-    "C-A-down" = [
+    "A-S-j" = [
       "normal_mode"
       "goto_line_end"
       "extend_line_below"
       "delete_selection"
       "paste_after"
     ];
-    "C-S-up" = [
+    "C-S-k" = [
       "normal_mode"
       "extend_line"
       "yank"
@@ -54,7 +47,7 @@ let
       "collapse_selection"
       "insert_mode"
     ];
-    "C-S-down" = [
+    "C-S-j" = [
       "normal_mode"
       "extend_line"
       "yank"
@@ -65,14 +58,13 @@ let
       "collapse_selection"
       "insert_mode"
     ];
-    "A-f" = [ "goto_line_end" "move_char_right" ];
-    "A-+" = "increment";
+    "A-=" = "increment";
     "A-minus" = "decrement";
   };
   special = {
+    t = [ "normal_mode" "extend_to_word" ];
     "tab" = "no_op";
     "A-x" = "extend_line_up";
-    "S-x" = [ "extend_line_up" "extend_to_line_bounds" ];
     "esc" = [ "collapse_selection" "keep_primary_selection" ];
     a = [ "append_mode" "collapse_selection" ];
     p = ":clipboard-paste-after";
@@ -83,12 +75,19 @@ let
   };
 in {
   normal = binds // special // {
-    "A-d" = [ "collapse_selection" "insert_mode" ];
+    ${toggle} = [ "collapse_selection" "insert_mode" ];
     "A-l" = [ "move_next_word_end" "collapse_selection" "move_char_right" ];
     "A-h" = [ "move_prev_word_start" "collapse_selection" ];
+
+    space = {
+      q = ":q";
+      c = ":buffer-close";
+      "S-c" = ":buffer-close!";
+      "S-f" = ":open %sh{ __yazi_picker }";
+    };
   };
   insert = binds // {
-    "A-d" = "normal_mode";
+    ${toggle} = "normal_mode";
     "ret" = [ "insert_newline" "commit_undo_checkpoint" ];
     "A-o" = "open_below";
     "A-p" = "open_above";
@@ -98,9 +97,9 @@ in {
     "A-k" = "move_line_up";
   };
   select = binds // special // {
+    ${toggle} = [ "collapse_selection" "normal_mode" ];
     "A-l" = [ "move_next_word_end" "move_char_right" ];
     "A-h" = [ "move_prev_word_start" ];
-    "A-d" = [ "collapse_selection" "normal_mode" ];
     "A-v" = "flip_selections";
     "i" = [ "collapse_selection" "insert_mode" ];
   };

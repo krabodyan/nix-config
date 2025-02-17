@@ -38,17 +38,17 @@
           bind "Alt w" { SwitchToMode "normal"; }
           bind "Alt q" { CloseFocus; SwitchToMode "normal"; }
           
-          bind "d" { ToggleFloatingPanes; SwitchToMode "normal"; }
+          bind "f" { ToggleFloatingPanes; SwitchToMode "normal"; }
           bind "e" { EditScrollback; SwitchToMode "Normal"; }
-          bind "f" { ToggleFocusFullscreen; SwitchToMode "normal"; }
+          bind "t" { ToggleFocusFullscreen; SwitchToMode "normal"; }
           bind "i" { Resize "decrease"; }
           bind "n" { NewTab; SwitchToMode "normal"; }
           bind "o" { Resize "increase"; }
           bind "s" { SwitchToMode "scroll"; }
           bind "space" { FocusNextPane; SwitchToMode "normal"; }
 
-          bind "Ctrl l" { GoToNextTab; }
-          bind "Ctrl h" { GoToPreviousTab;  }
+          bind "Shift l" { GoToNextTab; }
+          bind "Shift h" { GoToPreviousTab;  }
           
           bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
           bind "Alt l" { NewPane "Right"; SwitchToMode "Normal"; }
