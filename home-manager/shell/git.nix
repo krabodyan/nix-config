@@ -32,6 +32,7 @@
     enable = true;
     userName = "krabodyan";
     userEmail = "krabraketa@gmail.com";
+    signing.format = "ssh";
     extraConfig = {
       init = { defaultbranch = "master"; };
       branch = { sort = "-committerdate"; };

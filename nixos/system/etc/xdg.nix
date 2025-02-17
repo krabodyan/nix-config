@@ -1,8 +1,12 @@
 { pkgs, ... }: {
+  xdg.terminal-exec = {
+    enable = true;
+    settings = { default = [ "foot.desktop " ]; };
+  };
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    config.common.default = "gtk";
+    config.common.default = [ "gtk" "wlr" ];
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
     wlr = {
       enable = true;
