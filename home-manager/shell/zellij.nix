@@ -35,7 +35,8 @@
         }
 
         pane {
-          bind "Alt w" { SwitchToMode "normal"; }
+          bind "Alt Space" { SwitchToMode "normal"; }
+          bind "Space" { SwitchToMode "normal"; }
           bind "Alt q" { CloseFocus; SwitchToMode "normal"; }
           
           bind "f" { ToggleFloatingPanes; SwitchToMode "normal"; }
@@ -47,24 +48,34 @@
           bind "s" { SwitchToMode "scroll"; }
           bind "space" { FocusNextPane; SwitchToMode "normal"; }
 
-          bind "Shift l" { GoToNextTab; }
-          bind "Shift h" { GoToPreviousTab;  }
+          bind "l" { GoToNextTab; }
+          bind "h" { GoToPreviousTab;  }
           
-          bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
-          bind "Alt l" { NewPane "Right"; SwitchToMode "Normal"; }
+          bind "Alt l" { MoveFocus "Right"; SwitchToMode "Normal"; }
+          bind "Shift l" { NewPane "Right"; SwitchToMode "Normal"; }
           bind "Alt Shift l" { MovePane "right"; SwitchToMode "Normal"; }
           
-          bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
-          bind "Alt h" { NewPane "Left"; SwitchToMode "Normal"; }
+          bind "Alt h" { MoveFocus "Left"; SwitchToMode "Normal"; }
+          bind "Shift h" { NewPane "Left"; SwitchToMode "Normal"; }
           bind "Alt Shift h" { MovePane "left"; SwitchToMode "Normal"; }
           
-          bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
-          bind "Alt j" { NewPane "Down"; SwitchToMode "Normal"; }
+          bind "Alt j" { MoveFocus "Down"; SwitchToMode "Normal"; }
+          bind "Shift j" { NewPane "Down"; SwitchToMode "Normal"; }
           bind "Alt Shift j" { MovePane "down"; SwitchToMode "Normal"; }
           
-          bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
-          bind "Alt k" { NewPane "Up"; SwitchToMode "Normal"; }
+          bind "Alt k" { MoveFocus "Up"; SwitchToMode "Normal"; }
+          bind "Shift k" { NewPane "Up"; SwitchToMode "Normal"; }
           bind "Alt Shift k" { MovePane "up"; SwitchToMode "Normal"; }        
+          
+          bind "1" { GoToTab 1; SwitchToMode "Normal"; }
+          bind "2" { GoToTab 2; SwitchToMode "Normal"; }
+          bind "3" { GoToTab 3; SwitchToMode "Normal"; }
+          bind "4" { GoToTab 4; SwitchToMode "Normal"; }
+          bind "5" { GoToTab 5; SwitchToMode "Normal"; }
+          bind "6" { GoToTab 6; SwitchToMode "Normal"; }
+          bind "7" { GoToTab 7; SwitchToMode "Normal"; }
+          bind "8" { GoToTab 8; SwitchToMode "Normal"; }
+          bind "9" { GoToTab 9; SwitchToMode "Normal"; }
         }
         
         shared_except "normal" "locked" {
@@ -73,7 +84,7 @@
         }
 
         locked {
-          bind "Ctrl Alt k" { SwitchToMode "normal"; }
+          bind "Alt Shift Space" { SwitchToMode "normal"; }
           bind "Alt 1" { GoToTab 1; }
           bind "Alt 2" { GoToTab 2; }
           bind "Alt 3" { GoToTab 3; }
@@ -85,10 +96,10 @@
           bind "Alt 9" { GoToTab 9; }
         }
         
-        shared_except "locked" {
-          bind "Ctrl Alt k" { SwitchToMode "locked"; }
+        shared_except "locked" "pane" {
+          bind "Alt Shift Space" { SwitchToMode "locked"; }
           bind "Ctrl Alt r" { SwitchToMode "RenameTab"; TabNameInput 0; }
-          bind "Alt w" { SwitchToMode "pane"; }
+          bind "Alt Space" { SwitchToMode "pane"; }
 
           bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
           bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }

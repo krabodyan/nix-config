@@ -3,12 +3,12 @@ let
   binds = {
     "C-f" = "file_picker_in_current_buffer_directory";
     "C-c" = "completion";
-    # "C-b" = ''
-    #   :noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}
-    # '';
-    # "C-S-b" = ''
-    #   :sh gh browse %{filename:git_rel}:%{linenumber} -c=%sh{git rev-parse HEAD}
-    # '';
+    "C-b" = ''
+      :noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}
+    '';
+    "C-S-b" = ''
+      :sh gh browse %{filename:git_rel}:%{linenumber} -c=%sh{git rev-parse HEAD}
+    '';
     # "A-w" = "rotate_view;
     "A-f" = [ "goto_line_end" "move_char_right" ];
     "A-a" = [ "normal_mode" "goto_word" ];
@@ -37,7 +37,7 @@ let
       "delete_selection"
       "paste_after"
     ];
-    "C-S-k" = [
+    "C-S-up" = [
       "normal_mode"
       "extend_line"
       "yank"
@@ -47,7 +47,7 @@ let
       "collapse_selection"
       "insert_mode"
     ];
-    "C-S-j" = [
+    "C-S-down" = [
       "normal_mode"
       "extend_line"
       "yank"
@@ -72,6 +72,7 @@ let
     R = ":clipboard-paste-replace";
     y = ":clipboard-yank-join";
     Y = ":clipboard-yank";
+    i = [ "collapse_selection" "insert_mode" ];
   };
 in {
   normal = binds // special // {
@@ -81,7 +82,9 @@ in {
 
     space = {
       q = ":q";
+      Q = ":q!";
       c = ":buffer-close";
+      C = ":buffer-close!";
       "S-c" = ":buffer-close!";
       "S-f" = ":open %sh{ __yazi_picker }";
     };
@@ -101,6 +104,5 @@ in {
     "A-l" = [ "move_next_word_end" "move_char_right" ];
     "A-h" = [ "move_prev_word_start" ];
     "A-v" = "flip_selections";
-    "i" = [ "collapse_selection" "insert_mode" ];
   };
 }
