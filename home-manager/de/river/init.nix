@@ -133,29 +133,31 @@ in ''
 
   riverctl default-layout wideriver
 
-  wideriver \
-    --layout                       left        \
-    --layout-alt                   monocle     \
-    --stack                        even        \
-    --no-smart-gaps                            \
-    --count-master                 1           \
-    --ratio-master                 0.50        \
-    --count-wide-left              0           \
-    --ratio-wide                   0.35        \
-    --inner-gaps                   0           \
-    --outer-gaps                   0           \
-    --border-color-focused         ${focused}  \
-    --border-color-focused-monocle ${monocle}  \
-    --border-color-unfocused       ${border}   \
-    --border-width                 2           \
-    --border-width-monocle         2           \
-    --border-width-smart-gaps      2           \
-    --log-threshold                error       \
-    > /dev/null &
-   # > "/tmp/wideriver.$\{XDG_VTNR}.$\{USER}.log" 2>&1 &
+  pidof dbus-daemon || {
+    dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
+    wideriver \
+      --layout                       left        \
+      --layout-alt                   monocle     \
+      --stack                        even        \
+      --no-smart-gaps                            \
+      --count-master                 1           \
+      --ratio-master                 0.50        \
+      --count-wide-left              0           \
+      --ratio-wide                   0.35        \
+      --inner-gaps                   0           \
+      --outer-gaps                   0           \
+      --border-color-focused         ${focused}  \
+      --border-color-focused-monocle ${monocle}  \
+      --border-color-unfocused       ${border}   \
+      --border-width                 2           \
+      --border-width-monocle         2           \
+      --border-width-smart-gaps      2           \
+      --log-threshold                error       \
+      > /dev/null &
+     # > "/tmp/wideriver.$\{XDG_VTNR}.$\{USER}.log" 2>&1 &
 
-  pidof dbus-daemon || dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
-  systemctl --user set-environment XDG_CURRENT_DESKTOP=river
-  systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
-  dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
+    systemctl --user set-environment XDG_CURRENT_DESKTOP=river
+    systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
+    dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
+  }
 ''
