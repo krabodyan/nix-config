@@ -74,21 +74,7 @@ let
     Y = ":clipboard-yank";
     i = [ "collapse_selection" "insert_mode" ];
   };
-in {
-  normal = binds // special // {
-    ${toggle} = [ "collapse_selection" "insert_mode" ];
-    "A-l" = [ "move_next_word_end" "collapse_selection" "move_char_right" ];
-    "A-h" = [ "move_prev_word_start" "collapse_selection" ];
-
-    space = {
-      q = ":q";
-      Q = ":q!";
-      c = ":buffer-close";
-      C = ":buffer-close!";
-      "S-c" = ":buffer-close!";
-      "S-f" = ":open %sh{ __yazi_picker }";
-    };
-  };
+in rec {
   insert = binds // {
     ${toggle} = "normal_mode";
     "ret" = [ "insert_newline" "commit_undo_checkpoint" ];
@@ -99,10 +85,24 @@ in {
     "A-j" = "move_line_down";
     "A-k" = "move_line_up";
   };
+  normal = binds // special // {
+    ${toggle} = [ "collapse_selection" "insert_mode" ];
+    "A-l" = [ "move_next_word_end" "collapse_selection" "move_char_right" ];
+    "A-h" = [ "move_prev_word_start" "collapse_selection" ];
+    space = {
+      q = ":q";
+      Q = ":q!";
+      c = ":buffer-close";
+      C = ":buffer-close!";
+      "S-c" = ":buffer-close!";
+      "S-f" = ":open %sh{ __yazi_picker }";
+    };
+  };
   select = binds // special // {
     ${toggle} = [ "collapse_selection" "normal_mode" ];
     "A-l" = [ "move_next_word_end" "move_char_right" ];
     "A-h" = [ "move_prev_word_start" ];
     "A-v" = "flip_selections";
+    space = normal.space;
   };
 }
