@@ -37,8 +37,8 @@
         pane {
           bind "Alt Space" { SwitchToMode "normal"; }
           bind "Space" { SwitchToMode "normal"; }
-          bind "Alt q" { CloseFocus; SwitchToMode "normal"; }
           
+          bind "q" { CloseFocus; SwitchToMode "normal"; }
           bind "f" { ToggleFloatingPanes; SwitchToMode "normal"; }
           bind "e" { EditScrollback; SwitchToMode "Normal"; }
           bind "t" { ToggleFocusFullscreen; SwitchToMode "normal"; }
