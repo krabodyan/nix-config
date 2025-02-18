@@ -90,6 +90,7 @@
       bind --mode insert \ea beginning-of-line
 
       bind --mode insert \es _fzf_search_directory
+      bind --mode insert \er fzf-history-widget
 
       bind --mode visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
       bind --mode default -m insert p "fish_clipboard_paste; commandline -f repaint-mode"
