@@ -3,12 +3,11 @@ with theme;
 let kbd = "riverctl keyboard-layout -options grp:caps_toggle us,ru,ua";
 in ''
   #!/bin/sh
-
   riverctl background-color 0x${bg}
   swaybg -m fill -i ~/flake/assets/background.jpg &
 
   focused=0x${surface1}
-  monocle=0x${bg}
+  monocle=0x${bg-dark}
   border=0x${bg-dark}
   timeout=5000
 
@@ -119,6 +118,7 @@ in ''
   riverctl rule-add -app-id "steam" tags 16
   riverctl rule-add -app-id "steam" no-float
   riverctl rule-add -app-id "zoom" tags 8
+  riverctl rule-add -app-id "zoom" float
   riverctl rule-add -app-id "ONLYOFFICE Desktop Editors" tags 8
 
   riverctl rule-add -app-id 'floaterm' float
