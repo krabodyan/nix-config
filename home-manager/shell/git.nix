@@ -33,6 +33,11 @@
     userName = "krabodyan";
     userEmail = "krabraketa@gmail.com";
     signing.format = "ssh";
+    aliases = {
+      cm = "commit -m";
+      st = "status";
+      last = "log -1 HEAD";
+    };
     extraConfig = {
       init = { defaultbranch = "master"; };
       branch = { sort = "-committerdate"; };
