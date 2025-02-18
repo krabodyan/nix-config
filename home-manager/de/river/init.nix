@@ -1,19 +1,18 @@
 { theme }:
 with theme;
-let kbd = "riverctl keyboard-layout -options grp:caps_toggle us,ru,ua";
+let
+  kbd = "riverctl keyboard-layout -options grp:caps_toggle us,ru,ua";
+  focused = "0x${surface1}";
+  monocle = "0x${bg-dark}";
+  border = "0x${bg-dark}";
+  timeout = "5000";
 in ''
   #!/bin/sh
   riverctl background-color 0x${bg}
   swaybg -m fill -i ~/flake/assets/background.jpg &
-
-  focused=0x${surface1}
-  monocle=0x${bg-dark}
-  border=0x${bg-dark}
-  timeout=5000
-
-  riverctl border-color-focused $focused
-  riverctl border-color-urgent $border
-  riverctl border-color-unfocused $border
+  riverctl border-color-focused ${focused}
+  riverctl border-color-urgent ${border}
+  riverctl border-color-unfocused ${border}
   # riverctl border-width 4
 
   riverctl map -layout 0 normal Super       Q      close
@@ -41,7 +40,6 @@ in ''
   riverctl map -layout 0 normal Super+Shift  space zoom
   riverctl map -layout 0 normal Alt   tab    focus-view next
   riverctl map -layout 0 normal Super Return spawn "riverctl swap next && riverctl focus-view previous"
-  riverctl map -layout 0 normal Super+Shift Return spawn "exit" # idc
 
   riverctl map -layout 0 normal Super S send-layout-cmd wideriver "--layout monocle"
 
@@ -58,9 +56,9 @@ in ''
 
   riverctl map -layout 0 normal Super tab focus-previous-tags
 
-  riverctl map -layout 0 normal Super     b hide-cursor timeout $timeout
+  riverctl map -layout 0 normal Super     b hide-cursor timeout ${timeout}
   riverctl map -layout 0 normal Super+Alt b hide-cursor timeout 0
-  riverctl hide-cursor timeout $timeout
+  riverctl hide-cursor timeout ${timeout}
 
   riverctl set-repeat 40 330
   ${kbd}
@@ -146,9 +144,9 @@ in ''
     --ratio-wide                   0.35        \
     --inner-gaps                   0           \
     --outer-gaps                   0           \
-    --border-color-focused         $focused    \
-    --border-color-focused-monocle $monocle    \
-    --border-color-unfocused       $border     \
+    --border-color-focused         ${focused}  \
+    --border-color-focused-monocle ${monocle}  \
+    --border-color-unfocused       ${border}   \
     --border-width                 2           \
     --border-width-monocle         2           \
     --border-width-smart-gaps      2           \
@@ -156,8 +154,8 @@ in ''
     > /dev/null &
    # > "/tmp/wideriver.$\{XDG_VTNR}.$\{USER}.log" 2>&1 &
 
-  dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
+  pidof dbus-daemon || dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
   systemctl --user set-environment XDG_CURRENT_DESKTOP=river
   systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
-  dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river DBUS_SESSION_BUS_ADDRESS
+  dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
 ''
