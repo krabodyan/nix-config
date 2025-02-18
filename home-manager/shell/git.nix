@@ -35,8 +35,8 @@
     signing.format = "ssh";
     aliases = {
       cm = "commit -m";
-      st = "status";
-      last = "log -1 HEAD";
+      st = "status -sb";
+      last = "diff HEAD^";
     };
     extraConfig = {
       init = { defaultbranch = "master"; };
