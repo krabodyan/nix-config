@@ -72,7 +72,7 @@
       "mov"
       "mp4"
       "mkv"
-      "mp4"
+      "mp3"
       "ttf"
       # --end media formats
       "doc"
