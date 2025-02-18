@@ -49,6 +49,7 @@
       "*.bak"
       # c commons
       "__pycache__"
+      "cmake-build-debug"
       "compile_commands.json"
       "vgcore.*"
       ".cache"
