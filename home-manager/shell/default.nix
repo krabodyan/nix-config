@@ -1,24 +1,22 @@
 { pkgs, ... }: {
   imports = [
     ./bat
-    ./yazi
-    ./helix
-    ./fish
-    ./htop.nix
-    ./git.nix
-    ./zellij.nix
-    ./ripgrep.nix
     ./fastfetch.nix
-    ./zoxide.nix
+    ./fish
+    ./git.nix
+    ./helix
+    ./htop.nix
+    ./nh.nix
+    ./ripgrep.nix
     ./rustfmt.nix
+    ./yazi
+    ./zellij.nix
+    ./zoxide.nix
   ];
   home.packages = with pkgs; [
     jq # fish done
-    nh
     eza
     xdg-utils
-    iotop
-    iftop
     # termusic
     python3
     ffmpeg
@@ -28,7 +26,7 @@
     exiftool
 
     mangohud
-    postgresql
+    # postgresql
 
     pulsemixer
     # ngrok
