@@ -61,6 +61,10 @@
         inherit (zoxide) src;
       }
       {
+        name = "autopair";
+        inherit (pkgs.fishPlugins.autopair) src;
+      }
+      {
         name = "fzf";
         inherit (pkgs.fishPlugins.fzf-fish) src;
       }
