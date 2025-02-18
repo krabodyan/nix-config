@@ -10,18 +10,19 @@
     colors = with theme;
       let inherit (helpers) mkHex;
       in {
-        "bg+" = "-1";
         bg = "-1";
-        spinner = mkHex fg;
-        hl = mkHex fg;
         fg = mkHex fg-dark;
-        "fg+" = mkHex fg;
-        header = mkHex fg-dark;
+        hl = mkHex fg-dark;
+        current-bg = "-1";
+        current-fg = mkHex fg;
+        current-hl = mkHex fg;
+
         info = mkHex fg-dark;
-        pointer = mkHex fg-dark;
+        header = mkHex fg-dark;
+        pointer = mkHex red;
         marker = mkHex fg;
         prompt = mkHex fg;
-        "hl+" = mkHex fg;
+        spinner = mkHex fg;
         border = "-1";
         gutter = "-1";
       };
@@ -37,7 +38,7 @@
       "--height 7"
       "--info hidden"
       "--reverse"
-      "--bind 'tab:toggle-down,btab:toggle-up'"
+      "--bind 'tab:toggle-down,btab:toggle-up,alt-a:jump'"
     ];
   };
   programs.zoxide = {

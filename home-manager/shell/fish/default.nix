@@ -81,15 +81,20 @@
       end
 
       set --universal zoxide_cmd cd
-      bind -M insert \ef end-of-line
-      bind -M default \ef end-of-line
-      bind -M insert \f 'clear; commandline -f repaint'
-      bind -M default \f 'clear; commandline -f repaint'
-      bind -M insert \ea beginning-of-line
-      bind -M insert \cf _fzf_search_directory
-      bind -M visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
-      bind -M default -m insert p "fish_clipboard_paste; commandline -f repaint-mode"
-      bind -M insert \cS 'zellij; commandline -f repaint'
+
+      bind --mode default --sets-mode insert \ed repaint
+      bind --mode insert --sets-mode default \ed repaint
+
+      bind --mode insert \ef end-of-line
+      bind --mode default \ef end-of-line
+      bind --mode insert \ea beginning-of-line
+
+      bind --mode insert \es _fzf_search_directory
+
+      bind --mode visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
+      bind --mode default -m insert p "fish_clipboard_paste; commandline -f repaint-mode"
+
+      bind --mode insert \cS 'zellij; commandline -f repaint'
 
       set -g fish_color_normal ${fg}
       set -g fish_color_command ${green}
