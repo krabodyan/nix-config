@@ -1,7 +1,6 @@
 let
   toggle = "A-d";
   binds = {
-    "C-f" = "file_picker_in_current_buffer_directory";
     "C-c" = "completion";
     "C-b" = ''
       :noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}
@@ -96,6 +95,7 @@ in rec {
       C = ":buffer-close!";
       "S-c" = ":buffer-close!";
       "S-f" = ":open %sh{ __yazi_picker }";
+      "A-f" = "file_picker_in_current_buffer_directory";
     };
   };
   select = binds // special // {
