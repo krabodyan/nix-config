@@ -15,5 +15,7 @@
     pciutils
     acpi
     ntfs3g
+    iotop
+    iftop
   ];
 }
