@@ -18,7 +18,7 @@
       sha256 = "sha256:12s7ybq7sl7fv3pnni3i0m4jw5gw6sabmwgflkggyd0p8m6kw62f";
     };
 
-    "yazi/plugins/smart-paste.yazi/main.lua".source = ./plugins/smart-paste.lua;
+    # "yazi/plugins/smart-paste.yazi/main.lua".source = ./plugins/smart-paste.lua;
     "yazi/plugins/compress.yazi/main.lua".source = builtins.fetchurl {
       url =
         "https://raw.githubusercontent.com/KKV9/compress.yazi/refs/heads/main/init.lua";
@@ -35,10 +35,10 @@
       find_keyword  = { fg = "#${red}" }
       find_position = { fg = "#${red}" }
 
-      marker_copied   = { fg = "#${green}", bg = "#${green}" }
-      marker_cut      = { fg = "#${blue}", bg = "#${blue}" }
-      marker_marked   = { fg = "#${mode_select}", bg = "#${mode_select}" }
-      marker_selected = { fg = "#${magenta}", bg = "#${magenta}" }
+      marker_copied   = { fg = "#${brmagenta}", bg = "#${brmagenta}" }
+      marker_cut      = { fg = "#${red}", bg = "#${red}" }
+      marker_marked   = { fg = "#${blue}", bg = "#${blue}" }
+      marker_selected = { fg = "#${green}", bg = "#${green}" }
 
       tab_active   = { fg = "#${bg}", bg = "#${select}" }
       tab_inactive = { fg = "#${fg}", bg = "#${bg}" }
@@ -67,11 +67,11 @@
       perm_sep   = { fg = "#${overlay1}" }
 
       [mode]
-      normal_main = { fg = "#${bg}", bg = "#${yazi_select}", bold = true }
-      select_main = { fg = "#${bg}", bg = "#${mode_select}", bold = true }
+      normal_main = { fg = "#${bg}", bg = "#${mode_select}", bold = true }
+      select_main = { fg = "#${bg}", bg = "#${mode_normal}", bold = true }
       unset_main  = { fg = "#${bg}", bg = "#${mode_insert}", bold = true }
-      normal_alt = { fg = "#${yazi_select}", bg = "#${surface1}", bold = true }
-      select_alt = { fg = "#${mode_select}", bg = "#${surface1}", bold = true }
+      normal_alt = { fg = "#${mode_select}", bg = "#${surface1}", bold = true }
+      select_alt = { fg = "#${mode_normal}", bg = "#${surface1}", bold = true }
       unset_alt  = { fg = "#${mode_insert}", bg = "#${surface1}", bold = true }
 
       [select]
@@ -94,12 +94,12 @@
       hovered = { fg = "#${red}", underline = true }
 
       [which]
-      mask            = { bg = "#${surface0}" }
-      # cand            = { fg = "#${blue}" }
-      rest            = { fg = "#${overlay2}" }
-      desc            = { fg = "#${pink}" }
-      separator       = "  "
-      separator_style = { fg = "#${surface2}" }
+      mask            = { bg = "#${bg-bright}" }
+      cand            = { fg = "#${red}"    }
+      rest            = { fg = "#${green}"  }
+      desc            = { fg = "#${fg}"     }
+      separator       = "   "
+      # separator_style = { fg = "#${surface2}" }
 
       [help]
       on      = { fg = "#${fg}" }
@@ -119,7 +119,7 @@
       	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#${red}" },
       	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#${pink}" },
       	{ name = "*", fg = "#${fg}" },
-      	{ name = "*/", fg = "#${yazi_select}" }
+      	{ name = "*/", fg = "#${mode_select}" }
       ]
 
       [icon]

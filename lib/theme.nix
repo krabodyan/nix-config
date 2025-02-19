@@ -12,11 +12,9 @@
     mode_normal = red;
     mode_select = brmagenta;
 
-    yazi_select = brpink;
-
     bg = "0A0A0A";
     bg-dark = "000000";
-    bg-bright = "0f0f0f";
+    bg-bright = "141414";
 
     surface0 = "1a1a1a";
     surface1 = "262626";
@@ -45,7 +43,7 @@
     brgreen = "99f7ba";
     bryellow = "ffeec7";
     brblue = cyan;
-    brmagenta = "f5a5fa";
+    brmagenta = "f6affa";
     brcyan = "75e6e3";
 
     orange = "eba0ac";
