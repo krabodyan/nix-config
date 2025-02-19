@@ -35,7 +35,7 @@
       find_keyword  = { fg = "#${red}" }
       find_position = { fg = "#${red}" }
 
-      marker_copied   = { fg = "#${brmagenta}", bg = "#${brmagenta}" }
+      marker_copied   = { fg = "#${yellow}", bg = "#${yellow}" }
       marker_cut      = { fg = "#${red}", bg = "#${red}" }
       marker_marked   = { fg = "#${blue}", bg = "#${blue}" }
       marker_selected = { fg = "#${green}", bg = "#${green}" }
@@ -44,7 +44,7 @@
       tab_inactive = { fg = "#${fg}", bg = "#${bg}" }
       tab_width    = 2
 
-      count_copied   = { fg = "#${bg}", bg = "#${green}" }
+      count_copied   = { fg = "#${bg}", bg = "#${yellow}" }
       count_cut      = { fg = "#${bg}", bg = "#${red}" }
       count_selected = { fg = "#${bg}", bg = "#${pink}" }
 
