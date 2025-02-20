@@ -73,10 +73,10 @@
 
     osd-font='${theme.font}'
     osd-font-size=40
-    osd-border-color='#${bg-bright}'
-    osd-border-size=2
-    osd-color='#${fg}'
-    osd-shadow-color='#${fg}'
+    osd-border-color='#${overlay0}'
+    osd-border-size=1
+    osd-color='#${fg-bright}'
+    osd-shadow-color='#${bg}'
   '';
   programs.mpv = {
     enable = true;
