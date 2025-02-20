@@ -8,9 +8,9 @@
     "diagnostic.unnecessary" = { fg = "comment"; };
 
     error = "red";
-    warning = "yellow";
-    info = "green";
-    hint = "green";
+    warning = "comment";
+    info = "comment";
+    hint = "comment";
 
     # "attribute" = "yellow";
     "type" = {
