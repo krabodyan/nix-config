@@ -20,7 +20,7 @@ end
 
 function __done_ended --on-event fish_postexec
     set -l exit_status $status
-    set -q __done_min_cmd_duration; or set -g __done_min_cmd_duration 2000
+    set -q __done_min_cmd_duration; or set -g __done_min_cmd_duration 1000
     set -q cmd_duration; or set -l cmd_duration $CMD_DURATION
 
     if test $cmd_duration
