@@ -7,8 +7,8 @@
     powerManagement.enable = true;
     powerManagement.finegrained = false;
     nvidiaSettings = false;
-    open = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
     # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
     #   version = "570.86.16";
     #   sha256_64bit = "sha256-RWPqS7ZUJH9JEAWlfHLGdqrNlavhaR1xMyzs8lJhy9U=";

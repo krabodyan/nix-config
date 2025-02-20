@@ -24,7 +24,7 @@
     };
 
     kernelParams = [ "nohibernate" "rootfstype=btrfs" "raid=noautodetect" ];
-    # kernelPackages = pkgs-stable.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_6_11;
     extraModprobeConfig = ''
       options i915 enable_guc=3
     '';
@@ -50,8 +50,8 @@
       [ "xhci_pci" "thunderbolt" "nvme" "usbhid" ];
     # initrd.kernelModules = [ ];
     initrd.verbose = false;
-    kernelModules = [ "v4l2loopback" ]; # "i915" "uinput" ];
-    extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
+    # kernelModules = [ "v4l2loopback" ]; # "i915" "uinput" ];
+    # extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
   };
 
   services.udev.extraRules = ''
