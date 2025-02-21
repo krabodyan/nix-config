@@ -18,7 +18,7 @@
       # modifiers = [ "italic" ];
     };
 
-    "type.builtin" = "red";
+    "type.builtin" = "text";
     "type.enum" = "yellow";
 
     "constructor" = "yellow";
@@ -28,7 +28,7 @@
     "constant.character" = "teal";
     "constant.character.escape" = "teal";
 
-    "string" = "green";
+    "string" = "blue";
     "string.regexp" = "pink";
     "string.special" = "blue";
     "string.special.symbol" = "red";
@@ -41,13 +41,13 @@
 
     "variable" = "text";
     "variable.parameter" = "text";
-    "variable.builtin" = "red";
+    "variable.builtin" = "text";
     "variable.other.member" = "text";
 
     "label" = "red"; # used for lifetimes
 
     "punctuation" = "overlay1";
-    "punctuation.bracket" = "sky";
+    "punctuation.bracket" = "magenta";
     "punctuation.special" = "peach";
 
     "keyword" = {
@@ -57,14 +57,14 @@
     "operator" = "sky";
 
     "function" = {
-      fg = "blue";
+      fg = "fg";
       # modifiers = [ "italic" ];
     };
     # "function.builtin" = {
     #   fg = "peach";
     #   modifiers = [ "italic" ];
     # };
-    "function.macro" = "blue";
+    "function.macro" = "fg";
 
     "tag" = "sapphire";
 
