@@ -6,6 +6,31 @@ name = "svelte"
 comment-token = "//"
 block-comment-tokens = {start = "<!--", end = "-->"}
 
+# ARDUINO --------------------------
+[language-server.arduino-lsp]
+command = "arduino-language-server" 
+args = [
+  "-clangd", "clangd", "-cli", "arduino-cli", "-cli-config",
+  "$HOME/.arduino15/arduino-cli.yaml", "-fqbn", "arduino:mbed:nanorp2040connect"
+]
+
+[[grammar]]
+name = "arduino"
+source = { git = "https://github.com/ObserverOfTime/tree-sitter-arduino", rev = "017696bdf47ca2b10948c5a511f9ab387722d0f3"}
+
+[[language]]
+name = "arduino"
+grammar = "arduino"
+scope = "source.arduino"
+injection-regex = "arduino"
+file-types = ["ino", "cpp", "h"] # ⭐ this line is what matters
+comment-token = "//"
+roots = [ "sketch.yaml"]
+language-servers = [ "arduino-lsp" ]
+auto-format = true
+
+[language.formatter]
+command = "clang-format"
 
 # NIX --------------------------
 [[language]]

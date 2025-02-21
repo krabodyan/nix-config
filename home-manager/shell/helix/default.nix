@@ -12,6 +12,9 @@
     python312Packages.python-lsp-server
     typescript-language-server
     nodePackages.prettier
+    arduino-language-server
+    arduino-cli
+    clang-tools
     (import ./yazi-picker.nix { inherit pkgs; })
   ];
 
