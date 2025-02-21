@@ -117,7 +117,7 @@ in ''
   riverctl rule-add -app-id "steam" no-float
   riverctl rule-add -app-id "zoom" tags 8
   riverctl rule-add -app-id "zoom" float
-  riverctl rule-add -app-id "ONLYOFFICE Desktop Editors" tags 8
+  riverctl rule-add -app-id "ONLYOFFICE" tags 8
 
   riverctl rule-add -app-id 'floaterm' float
 
