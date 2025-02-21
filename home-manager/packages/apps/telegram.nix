@@ -13,5 +13,4 @@ in {
   xdg.mimeApps.defaultApplications = {
     "x-scheme-handler/tg" = [ "${name}.desktop" ];
   };
-
 }
