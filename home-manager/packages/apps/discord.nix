@@ -1,5 +1,5 @@
-{ pkgs, pkgs-stable, theme, ... }: {
-  home.packages = [ pkgs-stable.vesktop ];
+{ pkgs, theme, ... }: {
+  home.packages = [ pkgs.vesktop ];
   xdg.configFile."vesktop/settings/quickCss.css".text = with theme; ''
     * {
       font-family: "${font}" !important;
