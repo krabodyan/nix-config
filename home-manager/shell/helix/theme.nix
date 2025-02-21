@@ -14,14 +14,14 @@
 
     # "attribute" = "yellow";
     "type" = {
-      fg = "yellow";
+      fg = "text";
       # modifiers = [ "italic" ];
     };
 
     "type.builtin" = "text";
-    "type.enum" = "yellow";
+    "type.enum" = "magenta";
 
-    "constructor" = "yellow";
+    "constructor" = "text";
 
     "constant.builtin" = "red";
     "constant.numeric" = "red";
@@ -47,7 +47,7 @@
     "label" = "red"; # used for lifetimes
 
     "punctuation" = "overlay1";
-    "punctuation.bracket" = "magenta";
+    "punctuation.bracket" = "yellow";
     "punctuation.special" = "peach";
 
     "keyword" = {
@@ -57,14 +57,14 @@
     "operator" = "sky";
 
     "function" = {
-      fg = "fg";
+      fg = "text";
       # modifiers = [ "italic" ];
     };
     # "function.builtin" = {
     #   fg = "peach";
     #   modifiers = [ "italic" ];
     # };
-    "function.macro" = "fg";
+    "function.macro" = "text";
 
     "tag" = "sapphire";
 
@@ -197,9 +197,9 @@
     };
     # matching bracket
     "ui.cursor.match" = {
-      # fg = "yellow";
-      # bg = "surface1";
-      # modifiers = [ "underlined" ];
+      fg = "magenta";
+      bg = "surface0";
+      modifiers = [ "underlined" ];
     };
     "ui.cursor.primary.normal" = {
       fg = "base";
