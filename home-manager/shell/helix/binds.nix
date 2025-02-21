@@ -83,6 +83,7 @@ in rec {
     "A-l" = "move_char_right";
     "A-j" = "move_line_down";
     "A-k" = "move_line_up";
+    "A-v" = ":clipboard-paste-before";
   };
   normal = binds // special // {
     ${toggle} = [ "collapse_selection" "insert_mode" ];
