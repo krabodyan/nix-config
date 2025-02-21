@@ -27,7 +27,7 @@
 
     mangohud
     # postgresql
-
+    scrcpy
     pulsemixer
     # ngrok
   ];
