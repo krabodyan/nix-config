@@ -90,26 +90,28 @@
         bind --mode default --sets-mode insert \ed "commandline -f repaint-mode"
         bind --mode insert --sets-mode default \ed "commandline -f repaint-mode"
         bind --mode visual --sets-mode default \ed "commandline -f repaint-mode; commandline -f end-selection"
-        bind --mode visual --sets-mode insert i "commandline -f repaint-mode; commandline -f end-selection"
 
-        bind --erase --preset --mode insert \e\r
-        bind --erase --preset --mode default \e\r
+        bind --mode visual --sets-mode insert i "commandline -f repaint-mode; commandline -f end-selection"
+        bind --mode default --sets-mode insert i "commandline -f repaint-mode; commandline -f end-selection"
 
         bind --mode default --sets-mode visual x "commandline -f beginning-of-line; commandline -f begin-selection; commandline -f end-of-line; commandline -f repaint-mode"
         bind --mode visual x "commandline -f beginning-of-line; commandline -f begin-selection; commandline -f end-of-line"
 
         for mode in default insert visual
+          bind --erase --preset --mode $mode \e\r
+          bind --erase --preset --mode $mode \el
+
           bind --mode $mode \ef end-of-line
           bind --mode $mode \ea beginning-of-line
         end
 
+        bind --mode insert \eh backward-char
+        bind --mode insert \el forward-char
+        
         bind --mode insert \es _fzf_search_directory
-        bind --mode insert \er fzf-history-widget
 
         bind --mode visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
         bind --mode default -m insert p "fish_clipboard_paste; commandline -f repaint-mode"
-
-        bind --mode insert \cS 'zellij; commandline -f repaint'
       end
 
       set -g fish_key_bindings fish_hybrid_key_bindings
