@@ -8,6 +8,6 @@
         gst-libav
       ]);
     VDPAU_DRIVER = "va_gl";
-    LS_COLORS = "di=1;33";
+    LS_COLORS = "di=1;36";
   };
 }
