@@ -1,5 +1,9 @@
 { theme, pkgs, ... }: {
   home.packages = with pkgs; [ nix-your-shell ];
+  xdg.desktopEntries."fish" = {
+    name = "fish";
+    noDisplay = true;
+  };
   programs.fish = {
     enable = true;
     shellAliases = {
