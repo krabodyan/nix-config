@@ -87,8 +87,14 @@ in rec {
   };
   normal = binds // special // {
     ${toggle} = [ "collapse_selection" "insert_mode" ];
-    "A-l" = [ "move_next_word_end" "collapse_selection" "move_char_right" ];
-    "A-h" = [ "move_prev_word_start" "collapse_selection" ];
+    # "A-l" = [ "move_next_word_end" "collapse_selection" "move_char_right" ];
+    # "A-h" = [ "move_prev_word_start" "collapse_selection" ];
+    # e = [ "select_mode" "move_next_word_end" ];
+    # w = [ "select_mode" "move_next_word_start" ];
+    # b = [ "select_mode" "move_prev_word_end" ];
+    # E = [ "select_mode" "move_next_long_word_end" ];
+    # W = [ "select_mode" "move_next_long_word_start" ];
+    # B = [ "select_mode" "move_prev_long_word_end" ];
     space = {
       q = ":q";
       Q = ":q!";

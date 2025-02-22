@@ -198,7 +198,7 @@
     # matching bracket
     "ui.cursor.match" = {
       fg = "magenta";
-      bg = "surface0";
+      # bg = "surface0";
       modifiers = [ "underlined" ];
     };
     "ui.cursor.primary.normal" = {
