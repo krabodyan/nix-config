@@ -1,6 +1,7 @@
 { pkgs, ... }: {
+  nixpkgs.config.permittedInsecurePackages = [ "SDL_ttf-2.0.11" ];
   programs.nix-ld = {
-    enable = false;
+    enable = true;
     package = pkgs.nix-ld-rs;
     libraries = with pkgs; [
       # Without these it silently fails
