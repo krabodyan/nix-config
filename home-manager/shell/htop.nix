@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [ gpustat ];
-  xdg.configFile."htop/htoprc".force = true;
+  # xdg.configFile."htop/htoprc".force = true;
   programs.htop = {
     enable = true;
     settings = with config.lib.htop;
