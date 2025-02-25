@@ -47,7 +47,7 @@
 
   cursor-shape = {
     normal = "block";
-    insert = "block"; # bar
+    insert = "bar"; # bar
     select = "block";
   };
 

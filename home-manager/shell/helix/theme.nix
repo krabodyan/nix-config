@@ -18,7 +18,7 @@
       # modifiers = [ "italic" ];
     };
 
-    "type.builtin" = "text";
+    "type.builtin" = "magenta";
     "type.enum" = "magenta";
 
     "constructor" = "text";

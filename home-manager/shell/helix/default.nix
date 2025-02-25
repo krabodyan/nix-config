@@ -15,6 +15,9 @@
     arduino-language-server
     arduino-cli
     clang-tools
+    platformio
+    glibc_multi
+    pkgs.pkgsCross.avr.buildPackages.gcc
     (import ./yazi-picker.nix { inherit pkgs; })
   ];
 
