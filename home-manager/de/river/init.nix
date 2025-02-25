@@ -159,5 +159,9 @@ in ''
     systemctl --user set-environment XDG_CURRENT_DESKTOP=river
     systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
+
+    firefox &
+    QT_QPA_PLATFORMTHEME=gtk3 telegram-desktop &
+    vesktop &
   }
 ''
