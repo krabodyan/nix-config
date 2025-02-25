@@ -104,9 +104,12 @@
           bind --mode visual --sets-mode insert i "commandline -f repaint-mode; commandline -f end-selection"
           bind --mode default --sets-mode insert i "commandline -f repaint-mode; commandline -f end-selection"
 
+          bind --mode visual \; "commandline -f end-selection; commandline -f begin-selection"
+          bind --mode visual \ev swap-selection-start-stop
+
           bind --mode default --sets-mode visual w "commandline -f begin-selection; commandline -f forward-word; commandline -f forward-single-char"
           bind --mode default --sets-mode visual b "commandline -f begin-selection; commandline -f backward-word; commandline -f repaint-mode"
-          bind --mode default --sets-mode visual e "commandline -f begin-selection; commandline -f forward-single-char commandline -f forward-word; commandline -f backward-char; commandline -f repaint-mode"
+          bind --mode default --sets-mode visual e "commandline -f begin-selection; commandline -f forward-single-char; commandline -f forward-word; commandline -f backward-char; commandline -f repaint-mode"
 
           bind --mode default --sets-mode visual W "commandline -f begin-selection; commandline -f forward-bigword; commandline -f forward-single-char"
           bind --mode default --sets-mode visual B "commandline -f begin-selection; commandline -f backward-bigword; commandline -f repaint-mode"
