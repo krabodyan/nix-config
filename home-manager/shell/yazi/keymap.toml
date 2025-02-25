@@ -21,7 +21,7 @@ on = "<Space>"
 run = "toggle --state=none"
 desc = "Toggle the current selection state"
 
-[[manager.prepend_keymap]]
-on   = "p"
-run  = "plugin smart-paste"
-desc = "Paste into the hovered directory or CWD"
+# [[manager.prepend_keymap]]
+# on   = "p"
+# run  = "plugin smart-paste"
+# desc = "Paste into the hovered directory or CWD"
