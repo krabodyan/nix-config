@@ -37,15 +37,11 @@
         inherit system;
         overlays = [ inputs.nixpkgs-wayland.overlay ];
       };
-      # pkgs-stable = import nixpkgs-stable { inherit system; };
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs system nix-colors; };
         modules = [
-          {
-            nixpkgs.config.allowUnfree = true;
-            # nixpkgs.config.allowUnfreePredicate = (_: true);
-          }
+          { nixpkgs.config.allowUnfree = true; }
           ./lib/theme.nix
           ./nixos/configuration.nix
           inputs.disko.nixosModules.default
@@ -59,10 +55,7 @@
         inherit pkgs;
         extraSpecialArgs = { inherit inputs; };
         modules = [
-          {
-            nixpkgs.config.allowUnfree = true;
-            # nixpkgs.config.allowUnfreePredicate = (_: true);
-          }
+          { nixpkgs.config.allowUnfree = true; }
           ./home-manager
           ./lib/theme.nix
           ./lib/helpers.nix
@@ -74,18 +67,19 @@
           inherit system;
           overlays = [ (import inputs.rust-overlay) ];
         }).rust-bin.nightly.latest.default.override {
-          targets = [
-            # "wasm32-unknown-unknown"
-            "x86_64-unknown-linux-gnu"
-          ];
+          targets = [ "wasm32-unknown-unknown" "x86_64-unknown-linux-gnu" ];
           extensions = [ "rust-src" "rust-analyzer" "miri" ];
         };
       in {
         rust = pkgs.mkShell {
           DEV_SHELL_NAME = "rust";
           RUST_BACKTRACE = 1;
-          nativeBuildInputs = with pkgs; [ pkg-config ];
-          buildInputs = with pkgs; [ rust-pkg openssl cargo-watch ];
+          nativeBuildInputs = with pkgs; [
+            pkg-config
+            cargo-watch
+            cargo-expand
+          ];
+          buildInputs = with pkgs; [ rust-pkg openssl ];
         };
         tauri = pkgs.mkShell {
           DEV_SHELL_NAME = "tauri";
@@ -97,9 +91,9 @@
             gobject-introspection
             cargo-tauri
             nodejs
-            pnpm
+            tailwindcss
             # dioxus-cli
-            # trunk # for wasm
+            trunk # for wasm
           ];
           buildInputs = with pkgs; [
             rust-pkg
