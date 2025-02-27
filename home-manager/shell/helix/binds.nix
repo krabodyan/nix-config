@@ -1,6 +1,13 @@
 let
   toggle = "A-d";
   binds = {
+    "A-S-h" = "unindent";
+    "A-S-l" = "indent";
+    "up" = "no_op";
+    "down" = "no_op";
+    "left" = "no_op";
+    "right" = "no_op";
+
     "C-c" = "completion";
     "C-b" = ''
       :noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}
@@ -61,6 +68,8 @@ let
     "A-minus" = "decrement";
   };
   special = {
+    "<" = "no_op";
+    ">" = "no_op";
     t = [ "normal_mode" "extend_to_word" ];
     "tab" = "no_op";
     "A-x" = "extend_line_up";
