@@ -1,6 +1,5 @@
 { theme, mkHex }: {
   paradise = {
-
     "diagnostic.error" = { underline.style = "curl"; };
     "diagnostic.warning" = { underline.style = "curl"; };
     "diagnostic.info" = { underline.style = "curl"; };
@@ -12,11 +11,7 @@
     info = "overlay1";
     hint = "overlay1";
 
-    # "attribute" = "yellow";
-    "type" = {
-      fg = "text";
-      # modifiers = [ "italic" ];
-    };
+    "type" = { fg = "text"; };
 
     "type.builtin" = "magenta";
     "type.enum" = "magenta";
@@ -34,10 +29,7 @@
     "string.special.symbol" = "red";
     "string.special.path" = "pink";
 
-    "comment" = {
-      fg = "comment";
-      # modifiers = [ "italic" ];
-    };
+    "comment" = { fg = "comment"; };
 
     "variable" = "text";
     "variable.parameter" = "text";
@@ -50,28 +42,21 @@
     "punctuation.bracket" = "yellow";
     "punctuation.special" = "peach";
 
-    "keyword" = {
-      fg = "magenta";
-      # modifiers = [ "italic" ];
-    };
+    "keyword" = { fg = "magenta"; };
     "operator" = "sky";
 
-    "function" = {
-      fg = "text";
-      # modifiers = [ "italic" ];
-    };
+    "function" = { fg = "text"; };
+
     # "function.builtin" = {
     #   fg = "peach";
     #   modifiers = [ "italic" ];
     # };
+
     "function.macro" = "text";
 
     "tag" = "sapphire";
 
-    "namespace" = {
-      fg = "text";
-      # modifiers = [ "italic" ];
-    };
+    "namespace" = { fg = "text"; };
 
     "special" = "red";
 
@@ -90,10 +75,7 @@
     "markup.italic" = { modifiers = [ "italic" ]; };
     "markup.link.url" = {
       fg = "blue";
-      modifiers = [
-        # "italic"
-        "underlined"
-      ];
+      modifiers = [ "underlined" ];
     };
     "markup.link.text" = "blue";
     "markup.raw" = "yellow";
@@ -114,21 +96,22 @@
       fg = "overlay0";
       bg = "base";
     };
-    # "ui.statusline.normal" = {
-    #   fg = "base";
-    #   # bg = "mode_normal";
-    #   modifiers = [ "bold" ];
-    # };
-    # "ui.statusline.insert" = {
-    #   fg = "base";
-    #   # bg = "mode_insert";
-    #   modifiers = [ "bold" ];
-    # };
-    # "ui.statusline.select" = {
-    #   fg = "base";
-    #   # bg = "mode_select";
-    #   modifiers = [ "bold" ];
-    # };
+
+    "ui.statusline.normal" = {
+      fg = "base";
+      # bg = "mode_normal";
+      modifiers = [ "bold" ];
+    };
+    "ui.statusline.insert" = {
+      fg = "base";
+      # bg = "mode_insert";
+      modifiers = [ "bold" ];
+    };
+    "ui.statusline.select" = {
+      fg = "base";
+      # bg = "mode_select";
+      modifiers = [ "bold" ];
+    };
 
     # popup = space
     "ui.popup" = {
@@ -144,37 +127,30 @@
       fg = "overlay0";
       bg = "base";
     };
-    "ui.menu.selected" = {
-      fg = "text";
-      # bg = "surface2";
-    };
+    "ui.menu.selected" = { fg = "text"; };
     "ui.menu.scroll" = { fg = "surface2"; };
 
     "ui.picker.header" = { fg = "comment"; };
     "ui.window" = { fg = "surface1"; };
-    "ui.help" = {
+    "ui.help" = { # menu in command mode :
       fg = "overlay0";
-      bg = "bg-bright";
+      bg = "base";
     };
     "ui.bufferline" = {
-      fg = "comment";
+      fg = "surface2";
       bg = "base";
-      modifiers = [ "bold" ];
     };
-    "ui.bufferline.active" = {
-      fg = "subtext0";
-      bg = "surface0";
-      modifiers = [ "bold" ];
-    };
+    "ui.bufferline.active" = { fg = "subtext0"; };
     "ui.bufferline.background" = { bg = "base"; };
 
     "ui.text" = "text";
+    "ui.text.inactive" = { fg = "overlay1"; };
     "ui.text.focus" = {
       fg = "text";
       bg = "surface0";
       modifiers = [ "bold" ];
     };
-    "ui.text.inactive" = { fg = "overlay1"; };
+
     "ui.virtual" = "overlay0";
     "ui.virtual.ruler" = { bg = "surface0"; };
     "ui.virtual.indent-guide" = "surface1";
@@ -182,7 +158,6 @@
     "ui.virtual.jump-label" = {
       bg = "surface2";
       fg = "sky";
-      # modifiers = [ "bold" "italic" ];
     };
 
     "ui.selection" = { bg = "surface2"; };
@@ -198,7 +173,6 @@
     # matching bracket
     "ui.cursor.match" = {
       fg = "magenta";
-      # bg = "surface0";
       modifiers = [ "underlined" ];
     };
     "ui.cursor.primary.normal" = {
@@ -226,6 +200,7 @@
       fg = "base";
       bg = "overlay2";
     };
+
     "ui.cursorline.primary" = { bg = "bg-bright"; };
     "ui.highlight" = {
       fg = "yellow";

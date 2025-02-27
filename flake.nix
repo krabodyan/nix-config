@@ -21,7 +21,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    helix.url = "github:helix-editor/helix?ref=command-line";
+    helix.url = "github:helix-editor/helix";
     rust-overlay = {
       url =
         "github:oxalica/rust-overlay?rev=9a55a224af34b4f74526c261aeccd8d40af5e4f2";
@@ -80,6 +80,7 @@
             cargo-expand
           ];
           buildInputs = with pkgs; [ rust-pkg openssl ];
+          shellHook = "zellij";
         };
         tauri = pkgs.mkShell {
           DEV_SHELL_NAME = "tauri";
@@ -87,6 +88,7 @@
           GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
           nativeBuildInputs = with pkgs; [
             cargo-watch
+            cargo-expand
             pkg-config
             gobject-introspection
             cargo-tauri
@@ -110,6 +112,7 @@
             pango
             webkitgtk_4_1
           ];
+          shellHook = "zellij";
         };
         python = pkgs.mkShell {
           DEV_SHELL_NAME = "python";
