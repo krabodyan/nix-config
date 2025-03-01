@@ -10,7 +10,7 @@
     group_imports = "StdExternalCrate"
     imports_granularity = "Module"
     hard_tabs = true
-    tab_spaces = 1
+    tab_spaces = 4
     force_multiline_blocks = true
     newline_style = "Unix"
   '';
