@@ -80,7 +80,7 @@
             cargo-expand
           ];
           buildInputs = with pkgs; [ rust-pkg openssl ];
-          shellHook = "zellij";
+          shellHook = "test $ZELLIJ || zellij";
         };
         tauri = pkgs.mkShell {
           DEV_SHELL_NAME = "tauri";
@@ -89,13 +89,14 @@
           nativeBuildInputs = with pkgs; [
             cargo-watch
             cargo-expand
+            cargo-tauri
+            dioxus-cli
+            wasm-bindgen-cli
             pkg-config
             gobject-introspection
-            cargo-tauri
             nodejs
             tailwindcss
-            # dioxus-cli
-            trunk # for wasm
+            # trunk # for wasm
           ];
           buildInputs = with pkgs; [
             rust-pkg
@@ -112,7 +113,7 @@
             pango
             webkitgtk_4_1
           ];
-          shellHook = "zellij";
+          shellHook = "test $ZELLIJ || zellij";
         };
         python = pkgs.mkShell {
           DEV_SHELL_NAME = "python";
