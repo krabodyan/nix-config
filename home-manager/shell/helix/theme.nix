@@ -39,7 +39,7 @@
     "label" = "red"; # used for lifetimes
 
     "punctuation" = "overlay1";
-    "punctuation.bracket" = "yellow";
+    "punctuation.bracket" = "overlay2";
     "punctuation.special" = "peach";
 
     "keyword" = { fg = "magenta"; };
