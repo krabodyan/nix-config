@@ -115,6 +115,10 @@
           ];
           shellHook = "test $ZELLIJ || zellij";
         };
+        ino = pkgs.mkShell {
+          buildInputs = [ pkgs.glibc_multi ];
+          shellHook = "test $ZELLIJ || zellij";
+        };
         python = pkgs.mkShell {
           DEV_SHELL_NAME = "python";
           packages = [
