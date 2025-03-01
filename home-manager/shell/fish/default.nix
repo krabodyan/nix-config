@@ -7,6 +7,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
+      flake = "cd flake && zellij";
       ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
       tree =
         "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
@@ -109,11 +110,11 @@
 
           bind --mode default --sets-mode visual w "commandline -f begin-selection; commandline -f forward-word; commandline -f forward-single-char"
           bind --mode default --sets-mode visual b "commandline -f begin-selection; commandline -f backward-word; commandline -f repaint-mode"
-          bind --mode default --sets-mode visual e "commandline -f begin-selection; commandline -f forward-single-char; commandline -f forward-word; commandline -f backward-char; commandline -f repaint-mode"
+          bind --mode default --sets-mode visual e "commandline -f begin-selection; commandline -f forward-word; commandline -f backward-char; commandline -f repaint-mode"
 
           bind --mode default --sets-mode visual W "commandline -f begin-selection; commandline -f forward-bigword; commandline -f forward-single-char"
           bind --mode default --sets-mode visual B "commandline -f begin-selection; commandline -f backward-bigword; commandline -f repaint-mode"
-          bind --mode default --sets-mode visual E "commandline -f begin-selection; commandline -f forward-single-char commandline -f forward-bigword; commandline -f backward-char; commandline -f repaint-mode"
+          bind --mode default --sets-mode visual E "commandline -f begin-selection; commandline -f forward-bigword; commandline -f backward-char; commandline -f repaint-mode"
 
           bind --mode default --sets-mode visual x "commandline -f beginning-of-line; commandline -f begin-selection; commandline -f end-of-line; commandline -f repaint-mode"
           bind --mode visual x "commandline -f beginning-of-line; commandline -f begin-selection; commandline -f end-of-line"
