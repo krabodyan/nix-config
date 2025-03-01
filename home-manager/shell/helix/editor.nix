@@ -41,7 +41,7 @@
 
   indent-guides = {
     render = true;
-    # character = "╎";
+    character = "▏";
     skip-levels = 1;
   };
 
