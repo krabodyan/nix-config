@@ -18,8 +18,10 @@
   bufferline = "multiple";
   popup-border = "all";
   text-width = 145;
-  indent-heuristic = "tree-sitter";
+  # indent-heuristic = "tree-sitter";
   jump-label-alphabet = "fjdkshlweruiopmaqcvngbzxty";
+
+  clipboard-provider = "wayland";
 
   end-of-line-diagnostics = "hint";
   inline-diagnostics = {
