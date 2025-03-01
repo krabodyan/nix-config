@@ -25,28 +25,28 @@
 
       keybinds clear-defaults=true {   
         scroll {
-          bind "Ctrl c" "s" { SwitchToMode "normal"; }
+          bind "Alt Space" "Space" "i" "c" { SwitchToMode "normal"; }
+
           bind "j" "Down" { ScrollDown; }
           bind "k" "Up" { ScrollUp; }
+          bind "i" { SwitchToMode "normal"; }
         }
         
         renametab {
-          bind "Ctrl c" { UndoRenameTab; SwitchToMode "normal"; }
+          bind "Alt Space" "Space" "i" "c" { UndoRenameTab; SwitchToMode "normal"; }
         }
 
         pane {
-          bind "Alt Space" { SwitchToMode "normal"; }
-          bind "Space" { SwitchToMode "normal"; }
+          bind "Alt Space" "Space" "i" "c" { SwitchToMode "normal"; }
           
           bind "q" { CloseFocus; SwitchToMode "normal"; }
           bind "f" { ToggleFloatingPanes; SwitchToMode "normal"; }
           bind "e" { EditScrollback; SwitchToMode "Normal"; }
           bind "t" { ToggleFocusFullscreen; SwitchToMode "normal"; }
-          bind "i" { Resize "decrease"; }
           bind "n" { NewTab; SwitchToMode "normal"; }
-          bind "o" { Resize "increase"; }
+          bind "Alt o" { Resize "increase"; }
+          bind "Alt i" { Resize "decrease"; }
           bind "s" { SwitchToMode "scroll"; }
-          bind "space" { FocusNextPane; SwitchToMode "normal"; }
 
           bind "l" { GoToNextTab; }
           bind "h" { GoToPreviousTab;  }

@@ -16,14 +16,12 @@ let
       :sh gh browse %{filename:git_rel}:%{linenumber} -c=%sh{git rev-parse HEAD}
     '';
 
-    # "A-w" = "rotate_view;
     "A-f" = [ "goto_line_end" "move_char_right" ];
     "A-a" = [ "normal_mode" "goto_word" ];
-
     "A-s" =
       [ ":w" "normal_mode" "collapse_selection" "commit_undo_checkpoint" ];
     "A-e" = ":buffer-next";
-    "A-q" = ":buffer-previous";
+    "A-w" = ":buffer-previous";
 
     "A-/" = "toggle_comments";
     "A-7" = "toggle_comments";
@@ -52,7 +50,6 @@ let
       "normal_mode"
       "replace_with_yanked"
       "collapse_selection"
-      "insert_mode"
     ];
     "C-A-j" = [
       "normal_mode"
@@ -63,7 +60,6 @@ let
       "normal_mode"
       "replace_with_yanked"
       "collapse_selection"
-      "insert_mode"
     ];
     "A-=" = "increment";
     "A-minus" = "decrement";
@@ -117,8 +113,6 @@ in rec {
   };
   select = binds // special // {
     ${toggle} = [ "collapse_selection" "normal_mode" ];
-    "A-l" = [ "move_next_word_end" "move_char_right" ];
-    "A-h" = [ "move_prev_word_start" ];
     "A-v" = "flip_selections";
     space = normal.space;
   };
