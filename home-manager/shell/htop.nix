@@ -1,28 +1,23 @@
-{ config, pkgs, ... }: {
-  home.packages = with pkgs; [ gpustat ];
-  # xdg.configFile."htop/htoprc".force = true;
-  programs.htop = {
-    enable = true;
-    settings = with config.lib.htop;
-      leftMeters [ (bar "LeftCPUs2") (text "Blank") (bar "CPU") (bar "Memory") ]
-      // rightMeters [
-        (bar "RightCPUs2")
-        (text "Blank")
-        (text "Blank")
-        (text "LoadAverage")
-      ] // {
-        tree_view = false;
-        hide_kernel_threads = true;
-        hide_userland_threads = true;
-        show_program_path = false;
-        highlight_base_name = true;
-        show_cpu_frequency = true;
-        show_cpu_temperature = true;
-        cpu_count_from_one = true;
-        color_scheme = 6;
-        delay = 5;
-
-        fields = with fields; [ PID TIME PERCENT_CPU PERCENT_MEM COMM ];
-      };
+{ pkgs, ... }: {
+  home.packages = [ pkgs.htop ];
+  xdg.configFile."htop/htoprc" = {
+    force = true;
+    text = ''
+      color_scheme=6
+      cpu_count_from_one=1
+      delay=5
+      fields=0 49 46 47 1
+      hide_kernel_threads=1
+      hide_userland_threads=1
+      highlight_base_name=1
+      left_meter_modes=1 2 1 1
+      left_meters=LeftCPUs2 Blank CPU Memory
+      right_meter_modes=1 2 2 2
+      right_meters=RightCPUs2 Blank Blank LoadAverage
+      show_cpu_frequency=1
+      show_cpu_temperature=1
+      show_program_path=0
+      tree_view=0
+    '';
   };
 }

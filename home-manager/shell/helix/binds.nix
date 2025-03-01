@@ -15,6 +15,7 @@ let
     "C-S-b" = ''
       :sh gh browse %{filename:git_rel}:%{linenumber} -c=%sh{git rev-parse HEAD}
     '';
+
     # "A-w" = "rotate_view;
     "A-f" = [ "goto_line_end" "move_char_right" ];
     "A-a" = [ "normal_mode" "goto_word" ];
@@ -43,7 +44,7 @@ let
       "delete_selection"
       "paste_after"
     ];
-    "C-S-up" = [
+    "C-A-k" = [
       "normal_mode"
       "extend_line"
       "yank"
@@ -53,7 +54,7 @@ let
       "collapse_selection"
       "insert_mode"
     ];
-    "C-S-down" = [
+    "C-A-j" = [
       "normal_mode"
       "extend_line"
       "yank"

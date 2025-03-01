@@ -12,7 +12,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,15 +32,21 @@
   outputs = { nixpkgs, home-manager, nix-colors, ... }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
+      overlaysSettings = {
         inherit system;
+        config = {
+          allowUnfree = true;
+          allowBroken = true;
+          allowInsecurePredicate = _: true;
+        };
         overlays = [ inputs.nixpkgs-wayland.overlay ];
       };
+      pkgs = import nixpkgs overlaysSettings;
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        inherit pkgs;
         specialArgs = { inherit inputs system nix-colors; };
         modules = [
-          { nixpkgs.config.allowUnfree = true; }
           ./lib/theme.nix
           ./nixos/configuration.nix
           inputs.disko.nixosModules.default
@@ -54,12 +59,7 @@
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit inputs; };
-        modules = [
-          { nixpkgs.config.allowUnfree = true; }
-          ./home-manager
-          ./lib/theme.nix
-          ./lib/helpers.nix
-        ];
+        modules = [ ./home-manager ./lib/theme.nix ./lib/helpers.nix ];
       };
 
       devShells.${system} = let
