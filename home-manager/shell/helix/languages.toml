@@ -74,7 +74,9 @@ name = "rust"
 [language-server.rust-analyzer.config]
 check.command = "clippy"
 # procMacro.enable = false
+inlayHints.closingBraceHints.minLines = 5
 inlayHints.parameterHints.enable = false
+inlayHints.typeHints.hideClosureInitialization = true
 
 # PYTHON --------------------------
 [[language]]
