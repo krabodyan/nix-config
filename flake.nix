@@ -116,6 +116,7 @@
           shellHook = "test $ZELLIJ || zellij";
         };
         ino = pkgs.mkShell {
+          DEV_SHELL_NAME = "ino";
           buildInputs = [ pkgs.glibc_multi ];
           shellHook = "test $ZELLIJ || zellij";
         };
