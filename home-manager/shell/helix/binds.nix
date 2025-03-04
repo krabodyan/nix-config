@@ -96,6 +96,7 @@ in rec {
   };
   normal = binds // special // {
     ${toggle} = [ "collapse_selection" "insert_mode" ];
+    "A-v" = [ "select_mode" "flip_selections" ];
     # "A-l" = [ "move_next_word_end" "collapse_selection" "move_char_right" ];
     # "A-h" = [ "move_prev_word_start" "collapse_selection" ];
     # e = [ "select_mode" "move_next_word_end" ];
@@ -118,5 +119,6 @@ in rec {
     ${toggle} = [ "collapse_selection" "normal_mode" ];
     "A-v" = "flip_selections";
     space = normal.space;
+    "A-a" = "extend_to_word";
   };
 }

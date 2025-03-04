@@ -4,7 +4,9 @@
     enableFishIntegration = false;
   };
   xdg.configFile."zellij/config.kdl".text = with theme;
-    let back = surface0;
+    let
+      back = surface0;
+      # kdl
     in ''
       default_shell "fish"
       themes {
@@ -47,23 +49,20 @@
           bind "Alt o" { Resize "increase"; }
           bind "Alt i" { Resize "decrease"; }
           bind "s" { SwitchToMode "scroll"; }
-
-          bind "l" { GoToNextTab; }
-          bind "h" { GoToPreviousTab;  }
-          
-          bind "Alt l" { MoveFocus "Right"; SwitchToMode "Normal"; }
+                   
+          bind "l" "Alt l" { MoveFocus "Right"; SwitchToMode "Normal"; }
           bind "Shift l" { NewPane "Right"; SwitchToMode "Normal"; }
           bind "Alt Shift l" { MovePane "right"; SwitchToMode "Normal"; }
           
-          bind "Alt h" { MoveFocus "Left"; SwitchToMode "Normal"; }
+          bind "h" "Alt h" { MoveFocus "Left"; SwitchToMode "Normal"; }
           bind "Shift h" { NewPane "Left"; SwitchToMode "Normal"; }
           bind "Alt Shift h" { MovePane "left"; SwitchToMode "Normal"; }
           
-          bind "Alt j" { MoveFocus "Down"; SwitchToMode "Normal"; }
+          bind "j" "Alt j" { MoveFocus "Down"; SwitchToMode "Normal"; }
           bind "Shift j" { NewPane "Down"; SwitchToMode "Normal"; }
           bind "Alt Shift j" { MovePane "down"; SwitchToMode "Normal"; }
           
-          bind "Alt k" { MoveFocus "Up"; SwitchToMode "Normal"; }
+          bind "k" "Alt k" { MoveFocus "Up"; SwitchToMode "Normal"; }
           bind "Shift k" { NewPane "Up"; SwitchToMode "Normal"; }
           bind "Alt Shift k" { MovePane "up"; SwitchToMode "Normal"; }        
           
