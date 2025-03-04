@@ -38,7 +38,7 @@
       "--height 7"
       "--info hidden"
       "--reverse"
-      "--bind 'tab:toggle-down,btab:toggle-up,alt-a:jump'"
+      "--bind 'tab:toggle-down,btab:toggle-up,alt-a:abort,alt-s:jump'"
     ];
   };
   programs.zoxide = {

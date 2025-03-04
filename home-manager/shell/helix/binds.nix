@@ -16,8 +16,11 @@ let
       :sh gh browse %{filename:git_rel}:%{linenumber} -c=%sh{git rev-parse HEAD}
     '';
 
+    "A-y" = "save_selection";
     "A-f" = [ "goto_line_end" "move_char_right" ];
+    "A-g" = "goto_first_nonwhitespace";
     "A-a" = [ "normal_mode" "goto_word" ];
+
     "A-s" =
       [ ":w" "normal_mode" "collapse_selection" "commit_undo_checkpoint" ];
     "A-e" = ":buffer-next";

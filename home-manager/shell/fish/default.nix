@@ -7,12 +7,16 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      flake = "cd flake && zellij";
+      flake = "cd flake && pidof zellij || zellij";
       ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
       tree =
         "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
       c = "__zoxide_zi";
-    };
+    } // builtins.listToAttrs (builtins.map (name: {
+      name = name;
+      value = "nix develop $FLAKE#${name}";
+    }) [ "tauri" "rust" "ino" ]);
+
     functions = {
       _fzf_search_directory = # fish
         ''
@@ -98,6 +102,8 @@
           bind --mode default --sets-mode insert \ed "commandline -f repaint-mode"
           bind --mode insert --sets-mode default \ed "commandline -f repaint-mode"
           bind --mode visual --sets-mode default \ed "commandline -f repaint-mode; commandline -f end-selection"
+
+          bind --mode insert \ec __zoxide_zi
           
           bind --mode default --sets-mode default d "set fish_bind_mode visual; commandline -f delete-char"
           bind --mode default --sets-mode insert c "set fish_bind_mode visual; commandline -f delete-char; commandline -f repaint-mode"
@@ -107,14 +113,7 @@
 
           bind --mode visual \; "commandline -f end-selection; commandline -f begin-selection"
           bind --mode visual \ev swap-selection-start-stop
-
-          bind --mode default --sets-mode visual w "commandline -f begin-selection; commandline -f forward-word; commandline -f forward-single-char"
-          bind --mode default --sets-mode visual b "commandline -f begin-selection; commandline -f backward-word; commandline -f repaint-mode"
-          bind --mode default --sets-mode visual e "commandline -f begin-selection; commandline -f forward-word; commandline -f backward-char; commandline -f repaint-mode"
-
-          bind --mode default --sets-mode visual W "commandline -f begin-selection; commandline -f forward-bigword; commandline -f forward-single-char"
-          bind --mode default --sets-mode visual B "commandline -f begin-selection; commandline -f backward-bigword; commandline -f repaint-mode"
-          bind --mode default --sets-mode visual E "commandline -f begin-selection; commandline -f forward-bigword; commandline -f backward-char; commandline -f repaint-mode"
+          bind --mode visual \e\; swap-selection-start-stop
 
           bind --mode default --sets-mode visual x "commandline -f beginning-of-line; commandline -f begin-selection; commandline -f end-of-line; commandline -f repaint-mode"
           bind --mode visual x "commandline -f beginning-of-line; commandline -f begin-selection; commandline -f end-of-line"
@@ -124,13 +123,13 @@
             bind --erase --preset --mode $mode \el
 
             bind --mode $mode \ef end-of-line
-            bind --mode $mode \ea beginning-of-line
+            bind --mode $mode \eg beginning-of-line
           end
 
           bind --mode insert \eh backward-char
           bind --mode insert \el forward-char
           
-          bind --mode insert \es _fzf_search_directory
+          bind --mode insert \ea _fzf_search_directory
 
           bind --mode visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
           bind --mode default -m insert p "fish_clipboard_paste; commandline -f repaint-mode"

@@ -43,7 +43,7 @@
           bind "f" { ToggleFloatingPanes; SwitchToMode "normal"; }
           bind "e" { EditScrollback; SwitchToMode "Normal"; }
           bind "t" { ToggleFocusFullscreen; SwitchToMode "normal"; }
-          bind "n" { NewTab; SwitchToMode "normal"; }
+          bind "Alt n" "n" { NewTab; SwitchToMode "normal"; }
           bind "Alt o" { Resize "increase"; }
           bind "Alt i" { Resize "decrease"; }
           bind "s" { SwitchToMode "scroll"; }
