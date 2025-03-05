@@ -1,6 +1,6 @@
 { config, pkgs, theme, ... }: {
   home.packages = [ pkgs.satty ];
-  xdg.configFile."satty/config.toml".text = with theme; ''
+  xdg.configFile."satty/config.toml".text = with theme.colorsHex; ''
     [general]
     corner-roundness = 4
     fullscreen = true
@@ -20,13 +20,13 @@
 
     [color-palette]
     palette = [
-      "#${red}",
-      "#${yellow}",
-      "#${magenta}",
-      "#${blue}",
-      "#${fg}",
-      "#${green}",
-      "#${pink}"
+      "${red}",
+      "${yellow}",
+      "${magenta}",
+      "${blue}",
+      "${fg}",
+      "${green}",
+      "${pink}"
     ]
   '';
 }

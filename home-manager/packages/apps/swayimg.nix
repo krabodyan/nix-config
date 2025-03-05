@@ -1,19 +1,19 @@
 { pkgs, theme, helpers, ... }: {
   home.packages = [ pkgs.swayimg ];
-  xdg.configFile."swayimg/config".text = with theme; ''
+  xdg.configFile."swayimg/config".text = with theme.colorsHex; ''
     [general]
     size = fullscreen
 
     [viewer]
     scale = optimal
     transparency = grid
-    window = #${bg}ff
+    window = ${bg}ff
     slideshow = no
 
     [font]
-    name = ${font}
+    name = ${theme.font}
     size = 14
-    color = #${fg}ff
+    color = ${fg}ff
     shadow = #000000a0
 
     [keys.viewer]

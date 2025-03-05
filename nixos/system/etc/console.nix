@@ -4,7 +4,7 @@
     font =
       "${pkgs.powerline-fonts}/share/consolefonts/ter-powerline-v22b.psf.gz";
     keyMap = "us";
-    colors = with theme; [
+    colors = with theme.colors; [
       bg-dark
       red
       green

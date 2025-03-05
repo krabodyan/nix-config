@@ -1,5 +1,5 @@
 { theme }:
-with theme;
+with theme.colors;
 let
   kbd = "riverctl keyboard-layout -options grp:caps_toggle us,ru,ua";
   focused = "0x${surface1}";

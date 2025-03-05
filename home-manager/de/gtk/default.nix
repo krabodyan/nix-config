@@ -25,7 +25,7 @@
         slug = "paradise";
         name = "paradise";
         author = "krabodyan";
-        palette = with theme; {
+        palette = with theme.colors; {
           base00 = bg; # Фон (самый темный)
           base01 = surface0; # Темная поверхность
           base02 = bg; # Средняя поверхность

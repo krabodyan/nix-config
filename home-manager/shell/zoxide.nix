@@ -1,4 +1,4 @@
-{ config, theme, helpers, ... }: {
+{ config, theme, ... }: {
   programs.fd = {
     enable = true;
     hidden = false;
@@ -7,25 +7,23 @@
   };
   programs.fzf = {
     enable = true;
-    colors = with theme;
-      let inherit (helpers) mkHex;
-      in {
-        bg = "-1";
-        fg = mkHex fg-dark;
-        hl = mkHex fg-dark;
-        current-bg = "-1";
-        current-fg = mkHex fg;
-        current-hl = mkHex fg;
+    colors = with theme.colorsHex; {
+      bg = "-1";
+      fg = fg-dark;
+      hl = fg-dark;
+      current-bg = "-1";
+      current-fg = fg;
+      current-hl = fg;
 
-        info = mkHex fg-dark;
-        header = mkHex fg-dark;
-        pointer = mkHex red;
-        marker = mkHex fg;
-        prompt = mkHex fg;
-        spinner = mkHex fg;
-        border = "-1";
-        gutter = "-1";
-      };
+      info = fg-dark;
+      header = fg-dark;
+      pointer = red;
+      marker = fg;
+      prompt = fg;
+      spinner = fg;
+      border = "-1";
+      gutter = "-1";
+    };
     defaultOptions = [
       "--pointer ' '"
       "--marker ' '"

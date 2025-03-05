@@ -1,12 +1,12 @@
 { theme, ... }: {
   programs.swaylock = {
     enable = true;
-    settings = with theme;
+    settings = with theme.colors;
       let
         t = "00000000";
         fg = overlay1;
       in {
-        inherit font;
+        inherit (theme) font;
         # image = swaylock-image;
         daemonize = true;
 

@@ -1,8 +1,8 @@
 { theme, pkgs, ... }: {
   home.packages = [ pkgs.tmux ];
-  xdg.configFile."tmux/tmux.conf".text = with theme; # bash
+  xdg.configFile."tmux/tmux.conf".text = with theme.colorsHex; # bash
     ''
-      unbind-key -a
+      unbind -a
 
       set -g default-command ${pkgs.fish}/bin/fish
       set -g default-shell ${pkgs.fish}/bin/fish     
@@ -21,12 +21,12 @@
       bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
               
       set-option -g status-style "fg=default,bg=default"
-      set-window-option -g window-status-style "bg=default,fg=#${overlay0}"
-      set-window-option -g window-status-current-style "bg=default,fg=#${subtext0}"
-      set-option -g pane-border-style "fg=#${surface2},bg=default"
-      set-option -g pane-active-border-style "fg=#${select},bg=default"
-      set-option -g mode-style "fg=default,bg=#${surface2}"
-      set-option -g message-style "fg=default,bg=#${surface0}"
+      set-window-option -g window-status-style "bg=default,fg=${overlay0}"
+      set-window-option -g window-status-current-style "bg=default,fg=${subtext0}"
+      set-option -g pane-border-style "fg=${surface2},bg=default"
+      set-option -g pane-active-border-style "fg=${select},bg=default"
+      set-option -g mode-style "fg=default,bg=${surface2}"
+      set-option -g message-style "fg=default,bg=${surface0}"
 
       set -g status-interval 30
       set -g status-justify left
@@ -34,13 +34,13 @@
       set -g status-right-length 50
       set-option -g status-position bottom
       set-option -g status-left ""
-      set-option -g status-right '#{?client_prefix,#[fg=#${red}]NORMAL#[fg=default],}'
+      set-option -g status-right '#{?client_prefix,#[fg=${red}]NORMAL#[fg=default],}'
 
       set-option -g detach-on-destroy on
       set-option -g set-clipboard external
       set -g base-index 1
       setw -g pane-base-index 1
-      set -s escape-time 1000
+      set -s escape-time 0
       set -g renumber-windows on
 
       # bind M switch-client -t '{marked}'

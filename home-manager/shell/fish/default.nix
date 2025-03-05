@@ -86,7 +86,7 @@
           exec river
         end
       '';
-    interactiveShellInit = with theme; # fish
+    interactiveShellInit = with theme.colors; # fish
       ''
         function nix-shell --description "Start an interactive shell based on a Nix expression"
             nix-your-shell fish nix-shell -- $argv

@@ -13,15 +13,15 @@
       sort = true;
       sorting-method = "fzf";
     };
-    theme = with theme;
+    theme = with theme.colorsHex;
       let inherit (config.lib.formats.rasi) mkLiteral;
       in {
         "*" = {
           font = "${theme.font} SemiBold 11";
-          bg = mkLiteral "#${bg}"; # 99
-          fg = mkLiteral "#${fg-dark}";
-          red = mkLiteral "#${red}";
-          fg-bright = mkLiteral "#${fg}";
+          bg = mkLiteral "${bg}"; # 99
+          fg = mkLiteral "${fg-dark}";
+          red = mkLiteral "${red}";
+          fg-bright = mkLiteral "${fg}";
           background-color = mkLiteral "@bg";
           text-color = mkLiteral "@fg";
           separatorcolor = mkLiteral "transparent";
@@ -37,7 +37,7 @@
           y-offset = -30;
           border-radius = 6;
           border = 2;
-          border-color = mkLiteral "#${border}";
+          border-color = mkLiteral "${border}";
           background-color = mkLiteral "@bg";
         };
 
@@ -67,7 +67,7 @@
           text-color = mkLiteral "@fg-bright";
           border-radius = 5;
           border = 2;
-          border-color = mkLiteral "#${border}";
+          border-color = mkLiteral "${border}";
           background-color = mkLiteral "transparent";
           placeholder = "";
           cursor = mkLiteral "underline";

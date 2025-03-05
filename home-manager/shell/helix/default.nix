@@ -64,10 +64,7 @@
       editor = import ./editor.nix;
       keys = import ./binds.nix;
     };
-    themes = import ./theme.nix {
-      inherit theme;
-      inherit (helpers) mkHex;
-    };
+    themes = import ./theme.nix { inherit theme; };
     ignores = let add_ignore = ext: "*.${ext}";
     in [ "target" "icons" "venv" "node_modules" "__pycache__" "build" ]
     ++ map add_ignore [

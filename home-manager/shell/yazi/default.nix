@@ -25,101 +25,101 @@
       sha256 = "sha256:0yhg6nvp31k4r6wb8lxqs78cjy34y18a2rhsa9na9r67v5fygw3s";
     };
 
-    "yazi/theme.toml".text = with theme; ''
+    "yazi/theme.toml".text = with theme.colorsHex; ''
       [manager]
-      cwd = { fg = "#${fg}" }
+      cwd = { fg = "${fg}" }
 
       hovered         = { reversed = true }
       preview_hovered = { underline = false }
 
-      find_keyword  = { fg = "#${red}" }
-      find_position = { fg = "#${red}" }
+      find_keyword  = { fg = "${red}" }
+      find_position = { fg = "${red}" }
 
-      marker_copied   = { fg = "#${yellow}", bg = "#${yellow}" }
-      marker_cut      = { fg = "#${red}", bg = "#${red}" }
-      marker_marked   = { fg = "#${blue}", bg = "#${blue}" }
-      marker_selected = { fg = "#${green}", bg = "#${green}" }
+      marker_copied   = { fg = "${yellow}", bg = "${yellow}" }
+      marker_cut      = { fg = "${red}", bg = "${red}" }
+      marker_marked   = { fg = "${blue}", bg = "${blue}" }
+      marker_selected = { fg = "${green}", bg = "${green}" }
 
-      tab_active   = { fg = "#${bg}", bg = "#${select}" }
-      tab_inactive = { fg = "#${fg}", bg = "#${bg}" }
+      tab_active   = { fg = "${bg}", bg = "${select}" }
+      tab_inactive = { fg = "${fg}", bg = "${bg}" }
       tab_width    = 2
 
-      count_copied   = { fg = "#${bg}", bg = "#${yellow}" }
-      count_cut      = { fg = "#${bg}", bg = "#${red}" }
-      count_selected = { fg = "#${bg}", bg = "#${pink}" }
+      count_copied   = { fg = "${bg}", bg = "${yellow}" }
+      count_cut      = { fg = "${bg}", bg = "${red}" }
+      count_selected = { fg = "${bg}", bg = "${pink}" }
 
       border_symbol = "│"
-      border_style  = { fg = "#${fg-dark}" }
+      border_style  = { fg = "${fg-dark}" }
 
       [status]
       separator_open  = ""
       separator_close = ""
-      separator_style = { fg = "#${surface1}", bg = "#${surface1}" }
+      separator_style = { fg = "${surface1}", bg = "${surface1}" }
 
-      progress_label  = { fg = "#${fg}", bg = "#${surface1}", bold = true }
-      progress_normal = { fg = "#${green}", bg = "#${surface1}" }
-      progress_error  = { fg = "#${red}", bg = "#${surface1}" }
+      progress_label  = { fg = "${fg}", bg = "${surface1}", bold = true }
+      progress_normal = { fg = "${green}", bg = "${surface1}" }
+      progress_error  = { fg = "${red}", bg = "${surface1}" }
 
-      perm_type  = { fg = "#${overlay1}" }
-      perm_read  = { fg = "#${select}" }
-      perm_write = { fg = "#${overlay1}" }
-      perm_exec  = { fg = "#${select}" }
-      perm_sep   = { fg = "#${overlay1}" }
+      perm_type  = { fg = "${overlay1}" }
+      perm_read  = { fg = "${select}" }
+      perm_write = { fg = "${overlay1}" }
+      perm_exec  = { fg = "${select}" }
+      perm_sep   = { fg = "${overlay1}" }
 
       [mode]
-      normal_main = { fg = "#${bg}", bg = "#${mode_select}", bold = true }
-      select_main = { fg = "#${bg}", bg = "#${mode_normal}", bold = true }
-      unset_main  = { fg = "#${bg}", bg = "#${mode_insert}", bold = true }
-      normal_alt = { fg = "#${mode_select}", bg = "#${surface1}", bold = true }
-      select_alt = { fg = "#${mode_normal}", bg = "#${surface1}", bold = true }
-      unset_alt  = { fg = "#${mode_insert}", bg = "#${surface1}", bold = true }
+      normal_main = { fg = "${bg}", bg = "${mode_select}", bold = true }
+      select_main = { fg = "${bg}", bg = "${mode_normal}", bold = true }
+      unset_main  = { fg = "${bg}", bg = "${mode_insert}", bold = true }
+      normal_alt = { fg = "${mode_select}", bg = "${surface1}", bold = true }
+      select_alt = { fg = "${mode_normal}", bg = "${surface1}", bold = true }
+      unset_alt  = { fg = "${mode_insert}", bg = "${surface1}", bold = true }
 
       [select]
-      border   = { fg = "#${border}" }
-      active   = { fg = "#${red}", bold = true }
+      border   = { fg = "${border}" }
+      active   = { fg = "${red}", bold = true }
       inactive = {}
 
       [input]
-      border   = { fg = "#${border}" }
+      border   = { fg = "${border}" }
       title    = {}
       value    = {}
       selected = { reversed = true }
 
       [completion]
-      border = { fg = "#${border}" }
+      border = { fg = "${border}" }
 
       [tasks]
-      border  = { fg = "#${border}" }
+      border  = { fg = "${border}" }
       title   = {}
-      hovered = { fg = "#${red}", underline = true }
+      hovered = { fg = "${red}", underline = true }
 
       [which]
-      mask            = { bg = "#${bg-bright}" }
-      cand            = { fg = "#${red}"    }
-      rest            = { fg = "#${green}"  }
-      desc            = { fg = "#${fg}"     }
+      mask            = { bg = "${bg-bright}" }
+      cand            = { fg = "${red}"    }
+      rest            = { fg = "${green}"  }
+      desc            = { fg = "${fg}"     }
       separator       = "   "
-      # separator_style = { fg = "#${surface2}" }
+      # separator_style = { fg = "${surface2}" }
 
       [help]
-      on      = { fg = "#${fg}" }
-      run     = { fg = "#${pink}" }
+      on      = { fg = "${fg}" }
+      run     = { fg = "${pink}" }
       hovered = { reversed = true, bold = true }
-      footer  = { fg = "#${surface1}", bg = "#${fg}" }
+      footer  = { fg = "${surface1}", bg = "${fg}" }
 
       [notify]
-      title_info  = { fg = "#${green}" }
-      title_warn  = { fg = "#${yellow}" }
-      title_error = { fg = "#${red}" }
+      title_info  = { fg = "${green}" }
+      title_warn  = { fg = "${yellow}" }
+      title_error = { fg = "${red}" }
 
       [filetype]
 
       rules = [
-      	{ mime = "application/*zip", fg = "#${orange}" },
-      	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#${red}" },
-      	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#${pink}" },
-      	{ name = "*", fg = "#${fg}" },
-      	{ name = "*/", fg = "#${mode_select}" }
+      	{ mime = "application/*zip", fg = "${orange}" },
+      	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "${red}" },
+      	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "${pink}" },
+      	{ name = "*", fg = "${fg}" },
+      	{ name = "*/", fg = "${mode_select}" }
       ]
 
       [icon]

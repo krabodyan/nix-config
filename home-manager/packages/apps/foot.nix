@@ -65,7 +65,7 @@
         show-urls-launch = "Mod1+Control+o";
       };
 
-      colors = with theme; {
+      colors = with theme.colors; {
         background = "${bg}";
         foreground = "${fg}";
         regular0 = "${black}";

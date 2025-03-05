@@ -1,19 +1,19 @@
 { pkgs, theme, ... }: {
   home.packages = [ pkgs.libnotify ];
-  services.mako = with theme; {
+  services.mako = with theme.colorsHex; {
     enable = true;
-    font = "${font} SemiBold 11";
+    font = "${theme.font} SemiBold 11";
     sort = "-time";
     layer = "overlay";
     anchor = "bottom-center";
-    backgroundColor = "#${bg}ff";
-    progressColor = "over #${border}";
-    textColor = "#${fg}";
+    backgroundColor = "${bg}ff";
+    progressColor = "over ${border}";
+    textColor = "${fg}";
     width = 400;
     height = 110;
     padding = "12,0";
     borderSize = 2;
-    borderColor = "#${border}";
+    borderColor = "${border}";
     borderRadius = 8;
     # iconPath =
     #   "${config.gtk.iconTheme.package}/share/icons/${config.gtk.iconTheme.name}";
@@ -30,7 +30,7 @@
       format=<b>%s [%g]</b>\n%b
 
       [urgency=critical]
-      border-color=#${red}
+      border-color=${red}
       default-timeout=12000
 
       [app-name="foot"]

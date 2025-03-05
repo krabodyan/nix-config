@@ -1,4 +1,4 @@
-{ theme, mkHex }: {
+{ theme }: {
   paradise = {
     "diagnostic.error" = { underline.style = "curl"; };
     "diagnostic.warning" = { underline.style = "curl"; };
@@ -208,31 +208,31 @@
       modifiers = [ "bold" ];
     };
 
-    palette = with theme; {
-      teal = mkHex teal;
-      sky = mkHex sky;
-      sapphire = mkHex sapphire;
-      pink = mkHex pink;
-      magenta = mkHex brmagenta;
-      red = mkHex red;
-      peach = mkHex peach;
-      yellow = mkHex yellow;
-      green = mkHex green;
-      blue = mkHex blue;
-      text = mkHex fg;
-      comment = mkHex fg-dark;
-      subtext0 = mkHex subtext0;
-      overlay2 = mkHex overlay2;
-      overlay1 = mkHex overlay1;
-      overlay0 = mkHex overlay0;
-      surface2 = mkHex surface2;
-      surface1 = mkHex surface1;
-      surface0 = mkHex surface0;
-      base = mkHex bg;
-      bg-bright = mkHex bg-bright;
-      mode_normal = mkHex mode_normal;
-      mode_select = mkHex mode_select;
-      mode_insert = mkHex mode_insert;
+    palette = with theme.colorsHex; {
+      teal = teal;
+      sky = sky;
+      sapphire = sapphire;
+      pink = pink;
+      magenta = brmagenta;
+      red = red;
+      peach = peach;
+      yellow = yellow;
+      green = green;
+      blue = blue;
+      text = fg;
+      comment = fg-dark;
+      subtext0 = subtext0;
+      overlay2 = overlay2;
+      overlay1 = overlay1;
+      overlay0 = overlay0;
+      surface2 = surface2;
+      surface1 = surface1;
+      surface0 = surface0;
+      base = bg;
+      bg-bright = bg-bright;
+      mode_normal = mode_normal;
+      mode_select = mode_select;
+      mode_insert = mode_insert;
     };
   };
 }

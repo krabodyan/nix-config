@@ -56,7 +56,7 @@
     desktop = "mpv.desktop";
   };
 
-  xdg.configFile."mpv/mpv.conf".text = with theme; ''
+  xdg.configFile."mpv/mpv.conf".text = with theme.colorsHex; ''
     gpu-context=wayland
     vo=gpu
     profile=fast
@@ -73,10 +73,10 @@
 
     osd-font='${theme.font}'
     osd-font-size=40
-    osd-border-color='#${overlay0}'
+    osd-border-color='${overlay0}'
     osd-border-size=1
-    osd-color='#${fg-bright}'
-    osd-shadow-color='#${bg}'
+    osd-color='${fg-bright}'
+    osd-shadow-color='${bg}'
   '';
   programs.mpv = {
     enable = true;
