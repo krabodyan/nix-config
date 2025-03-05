@@ -147,8 +147,8 @@
     "ui.text.inactive" = { fg = "overlay1"; };
     "ui.text.focus" = {
       fg = "text";
-      bg = "surface0";
-      modifiers = [ "bold" ];
+      bg = "surface1";
+      # modifiers = [ "bold" ];
     };
 
     "ui.virtual" = "overlay0";
