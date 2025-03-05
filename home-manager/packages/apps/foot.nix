@@ -41,8 +41,8 @@
 
       desktop-notifications = {
         command =
-          "notify-send --app-name foot  --urgency \${urgency} --expire-time \${expire-time} \${title} \${body}";
-        inhibit-when-focused = "yes";
+          "notify-send --app-name foot --urgency \${urgency} --expire-time \${expire-time} \${title} \${body}";
+        inhibit-when-focused = "no";
       };
 
       scrollback = {

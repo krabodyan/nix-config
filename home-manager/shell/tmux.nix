@@ -4,11 +4,15 @@
     ''
       unbind-key -a
 
+      set update-environment DEV_SHELL_NAME IN_NIX_SHELL
+
       set -g prefix M-Space
       bind M-Space send-prefix
 
       setw -g mode-keys vi
       set -g status-keys vi
+
+      set -g allow-passthrough all
 
       bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
               
