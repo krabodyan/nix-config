@@ -77,8 +77,11 @@
           targets = [ "wasm32-unknown-unknown" "x86_64-unknown-linux-gnu" ];
           extensions = [ "rust-src" "rust-analyzer" "miri" ];
         };
+        shellHook = # bash
+          ''test -n "$TMUX" || tmux'';
       in {
         rust = pkgs.mkShell {
+          inherit shellHook;
           DEV_SHELL_NAME = "rust";
           RUST_BACKTRACE = 1;
           nativeBuildInputs = with pkgs; [
@@ -87,9 +90,9 @@
             cargo-expand
           ];
           buildInputs = with pkgs; [ rust-pkg openssl ];
-          shellHook = "test $ZELLIJ || zellij";
         };
         tauri = pkgs.mkShell {
+          inherit shellHook;
           DEV_SHELL_NAME = "tauri";
           RUST_BACKTRACE = 1;
           GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
@@ -120,14 +123,14 @@
             pango
             webkitgtk_4_1
           ];
-          shellHook = "test $ZELLIJ || zellij";
         };
         ino = pkgs.mkShell {
+          inherit shellHook;
           DEV_SHELL_NAME = "ino";
           buildInputs = [ pkgs.glibc_multi ];
-          shellHook = "test $ZELLIJ || zellij";
         };
         python = pkgs.mkShell {
+          inherit shellHook;
           DEV_SHELL_NAME = "python";
           packages = [
             (pkgs.python311.withPackages (python-pkgs:

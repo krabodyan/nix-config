@@ -7,7 +7,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      flake = "cd flake && pidof zellij || zellij";
+      flake = ''cd flake && test -n "$TMUX" || tmux'';
       ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
       tree =
         "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
@@ -196,29 +196,25 @@
 
         function fish_prompt
           switch $fish_bind_mode
-            # set_color --bold
             case insert
               printf "\033]12;#${overlay1}\007"
               set_color ${fg}
-              # printf "\033[6 q"
             case default
               printf "\033]12;#${mode_normal}\007"
               set_color ${mode_normal}
-              # printf "\033[2 q"
             case visual
               printf "\033]12;#${mode_select}\007"
               set_color ${mode_select}
-              # printf "\033[2 q"
             case '*'
               printf "\033]12;#${green}\007"
               set_color ${green}
-              # printf "\033[4 q"
           end
-          if test -z "$IN_NIX_SHELL"
-            printf "%s 󰧞 " (prompt_pwd) 
-          else
-            set -q DEV_SHELL_NAME; or set -l DEV_SHELL_NAME "nix-shell"
+          if set -q DEV_SHELL_NAME
             printf "\033[36m$DEV_SHELL_NAME\033[0m %s 󰧞 " (prompt_pwd)
+          else if set -q IN_NIX_SHELL
+            printf "\033[36mnix-shell\033[0m %s 󰧞 " (prompt_pwd)
+          else
+            printf "%s 󰧞 " (prompt_pwd)
           end
           set_color normal
         end
