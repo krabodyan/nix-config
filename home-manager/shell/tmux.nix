@@ -67,8 +67,10 @@
       bind -r M-k select-pane -U
       bind -r M-l select-pane -R
 
-      bind -n M-n swap-pane -t -1
-      bind -n M-b swap-pane -t +1
+      # bind -n M-y swap-pane -t -1
+      # bind -n M-u swap-pane -t +1
+      bind -n M-n next-layout
+      bind -n M-b previous-layout
 
       bind -r \] resize-pane -D 1
       bind -r \[ resize-pane -U 1
