@@ -4,7 +4,7 @@
     ''
       unbind-key -a
 
-      set update-environment DEV_SHELL_NAME IN_NIX_SHELL
+      set -g update-environment "DEV_SHELL_NAME IN_NIX_SHELL"
 
       set -g prefix M-Space
       bind M-Space send-prefix
@@ -84,6 +84,17 @@
 
 
       bind v copy-mode
+
+      bind -T copy-mode-vi M-d send-keys -X cancel
+
+      unbind -T copy-mode-vi 'H'
+      unbind -T copy-mode-vi 'L'
+
+      bind -T copy-mode-vi 'K' scroll-up
+      bind -T copy-mode-vi 'J' scroll-down
+      bind -T copy-mode-vi 'M-f' send -X end-of-line
+      bind -T copy-mode-vi 'M-g' send -X start-of-line
+
       bind -T copy-mode-vi 'v' send -X begin-selection
       bind -T copy-mode-vi 'r' send-keys -X rectangle-toggle
       bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace wl-copy"
