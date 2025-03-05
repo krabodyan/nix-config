@@ -53,9 +53,9 @@
       url = { launch = "xdg-open \${url}"; };
 
       cursor = {
-        style = "underline";
-        unfocused-style = "unchanged";
-        underline-thickness = "2px";
+        style = "block";
+        unfocused-style = "hollow";
+        # underline-thickness = "2px";
         blink = "no";
       };
 

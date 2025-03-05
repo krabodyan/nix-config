@@ -98,41 +98,48 @@
 
         function fish_hybrid_key_bindings
           fish_vi_key_bindings --no-erase
+
+          bind -M default -m insert enter repaint-mode execute
+          bind -M visual  -m insert enter repaint-mode execute
+
+          # -M = --mode
+          # -m = --sets-mode
           
-          bind --mode default --sets-mode insert \ed "commandline -f repaint-mode"
-          bind --mode insert --sets-mode default \ed "commandline -f repaint-mode"
-          bind --mode visual --sets-mode default \ed "commandline -f repaint-mode; commandline -f end-selection"
+          bind -M default -m insert alt-d repaint-mode
+          bind -M insert  -m default alt-d repaint-mode
+          bind -M visual  -m default alt-d repaint-mode end-selection
 
-          bind --mode insert \ec __zoxide_zi
+          # bind -M insert alt-c __zoxide_zi
           
-          bind --mode default --sets-mode default d "set fish_bind_mode visual; commandline -f delete-char"
-          bind --mode default --sets-mode insert c "set fish_bind_mode visual; commandline -f delete-char; commandline -f repaint-mode"
+          bind -M default -m visual d delete-char repaint-mode
+          bind -M visual  -m insert c kill-selection end-selection repaint-mode
+          bind -M default -m insert c begin-selection kill-selection end-selection repaint-mode
 
-          bind --mode visual --sets-mode insert i "commandline -f repaint-mode; commandline -f end-selection"
-          bind --mode default --sets-mode insert i "commandline -f repaint-mode; commandline -f end-selection"
+          bind -M visual  -m insert i repaint-mode end-selection
+          bind -M default -m insert i repaint-mode end-selection
 
-          bind --mode visual \; "commandline -f end-selection; commandline -f begin-selection"
-          bind --mode visual \ev swap-selection-start-stop
-          bind --mode visual \e\; swap-selection-start-stop
+          bind -M visual     \; end-selection begin-selection
+          bind -M visual alt-\; swap-selection-start-stop
+          bind -M visual alt-v  swap-selection-start-stop
 
-          bind --mode default --sets-mode visual x "commandline -f beginning-of-line; commandline -f begin-selection; commandline -f end-of-line; commandline -f repaint-mode"
-          bind --mode visual x "commandline -f beginning-of-line; commandline -f begin-selection; commandline -f end-of-line"
+          bind -M default -m visual x beginning-of-line begin-selection end-of-line repaint-mode
+          bind -M visual            x beginning-of-line begin-selection end-of-line
 
           for mode in default insert visual
-            bind --erase --preset --mode $mode \e\r
-            bind --erase --preset --mode $mode \el
+            bind --erase -M $mode alt-r
+            bind --erase -M $mode alt-l
 
-            bind --mode $mode \ef end-of-line
-            bind --mode $mode \eg beginning-of-line
+            bind -M $mode alt-f end-of-line
+            bind -M $mode alt-g beginning-of-line
           end
 
-          bind --mode insert \eh backward-char
-          bind --mode insert \el forward-char
+          bind -M insert alt-h backward-char
+          bind -M insert alt-l forward-char
           
-          bind --mode insert \ea _fzf_search_directory
+          bind -M insert alt-a _fzf_search_directory
 
-          bind --mode visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
-          bind --mode default -m insert p "fish_clipboard_paste; commandline -f repaint-mode"
+          bind -M visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
+          bind -M default -m insert p "fish_clipboard_paste; commandline -f repaint-mode"
         end
 
         set -g fish_key_bindings fish_hybrid_key_bindings
@@ -171,6 +178,10 @@
 
         set fish_greeting
 
+        set fish_cursor_visual block
+        set fish_cursor_default block
+        set fish_cursor_insert line
+
         function fish_mode_prompt
         end
 
@@ -187,21 +198,21 @@
           switch $fish_bind_mode
             # set_color --bold
             case insert
-              printf "\033]12;#${fg}\007"
+              printf "\033]12;#${overlay1}\007"
               set_color ${fg}
-              printf "\033[4 q"
+              # printf "\033[6 q"
             case default
               printf "\033]12;#${mode_normal}\007"
               set_color ${mode_normal}
-              printf "\033[2 q"
+              # printf "\033[2 q"
             case visual
               printf "\033]12;#${mode_select}\007"
               set_color ${mode_select}
-              printf "\033[2 q"
+              # printf "\033[2 q"
             case '*'
               printf "\033]12;#${green}\007"
               set_color ${green}
-              printf "\033[4 q"
+              # printf "\033[4 q"
           end
           if test -z "$IN_NIX_SHELL"
             printf "%s 󰧞 " (prompt_pwd) 

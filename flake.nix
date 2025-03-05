@@ -12,6 +12,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,7 +41,12 @@
           allowBroken = true;
           allowInsecurePredicate = _: true;
         };
-        overlays = [ inputs.nixpkgs-wayland.overlay ];
+        overlays = [
+          inputs.nixpkgs-wayland.overlay
+          (self: super: {
+            fish = inputs.nixpkgs-master.legacyPackages.${system}.fish;
+          })
+        ];
       };
       pkgs = import nixpkgs overlaysSettings;
     in {

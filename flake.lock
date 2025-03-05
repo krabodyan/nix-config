@@ -211,6 +211,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1741112358,
+        "narHash": "sha256-1u+X0fdFQxx1aa8ehcQtMRkJBPwmm8eiLbFwOCXeknU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ecb2fc13e7c8302761880995d5b27cf56531f4df",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-wayland": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -286,6 +302,7 @@
         "home-manager": "home-manager",
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-master": "nixpkgs-master",
         "nixpkgs-wayland": "nixpkgs-wayland",
         "rust-overlay": "rust-overlay_2"
       }
