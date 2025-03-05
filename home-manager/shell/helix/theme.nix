@@ -181,7 +181,7 @@
     };
     "ui.cursor.primary.insert" = {
       fg = "base";
-      bg = "mode_insert";
+      bg = "base";
     };
     "ui.cursor.primary.select" = {
       fg = "base";

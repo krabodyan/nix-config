@@ -10,12 +10,13 @@
     ./ripgrep.nix
     ./rustfmt.nix
     ./yazi
-    ./zellij.nix
     ./zoxide.nix
+    ./tmux.nix
   ];
   home.packages = with pkgs; [
     jq # fish done
     eza
+    tmux
     xdg-utils
     # termusic
     python3
