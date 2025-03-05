@@ -125,9 +125,9 @@
           ];
         };
         ino = pkgs.mkShell {
-          inherit shellHook;
           DEV_SHELL_NAME = "ino";
           buildInputs = [ pkgs.glibc_multi ];
+          inherit shellHook;
         };
         python = pkgs.mkShell {
           inherit shellHook;

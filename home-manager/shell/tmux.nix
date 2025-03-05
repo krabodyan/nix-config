@@ -4,13 +4,17 @@
     ''
       unbind-key -a
 
-      set -g update-environment "DEV_SHELL_NAME IN_NIX_SHELL"
+      set -g default-command ${pkgs.fish}/bin/fish
+      set -g default-shell ${pkgs.fish}/bin/fish     
 
       set -g prefix M-Space
       bind M-Space send-prefix
 
       setw -g mode-keys vi
       set -g status-keys vi
+
+      set-window-option -g automatic-rename on
+      setw -g automatic-rename
 
       set -g allow-passthrough all
 
@@ -40,17 +44,11 @@
       set -g renumber-windows on
 
       # bind M switch-client -t '{marked}'
-      # todo rebind mark
 
       bind n new-window -c "#{pane_current_path}"
       bind M-n new-window -c "#{pane_current_path}"
 
       bind s break-pane
-      bind-key c command-prompt -p "join pane from:"  "join-pane -s '%%'"
-      bind-key b command-prompt -p "send pane to:"  "join-pane -t '%%'"
-
-      # bind j choose-window 'join-pane -h -s "%%"'
-      # bind J choose-window 'join-pane -s "%%"'
 
       bind -n M-1 select-window -t 1
       bind -n M-2 select-window -t 2
@@ -82,16 +80,13 @@
       bind 'J' split-window -v -c "#{pane_current_path}"
       bind 'K' split-window -v -c "#{pane_current_path}"
 
-
       bind v copy-mode
-
       bind -T copy-mode-vi M-d send-keys -X cancel
-
       unbind -T copy-mode-vi 'H'
       unbind -T copy-mode-vi 'L'
 
-      bind -T copy-mode-vi 'K' scroll-up
-      bind -T copy-mode-vi 'J' scroll-down
+      bind -T copy-mode-vi 'K' send -X scroll-up
+      bind -T copy-mode-vi 'J' send -X scroll-down
       bind -T copy-mode-vi 'M-f' send -X end-of-line
       bind -T copy-mode-vi 'M-g' send -X start-of-line
 
