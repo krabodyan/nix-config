@@ -60,14 +60,14 @@
       bind -n M-6 select-window -t 6
       bind -n M-7 select-window -t 7
 
-      bind -r h select-pane -L
-      bind -r j select-pane -D
-      bind -r k select-pane -U
-      bind -r l select-pane -R
-      bind -r M-h select-pane -L
-      bind -r M-j select-pane -D
-      bind -r M-k select-pane -U
-      bind -r M-l select-pane -R
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
+      bind M-h select-pane -L
+      bind M-j select-pane -D
+      bind M-k select-pane -U
+      bind M-l select-pane -R
 
       # bind -n M-y swap-pane -t -1
       # bind -n M-u swap-pane -t +1
