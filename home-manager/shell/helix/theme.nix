@@ -92,10 +92,6 @@
       fg = "overlay0";
       bg = "base";
     };
-    "ui.statusline.active" = {
-      fg = "overlay0";
-      bg = "base";
-    };
 
     "ui.statusline.normal" = {
       fg = "base";

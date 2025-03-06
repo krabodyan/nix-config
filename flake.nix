@@ -97,6 +97,7 @@
           RUST_BACKTRACE = 1;
           GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
           nativeBuildInputs = with pkgs; [
+            sqlx-cli
             cargo-watch
             cargo-expand
             cargo-tauri
@@ -109,9 +110,12 @@
             # trunk # for wasm
           ];
           buildInputs = with pkgs; [
+            sqlite.dev
             rust-pkg
             openssl
             at-spi2-atk
+            xdotool
+            openssl.dev
             atkmm
             cairo
             gdk-pixbuf

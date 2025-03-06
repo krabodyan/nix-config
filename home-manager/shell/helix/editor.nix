@@ -45,7 +45,7 @@
     skip-levels = 1;
   };
 
-  true-color = false;
+  true-color = true;
 
   cursor-shape = {
     normal = "block";
