@@ -24,6 +24,7 @@
       border = "-1";
       gutter = "-1";
     };
+    defaultCommand = "fd --type f --strip-cwd-prefix";
     defaultOptions = [
       "--pointer ' '"
       "--marker ' '"
