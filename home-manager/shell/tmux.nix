@@ -31,12 +31,15 @@
       set-option -g message-style "fg=default,bg=${surface0}"
 
       set -g status-interval 30
-      set -g status-justify left
-      set -g status-left-length 100
-      set -g status-right-length 50
+      set -g status-justify centre
+      set -g status-left-length 20
+      set -g status-right-length 20
+
       set-option -g status-position bottom
-      set-option -g status-left ""
-      set-option -g status-right '#{?client_prefix,#[fg=${red}]NORMAL#[fg=default],}'
+      set -g status-left "#[align=left]          "
+      set -g status-right '#{?client_prefix,#[fg=red] NORMAL #[fg=default],}          '
+      set -g status-left-length 10
+      set -g status-right-length 10
 
       set-option -g detach-on-destroy on
       set-option -g set-clipboard external
