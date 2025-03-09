@@ -18,7 +18,6 @@
       sha256 = "sha256:12s7ybq7sl7fv3pnni3i0m4jw5gw6sabmwgflkggyd0p8m6kw62f";
     };
 
-    # "yazi/plugins/smart-paste.yazi/main.lua".source = ./plugins/smart-paste.lua;
     "yazi/plugins/compress.yazi/main.lua".source = builtins.fetchurl {
       url =
         "https://raw.githubusercontent.com/KKV9/compress.yazi/refs/heads/main/init.lua";
@@ -52,9 +51,8 @@
       border_style  = { fg = "${fg-dark}" }
 
       [status]
-      separator_open  = ""
-      separator_close = ""
-      separator_style = { fg = "${surface1}", bg = "${surface1}" }
+      sep_left = { open  = "", close = "" }
+      sep_right = { open  = "", close = "" }
 
       progress_label  = { fg = "${fg}", bg = "${surface1}", bold = true }
       progress_normal = { fg = "${green}", bg = "${surface1}" }
