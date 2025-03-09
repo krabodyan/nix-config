@@ -63,7 +63,7 @@ in ''
 
   riverctl set-repeat 40 330
   ${kbd}
-  riverctl map -layout 0 normal Alt W spawn "${kbd}"
+  riverctl map -layout 0 normal Super W spawn "${kbd}"
 
   riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events disabled
   riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" scroll-factor 0.2
