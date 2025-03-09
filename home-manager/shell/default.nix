@@ -29,6 +29,7 @@
     mangohud
     # postgresql
     scrcpy
+    android-tools
     pulsemixer
     # ngrok
   ];
