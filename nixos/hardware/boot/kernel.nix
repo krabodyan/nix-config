@@ -23,7 +23,7 @@
     };
 
     kernelParams = [ "nohibernate" "rootfstype=btrfs" "raid=noautodetect" ];
-    kernelPackages = pkgs.linuxPackages_zen;
+    # kernelPackages = pkgs.linuxPackages_latest;
     extraModprobeConfig = ''
       options i915 enable_guc=3
     '';
