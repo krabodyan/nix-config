@@ -1,7 +1,8 @@
 { theme }:
 with theme.colors;
 let
-  kbd = "riverctl keyboard-layout -options grp:caps_toggle us,ru,ua";
+  kbd =
+    "riverctl keyboard-layout -options grp:alts_toggle,caps:backspace,shift:both_capslock us,ru,ua";
   focused = "0x${surface1}";
   monocle = "0x${bg-dark}";
   border = "0x${bg-dark}";
@@ -62,7 +63,7 @@ in ''
 
   riverctl set-repeat 40 330
   ${kbd}
-  riverctl map -layout 0 normal Super W spawn "${kbd}"
+  riverctl map -layout 0 normal Alt W spawn "${kbd}"
 
   riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events disabled
   riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" scroll-factor 0.2
