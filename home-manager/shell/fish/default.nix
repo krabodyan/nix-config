@@ -1,7 +1,7 @@
 {
-  self,
-  theme,
   pkgs,
+  theme,
+  config,
   ...
 }: {
   home.packages = [pkgs.nix-your-shell];
@@ -22,7 +22,7 @@
       }
       // builtins.listToAttrs (builtins.map (name: {
         name = name;
-        value = "nix develop ${self}#${name}";
+        value = "nix develop ${config.home.sessionVariables.FLAKE}#${name}";
       }) ["tauri" "rust" "ino"]);
 
     plugins = [
@@ -157,8 +157,6 @@
           set_color normal
         end
 
-        set -g fzf_fd_opts --color never --type file
-
         set -g fish_color_normal ${fg}
         set -g fish_color_command ${green}
         set -g fish_color_keyword -i ${yellow}
@@ -192,8 +190,7 @@
     functions._fzf_search_directory =
       # fish
       ''
-        set -f fd_cmd ${pkgs.fd}/bin/fd
-        set -f --append fd_cmd $fzf_fd_opts
+        set -f fd_cmd ${config.programs.fzf.defaultCommand}
 
         set -f fzf_arguments $fzf_directory_opts
         set -f token (commandline --current-token)
