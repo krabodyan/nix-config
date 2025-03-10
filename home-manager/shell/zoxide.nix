@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   theme,
   ...
@@ -27,7 +28,7 @@
       border = "-1";
       gutter = "-1";
     };
-    defaultCommand = "fd";
+    defaultCommand = "fd " + lib.concatStringsSep " " config.programs.fd.extraOptions;
     defaultOptions = [
       "--pointer ' '"
       "--marker ' '"
@@ -43,8 +44,17 @@
       "--bind 'tab:toggle-down,btab:toggle-up,alt-a:abort,alt-s:jump'"
     ];
   };
+
+  home.sessionVariables._ZO_FZF_OPTS = let
+    colors = config.programs.fzf.colors;
+  in
+    builtins.concatStringsSep " " config.programs.fzf.defaultOptions
+    + " --color "
+    + builtins.concatStringsSep "," (map (n: "${n}:${colors.${n}}") (builtins.attrNames colors));
+
   programs.zoxide = {
     enable = true;
-    enableFishIntegration = false;
+    enableFishIntegration = true;
+    options = ["--cmd cd"];
   };
 }

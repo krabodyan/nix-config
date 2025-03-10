@@ -2,6 +2,7 @@
   pkgs,
   theme,
   inputs,
+  config,
   helpers,
   ...
 }: {
@@ -74,7 +75,7 @@
     ignores = let
       add_ignore = ext: "*.${ext}";
     in
-      ["target" "icons" "venv" "node_modules" "__pycache__" "build"]
+      config.programs.git.ignores
       ++ map add_ignore [
         "png"
         "svg"
@@ -95,6 +96,10 @@
         "pdf"
         "csv"
         "drawio"
+        "zip"
+        "tar.gz"
+        "tar"
+        "tar.xz"
       ];
   };
 }

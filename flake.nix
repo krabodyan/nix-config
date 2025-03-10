@@ -21,9 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     helix.url = "github:helix-editor/helix";
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay?rev=9a55a224af34b4f74526c261aeccd8d40af5e4f2";
-    };
+    rust-overlay.url = "github:oxalica/rust-overlay?rev=9a55a224af34b4f74526c261aeccd8d40af5e4f2";
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     nix-colors.url = "github:misterio77/nix-colors";
   };
@@ -79,7 +77,7 @@
           targets = ["wasm32-unknown-unknown" "x86_64-unknown-linux-gnu"];
           extensions = ["rust-src" "rust-analyzer" "miri"];
         };
-      shellHook = ''test -n "$TMUX" || tmux'';
+      shellHook = ''test -n "$TMUX" || exec tmux'';
     in {
       rust = pkgs.mkShell {
         DEV_SHELL_NAME = "rust";

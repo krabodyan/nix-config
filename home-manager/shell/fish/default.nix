@@ -1,4 +1,5 @@
 {
+  self,
   theme,
   pkgs,
   ...
@@ -21,7 +22,7 @@
       }
       // builtins.listToAttrs (builtins.map (name: {
         name = name;
-        value = "nix develop $FLAKE#${name}";
+        value = "nix develop ${self}#${name}";
       }) ["tauri" "rust" "ino"]);
 
     plugins = [
@@ -56,8 +57,6 @@
         function nix --description "Reproducible and declarative configuration management"
             nix-your-shell fish nix -- $argv
         end
-
-        zoxide init fish --cmd cd | source
 
         function fish_hybrid_key_bindings
           fish_vi_key_bindings --no-erase
@@ -102,6 +101,8 @@
 
           bind -M visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
           bind -M default -m insert p "fish_clipboard_paste; commandline -f repaint-mode"
+
+          bind -M insert alt-v "fish_clipboard_paste"
         end
 
         set -g fish_key_bindings fish_hybrid_key_bindings
