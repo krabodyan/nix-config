@@ -1,5 +1,6 @@
 {
-  i18n = let locale = "uk_UA.UTF-8";
+  i18n = let
+    locale = "uk_UA.UTF-8";
   in {
     defaultLocale = locale;
     extraLocaleSettings = {
@@ -13,6 +14,6 @@
       LC_TELEPHONE = locale;
       LC_TIME = locale;
     };
-    supportedLocales = [ "${locale}/UTF-8" ];
+    supportedLocales = ["${locale}/UTF-8"];
   };
 }

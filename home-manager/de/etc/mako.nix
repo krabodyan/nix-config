@@ -1,5 +1,9 @@
-{ pkgs, theme, ... }: {
-  home.packages = [ pkgs.libnotify ];
+{
+  pkgs,
+  theme,
+  ...
+}: {
+  home.packages = [pkgs.libnotify];
   services.mako = with theme.colorsHex; {
     enable = true;
     font = "${theme.font} SemiBold 11";

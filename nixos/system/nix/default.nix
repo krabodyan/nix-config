@@ -1,5 +1,9 @@
-{ system, lib, ... }: {
-  imports = [ ./ld.nix ];
+{
+  system,
+  lib,
+  ...
+}: {
+  imports = [./ld.nix];
   nixpkgs.hostPlatform = lib.mkDefault system;
   nix = {
     gc = {
@@ -9,15 +13,15 @@
     };
     optimise = {
       automatic = true;
-      dates = [ "weekly" ];
+      dates = ["weekly"];
     };
     settings = {
       warn-dirty = false;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = ["nix-command" "flakes"];
       builders-use-substitutes = true;
       max-jobs = 12;
       cores = 12;
-      trusted-users = [ "krabodyan" "root" ];
+      trusted-users = ["krabodyan" "root"];
       auto-optimise-store = true;
     };
   };

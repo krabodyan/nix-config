@@ -1,4 +1,8 @@
-{ pkgs, theme, ... }: {
+{
+  pkgs,
+  theme,
+  ...
+}: {
   fonts.packages = with pkgs; [
     corefonts
     font-awesome
@@ -21,11 +25,10 @@
     hinting.enable = true;
     cache32Bit = true;
     defaultFonts = {
-      serif = [ "Roboto Medium" ];
-      sansSerif = [ "Roboto Medium" ];
-      monospace = [ theme.font ];
-      emoji = [ "SymbolsNerdFont" "FontAwesome" "Noto Color Emoji" ];
+      serif = ["Roboto Medium"];
+      sansSerif = ["Roboto Medium"];
+      monospace = [theme.font];
+      emoji = ["SymbolsNerdFont" "FontAwesome" "Noto Color Emoji"];
     };
   };
-
 }

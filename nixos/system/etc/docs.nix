@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{lib, ...}: {
   documentation = {
     enable = lib.mkDefault false;
     dev.enable = lib.mkDefault false;

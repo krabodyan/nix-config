@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  home.packages = [ pkgs.htop ];
+{pkgs, ...}: {
+  home.packages = [pkgs.htop];
   xdg.configFile."htop/htoprc" = {
     force = true;
     text = ''

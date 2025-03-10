@@ -7,10 +7,10 @@
   services.btrfs.autoScrub = {
     enable = true;
     interval = "monthly";
-    fileSystems = [ "/" ];
+    fileSystems = ["/"];
   };
 
   services.fstrim.enable = true;
 
-  swapDevices = [ ];
+  swapDevices = [];
 }

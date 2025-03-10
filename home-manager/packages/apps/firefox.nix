@@ -1,4 +1,8 @@
-{ pkgs, helpers, ... }: {
+{
+  pkgs,
+  helpers,
+  ...
+}: {
   xdg.mimeApps.defaultApplications = helpers.mkAssociations {
     types = [
       "x-scheme-handler/http"
@@ -110,8 +114,7 @@
         DisableFirefoxStudies = true;
         DisablePocket = true;
         DisplayBookmarksToolbar = "always"; # alternatives: "always" or "newtab"
-        DisplayMenuBar =
-          "default-off"; # alternatives: "always", "never" or "default-on"
+        DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
         SearchBar = "unified"; # alternative: "separate"
       };
       userChrome = builtins.readFile ../../../assets/firefox.css;

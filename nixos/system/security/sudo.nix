@@ -1,27 +1,27 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   security.sudo.enable = false;
-  environment.systemPackages = [ pkgs.doas-sudo-shim ];
+  environment.systemPackages = [pkgs.doas-sudo-shim];
   security.doas = {
     enable = true;
     extraRules = [
       {
-        groups = [ "wheel" ];
+        groups = ["wheel"];
         noPass = false;
         keepEnv = true;
         persist = true;
       }
       {
-        users = [ "krabodyan" ];
+        users = ["krabodyan"];
         cmd = "intel_gpu_top";
         noPass = true;
       }
       {
-        users = [ "krabodyan" ];
+        users = ["krabodyan"];
         cmd = "iotop";
         noPass = true;
       }
       {
-        users = [ "krabodyan" ];
+        users = ["krabodyan"];
         cmd = "iftop";
         noPass = true;
       }

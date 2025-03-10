@@ -1,8 +1,9 @@
-{ background, theme }:
-with theme.colors;
-let
-  kbd =
-    "riverctl keyboard-layout -options grp:alts_toggle,caps:backspace,shift:both_capslock us,ru,ua";
+{
+  background,
+  theme,
+}:
+with theme.colors; let
+  kbd = "riverctl keyboard-layout -options grp:alts_toggle,caps:backspace,shift:both_capslock us,ru,ua";
   focused = "0x${surface1}";
   monocle = "0x${bg-dark}";
   border = "0x${bg-dark}";
@@ -157,7 +158,7 @@ in ''
 
   pidof dbus-daemon || {
     dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
-    
+
     systemctl --user set-environment XDG_CURRENT_DESKTOP=river
     systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS

@@ -1,8 +1,11 @@
-{ pkgs, theme, ... }: {
+{
+  pkgs,
+  theme,
+  ...
+}: {
   console = {
     earlySetup = true;
-    font =
-      "${pkgs.powerline-fonts}/share/consolefonts/ter-powerline-v22b.psf.gz";
+    font = "${pkgs.powerline-fonts}/share/consolefonts/ter-powerline-v22b.psf.gz";
     keyMap = "us";
     colors = with theme.colors; [
       bg-dark

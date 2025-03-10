@@ -1,9 +1,14 @@
-{ theme, helpers, pkgs, ... }: {
+{
+  theme,
+  helpers,
+  pkgs,
+  ...
+}: {
   xdg.mimeApps.defaultApplications = helpers.mkAssociations {
-    types = [ "inode/directory" "application/x-gnome-saved-search" ];
+    types = ["inode/directory" "application/x-gnome-saved-search"];
     desktop = "yazi.desktop";
   };
-  home.packages = with pkgs; [ ouch ];
+  home.packages = with pkgs; [ouch];
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
@@ -13,14 +18,12 @@
     "yazi/keymap.toml".source = ./keymap.toml;
 
     "yazi/plugins/ouch.yazi/main.lua".source = builtins.fetchurl {
-      url =
-        "https://raw.githubusercontent.com/ndtoan96/ouch.yazi/refs/heads/main/main.lua";
+      url = "https://raw.githubusercontent.com/ndtoan96/ouch.yazi/refs/heads/main/main.lua";
       sha256 = "sha256:12s7ybq7sl7fv3pnni3i0m4jw5gw6sabmwgflkggyd0p8m6kw62f";
     };
 
     "yazi/plugins/compress.yazi/main.lua".source = builtins.fetchurl {
-      url =
-        "https://raw.githubusercontent.com/KKV9/compress.yazi/refs/heads/main/init.lua";
+      url = "https://raw.githubusercontent.com/KKV9/compress.yazi/refs/heads/main/init.lua";
       sha256 = "sha256:0yhg6nvp31k4r6wb8lxqs78cjy34y18a2rhsa9na9r67v5fygw3s";
     };
 

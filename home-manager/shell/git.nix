@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  home.packages = with pkgs; [ gh lazygit ];
+{pkgs, ...}: {
+  home.packages = with pkgs; [gh lazygit];
   programs.git = {
     enable = true;
     userName = "krabodyan";
@@ -11,16 +11,16 @@
       last = "diff HEAD^";
     };
     extraConfig = {
-      init = { defaultbranch = "master"; };
-      branch = { sort = "-committerdate"; };
-      pull = { rebase = true; };
+      init = {defaultbranch = "master";};
+      branch = {sort = "-committerdate";};
+      pull = {rebase = true;};
       rebase.autoStash = true;
       push = {
         autoSetupRemote = true;
         default = "simple";
       };
       diff.algorithm = "histogram";
-      safe = { directory = "*"; };
+      safe = {directory = "*";};
     };
     ignores = [
       "*.bak"

@@ -1,4 +1,10 @@
-{ pkgs, theme, inputs, helpers, ... }: {
+{
+  pkgs,
+  theme,
+  inputs,
+  helpers,
+  ...
+}: {
   home.packages = with pkgs; [
     docker-compose-language-service
     dockerfile-language-server-nodejs
@@ -6,9 +12,9 @@
     biome
     ruff
     nixd
+    alejandra
     fish-lsp
     vscode-langservers-extracted
-    nixfmt-classic
     python312Packages.python-lsp-server
     typescript-language-server
     nodePackages.prettier
@@ -18,7 +24,7 @@
     platformio
     glibc_multi
     pkgs.pkgsCross.avr.buildPackages.gcc
-    (import ./yazi-picker.nix { inherit pkgs; })
+    (import ./yazi-picker.nix {inherit pkgs;})
   ];
 
   xdg.mimeApps.defaultApplications = helpers.mkAssociations {
@@ -64,29 +70,31 @@
       editor = import ./editor.nix;
       keys = import ./binds.nix;
     };
-    themes = import ./theme.nix { inherit theme; };
-    ignores = let add_ignore = ext: "*.${ext}";
-    in [ "target" "icons" "venv" "node_modules" "__pycache__" "build" ]
-    ++ map add_ignore [
-      "png"
-      "svg"
-      "jpeg"
-      "jpg"
-      "mov"
-      "mp4"
-      "mkv"
-      "mp3"
-      "ttf"
-      # --end media formats
-      "doc"
-      "docx"
-      "pptx"
-      "xls"
-      "xlsx"
-      # --end office
-      "pdf"
-      "csv"
-      "drawio"
-    ];
+    themes = import ./theme.nix {inherit theme;};
+    ignores = let
+      add_ignore = ext: "*.${ext}";
+    in
+      ["target" "icons" "venv" "node_modules" "__pycache__" "build"]
+      ++ map add_ignore [
+        "png"
+        "svg"
+        "jpeg"
+        "jpg"
+        "mov"
+        "mp4"
+        "mkv"
+        "mp3"
+        "ttf"
+        # --end media formats
+        "doc"
+        "docx"
+        "pptx"
+        "xls"
+        "xlsx"
+        # --end office
+        "pdf"
+        "csv"
+        "drawio"
+      ];
   };
 }

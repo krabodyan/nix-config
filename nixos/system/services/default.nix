@@ -1,5 +1,5 @@
 {
-  imports = [ ./tlp.nix ./docker.nix ];
+  imports = [./tlp.nix ./docker.nix];
   systemd.coredump.enable = false;
   systemd.extraConfig = ''
     DefaultTimeoutStartSec=15s
@@ -18,7 +18,7 @@
       freeMemThreshold = 3;
       freeMemKillThreshold = 2;
       enableNotifications = true;
-      extraArgs = [ "--prefer" "'^firefox$'" "--avoid" "'^steam$'" ];
+      extraArgs = ["--prefer" "'^firefox$'" "--avoid" "'^steam$'"];
     };
     dbus = {
       enable = true;

@@ -1,6 +1,6 @@
-{ config, ... }: {
-  services.xserver.videoDrivers = [ "nvidia" ];
-  boot.blacklistedKernelModules = [ "nouveau" ];
+{config, ...}: {
+  services.xserver.videoDrivers = ["nvidia"];
+  boot.blacklistedKernelModules = ["nouveau"];
 
   hardware.nvidia = {
     modesetting.enable = true;

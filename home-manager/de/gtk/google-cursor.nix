@@ -1,4 +1,10 @@
-{ stdenv, fetchFromGitHub, nodejs_20, clickgen, yarn, }:
+{
+  stdenv,
+  fetchFromGitHub,
+  nodejs_20,
+  clickgen,
+  yarn,
+}:
 stdenv.mkDerivation {
   name = "google-cursor";
   version = "2.0.0";
@@ -10,7 +16,7 @@ stdenv.mkDerivation {
     sha256 = "sha256-ON4dwn24sc+8gSErelBsCQo4PLb7Vy6/x7JfXyuvg+4=";
   };
 
-  buildInputs = [ nodejs_20 clickgen yarn ];
+  buildInputs = [nodejs_20 clickgen yarn];
   installPhase = ''
     runHook preInstall
     mkdir -p $out/share/icons

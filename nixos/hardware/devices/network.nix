@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{lib, ...}: {
   networking = {
     dhcpcd = {
       enable = true;
@@ -11,7 +11,7 @@
         #static router=192.168.1.1
       '';
     };
-    nameservers = [ "8.8.8.8" "8.8.4.4" ];
+    nameservers = ["8.8.8.8" "8.8.4.4"];
     # useDHCP = true;
     firewall.enable = false;
     hostName = "nixos";
@@ -24,12 +24,12 @@
             UseDefaultInterface = true;
             EnableNetworkConfiguration = true;
           };
-          Network = { EnableIPv6 = true; };
+          Network = {EnableIPv6 = true;};
           Settings.AutoConnect = true;
           Scan.DisablePeriodicScan = false;
         };
       };
     };
   };
-  systemd.services.iwd.wantedBy = lib.mkForce [ ];
+  systemd.services.iwd.wantedBy = lib.mkForce [];
 }

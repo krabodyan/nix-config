@@ -5,7 +5,7 @@
     max_width = 80
     comment_width = 100
     fn_call_width = 55
-    # array_width = 
+    # array_width =
     binop_separator = "Front"
     group_imports = "StdExternalCrate"
     imports_granularity = "Module"

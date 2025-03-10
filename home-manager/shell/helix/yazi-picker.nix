@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{pkgs, ...}:
 pkgs.writeShellScriptBin "__yazi_picker" ''
   dir="$PWD"
   if [ -n "$1" ]; then

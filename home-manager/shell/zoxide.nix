@@ -1,8 +1,12 @@
-{ config, theme, ... }: {
+{
+  config,
+  theme,
+  ...
+}: {
   programs.fd = {
     enable = true;
     hidden = false;
-    extraOptions = [ "--color" "never" "--type" "file" ];
+    extraOptions = ["--color" "never" "--type" "file" "--strip-cwd-prefix"];
     inherit (config.programs.git) ignores;
   };
   programs.fzf = {
@@ -14,7 +18,6 @@
       current-bg = "-1";
       current-fg = fg;
       current-hl = fg;
-
       info = fg-dark;
       header = fg-dark;
       pointer = red;
@@ -24,7 +27,7 @@
       border = "-1";
       gutter = "-1";
     };
-    defaultCommand = "fd --type f --strip-cwd-prefix";
+    defaultCommand = "fd";
     defaultOptions = [
       "--pointer ' '"
       "--marker ' '"

@@ -1,9 +1,13 @@
 {
   _module.args.helpers = {
-    mkAssociations = { types, desktop }:
+    mkAssociations = {
+      types,
+      desktop,
+    }:
       builtins.listToAttrs (map (type: {
-        name = type;
-        value = desktop;
-      }) types);
+          name = type;
+          value = desktop;
+        })
+        types);
   };
 }

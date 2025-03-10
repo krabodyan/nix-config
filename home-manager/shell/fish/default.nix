@@ -1,5 +1,9 @@
-{ theme, pkgs, ... }: {
-  home.packages = [ pkgs.nix-your-shell ];
+{
+  theme,
+  pkgs,
+  ...
+}: {
+  home.packages = [pkgs.nix-your-shell];
 
   xdg.desktopEntries."fish" = {
     name = "fish";
@@ -8,16 +12,17 @@
 
   programs.fish = {
     enable = true;
-    shellAliases = {
-      flake = ''cd flake && test -n "$TMUX" || tmux'';
-      ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
-      tree =
-        "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
-      c = "__zoxide_zi";
-    } // builtins.listToAttrs (builtins.map (name: {
-      name = name;
-      value = "nix develop $FLAKE#${name}";
-    }) [ "tauri" "rust" "ino" ]);
+    shellAliases =
+      {
+        flake = ''cd flake && test -n "$TMUX" || tmux'';
+        ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
+        tree = "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
+        c = "__zoxide_zi";
+      }
+      // builtins.listToAttrs (builtins.map (name: {
+        name = name;
+        value = "nix develop $FLAKE#${name}";
+      }) ["tauri" "rust" "ino"]);
 
     plugins = [
       {
@@ -33,7 +38,8 @@
         inherit (pkgs.fishPlugins.fzf-fish) src;
       }
     ];
-    loginShellInit = # fish
+    loginShellInit =
+      # fish
       ''
         if test (tty) = "/dev/tty1"
           set -x WLR_DRM_DEVICES /dev/dri/igpu
@@ -41,6 +47,7 @@
         end
       '';
     interactiveShellInit = with theme.colors; # fish
+    
       ''
         function nix-shell --description "Start an interactive shell based on a Nix expression"
             nix-your-shell fish nix-shell -- $argv
@@ -61,11 +68,11 @@
 
           # -M = --mode
           # -m = --sets-mode
-          
+
           bind -M default -m insert alt-d repaint-mode
           bind -M insert  -m default alt-d repaint-mode
           bind -M visual  -m default alt-d repaint-mode end-selection
-          
+
           bind -M default -m visual d delete-char repaint-mode
           bind -M visual  -m insert c kill-selection end-selection repaint-mode
           bind -M default -m insert c begin-selection kill-selection end-selection repaint-mode
@@ -90,7 +97,7 @@
 
           bind -M insert alt-h backward-char
           bind -M insert alt-l forward-char
-          
+
           bind -M insert alt-a _fzf_search_directory
 
           bind -M visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
@@ -118,7 +125,7 @@
         #     printf \e\]7\;file://%s%s\e\\ $hostname (string escape --style=url $PWD)
         # end
 
-        # update_cwd_osc 
+        # update_cwd_osc
 
         function fish_prompt
           switch $fish_bind_mode
@@ -135,7 +142,7 @@
               printf "\033]12;#${green}\007"
               set_color ${green}
           end
-          
+
           if set -q IN_NIX_SHELL
             if set -q DEV_SHELL_NAME
               printf "\033[36m$DEV_SHELL_NAME\033[0m %s 󰧞 " (prompt_pwd)
@@ -145,11 +152,11 @@
           else
             printf "%s 󰧞 " (prompt_pwd)
           end
-          
+
           set_color normal
         end
 
-        # set -g fzf_fd_opts --color never --type file 
+        set -g fzf_fd_opts --color never --type file
 
         set -g fish_color_normal ${fg}
         set -g fish_color_command ${green}
@@ -181,7 +188,8 @@
         printf '\e[?45l'
       '';
 
-    functions._fzf_search_directory = # fish
+    functions._fzf_search_directory =
+      # fish
       ''
         set -f fd_cmd ${pkgs.fd}/bin/fd
         set -f --append fd_cmd $fzf_fd_opts

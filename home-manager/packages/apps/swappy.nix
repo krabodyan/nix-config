@@ -1,5 +1,9 @@
-{ pkgs, config, ... }: {
-  home.packages = [ pkgs.satty ];
+{
+  pkgs,
+  config,
+  ...
+}: {
+  home.packages = [pkgs.satty];
   xdg.configFile."satty/config.toml".text = with config.colors; ''
     [general]
     corner-roundness = 4

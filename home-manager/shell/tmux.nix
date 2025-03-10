@@ -1,13 +1,18 @@
-{ theme, pkgs, ... }: {
-  home.packages = [ pkgs.tmux ];
+{
+  theme,
+  pkgs,
+  ...
+}: {
+  home.packages = [pkgs.tmux];
   xdg.configFile."tmux/tmux.conf".text = with theme.colorsHex; # bash
+  
     ''
       unbind -a
 
       set -as terminal-features ",xterm*:RGB"
       set -as terminal-overrides ",xterm*:Tc"
       set -g default-command ${pkgs.fish}/bin/fish
-      set -g default-shell ${pkgs.fish}/bin/fish     
+      set -g default-shell ${pkgs.fish}/bin/fish
 
       set -g prefix M-Space
       bind M-Space send-prefix
@@ -21,7 +26,7 @@
       set -g allow-passthrough all
 
       bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
-              
+
       set-option -g status-style "fg=default,bg=default"
       set-window-option -g window-status-style "bg=default,fg=${overlay0}"
       set-window-option -g window-status-current-style "bg=default,fg=${subtext0}"

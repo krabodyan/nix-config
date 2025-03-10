@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.waybar = {
     enable = true;
     package = pkgs.waybar.override {
@@ -34,9 +38,9 @@
       # margin-right = 0;
       # margin-left = 0;
 
-      modules-left = [ "battery" "network" "tray" ];
-      modules-center = [ "river/tags" ];
-      modules-right = [ "clock" ];
+      modules-left = ["battery" "network" "tray"];
+      modules-center = ["river/tags"];
+      modules-right = ["clock"];
 
       tray = {
         icon-size = 10;
@@ -45,7 +49,7 @@
 
       "river/tags" = {
         num-tags = 5;
-        tag-labels = [ "" "" "" "" "" "" ];
+        tag-labels = ["" "" "" "" "" ""];
       };
 
       clock = {
@@ -81,9 +85,9 @@
         tooltip-format = "{time} | {capacity} %";
         tooltip-format-full = "{capacity} %";
         format-icons = rec {
-          discharging = [ "󰁺" "󰁽" "󰂀" "󰂂" ];
-          charging = [ "" ];
-          plugged = [ "󰁹" ];
+          discharging = ["󰁺" "󰁽" "󰂀" "󰂂"];
+          charging = [""];
+          plugged = ["󰁹"];
           full = plugged;
         };
         states = {
@@ -106,7 +110,7 @@
       }
 
       window#waybar {
-        background-color: transparent; 
+        background-color: transparent;
       }
 
       #language,

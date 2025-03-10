@@ -1,4 +1,9 @@
-{ theme, pkgs, lib, ... }: {
+{
+  theme,
+  pkgs,
+  lib,
+  ...
+}: {
   programs.foot = {
     enable = true;
     server.enable = false;
@@ -40,8 +45,7 @@
       };
 
       desktop-notifications = {
-        command =
-          "notify-send --app-name foot --urgency \${urgency} --expire-time \${expire-time} \${title} \${body}";
+        command = "notify-send --app-name foot --urgency \${urgency} --expire-time \${expire-time} \${title} \${body}";
         inhibit-when-focused = "no";
       };
 
@@ -50,7 +54,7 @@
         lines = 2000;
       };
 
-      url = { launch = "xdg-open \${url}"; };
+      url = {launch = "xdg-open \${url}";};
 
       cursor = {
         style = "block";

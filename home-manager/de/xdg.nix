@@ -1,7 +1,8 @@
-{ config, ... }: {
+{config, ...}: {
   xdg = {
     enable = true;
-    userDirs = let mk = path: "${config.home.homeDirectory}/${path}";
+    userDirs = let
+      mk = path: "${config.home.homeDirectory}/${path}";
     in {
       enable = true;
       desktop = mk "desktop";
@@ -15,7 +16,7 @@
     };
     mime.enable = true;
     mimeApps.enable = true;
-    configFile = { "mimeapps.list".force = true; };
+    configFile = {"mimeapps.list".force = true;};
     portal.xdgOpenUsePortal = true;
   };
 }

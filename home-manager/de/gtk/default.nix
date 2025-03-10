@@ -1,12 +1,18 @@
-{ inputs, theme, config, pkgs, ... }: {
-  imports = [ ./cursor.nix ./qtct.nix ];
-  home.packages = [ pkgs.dconf ];
+{
+  inputs,
+  theme,
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [./cursor.nix ./qtct.nix];
+  home.packages = [pkgs.dconf];
   dconf = {
     enable = true;
     settings = {
-      "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
-      "org/gnome/desktop/wm/preferences" = { button-layout = ""; };
-      "org/gnome/desktop/applications/terminal" = { exec = "foot"; };
+      "org/gnome/desktop/interface" = {color-scheme = "prefer-dark";};
+      "org/gnome/desktop/wm/preferences" = {button-layout = "";};
+      "org/gnome/desktop/applications/terminal" = {exec = "foot";};
     };
   };
   gtk = {
@@ -44,11 +50,13 @@
           base0F = peach; # Редко используемый акцент
         };
       };
-      inherit (inputs.nix-colors.lib-contrib { inherit pkgs; })
-        gtkThemeFromScheme;
+      inherit
+        (inputs.nix-colors.lib-contrib {inherit pkgs;})
+        gtkThemeFromScheme
+        ;
     in {
       name = colorScheme.slug;
-      package = gtkThemeFromScheme { scheme = colorScheme; };
+      package = gtkThemeFromScheme {scheme = colorScheme;};
     };
     gtk2 = {
       configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";

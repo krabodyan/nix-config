@@ -1,1 +1,1 @@
-{ imports = [ ./mako.nix ./rofi.nix ./swaylock.nix ]; }
+{imports = [./mako.nix ./rofi.nix ./swaylock.nix];}

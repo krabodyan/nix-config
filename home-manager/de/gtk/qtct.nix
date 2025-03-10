@@ -1,5 +1,10 @@
-{ config, pkgs, theme, ... }: {
-  home.packages = with pkgs; [ kdePackages.qt6ct libsForQt5.qt5ct ];
+{
+  config,
+  pkgs,
+  theme,
+  ...
+}: {
+  home.packages = with pkgs; [kdePackages.qt6ct libsForQt5.qt5ct];
   xdg.configFile = let
     colors = with theme.colors; ''
       [ColorScheme]
@@ -42,7 +47,7 @@
 
       [Troubleshooting]
       force_raster_widgets=1
-      ignored_applications=@Invalid() 
+      ignored_applications=@Invalid()
     '';
     "qt6ct/qt6ct.conf".text = ''
       [Appearance]
@@ -76,7 +81,7 @@
 
       [Troubleshooting]
       force_raster_widgets=1
-      ignored_applications=@Invalid() 
+      ignored_applications=@Invalid()
     '';
   };
 }

@@ -1,5 +1,5 @@
-{ config, ... }: {
-  home.sessionPath = [ "$HOME/.cargo/bin" ];
+{config, ...}: {
+  home.sessionPath = ["$HOME/.cargo/bin"];
   home.sessionVariables = {
     XDG_SESSION_DESKTOP = "river";
     XDG_CURRENT_DESKTOP = "river";

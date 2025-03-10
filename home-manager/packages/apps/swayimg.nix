@@ -1,5 +1,10 @@
-{ pkgs, theme, helpers, ... }: {
-  home.packages = [ pkgs.swayimg ];
+{
+  pkgs,
+  theme,
+  helpers,
+  ...
+}: {
+  home.packages = [pkgs.swayimg];
   xdg.configFile."swayimg/config".text = with theme.colorsHex; ''
     [general]
     size = fullscreen

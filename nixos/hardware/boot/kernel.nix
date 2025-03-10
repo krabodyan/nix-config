@@ -1,5 +1,11 @@
-{ config, lib, pkgs, modulesPath, ... }: {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+{
+  config,
+  lib,
+  pkgs,
+  modulesPath,
+  ...
+}: {
+  imports = [(modulesPath + "/installer/scan/not-detected.nix")];
   boot = {
     kernel.sysctl = {
       "kernel.printk" = 2;
@@ -22,7 +28,7 @@
       "net.ipv4.icmp_echo_ignore_all" = 1;
     };
 
-    kernelParams = [ "nohibernate" "rootfstype=btrfs" "raid=noautodetect" ];
+    kernelParams = ["nohibernate" "rootfstype=btrfs" "raid=noautodetect"];
     # kernelPackages = pkgs.linuxPackages_latest;
     extraModprobeConfig = ''
       options i915 enable_guc=3
@@ -45,8 +51,7 @@
       "omfs"
       "ufs"
     ];
-    initrd.availableKernelModules =
-      [ "xhci_pci" "thunderbolt" "nvme" "usbhid" ];
+    initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usbhid"];
     # initrd.kernelModules = [ ];
     initrd.verbose = false;
     # kernelModules = [ "v4l2loopback" ]; # "i915" "uinput" ];
@@ -58,7 +63,7 @@
     ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="046d", ATTR{power/wakeup}="disabled"
     SUBSYSTEM=="drm", KERNEL=="card*", ATTRS{device}=="0x9a68", SYMLINK+="dri/igpu"
   '';
-  services.udev.packages = with pkgs; [ platformio-core.udev ];
+  services.udev.packages = with pkgs; [platformio-core.udev];
 
   hardware = {
     enableRedistributableFirmware = true;

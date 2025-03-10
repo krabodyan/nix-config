@@ -1,4 +1,4 @@
-{ device ? throw "set your disk", ... }: {
+{device ? throw "set your disk", ...}: {
   disko.devices = {
     disk.main = {
       type = "disk";
@@ -14,7 +14,7 @@
             content = {
               type = "filesystem";
               format = "vfat";
-              extraArgs = [ "-F32" ];
+              extraArgs = ["-F32"];
               mountpoint = "/boot";
             };
           };
@@ -32,18 +32,18 @@
               ];
             in {
               type = "btrfs";
-              extraArgs = [ "-f" ];
+              extraArgs = ["-f"];
               subvolumes = {
                 "/nix" = {
-                  mountOptions = options ++ [ "subvol=nix" ];
+                  mountOptions = options ++ ["subvol=nix"];
                   mountpoint = "/nix";
                 };
                 "/home" = {
-                  mountOptions = options ++ [ "subvol=home" ];
+                  mountOptions = options ++ ["subvol=home"];
                   mountpoint = "/home";
                 };
                 "/root" = {
-                  mountOptions = options ++ [ "subvol=root" ];
+                  mountOptions = options ++ ["subvol=root"];
                   mountpoint = "/";
                 };
               };

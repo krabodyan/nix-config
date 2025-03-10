@@ -20,7 +20,7 @@ language-servers = ["nix"]
 name = "nix"
 
 [language.formatter]
-command = "nixfmt"
+command = "alejandra"
 
 [language-server.nix]
 command = "nixd"
