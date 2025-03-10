@@ -18,7 +18,6 @@
         flake = ''cd flake && test -n "$TMUX" || tmux'';
         ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
         tree = "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
-        c = "__zoxide_zi";
       }
       // builtins.listToAttrs (builtins.map (name: {
         name = name;
@@ -98,6 +97,7 @@
           bind -M insert alt-l forward-char
 
           bind -M insert alt-a _fzf_search_directory
+          bind -M insert alt-c "__zoxide_zi; commandline -f repaint"
 
           bind -M visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
           bind -M default -m insert p "fish_clipboard_paste; commandline -f repaint-mode"
