@@ -1,9 +1,11 @@
 { theme, pkgs, ... }: {
-  home.packages = with pkgs; [ nix-your-shell ];
+  home.packages = [ pkgs.nix-your-shell ];
+
   xdg.desktopEntries."fish" = {
     name = "fish";
     noDisplay = true;
   };
+
   programs.fish = {
     enable = true;
     shellAliases = {
@@ -17,58 +19,10 @@
       value = "nix develop $FLAKE#${name}";
     }) [ "tauri" "rust" "ino" ]);
 
-    functions = {
-      _fzf_search_directory = # fish
-        ''
-          set -f fd_cmd ${pkgs.fd}/bin/fd
-          set -f --append fd_cmd $fzf_fd_opts
-
-          set -f fzf_arguments $fzf_directory_opts
-          set -f token (commandline --current-token)
-          set -f expanded_token (eval echo -- $token)
-          set -f unescaped_exp_token (string unescape -- $expanded_token)
-
-          if string match --quiet -- "*/" $unescaped_exp_token && test -d "$unescaped_exp_token"
-              set --append fd_cmd --base-directory=$unescaped_exp_token
-              set --prepend fzf_arguments --prompt="$unescaped_exp_token> "
-              set -f file_paths_selected $unescaped_exp_token($fd_cmd 2>/dev/null | _fzf_wrapper $fzf_arguments)
-          else
-              set --prepend fzf_arguments --query="$unescaped_exp_token"
-              set -f file_paths_selected ($fd_cmd 2>/dev/null | _fzf_wrapper $fzf_arguments)
-          end
-
-          if test $status -eq 0
-              commandline --current-token --replace -- "$(string escape -- $file_paths_selected)"
-          end
-
-          commandline --function repaint
-        '';
-    };
-    plugins = let
-      zoxide = pkgs.fishPlugins.buildFishPlugin rec {
-        pname = "zoxide.fish";
-        version = "1.0";
-
-        src = pkgs.fetchFromGitHub {
-          owner = "Susensio";
-          repo = pname;
-          rev = "b1aebcc484ea500a2acbfea85a7dcddc8a25f198";
-          sha256 = "sha256-9hqq4hjsXhmDr06zdx+TokpZeMpzn0tNKtb8v1ghZsI=";
-        };
-
-        meta = {
-          description = "zoxide plugin fish";
-          homepage = "https://github.com/kidonng/zoxide.fish";
-        };
-      };
-    in [
+    plugins = [
       {
         name = "done";
         src = ./plugins/done;
-      }
-      {
-        name = "zoxide.fish";
-        inherit (zoxide) src;
       }
       {
         name = "autopair";
@@ -95,6 +49,8 @@
         function nix --description "Reproducible and declarative configuration management"
             nix-your-shell fish nix -- $argv
         end
+
+        zoxide init fish --cmd cd | source
 
         function fish_hybrid_key_bindings
           fish_vi_key_bindings --no-erase
@@ -142,35 +98,6 @@
         end
 
         set -g fish_key_bindings fish_hybrid_key_bindings
-
-        set --universal zoxide_cmd cd
-
-        set -g fish_color_normal ${fg}
-        set -g fish_color_command ${green}
-        set -g fish_color_keyword -i ${yellow}
-        set -g fish_color_quote ${yellow}
-        set -g fish_color_redirection ${blue}
-        set -g fish_color_end ${blue}
-        set -g fish_color_error ${red}
-        set -g fish_color_warn ${orange}
-        set -g fish_color_param ${fg}
-        set -g fish_color_comment -i ${fg-dark}
-        set -g fish_color_selection --background=${surface2}
-        set -g fish_color_search_match --background=${fg-dark}
-        set -g fish_color_operator ${green}
-        set -g fish_color_autosuggestion ${fg-dark}
-        set -g fish_color_valid_path ${fg}
-        set -g fish_color_cancel ${red}
-
-        set -g fish_pager_color_secondary ${red}
-        set -g fish_pager_color_progress ${red}
-        set -g fish_pager_color_prefix ${fg-dark}
-        set -g fish_pager_color_completion ${fg-dark}
-        set -g fish_pager_color_description -i ${fg-dark}
-        set -g fish_pager_color_selected_prefix ${fg}
-        set -g fish_pager_color_selected_completion ${fg}
-        set -g fish_pager_color_selected_description -i ${fg}
-        set -g fish_pager_color_selected_background ${bg}
 
         set -g fish_prompt_pwd_dir_length 1
         set -g fish_prompt_pwd_full_dirs 1
@@ -222,11 +149,62 @@
           set_color normal
         end
 
-        set -U __done_min_cmd_duration 5000
+        # set -g fzf_fd_opts --color never --type file 
 
-        set -g fzf_fd_opts --color never --type file 
+        set -g fish_color_normal ${fg}
+        set -g fish_color_command ${green}
+        set -g fish_color_keyword -i ${yellow}
+        set -g fish_color_quote ${yellow}
+        set -g fish_color_redirection ${blue}
+        set -g fish_color_end ${blue}
+        set -g fish_color_error ${red}
+        set -g fish_color_warn ${orange}
+        set -g fish_color_param ${fg}
+        set -g fish_color_comment -i ${fg-dark}
+        set -g fish_color_selection --background=${surface2}
+        set -g fish_color_search_match --background=${fg-dark}
+        set -g fish_color_operator ${green}
+        set -g fish_color_autosuggestion ${fg-dark}
+        set -g fish_color_valid_path ${fg}
+        set -g fish_color_cancel ${red}
+
+        set -g fish_pager_color_secondary ${red}
+        set -g fish_pager_color_progress ${red}
+        set -g fish_pager_color_prefix ${fg-dark}
+        set -g fish_pager_color_completion ${fg-dark}
+        set -g fish_pager_color_description -i ${fg-dark}
+        set -g fish_pager_color_selected_prefix ${fg}
+        set -g fish_pager_color_selected_completion ${fg}
+        set -g fish_pager_color_selected_description -i ${fg}
+        set -g fish_pager_color_selected_background ${bg}
 
         printf '\e[?45l'
+      '';
+
+    functions._fzf_search_directory = # fish
+      ''
+        set -f fd_cmd ${pkgs.fd}/bin/fd
+        set -f --append fd_cmd $fzf_fd_opts
+
+        set -f fzf_arguments $fzf_directory_opts
+        set -f token (commandline --current-token)
+        set -f expanded_token (eval echo -- $token)
+        set -f unescaped_exp_token (string unescape -- $expanded_token)
+
+        if string match --quiet -- "*/" $unescaped_exp_token && test -d "$unescaped_exp_token"
+            set --append fd_cmd --base-directory=$unescaped_exp_token
+            set --prepend fzf_arguments --prompt="$unescaped_exp_token> "
+            set -f file_paths_selected $unescaped_exp_token($fd_cmd 2>/dev/null | _fzf_wrapper $fzf_arguments)
+        else
+            set --prepend fzf_arguments --query="$unescaped_exp_token"
+            set -f file_paths_selected ($fd_cmd 2>/dev/null | _fzf_wrapper $fzf_arguments)
+        end
+
+        if test $status -eq 0
+            commandline --current-token --replace -- "$(string escape -- $file_paths_selected)"
+        end
+
+        commandline --function repaint
       '';
   };
 }

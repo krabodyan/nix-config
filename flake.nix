@@ -55,7 +55,7 @@
         ];
       };
 
-      formatter.${system} = pkgs.nixfmt-classic;
+      formatter.${system} = pkgs.alejandra;
 
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
