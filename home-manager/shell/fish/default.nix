@@ -67,13 +67,14 @@
           # -M = --mode
           # -m = --sets-mode
 
-          bind -M default -m insert alt-d repaint-mode
+          bind -M default -m insert  alt-d repaint-mode
           bind -M insert  -m default alt-d repaint-mode
           bind -M visual  -m default alt-d repaint-mode end-selection
 
-          bind -M default -m visual d delete-char repaint-mode
+          bind -M default           d delete-char
+          bind -M visual            d kill-selection end-selection begin-selection
           bind -M visual  -m insert c kill-selection end-selection repaint-mode
-          bind -M default -m insert c begin-selection kill-selection end-selection repaint-mode
+          bind -M default -m insert c delete-char repaint-mode
 
           bind -M visual  -m insert i repaint-mode end-selection
           bind -M default -m insert i repaint-mode end-selection
