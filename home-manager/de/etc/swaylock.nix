@@ -7,7 +7,6 @@
         fg = overlay1;
       in {
         inherit (theme) font;
-        # image = swaylock-image;
         daemonize = true;
 
         color = bg;

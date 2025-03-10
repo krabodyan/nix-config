@@ -1,4 +1,4 @@
-{ theme }:
+{ background, theme }:
 with theme.colors;
 let
   kbd =
@@ -10,7 +10,7 @@ let
 in ''
   #!/bin/sh
   riverctl background-color 0x${bg}
-  swaybg -m fill -i ~/flake/assets/background.jpg &
+  swaybg -m fill -i ${background} &
   riverctl border-color-focused ${focused}
   riverctl border-color-urgent ${border}
   riverctl border-color-unfocused ${border}

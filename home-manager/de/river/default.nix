@@ -1,9 +1,12 @@
-{ pkgs, theme, ... }: {
+{ self, pkgs, theme, ... }: {
   home.packages = with pkgs; [ swaybg wideriver lswt ];
   wayland.windowManager.river = {
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
-    extraConfig = import ./init.nix { inherit theme; };
+    extraConfig = import ./init.nix {
+      inherit theme;
+      background = "${self}/assets/background.jpg";
+    };
   };
 }
