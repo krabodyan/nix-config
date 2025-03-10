@@ -1,6 +1,7 @@
-{
+{config, ...}: {
   _module.args.theme = rec {
     font = "IosevkaTerm Nerd Font";
+    background = "${config.home.sessionVariables.FLAKE}/assets/background.jpg";
 
     colors = rec {
       select = brpink;

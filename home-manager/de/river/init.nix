@@ -1,7 +1,4 @@
-{
-  background,
-  theme,
-}:
+{theme}:
 with theme.colors; let
   kbd = "riverctl keyboard-layout -options grp:alts_toggle,caps:backspace,shift:both_capslock us,ru,ua";
   focused = "0x${surface1}";
@@ -11,7 +8,7 @@ with theme.colors; let
 in ''
   #!/bin/sh
   riverctl background-color 0x${bg}
-  swaybg -m fill -i ${background} &
+  pidof swaybg || swaybg -m fill -i ${theme.background} &
   riverctl border-color-focused ${focused}
   riverctl border-color-urgent ${border}
   riverctl border-color-unfocused ${border}
@@ -123,50 +120,43 @@ in ''
 
   riverctl rule-add -app-id 'floaterm' float
 
-  # riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' float
-  # riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' position 1390 30
-  # riverctl rule-add -app-id 'org.pulseaudio.pavucontrol' dimensions 500 800
-
   riverctl rule-add -app-id "xdg-desktop-portal-gtk" float
-  # riverctl rule-add -app-id "xdg-desktop-portal-gtk" dimensions 1000 800
+  riverctl rule-add -app-id "xdg-desktop-portal-gtk" dimensions 1000 800
 
   riverctl rule-add -title "Медіапереглядач" no-fullscreen
   riverctl rule-add -title "Медіапереглядач" float
 
   riverctl default-layout wideriver
 
-   # > "/tmp/wideriver.$\{XDG_VTNR}.$\{USER}.log" 2>&1 &
+  pidof wideriver || wideriver \
+    --layout                       left        \
+    --layout-alt                   monocle     \
+    --stack                        even        \
+    --smart-gaps                               \
+    --count-master                 1           \
+    --ratio-master                 0.50        \
+    --count-wide-left              0           \
+    --ratio-wide                   0.35        \
+    --inner-gaps                   0           \
+    --outer-gaps                   0           \
+    --border-color-focused         ${focused}  \
+    --border-color-focused-monocle ${monocle}  \
+    --border-color-unfocused       ${border}   \
+    --border-width                 2           \
+    --border-width-monocle         0           \
+    --border-width-smart-gaps      0           \
+    --log-threshold                error       \
+    > /dev/null &
 
-  pidof wideriver || {
-    swaybg -m fill -i /home/krabodyan/flake/assets/background.jpg &
-    wideriver \
-      --layout                       left        \
-      --layout-alt                   monocle     \
-      --stack                        even        \
-      --smart-gaps                               \
-      --count-master                 1           \
-      --ratio-master                 0.50        \
-      --count-wide-left              0           \
-      --ratio-wide                   0.35        \
-      --inner-gaps                   0           \
-      --outer-gaps                   0           \
-      --border-color-focused         ${focused}  \
-      --border-color-focused-monocle ${monocle}  \
-      --border-color-unfocused       ${border}   \
-      --border-width                 2           \
-      --border-width-monocle         0           \
-      --border-width-smart-gaps      0           \
-      --log-threshold                error       \
-      > /dev/null &
-
+  pidof dbus-daemon || {
     dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
-
-    systemctl --user set-environment XDG_CURRENT_DESKTOP=river
-    systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
-    dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
-
+    # systemctl --user set-environment XDG_CURRENT_DESKTOP=river
+    # systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
+    # dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
+    # systemctl --user start river-session.target
     # firefox &
     # QT_QPA_PLATFORMTHEME=gtk3 telegram-desktop &
     # vesktop &
   }
+  systemctl --user is-active wireplumber.service || systemctl --user restart wireplumber.service
 ''
