@@ -40,7 +40,7 @@
           allowBroken = true;
           allowInsecurePredicate = _: true;
         };
-        # overlays = [ inputs.nixpkgs-wayland.overlay ];
+        overlays = [ inputs.nixpkgs-wayland.overlay ];
       };
       pkgs = import nixpkgs overlaysSettings;
     in {
