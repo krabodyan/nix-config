@@ -135,36 +135,38 @@ in ''
 
   riverctl default-layout wideriver
 
-  wideriver \
-    --layout                       left        \
-    --layout-alt                   monocle     \
-    --stack                        even        \
-    --smart-gaps                               \
-    --count-master                 1           \
-    --ratio-master                 0.50        \
-    --count-wide-left              0           \
-    --ratio-wide                   0.35        \
-    --inner-gaps                   0           \
-    --outer-gaps                   0           \
-    --border-color-focused         ${focused}  \
-    --border-color-focused-monocle ${monocle}  \
-    --border-color-unfocused       ${border}   \
-    --border-width                 2           \
-    --border-width-monocle         0           \
-    --border-width-smart-gaps      0           \
-    --log-threshold                error       \
-    > /dev/null &
    # > "/tmp/wideriver.$\{XDG_VTNR}.$\{USER}.log" 2>&1 &
 
-  pidof dbus-daemon || {
+  pidof wideriver || {
+    swaybg -m fill -i /home/krabodyan/flake/assets/background.jpg &
+    wideriver \
+      --layout                       left        \
+      --layout-alt                   monocle     \
+      --stack                        even        \
+      --smart-gaps                               \
+      --count-master                 1           \
+      --ratio-master                 0.50        \
+      --count-wide-left              0           \
+      --ratio-wide                   0.35        \
+      --inner-gaps                   0           \
+      --outer-gaps                   0           \
+      --border-color-focused         ${focused}  \
+      --border-color-focused-monocle ${monocle}  \
+      --border-color-unfocused       ${border}   \
+      --border-width                 2           \
+      --border-width-monocle         0           \
+      --border-width-smart-gaps      0           \
+      --log-threshold                error       \
+      > /dev/null &
+
     dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
 
     systemctl --user set-environment XDG_CURRENT_DESKTOP=river
     systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP DBUS_SESSION_BUS_ADDRESS
 
-    firefox &
-    QT_QPA_PLATFORMTHEME=gtk3 telegram-desktop &
-    vesktop &
+    # firefox &
+    # QT_QPA_PLATFORMTHEME=gtk3 telegram-desktop &
+    # vesktop &
   }
 ''

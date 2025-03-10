@@ -1,7 +1,7 @@
 {
-  self,
   pkgs,
   theme,
+  config,
   ...
 }: {
   home.packages = with pkgs; [swaybg wideriver lswt];
@@ -11,7 +11,7 @@
     systemd.enable = true;
     extraConfig = import ./init.nix {
       inherit theme;
-      background = "${self}/assets/background.jpg";
+      background = "${config.home.sessionVariables.FLAKE}/assets/background.jpg";
     };
   };
 }
