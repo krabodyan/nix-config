@@ -99,8 +99,9 @@
         function fish_hybrid_key_bindings
           fish_vi_key_bindings --no-erase
 
-          bind -M default -m insert enter repaint-mode execute
-          bind -M visual  -m insert enter repaint-mode execute
+          bind -M insert            alt-enter repaint-mode execute
+          bind -M default -m insert enter     repaint-mode execute
+          bind -M visual  -m insert enter     repaint-mode end-selection execute
 
           # -M = --mode
           # -m = --sets-mode
@@ -108,8 +109,6 @@
           bind -M default -m insert alt-d repaint-mode
           bind -M insert  -m default alt-d repaint-mode
           bind -M visual  -m default alt-d repaint-mode end-selection
-
-          # bind -M insert alt-c __zoxide_zi
           
           bind -M default -m visual d delete-char repaint-mode
           bind -M visual  -m insert c kill-selection end-selection repaint-mode
@@ -180,24 +179,24 @@
 
         set fish_cursor_visual block
         set fish_cursor_default block
-        set fish_cursor_insert line
+        set fish_cursor_insert block
 
         function fish_mode_prompt
         end
 
-        function update_cwd_osc --on-variable PWD --description 'Notify terminals when \$PWD changes'
-            if status --is-command-substitution || set -q INSIDE_EMACS
-                return
-            end
-            printf \e\]7\;file://%s%s\e\\ $hostname (string escape --style=url $PWD)
-        end
+        # function update_cwd_osc --on-variable PWD --description 'Notify terminals when \$PWD changes'
+        #     if status --is-command-substitution || set -q INSIDE_EMACS
+        #         return
+        #     end
+        #     printf \e\]7\;file://%s%s\e\\ $hostname (string escape --style=url $PWD)
+        # end
 
-        update_cwd_osc 
+        # update_cwd_osc 
 
         function fish_prompt
           switch $fish_bind_mode
             case insert
-              printf "\033]12;#${overlay1}\007"
+              printf "\033]12;#${mode_insert}\007"
               set_color ${fg}
             case default
               printf "\033]12;#${mode_normal}\007"
@@ -209,13 +208,17 @@
               printf "\033]12;#${green}\007"
               set_color ${green}
           end
-          if set -q DEV_SHELL_NAME
-            printf "\033[36m$DEV_SHELL_NAME\033[0m %s 󰧞 " (prompt_pwd)
-          else if set -q IN_NIX_SHELL
-            printf "\033[36mnix-shell\033[0m %s 󰧞 " (prompt_pwd)
+          
+          if set -q IN_NIX_SHELL
+            if set -q DEV_SHELL_NAME
+              printf "\033[36m$DEV_SHELL_NAME\033[0m %s 󰧞 " (prompt_pwd)
+            else
+              printf "\033[36mnix-shell\033[0m %s 󰧞 " (prompt_pwd)
+            end
           else
             printf "%s 󰧞 " (prompt_pwd)
           end
+          
           set_color normal
         end
 

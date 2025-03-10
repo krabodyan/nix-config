@@ -8,8 +8,8 @@
 
     error = "red";
     warning = "yellow";
-    info = "overlay1";
-    hint = "overlay1";
+    info = "overlay2";
+    hint = "overlay2";
 
     "type" = { fg = "text"; };
 
@@ -177,7 +177,7 @@
     };
     "ui.cursor.primary.insert" = {
       fg = "base";
-      bg = "base";
+      bg = "mode_insert";
     };
     "ui.cursor.primary.select" = {
       fg = "base";

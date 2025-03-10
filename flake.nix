@@ -30,7 +30,7 @@
     nix-colors.url = "github:misterio77/nix-colors";
   };
 
-  outputs = { nixpkgs, home-manager, nix-colors, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       overlaysSettings = {
@@ -46,7 +46,7 @@
     in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit pkgs;
-        specialArgs = { inherit inputs system nix-colors; };
+        specialArgs = { inherit self inputs system; };
         modules = [
           ./lib/theme.nix
           ./nixos/configuration.nix
@@ -59,7 +59,7 @@
 
       homeConfigurations.krabodyan = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = { inherit self inputs system; };
         modules = [ ./home-manager ./lib/theme.nix ./lib/helpers.nix ];
       };
 
@@ -71,12 +71,11 @@
           targets = [ "wasm32-unknown-unknown" "x86_64-unknown-linux-gnu" ];
           extensions = [ "rust-src" "rust-analyzer" "miri" ];
         };
-        shellHook = # bash
-          ''test -n "$TMUX" || tmux'';
+        shellHook = ''test -n "$TMUX" || tmux'';
       in {
         rust = pkgs.mkShell {
-          inherit shellHook;
           DEV_SHELL_NAME = "rust";
+          inherit shellHook;
           RUST_BACKTRACE = 1;
           nativeBuildInputs = with pkgs; [
             pkg-config
@@ -86,8 +85,8 @@
           buildInputs = with pkgs; [ rust-pkg openssl ];
         };
         tauri = pkgs.mkShell {
-          inherit shellHook;
           DEV_SHELL_NAME = "tauri";
+          inherit shellHook;
           RUST_BACKTRACE = 1;
           GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
           nativeBuildInputs = with pkgs; [
@@ -124,12 +123,12 @@
         };
         ino = pkgs.mkShell {
           DEV_SHELL_NAME = "ino";
-          buildInputs = [ pkgs.glibc_multi ];
           inherit shellHook;
+          buildInputs = [ pkgs.glibc_multi ];
         };
         python = pkgs.mkShell {
-          inherit shellHook;
           DEV_SHELL_NAME = "python";
+          inherit shellHook;
           packages = [
             (pkgs.python311.withPackages (python-pkgs:
               with python-pkgs; [

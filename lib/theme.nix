@@ -1,7 +1,5 @@
-{ config, ... }: {
+{
   _module.args.theme = rec {
-    background-image =
-      "${config.home.homeDirectory}/flake/assets/background.jpg";
     font = "IosevkaTerm Nerd Font";
 
     colors = rec {
