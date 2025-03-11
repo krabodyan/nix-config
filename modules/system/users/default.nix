@@ -1,5 +1,6 @@
 {
   lib,
+  self,
   config,
   username,
   pkgs,
@@ -29,7 +30,7 @@ in {
       users = {
         root = {
           shell = pkgs.fish;
-          initialHashedPassword = "$6$zrplm9USsp0GLUsp$r.OsKXdabd23VoF3S/vja049G9NgdzEeXfdVGP.rYtwUQgv5CHu.hDZmY2zeMryFQ/fVpCkIRfYSuB1Y2H7hh0";
+          hashedPasswordFile = "${self}/secrets/password.hash";
         };
 
         ${username} = {
@@ -49,7 +50,7 @@ in {
             "uucp"
             "dialout"
           ];
-          initialHashedPassword = "$6$zrplm9USsp0GLUsp$r.OsKXdabd23VoF3S/vja049G9NgdzEeXfdVGP.rYtwUQgv5CHu.hDZmY2zeMryFQ/fVpCkIRfYSuB1Y2H7hh0";
+          hashedPasswordFile = "${self}/secrets/password.hash";
         };
       };
     };
