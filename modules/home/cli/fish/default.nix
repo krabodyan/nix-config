@@ -129,6 +129,7 @@ in {
             bind -M insert alt-l forward-char
 
             bind -M insert alt-a _fzf_search_directory
+            bind -M insert alt-s _fzf_search_git_status
             bind -M insert alt-c "__zoxide_zi; commandline -f repaint"
 
             bind -M visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
