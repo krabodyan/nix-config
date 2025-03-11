@@ -17,20 +17,30 @@
     };
 
     kernelParams = ["nohibernate" "rootfstype=btrfs" "raid=noautodetect"];
+
     # kernelPackages = pkgs.linuxPackages_latest;
+
     extraModprobeConfig = ''
       options i915 enable_guc=3
     '';
+
+    kernelModules = [
+      "kvm-intel"
+    ];
+
+    initrd.kernelModules = [
+      "i915"
+    ];
+
+    initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usbhid"];
+    initrd.verbose = false;
+
     blacklistedKernelModules = [
       "appletalk"
       "decnet"
-
-      # Obscure network protocols
       "ax25"
       "netrom"
       "rose"
-
-      # Old or rare or insufficiently audited filesystems
       "adfs"
       "affs"
       "bfs"
@@ -53,9 +63,6 @@
       "sysv"
       "ufs"
     ];
-
-    initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usbhid"];
-    initrd.verbose = false;
   };
 
   hardware = {
