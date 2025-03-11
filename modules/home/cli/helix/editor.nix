@@ -45,7 +45,7 @@
     skip-levels = 1;
   };
 
-  true-color = true;
+  # true-color = true;
 
   cursor-shape = {
     normal = "block";
@@ -65,21 +65,14 @@
   };
   statusline = {
     right = [
-      # "mode"
       "diagnostics"
       "read-only-indicator"
       "file-modification-indicator"
-      "file-base-name"
-      # "separator"
+      "file-name"
       "spinner"
     ];
     center = [];
     left = [];
     separator = " ";
-    # mode = {
-    #   normal = "-- normal --";
-    #   insert = "-- insert --";
-    #   select = "-- select --";
-    # };
   };
 }

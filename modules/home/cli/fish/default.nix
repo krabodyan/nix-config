@@ -147,7 +147,7 @@ in {
           set -g fish_key_bindings fish_hybrid_key_bindings
 
           # set -g fish_prompt_pwd_dir_length 1
-          set -g fish_prompt_pwd_full_dirs 3
+          set -g fish_prompt_pwd_full_dirs 2
 
           set fish_greeting
 
