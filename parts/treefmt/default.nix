@@ -6,6 +6,7 @@
         global.excludes = [
           "*.tmTheme"
           "*.css"
+          "*.md"
           "*.toml"
           ".gitignore"
           "secrets/**"
