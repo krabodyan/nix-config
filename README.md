@@ -1,1 +1,5 @@
-my nixos config
+# stack
+  - river wm
+  - yazi
+  - helix
+  - foot
