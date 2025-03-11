@@ -58,7 +58,7 @@
     firefox.enable = true;
     foot.enable = true;
 
-    # ------------- desktop enviroment
+    # ------------- desktop environment
     xdg.enable = true;
     variables.enable = true;
     qtct.enable = true;
