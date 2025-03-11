@@ -30,7 +30,7 @@
         [
           disko.nixosModules.default
         ]
-        ++ ["${self}/modules/system"];
+        ++ ["${self}/hosts"];
     };
   mkHome = homeDir: {
     stateVersion,
