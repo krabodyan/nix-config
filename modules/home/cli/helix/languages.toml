@@ -1,0 +1,109 @@
+file_watch_support = false
+
+# SVELTE --------------------------
+[[language]]
+name = "svelte"
+comment-token = "//"
+block-comment-tokens = {start = "<!--", end = "-->"}
+
+# ARDUINO --------------------------
+
+[[language]]
+auto-format = true
+name = "cpp"
+formatter.command = "clang-format"
+
+# NIX --------------------------
+[[language]]
+auto-format = true
+language-servers = ["nix"]
+name = "nix"
+
+[language.formatter]
+command = "alejandra"
+
+[language-server.nix]
+command = "nixd"
+
+# TS -----------------------
+[[language]]
+name = "typescript"
+language-servers = ["typescript-language-server", "eslint"]
+roots = ["package-lock.json", "tsconfig.json", ".prettierrc.json"]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server", "eslint"]
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+auto-format = true
+
+[language-server.eslint]
+args = ["--stdio"]
+command = "vscode-eslint-language-server"
+
+[language-server.eslint.config]
+format = true
+nodePath = ""
+onIgnoredFiles = "off"
+packageManager = "pnpm"
+quiet = false
+rulesCustomizations = []
+run = "onType"
+useESLintClass = false
+validate = "on"
+codeAction = { disableRuleComment = { enable = true, location = "separateLine" }, showDocumentation = { enable = true } }
+codeActionOnSave = { mode = "all" }
+experimental = {}
+problems = { shortenToSingleLine = false }
+workingDirectory = { mode = "auto" }
+
+# RUST --------------------------
+[[language]]
+name = "rust"
+
+[language.auto-pairs]
+"\"" = "\""
+"(" = ")"
+"<" = ">"
+"[" = "]"
+"`" = "`"
+"{" = "}"
+
+[language-server.rust-analyzer.config]
+check.command = "clippy"
+# procMacro.enable = false
+inlayHints.closingBraceHints.minLines = 5
+inlayHints.parameterHints.enable = false
+inlayHints.typeHints.hideClosureInitialization = true
+
+# PYTHON --------------------------
+[[language]]
+name = "python"
+auto-format = true
+language-servers = ["ruff", "pylsp"]
+
+[language.formatter]
+args = ["--line-length", "88", "--quiet", "-"]
+command = "black"
+
+# HTML ------------------------------------
+[[language]]
+name = "html"
+formatter = { command = 'prettier', args = ["--parser", "html"] }
+
+# JSON --------------------------
+[[language]]
+name = "json"
+language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome"]
+
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+
+[language-server.vscode-json-language-server.config.json]
+validate = { enable = true }
+format = { enable = true }
+schemas = [{ fileMatch = ["tsconfig.json", "tsconfig.*.json"], url = "https://json.schemastore.org/tsconfig.json" }, { fileMatch = [ "package.json" ], url = "https://json.schemastore.org/package.json" }]
+

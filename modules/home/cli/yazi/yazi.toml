@@ -1,0 +1,25 @@
+[log]
+enabled = false
+
+[manager]
+linemode = "none"
+ratio = [0, 2, 3]
+show_hidden = false
+sort_by = "alphabetical"
+sort_dir_first = true
+sort_sensitive = false
+
+[preview]
+image_filter = "nearest"
+image_quality = 90
+max_width = 1200
+
+[plugin]
+prepend_previewers = [
+	{ mime = "application/*zip",            run = "ouch" },
+	{ mime = "application/x-tar",           run = "ouch" },
+	{ mime = "application/x-bzip2",         run = "ouch" },
+	{ mime = "application/x-7z-compressed", run = "ouch" },
+	{ mime = "application/x-rar",           run = "ouch" },
+	{ mime = "application/x-xz",            run = "ouch" },
+]
