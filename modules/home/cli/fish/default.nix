@@ -34,8 +34,8 @@ in {
         flake = ''cd flake && test -n "$TMUX" || tmux'';
         ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
         tree = "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
-        ino = "nix develop \$FLAKE#ino";
-        rust = "nix develop \$FLAKE#rust";
+        ino = "nix develop $FLAKE#ino";
+        rust = "nix develop $FLAKE#rust";
       };
 
       plugins = let
@@ -121,6 +121,7 @@ in {
 
             for mode in default insert visual
               bind --erase -M $mode alt-r
+              bind --erase -M $mode ctrl-r
               bind --erase -M $mode alt-l
 
               bind -M $mode alt-f end-of-line
@@ -129,7 +130,10 @@ in {
 
             bind -M insert alt-h backward-char
             bind -M insert alt-l forward-char
+            bind -M insert alt-k up-or-search
+            bind -M insert alt-j down-or-search
 
+            bind -M insert alt-r fzf-history-widget
             bind -M insert alt-a _fzf_search_directory
             bind -M insert alt-s _fzf_search_git_status
             bind -M insert alt-c "__zoxide_zi; commandline -f repaint"
@@ -142,8 +146,8 @@ in {
 
           set -g fish_key_bindings fish_hybrid_key_bindings
 
-          set -g fish_prompt_pwd_dir_length 1
-          set -g fish_prompt_pwd_full_dirs 1
+          # set -g fish_prompt_pwd_dir_length 1
+          set -g fish_prompt_pwd_full_dirs 3
 
           set fish_greeting
 
@@ -192,7 +196,7 @@ in {
           set -g fish_color_error ${red}
           set -g fish_color_warn ${orange}
           set -g fish_color_param ${fg}
-          set -g fish_color_comment -i ${fg-dark}
+          set -g fish_color_comment ${fg-dark}
           set -g fish_color_selection --background=${surface2}
           set -g fish_color_search_match --background=${fg-dark}
           set -g fish_color_operator ${green}
@@ -200,15 +204,19 @@ in {
           set -g fish_color_valid_path ${fg}
           set -g fish_color_cancel ${red}
 
-          set -g fish_pager_color_secondary ${red}
-          set -g fish_pager_color_progress ${red}
+          set -g fish_pager_color_progress ${overlay0}
           set -g fish_pager_color_prefix ${fg-dark}
           set -g fish_pager_color_completion ${fg-dark}
-          set -g fish_pager_color_description -i ${fg-dark}
+          set -g fish_pager_color_description ${fg-dark}
           set -g fish_pager_color_selected_prefix ${fg}
           set -g fish_pager_color_selected_completion ${fg}
-          set -g fish_pager_color_selected_description -i ${fg}
+          set -g fish_pager_color_selected_description ${fg}
           set -g fish_pager_color_selected_background ${bg}
+          set -g fish_pager_color_secondary ${overlay0}
+          set -g fish_pager_color_secondary_prefix ${fg-dark}
+          set -g fish_pager_color_secondary_completion ${fg-dark}
+          set -g fish_pager_color_secondary_description ${fg-dark}
+          set -g fish_pager_color_secondary_background ${fg-dark}
 
           printf '\e[?45l'
         '';
