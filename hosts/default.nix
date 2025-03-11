@@ -1,16 +1,8 @@
 {
-  self,
-  hostDir,
   system,
   stateVersion,
   ...
 }: {
-  imports = [
-    "${self}/modules/system"
-    "${self}/hosts/${hostDir}"
-    "${self}/hosts/${hostDir}/modules"
-  ];
-
   system = {
     inherit stateVersion;
   };

@@ -30,9 +30,13 @@
         [
           disko.nixosModules.default
         ]
-        ++ ["${self}/hosts"];
+        ++ [
+          "${self}/modules/system"
+          "${self}/hosts/${hostDir}/system"
+          "${self}/hosts/${hostDir}/system/modules"
+        ];
     };
-  mkHome = homeDir: {
+  mkHome = hostDir: {
     stateVersion,
     system,
     username,
@@ -56,12 +60,16 @@
           username
           stateVersion
           system
-          homeDir
+          hostDir
           colors
           systemFont
           ;
       };
-      modules = ["${self}/modules/home"];
+      modules = [
+        "${self}/modules/home"
+        "${self}/hosts/${hostDir}/home"
+        "${self}/hosts/${hostDir}/home/modules"
+      ];
     };
 in {
   forAllSystems = inputs.nixpkgs.lib.systems.flakeExposed;

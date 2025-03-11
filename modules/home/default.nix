@@ -1,10 +1,7 @@
 {
-  home = {
-    username = "krabodyan";
-    homeDirectory = "/home/krabodyan";
-    stateVersion = "25.05";
-  };
-  programs.home-manager.enable = true;
-  news.display = "silent";
-  imports = [./de ./packages ./shell];
+  self,
+  allDirs,
+  ...
+}: {
+  imports = allDirs "${self}/modules/home/cli" ++ allDirs "${self}/modules/home/gui";
 }

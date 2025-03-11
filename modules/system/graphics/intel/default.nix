@@ -20,5 +20,8 @@ in {
     environment.systemPackages = with pkgs; [
       intel-gpu-tools
     ];
+    services.udev.extraRules = ''
+      SUBSYSTEM=="drm", KERNEL=="card*", ATTRS{device}=="0x9a68", SYMLINK+="dri/igpu"
+    '';
   };
 }
