@@ -41,9 +41,9 @@
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = libx.forAllSystems;
       imports = [
-        inputs.home-manager.flakeModules.home-manager
         inputs.treefmt-nix.flakeModule
-        ./parts
+        ./parts/devshells
+        ./parts/treefmt
       ];
       flake = {
         nixosConfigurations = libx.genNixos hosts;
