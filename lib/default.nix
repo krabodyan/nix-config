@@ -45,7 +45,7 @@
   }:
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import inputs.nixpkgs {
-        system = system;
+        inherit system;
         config = {
           allowUnfree = true;
           allowBroken = true;
