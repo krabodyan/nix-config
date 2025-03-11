@@ -27,7 +27,6 @@ in {
       QT_AUTO_SCREEN_SCALE_FACTOR = 1;
       QT_WAYLAND_DISABLE_WINDOWDECORATION = 1;
       _JAVA_AWT_WM_NONEREPARENTING = 1;
-      RUST_BACKTRACE = 1;
       XDG_SCREENSHOTS_DIR = "~/pictures";
       FLAKE = "${config.home.homeDirectory}/flake";
       MOZ_ENABLE_WAYLAND = 1;
