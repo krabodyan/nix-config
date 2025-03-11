@@ -8,14 +8,34 @@ with colors; let
   monocle = "0x${bg-dark}";
   border = "0x${bg-dark}";
   timeout = "5000";
+  windows = [
+    "Виберіть файли"
+    "Відкрити файли"
+    "Зберегти відео"
+    "Вивантаження файлу"
+    "File Upload"
+    "Відкрити документ"
+    "Зберегти файл"
+    "Open File"
+    "Зберегти зображення"
+  ];
+  picker-rules =
+    builtins.concatStringsSep "\n"
+    (builtins.map
+      (
+        title: ''
+          riverctl rule-add -title "${title}" float
+          riverctl rule-add -title "${title}" dimensions 1000 800
+        ''
+      )
+      windows);
 in ''
-  #!/bin/sh
+  #!/bin/bash
   riverctl background-color 0x${bg}
   pidof swaybg || swaybg -m fill -i ${background} &
   riverctl border-color-focused ${focused}
   riverctl border-color-urgent ${border}
   riverctl border-color-unfocused ${border}
-  # riverctl border-width 4
 
   riverctl map -layout 0 normal Super       Q      close
   riverctl map -layout 0 normal Super+Shift Delete exit
@@ -103,13 +123,6 @@ in ''
   riverctl map -layout 0 normal Super+Shift Print spawn "wl-paste | satty -f -";
   riverctl map -layout 0 normal Super+Shift 0     spawn "swaylock"
 
-
-  array=("Виберіть файли" "Відкрити файли" "Зберегти відео" "Вивантаження файлу" "File Upload" "Відкрити документ" "Зберегти файл" "Open File" "Зберегти зображення")
-  for item in "$\{array[@]}"; do
-    riverctl rule-add -title "$item" float
-    riverctl rule-add -title "$item" dimensions 1000 800
-  done
-
   riverctl rule-add -app-id "*" ssd
   riverctl rule-add -app-id "org.telegram.desktop" tags 1
   riverctl rule-add -app-id "google-chrome" tags 2
@@ -125,6 +138,7 @@ in ''
 
   riverctl rule-add -app-id "xdg-desktop-portal-gtk" float
   riverctl rule-add -app-id "xdg-desktop-portal-gtk" dimensions 1000 800
+  ${picker-rules}
 
   riverctl rule-add -title "Медіапереглядач" no-fullscreen
   riverctl rule-add -title "Медіапереглядач" float
