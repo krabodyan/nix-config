@@ -34,6 +34,8 @@ in {
         flake = ''cd flake && test -n "$TMUX" || tmux'';
         ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
         tree = "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
+        ino = "nix develop \$FLAKE#ino";
+        rust = "nix develop \$FLAKE#rust";
       };
 
       plugins = let
