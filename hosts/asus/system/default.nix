@@ -61,7 +61,10 @@
         enable = true;
         hostname = "nixos";
       };
-      iwd.enable = true;
+      iwd = {
+        enable = true;
+        enableDaemon = false;
+      };
     };
 
     graphics = {
