@@ -93,7 +93,7 @@ in rec {
       "A-l" = "move_char_right";
       "A-j" = "move_line_down";
       "A-k" = "move_line_up";
-      "A-v" = ":clipboard-paste-after";
+      "A-v" = ":clipboard-paste-before";
     };
   normal =
     binds
@@ -101,19 +101,12 @@ in rec {
     // {
       ${toggle} = ["collapse_selection" "insert_mode"];
       "A-v" = ["select_mode" "flip_selections"];
-      # "A-l" = [ "move_next_word_end" "collapse_selection" "move_char_right" ];
-      # "A-h" = [ "move_prev_word_start" "collapse_selection" ];
-      # e = [ "select_mode" "move_next_word_end" ];
-      # w = [ "select_mode" "move_next_word_start" ];
-      # b = [ "select_mode" "move_prev_word_end" ];
-      # E = [ "select_mode" "move_next_long_word_end" ];
-      # W = [ "select_mode" "move_next_long_word_start" ];
-      # B = [ "select_mode" "move_prev_long_word_end" ];
       space = {
         q = ":q";
         Q = ":q!";
         c = ":buffer-close";
         C = ":buffer-close!";
+        i = ":toggle lsp.display-inlay-hints";
         "S-c" = ":buffer-close!";
         "S-f" = ":open %sh{ __yazi_picker }";
         "A-f" = "file_picker_in_current_buffer_directory";
