@@ -4,5 +4,5 @@
   hostDir,
   ...
 }: {
-  imports = allDirs "${self}/hosts/${hostDir}/modules/hardware";
+  imports = allDirs "${self}/hosts/${hostDir}/system/modules/hardware";
 }

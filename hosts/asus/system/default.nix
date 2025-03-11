@@ -10,7 +10,7 @@
     docs.enable = true;
     console.enable = true;
     users.enable = true;
-    udev = {
+    udev-rules = {
       enable = true;
       platformio = true;
     };
@@ -27,7 +27,6 @@
       ];
       fonts = {
         enable = true;
-        monospace = "IosevkaTerm Nerd Font";
         serif = "Roboto Medium";
       };
     };

@@ -8,7 +8,7 @@
   cfg = config.module.udev-rules;
 in {
   options = {
-    module.kernel = {
+    module.udev-rules = {
       enable = mkEnableOption "enabled udev rules for usb mouse";
       platformio = mkOption {
         type = lib.types.bool;

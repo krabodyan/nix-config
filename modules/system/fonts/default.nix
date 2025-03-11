@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  systemFont,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
@@ -10,9 +11,6 @@ in {
   options = {
     module.packages.fonts = {
       enable = mkEnableOption "enable fonts";
-      monospace = mkOption {
-        type = lib.types.str;
-      };
       serif = mkOption {
         type = lib.types.str;
       };
@@ -40,7 +38,7 @@ in {
       defaultFonts = {
         serif = [cfg.serif];
         sansSerif = [cfg.serif];
-        monospace = [cfg.monospace];
+        monospace = [systemFont];
         emoji = ["SymbolsNerdFont" "FontAwesome" "Noto Color Emoji"];
       };
     };

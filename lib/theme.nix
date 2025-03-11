@@ -1,4 +1,6 @@
 rec {
+  systemFont = "IosevkaTerm Nerd Font";
+
   colors = rec {
     select = brpink;
 

@@ -1,7 +1,9 @@
 {
   lib,
   config,
+  system,
   username,
+  stateVersion,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -13,6 +15,16 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    system = {
+      inherit stateVersion;
+    };
+    nixpkgs.hostPlatform = system;
+    nixpkgs.config = {
+      allowUnfree = true;
+      allowBroken = true;
+      allowInsecurePredicate = _: true;
+    };
+
     nix = {
       gc.automatic = false;
       optimise = {

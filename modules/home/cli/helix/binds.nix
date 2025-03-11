@@ -93,7 +93,7 @@ in rec {
       "A-l" = "move_char_right";
       "A-j" = "move_line_down";
       "A-k" = "move_line_up";
-      "A-v" = ":clipboard-paste-before";
+      "A-v" = ":clipboard-paste-after";
     };
   normal =
     binds
@@ -126,6 +126,7 @@ in rec {
       ${toggle} = ["collapse_selection" "normal_mode"];
       "A-v" = "flip_selections";
       space = normal.space;
+      "A-S-a" = "goto_word";
       "A-a" = "extend_to_word";
     };
 }
