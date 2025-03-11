@@ -20,7 +20,7 @@ in {
     programs.command-not-found.enable = true;
 
     users = {
-      mutableUsers = false;
+      mutableUsers = true;
 
       groups = {
         plugdev = {};
@@ -30,7 +30,7 @@ in {
       users = {
         root = {
           shell = pkgs.fish;
-          hashedPasswordFile = "${self}/secrets/password.hash";
+          hashedPasswordFile = "${self}/secrets/password";
         };
 
         ${username} = {
@@ -50,7 +50,7 @@ in {
             "uucp"
             "dialout"
           ];
-          hashedPasswordFile = "${self}/secrets/password.hash";
+          hashedPasswordFile = "${self}/secrets/password";
         };
       };
     };

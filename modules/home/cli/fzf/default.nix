@@ -50,7 +50,7 @@ in {
         "--height 7"
         "--info hidden"
         "--reverse"
-        "--bind 'alt-j:down,alt-k:up,alt-a:abort,alt-s:jump,alt-c:abort'"
+        "--bind 'tab:toggle-down,btab:toggle-up,alt-j:down,alt-k:up,alt-a:abort,alt-s:jump,alt-c:abort'"
       ];
     };
   };
