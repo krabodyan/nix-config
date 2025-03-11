@@ -15,8 +15,8 @@ in {
 
     "type" = {fg = fg;};
 
-    "type.builtin" = magenta;
-    "type.enum" = magenta;
+    "type.builtin" = brmagenta;
+    "type.enum" = brmagenta;
 
     "constructor" = fg;
 
@@ -44,7 +44,7 @@ in {
     "punctuation.bracket" = overlay2;
     "punctuation.special" = peach;
 
-    "keyword" = {fg = magenta;};
+    "keyword" = {fg = brmagenta;};
     "operator" = sky;
 
     "function" = {fg = fg;};
