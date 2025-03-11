@@ -42,10 +42,8 @@
       systems = libx.forAllSystems;
       imports = [
         inputs.home-manager.flakeModules.home-manager
+        ./parts
       ];
-      # imports = [
-      #   ./parts
-      # ];
       flake = {
         nixosConfigurations = libx.genNixos hosts;
         homeConfigurations = libx.genHome hosts;

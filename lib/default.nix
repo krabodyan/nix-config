@@ -6,7 +6,7 @@
   inherit (import ./theme.nix) colors systemFont;
   mkHost = hostDir: {
     stateVersion,
-    platform,
+    system,
     hostname,
     username,
   }:
@@ -20,7 +20,7 @@
           hostname
           username
           stateVersion
-          platform
+          system
           hostDir
           colors
           systemFont
@@ -34,13 +34,13 @@
     };
   mkHome = homeDir: {
     stateVersion,
-    platform,
+    system,
     username,
     ...
   }:
     inputs.home-manager.lib.homeManagerConfiguration {
       pkgs = import inputs.nixpkgs {
-        system = platform;
+        system = system;
         config = {
           allowUnfree = true;
           allowBroken = true;
@@ -55,7 +55,7 @@
           mkAssociations
           username
           stateVersion
-          platform
+          system
           homeDir
           colors
           systemFont

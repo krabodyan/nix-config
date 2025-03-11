@@ -1,15 +1,17 @@
 {
-  platform,
+  system,
   lib,
   ...
 }: {
   imports = [./ld.nix];
-  nixpkgs.hostPlatform = lib.mkDefault platform;
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowBroken = true;
-    allowInsecurePredicate = _: true;
-  };
+  nixpkgs.hostPlatform = lib.mkDefault system;
+
+  # nixpkgs.config = {
+  #   allowUnfree = true;
+  #   allowBroken = true;
+  #   allowInsecurePredicate = _: true;
+  # };
+
   nix = {
     gc.automatic = false;
     optimise = {
