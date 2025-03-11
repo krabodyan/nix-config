@@ -77,6 +77,14 @@
     river = {
       enable = true;
       background = "~/flake/assets/background.jpg";
+      extraConfig = ''
+        riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events disabled
+        riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" scroll-factor 0.2
+        riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" pointer-accel 0.3
+        riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" accel-profile flat
+        riverctl input "pointer-1133-50504-Logitech_USB_Receiver_Mouse" accel-profile flat
+        riverctl input "pointer-1133-50504-Logitech_USB_Receiver_Mouse" pointer-accel 0
+      '';
     };
     rofi.enable = true;
     swaylock.enable = true;

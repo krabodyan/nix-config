@@ -14,6 +14,10 @@ in {
       background = mkOption {
         type = lib.types.str;
       };
+      extraConfig = mkOption {
+        type = lib.types.nullOr lib.types.str;
+        default = null;
+      };
     };
   };
   config = mkIf cfg.enable {
@@ -23,8 +27,8 @@ in {
       xwayland.enable = true;
       systemd.enable = true;
       extraConfig = import ./init.nix {
-        inherit colors;
-        inherit (cfg) background;
+        inherit colors lib;
+        inherit (cfg) background extraConfig;
       };
     };
   };
