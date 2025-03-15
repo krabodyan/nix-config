@@ -119,7 +119,6 @@ in rec {
       ${toggle} = ["collapse_selection" "normal_mode"];
       "A-v" = "flip_selections";
       space = normal.space;
-      "A-S-a" = "goto_word";
-      "A-a" = "extend_to_word";
+      "A-a" = "goto_word";
     };
 }

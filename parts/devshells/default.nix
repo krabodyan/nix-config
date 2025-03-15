@@ -19,16 +19,33 @@
         cargo-watch
         cargo-expand
         cargo-tauri
-        dioxus-cli
-        wasm-bindgen-cli
+        pnpm
+        # dioxus-cli
+        # wasm-bindgen-cli
         gobject-introspection
         nodejs
         tailwindcss
+        tailwindcss-language-server
+        pkg-config
+        sqlite
+        openssl
+        svelte-language-server
+        nodePackages.prettier
       ];
 
       buildInputs = with pkgs; [
-        openssl
-        pkg-config
+        at-spi2-atk
+        atkmm
+        cairo
+        gdk-pixbuf
+        glib
+        gtk3
+        harfbuzz
+        librsvg
+        libsoup_3
+        pango
+        xdotool
+        webkitgtk_4_1
         (
           rust-pkgs.rust-bin.nightly.latest.default.override
           {

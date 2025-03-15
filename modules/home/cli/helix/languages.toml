@@ -4,7 +4,11 @@ file_watch_support = false
 [[language]]
 name = "svelte"
 comment-token = "//"
+indent = { tab-width = 4, unit = "\t" }
 block-comment-tokens = {start = "<!--", end = "-->"}
+language-servers = [ "svelteserver" ]
+formatter = { command = "prettier", args = ["--parser", "svelte"] }
+auto-format = true
 
 # ARDUINO --------------------------
 
@@ -28,36 +32,17 @@ command = "nixd"
 # TS -----------------------
 [[language]]
 name = "typescript"
-language-servers = ["typescript-language-server", "eslint"]
+language-servers = ["typescript-language-server"] 
 roots = ["package-lock.json", "tsconfig.json", ".prettierrc.json"]
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = ["typescript-language-server", "eslint"]
+language-servers = ["typescript-language-server"]
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
 
-[language-server.eslint]
-args = ["--stdio"]
-command = "vscode-eslint-language-server"
-
-[language-server.eslint.config]
-format = true
-nodePath = ""
-onIgnoredFiles = "off"
-packageManager = "pnpm"
-quiet = false
-rulesCustomizations = []
-run = "onType"
-useESLintClass = false
-validate = "on"
-codeAction = { disableRuleComment = { enable = true, location = "separateLine" }, showDocumentation = { enable = true } }
-codeActionOnSave = { mode = "all" }
-experimental = {}
-problems = { shortenToSingleLine = false }
-workingDirectory = { mode = "auto" }
 
 # RUST --------------------------
 [[language]]
@@ -96,14 +81,18 @@ formatter = { command = 'prettier', args = ["--parser", "html"] }
 # JSON --------------------------
 [[language]]
 name = "json"
-language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome"]
+language-servers = [ "json", "biome"]
 
-[language-server.biome]
-command = "biome"
-args = ["lsp-proxy"]
+[language-server.json]
+command = "vscode-json-language-server"
+except-features = [ "format" ]
+args = ["--stdio"]
 
-[language-server.vscode-json-language-server.config.json]
+[language-server.json.config.json]
 validate = { enable = true }
 format = { enable = true }
 schemas = [{ fileMatch = ["tsconfig.json", "tsconfig.*.json"], url = "https://json.schemastore.org/tsconfig.json" }, { fileMatch = [ "package.json" ], url = "https://json.schemastore.org/package.json" }]
 
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]

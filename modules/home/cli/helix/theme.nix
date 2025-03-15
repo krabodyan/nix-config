@@ -6,7 +6,9 @@ in {
     "diagnostic.warning" = underline;
     "diagnostic.info" = underline;
     "diagnostic.hint" = underline;
-    "diagnostic.unnecessary" = {fg = fg-dark;};
+    "diagnostic.unnecessary" = {
+      fg = fg-dark;
+    };
 
     error = red;
     warning = yellow;
@@ -29,7 +31,7 @@ in {
     "string.regexp" = pink;
     "string.special" = blue;
     "string.special.symbol" = red;
-    "string.special.path" = pink;
+    "string.special.path" = brpink;
 
     "comment" = {fg = fg-dark;};
 

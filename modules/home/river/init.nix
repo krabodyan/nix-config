@@ -5,9 +5,9 @@
   extraConfig,
 }:
 with colors; let
-  kbd = "riverctl keyboard-layout -options grp:alts_toggle,caps:backspace,shift:both_capslock us,ru,ua";
+  kbd = "riverctl keyboard-layout -options grp:alts_toggle,caps:backspace,shift:both_capslock us,ua,ru";
   focused = "0x${surface1}";
-  monocle = "0x${bg-dark}";
+  monocle = "0x${bg}";
   border = "0x${bg-dark}";
   timeout = "5000";
   windows = [
@@ -154,8 +154,8 @@ in
       --border-color-focused-monocle ${monocle}  \
       --border-color-unfocused       ${border}   \
       --border-width                 2           \
-      --border-width-monocle         0           \
-      --border-width-smart-gaps      0           \
+      --border-width-monocle         2           \
+      --border-width-smart-gaps      2           \
       --log-threshold                error       \
       > /dev/null &
 

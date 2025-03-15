@@ -14,6 +14,15 @@
 
       "vm.max_map_count" = 2147483642;
       "vm.min_free_kbytes" = 1048576;
+
+      "net.ipv4.tcp_fastopen" = 3;
+      "net.core.default_qdisc" = "cake";
+      "net.ipv4.tcp_congestion_control" = "bbr";
+      "net.core.somaxconn" = 1024;
+      "net.ipv4.tcp_fin_timeout" = 5;
+      "net.ipv4.tcp_slow_start_after_idle" = 0;
+      "net.ipv4.tcp_mtu_probing" = 1;
+      "net.ipv4.icmp_echo_ignore_all" = 1;
     };
 
     kernelParams = ["nohibernate" "rootfstype=btrfs" "raid=noautodetect"];
