@@ -21,8 +21,8 @@ in {
       settings = {
         main = let
           features = [
-            "ss12"
-            # "ss14"
+            # "ss12"
+            "ss14"
             # "VSAH=3"
             # "VSAG=3"
             # "VSAB=11"
@@ -45,7 +45,7 @@ in {
           font-bold-italic = "${font}:weight=SemiBold:slant=Italic";
 
           # box-drawings-uses-font-glyphs = false;
-          pad = "14x10";
+          pad = "14x4 center";
           dpi-aware = "no";
           resize-by-cells = "no";
           resize-delay-ms = 300;
