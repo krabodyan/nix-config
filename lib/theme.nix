@@ -6,7 +6,7 @@ rec {
 
     border = "ffdef6";
 
-    mode_insert = yellow;
+    mode_insert = overlay1;
     mode_normal = red;
     mode_select = brmagenta;
 

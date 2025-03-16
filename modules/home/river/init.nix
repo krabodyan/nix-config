@@ -1,6 +1,7 @@
 {
   lib,
   colors,
+  config,
   background,
   extraConfig,
 }:
@@ -85,7 +86,8 @@ in
     riverctl map -layout 0 normal Super+Alt b hide-cursor timeout 0
     riverctl hide-cursor timeout ${timeout}
 
-    riverctl set-repeat 40 330
+    riverctl xcursor-theme ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}
+    riverctl set-repeat 40 400
     ${kbd}
     riverctl map -layout 0 normal Super W spawn "${kbd}"
 

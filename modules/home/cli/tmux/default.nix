@@ -117,6 +117,8 @@ in {
         bind -T copy-mode-vi 'r' send-keys -X rectangle-toggle
         bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace wl-copy"
         bind -T copy-mode-vi 'Y' send-keys -X copy-pipe-and-cancel "tmux paste-buffer"
+
+        bind b set-option -g status
       '';
   };
 }

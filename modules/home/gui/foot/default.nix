@@ -68,7 +68,6 @@ in {
         url = {launch = "xdg-open \${url}";};
 
         cursor = {
-          style = "block";
           unfocused-style = "hollow";
           blink = "no";
         };

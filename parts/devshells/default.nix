@@ -34,6 +34,7 @@
       ];
 
       buildInputs = with pkgs; [
+        libudev-zero
         at-spi2-atk
         atkmm
         cairo

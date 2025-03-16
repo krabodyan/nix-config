@@ -27,7 +27,7 @@ in {
       xwayland.enable = true;
       systemd.enable = true;
       extraConfig = import ./init.nix {
-        inherit colors lib;
+        inherit colors lib config;
         inherit (cfg) background extraConfig;
       };
     };

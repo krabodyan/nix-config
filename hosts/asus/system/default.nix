@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   module = {
-    bluetooth.enable = false;
+    bluetooth.enable = true;
     bootloader.enable = true;
     tmpfs.enable = true;
     ssd-btrfs.enable = true;

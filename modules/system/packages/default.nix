@@ -35,6 +35,8 @@ in {
         ntfs3g
         iotop
         iftop
+        busybox
+        screen
       ]
       ++ cfg.extraPackages;
     programs.steam = mkIf cfg.steam {

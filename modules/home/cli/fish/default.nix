@@ -121,8 +121,9 @@ in {
 
             for mode in default insert visual
               bind --erase -M $mode alt-r
-              bind --erase -M $mode ctrl-r
+              bind --erase -M $mode alt-s
               bind --erase -M $mode alt-l
+              bind --erase -M $mode ctrl-r
 
               bind -M $mode alt-f end-of-line
               bind -M $mode alt-g beginning-of-line
@@ -153,7 +154,7 @@ in {
 
           set fish_cursor_visual block
           set fish_cursor_default block
-          set fish_cursor_insert block
+          set fish_cursor_insert line
 
           function fish_mode_prompt
           end
