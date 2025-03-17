@@ -58,7 +58,7 @@ in {
 
     "function.macro" = fg;
 
-    "tag" = sapphire;
+    "tag" = brmagenta;
 
     namespace = {fg = fg;};
 
