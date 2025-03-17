@@ -118,7 +118,7 @@ in
     riverctl map -layout 0 normal None        Print spawn "__screenshot"
     riverctl map -layout 0 normal None        Pause spawn "__screenshot full";
     riverctl map -layout 0 normal Super       Print spawn "__screenshot swayimg";
-    riverctl map -layout 0 normal Super+Shift Print spawn "wl-paste | satty -f -";
+    riverctl map -layout 0 normal Super+Shift Print spawn "wl-paste | swappy -f -";
     riverctl map -layout 0 normal Super+Shift 0     spawn "swaylock"
 
     riverctl rule-add -app-id "*" ssd
