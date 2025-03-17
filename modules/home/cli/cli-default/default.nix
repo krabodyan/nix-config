@@ -24,7 +24,7 @@ in {
         xdg-utils
 
         python3
-        ffmpeg
+        ffmpeg-full
         dust
         dua
         duf

@@ -16,7 +16,6 @@ in {
     programs.fd = {
       enable = true;
       hidden = false;
-      extraOptions = ["--color" "never" "--type" "file" "--strip-cwd-prefix"];
       inherit (config.programs.git) ignores;
     };
     programs.fzf = {
@@ -37,7 +36,7 @@ in {
         border = "-1";
         gutter = "-1";
       };
-      defaultCommand = "fd " + lib.concatStringsSep " " config.programs.fd.extraOptions;
+      defaultCommand = "fd --color never --type file --strip-cwd-prefix";
       defaultOptions = [
         "--pointer ' '"
         "--marker ' '"

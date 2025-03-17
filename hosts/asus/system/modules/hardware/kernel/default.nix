@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: {
@@ -27,7 +28,7 @@
 
     kernelParams = ["nohibernate" "rootfstype=btrfs" "raid=noautodetect"];
 
-    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     extraModprobeConfig = ''
       options i915 enable_guc=3

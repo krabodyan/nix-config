@@ -13,8 +13,11 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    nixpkgs.config.packageOverrides = pkgs: {
+      vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
+    };
     hardware.graphics = {
-      extraPackages = with pkgs; [intel-media-driver libvdpau-va-gl];
+      extraPackages = with pkgs; [intel-media-driver libvdpau-va-gl vaapiVdpau];
     };
     environment.sessionVariables.LIBVA_DRIVER_NAME = "iHD";
     environment.systemPackages = with pkgs; [
