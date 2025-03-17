@@ -91,7 +91,17 @@ in {
           end
 
           function fish_hybrid_key_bindings
-            fish_vi_key_bindings --no-erase
+            fish_vi_key_bindings
+
+            for mode in default insert visual
+              bind --preset --erase -M $mode alt-r
+              bind --preset --erase -M $mode alt-l
+              bind --preset --erase -M $mode alt-v
+              bind --preset --erase -M $mode ctrl-r
+
+              bind -M $mode alt-f end-of-line
+              bind -M $mode alt-g beginning-of-line
+            end
 
             bind -M insert            alt-enter repaint-mode execute
             bind -M default -m insert enter     repaint-mode execute
@@ -119,16 +129,6 @@ in {
             bind -M default -m visual x beginning-of-line begin-selection end-of-line repaint-mode
             bind -M visual            x beginning-of-line begin-selection end-of-line
 
-            for mode in default insert visual
-              bind --erase -M $mode alt-r
-              bind --erase -M $mode alt-s
-              bind --erase -M $mode alt-l
-              bind --erase -M $mode ctrl-r
-
-              bind -M $mode alt-f end-of-line
-              bind -M $mode alt-g beginning-of-line
-            end
-
             bind -M insert alt-h backward-char
             bind -M insert alt-l forward-char
             bind -M insert alt-k up-or-search
@@ -136,7 +136,7 @@ in {
 
             bind -M insert alt-r fzf-history-widget
             bind -M insert alt-a _fzf_search_directory
-            bind -M insert alt-s _fzf_search_git_status
+            bind -M insert alt-x _fzf_search_git_status
             bind -M insert alt-c "__zoxide_zi; commandline -f repaint"
 
             bind -M visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
