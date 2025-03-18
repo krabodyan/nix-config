@@ -63,7 +63,7 @@
     variables.enable = true;
     qtct.enable = true;
     gtk.enable = true;
-    de-scripts = {
+    wm-scripts = {
       enable = true;
       touchpadcommands = {
         toggleup = ''
@@ -89,6 +89,6 @@
     rofi.enable = true;
     swaylock.enable = true;
     mako.enable = true;
-    de-packages.enable = true;
+    wm-utils.enable = true;
   };
 }

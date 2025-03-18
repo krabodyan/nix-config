@@ -5,11 +5,11 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
-  cfg = config.module.de-packages;
+  cfg = config.module.wm-utils;
 in {
   options = {
-    module.de-packages = {
-      enable = mkEnableOption "enable de-packages";
+    module.wm-utils = {
+      enable = mkEnableOption "enable wm related utils";
     };
   };
   config = mkIf cfg.enable {

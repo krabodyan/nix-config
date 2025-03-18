@@ -6,11 +6,11 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
-  cfg = config.module.de-scripts;
+  cfg = config.module.wm-scripts;
 in {
   options = {
-    module.de-scripts = {
-      enable = mkEnableOption "enable de-scripts";
+    module.wm-scripts = {
+      enable = mkEnableOption "enable wm-scripts";
       touchpadcommands = {
         toggleup = mkOption {
           type = lib.types.str;
