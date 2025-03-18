@@ -8,7 +8,6 @@
 with colors; let
   kbd = "riverctl keyboard-layout -options grp:alts_toggle,caps:backspace,shift:both_capslock us,ua,ru";
   focused = "0x${surface1}";
-  monocle = "0x${bg}";
   border = "0x${bg-dark}";
   timeout = "5000";
   windows = [
@@ -40,6 +39,7 @@ in
     riverctl border-color-focused ${focused}
     riverctl border-color-urgent ${border}
     riverctl border-color-unfocused ${border}
+    riverctl border-width 1
 
     riverctl map -layout 0 normal Super       Q      close
     riverctl map -layout 0 normal Super+Shift Delete exit
@@ -67,18 +67,18 @@ in
     riverctl map -layout 0 normal Alt   tab    focus-view next
     riverctl map -layout 0 normal Super Return spawn "riverctl swap next && riverctl focus-view previous"
 
-    riverctl map -layout 0 normal Super S send-layout-cmd wideriver "--layout monocle"
+    riverctl map -layout 0 normal Super S send-layout-cmd rivercarro "main-location-cycle monocle,left"
 
-    riverctl map -layout 0 normal Super O send-layout-cmd wideriver "--ratio +0.02"
-    riverctl map -layout 0 normal Super I send-layout-cmd wideriver "--ratio -0.02"
+    riverctl map -layout 0 normal Super O send-layout-cmd rivercarro "main-ratio +0.02"
+    riverctl map -layout 0 normal Super I send-layout-cmd rivercarro "main-ratio -0.02"
 
-    riverctl map -layout 0 normal Super Right send-layout-cmd wideriver "--count +1"
-    riverctl map -layout 0 normal Super Left  send-layout-cmd wideriver "--count -1"
+    riverctl map -layout 0 normal Super Right send-layout-cmd rivercarro "main-count +1"
+    riverctl map -layout 0 normal Super Left  send-layout-cmd rivercarro "main-count -1"
 
-    riverctl map -layout 0 normal Super+Alt K send-layout-cmd wideriver "--layout top"
-    riverctl map -layout 0 normal Super+Alt L send-layout-cmd wideriver "--layout right"
-    riverctl map -layout 0 normal Super+Alt J send-layout-cmd wideriver "--layout bottom"
-    riverctl map -layout 0 normal Super+Alt H send-layout-cmd wideriver "--layout left"
+    riverctl map -layout 0 normal Super+Alt K send-layout-cmd rivercarro "main-location top"
+    riverctl map -layout 0 normal Super+Alt L send-layout-cmd rivercarro "main-location right"
+    riverctl map -layout 0 normal Super+Alt J send-layout-cmd rivercarro "main-location bottom"
+    riverctl map -layout 0 normal Super+Alt H send-layout-cmd rivercarro "main-location left"
 
     riverctl map -layout 0 normal Super tab focus-previous-tags
 
@@ -129,7 +129,7 @@ in
     riverctl rule-add -app-id "steam" tags 16
     riverctl rule-add -app-id "steam" no-float
     riverctl rule-add -app-id "zoom" tags 8
-    riverctl rule-add -app-id "zoom" float
+    riverctl rule-add -app-id "zoom" -title "zoom" float
     riverctl rule-add -app-id "ONLYOFFICE" tags 16
 
     riverctl rule-add -app-id 'floaterm' float
@@ -139,28 +139,9 @@ in
     riverctl rule-add -title "Медіапереглядач" float
     ${picker-rules}
 
-    riverctl default-layout wideriver
+    riverctl default-layout rivercarro
 
-    pidof wideriver || wideriver \
-      --layout                       left        \
-      --layout-alt                   monocle     \
-      --stack                        even        \
-      --smart-gaps                               \
-      --count-master                 1           \
-      --ratio-master                 0.50        \
-      --count-wide-left              0           \
-      --ratio-wide                   0.35        \
-      --inner-gaps                   0           \
-      --outer-gaps                   0           \
-      --border-color-focused         ${focused}  \
-      --border-color-focused-monocle ${monocle}  \
-      --border-color-unfocused       ${border}   \
-      --border-width                 2           \
-      --border-width-monocle         2           \
-      --border-width-smart-gaps      2           \
-      --log-threshold                error       \
-      > /dev/null &
-
+    pidof rivercarro || rivercarro -inner-gaps 0 -outer-gaps 0 -per-tag -main-ratio 0.5 &
     pidof dbus-daemon || {
       dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
     }
