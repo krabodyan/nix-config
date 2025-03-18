@@ -14,7 +14,7 @@ in {
   config = mkIf cfg.enable {
     time = {
       timeZone = "Europe/Kiev";
-      hardwareClockInLocalTime = true;
+      hardwareClockInLocalTime = false;
     };
   };
 }

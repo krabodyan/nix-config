@@ -42,7 +42,7 @@
       "i915"
     ];
 
-    initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usbhid"];
+    initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usbhid" "r8169" "mt7921e"];
     initrd.verbose = false;
 
     blacklistedKernelModules = [
