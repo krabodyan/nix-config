@@ -31,11 +31,12 @@ in {
       enable = true;
 
       shellAliases = {
-        flake = ''cd flake && test -n "$TMUX" || tmux'';
         ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
         tree = "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
         ino = "nix develop $FLAKE#ino";
         rust = "nix develop $FLAKE#rust";
+        tauri = "nix develop $FLAKE#tauri";
+        tmux = "${pkgs.tmux}/bin/tmux -L $(uuidgen)";
       };
 
       plugins = let
@@ -45,8 +46,8 @@ in {
           src = pkgs.fetchFromGitHub {
             owner = "krabodyan";
             repo = pname;
-            rev = "27e70a74cdfed20a6e2bfef9eba97263f98e2ae0";
-            sha256 = "sha256-9CH2EaEIpZQHcy89w0GM0IKMQ6GDX1WXT5SCBNiVheo=";
+            rev = "00493a676621befaeafeabae6d0c8aacaf06f32a";
+            sha256 = "sha256-J0MtyqGKkIv/e0K/f/ZGHOgfofXgamvQ+qCpg4PFaE8=";
           };
         };
       in [
@@ -103,9 +104,10 @@ in {
               bind -M $mode alt-g beginning-of-line
             end
 
-            bind -M insert            alt-enter repaint-mode execute
-            bind -M default -m insert enter     repaint-mode execute
-            bind -M visual  -m insert enter     repaint-mode end-selection execute
+            bind -M insert            alt-enter   repaint-mode execute
+            bind -M insert            shift-enter repaint-mode execute
+            bind -M default -m insert enter       repaint-mode execute
+            bind -M visual  -m insert enter       repaint-mode end-selection execute
 
             # -M = --mode
             # -m = --sets-mode
