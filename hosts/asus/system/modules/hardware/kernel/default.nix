@@ -28,14 +28,14 @@
 
     kernelParams = ["nohibernate" "rootfstype=btrfs" "raid=noautodetect"];
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
 
     extraModprobeConfig = ''
       options i915 enable_guc=3
     '';
 
     kernelModules = [
-      "kvm-intel"
+      # "kvm-intel"
     ];
 
     initrd.kernelModules = [

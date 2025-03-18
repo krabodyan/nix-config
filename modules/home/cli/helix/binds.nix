@@ -1,6 +1,7 @@
 let
   toggle = "A-d";
   binds = {
+    "A-ret" = ["insert_mode" "insert_newline" "open_above" "insert_tab"];
     "A-S-h" = "unindent";
     "A-S-l" = "indent";
     "up" = "no_op";
