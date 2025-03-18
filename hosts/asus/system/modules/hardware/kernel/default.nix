@@ -9,7 +9,7 @@
       "kernel.printk" = 2;
       "kernel.nmi_watchdog" = 0;
 
-      "kernel.core_pattern" = "|/bin/false";
+      "kernel.core_pattern" = "|${pkgs.coreutils}/bin/false";
       "fs.suid_dumpable" = 0;
       "kernel.dmesg_restrict" = 0;
 
