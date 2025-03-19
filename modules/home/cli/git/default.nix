@@ -27,7 +27,7 @@ in {
       aliases = {
         cm = "commit -m";
         st = "status -sb";
-        last = "diff HEAD^";
+        graph = "log --oneline --all --graph";
       };
       extraConfig = {
         init = {defaultbranch = "master";};
