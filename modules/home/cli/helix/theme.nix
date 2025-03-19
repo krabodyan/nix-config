@@ -155,7 +155,7 @@ in {
     "ui.virtual.inlay-hint" = {fg = fg-dark;};
     "ui.virtual.jump-label" = {
       bg = surface2;
-      fg = sky;
+      fg = green;
     };
 
     "ui.selection" = {bg = surface2;};
