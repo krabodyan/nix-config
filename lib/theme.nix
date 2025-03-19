@@ -30,16 +30,16 @@ rec {
 
     black = fg-dark;
     red = "EF8993";
-    green = "67e692";
-    yellow = "f9e289";
+    green = "89ff6e";
+    yellow = "fff982";
     blue = "80beed";
     magenta = "ee7cec";
     cyan = "77d9d7";
 
     brblack = overlay0;
     brred = "ff96b4";
-    brgreen = "99f7ba";
-    bryellow = "ffeec7";
+    brgreen = "89ff6e";
+    bryellow = "fff982";
     brblue = cyan;
     brmagenta = "f6affa";
     brcyan = "75e6e3";

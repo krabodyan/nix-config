@@ -27,7 +27,7 @@ in {
     "constant.character" = teal;
     "constant.character.escape" = teal;
 
-    "string" = blue;
+    "string" = sky;
     "string.regexp" = pink;
     "string.special" = blue;
     "string.special.symbol" = red;
