@@ -39,7 +39,7 @@ in
     riverctl border-color-focused ${focused}
     riverctl border-color-urgent ${border}
     riverctl border-color-unfocused ${border}
-    riverctl border-width 1
+    riverctl border-width 2
 
     riverctl map -layout 0 normal Super       Q      close
     riverctl map -layout 0 normal Super+Shift Delete exit
