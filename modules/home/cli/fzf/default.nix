@@ -16,6 +16,7 @@ in {
     programs.fd = {
       enable = true;
       hidden = false;
+      extraOptions = ["--color" "never" "--strip-cwd-prefix"];
       inherit (config.programs.git) ignores;
     };
     programs.fzf = {
@@ -36,7 +37,9 @@ in {
         border = "-1";
         gutter = "-1";
       };
-      defaultCommand = "fd --color never --type file --strip-cwd-prefix";
+      defaultCommand = "fd --type f";
+      changeDirWidgetCommand = "fd --type d";
+      fileWidgetCommand = "fd --type f";
       defaultOptions = [
         "--pointer ' '"
         "--marker ' '"
@@ -49,7 +52,7 @@ in {
         "--height 7"
         "--info hidden"
         "--reverse"
-        "--bind 'tab:down,btab:up,alt-j:down,alt-k:up,alt-a:abort,alt-s:jump,alt-c:abort'"
+        "--bind 'tab:down,btab:up,alt-j:down,alt-k:up,alt-a:abort,alt-s:jump,alt-c:abort,alt-z:abort'"
       ];
     };
   };

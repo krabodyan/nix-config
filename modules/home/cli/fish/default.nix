@@ -137,9 +137,10 @@ in {
             bind -M insert alt-j down-or-search
 
             bind -M insert alt-r fzf-history-widget
+            bind -M insert alt-c fzf-cd-widget
             bind -M insert alt-a _fzf_search_directory
             bind -M insert alt-x _fzf_search_git_status
-            bind -M insert alt-c "__zoxide_zi; commandline -f repaint"
+            bind -M insert alt-z "__zoxide_zi; commandline -f repaint"
 
             bind -M visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
             bind -M default -m insert p "fish_clipboard_paste; commandline -f repaint-mode"
