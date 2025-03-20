@@ -36,7 +36,8 @@ in {
           fontfeatures = lib.concatStringsSep ":fontfeatures=" features;
           font = "${systemFont}:size=17:fontfeatures=${fontfeatures}";
         in {
-          term = "xterm-256color";
+          # term = "xterm-256color";
+          term = "foot";
           shell = "${pkgs.fish}/bin/fish";
 
           font = "${font}:weight=Regular";

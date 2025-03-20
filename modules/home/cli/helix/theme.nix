@@ -1,18 +1,29 @@
-{colors}: let
-  underline = {underline.style = "curl";};
-in {
+{colors}: {
   paradise = with colors.hex; {
-    "diagnostic.error" = underline;
-    "diagnostic.warning" = underline;
-    "diagnostic.info" = underline;
-    "diagnostic.hint" = underline;
+    "diagnostic.error" = {
+      underline.style = "line";
+      underline.color = red;
+    };
+    "diagnostic.warning" = {
+      underline.style = "line";
+      underline.color = yellow;
+    };
+    "diagnostic.info" = {
+      underline.style = "line";
+      underline.color = yellow;
+    };
+    "diagnostic.hint" = {
+      underline.style = "line";
+      underline.color = yellow;
+    };
     "diagnostic.unnecessary" = {
+      underline.color = fg-dark;
       fg = fg-dark;
     };
 
     error = red;
     warning = yellow;
-    info = overlay2;
+    info = green;
     hint = overlay2;
 
     "type" = {fg = fg;};
@@ -77,11 +88,9 @@ in {
     "markup.list" = sky;
     "markup.bold" = {modifiers = ["bold"];};
     "markup.italic" = {modifiers = ["italic"];};
-    "markup.link.url" =
-      underline
-      // {
-        fg = blue;
-      };
+    "markup.link.url" = {
+      fg = blue;
+    };
 
     "markup.link.text" = blue;
     "markup.raw" = yellow;
@@ -169,11 +178,10 @@ in {
       bg = mode_normal;
     };
     # matching bracket
-    "ui.cursor.match" =
-      underline
-      // {
-        fg = magenta;
-      };
+    "ui.cursor.match" = {
+      underline.style = "curl";
+      fg = magenta;
+    };
     "ui.cursor.primary.normal" = {
       fg = bg;
       bg = mode_normal;

@@ -195,8 +195,8 @@ in {
           set -g fish_color_command ${green}
           set -g fish_color_keyword -i ${yellow}
           set -g fish_color_quote ${yellow}
-          set -g fish_color_redirection ${blue}
-          set -g fish_color_end ${blue}
+          set -g fish_color_redirection ${fg}
+          set -g fish_color_end ${fg}
           set -g fish_color_error ${red}
           set -g fish_color_warn ${orange}
           set -g fish_color_param ${fg}
