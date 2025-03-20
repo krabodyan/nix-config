@@ -23,9 +23,6 @@
       extra = with pkgs; [
         scrcpy
         android-tools
-        arduino-cli
-        platformio
-        pkgs.pkgsCross.avr.buildPackages.gcc
       ];
     };
     fish = {

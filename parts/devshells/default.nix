@@ -81,7 +81,12 @@
     };
     devShells.ino = pkgs.mkShell {
       DEV_SHELL_NAME = "ino";
-      buildInputs = [pkgs.glibc_multi];
+      buildInputs = with pkgs; [
+        glibc_multi
+        pkgsCross.avr.buildPackages.gcc
+        arduino-cli
+        platformio
+      ];
     };
   };
 }
