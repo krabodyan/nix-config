@@ -16,7 +16,7 @@
 
     helix.url = "github:helix-editor/helix";
 
-    rust-overlay.url = "github:oxalica/rust-overlay?rev=9a55a224af34b4f74526c261aeccd8d40af5e4f2";
+    rust-overlay.url = "github:oxalica/rust-overlay?rev=f03085549609e49c7bcbbee86a1949057d087199";
 
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
 

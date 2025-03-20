@@ -32,8 +32,10 @@ in {
       extraConfig = {
         init = {defaultbranch = "master";};
         branch = {sort = "-committerdate";};
-        pull = {rebase = true;};
-        rebase.autoStash = true;
+        rerere = {
+          enabled = true;
+          autoUpdate = true;
+        };
         push = {
           autoSetupRemote = true;
           default = "simple";

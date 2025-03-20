@@ -13,7 +13,7 @@ in {
   };
   config = mkIf cfg.enable {
     xdg.configFile."rustfmt/rustfmt.toml".text = ''
-      edition = "2021"
+      edition = "2024"
       chain_width = 55
       max_width = 80
       comment_width = 100
