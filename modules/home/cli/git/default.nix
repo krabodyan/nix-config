@@ -36,6 +36,7 @@ in {
           enabled = true;
           autoUpdate = true;
         };
+        pull.rebase = true;
         push = {
           autoSetupRemote = true;
           default = "simple";
