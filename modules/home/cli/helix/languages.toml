@@ -62,6 +62,7 @@ check.command = "clippy"
 inlayHints.closingBraceHints.minLines = 5
 inlayHints.parameterHints.enable = false
 inlayHints.typeHints.hideClosureInitialization = true
+files.excludeDirs = [ ".git", "target" ]
 
 # PYTHON --------------------------
 [[language]]

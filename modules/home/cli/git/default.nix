@@ -30,8 +30,8 @@ in {
         graph = "log --oneline --all --graph";
       };
       extraConfig = {
-        init = {defaultbranch = "master";};
-        branch = {sort = "-committerdate";};
+        init.defaultbranch = "master";
+        branch.sort = "-committerdate";
         rerere = {
           enabled = true;
           autoUpdate = true;
@@ -41,7 +41,7 @@ in {
           default = "simple";
         };
         diff.algorithm = "histogram";
-        safe = {directory = "*";};
+        safe.directory = "*";
       };
       ignores = [
         "*.bak"
