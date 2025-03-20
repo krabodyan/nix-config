@@ -136,6 +136,9 @@ in {
             bind -M insert alt-k up-or-search
             bind -M insert alt-j down-or-search
 
+            bind -M insert  alt-i nextd-or-forward-word
+            bind -M default alt-i nextd-or-forward-word
+
             bind -M insert alt-r fzf-history-widget
             bind -M insert alt-z fzf-cd-widget
             bind -M insert alt-a _fzf_search_directory
