@@ -143,7 +143,7 @@ in
 
     pidof rivercarro || rivercarro -inner-gaps 0 -outer-gaps 0 -per-tag -main-ratio 0.5 &
     pidof dbus-daemon || {
-      dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork
+      dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork &
     }
     systemctl --user is-active wireplumber.service || systemctl --user restart wireplumber.service
   ''
