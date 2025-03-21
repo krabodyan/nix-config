@@ -52,7 +52,7 @@ in {
         "--height 7"
         "--info hidden"
         "--reverse"
-        "--bind 'tab:down,btab:up,alt-j:down,alt-k:up,alt-a:abort,alt-s:jump,alt-c:abort,alt-z:abort'"
+        "--bind 'tab:down,btab:up,alt-j:down,alt-k:up,alt-s:jump,alt-c:abort,alt-z:abort,alt-a:abort,alt-r:abort'"
       ];
     };
   };
