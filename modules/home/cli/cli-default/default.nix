@@ -20,7 +20,6 @@ in {
     home.packages = with pkgs;
       [
         jq
-        eza
         xdg-utils
 
         python3

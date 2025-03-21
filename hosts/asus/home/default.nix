@@ -13,6 +13,7 @@
     yazi.enable = true;
     bat.enable = true;
     helix.enable = true;
+    eza.enable = true;
     git = {
       enable = true;
       userName = "krabodyan";

@@ -31,12 +31,9 @@ in {
       enable = true;
 
       shellAliases = {
-        ls = "${pkgs.eza}/bin/eza --icons always --group-directories-first -1";
-        tree = "${pkgs.eza}/bin/eza --icons always --group-directories-first --tree -L 4";
         ino = "nix develop $FLAKE#ino";
         rust = "nix develop $FLAKE#rust";
         tauri = "nix develop $FLAKE#tauri";
-        tmux = "${pkgs.tmux}/bin/tmux -L $(uuidgen)";
       };
 
       plugins = let
@@ -206,7 +203,7 @@ in {
           set -g fish_color_comment ${fg-dark}
           set -g fish_color_selection --background=${surface2}
           set -g fish_color_search_match --background=${fg-dark}
-          set -g fish_color_operator ${green}
+          set -g fish_color_operator ${fg}
           set -g fish_color_autosuggestion ${fg-dark}
           set -g fish_color_valid_path ${fg}
           set -g fish_color_cancel ${red}
