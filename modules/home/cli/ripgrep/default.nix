@@ -23,7 +23,6 @@ in {
         "--colors=match:fg:black"
         "--colors=match:bg:white"
         "--ignore-case"
-        "--context=1"
         "--glob=!.git/*"
       ];
     };
