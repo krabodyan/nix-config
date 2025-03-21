@@ -32,6 +32,21 @@ in {
       extraConfig = {
         init.defaultbranch = "master";
         branch.sort = "-committerdate";
+        commit.template = builtins.toString (pkgs.writeText "template.txt" ''
+          # <type>[optional scope][!]: <description>
+          # chore docs style refactor perf test
+
+          # feat: description
+          # feat(feat): description
+
+          # chore: description
+          # chore(chore): description
+
+          # fix: description
+          # fix(fix): description
+
+          # BREAKING CHANGE: description
+        '');
         rerere = {
           enabled = true;
           autoUpdate = true;
