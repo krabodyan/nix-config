@@ -1,19 +1,25 @@
 {
 	"name": "Vimium C",
-	"@time": "27.01.2025, 12:43:19",
-	"time": 1737974599285,
+	"@time": "21.03.2025, 23:11:09",
+	"time": 1742591469417,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
-		"firefox": 134
+		"firefox": 136
 	},
-	"exclusionRules": [],
+	"autoDarkMode": 1,
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://typerun.top/"
+		}
+	],
 	"grabBackFocus": true,
 	"keyLayout": 1,
 	"keyMappings": [
 		"#!no-check",
 		"unmapAll",
-		"map r reload",
+		"map R reload",
 		"",
 		"map i enterInsertMode",
 		"map ge scrollToBottom",
@@ -23,8 +29,8 @@
 		"map u goBack",
 		"map <c-u> goForward",
 		"map \\ passNextKey",
-		"map <a-s> LinkHints.activate",
-		"map <a-a> LinkHints.activateOpenInNewTab",
+		"map <a-a> LinkHints.activate",
+		"map <a-s-a> LinkHints.activateOpenInNewTab",
 		"map j scrollDown",
 		"map k scrollUp",
 		"map l scrollLeft",
@@ -40,14 +46,14 @@
 	"nextPatterns": "next,more,newer,>,›,→,»,≫,>>",
 	"notifyUpdate": false,
 	"previousPatterns": "prev,previous,back,older,<,‹,←,«,≪,<<",
-	"showActionIcon": false,
+	"scrollStepSize": 160,
 	"userDefinedCss": [
 		".LH, .D>.LH { ",
 		"  padding: 4px;",
 		"  background: #f9e289; ",
 		"  border: none;",
 		"  outline: none;",
-		"  font-size: 18px;",
+		"  font-size: 21px;",
 		"  font-family: monospace;",
 		"  font-weight: 400;",
 		"  text-transform: lowercase;",
@@ -65,6 +71,8 @@
 		"/* #ui */",
 		".HUD.D { ",
 		"  font-family: monospace !important;",
+		"  font-size: 20px !important;",
+		"  padding: 10px !important;",
 		"  font-weight: 400 !important;",
 		"}",
 		".HUD.D:after {",
