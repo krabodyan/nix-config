@@ -179,7 +179,7 @@
     };
     # matching bracket
     "ui.cursor.match" = {
-      underline.style = "curl";
+      underline.style = "line";
       fg = magenta;
     };
     "ui.cursor.primary.normal" = {
