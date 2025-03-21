@@ -42,6 +42,9 @@ in {
           # chore: description
           # chore(chore): description
 
+          # style: description
+          # style(style): description
+
           # fix: description
           # fix(fix): description
 
