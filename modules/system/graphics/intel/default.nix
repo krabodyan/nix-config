@@ -17,7 +17,7 @@ in {
       vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
     };
     hardware.graphics = {
-      extraPackages = with pkgs; [intel-media-driver libvdpau-va-gl vaapiVdpau];
+      extraPackages = with pkgs; [intel-media-driver libvdpau-va-gl vaapiVdpau intel-media-sdk];
     };
     environment.sessionVariables.LIBVA_DRIVER_NAME = "iHD";
     environment.systemPackages = with pkgs; [
