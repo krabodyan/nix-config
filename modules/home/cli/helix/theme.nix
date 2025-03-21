@@ -159,7 +159,7 @@
     };
 
     "ui.virtual" = overlay0;
-    "ui.virtual.ruler" = {bg = surface0;};
+    "ui.virtual.ruler" = {bg = bg-bright;};
     "ui.virtual.indent-guide" = surface1;
     "ui.virtual.inlay-hint" = {fg = fg-dark;};
     "ui.virtual.jump-label" = {
