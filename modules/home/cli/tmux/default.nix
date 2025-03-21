@@ -14,6 +14,7 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    programs.fish.shellAliases.tm = "${pkgs.tmux}/bin/tmux -L $(uuidgen)";
     home.packages = [pkgs.tmux];
     xdg.configFile."tmux/tmux.conf".text = with colors.hex; # bash
     
@@ -43,7 +44,7 @@ in {
         set-window-option -g window-status-current-style "bg=default,fg=${subtext0}"
         set-option -g pane-border-style "fg=${surface2},bg=default"
         set-option -g pane-active-border-style "fg=${select},bg=default"
-        set-option -g mode-style "fg=default,bg=${surface2}"
+        set-option -g mode-style "bg=${surface2}"
         set-option -g message-style "fg=default,bg=${surface0}"
 
         set -g status-interval 30
@@ -78,6 +79,8 @@ in {
         bind -n M-5 select-window -t 5
         bind -n M-6 select-window -t 6
         bind -n M-7 select-window -t 7
+
+        bind-key w command-prompt "swap-window -t %%"
 
         bind h select-pane -L
         bind j select-pane -D
