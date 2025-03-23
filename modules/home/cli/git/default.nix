@@ -32,7 +32,10 @@ in {
       extraConfig = {
         init.defaultbranch = "master";
         branch.sort = "-committerdate";
-        advice.skippedCherryPicks = false;
+        advice = {
+          skippedCherryPicks = false;
+          mergeConflict = false;
+        };
         commit.template = builtins.toString (pkgs.writeText "template.txt" ''
           # <type>[optional scope][!]: <description>
           # chore docs style refactor perf test
