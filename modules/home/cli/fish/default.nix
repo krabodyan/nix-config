@@ -180,12 +180,12 @@ in {
 
             if set -q IN_NIX_SHELL
               if set -q DEV_SHELL_NAME
-                printf "\033[36m$DEV_SHELL_NAME\033[0m %s 󰧞 " (prompt_pwd)
+                printf "\033[36m$DEV_SHELL_NAME\033[0m %s%s 󰧞 " (prompt_pwd) (fish_git_prompt)
               else
-                printf "\033[36mnix-shell\033[0m %s 󰧞 " (prompt_pwd)
+                printf "\033[36mnix-shell\033[0m %s%s 󰧞 " (prompt_pwd) (fish_git_prompt)
               end
             else
-              printf "%s 󰧞 " (prompt_pwd)
+              printf "%s%s 󰧞 " (prompt_pwd) (fish_git_prompt)
             end
 
             set_color normal
@@ -221,6 +221,41 @@ in {
           set -g fish_pager_color_secondary_completion ${fg-dark}
           set -g fish_pager_color_secondary_description ${fg-dark}
           set -g fish_pager_color_secondary_background ${fg-dark}
+
+          set -g __fish_git_prompt_show_informative_status 1
+          set -g __fish_git_prompt_showdirtystate 1
+          set -g __fish_git_prompt_showstashstate 1
+          set -g __fish_git_prompt_showuntrackedfiles 1
+          set -g __fish_git_prompt_show_informative_status 0
+          set -g __fish_git_prompt_char_stateseparator ""
+
+          set -g __fish_git_prompt_color_branch ${sky}
+          set -g __fish_git_prompt_color_prefix ${overlay1}
+          set -g __fish_git_prompt_color_suffix ${overlay1}
+
+          set -g __fish_git_prompt_showupstream 'auto'
+          set -g __fish_git_prompt_color_upstream green
+          set -g __fish_git_prompt_char_upstream_ahead ' ↑'
+          set -g __fish_git_prompt_char_upstream_behind ' ↓'
+          set -g __fish_git_prompt_char_upstream_diverged ' ↓↑'
+          set -g __fish_git_prompt_char_upstream_equal ""
+
+          set -g __fish_git_prompt_color_invalidstate red
+          set -g __fish_git_prompt_char_invalidstate ' ✖'
+
+          set -g __fish_git_prompt_color_dirtystate red
+          set -g __fish_git_prompt_char_dirtystate ' M'
+
+          set -g __fish_git_prompt_color_stagedstate green
+          set -g __fish_git_prompt_char_stagedstate ' M'
+
+          set -g __fish_git_prompt_color_stashstate blue
+          set -g __fish_git_prompt_char_stashstate ' S'
+
+          set -g __fish_git_prompt_color_untrackedfiles red
+          set -g __fish_git_prompt_char_untrackedfiles ' ?'
+
+          set -g __fish_git_prompt_char_cleanstate ""
 
           printf '\e[?45l'
         '';
