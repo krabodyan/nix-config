@@ -33,6 +33,40 @@ in {
       (import ./yazi-picker.nix {inherit pkgs;})
     ];
 
+    xdg.configFile."helix/languages.toml".source = ./languages.toml;
+
+    programs.helix = {
+      enable = true;
+      package = inputs.helix.packages.${pkgs.system}.helix;
+      defaultEditor = true;
+      settings = {
+        theme = "paradise";
+        editor = import ./editor.nix;
+        keys = import ./binds.nix;
+      };
+      themes = import ./theme.nix {inherit colors;};
+      ignores = let
+        add_ignore = ext: "*.${ext}";
+      in
+        config.programs.git.ignores
+        ++ map add_ignore [
+          "png"
+          "svg"
+          "jpeg"
+          "jpg"
+          "ttf"
+          # --end media formats
+          "doc"
+          "docx"
+          "pptx"
+          "xls"
+          "xlsx"
+          # --end office
+          "csv"
+          "drawio"
+        ];
+    };
+
     xdg.mimeApps.defaultApplications = mkAssociations {
       types = [
         "text/plain"
@@ -64,48 +98,6 @@ in {
         "application/x-docbook+xml"
       ];
       desktop = "Helix.desktop";
-    };
-
-    xdg.configFile."helix/languages.toml".source = ./languages.toml;
-    programs.helix = {
-      enable = true;
-      package = inputs.helix.packages.${pkgs.system}.helix;
-      defaultEditor = true;
-      settings = {
-        theme = "paradise";
-        editor = import ./editor.nix;
-        keys = import ./binds.nix;
-      };
-      themes = import ./theme.nix {inherit colors;};
-      ignores = let
-        add_ignore = ext: "*.${ext}";
-      in
-        config.programs.git.ignores
-        ++ map add_ignore [
-          "png"
-          "svg"
-          "jpeg"
-          "jpg"
-          "mov"
-          "mp4"
-          "mkv"
-          "mp3"
-          "ttf"
-          # --end media formats
-          "doc"
-          "docx"
-          "pptx"
-          "xls"
-          "xlsx"
-          # --end office
-          "pdf"
-          "csv"
-          "drawio"
-          "zip"
-          "tar.gz"
-          "tar"
-          "tar.xz"
-        ];
     };
   };
 }
