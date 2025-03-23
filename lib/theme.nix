@@ -28,7 +28,7 @@ rec {
     overlay2 = "808080";
     subtext0 = "a6a6a1";
 
-    black = fg-dark;
+    black = surface0;
     red = "EF8993";
     green = "89ff6e";
     yellow = "fff982";
@@ -36,7 +36,7 @@ rec {
     magenta = "ee7cec";
     cyan = "77d9d7";
 
-    brblack = overlay0;
+    brblack = surface3;
     brred = "ff96b4";
     brgreen = "89ff6e";
     bryellow = "fff982";
