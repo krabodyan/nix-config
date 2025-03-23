@@ -24,6 +24,8 @@
       extra = with pkgs; [
         scrcpy
         android-tools
+        postgresql
+        lazydocker
       ];
     };
     fish = {
