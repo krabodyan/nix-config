@@ -77,7 +77,6 @@ in {
         "vgcore.*"
         ".cache"
         "*.gc??"
-        "target"
         "node_modules"
         # locked files
         "*~"
@@ -90,6 +89,10 @@ in {
         ".vs"
         ".devenv.*"
         "venv"
+
+        # rust
+        ".sqlx/"
+        "target"
 
         # 💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀
         "mov"

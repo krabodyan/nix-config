@@ -15,11 +15,13 @@
         cargo-watch
         cargo-expand
         pkg-config
-        # sqlite
-        # openssl
+        sqlx-cli
+        openssl
+        litecli
       ];
 
       buildInputs = with pkgs; [
+        sqlite.dev
         libudev-zero
         (
           rust-pkgs.rust-bin.nightly.latest.default.override
@@ -50,13 +52,14 @@
         tailwindcss
         tailwindcss-language-server
         pkg-config
-        sqlite
         openssl
+        litecli
         svelte-language-server
         nodePackages.prettier
       ];
 
       buildInputs = with pkgs; [
+        sqlite.dev
         libudev-zero
         at-spi2-atk
         atkmm
