@@ -26,6 +26,7 @@ in {
       signing.format = "ssh";
       aliases = {
         cm = "commit -m";
+        cma = "commit -am";
         st = "status -sb";
         graph = "log --oneline --all --graph --format=format:'%C(blue)%h%C(reset)%C(auto)%d%C(reset) %s%C(dim black) - %ar%C(reset)'";
       };
@@ -59,6 +60,7 @@ in {
           autoUpdate = true;
         };
         pull.rebase = true;
+        rebase.autoStash = true;
         push = {
           autoSetupRemote = true;
           default = "simple";

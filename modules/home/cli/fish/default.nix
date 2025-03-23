@@ -249,7 +249,7 @@ in {
           set -g __fish_git_prompt_color_stagedstate green
           set -g __fish_git_prompt_char_stagedstate ' M'
 
-          set -g __fish_git_prompt_color_stashstate blue
+          set -g __fish_git_prompt_color_stashstate yellow
           set -g __fish_git_prompt_char_stashstate ' S'
 
           set -g __fish_git_prompt_color_untrackedfiles red
