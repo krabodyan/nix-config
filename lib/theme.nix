@@ -44,7 +44,7 @@ rec {
     brmagenta = "f6affa";
     brcyan = "75e6e3";
 
-    orange = "eba0ac";
+    orange = "fd9a00";
     pink = "f595db";
     brpink = "ffcaf0";
     peach = "f2cdcd";
