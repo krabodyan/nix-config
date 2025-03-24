@@ -99,6 +99,8 @@ in {
 
               bind -M $mode alt-f end-of-line
               bind -M $mode alt-g beginning-of-line
+
+              bind -M $mode ctrl-l "clear; commandline -f repaint"
             end
 
             bind -M insert            alt-enter   repaint-mode execute
