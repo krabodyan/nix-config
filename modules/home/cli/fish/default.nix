@@ -158,6 +158,7 @@ in {
           set fish_cursor_visual block
           set fish_cursor_default block
           set fish_cursor_insert line
+          set fish_cursor_replace_one underscore
 
           function fish_mode_prompt
           end
@@ -170,7 +171,7 @@ in {
               case default
                 printf "\033]12;#${mode_normal}\007"
                 set_color ${mode_normal}
-              case visual
+              case visual replace_one
                 printf "\033]12;#${mode_select}\007"
                 set_color ${mode_select}
               case '*'
