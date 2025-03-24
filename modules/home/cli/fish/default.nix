@@ -261,31 +261,41 @@ in {
           printf '\e[?45l'
         '';
 
-      functions._fzf_search_directory = assert config.module.fzf.enable;
-      # fish
-        ''
-          set -f fd_cmd ${config.programs.fzf.defaultCommand}
+      functions = {
+        build-devshell =
+          # fish
+          ''
+            for name in rust tauri ino
+              nix build $FLAKE#devShells.x86_64-linux.$name -o ~/.gc-root-$name
+              echo $name builded
+            end
+          '';
+        _fzf_search_directory = assert config.module.fzf.enable;
+        # fish
+          ''
+            set -f fd_cmd ${config.programs.fzf.defaultCommand}
 
-          set -f fzf_arguments $fzf_directory_opts
-          set -f token (commandline --current-token)
-          set -f expanded_token (eval echo -- $token)
-          set -f unescaped_exp_token (string unescape -- $expanded_token)
+            set -f fzf_arguments $fzf_directory_opts
+            set -f token (commandline --current-token)
+            set -f expanded_token (eval echo -- $token)
+            set -f unescaped_exp_token (string unescape -- $expanded_token)
 
-          if string match --quiet -- "*/" $unescaped_exp_token && test -d "$unescaped_exp_token"
-              set --append fd_cmd --base-directory=$unescaped_exp_token
-              set --prepend fzf_arguments --prompt="$unescaped_exp_token> "
-              set -f file_paths_selected $unescaped_exp_token($fd_cmd 2>/dev/null | _fzf_wrapper $fzf_arguments)
-          else
-              set --prepend fzf_arguments --query="$unescaped_exp_token"
-              set -f file_paths_selected ($fd_cmd 2>/dev/null | _fzf_wrapper $fzf_arguments)
-          end
+            if string match --quiet -- "*/" $unescaped_exp_token && test -d "$unescaped_exp_token"
+                set --append fd_cmd --base-directory=$unescaped_exp_token
+                set --prepend fzf_arguments --prompt="$unescaped_exp_token> "
+                set -f file_paths_selected $unescaped_exp_token($fd_cmd 2>/dev/null | _fzf_wrapper $fzf_arguments)
+            else
+                set --prepend fzf_arguments --query="$unescaped_exp_token"
+                set -f file_paths_selected ($fd_cmd 2>/dev/null | _fzf_wrapper $fzf_arguments)
+            end
 
-          if test $status -eq 0
-              commandline --current-token --replace -- "$(string escape -- $file_paths_selected)"
-          end
+            if test $status -eq 0
+                commandline --current-token --replace -- "$(string escape -- $file_paths_selected)"
+            end
 
-          commandline --function repaint
-        '';
+            commandline --function repaint
+          '';
+      };
     };
 
     xdg.desktopEntries."fish" = {
