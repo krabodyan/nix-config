@@ -16,12 +16,11 @@ in {
       enable = true;
       arguments = [
         "--max-columns-preview"
-        "--colors=line:fg:red"
-        "--colors=line:style:bold"
-        "--colors=path:fg:magenta"
-        "--colors=path:style:bold"
-        "--colors=match:fg:black"
-        "--colors=match:bg:white"
+        "--colors=line:fg:black"
+        "--colors=line:style:intense"
+        "--colors=path:fg:black"
+        "--colors=path:style:intense"
+        "--colors=match:fg:blue"
         "--ignore-case"
         "--glob=!.git/*"
       ];
