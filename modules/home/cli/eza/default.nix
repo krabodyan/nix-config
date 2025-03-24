@@ -16,7 +16,8 @@ in {
     programs.fish.shellAliases = let
       eza = "${pkgs.eza}/bin/eza --group-directories-first --long --git";
     in rec {
-      ls = "${eza} --no-filesize --no-user --no-time --no-permissions";
+      l = "${eza} --no-filesize --no-user --no-time --no-permissions";
+      ls = "${l} --git-ignore";
       la = "${ls} -a";
       ll = "${eza} --octal-permissions --no-permissions";
       lla = "${eza} --octal-permissions --no-permissions -a";
