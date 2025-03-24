@@ -28,7 +28,7 @@ in {
         cm = "commit -m";
         cma = "commit -am";
         st = "status -sb";
-        graph = "log --oneline --all --graph --format=format:'%C(blue)%h%C(reset)%C(auto)%d%C(reset) %s%C(dim black) - %ar%C(reset)'";
+        graph = "log --oneline --all --graph --format=format:'%C(blue)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) - %ar%C(reset)'";
       };
       extraConfig = {
         init.defaultbranch = "master";

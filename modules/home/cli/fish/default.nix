@@ -205,7 +205,7 @@ in {
           set -g fish_color_selection --background=${surface2}
           set -g fish_color_search_match --background=${fg-dark}
           set -g fish_color_operator ${fg}
-          set -g fish_color_autosuggestion ${fg-dark}
+          set -g fish_color_autosuggestion ${brblack}
           set -g fish_color_valid_path ${fg}
           set -g fish_color_cancel ${red}
 

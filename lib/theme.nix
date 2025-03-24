@@ -28,7 +28,7 @@ rec {
     overlay2 = "808080";
     subtext0 = "a6a6a1";
 
-    black = surface0;
+    black = surface1;
     red = "EF8993";
     green = "89ff6e";
     yellow = "fff982";
