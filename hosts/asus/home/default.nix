@@ -22,9 +22,11 @@
     cli-default = {
       enable = true;
       extra = with pkgs; [
+        sqlx-cli
         scrcpy
         android-tools
         postgresql
+        litecli
         lazydocker
       ];
     };

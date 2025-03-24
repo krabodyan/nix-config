@@ -15,9 +15,7 @@
         cargo-watch
         cargo-expand
         pkg-config
-        sqlx-cli
         openssl
-        litecli
       ];
 
       buildInputs = with pkgs; [
@@ -40,22 +38,15 @@
       GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
 
       nativeBuildInputs = with pkgs; [
-        sqlx-cli
         cargo-watch
         cargo-expand
         cargo-tauri
         pnpm
-        # dioxus-cli
-        # wasm-bindgen-cli
+        tailwindcss
         gobject-introspection
         nodejs
-        tailwindcss
-        tailwindcss-language-server
         pkg-config
         openssl
-        litecli
-        svelte-language-server
-        nodePackages.prettier
       ];
 
       buildInputs = with pkgs; [
@@ -87,7 +78,6 @@
       buildInputs = with pkgs; [
         glibc_multi
         pkgsCross.avr.buildPackages.gcc
-        arduino-cli
         platformio
       ];
     };

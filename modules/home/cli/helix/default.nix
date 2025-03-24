@@ -17,21 +17,31 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
+      # docker
       docker-compose-language-service
       dockerfile-language-server-nodejs
+      yaml-language-server
+      # python
       black
-      biome
       ruff
+      python312Packages.python-lsp-server
+      # json
+      biome
+      # nix
       nixd
       alejandra
+      # shell
       fish-lsp
-      vscode-langservers-extracted
-      superhtml
-      python312Packages.python-lsp-server
+      # web
+      tailwindcss-language-server
       typescript-language-server
+      svelte-language-server
+      superhtml
       nodePackages.prettier
+      # cpp
       clang-tools
-      (import ./yazi-picker.nix {inherit pkgs;})
+      # other
+      vscode-langservers-extracted
     ];
 
     xdg.configFile."helix/languages.toml".source = ./languages.toml;
@@ -39,6 +49,9 @@ in {
     programs.helix = {
       enable = true;
       package = inputs.helix.packages.${pkgs.system}.helix;
+      extraPackages = [
+        (import ./yazi-picker.nix {inherit pkgs;})
+      ];
       defaultEditor = true;
       settings = {
         theme = "paradise";
