@@ -18,7 +18,6 @@ in {
     xdg.configFile."mpv/mpv.conf".text = with colors.hex; ''
       gpu-context=wayland
       vo=dmabuf-wayland
-      ao=pulse                # todo: remove after fix
       volume=50
       keep-open=yes
       fullscreen=no
