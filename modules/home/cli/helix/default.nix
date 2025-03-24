@@ -26,6 +26,7 @@ in {
       alejandra
       fish-lsp
       vscode-langservers-extracted
+      superhtml
       python312Packages.python-lsp-server
       typescript-language-server
       nodePackages.prettier

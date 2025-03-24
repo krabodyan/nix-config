@@ -6,9 +6,13 @@ name = "svelte"
 comment-token = "//"
 indent = { tab-width = 4, unit = "\t" }
 block-comment-tokens = {start = "<!--", end = "-->"}
-language-servers = [ "svelteserver" ]
+language-servers = [ "svelteserver", "tailwindcss" ]
 formatter = { command = "prettier", args = ["--parser", "svelte"] }
 auto-format = true
+
+[language-server.tailwindcss]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
 
 # ARDUINO --------------------------
 
@@ -42,7 +46,6 @@ name = "tsx"
 language-servers = ["typescript-language-server"]
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
-
 
 # RUST --------------------------
 [[language]]
@@ -78,6 +81,7 @@ command = "black"
 [[language]]
 name = "html"
 formatter = { command = 'prettier', args = ["--parser", "html"] }
+language-servers = [ "superhtml", "tailwindcss" ]
 
 # JSON --------------------------
 [[language]]
