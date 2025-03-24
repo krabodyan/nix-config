@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   system,
   username,
@@ -26,6 +27,7 @@ in {
     };
 
     nix = {
+      package = pkgs.lix;
       gc.automatic = false;
       optimise = {
         automatic = true;
@@ -34,7 +36,6 @@ in {
       settings = {
         warn-dirty = false;
         experimental-features = ["nix-command" "flakes"];
-        # builders-use-substitutes = true;
 
         substituters = ["https://helix.cachix.org" "https://nixpkgs-wayland.cachix.org"];
 
