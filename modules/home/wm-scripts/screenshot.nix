@@ -15,6 +15,7 @@
   swayimg = "${pkgs.swayimg}/bin/swayimg --config info.show=no";
 in
   pkgs.writeShellScriptBin "__screenshot" ''
+    pidof slurp && exit 0
     makoctl dismiss
     if [ "$1" = "full" ]; then
       ${grim} - | ${copy}
