@@ -19,21 +19,21 @@ in {
       font = "${pkgs.powerline-fonts}/share/consolefonts/ter-powerline-v22b.psf.gz";
       keyMap = "us";
       colors = with colors; [
-        bg-dark
+        bg
         red
         green
         yellow
         blue
         magenta
-        cyan
-        fg-bright
-        bg-bright
+        pink
+        fg
+        brblack
         brred
         brgreen
         bryellow
         brblue
         brmagenta
-        brcyan
+        brpink
         fg-bright
       ];
     };

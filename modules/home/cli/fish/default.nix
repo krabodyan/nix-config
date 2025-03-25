@@ -178,7 +178,7 @@ in {
             switch $fish_bind_mode
               case insert
                 printf "\033]12;#${mode_insert}\007"
-                set_color ${fg}
+                set_color normal
               case default
                 printf "\033]12;#${mode_normal}\007"
                 set_color ${mode_normal}
@@ -186,8 +186,8 @@ in {
                 printf "\033]12;#${mode_select}\007"
                 set_color ${mode_select}
               case '*'
-                printf "\033]12;#${green}\007"
-                set_color ${green}
+                printf "\033]12;#green\007"
+                set_color green
             end
 
             if set -q IN_NIX_SHELL
@@ -203,30 +203,30 @@ in {
             set_color normal
           end
 
-          set -g fish_color_normal ${fg}
-          set -g fish_color_command ${green}
-          set -g fish_color_keyword -i ${yellow}
-          set -g fish_color_quote ${yellow}
-          set -g fish_color_redirection ${fg}
-          set -g fish_color_end ${fg}
-          set -g fish_color_error ${red}
+          set -g fish_color_normal normal
+          set -g fish_color_command green
+          set -g fish_color_keyword -i yellow
+          set -g fish_color_quote yellow
+          set -g fish_color_redirection normal
+          set -g fish_color_end normal
+          set -g fish_color_error red
           set -g fish_color_warn ${orange}
-          set -g fish_color_param ${fg}
+          set -g fish_color_param normal
           set -g fish_color_comment ${fg-dark}
           set -g fish_color_selection --background=${surface2}
           set -g fish_color_search_match --background=${fg-dark}
-          set -g fish_color_operator ${fg}
-          set -g fish_color_autosuggestion ${brblack}
-          set -g fish_color_valid_path ${fg}
-          set -g fish_color_cancel ${red}
+          set -g fish_color_operator normal
+          set -g fish_color_autosuggestion brblack
+          set -g fish_color_valid_path normal
+          set -g fish_color_cancel red
 
           set -g fish_pager_color_progress ${overlay0}
           set -g fish_pager_color_prefix ${fg-dark}
           set -g fish_pager_color_completion ${fg-dark}
           set -g fish_pager_color_description ${fg-dark}
-          set -g fish_pager_color_selected_prefix ${fg}
-          set -g fish_pager_color_selected_completion ${fg}
-          set -g fish_pager_color_selected_description ${fg}
+          set -g fish_pager_color_selected_prefix normal
+          set -g fish_pager_color_selected_completion normal
+          set -g fish_pager_color_selected_description normal
           set -g fish_pager_color_selected_background ${bg}
           set -g fish_pager_color_secondary ${overlay0}
           set -g fish_pager_color_secondary_prefix ${fg-dark}
@@ -245,7 +245,7 @@ in {
           set -g __fish_git_prompt_color_prefix ${overlay1}
           set -g __fish_git_prompt_color_suffix ${overlay1}
 
-          set -g __fish_git_prompt_showupstream 'auto'
+          set -g __fish_git_prompt_showupstream auto
           set -g __fish_git_prompt_color_upstream green
           set -g __fish_git_prompt_char_upstream_ahead ' ↑'
           set -g __fish_git_prompt_char_upstream_behind ' ↓'
@@ -261,7 +261,7 @@ in {
           set -g __fish_git_prompt_color_stagedstate green
           set -g __fish_git_prompt_char_stagedstate ' M'
 
-          set -g __fish_git_prompt_color_stashstate yellow
+          set -g __fish_git_prompt_color_stashstate red
           set -g __fish_git_prompt_char_stashstate ' S'
 
           set -g __fish_git_prompt_color_untrackedfiles red
