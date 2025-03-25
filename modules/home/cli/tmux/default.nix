@@ -32,9 +32,6 @@ in {
         setw -g mode-keys vi
         set -g status-keys vi
 
-        set-window-option -g automatic-rename on
-        setw -g automatic-rename
-
         set -g allow-passthrough all
 
         bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
@@ -47,6 +44,7 @@ in {
         set-option -g mode-style "bg=${surface2}"
         set-option -g message-style "fg=default,bg=${surface0}"
 
+        set-window-option -g automatic-rename on
         set -g status-interval 30
         set -g status-justify centre
         set -g status-left-length 20
@@ -80,7 +78,8 @@ in {
         bind -n M-6 select-window -t 6
         bind -n M-7 select-window -t 7
 
-        bind-key w command-prompt "swap-window -t %%"
+        bind -n M-Tab last-window
+        bind w command-prompt "swap-window -t %%"
 
         bind h select-pane -L
         bind j select-pane -D

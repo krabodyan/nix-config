@@ -64,7 +64,6 @@ in
 
     riverctl map -layout 0 normal Super space  focus-view next
     riverctl map -layout 0 normal Super+Shift  space zoom
-    riverctl map -layout 0 normal Alt   tab    focus-view next
     riverctl map -layout 0 normal Super Return spawn "riverctl swap next && riverctl focus-view previous"
 
     riverctl map -layout 0 normal Super S send-layout-cmd rivercarro "main-location-cycle monocle,left"
