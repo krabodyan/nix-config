@@ -61,6 +61,7 @@ in {
         };
         pull.rebase = true;
         rebase.autoStash = true;
+        stash.showIncludeUntracked = true;
         push = {
           autoSetupRemote = true;
           default = "simple";
