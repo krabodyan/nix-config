@@ -93,8 +93,13 @@ in {
 
             for mode in default insert visual
               bind --preset --erase -M $mode alt-r
-              bind --preset --erase -M $mode alt-l
               bind --preset --erase -M $mode alt-v
+
+              bind --preset --erase -M $mode alt-h
+              bind --preset --erase -M $mode alt-j
+              bind --preset --erase -M $mode alt-k
+              bind --preset --erase -M $mode alt-l
+
               bind --preset --erase -M $mode ctrl-r
               bind --preset --erase -M $mode ctrl-h
 
@@ -103,8 +108,11 @@ in {
 
               bind -M $mode ctrl-l "clear; commandline -f repaint"
 
-              bind -M $mode alt-L nextd-or-forward-word
-              bind -M $mode alt-H prevd-or-backward-word
+              bind -M $mode alt-H prevd repaint-mode
+              bind -M $mode alt-L nextd repaint-mode
+
+              bind -M $mode alt-i forward-word
+              bind -M $mode alt-o backward-word
             end
 
             bind -M insert            alt-enter   repaint-mode execute
