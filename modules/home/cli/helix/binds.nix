@@ -18,7 +18,7 @@ let
     '';
 
     "A-y" = "save_selection";
-    "A-f" = ["goto_line_end" "move_char_right"];
+    "A-f" = ["goto_line_end_newline"];
     "A-g" = "goto_first_nonwhitespace";
     "A-a" = ["normal_mode" "goto_word"];
 
@@ -107,6 +107,8 @@ in rec {
     // {
       ${toggle} = ["collapse_selection" "insert_mode"];
       "A-v" = ["select_mode" "flip_selections"];
+      f = ["select_mode" "find_next_char"];
+      F = ["select_mode" "find_prev_char"];
       space = {
         q = ":q";
         Q = ":q!";
