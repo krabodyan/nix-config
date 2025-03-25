@@ -21,59 +21,54 @@
       fg = fg-dark;
     };
 
-    error = red;
-    warning = yellow;
-    info = green;
-    hint = overlay2;
+    "error" = red;
+    "warning" = yellow;
+    "info" = green;
+    "hint" = overlay2;
 
-    type = {fg = fg;};
+    "type" = fg;
 
     "type.builtin" = brmagenta;
     "type.enum" = brmagenta;
 
-    constructor = fg;
+    "constructor" = fg;
 
     "constant.builtin" = red;
     "constant.numeric" = red;
     "constant.character" = teal;
     "constant.character.escape" = teal;
 
-    string = brcyan;
+    "string" = brcyan;
     "string.regexp" = brmagenta;
     "string.special" = blue;
     "string.special.symbol" = red;
     "string.special.path" = brmagenta;
 
-    comment = {fg = fg-dark;};
+    "comment" = fg-dark;
 
-    variable = fg;
+    "variable" = fg;
     "variable.parameter" = fg;
     "variable.builtin" = fg;
     "variable.other.member" = fg;
 
-    label = red; # used for lifetimes
+    "label" = red; # used for lifetimes
 
-    punctuation = overlay1;
+    "punctuation" = overlay1;
     "punctuation.bracket" = overlay2;
     "punctuation.special" = peach;
 
-    keyword = {fg = brmagenta;};
-    operator = sky;
+    "keyword" = brmagenta;
+    "operator" = sky;
 
-    function = {fg = fg;};
-
-    # "function.builtin" = {
-    #   fg = "peach";
-    #   modifiers = [ "italic" ];
-    # };
+    "function" = fg;
 
     "function.macro" = fg;
 
-    tag = brmagenta;
+    "tag" = brmagenta;
 
-    namespace = {fg = fg;};
+    "namespace" = fg;
 
-    special = red;
+    "special" = red;
 
     "markup.heading.marker" = {
       fg = peach;
@@ -86,11 +81,9 @@
     "markup.heading.5" = magenta;
     "markup.heading.6" = teal;
     "markup.list" = sky;
-    "markup.bold" = {modifiers = ["bold"];};
-    "markup.italic" = {modifiers = ["italic"];};
-    "markup.link.url" = {
-      fg = blue;
-    };
+    "markup.bold".modifiers = ["bold"];
+    "markup.italic".modifiers = ["italic"];
+    "markup.link.url" = blue;
 
     "markup.link.text" = blue;
     "markup.raw" = yellow;
@@ -101,8 +94,8 @@
 
     "ui.background" = {};
 
-    "ui.linenr" = {fg = surface1;};
-    "ui.linenr.selected" = {fg = subtext0;};
+    "ui.linenr" = surface1;
+    "ui.linenr.selected" = subtext0;
     "ui.statusline" = {
       fg = overlay0;
       bg = bg;
@@ -134,11 +127,11 @@
       fg = overlay0;
       inherit bg;
     };
-    "ui.menu.selected" = {fg = fg;};
-    "ui.menu.scroll" = {fg = surface2;};
+    "ui.menu.selected" = fg;
+    "ui.menu.scroll" = surface2;
 
-    "ui.picker.header" = {fg = fg-dark;};
-    "ui.window" = {fg = surface1;};
+    "ui.picker.header" = fg-dark;
+    "ui.window" = surface1;
     "ui.help" = {
       # menu in command mode :
       fg = overlay0;
@@ -148,11 +141,11 @@
       fg = surface2;
       inherit bg;
     };
-    "ui.bufferline.active" = {fg = subtext0;};
+    "ui.bufferline.active" = subtext0;
     "ui.bufferline.background" = {bg = bg;};
 
     "ui.text" = fg;
-    "ui.text.inactive" = {fg = overlay1;};
+    "ui.text.inactive" = overlay1;
     "ui.text.focus" = {
       inherit fg;
       bg = surface1;
@@ -161,7 +154,7 @@
     "ui.virtual" = overlay0;
     "ui.virtual.ruler" = {bg = bg-bright;};
     "ui.virtual.indent-guide" = surface1;
-    "ui.virtual.inlay-hint" = {fg = fg-dark;};
+    "ui.virtual.inlay-hint" = fg-dark;
     "ui.virtual.jump-label" = {
       bg = surface2;
       fg = green;
