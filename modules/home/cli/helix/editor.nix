@@ -24,6 +24,7 @@
   end-of-line-diagnostics = "hint";
   inline-diagnostics = {
     cursor-line = "hint";
+    max-diagnostics = 3;
   };
 
   lsp = {
