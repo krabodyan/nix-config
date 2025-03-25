@@ -20,14 +20,14 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [gh lazygit];
+    programs.fish.shellAliases.gs = "git status -sb";
     programs.git = {
       enable = true;
       inherit (cfg) userName userEmail;
       signing.format = "ssh";
       aliases = {
         cm = "commit -m";
-        cma = "commit -am";
-        st = "status -sb";
+        st = "status";
         graph = "log --oneline --all --graph --format=format:'%C(blue)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) - %ar%C(reset)'";
       };
       extraConfig = {
