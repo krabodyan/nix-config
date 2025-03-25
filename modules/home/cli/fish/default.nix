@@ -96,11 +96,15 @@ in {
               bind --preset --erase -M $mode alt-l
               bind --preset --erase -M $mode alt-v
               bind --preset --erase -M $mode ctrl-r
+              bind --preset --erase -M $mode ctrl-h
 
               bind -M $mode alt-f end-of-line
               bind -M $mode alt-g beginning-of-line
 
               bind -M $mode ctrl-l "clear; commandline -f repaint"
+
+              bind -M $mode alt-L nextd-or-forward-word
+              bind -M $mode alt-H prevd-or-backward-word
             end
 
             bind -M insert            alt-enter   repaint-mode execute
@@ -134,9 +138,6 @@ in {
             bind -M insert alt-l forward-char
             bind -M insert alt-k up-or-search
             bind -M insert alt-j down-or-search
-
-            bind -M insert  alt-i nextd-or-forward-word
-            bind -M default alt-i nextd-or-forward-word
 
             bind -M insert alt-r fzf-history-widget
             bind -M insert alt-z fzf-cd-widget
