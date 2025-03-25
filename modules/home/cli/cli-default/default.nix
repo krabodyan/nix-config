@@ -20,6 +20,7 @@ in {
     home.packages = with pkgs;
       [
         jq
+        pv
         xdg-utils
 
         python3

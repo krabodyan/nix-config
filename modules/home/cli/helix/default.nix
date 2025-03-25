@@ -31,6 +31,7 @@ in {
       nixd
       alejandra
       # shell
+      bash-language-server
       fish-lsp
       # web
       tailwindcss-language-server
