@@ -1,7 +1,6 @@
 {
   insert-final-newline = true;
   mouse = false;
-  # line-number = "relative";
   cursorline = true;
   color-modes = true;
   scrolloff = 10;
@@ -18,7 +17,6 @@
   bufferline = "multiple";
   popup-border = "all";
   text-width = 145;
-  # indent-heuristic = "tree-sitter";
   jump-label-alphabet = "fjdkshlweruiopmaqcvngbzxty";
 
   clipboard-provider = "wayland";
@@ -26,7 +24,6 @@
   end-of-line-diagnostics = "hint";
   inline-diagnostics = {
     cursor-line = "hint";
-    #   other-lines = "error";
   };
 
   lsp = {
@@ -45,11 +42,9 @@
     skip-levels = 1;
   };
 
-  # true-color = true;
-
   cursor-shape = {
     normal = "block";
-    insert = "bar"; # bar
+    insert = "bar";
     select = "block";
   };
 
@@ -58,11 +53,15 @@
     wrap-at-text-width = true;
   };
 
-  gutters = {layout = ["diff" "diagnostics" "line-numbers" "spacer"];};
+  file-picker = {
+    hidden = false;
+  };
+
+  gutters.layout = ["diff" "diagnostics" "line-numbers" "spacer"];
   smart-tab = {
     enable = false;
-    # supersede-menu = true;
   };
+
   statusline = {
     right = [
       "diagnostics"
