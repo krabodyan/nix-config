@@ -3,35 +3,31 @@
   config,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf mkOption;
+  inherit (lib) mkEnableOption mkIf;
   cfg = config.module.locale;
 in {
   options = {
     module.locale = {
       enable = mkEnableOption "enable locale";
-      locale = mkOption {
-        type = lib.types.str;
-        example = "uk_UA.UTF-8";
-      };
     };
   };
   config = mkIf cfg.enable {
     i18n = let
-      inherit (cfg) locale;
+      us = "en_US.UTF-8";
     in {
-      defaultLocale = locale;
+      defaultLocale = us;
       extraLocaleSettings = {
-        LC_ADDRESS = locale;
-        LC_IDENTIFICATION = locale;
-        LC_MEASUREMENT = locale;
-        LC_MONETARY = locale;
-        LC_NAME = locale;
-        LC_NUMERIC = locale;
-        LC_PAPER = locale;
-        LC_TELEPHONE = locale;
-        LC_TIME = locale;
+        LC_ADDRESS = us;
+        LC_IDENTIFICATION = us;
+        LC_MEASUREMENT = us;
+        LC_MONETARY = us;
+        LC_NAME = us;
+        LC_NUMERIC = us;
+        LC_PAPER = us;
+        LC_TELEPHONE = us;
+        LC_TIME = us;
       };
-      supportedLocales = ["${locale}/UTF-8"];
+      supportedLocales = ["${us}/UTF-8"];
     };
   };
 }

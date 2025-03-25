@@ -14,10 +14,7 @@
       enable = true;
       platformio = true;
     };
-    locale = {
-      enable = true;
-      locale = "uk_UA.UTF-8";
-    };
+    locale.enable = true;
 
     packages = {
       enable = true;
