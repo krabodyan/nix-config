@@ -1,7 +1,6 @@
 {
   lib,
   pkgs,
-  colors,
   config,
   ...
 }: let
@@ -16,8 +15,8 @@ in {
   config = mkIf cfg.enable {
     programs.fish.shellAliases.tm = "${pkgs.tmux}/bin/tmux -L $(uuidgen)";
     home.packages = [pkgs.tmux];
-    xdg.configFile."tmux/tmux.conf".text = with colors.hex; # bash
-    
+    xdg.configFile."tmux/tmux.conf".text =
+      # bash
       ''
         unbind -a
 
@@ -37,12 +36,12 @@ in {
         bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
 
         set-option -g status-style "fg=default,bg=default"
-        set-window-option -g window-status-style "bg=default,fg=${overlay0}"
-        set-window-option -g window-status-current-style "bg=default,fg=${subtext0}"
-        set-option -g pane-border-style "fg=${surface2},bg=default"
-        set-option -g pane-active-border-style "fg=${select},bg=default"
-        set-option -g mode-style "bg=${surface2}"
-        set-option -g message-style "fg=default,bg=${surface0}"
+        set-window-option -g window-status-style "bg=default,fg=black,bright"
+        set-window-option -g window-status-current-style "bg=default,fg=white"
+        set-option -g pane-border-style "fg=black,bright,bg=default"
+        set-option -g pane-active-border-style "fg=magenta,bg=default"
+        set-option -g mode-style "bg=black,bright"
+        set-option -g message-style "fg=default,bg=black,bright"
 
         set-window-option -g automatic-rename on
         set -g status-interval 30

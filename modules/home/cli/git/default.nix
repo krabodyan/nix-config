@@ -28,7 +28,7 @@ in {
       aliases = {
         cm = "commit -m";
         st = "status";
-        graph = "log --oneline --all --graph --format=format:'%C(blue)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) - %ar%C(reset)'";
+        graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) - %ar%C(reset)'";
       };
       extraConfig = {
         init.defaultbranch = "master";

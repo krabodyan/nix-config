@@ -171,6 +171,21 @@ in {
           set fish_cursor_insert line
           set fish_cursor_replace_one underscore
 
+          set_color ${black} black
+          set_color ${brblack} brblack
+          set_color ${red} red
+          set_color ${brred} brred
+          set_color ${green} green
+          set_color ${brgreen} brgreen
+          set_color ${yellow} yellow
+          set_color ${bryellow} bryellow
+          set_color ${blue} blue
+          set_color ${brblue} brblue
+          set_color ${magenta} magenta
+          set_color ${brmagenta} brmagenta
+          set_color ${cyan} cyan
+          set_color ${brcyan} brcyan
+
           function fish_mode_prompt
           end
 
@@ -186,15 +201,15 @@ in {
                 printf "\033]12;#${mode_select}\007"
                 set_color ${mode_select}
               case '*'
-                printf "\033]12;#green\007"
+                printf "\033]12;#${green}\007"
                 set_color green
             end
 
             if set -q IN_NIX_SHELL
               if set -q DEV_SHELL_NAME
-                printf "\033[36m$DEV_SHELL_NAME\033[0m %s%s 󰧞 " (prompt_pwd) (fish_git_prompt)
+                printf "\033[35m$DEV_SHELL_NAME\033[0m %s%s 󰧞 " (prompt_pwd) (fish_git_prompt)
               else
-                printf "\033[36mnix-shell\033[0m %s%s 󰧞 " (prompt_pwd) (fish_git_prompt)
+                printf "\033[35mnix-shell\033[0m %s%s 󰧞 " (prompt_pwd) (fish_git_prompt)
               end
             else
               printf "%s%s 󰧞 " (prompt_pwd) (fish_git_prompt)
@@ -205,34 +220,34 @@ in {
 
           set -g fish_color_normal normal
           set -g fish_color_command green
-          set -g fish_color_keyword -i yellow
+          set -g fish_color_keyword yellow
           set -g fish_color_quote yellow
           set -g fish_color_redirection normal
           set -g fish_color_end normal
           set -g fish_color_error red
-          set -g fish_color_warn ${orange}
+          set -g fish_color_warn red
           set -g fish_color_param normal
-          set -g fish_color_comment ${fg-dark}
-          set -g fish_color_selection --background=${surface2}
-          set -g fish_color_search_match --background=${fg-dark}
+          set -g fish_color_comment brblack
+          set -g fish_color_selection --background=black
+          set -g fish_color_search_match --background=black
           set -g fish_color_operator normal
           set -g fish_color_autosuggestion brblack
           set -g fish_color_valid_path normal
           set -g fish_color_cancel red
 
-          set -g fish_pager_color_progress ${overlay0}
-          set -g fish_pager_color_prefix ${fg-dark}
-          set -g fish_pager_color_completion ${fg-dark}
-          set -g fish_pager_color_description ${fg-dark}
+          set -g fish_pager_color_progress black
+          set -g fish_pager_color_prefix brblack
+          set -g fish_pager_color_completion brblack
+          set -g fish_pager_color_description brblack
           set -g fish_pager_color_selected_prefix normal
           set -g fish_pager_color_selected_completion normal
           set -g fish_pager_color_selected_description normal
-          set -g fish_pager_color_selected_background ${bg}
-          set -g fish_pager_color_secondary ${overlay0}
-          set -g fish_pager_color_secondary_prefix ${fg-dark}
-          set -g fish_pager_color_secondary_completion ${fg-dark}
-          set -g fish_pager_color_secondary_description ${fg-dark}
-          set -g fish_pager_color_secondary_background ${fg-dark}
+          set -g fish_pager_color_selected_background --background=""
+          set -g fish_pager_color_secondary brblack
+          set -g fish_pager_color_secondary_prefix brblack
+          set -g fish_pager_color_secondary_completion brblack
+          set -g fish_pager_color_secondary_description brblack
+          set -g fish_pager_color_secondary_background brblack
 
           set -g __fish_git_prompt_show_informative_status 1
           set -g __fish_git_prompt_showdirtystate 1
@@ -241,9 +256,9 @@ in {
           set -g __fish_git_prompt_show_informative_status 0
           set -g __fish_git_prompt_char_stateseparator ""
 
-          set -g __fish_git_prompt_color_branch ${sky}
-          set -g __fish_git_prompt_color_prefix ${overlay1}
-          set -g __fish_git_prompt_color_suffix ${overlay1}
+          set -g __fish_git_prompt_color_branch cyan --bold
+          set -g __fish_git_prompt_color_prefix brblack
+          set -g __fish_git_prompt_color_suffix brblack
 
           set -g __fish_git_prompt_showupstream auto
           set -g __fish_git_prompt_color_upstream green

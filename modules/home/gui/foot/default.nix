@@ -89,7 +89,7 @@ in {
           regular3 = "${yellow}";
           regular4 = "${blue}";
           regular5 = "${magenta}";
-          regular6 = "${pink}";
+          regular6 = "${cyan}";
           regular7 = "${fg}";
           bright0 = "${brblack}";
           bright1 = "${brred}";
@@ -97,7 +97,7 @@ in {
           bright3 = "${bryellow}";
           bright4 = "${brblue}";
           bright5 = "${brmagenta}";
-          bright6 = "${brpink}";
+          bright6 = "${cyan}";
           bright7 = "${fg-bright}";
         };
       };

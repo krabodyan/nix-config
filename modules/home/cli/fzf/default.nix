@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  colors,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -21,19 +20,22 @@ in {
     };
     programs.fzf = {
       enable = true;
-      colors = with colors.hex; {
+      colors = let
+        dark = "8";
+        bright = "7";
+      in {
         bg = "-1";
-        fg = fg-dark;
-        hl = fg-dark;
+        fg = dark;
+        hl = dark;
         current-bg = "-1";
-        current-fg = fg;
-        current-hl = fg;
-        info = fg-dark;
-        header = fg-dark;
-        pointer = red;
-        marker = fg;
-        prompt = fg;
-        spinner = fg;
+        current-fg = bright;
+        current-hl = bright;
+        info = dark;
+        header = dark;
+        pointer = "red";
+        marker = bright;
+        prompt = bright;
+        spinner = bright;
         border = "-1";
         gutter = "-1";
       };
@@ -52,6 +54,7 @@ in {
         "--height 7"
         "--info hidden"
         "--reverse"
+        "--ansi"
         "--bind 'tab:down,btab:up,alt-j:down,alt-k:up,alt-s:jump,alt-c:abort,alt-z:abort,alt-a:abort,alt-r:abort'"
       ];
     };

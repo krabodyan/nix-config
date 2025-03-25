@@ -25,7 +25,7 @@ in {
         yellow
         blue
         magenta
-        pink
+        cyan
         fg
         brblack
         brred
@@ -33,7 +33,7 @@ in {
         bryellow
         brblue
         brmagenta
-        brpink
+        cyan
         fg-bright
       ];
     };

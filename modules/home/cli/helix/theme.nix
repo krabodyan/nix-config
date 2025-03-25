@@ -26,41 +26,41 @@
     info = green;
     hint = overlay2;
 
-    "type" = {fg = fg;};
+    type = {fg = fg;};
 
     "type.builtin" = brmagenta;
     "type.enum" = brmagenta;
 
-    "constructor" = fg;
+    constructor = fg;
 
     "constant.builtin" = red;
     "constant.numeric" = red;
     "constant.character" = teal;
     "constant.character.escape" = teal;
 
-    "string" = sky;
-    "string.regexp" = pink;
+    string = brcyan;
+    "string.regexp" = brmagenta;
     "string.special" = blue;
     "string.special.symbol" = red;
-    "string.special.path" = brpink;
+    "string.special.path" = brmagenta;
 
-    "comment" = {fg = fg-dark;};
+    comment = {fg = fg-dark;};
 
-    "variable" = fg;
+    variable = fg;
     "variable.parameter" = fg;
     "variable.builtin" = fg;
     "variable.other.member" = fg;
 
-    "label" = red; # used for lifetimes
+    label = red; # used for lifetimes
 
-    "punctuation" = overlay1;
+    punctuation = overlay1;
     "punctuation.bracket" = overlay2;
     "punctuation.special" = peach;
 
-    "keyword" = {fg = brmagenta;};
-    "operator" = sky;
+    keyword = {fg = brmagenta;};
+    operator = sky;
 
-    "function" = {fg = fg;};
+    function = {fg = fg;};
 
     # "function.builtin" = {
     #   fg = "peach";
@@ -69,7 +69,7 @@
 
     "function.macro" = fg;
 
-    "tag" = brmagenta;
+    tag = brmagenta;
 
     namespace = {fg = fg;};
 
@@ -83,7 +83,7 @@
     "markup.heading.2" = sky;
     "markup.heading.3" = green;
     "markup.heading.4" = yellow;
-    "markup.heading.5" = pink;
+    "markup.heading.5" = magenta;
     "markup.heading.6" = teal;
     "markup.list" = sky;
     "markup.bold" = {modifiers = ["bold"];};

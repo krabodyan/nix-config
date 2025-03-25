@@ -2,7 +2,7 @@ rec {
   systemFont = "IosevkaTerm Nerd Font";
 
   colors = rec {
-    select = brpink;
+    select = brmagenta;
 
     border = "ffdef6";
 
@@ -17,7 +17,6 @@ rec {
     surface0 = "1a1a1a";
     surface1 = "262626";
     surface2 = "2e2e2e";
-    surface3 = "383838";
 
     fg = "f7f6ef";
     fg-dark = "474747";
@@ -29,24 +28,22 @@ rec {
     subtext0 = "a6a6a1";
 
     black = surface1;
-    red = "EF8993";
+    red = "ef8993";
     green = "89ff6e";
     yellow = "fff982";
     blue = "80beed";
-    magenta = "ee7cec";
-    cyan = "77d9d7";
+    magenta = "f595db";
+    cyan = "7fe8e6";
 
-    brblack = surface3;
+    brblack = "363636";
     brred = "ff96b4";
     brgreen = "89ff6e";
     bryellow = "fff982";
-    brblue = cyan;
-    brmagenta = "f6affa";
-    brcyan = "75e6e3";
+    brblue = "89dceb";
+    brmagenta = "ffbaec";
+    brcyan = "86f5f3";
 
     orange = "fe640b";
-    pink = "f595db";
-    brpink = "ffcaf0";
     peach = "f2cdcd";
     rosewater = "f5e0dc";
     teal = "94e2d5";

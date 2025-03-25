@@ -2,7 +2,6 @@
   lib,
   pkgs,
   config,
-  colors,
   mkAssociations,
   ...
 }: let
@@ -38,57 +37,59 @@ in {
         sha256 = "sha256:0yhg6nvp31k4r6wb8lxqs78cjy34y18a2rhsa9na9r67v5fygw3s";
       };
 
-      "yazi/theme.toml".text = with colors.hex; ''
+      "yazi/theme.toml".text = let
+        border = "lightmagenta";
+      in ''
         [manager]
-        cwd = { fg = "${fg}" }
+        cwd = { fg = "white" }
 
         hovered         = { reversed = true }
         preview_hovered = { underline = false }
 
-        find_keyword  = { fg = "${red}" }
-        find_position = { fg = "${red}" }
+        find_keyword  = { fg = "red" }
+        find_position = { fg = "red" }
 
-        marker_copied   = { fg = "${yellow}", bg = "${yellow}" }
-        marker_cut      = { fg = "${red}", bg = "${red}" }
-        marker_marked   = { fg = "${blue}", bg = "${blue}" }
-        marker_selected = { fg = "${green}", bg = "${green}" }
+        marker_copied   = { fg = "yellow", bg = "yellow" }
+        marker_cut      = { fg = "red", bg = "red" }
+        marker_marked   = { fg = "blue", bg = "blue" }
+        marker_selected = { fg = "green", bg = "green" }
 
-        tab_active   = { fg = "${bg}", bg = "${select}" }
-        tab_inactive = { fg = "${fg}", bg = "${bg}" }
+        tab_active   = { fg = "black", bg = "lightmagenta" }
+        tab_inactive = { fg = "white", bg = "reset" }
         tab_width    = 2
 
-        count_copied   = { fg = "${bg}", bg = "${yellow}" }
-        count_cut      = { fg = "${bg}", bg = "${red}" }
-        count_selected = { fg = "${bg}", bg = "${pink}" }
+        count_copied   = { fg = "black", bg = "yellow" }
+        count_cut      = { fg = "black", bg = "red" }
+        count_selected = { fg = "black", bg = "lightmagenta" }
 
         border_symbol = "│"
-        border_style  = { fg = "${fg-dark}" }
+        border_style  = { fg = "black" }
 
         [status]
         sep_left = { open  = "", close = "" }
         sep_right = { open  = "", close = "" }
 
-        progress_label  = { fg = "${fg}", bg = "${surface1}", bold = true }
-        progress_normal = { fg = "${green}", bg = "${surface1}" }
-        progress_error  = { fg = "${red}", bg = "${surface1}" }
+        progress_label  = { fg = "white", bg = "darkgray", bold = true }
+        progress_normal = { fg = "green", bg = "darkgray" }
+        progress_error  = { fg = "red", bg = "darkgray" }
 
-        perm_type  = { fg = "${overlay1}" }
-        perm_read  = { fg = "${select}" }
-        perm_write = { fg = "${overlay1}" }
-        perm_exec  = { fg = "${select}" }
-        perm_sep   = { fg = "${overlay1}" }
+        perm_type  = { fg = "darkgray" }
+        perm_read  = { fg = "lightmagenta" }
+        perm_write = { fg = "darkgray" }
+        perm_exec  = { fg = "magenta" }
+        perm_sep   = { fg = "darkgray" }
 
         [mode]
-        normal_main = { fg = "${bg}", bg = "${mode_select}", bold = true }
-        select_main = { fg = "${bg}", bg = "${mode_normal}", bold = true }
-        unset_main  = { fg = "${bg}", bg = "${mode_insert}", bold = true }
-        normal_alt = { fg = "${mode_select}", bg = "${surface1}", bold = true }
-        select_alt = { fg = "${mode_normal}", bg = "${surface1}", bold = true }
-        unset_alt  = { fg = "${mode_insert}", bg = "${surface1}", bold = true }
+        normal_main = { fg = "black", bg = "${border}", bold = true }
+        select_main = { fg = "black", bg = "green", bold = true }
+        unset_main  = { fg = "black", bg = "red", bold = true }
+        normal_alt = { fg = "${border}", bg = "darkgray", bold = true }
+        select_alt = { fg = "green", bg = "darkgray", bold = true }
+        unset_alt  = { fg = "red", bg = "darkgray", bold = true }
 
         [select]
         border   = { fg = "${border}" }
-        active   = { fg = "${red}", bold = true }
+        active   = { fg = "red", bold = true }
         inactive = {}
 
         [input]
@@ -103,35 +104,34 @@ in {
         [tasks]
         border  = { fg = "${border}" }
         title   = {}
-        hovered = { fg = "${red}", underline = true }
+        hovered = { fg = "red", underline = true }
 
         [which]
-        mask            = { bg = "${bg-bright}" }
-        cand            = { fg = "${red}"    }
-        rest            = { fg = "${green}"  }
-        desc            = { fg = "${fg}"     }
+        mask            = { bg = "darkgray" }
+        cand            = { fg = "red"    }
+        rest            = { fg = "green"  }
+        desc            = { fg = "white"     }
         separator       = "   "
-        # separator_style = { fg = "${surface2}" }
 
         [help]
-        on      = { fg = "${fg}" }
-        run     = { fg = "${pink}" }
+        on      = { fg = "white" }
+        run     = { fg = "lightmagenta" }
         hovered = { reversed = true, bold = true }
-        footer  = { fg = "${surface1}", bg = "${fg}" }
+        footer  = { fg = "darkgray", bg = "white" }
 
         [notify]
-        title_info  = { fg = "${green}" }
-        title_warn  = { fg = "${yellow}" }
-        title_error = { fg = "${red}" }
+        title_info  = { fg = "green" }
+        title_warn  = { fg = "yellow" }
+        title_error = { fg = "red" }
 
         [filetype]
 
         rules = [
-        	{ mime = "application/*zip", fg = "${orange}" },
-        	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "${red}" },
-        	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "${pink}" },
-        	{ name = "*", fg = "${fg}" },
-        	{ name = "*/", fg = "${mode_select}" }
+        	{ mime = "application/*zip", fg = "lightred" },
+        	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "lightred" },
+        	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "lightmagenta" },
+        	{ name = "*", fg = "white" },
+        	{ name = "*/", fg = "magenta" }
         ]
 
         [icon]
