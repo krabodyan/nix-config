@@ -23,7 +23,7 @@
 
   end-of-line-diagnostics = "hint";
   inline-diagnostics = {
-    cursor-line = "hint";
+    cursor-line = "info";
     max-diagnostics = 3;
   };
 

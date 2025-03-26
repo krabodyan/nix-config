@@ -60,8 +60,20 @@ name = "rust"
 "{" = "}"
 
 [language-server.rust-analyzer.config]
+numThreads = 12
+lru.capacity = 256
 check.command = "clippy"
-# procMacro.enable = false
+cargo.buildScripts.enable = false
+semanticHighlighting.nonStandardTokens = false
+diagnostics.disabled = ["proc-macro-disabled"] # "macro-error", "unresolved-proc-macro"
+procMacro.ignored.tauri_macros = [ "command", "generate_handler" ]
+cache.warmup = false
+checkOnSave = true
+completion.autoAwait.enable = false
+completion.autoIter.enable = false
+completion.autoimport.enable = false
+completion.hideDeprecated = true
+completion.postfix.enable = false
 inlayHints.closingBraceHints.minLines = 5
 inlayHints.parameterHints.enable = false
 inlayHints.typeHints.hideClosureInitialization = true

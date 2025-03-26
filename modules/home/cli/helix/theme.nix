@@ -6,15 +6,15 @@
     };
     "diagnostic.warning" = {
       underline.style = "line";
-      underline.color = yellow;
+      underline.color = red;
     };
     "diagnostic.info" = {
       underline.style = "line";
-      underline.color = yellow;
+      underline.color = red;
     };
     "diagnostic.hint" = {
       underline.style = "line";
-      underline.color = yellow;
+      underline.color = red;
     };
     "diagnostic.unnecessary" = {
       underline.color = fg-dark;
@@ -24,7 +24,7 @@
     "error" = red;
     "warning" = yellow;
     "info" = green;
-    "hint" = overlay2;
+    "hint" = green;
 
     "type" = fg;
 
