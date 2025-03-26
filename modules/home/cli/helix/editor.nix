@@ -5,6 +5,7 @@
   color-modes = true;
   scrolloff = 10;
   scroll-lines = 1;
+  auto-format = false;
 
   continue-comments = false;
 

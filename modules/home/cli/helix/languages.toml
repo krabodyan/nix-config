@@ -8,7 +8,6 @@ indent = { tab-width = 4, unit = "\t" }
 block-comment-tokens = {start = "<!--", end = "-->"}
 language-servers = [ "svelteserver", "tailwindcss" ]
 formatter = { command = "prettier", args = ["--parser", "svelte"] }
-auto-format = true
 
 [language-server.tailwindcss]
 command = "tailwindcss-language-server"
@@ -17,13 +16,11 @@ args = ["--stdio"]
 # ARDUINO --------------------------
 
 [[language]]
-auto-format = true
 name = "cpp"
 formatter.command = "clang-format"
 
 # NIX --------------------------
 [[language]]
-auto-format = true
 language-servers = ["nix"]
 name = "nix"
 
@@ -39,13 +36,11 @@ name = "typescript"
 language-servers = ["typescript-language-server"] 
 roots = ["package-lock.json", "tsconfig.json", ".prettierrc.json"]
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
-auto-format = true
 
 [[language]]
 name = "tsx"
 language-servers = ["typescript-language-server"]
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
-auto-format = true
 
 # RUST --------------------------
 [[language]]
@@ -60,7 +55,6 @@ name = "rust"
 "{" = "}"
 
 [language-server.rust-analyzer.config]
-numThreads = 12
 lru.capacity = 256
 check.command = "clippy"
 cargo.buildScripts.enable = false
@@ -82,7 +76,6 @@ files.excludeDirs = [ ".git", "target" ]
 # PYTHON --------------------------
 [[language]]
 name = "python"
-auto-format = true
 language-servers = ["ruff", "pylsp"]
 
 [language.formatter]

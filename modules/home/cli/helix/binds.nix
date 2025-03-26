@@ -68,6 +68,7 @@ let
     "A-minus" = "decrement";
   };
   special = {
+    "=" = ":format";
     "<" = "no_op";
     ">" = "no_op";
     t = ["normal_mode" "extend_to_word"];
