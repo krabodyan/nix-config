@@ -113,6 +113,8 @@ in {
 
               bind -M $mode alt-i forward-word
               bind -M $mode alt-o backward-word
+
+              bind -M $mode alt-u backward-kill-line
             end
 
             bind -M insert            alt-enter   repaint-mode execute
