@@ -31,6 +31,7 @@
     xdg-portal = {
       enable = true;
       terminal = "foot.desktop";
+      portals = ["gtk" "wlr"];
     };
 
     security = {

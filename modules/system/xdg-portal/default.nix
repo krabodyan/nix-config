@@ -14,6 +14,10 @@ in {
         type = lib.types.str;
         example = "foot.desktop";
       };
+      portals = mkOption {
+        type = lib.types.listOf lib.types.str;
+        example = ["gtk" "wlr"];
+      };
     };
   };
   config = mkIf cfg.enable {
@@ -21,19 +25,11 @@ in {
       enable = true;
       settings.default = [cfg.terminal];
     };
-    environment.variables = {
-      TERMCMD = "foot -a floaterm";
-      GDK_DEBUG = "portals";
-    };
-    environment.systemPackages = [pkgs.xdg-desktop-portal-termfilechooser];
     xdg.portal = {
       enable = true;
       xdgOpenUsePortal = true;
-      config = {
-        common.default = "wlr";
-        common."org.freedesktop.impl.portal.FileChooser" = ["xdg-desktop-portal-termfilechooser"];
-      };
-      extraPortals = with pkgs; [xdg-desktop-portal-gtk xdg-desktop-portal-termfilechooser];
+      config.common.default = cfg.portals;
+      extraPortals = with pkgs; [xdg-desktop-portal-gtk];
       wlr = {
         enable = true;
         settings = {
