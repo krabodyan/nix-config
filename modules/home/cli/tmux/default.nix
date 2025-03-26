@@ -36,8 +36,8 @@ in {
         bind r source-file ~/.config/tmux/tmux.conf \; display "Reloaded!"
 
         set-option -g status-style "fg=default,bg=default"
-        set-window-option -g window-status-style "bg=default,fg=black,bright"
-        set-window-option -g window-status-current-style "bg=default,fg=white"
+        set-window-option -g window-status-style "bg=default,fg=black,bright,dim"
+        set-window-option -g window-status-current-style "bg=default,fg=white,dim"
         set-option -g pane-border-style "fg=black,bright,bg=default"
         set-option -g pane-active-border-style "fg=magenta,bg=default"
         set-option -g mode-style "bg=black,bright"
