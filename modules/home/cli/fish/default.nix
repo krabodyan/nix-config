@@ -130,6 +130,7 @@ in {
             bind -M visual  -m default alt-d repaint-mode end-selection
 
             bind -M default           d delete-char
+            bind -M default           U redo
             bind -M visual            d kill-selection end-selection begin-selection
             bind -M visual  -m insert c kill-selection end-selection repaint-mode
             bind -M default -m insert c delete-char repaint-mode
@@ -220,30 +221,30 @@ in {
             set_color normal
           end
 
-          set -g fish_color_normal normal
+          set -g fish_color_normal white
           set -g fish_color_command green
           set -g fish_color_keyword yellow
           set -g fish_color_quote yellow
-          set -g fish_color_redirection normal
+          set -g fish_color_redirection white
           set -g fish_color_end normal
           set -g fish_color_error red
           set -g fish_color_warn red
-          set -g fish_color_param normal
+          set -g fish_color_param white
           set -g fish_color_comment brblack
           set -g fish_color_selection --background=black
           set -g fish_color_search_match --background=black
-          set -g fish_color_operator normal
+          set -g fish_color_operator blue
           set -g fish_color_autosuggestion brblack
-          set -g fish_color_valid_path normal
+          set -g fish_color_valid_path white
           set -g fish_color_cancel red
 
           set -g fish_pager_color_progress black
           set -g fish_pager_color_prefix brblack
           set -g fish_pager_color_completion brblack
           set -g fish_pager_color_description brblack
-          set -g fish_pager_color_selected_prefix normal
-          set -g fish_pager_color_selected_completion normal
-          set -g fish_pager_color_selected_description normal
+          set -g fish_pager_color_selected_prefix white
+          set -g fish_pager_color_selected_completion white
+          set -g fish_pager_color_selected_description white
           set -g fish_pager_color_selected_background --background=""
           set -g fish_pager_color_secondary brblack
           set -g fish_pager_color_secondary_prefix brblack
@@ -258,7 +259,7 @@ in {
           set -g __fish_git_prompt_show_informative_status 0
           set -g __fish_git_prompt_char_stateseparator ""
 
-          set -g __fish_git_prompt_color_branch cyan --bold
+          set -g __fish_git_prompt_color_branch cyan
           set -g __fish_git_prompt_color_prefix brblack
           set -g __fish_git_prompt_color_suffix brblack
 

@@ -37,7 +37,7 @@ rec {
 
     brblack = "363636";
     brred = "ff96b4";
-    brgreen = "89ff6e";
+    brgreen = "a6ff80";
     bryellow = "fff982";
     brblue = "89dceb";
     brmagenta = "ffbaec";

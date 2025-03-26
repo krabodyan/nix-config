@@ -36,11 +36,11 @@
     "constant.builtin" = red;
     "constant.numeric" = red;
     "constant.character" = teal;
-    "constant.character.escape" = teal;
+    "constant.character.escape" = brred;
 
-    "string" = brcyan;
+    "string" = brblue;
     "string.regexp" = brmagenta;
-    "string.special" = blue;
+    "string.special" = brmagenta;
     "string.special.symbol" = red;
     "string.special.path" = brmagenta;
 
