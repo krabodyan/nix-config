@@ -29,7 +29,7 @@ rec {
 
     black = surface1;
     red = "ef8993";
-    green = "89ff6e";
+    green = "9eff75";
     yellow = "fff982";
     blue = "80beed";
     magenta = "f595db";
@@ -37,7 +37,7 @@ rec {
 
     brblack = "363636";
     brred = "ff96b4";
-    brgreen = "a6ff80";
+    brgreen = "bdffa1";
     bryellow = "fff982";
     brblue = "89dceb";
     brmagenta = "ffbaec";

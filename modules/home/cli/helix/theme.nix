@@ -1,19 +1,19 @@
 {colors}: {
   paradise = with colors.hex; {
     "diagnostic.error" = {
-      underline.style = "line";
+      underline.style = "curl";
       underline.color = red;
     };
     "diagnostic.warning" = {
-      underline.style = "line";
+      underline.style = "curl";
       underline.color = yellow;
     };
     "diagnostic.info" = {
-      underline.style = "line";
+      underline.style = "curl";
       underline.color = yellow;
     };
     "diagnostic.hint" = {
-      underline.style = "line";
+      underline.style = "curl";
       underline.color = yellow;
     };
     "diagnostic.unnecessary" = {
@@ -24,7 +24,7 @@
     "error" = red;
     "warning" = yellow;
     "info" = yellow;
-    "hint" = yellow;
+    "hint" = overlay1;
 
     "type" = fg;
 
