@@ -11,15 +11,10 @@ with colors; let
   border = "0x${bg-dark}";
   timeout = "5000";
   windows = [
-    "Виберіть файли"
-    "Відкрити файли"
-    "Зберегти відео"
-    "Вивантаження файлу"
     "File Upload"
-    "Відкрити документ"
-    "Зберегти файл"
     "Open File"
-    "Зберегти зображення"
+    "Open Document"
+    "Choose Files"
   ];
   picker-rules =
     builtins.concatStringsSep "\n"
