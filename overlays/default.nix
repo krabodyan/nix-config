@@ -1,5 +1,5 @@
 {inputs, ...}: {
   nixpkgs.overlays = [
-    # inputs.nixpkgs-wayland.overlay
+    inputs.nixpkgs-wayland.overlay
   ];
 }
