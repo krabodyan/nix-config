@@ -24,7 +24,7 @@
     "error" = red;
     "warning" = yellow;
     "info" = yellow;
-    "hint" = overlay1;
+    "hint" = green;
 
     "type" = fg;
 
@@ -153,7 +153,7 @@
 
     "ui.virtual" = overlay0;
     "ui.virtual.ruler" = {bg = bg-bright;};
-    "ui.virtual.indent-guide" = surface1;
+    "ui.virtual.indent-guide" = bg-bright;
     "ui.virtual.inlay-hint" = fg-dark;
     "ui.virtual.jump-label" = {
       bg = surface2;
