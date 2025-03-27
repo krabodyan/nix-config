@@ -101,7 +101,7 @@ in {
           bright7 = fg-bright;
           dim0 = surface2;
           dim1 = "b3676e";
-          dim2 = "448037";
+          dim2 = brgreen;
           dim3 = "ccc668";
           dim4 = "6ea4cc";
           dim5 = "cc7cb6";
