@@ -1,4 +1,4 @@
-file_watch_support = false
+file_watch_support = true
 
 # SVELTE --------------------------
 [[language]]
@@ -58,14 +58,16 @@ name = "rust"
 lru.capacity = 256
 check.command = "clippy"
 cargo.buildScripts.enable = false
+check.invocationStrategy = "once"
 semanticHighlighting.nonStandardTokens = false
-diagnostics.disabled = ["proc-macro-disabled"] # "macro-error", "unresolved-proc-macro"
+diagnostics.disabled = ["proc-macro-disabled"]
 procMacro.ignored.tauri_macros = [ "command", "generate_handler" ]
+procMacro.ignored.tokio_macros = [ "main" ]
 cache.warmup = false
-checkOnSave = false
+checkOnSave = true
 completion.autoAwait.enable = false
 completion.autoIter.enable = false
-completion.autoimport.enable = false
+completion.autoimport.enable = true
 completion.hideDeprecated = true
 completion.postfix.enable = false
 inlayHints.closingBraceHints.minLines = 5
