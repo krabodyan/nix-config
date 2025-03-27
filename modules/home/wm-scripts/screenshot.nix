@@ -10,7 +10,7 @@
     -a swaynotify \
     -h string:x-canonical-private-synchronous:swaynotify \
   '';
-  slurp = "${pkgs.slurp}/bin/slurp -b ${colors.bg}d9 -c ${colors.select}";
+  slurp = "${pkgs.slurp}/bin/slurp -b ${colors.bg}66 -c ${colors.select}";
   copy = "${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
   swayimg = "${pkgs.swayimg}/bin/swayimg --config info.show=no";
 in
