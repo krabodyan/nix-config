@@ -46,6 +46,8 @@ in {
           "media.webspeech.synth.enabled" = false;
           "privacy.webrtc.legacyGlobalIndicator" = false;
           "ui.key.menuAccessKeyFocuses" = false;
+          "ui.key.accelKey" = 17; # 17 = ctrl, 18 = alt
+          "ui.key.menuAccessKey" = 17;
           "extensions.pocket.enabled" = false;
           "browser.topsites.contile.enabled" = false;
           "browser.search.suggest.enabled" = false;
