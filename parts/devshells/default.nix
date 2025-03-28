@@ -8,6 +8,7 @@
     devShells.rust = pkgs.mkShell {
       name = "rust";
       meta.description = "Light DevShell for Rust";
+      LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
       DEV_SHELL_NAME = "rust";
       RUST_BACKTRACE = 1;
 
@@ -20,6 +21,7 @@
 
       buildInputs = with pkgs; [
         sqlite.dev
+        llvmPackages.clang
         libudev-zero
         (
           rust-pkgs.rust-bin.nightly.latest.default.override
