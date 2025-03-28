@@ -20,7 +20,22 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [gh lazygit];
+    
     programs.fish.shellAliases.gs = "git status -sb";
+    
+    xdg.configFile."lazygit/config.yml".text = ''
+      gui:
+        border: single
+        theme:
+          activeBorderColor:
+            - green
+          inactiveBorderColor:
+            - black
+          selectedLineBgColor:
+            - black
+    '';
+    
+    
     programs.git = {
       enable = true;
       inherit (cfg) userName userEmail;
@@ -36,6 +51,7 @@ in {
         advice = {
           skippedCherryPicks = false;
           mergeConflict = false;
+          detachedHead = false;
         };
         commit.template = builtins.toString (pkgs.writeText "template.txt" ''
           # <type>[optional scope][!]: <description>

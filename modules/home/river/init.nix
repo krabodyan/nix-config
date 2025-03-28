@@ -139,6 +139,5 @@ in
     pidof dbus-daemon || {
       dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork &
     }
-    systemctl --user is-active wireplumber.service || systemctl --user restart wireplumber.service
   ''
   + (lib.optionalString (extraConfig != null) extraConfig)
