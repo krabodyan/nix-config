@@ -164,11 +164,9 @@
 
     "ui.cursor" = {
       fg = bg;
-      bg = overlay2;
     };
     "ui.cursor.primary" = {
       fg = bg;
-      bg = mode_normal;
     };
     # matching bracket
     "ui.cursor.match" = {
@@ -190,15 +188,15 @@
 
     "ui.cursor.normal" = {
       fg = bg;
-      bg = overlay2;
+      bg = overlay1;
     };
     "ui.cursor.insert" = {
       fg = bg;
-      bg = overlay2;
+      bg = overlay1;
     };
     "ui.cursor.select" = {
       fg = bg;
-      bg = overlay2;
+      bg = overlay1;
     };
 
     "ui.cursorline.primary" = {bg = bg-bright;};
