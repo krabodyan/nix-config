@@ -5,6 +5,8 @@
   ...
 }: {
   boot = {
+    initrd.systemd.enable = true;
+    initrd.systemd.dbus.enable = true;
     kernel.sysctl = {
       "kernel.printk" = 2;
       "kernel.nmi_watchdog" = 0;
@@ -28,7 +30,7 @@
 
     kernelParams = ["nohibernate" "rootfstype=btrfs" "raid=noautodetect"];
 
-    kernelPackages = pkgs.linuxPackages_zen;
+    # kernelPackages = pkgs.linuxPackages;
 
     extraModprobeConfig = ''
       options i915 enable_guc=3
