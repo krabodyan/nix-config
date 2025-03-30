@@ -26,7 +26,8 @@ in {
         '';
       };
       nameservers = ["8.8.8.8" "8.8.4.4" "1.1.1.1"];
-      firewall.enable = false;
+      firewall.enable = true;
+      useDHCP = true;
       hostName = cfg.hostname;
     };
   };
