@@ -21,8 +21,8 @@ in {
         true = "0;31";
         numbers = "0;31";
         strings = "0;34";
-        arrays = "1;30";
-        objects = "1;30";
+        arrays = "2;37";
+        objects = "2;37";
         keys = "0;37";
       };
     in {

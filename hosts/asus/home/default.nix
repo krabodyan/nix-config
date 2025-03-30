@@ -14,6 +14,7 @@
     bat.enable = true;
     helix.enable = true;
     eza.enable = true;
+    jq.enable = true;
     git = {
       enable = true;
       userName = "krabodyan";
