@@ -20,9 +20,6 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [gh lazygit];
-    
-    programs.fish.shellAliases.gs = "git status -sb";
-    
     xdg.configFile."lazygit/config.yml".text = ''
       gui:
         border: single
@@ -34,14 +31,14 @@ in {
           selectedLineBgColor:
             - black
     '';
-    
-    
+
     programs.git = {
       enable = true;
       inherit (cfg) userName userEmail;
       signing.format = "ssh";
       aliases = {
         cm = "commit -m";
+        s = "status -sb";
         st = "status";
         graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) - %ar%C(reset)'";
       };
