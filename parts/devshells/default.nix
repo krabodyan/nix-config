@@ -7,7 +7,6 @@
   in {
     devShells.rust = pkgs.mkShell {
       name = "rust";
-      meta.description = "Light DevShell for Rust";
       LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
       DEV_SHELL_NAME = "rust";
       RUST_BACKTRACE = 1;
@@ -34,7 +33,7 @@
     };
     devShells.tauri = pkgs.mkShell {
       name = "tauri";
-      meta.description = "DevShell for Rust with Tauri";
+      LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
       DEV_SHELL_NAME = "tauri";
       RUST_BACKTRACE = 1;
       GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
@@ -43,6 +42,7 @@
         cargo-watch
         cargo-expand
         cargo-tauri
+        llvmPackages.clang
         pnpm
         tailwindcss
         gobject-introspection
