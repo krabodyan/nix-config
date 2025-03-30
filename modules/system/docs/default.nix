@@ -13,8 +13,8 @@ in {
   };
   config = mkIf cfg.enable {
     documentation = {
-      enable = true;
-      man.enable = true;
+      enable = lib.mkForce false;
+      man.enable = lib.mkForce false;
       dev.enable = lib.mkForce false;
       doc.enable = lib.mkForce false;
       info.enable = lib.mkForce false;
