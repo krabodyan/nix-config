@@ -13,7 +13,6 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    programs.fish.shellAliases.tm = "${pkgs.tmux}/bin/tmux -L $(uuidgen)";
     home.packages = [pkgs.tmux];
     xdg.configFile."tmux/tmux.conf".text =
       # bash

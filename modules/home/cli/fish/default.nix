@@ -30,10 +30,13 @@ in {
     programs.fish = {
       enable = true;
 
-      shellAliases = {
-        ino = "nix develop $FLAKE#ino";
-        rust = "nix develop $FLAKE#rust";
-        tauri = "nix develop $FLAKE#tauri";
+      shellAliases = let
+        tm = "${pkgs.tmux}/bin/tmux -L $(uuidgen)";
+      in {
+        inherit tm;
+        ino = "nix develop $FLAKE#ino --command ${tm}";
+        rust = "nix develop $FLAKE#rust --command ${tm}";
+        tauri = "nix develop $FLAKE#tauri --command ${tm}";
       };
 
       plugins = let
