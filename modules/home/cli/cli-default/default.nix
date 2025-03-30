@@ -19,7 +19,6 @@ in {
   config = mkIf cfg.enable {
     home.packages = with pkgs;
       [
-        jq
         pv
         xdg-utils
 
