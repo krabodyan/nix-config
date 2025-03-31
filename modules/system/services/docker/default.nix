@@ -10,8 +10,9 @@ in {
     module.services.docker = {
       enable = mkEnableOption "enable docker";
       storageDriver = mkOption {
-        type = lib.types.str;
+        type = lib.types.nullOr (lib.types.str);
         example = "btrfs";
+        default = null;
       };
     };
   };
