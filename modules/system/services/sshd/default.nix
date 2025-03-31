@@ -19,7 +19,7 @@ in {
   config = mkIf cfg.enable {
     services.openssh = {
       enable = true;
-      settings.AllowUsers = username;
+      settings.AllowUsers = [username];
     };
   };
 }
