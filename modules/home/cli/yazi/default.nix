@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  inputs,
   mkAssociations,
   ...
 }: let
@@ -26,17 +27,9 @@ in {
     xdg.configFile = {
       "yazi/yazi.toml".source = ./yazi.toml;
       "yazi/keymap.toml".source = ./keymap.toml;
-
-      "yazi/plugins/ouch.yazi/main.lua".source = builtins.fetchurl {
-        url = "https://raw.githubusercontent.com/ndtoan96/ouch.yazi/refs/heads/main/main.lua";
-        sha256 = "sha256:12s7ybq7sl7fv3pnni3i0m4jw5gw6sabmwgflkggyd0p8m6kw62f";
-      };
-
-      "yazi/plugins/compress.yazi/main.lua".source = builtins.fetchurl {
-        url = "https://raw.githubusercontent.com/KKV9/compress.yazi/refs/heads/main/init.lua";
-        sha256 = "sha256:0yhg6nvp31k4r6wb8lxqs78cjy34y18a2rhsa9na9r67v5fygw3s";
-      };
-
+      "yazi/plugins/ouch.yazi/main.lua".source = "${inputs.yazi-plugin-ouch}/main.lua";
+      "yazi/plugins/compress.yazi/main.lua".source = "${inputs.yazi-plugin-compress}/init.lua";
+      
       "yazi/theme.toml".text = let
         border = "lightmagenta";
       in ''

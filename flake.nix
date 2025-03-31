@@ -28,6 +28,15 @@
     };
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
+
+    yazi-plugin-compress = {
+      url = "github:KKV9/compress.yazi";
+      flake = false;
+    };
+    yazi-plugin-ouch = {
+      url = "github:ndtoan96/ouch.yazi";
+      flake = false;
+    };
   };
 
   outputs = {

@@ -325,7 +325,9 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-wayland": "nixpkgs-wayland",
         "rust-overlay": "rust-overlay_2",
-        "treefmt-nix": "treefmt-nix"
+        "treefmt-nix": "treefmt-nix",
+        "yazi-plugin-compress": "yazi-plugin-compress",
+        "yazi-plugin-ouch": "yazi-plugin-ouch"
       }
     },
     "rust-overlay": {
@@ -413,6 +415,38 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "yazi-plugin-compress": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1723254185,
+        "narHash": "sha256-Yf5R3H8t6cJBMan8FSpK3BDSG5UnGlypKSMOi0ZFqzE=",
+        "owner": "KKV9",
+        "repo": "compress.yazi",
+        "rev": "60b24af23d1050f1700953a367dd4a2990ee51aa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "KKV9",
+        "repo": "compress.yazi",
+        "type": "github"
+      }
+    },
+    "yazi-plugin-ouch": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1743268959,
+        "narHash": "sha256-7X8uAiJ8vBXYBXOgyKhVVikOnTBGrdCcXOJemjQNolI=",
+        "owner": "ndtoan96",
+        "repo": "ouch.yazi",
+        "rev": "558188d2479d73cafb7ad8fb1bee12b2b59fb607",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ndtoan96",
+        "repo": "ouch.yazi",
         "type": "github"
       }
     }
