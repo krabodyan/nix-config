@@ -30,6 +30,17 @@ in {
     programs.fish = {
       enable = true;
 
+      shellAbbrs = {
+        gs = "git status -sb";
+        ds = "docker stack";
+        dn = "docker node";
+        dc = "docker container";
+        di = "docker image";
+        dr = "docker run --rm -it";
+        dss = "docker stack services";
+        dsd = "docker stack deploy -c docker-compose.yml";
+      };
+
       shellAliases = let
         tm = "${pkgs.tmux}/bin/tmux -L $(uuidgen)";
       in {

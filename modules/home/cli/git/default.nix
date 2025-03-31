@@ -38,7 +38,6 @@ in {
       signing.format = "ssh";
       aliases = {
         cm = "commit -m";
-        s = "status -sb";
         st = "status";
         graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) - %ar%C(reset)'";
       };
