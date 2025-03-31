@@ -1,5 +1,7 @@
-{inputs, ...}: {
-  nixpkgs.overlays = [
-    inputs.nixpkgs-wayland.overlay
-  ];
+{
+  inputs,
+  overlays,
+  ...
+}: {
+  nixpkgs.overlays = map (overlay: inputs.${overlay}.overlay) overlays;
 }

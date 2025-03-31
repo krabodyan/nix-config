@@ -9,6 +9,7 @@
     system,
     hostname,
     username,
+    overlays ? []
   }:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
@@ -23,6 +24,7 @@
           system
           hostDir
           colors
+          overlays
           systemFont
           ;
       };
@@ -41,6 +43,7 @@
     stateVersion,
     system,
     username,
+    overlays ? [],
     ...
   }:
     inputs.home-manager.lib.homeManagerConfiguration {
@@ -64,6 +67,7 @@
           hostDir
           colors
           systemFont
+          overlays
           ;
       };
       modules = [
