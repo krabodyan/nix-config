@@ -37,6 +37,7 @@
         enable = true;
         enableDaemon = false;
       };
+      sshd.enable = true;
       systemd-config.enable = true;
       earlyoom.enable = true;
       dbus-broker.enable = true;
