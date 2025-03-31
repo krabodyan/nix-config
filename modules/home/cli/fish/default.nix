@@ -31,6 +31,8 @@ in {
       enable = true;
 
       shellAbbrs = {
+        ns = "nix-shell -p";
+        nr = "nix run nixpkgs#";
         gs = "git status -sb";
         ds = "docker stack";
         dn = "docker node";
