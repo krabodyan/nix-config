@@ -17,7 +17,7 @@ in {
   config = mkIf cfg.enable {
     xdg.configFile."mpv/mpv.conf".text = with colors.hex; ''
       gpu-context=wayland
-      vo=dmabuf-wayland
+      vo=gpu
       volume=50
       keep-open=yes
       fullscreen=no
