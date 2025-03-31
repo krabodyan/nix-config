@@ -28,13 +28,7 @@
       "net.ipv4.icmp_echo_ignore_all" = 1;
     };
 
-    kernelParams = ["nohibernate" "rootfstype=btrfs" "raid=noautodetect"];
-
-    # kernelPackages = pkgs.linuxPackages;
-
-    extraModprobeConfig = ''
-      options i915 enable_guc=3
-    '';
+    kernelParams = ["nohibernate" "rootfstype=ext4" "raid=noautodetect"];
 
     kernelModules = [
       # "kvm-intel"
@@ -44,10 +38,11 @@
       "i915"
     ];
 
-    initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usbhid" "r8169" "mt7921e"];
+    initrd.availableKernelModules = ["xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" "rtsx_pci_sdmmc" ];
     initrd.verbose = false;
 
     blacklistedKernelModules = [
+      "btrfs"
       "appletalk"
       "decnet"
       "ax25"
