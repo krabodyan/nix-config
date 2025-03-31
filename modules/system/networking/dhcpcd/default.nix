@@ -26,7 +26,11 @@ in {
         '';
       };
       nameservers = ["8.8.8.8" "8.8.4.4" "1.1.1.1"];
-      firewall.enable = false;
+      firewall = {
+        enable = true;
+        allowedTCPPorts = [2376 2377 7946];
+        allowedUDPPorts = [7946 4789];
+      };
       useDHCP = true;
       hostName = cfg.hostname;
     };
