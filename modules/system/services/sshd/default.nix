@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  username,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
@@ -16,6 +17,9 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    services.sshd.enable = true;
+    services.openssh = {
+      enable = true;
+      settings.AllowUsers = username;
+    };
   };
 }
