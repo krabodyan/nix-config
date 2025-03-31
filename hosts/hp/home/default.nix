@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   module = {
     # ------------- cli
     home-manager.enable = true;
@@ -28,7 +28,6 @@
       loginShell = {
         enable = true;
         wm = "river";
-        withIGPU = true;
       };
     };
 
@@ -64,7 +63,6 @@
       enable = true;
       background = "~/flake/assets/background.jpg";
       extraConfig = ''
-        riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events disabled
         riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" scroll-factor 0.2
         riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" pointer-accel 0.3
         riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" accel-profile flat
