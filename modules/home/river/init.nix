@@ -42,6 +42,7 @@ in
     riverctl map -layout 0 normal Super E       spawn "foot"
     riverctl map -layout 0 normal Super+Shift E spawn "foot -a floaterm"
     riverctl map -layout 0 normal Super R       spawn "foot -a floaterm pulsemixer"
+
     riverctl map -layout 0 normal Shift F1      spawn "pidof wl-gammactl && pkill wl-gammactl || wl-gammactl -c 1.3"
     riverctl map -layout 0 normal Shift F2      spawn "pidof wl-gammactl && pkill wl-gammactl || wl-gammactl -g 1.1 -c 1.8"
     riverctl map -layout 0 normal Shift F3      spawn "pidof wl-gammactl && pkill wl-gammactl || wl-gammactl -g 1.3 -c 2"
@@ -126,7 +127,8 @@ in
     riverctl rule-add -app-id "zoom" -title "zoom" float
     riverctl rule-add -app-id "ONLYOFFICE" tags 16
 
-    riverctl rule-add -app-id 'floaterm' float
+    riverctl rule-add -app-id "floaterm" float
+
     riverctl rule-add -app-id "xdg-desktop-portal-gtk" float
     riverctl rule-add -app-id "xdg-desktop-portal-gtk" dimensions 1000 800
     riverctl rule-add -title "Медіапереглядач" no-fullscreen

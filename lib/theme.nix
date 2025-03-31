@@ -30,7 +30,7 @@ rec {
     black = surface1;
     red = "ef8993";
     green = "9eff75";
-    yellow = "f9d481";
+    yellow = "f9e381";
     blue = "80beed";
     magenta = "f595db";
     cyan = "7fe8e6";
