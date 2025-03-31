@@ -25,7 +25,7 @@ in {
           nohook iwd
         '';
       };
-      nameservers = ["8.8.8.8" "8.8.4.4" "1.1.1.1"];
+
       firewall = {
         enable = true;
         allowedTCPPorts = [2376 2377 7946];
