@@ -30,7 +30,7 @@ rec {
     black = surface1;
     red = "ef8993";
     green = "9eff75";
-    yellow = "fff982";
+    yellow = "f9d481";
     blue = "80beed";
     magenta = "f595db";
     cyan = "7fe8e6";
@@ -43,7 +43,7 @@ rec {
     brmagenta = "ffbaec";
     brcyan = "86f5f3";
 
-    orange = "fe640b";
+    orange = "f5ca69";
     peach = "f2cdcd";
     rosewater = "f5e0dc";
     teal = "94e2d5";

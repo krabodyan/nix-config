@@ -22,7 +22,7 @@ in {
         main = let
           features = [
             # "ss12"
-            "ss14"
+            # "ss14"
             # "VSAH=3"
             # "VSAG=3"
             # "VSAB=11"
@@ -81,6 +81,8 @@ in {
         };
 
         colors = with colors; {
+          selection-background = surface2;
+          selection-foreground = fg;
           background = bg;
           foreground = fg;
           regular0 = black;
