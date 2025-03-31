@@ -52,10 +52,10 @@
       enable = true;
       touchpadcommands = {
         toggleup = ''
-          riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events enabled
+          riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" events enabled
         '';
         toggledown = ''
-          riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events disabled
+          riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" events disabled
         '';
       };
     };
