@@ -1,9 +1,7 @@
-{pkgs, hostname, ...}: {
+{hostname, ...}: {
   module = {
-    bluetooth.enable = true;
     bootloader.enable = true;
     tmpfs.enable = true;
-    ssd-btrfs.enable = true;
     sound.enable = true;
     nix-config.enable = true;
     time.enable = true;
@@ -12,16 +10,11 @@
     users.enable = true;
     udev-rules = {
       enable = true;
-      platformio = true;
     };
     locale.enable = true;
 
     packages = {
       enable = true;
-      steam = true;
-      extraPackages = with pkgs; [
-        imagemagick
-      ];
       fonts = {
         enable = true;
         serif = "Roboto Medium";
@@ -49,7 +42,6 @@
       dbus-broker.enable = true;
       docker = {
         enable = true;
-        storageDriver = "btrfs";
       };
     };
 
@@ -60,18 +52,13 @@
       };
       iwd = {
         enable = true;
-        enableDaemon = false;
+        enableDaemon = true;
       };
     };
 
     graphics = {
       minimal.enable = true;
       intel.enable = true;
-      nvidia-hybrid = {
-        enable = true;
-        intelBusId = "PCI:0:2:0";
-        nvidiaBusId = "PCI:1:0:0";
-      };
     };
   };
 }
