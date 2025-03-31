@@ -33,7 +33,10 @@ in {
       shellAbbrs = {
         ns = "nix-shell -p";
         nr = "nix run nixpkgs#";
+        
         gs = "git status -sb";
+        gg = "git graph -10";
+
         ds = "docker stack";
         dn = "docker node";
         dc = "docker container";
