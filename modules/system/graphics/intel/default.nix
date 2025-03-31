@@ -24,7 +24,7 @@ in {
       intel-gpu-tools
     ];
     services.udev.extraRules = ''
-      SUBSYSTEM=="drm", KERNEL=="card*", ATTRS{vendor}=="0x8086", SYMLINK+="dri/igpu"
+      SUBSYSTEM=="drm", KERNEL=="card*", ATTRS{device}=="0x9a68", SYMLINK+="dri/igpu"
     '';
   };
 }
