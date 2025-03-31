@@ -84,7 +84,7 @@ let
     i = ["collapse_selection" "insert_mode"];
     "S-j" = "join_selections";
     "A-j" = "join_selections_space";
-    "_" = "merge_selections";
+    "S-m" = "merge_selections";
     "S-c" = "copy_selection_on_next_line";
     "A-c" = "copy_selection_on_prev_line";
   };
