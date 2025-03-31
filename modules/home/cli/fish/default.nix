@@ -127,8 +127,8 @@ in {
               bind -M $mode alt-H prevd repaint-mode
               bind -M $mode alt-L nextd repaint-mode
 
-              bind -M $mode alt-i forward-word
-              bind -M $mode alt-o backward-word
+              bind -M $mode alt-i forward-bigword
+              bind -M $mode alt-o backward-bigword
 
               bind -M $mode alt-u backward-kill-line
             end
