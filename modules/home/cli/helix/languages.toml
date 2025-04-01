@@ -72,6 +72,7 @@ semanticHighlighting.nonStandardTokens = false
 diagnostics.disabled = ["proc-macro-disabled"]
 procMacro.ignored.tauri_macros = [ "command", "generate_handler" ]
 procMacro.ignored.tokio_macros = [ "main" ]
+procMacro.ignored.embassy_executor_macros = [ "main" ]
 cache.warmup = false
 checkOnSave = true
 completion.autoAwait.enable = false
