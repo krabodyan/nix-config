@@ -16,11 +16,8 @@ in {
     xdg.configFile."clipse/config.json".text = ''
       {
           "allowDuplicates": false,
-          "historyFile": "/tmp/clipse/clipboard_history.json",
           "maxHistory": 10,
-          "logFile": "/tmp/clipse/clipse.log",
-          "themeFile": "custom_theme.json",
-          "tempDir": "/tmp/clipse/temp"
+          "themeFile": "custom_theme.json"
       }
     '';
     xdg.configFile."clipse/custom_theme.json".text = with colors.hex; ''
