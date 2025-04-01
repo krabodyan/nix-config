@@ -31,6 +31,30 @@
         )
       ];
     };
+    devShells.rasp = pkgs.mkShell {
+      name = "rasp";
+      DEV_SHELL_NAME = "rasp";
+      RUST_BACKTRACE = 1;
+
+      nativeBuildInputs = with pkgs; [
+        cargo-expand
+        pkg-config
+      ];
+
+      buildInputs = with pkgs; [
+        probe-rs-tools
+        probe-rs        
+        picotool
+        libudev-zero
+        (
+          rust-pkgs.rust-bin.nightly.latest.default.override
+          {
+            targets = ["thumbv6m-none-eabi"];
+            extensions = ["rust-src" "rust-analyzer"];
+          }
+        )
+      ];
+    };
     devShells.tauri = pkgs.mkShell {
       name = "tauri";
       LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";

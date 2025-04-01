@@ -52,6 +52,7 @@ in {
         inherit tm;
         ino = "nix develop $FLAKE#ino --command ${tm}";
         rust = "nix develop $FLAKE#rust --command ${tm}";
+        rasp = "nix develop $FLAKE#rasp --command ${tm}";
         tauri = "nix develop $FLAKE#tauri --command ${tm}";
       };
 
@@ -130,8 +131,8 @@ in {
               bind -M $mode alt-H prevd repaint-mode
               bind -M $mode alt-L nextd repaint-mode
 
-              bind -M $mode alt-i forward-bigword
-              bind -M $mode alt-o backward-bigword
+              bind -M $mode alt-o forward-bigword
+              bind -M $mode alt-i backward-bigword
 
               bind -M $mode alt-u backward-kill-line
             end
@@ -313,7 +314,7 @@ in {
         build-devshell =
           # fish
           ''
-            for name in rust tauri ino
+            for name in rust tauri ino rasp
               nix build $FLAKE#devShells.x86_64-linux.$name -o ~/.gc-root-$name
               echo $name builded
             end
