@@ -29,7 +29,7 @@
 
     security = {
       pam.enable = true;
-      doas.enable = true;
+      sudo.enable = true;
     };
 
     services = {
