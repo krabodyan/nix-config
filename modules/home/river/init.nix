@@ -109,7 +109,7 @@ in
     riverctl map -layout 0 normal None  XF86MonBrightnessUp   spawn '__brightness up'
     riverctl map -layout 0 normal None  XF86MonBrightnessDown spawn '__brightness down'
     riverctl map -layout 0 normal Super X                     spawn '__brightness toggle'
-    riverctl map -layout 0 normal Super V                     spawn 'notify-send --expire-time 2000 "$(date +"%d %B %H:%M")"'
+    riverctl map -layout 0 normal Super C                     spawn 'notify-send --expire-time 2000 "$(date +"%d %B %H:%M")"'
     riverctl map -layout 0 normal None        Print spawn "__screenshot"
     riverctl map -layout 0 normal None        Pause spawn "__screenshot full";
     riverctl map -layout 0 normal Super       Print spawn "__screenshot swayimg";

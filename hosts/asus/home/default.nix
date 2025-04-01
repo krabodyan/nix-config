@@ -88,7 +88,7 @@
         riverctl input "pointer-1133-50504-Logitech_USB_Receiver_Mouse" accel-profile flat
         riverctl input "pointer-1133-50504-Logitech_USB_Receiver_Mouse" pointer-accel 0
 
-        riverctl map -layout 0 normal Super C       spawn "foot -w 850x800 -a floaterm clipse"
+        riverctl map -layout 0 normal Super V       spawn "foot -w 850x800 -a floaterm clipse"
         pidof clipse || clipse -listen &
       '';
     };
