@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   config,
   ...
 }: let
@@ -22,25 +21,15 @@ in {
         "SETENV"
       ];
       extraConfig = ''
-        Defaults pwfeedback
+        Defaults env_reset,pwfeedback
       '';
       extraRules = [
         {
           groups = ["wheel"];
-          commands = [
-            {
-              command = lib.getExe' pkgs.intel-gpu-tools "intel_gpu_top";
-              options = ["NOPASSWD"];
-            }
-            {
-              command = lib.getExe' pkgs.iftop;
-              options = ["NOPASSWD"];
-            }
-            {
-              command = lib.getExe' pkgs.iotop;
-              options = ["NOPASSWD"];
-            }
-          ];
+          commands = map (cmd: {
+            command = "/run/current-system/sw/bin/${cmd}";
+            options = ["NOPASSWD"];
+          }) ["iotop" "iftop" "intel_gpu_top"];
         }
       ];
     };
