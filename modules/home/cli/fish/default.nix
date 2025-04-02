@@ -72,7 +72,7 @@ in {
         // lib.genAttrs ["ino" "rust" "rasp" "tauri"] (
           name: "nix develop $FLAKE#${name} --command ${tm}"
         );
-      
+
       plugins = 
       [
         {
