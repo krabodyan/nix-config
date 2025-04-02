@@ -95,6 +95,7 @@ in {
           side-by-side = true;
           navigate = true;
           relative-paths = true;
+          generate-completion = "fish";
           dark = true;
           tabs = 4;
 
@@ -123,6 +124,10 @@ in {
           merge-conflict-ours-diff-header-decoration-style = "green";
           merge-conflict-theirs-diff-header-style = "red";
           merge-conflict-theirs-diff-header-decoration-style = "red";
+
+          grep-file-style = "white dim";
+          grep-line-number-style = "white dim";
+          grep-match-word-style = "blue";
         };
 
         advice = {
