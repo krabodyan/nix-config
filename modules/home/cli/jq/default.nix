@@ -13,9 +13,9 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    home.packages = [pkgs.jq];
-    home.sessionVariables = let
-      c = {
+    programs.jq = {
+      enable = true;
+      colors = {
         null = "0;31";
         false = "0;31";
         true = "0;31";
@@ -23,10 +23,8 @@ in {
         strings = "0;34";
         arrays = "2;37";
         objects = "2;37";
-        keys = "0;37";
+        objectKeys = "0;37";
       };
-    in {
-      JQ_COLORS = "${c.null}:${c.false}:${c.true}:${c.numbers}:${c.strings}:${c.arrays}:${c.objects}:${c.keys}";
     };
   };
 }
