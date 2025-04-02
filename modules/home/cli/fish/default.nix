@@ -1,8 +1,9 @@
 {
   lib,
-  config,
   pkgs,
+  config,
   colors,
+  inputs,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
@@ -30,51 +31,57 @@ in {
     programs.fish = {
       enable = true;
 
-      shellAbbrs = {
-        ns = "nix-shell -p";
-        nr = "nix run nixpkgs#";
-        
-        gs = "git status -sb";
-        gg = "git graph -10";
+      shellAbbrs = let
+        genDocker = builtins.mapAttrs (name: value: {
+          command = "docker";
+          expansion = value;
+        });
+      in
+        {
+          ns = "nix-shell -p";
+          nr = {
+            expansion = "nix run nixpkgs#%";
+            setCursor = true;
+          };
 
-        ds = "docker stack";
-        dn = "docker node";
-        dc = "docker container";
-        di = "docker image";
-        dr = "docker run --rm -it";
-        dss = "docker stack services";
-        dsd = "docker stack deploy -c docker-compose.yml";
-      };
+          gs = "git status -sb";
+          gg = "git graph -10";
+
+          d = "docker";
+        }
+        // genDocker {
+          s = "stack";
+          sp = "stack ps";
+          ss = "stack services";
+          sd = "stack deploy -c docker-compose-yml";
+          sv = "service";
+          i = "image";
+          c = "container";
+          n = "node";
+          nl = "node ls";
+          np = "node ps";
+          r = "run --run -it";
+        };
 
       shellAliases = let
         tm = "${pkgs.tmux}/bin/tmux -L $(uuidgen)";
-      in {
-        inherit tm;
-        ino = "nix develop $FLAKE#ino --command ${tm}";
-        rust = "nix develop $FLAKE#rust --command ${tm}";
-        rasp = "nix develop $FLAKE#rasp --command ${tm}";
-        tauri = "nix develop $FLAKE#tauri --command ${tm}";
-      };
-
-      plugins = let
-        done = pkgs.fishPlugins.buildFishPlugin rec {
-          pname = "fish-done-osc99";
-          version = "1.0";
-          src = pkgs.fetchFromGitHub {
-            owner = "krabodyan";
-            repo = pname;
-            rev = "00493a676621befaeafeabae6d0c8aacaf06f32a";
-            sha256 = "sha256-J0MtyqGKkIv/e0K/f/ZGHOgfofXgamvQ+qCpg4PFaE8=";
-          };
-        };
-      in [
+      in
+        {
+          inherit tm;
+        }
+        // lib.genAttrs ["ino" "rust" "rasp" "tauri"] (
+          name: "nix develop $FLAKE#${name} --command ${tm}"
+        );
+      
+      plugins = 
+      [
         {
           name = "autopair";
           inherit (pkgs.fishPlugins.autopair) src;
         }
         {
           name = "done";
-          inherit (done) src;
+          src = inputs.fish-done;
         }
         {
           name = "fzf";

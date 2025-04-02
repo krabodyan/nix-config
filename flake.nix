@@ -29,6 +29,10 @@
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
+    fish-done = {
+      url = "github:krabodyan/fish-done-osc99";
+      flake = false;
+    };
     yazi-plugin-compress = {
       url = "github:KKV9/compress.yazi";
       flake = false;

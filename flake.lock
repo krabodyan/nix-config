@@ -36,6 +36,22 @@
         "type": "github"
       }
     },
+    "fish-done": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1742326348,
+        "narHash": "sha256-J0MtyqGKkIv/e0K/f/ZGHOgfofXgamvQ+qCpg4PFaE8=",
+        "owner": "krabodyan",
+        "repo": "fish-done-osc99",
+        "rev": "00f19021f516813e085331fd59db57abe643c93c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "krabodyan",
+        "repo": "fish-done-osc99",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "locked": {
         "lastModified": 1717312683,
@@ -318,6 +334,7 @@
     "root": {
       "inputs": {
         "disko": "disko",
+        "fish-done": "fish-done",
         "flake-parts": "flake-parts",
         "helix": "helix",
         "home-manager": "home-manager",
