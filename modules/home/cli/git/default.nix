@@ -43,7 +43,7 @@ in {
         interactive.diffFilter = "delta --color-only";
         delta = {
           line-numbers = true;
-          side-by-side = true;
+          side-by-side = false;
           navigate = true;
           relative-paths = true;
           dark = true;
@@ -66,7 +66,7 @@ in {
 
           file-style = "omit";
           hunk-header-decoration-style = "white dim ol ul";
-          hunk-header-line-number-style = "white";
+          hunk-header-line-number-style = "blue";
           hunk-header-file-style = "blue";
           hunk-header-style = "file line-number syntax";
 
@@ -76,9 +76,9 @@ in {
           merge-conflict-theirs-diff-header-decoration-style = "red";
         };
         merge = {
+          ff = "only";
           conflictstyle = "zdiff3";
         };
-
         rerere = {
           enabled = true;
           autoUpdate = true;
