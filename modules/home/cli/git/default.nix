@@ -27,16 +27,19 @@ in {
       signing.format = "ssh";
 
       aliases = {
-        cm = "commit -m";
-        st = "status";
+        s = "status";
         graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) - %ar%C(reset)'";
       };
 
       extraConfig = {
         advice = {
+          diverging = false;
           skippedCherryPicks = false;
           mergeConflict = false;
           detachedHead = false;
+          addEmptyPathspec = false;
+          statusHints = false;
+          pushUpdateRejected = false;
         };
 
         core = {
@@ -66,7 +69,7 @@ in {
 
         rerere = {
           enabled = true;
-          autoUpdate = true;
+          autoUpdate = false;
         };
 
         pull = {

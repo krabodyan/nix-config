@@ -38,15 +38,30 @@ in {
         });
       in
         {
+          # ------- NIX -------
           ns = "nix-shell -p";
           nr = {
             expansion = "nix run nixpkgs#%";
             setCursor = true;
           };
 
-          gs = "git status -sb";
+          # ------- GIT -------
+          cm = {
+            command = "git";
+            expansion = "commit -m '%'";
+            setCursor = true;
+          };
+          cma = {
+            command = "git";
+            expansion = "commit --all -m '%'";
+            setCursor = true;
+          };
+          gs = "git status";
+          gr = "git restore --staged";
+          ga = "git add";
           gg = "git graph -10";
 
+          # ----- DOCKER -----
           d = "docker";
         }
         // genDocker {
@@ -73,7 +88,7 @@ in {
           name: "nix develop $FLAKE#${name} --command ${tm}"
         );
 
-      plugins = 
+      plugins =
       [
         {
           name = "autopair";
@@ -105,7 +120,7 @@ in {
         else null;
 
       interactiveShellInit = with colors; # fish
-      
+
         ''
           function nix-shell --description "Start an interactive shell based on a Nix expression"
               nix-your-shell fish nix-shell -- $argv
