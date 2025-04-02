@@ -1,5 +1,6 @@
 {
   insert-final-newline = true;
+  trim-trailing-whitespace = true;
   mouse = false;
   cursorline = true;
   color-modes = true;
