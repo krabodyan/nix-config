@@ -21,7 +21,6 @@ in {
 
         set -as terminal-features ",xterm*:RGB"
         set -as terminal-overrides ",xterm*:Tc"
-        set -g default-command ${pkgs.fish}/bin/fish
         set -g default-shell ${pkgs.fish}/bin/fish
 
         set -g prefix M-Space

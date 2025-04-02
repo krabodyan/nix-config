@@ -39,11 +39,11 @@
     "fish-done": {
       "flake": false,
       "locked": {
-        "lastModified": 1742326348,
-        "narHash": "sha256-J0MtyqGKkIv/e0K/f/ZGHOgfofXgamvQ+qCpg4PFaE8=",
+        "lastModified": 1743609250,
+        "narHash": "sha256-h+L741selF95Cn4AcAFScGz78UyUiyv1sj9fNMuka4o=",
         "owner": "krabodyan",
         "repo": "fish-done-osc99",
-        "rev": "00f19021f516813e085331fd59db57abe643c93c",
+        "rev": "16bdd2314eb8823186962f3f49250d91ba73a890",
         "type": "github"
       },
       "original": {
