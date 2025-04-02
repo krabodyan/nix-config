@@ -23,24 +23,76 @@ in {
     programs.git = {
       enable = true;
       inherit (cfg) userName userEmail;
+
       signing.format = "ssh";
+
       aliases = {
         cm = "commit -m";
         st = "status";
         graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) - %ar%C(reset)'";
       };
+
       extraConfig = {
-        init.defaultbranch = "master";
-        branch.sort = "-committerdate";
         advice = {
           skippedCherryPicks = false;
           mergeConflict = false;
           detachedHead = false;
         };
 
-        # delta
-        core.pager = "delta";
-        interactive.diffFilter = "delta --color-only";
+        core = {
+          pager = "delta";
+        };
+
+        init = {
+          defaultbranch = "master";
+        };
+
+        branch = {
+          sort = "-committerdate";
+        };
+
+        fetch = {
+          prune = true;
+        };
+
+        interactive = {
+          diffFilter = "delta --color-only";
+        };
+
+        merge = {
+          ff = "only";
+          conflictstyle = "zdiff3";
+        };
+
+        rerere = {
+          enabled = true;
+          autoUpdate = true;
+        };
+
+        pull = {
+          rebase = true;
+        };
+
+        rebase = {
+          autoStash = true;
+        };
+
+        stash = {
+          showIncludeUntracked = true;
+        };
+
+        push = {
+          autoSetupRemote = true;
+          default = "simple";
+        };
+
+        diff = {
+          algorithm = "histogram";
+          colorMoved = "default";
+        };
+
+        safe.directory = "*";
+
         delta = {
           line-numbers = true;
           side-by-side = false;
@@ -49,7 +101,7 @@ in {
           dark = true;
           tabs = 4;
 
-          map-styles = "bold purple => white strike dim \"#25171C\", bold cyan => yellow dim ul \"#12261E\", bold yellow => yellow dim ul \"#12261E\"";
+          map-styles = "bold purple => white strike dim \"#25171C\", bold cyan => yellow dim ul \"#12261E\", bold blue => yellow dim ul \"#12261E\"";
           whitespace-error-style = "auto yellow";
 
           minus-style = "syntax \"#25171C\"";
@@ -75,26 +127,7 @@ in {
           merge-conflict-theirs-diff-header-style = "red";
           merge-conflict-theirs-diff-header-decoration-style = "red";
         };
-        merge = {
-          ff = "only";
-          conflictstyle = "zdiff3";
-        };
-        rerere = {
-          enabled = true;
-          autoUpdate = true;
-        };
-        pull.rebase = true;
-        rebase.autoStash = true;
-        stash.showIncludeUntracked = true;
-        push = {
-          autoSetupRemote = true;
-          default = "simple";
-        };
-        diff = {
-          algorithm = "histogram";
-          colorMoved = "default";
-        };
-        safe.directory = "*";
+
         commit.template = builtins.toString (pkgs.writeText "template.txt" ''
           # <type>[optional scope][!]: <description>
           # chore docs style refactor perf test
@@ -114,20 +147,46 @@ in {
           # BREAKING CHANGE: description
         '');
       };
+
       ignores = [
         "*.bak"
+        ".cache/"
+        "tmp/"
+        "*.tmp"
+        "log/"
+        "*.swp"
+
         # c commons
         "__pycache__"
         "cmake-build-debug"
         "compile_commands.json"
         "vgcore.*"
         ".cache"
+        ".tags"
+        "tags"
+        "*~"
+        "*.o"
+        "*.so"
+        "*.cmake"
         "*.gc??"
+        "CMakeCache.txt"
+        "CMakeFiles/"
+        "cmake-build-debug/"
+        "compile_commands.json"
+        ".ccls*"
+        "*.out"
+
+        # node
         "node_modules"
+
         # locked files
         "*~"
-        # nix buid
+
+        # nix
         "result"
+        "result-*"
+        ".direnv/"
+
         # ide folders
         ".editorconfig"
         ".vscode"
@@ -151,6 +210,7 @@ in {
         "tar.xz"
       ];
     };
+
     xdg.configFile."lazygit/config.yml".text = ''
       gui:
         border: single
