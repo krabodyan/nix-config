@@ -61,8 +61,6 @@ in {
         set -s escape-time 0
         set -g renumber-windows on
 
-        # bind M switch-client -t '{marked}'
-
         bind n new-window -c "#{pane_current_path}"
         bind M-n new-window -c "#{pane_current_path}"
 
@@ -88,8 +86,6 @@ in {
         bind M-k select-pane -U
         bind M-l select-pane -R
 
-        # bind -n M-y swap-pane -t -1
-        # bind -n M-u swap-pane -t +1
         bind -n M-n next-layout
         bind -n M-b previous-layout
 
@@ -118,6 +114,7 @@ in {
         bind -T copy-mode-vi 'y' send -X copy-pipe-and-cancel "reattach-to-user-namespace wl-copy"
         bind -T copy-mode-vi 'Y' send-keys -X copy-pipe-and-cancel "tmux paste-buffer"
 
+        bind q kill-session
         bind b set-option -g status
       '';
   };
