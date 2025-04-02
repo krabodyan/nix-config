@@ -31,17 +31,11 @@ in {
         graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) - %ar%C(reset)'";
       };
 
-      extraConfig = {
-        advice = {
-          diverging = false;
-          skippedCherryPicks = false;
-          mergeConflict = false;
-          detachedHead = false;
-          addEmptyPathspec = false;
-          statusHints = false;
-          pushUpdateRejected = false;
-        };
+      attributes = [
+        "*.svg binary"
+      ];
 
+      extraConfig = {
         core = {
           pager = "delta";
         };
@@ -69,7 +63,7 @@ in {
 
         rerere = {
           enabled = true;
-          autoUpdate = false;
+          autoUpdate = true;
         };
 
         pull = {
@@ -98,13 +92,13 @@ in {
 
         delta = {
           line-numbers = true;
-          side-by-side = false;
+          side-by-side = true;
           navigate = true;
           relative-paths = true;
           dark = true;
           tabs = 4;
 
-          map-styles = "bold purple => white strike dim \"#25171C\", bold cyan => yellow dim ul \"#12261E\", bold blue => yellow dim ul \"#12261E\"";
+          map-styles = "bold purple => white strike dim \"#25171C\", bold cyan => yellow dim \"#12261E\", bold blue => yellow dim \"#12261E\"";
           whitespace-error-style = "auto yellow";
 
           minus-style = "syntax \"#25171C\"";
@@ -129,6 +123,16 @@ in {
           merge-conflict-ours-diff-header-decoration-style = "green";
           merge-conflict-theirs-diff-header-style = "red";
           merge-conflict-theirs-diff-header-decoration-style = "red";
+        };
+
+        advice = {
+          diverging = false;
+          skippedCherryPicks = false;
+          mergeConflict = false;
+          detachedHead = false;
+          addEmptyPathspec = false;
+          statusHints = false;
+          pushUpdateRejected = false;
         };
 
         commit.template = builtins.toString (pkgs.writeText "template.txt" ''

@@ -48,12 +48,12 @@ in {
           # ------- GIT -------
           cm = {
             command = "git";
-            expansion = "commit -m '%'";
+            expansion = "commit -m \"%\"";
             setCursor = true;
           };
           cma = {
             command = "git";
-            expansion = "commit --all -m '%'";
+            expansion = "commit --all -m \"%\"";
             setCursor = true;
           };
           gs = "git status";
@@ -88,8 +88,7 @@ in {
           name: "nix develop $FLAKE#${name} --command ${tm}"
         );
 
-      plugins =
-      [
+      plugins = [
         {
           name = "autopair";
           inherit (pkgs.fishPlugins.autopair) src;
@@ -311,6 +310,8 @@ in {
           set -g __fish_git_prompt_char_upstream_behind ' ↓'
           set -g __fish_git_prompt_char_upstream_diverged ' ↓↑'
           set -g __fish_git_prompt_char_upstream_equal ""
+
+          set -g __fish_git_prompt_color_merging magenta
 
           set -g __fish_git_prompt_color_invalidstate red
           set -g __fish_git_prompt_char_invalidstate ' ✖'
