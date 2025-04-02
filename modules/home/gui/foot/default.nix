@@ -102,13 +102,13 @@ in {
           bright6 = cyan;
           bright7 = fg-bright;
           dim0 = surface2;
-          dim1 = "b3676e";
-          dim2 = brgreen;
+          dim1 = "b33945";
+          dim2 = "2ea12a";
           dim3 = "ccc668";
           dim4 = "6ea4cc";
           dim5 = "cc7cb6";
           dim6 = "70ccca";
-          dim7 = overlay2;
+          dim7 = overlay1;
         };
       };
     };
