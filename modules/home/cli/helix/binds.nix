@@ -118,6 +118,7 @@ in rec {
         c = ":buffer-close";
         C = ":buffer-close!";
         i = ":toggle lsp.display-inlay-hints";
+        B = ":echo %sh{git blame --date=short -L %{cursor_line},+1 %{buffer_name}}";
         "S-c" = ":buffer-close!";
         "S-f" = ":open %sh{ __yazi_picker }";
         "A-f" = "file_picker_in_current_buffer_directory";
