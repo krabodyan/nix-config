@@ -44,11 +44,16 @@
     gui-default = {
       enable = true;
       extra = with pkgs; [
+        obsidian
         gimp
         system-config-printer
         fritzing
         whatsie
         onlyoffice-bin
+        obs-studio
+        qbittorrent
+        solaar
+        gcolor3
       ];
     };
     screenshot.enable = true;

@@ -19,10 +19,6 @@ in {
   config = mkIf cfg.enable {
     home.packages = with pkgs;
       [
-        qbittorrent
-        solaar
-        gcolor3
-        obs-studio
       ]
       ++ cfg.extra;
   };
