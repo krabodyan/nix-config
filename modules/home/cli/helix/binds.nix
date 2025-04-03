@@ -46,6 +46,7 @@ let
       "paste_after"
     ];
     "C-A-k" = [
+      "trim_selections"
       "normal_mode"
       "extend_line"
       "yank"
@@ -55,6 +56,7 @@ let
       "collapse_selection"
     ];
     "C-A-j" = [
+      "trim_selections"
       "normal_mode"
       "extend_line"
       "yank"
