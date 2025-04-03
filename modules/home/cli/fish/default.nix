@@ -75,7 +75,7 @@ in {
           n = "node";
           nl = "node ls";
           np = "node ps";
-          r = "run --run -it";
+          r = "run --rm -it";
         };
 
       shellAliases = let
@@ -154,6 +154,8 @@ in {
 
               bind -M $mode alt-o forward-bigword
               bind -M $mode alt-i backward-bigword
+              bind -M $mode alt-shift-o forward-word
+              bind -M $mode alt-shift-i backward-word
 
               bind -M $mode alt-u backward-kill-line
             end
