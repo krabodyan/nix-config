@@ -4,6 +4,11 @@
       inherit (pkgs) system;
       overlays = [(import inputs.rust-overlay)];
     };
+    rust-default-utils = with pkgs; [
+      cargo-watch
+      cargo-expand
+      pkg-config
+    ];
   in {
     devShells.rust = pkgs.mkShell {
       name = "rust";
@@ -11,12 +16,11 @@
       DEV_SHELL_NAME = "rust";
       RUST_BACKTRACE = 1;
 
-      nativeBuildInputs = with pkgs; [
-        cargo-watch
-        cargo-expand
-        pkg-config
-        openssl
-      ];
+      nativeBuildInputs = with pkgs;
+        rust-default-utils
+        ++ [
+          openssl
+        ];
 
       buildInputs = with pkgs; [
         sqlite.dev
@@ -36,16 +40,14 @@
       DEV_SHELL_NAME = "rasp";
       RUST_BACKTRACE = 1;
 
-      nativeBuildInputs = with pkgs; [
-        cargo-expand
-        pkg-config
-      ];
-
-      buildInputs = with pkgs; [
-        probe-rs-tools
-        probe-rs        
-        picotool
-        libudev-zero
+      nativeBuildInputs = with pkgs;
+        rust-default-utils
+        ++ [
+          probe-rs-tools
+          probe-rs
+          picotool
+        ];
+      buildInputs = [
         (
           rust-pkgs.rust-bin.nightly.latest.default.override
           {
@@ -62,18 +64,14 @@
       RUST_BACKTRACE = 1;
       GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
 
-      nativeBuildInputs = with pkgs; [
-        cargo-watch
-        cargo-expand
-        cargo-tauri
-        llvmPackages.clang
-        pnpm
-        tailwindcss
-        gobject-introspection
-        nodejs
-        pkg-config
-        openssl
-      ];
+      nativeBuildInputs = with pkgs;
+        rust-default-utils
+        ++ [
+          tailwindcss
+          gobject-introspection
+          nodejs
+          openssl
+        ];
 
       buildInputs = with pkgs; [
         sqlite.dev
@@ -93,7 +91,7 @@
         (
           rust-pkgs.rust-bin.nightly.latest.default.override
           {
-            targets = ["wasm32-unknown-unknown" "x86_64-unknown-linux-gnu"];
+            targets = ["x86_64-unknown-linux-gnu"];
             extensions = ["rust-src" "rust-analyzer"];
           }
         )
