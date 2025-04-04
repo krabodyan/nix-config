@@ -10,13 +10,14 @@
     kernel.sysctl = {
       "kernel.printk" = 2;
       "kernel.nmi_watchdog" = 0;
+      "kernel.watchdog" = 0;
 
       "kernel.core_pattern" = "|${pkgs.coreutils}/bin/false";
       "fs.suid_dumpable" = 0;
       "kernel.dmesg_restrict" = 0;
 
-      "vm.max_map_count" = 2147483642;
-      "vm.min_free_kbytes" = 1048576;
+      "vm.vfs_cache_pressure" = 50;
+      "vm.max_map_count" = 1048576;
 
       "net.ipv4.tcp_fastopen" = 3;
       "net.core.default_qdisc" = "cake";
@@ -28,9 +29,9 @@
       "net.ipv4.icmp_echo_ignore_all" = 1;
     };
 
-    kernelParams = ["nohibernate" "rootfstype=btrfs" "raid=noautodetect"];
+    kernelParams = ["nohibernate" "rootfstype=btrfs" "raid=noautodetect"]; # "preempt=full"];
 
-    # kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_zen;
 
     extraModprobeConfig = ''
       options i915 enable_guc=3
@@ -48,6 +49,7 @@
     initrd.verbose = false;
 
     blacklistedKernelModules = [
+      "iTCO_wdt" # intel watchdog
       "appletalk"
       "decnet"
       "ax25"
