@@ -16,5 +16,7 @@ in {
       enable = true;
       powerOnBoot = false;
     };
+    systemd.services.bluetooth.wantedBy = lib.mkForce [];
+    systemd.targets.bluetooth.wantedBy = lib.mkForce [];
   };
 }
