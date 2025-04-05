@@ -7,16 +7,10 @@
 }:
 with colors; let
   term = "foot";
-  kbd = "riverctl keyboard-layout -options grp:alts_toggle,caps:backspace,shift:both_capslock us,ua,ru";
   focused = "0x${surface1}";
   border = "0x${bg-dark}";
-  timeout = "5000";
-  windows = [
-    "File Upload"
-    "Open File"
-    "Open Document"
-    "Choose Files"
-  ];
+  kbd = "riverctl keyboard-layout -options grp:alts_toggle,caps:backspace,shift:both_capslock us,ua,ru";
+
   picker-rules =
     builtins.concatStringsSep "\n"
     (builtins.map
@@ -26,7 +20,12 @@ with colors; let
           riverctl rule-add -title "${title}" dimensions 1000 800
         ''
       )
-      windows);
+      [
+        "File Upload"
+        "Open File"
+        "Open Document"
+        "Choose Files"
+      ]);
 in
   ''
     #!/bin/bash
@@ -78,9 +77,9 @@ in
 
     riverctl map -layout 0 normal Super tab focus-previous-tags
 
-    riverctl map -layout 0 normal Super     b hide-cursor timeout ${timeout}
+    riverctl hide-cursor timeout 5000
+    riverctl map -layout 0 normal Super     b hide-cursor timeout 5000
     riverctl map -layout 0 normal Super+Alt b hide-cursor timeout 0
-    riverctl hide-cursor timeout ${timeout}
 
     riverctl xcursor-theme ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}
     riverctl set-repeat 40 400
