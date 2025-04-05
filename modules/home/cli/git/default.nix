@@ -99,7 +99,7 @@ in {
           dark = true;
           tabs = 4;
 
-          map-styles = "bold purple => white strike dim \"#25171C\", bold cyan => yellow dim \"#12261E\", bold blue => yellow dim \"#12261E\"";
+          map-styles = "bold purple => white strike dim \"#25171C\", bold cyan => yellow dim \"#12261E\", bold blue => white strike dim \"#25171C\", bold yellow => yellow dim \"#12261E\"";
           whitespace-error-style = "auto yellow";
 
           minus-style = "syntax \"#25171C\"";
