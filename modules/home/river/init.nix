@@ -6,6 +6,7 @@
   extraConfig,
 }:
 with colors; let
+  term = "foot";
   kbd = "riverctl keyboard-layout -options grp:alts_toggle,caps:backspace,shift:both_capslock us,ua,ru";
   focused = "0x${surface1}";
   border = "0x${bg-dark}";
@@ -39,9 +40,9 @@ in
     riverctl map -layout 0 normal Super       Q      close
     riverctl map -layout 0 normal Super+Shift Delete exit
 
-    riverctl map -layout 0 normal Super E       spawn "foot"
-    riverctl map -layout 0 normal Super+Shift E spawn "foot -a floaterm"
-    riverctl map -layout 0 normal Super R       spawn "foot -a floaterm pulsemixer"
+    riverctl map -layout 0 normal Super E       spawn "${term}"
+    riverctl map -layout 0 normal Super+Shift E spawn "${term} -a floaterm"
+    riverctl map -layout 0 normal Super R       spawn "${term} -a floaterm pulsemixer"
 
     riverctl map -layout 0 normal Shift F1      spawn "pidof wl-gammactl && pkill wl-gammactl || wl-gammactl -c 1.3"
     riverctl map -layout 0 normal Shift F2      spawn "pidof wl-gammactl && pkill wl-gammactl || wl-gammactl -g 1.1 -c 1.8"
@@ -141,7 +142,7 @@ in
     pidof dbus-daemon || dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork &
   ''
   + (lib.optionalString (config.module.clipse.enable) ''
-    riverctl map -layout 0 normal Super V spawn "pidof clipse && pkill clipse || foot -w 850x800 -a floaterm clipse"
+    riverctl map -layout 0 normal Super V spawn "pidof clipse && pkill clipse || ${term} -w 850x800 -a floaterm clipse"
     clipse -listen &
   '')
   + (lib.optionalString (extraConfig != null) extraConfig)
