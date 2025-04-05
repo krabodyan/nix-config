@@ -35,6 +35,7 @@
         )
       ];
     };
+
     devShells.rasp = pkgs.mkShell {
       name = "rasp";
       DEV_SHELL_NAME = "rasp";
@@ -57,6 +58,7 @@
         )
       ];
     };
+
     devShells.tauri = pkgs.mkShell {
       name = "tauri";
       LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
@@ -97,7 +99,9 @@
         )
       ];
     };
+
     devShells.ino = pkgs.mkShell {
+      name = "ino";
       DEV_SHELL_NAME = "ino";
       buildInputs = with pkgs; [
         glibc_multi

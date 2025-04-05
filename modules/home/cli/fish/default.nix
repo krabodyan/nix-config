@@ -46,6 +46,7 @@ in {
           };
 
           # ------- GIT -------
+          g = "git";
           cm = {
             command = "git";
             expansion = "commit -m \"%\"";
@@ -264,23 +265,25 @@ in {
             set_color normal
           end
 
-          set -g fish_color_normal white
-          set -g fish_color_command green
-          set -g fish_color_keyword yellow
-          set -g fish_color_quote yellow
-          set -g fish_color_redirection white
-          set -g fish_color_end normal
-          set -g fish_color_error red
-          set -g fish_color_warn red
+          # ---- syntax ----
           set -g fish_color_param white
+          set -g fish_color_normal white
+          set -g fish_color_valid_path white
+          set -g fish_color_redirection white
+          set -g fish_color_end blue
+          set -g fish_color_operator blue
+          set -g fish_color_warn red
+          set -g fish_color_error red
+          set -g fish_color_cancel red
+          set -g fish_color_command green
+          set -g fish_color_quote yellow
+          set -g fish_color_keyword yellow
           set -g fish_color_comment brblack
+          set -g fish_color_autosuggestion brblack
           set -g fish_color_selection --background=black
           set -g fish_color_search_match --background=black
-          set -g fish_color_operator blue
-          set -g fish_color_autosuggestion brblack
-          set -g fish_color_valid_path white
-          set -g fish_color_cancel red
 
+          # ---- pager ----
           set -g fish_pager_color_progress black
           set -g fish_pager_color_prefix brblack
           set -g fish_pager_color_completion brblack
@@ -295,6 +298,7 @@ in {
           set -g fish_pager_color_secondary_description brblack
           set -g fish_pager_color_secondary_background brblack
 
+          # ---- git ----
           set -g __fish_git_prompt_show_informative_status 1
           set -g __fish_git_prompt_showdirtystate 1
           set -g __fish_git_prompt_showstashstate 1
