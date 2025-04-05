@@ -15,11 +15,16 @@
     helix.enable = true;
     eza.enable = true;
     jq.enable = true;
+
     git = {
       enable = true;
       userName = "krabodyan";
       userEmail = "krabraketa@gmail.com";
     };
+    git-delta.enable = true;
+    lazygit.enable = true;
+    gh.enable = true;
+
     cli-default = {
       enable = true;
       extra = with pkgs; [
