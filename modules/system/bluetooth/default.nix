@@ -13,10 +13,8 @@ in {
   };
   config = mkIf cfg.enable {
     hardware.bluetooth = {
-      enable = true;
+      enable = false;
       powerOnBoot = false;
     };
-    systemd.services.bluetooth.wantedBy = lib.mkForce [];
-    systemd.targets.bluetooth.wantedBy = lib.mkForce [];
   };
 }
