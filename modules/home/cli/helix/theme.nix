@@ -33,8 +33,8 @@
 
     "constructor" = fg;
 
-    "constant.builtin" = red;
-    "constant.numeric" = red;
+    "constant.builtin" = brred;
+    "constant.numeric" = brred;
     "constant.character" = teal;
     "constant.character.escape" = brred;
 

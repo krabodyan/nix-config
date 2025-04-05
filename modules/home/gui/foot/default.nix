@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   config,
   colors,
   systemFont,
@@ -21,31 +20,19 @@ in {
       settings = {
         main = let
           features = [
-            # "ss12"
+            "ss12"
             # "ss14"
-            # "VSAH=3"
-            # "VSAG=3"
-            # "VSAB=11"
-            # "cv03=1"
-            # "cv05=1"
-            # "cv06=1"
-            # "cv09=1"
-            # "cv10=2"
-            # "cv19=2"
           ];
           fontfeatures = lib.concatStringsSep ":fontfeatures=" features;
           font = "${systemFont}:size=17:fontfeatures=${fontfeatures}";
         in {
-          # term = "xterm-256color";
           term = "foot";
-          shell = "${pkgs.fish}/bin/fish";
 
           font = "${font}:weight=Regular";
           font-bold = "${font}:weight=SemiBold";
           font-italic = "${font}:weight=Regular:slant=Italic";
           font-bold-italic = "${font}:weight=SemiBold:slant=Italic";
 
-          # box-drawings-uses-font-glyphs = false;
           pad = "14x4 center";
           dpi-aware = "no";
           resize-by-cells = "no";
