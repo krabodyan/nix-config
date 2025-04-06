@@ -26,8 +26,6 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    home.packages = [pkgs.nix-your-shell];
-
     programs.fish = {
       enable = true;
 
@@ -39,7 +37,7 @@ in {
       in
         {
           # ------- NIX -------
-          ns = "nix-shell -p";
+          ns = "nix-shell --command fish -p";
           nr = {
             expansion = "nix run nixpkgs#%";
             setCursor = true;
@@ -122,14 +120,6 @@ in {
       interactiveShellInit = with colors; # fish
 
         ''
-          function nix-shell --description "Start an interactive shell based on a Nix expression"
-              nix-your-shell fish nix-shell -- $argv
-          end
-
-          function nix --description "Reproducible and declarative configuration management"
-              nix-your-shell fish nix -- $argv
-          end
-
           function fish_hybrid_key_bindings
             fish_vi_key_bindings
 
