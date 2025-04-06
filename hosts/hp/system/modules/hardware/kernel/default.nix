@@ -29,7 +29,12 @@
       "net.ipv4.icmp_echo_ignore_all" = 1;
     };
 
-    kernelParams = ["nohibernate" "rootfstype=ext4" "raid=noautodetect" "radeon.cik_support=0" "amdgpu.cik_support=1" "radeon.ci_support=0" "amdgpu.ci_support=1"];
+    kernelParams = [
+      "nohibernate"
+      "rootfstype=ext4"
+      "raid=noautodetect"
+      "amdgpu.cik_support=1"
+    ];
 
     kernelPackages = pkgs.linuxPackages_zen;
 
@@ -41,7 +46,15 @@
       "i915"
     ];
 
-    initrd.availableKernelModules = ["xhci_pci" "ehci_pci" "ahci" "usb_storage" "sd_mod" "sr_mod" "rtsx_pci_sdmmc"];
+    initrd.availableKernelModules = [
+      "xhci_pci"
+      "ehci_pci"
+      "ahci"
+      "usb_storage"
+      "sd_mod"
+      "sr_mod"
+      "rtsx_pci_sdmmc"
+    ];
     initrd.verbose = false;
 
     blacklistedKernelModules = [

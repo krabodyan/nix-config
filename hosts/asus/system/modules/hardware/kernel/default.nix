@@ -29,7 +29,11 @@
       "net.ipv4.icmp_echo_ignore_all" = 1;
     };
 
-    kernelParams = ["nohibernate" "rootfstype=btrfs" "raid=noautodetect"];
+    kernelParams = [
+      "nohibernate"
+      "rootfstype=btrfs"
+      "raid=noautodetect"
+    ];
 
     kernelPackages = pkgs.linuxPackages_zen;
 
@@ -45,7 +49,14 @@
       "i915"
     ];
 
-    initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usbhid" "r8169" "mt7921e"];
+    initrd.availableKernelModules = [
+      "xhci_pci"
+      "thunderbolt"
+      "nvme"
+      "usbhid"
+      "r8169"
+      "mt7921e"
+    ];
     initrd.verbose = false;
 
     blacklistedKernelModules = [
