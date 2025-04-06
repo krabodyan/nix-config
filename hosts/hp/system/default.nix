@@ -7,9 +7,6 @@
     time.enable = true;
     console.enable = true;
     users.enable = true;
-    udev-rules = {
-      enable = true;
-    };
     locale.enable = true;
 
     packages = {
@@ -45,10 +42,6 @@
       dhcpcd = {
         enable = true;
         inherit hostname;
-      };
-      iwd = {
-        enable = true;
-        enableDaemon = true;
       };
     };
 
