@@ -70,7 +70,10 @@
 
     graphics = {
       minimal.enable = true;
-      intel.enable = true;
+      intel = {
+        enable = true;
+        newer = true;
+      };
       nvidia-hybrid = {
         enable = true;
         intelBusId = "PCI:0:2:0";

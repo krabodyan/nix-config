@@ -4,27 +4,51 @@
   config,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) mkEnableOption mkIf mkOption mkMerge;
   cfg = config.module.graphics.intel;
 in {
   options = {
     module.graphics.intel = {
       enable = mkEnableOption "enable intel gpu support";
+      newer = mkOption {
+        type = lib.types.bool;
+      };
     };
   };
-  config = mkIf cfg.enable {
-    nixpkgs.config.packageOverrides = pkgs: {
-      vaapiIntel = pkgs.vaapiIntel.override {enableHybridCodec = true;};
-    };
-    hardware.graphics = {
-      extraPackages = with pkgs; [intel-media-driver libvdpau-va-gl vaapiVdpau intel-media-sdk];
-    };
-    environment.sessionVariables.LIBVA_DRIVER_NAME = "iHD";
-    environment.systemPackages = with pkgs; [
-      intel-gpu-tools
-    ];
-    services.udev.extraRules = ''
-      SUBSYSTEM=="drm", KERNEL=="card*", ATTRS{device}=="0x9a68", SYMLINK+="dri/igpu"
-    '';
-  };
+  config = mkMerge [
+    (
+      mkIf cfg.enable {
+        environment.systemPackages = with pkgs; [
+          intel-gpu-tools
+        ];
+        services.udev.extraRules = ''
+          SUBSYSTEM=="drm", KERNEL=="card*", ATTRS{device}=="0x9a68", SYMLINK+="dri/igpu"
+        '';
+      }
+    )
+    (
+      mkIf (cfg.enable
+        && cfg.newer) {
+        hardware.graphics = {
+          extraPackages = with pkgs; [
+            vpl-gpu-rt
+            intel-media-driver
+          ];
+        };
+        environment.sessionVariables.LIBVA_DRIVER_NAME = "iHD";
+      }
+    )
+    (
+      mkIf (cfg.enable
+        && !cfg.newer) {
+        hardware.graphics = {
+          extraPackages = with pkgs; [
+            intel-media-sdk
+            vaapi-intel-hybrid
+          ];
+        };
+        environment.sessionVariables.LIBVA_DRIVER_NAME = "i965";
+      }
+    )
+  ];
 }

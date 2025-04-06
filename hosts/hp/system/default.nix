@@ -47,7 +47,10 @@
 
     graphics = {
       minimal.enable = true;
-      intel.enable = true;
+      intel = {
+        enable = true;
+        newer = false;
+      };
       amdgpu.enable = true;
     };
   };
