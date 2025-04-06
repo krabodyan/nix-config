@@ -32,10 +32,6 @@
     };
 
     services = {
-      tlp = {
-        enable = true;
-        enableDaemon = false;
-      };
       sshd.enable = true;
       systemd-config.enable = true;
       earlyoom.enable = true;
