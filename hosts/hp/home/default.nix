@@ -6,11 +6,8 @@
     fzf.enable = true;
     zoxide.enable = true;
     ripgrep.enable = true;
-    fastfetch.enable = true;
     tmux.enable = true;
     htop.enable = true;
-    rustfmt.enable = true;
-    yazi.enable = true;
     bat.enable = true;
     helix.enable = true;
     eza.enable = true;
@@ -36,10 +33,6 @@
       enable = true;
     };
     screenshot.enable = true;
-    telegram.enable = true;
-    swayimg.enable = true;
-    zathura.enable = true;
-    mpv.enable = true;
     firefox.enable = true;
     foot.enable = true;
 
@@ -74,6 +67,5 @@
     swaylock.enable = true;
     mako.enable = true;
     wm-utils.enable = true;
-    clipse.enable = true;
   };
 }
