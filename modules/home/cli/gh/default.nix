@@ -15,11 +15,6 @@ in {
   config = mkIf cfg.enable {
     programs.gh = {
       enable = true;
-      settings = {
-        git_protocol = "ssh";
-        prompt = "enabled";
-        prefer_editor_prompt = "enabled";
-      };
     };
   };
 }
