@@ -55,6 +55,7 @@
     graphics = {
       minimal.enable = true;
       intel.enable = true;
+      amdgpu.enable = true;
     };
   };
 }
