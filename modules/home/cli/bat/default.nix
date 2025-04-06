@@ -19,7 +19,7 @@ in {
         style = "numbers,changes";
       };
     };
-    home.sessionVariables.BAT_THEME="theme";
+    home.sessionVariables.BAT_THEME = "theme";
     xdg.configFile."bat/themes/theme.tmTheme".text = let
       helix = config.programs.helix.themes.paradise;
     in ''

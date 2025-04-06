@@ -33,18 +33,20 @@
     };
 
     sops-nix = {
-      inputs.nixpkgs.follows = "nixpkgs";
       url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     fish-done = {
       url = "github:krabodyan/fish-done-osc99";
       flake = false;
     };
+
     yazi-plugin-compress = {
       url = "github:KKV9/compress.yazi";
       flake = false;
     };
+
     yazi-plugin-ouch = {
       url = "github:ndtoan96/ouch.yazi";
       flake = false;

@@ -1,4 +1,8 @@
-{pkgs, hostname, ...}: {
+{
+  pkgs,
+  hostname,
+  ...
+}: {
   module = {
     bluetooth.enable = true;
     bootloader.enable = true;

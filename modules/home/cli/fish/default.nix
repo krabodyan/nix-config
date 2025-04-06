@@ -118,7 +118,7 @@ in {
         else null;
 
       interactiveShellInit = with colors; # fish
-
+      
         ''
           function fish_hybrid_key_bindings
             fish_vi_key_bindings

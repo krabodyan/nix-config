@@ -21,7 +21,10 @@ in {
           live_config_reload = true;
         };
         font = {
-          normal = { family = systemFont; style = "Regular"; };
+          normal = {
+            family = systemFont;
+            style = "Regular";
+          };
           size = 17;
         };
         colors = with colors.hex; {
