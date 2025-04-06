@@ -1,0 +1,12 @@
+keys:
+  - &asus age19a88vy37jpumgylna2uua3ccgrmv3xmzwq97sngn480tyt5mu54s5wz2pp
+  - &hp age13z78eh7s9qy08rkt5yx65ezh2wrhw5lxdghtt7puzjshlgtdfqzsx74fc8
+creation_rules:
+  - path_regex: secrets/asus/secrets.yaml$
+    key_groups:
+      - age:
+          - *asus
+  - path_regex: secrets/hp/secrets.yaml$
+    key_groups:
+      - age:
+          - *hp

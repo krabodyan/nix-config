@@ -1,9 +1,10 @@
 {
   lib,
   self,
+  pkgs,
   config,
   username,
-  pkgs,
+  hostname,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -19,6 +20,14 @@ in {
     programs.fish.enable = true;
     programs.command-not-found.enable = true;
 
+    sops = {
+      defaultSopsFile = "${self}/secrets/${hostname}/secrets.yaml";
+      defaultSopsFormat = "yaml";
+      age.keyFile = "/etc/sops-nix/keys.txt";
+      secrets.password.neededForUsers = true;
+    };
+    environment.sessionVariables.SOPS_AGE_KEY_FILE = "/etc/sops-nix/keys.txt";
+
     users = {
       mutableUsers = false;
 
@@ -30,7 +39,7 @@ in {
       users = {
         root = {
           shell = pkgs.fish;
-          hashedPasswordFile = "${self}/secrets/password.hash";
+          hashedPasswordFile = config.sops.secrets.password.path;
         };
 
         ${username} = {
@@ -50,7 +59,7 @@ in {
             "uucp"
             "dialout"
           ];
-          hashedPasswordFile = "${self}/secrets/password.hash";
+          hashedPasswordFile = config.sops.secrets.password.path;
         };
       };
     };

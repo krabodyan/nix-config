@@ -9,7 +9,7 @@
     system,
     hostname,
     username,
-    overlays ? []
+    overlays ? [],
   }:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
@@ -31,6 +31,7 @@
       modules = with inputs;
         [
           disko.nixosModules.default
+          sops-nix.nixosModules.sops
         ]
         ++ [
           "${self}/overlays"
@@ -70,12 +71,16 @@
           overlays
           ;
       };
-      modules = [
-        "${self}/overlays"
-        "${self}/modules/home"
-        "${self}/hosts/${hostDir}/home"
-        "${self}/hosts/${hostDir}/home/modules"
-      ];
+      modules =
+        [
+          inputs.sops-nix.homeManagerModules.sops
+        ]
+        ++ [
+          "${self}/overlays"
+          "${self}/modules/home"
+          "${self}/hosts/${hostDir}/home"
+          "${self}/hosts/${hostDir}/home/modules"
+        ];
     };
 in {
   forAllSystems = inputs.nixpkgs.lib.systems.flakeExposed;

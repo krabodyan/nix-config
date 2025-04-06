@@ -27,7 +27,15 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
-    treefmt-nix.url = "github:numtide/treefmt-nix";
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    sops-nix = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:Mic92/sops-nix";
+    };
 
     fish-done = {
       url = "github:krabodyan/fish-done-osc99";

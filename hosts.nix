@@ -1,6 +1,6 @@
 {
   asus = {
-    hostname = "nixos";
+    hostname = "asus";
     username = "krabodyan";
     system = "x86_64-linux";
     stateVersion = "25.05";
