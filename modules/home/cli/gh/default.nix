@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: let
@@ -13,8 +14,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs.gh = {
-      enable = true;
-    };
+    home.packages = [ pkgs.gh ];
   };
 }
