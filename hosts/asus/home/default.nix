@@ -2,7 +2,7 @@
   module = {
     # ------------- cli
     home-manager.enable = true;
-    nix-index.enable = true;
+    command-not-found.enable = true;
     nh.enable = true;
     fzf.enable = true;
     zoxide.enable = true;
