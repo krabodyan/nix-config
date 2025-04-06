@@ -37,7 +37,6 @@ in {
       in
         {
           # ------- NIX -------
-          ns = "nix-shell --command fish -p";
           nr = {
             expansion = "nix run nixpkgs#%";
             setCursor = true;
@@ -56,7 +55,8 @@ in {
             setCursor = true;
           };
           gs = "git status";
-          gr = "git restore --staged";
+          gr = "git restore";
+          grs = "git restore --staged";
           ga = "git add";
           gg = "git graph -10";
 
@@ -82,6 +82,7 @@ in {
       in
         {
           inherit tm;
+          ns = "nix-shell --command fish -p";
         }
         // lib.genAttrs ["ino" "rust" "rasp" "tauri"] (
           name: "nix develop $FLAKE#${name} --command ${tm}"
@@ -118,7 +119,7 @@ in {
         else null;
 
       interactiveShellInit = with colors; # fish
-      
+
         ''
           function fish_hybrid_key_bindings
             fish_vi_key_bindings
