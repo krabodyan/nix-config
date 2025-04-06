@@ -73,5 +73,6 @@
     swaylock.enable = true;
     mako.enable = true;
     wm-utils.enable = true;
+    clipse.enable = true;
   };
 }

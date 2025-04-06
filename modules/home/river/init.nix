@@ -77,6 +77,9 @@ in
 
     riverctl map -layout 0 normal Super tab focus-previous-tags
 
+    riverctl map -layout 0 normal Super       n   focus-output   next
+    riverctl map -layout 0 normal Super+Shift n   spawn "riverctl send-to-output -current-tags next && riverctl focus-output next"
+
     riverctl hide-cursor timeout 5000
     riverctl map -layout 0 normal Super     b hide-cursor timeout 5000
     riverctl map -layout 0 normal Super+Alt b hide-cursor timeout 0
