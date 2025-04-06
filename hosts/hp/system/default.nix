@@ -5,7 +5,6 @@
     sound.enable = true;
     nix-config.enable = true;
     time.enable = true;
-    docs.enable = true;
     console.enable = true;
     users.enable = true;
     nix-index.enable = true;

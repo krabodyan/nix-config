@@ -3,7 +3,7 @@
   config,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) mkEnableOption;
   cfg = config.module.docs;
 in {
   options = {
@@ -11,14 +11,12 @@ in {
       enable = mkEnableOption "docs settings";
     };
   };
-  config = mkIf cfg.enable {
-    documentation = {
-      enable = true;
-      man.enable = true;
-      dev.enable = lib.mkForce false;
-      doc.enable = lib.mkForce false;
-      info.enable = lib.mkForce false;
-      nixos.enable = lib.mkForce false;
-    };
+  config.documentation = {
+    enable = lib.mkForce cfg.enable;
+    man.enable = lib.mkForce cfg.enable;
+    dev.enable = lib.mkForce false;
+    doc.enable = lib.mkForce false;
+    info.enable = lib.mkForce false;
+    nixos.enable = lib.mkForce false;
   };
 }
