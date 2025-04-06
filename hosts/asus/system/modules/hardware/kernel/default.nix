@@ -50,6 +50,9 @@
 
     blacklistedKernelModules = [
       "iTCO_wdt" # intel watchdog
+      "radeom"
+      "amdgpu"
+      "nouveau"
       "appletalk"
       "decnet"
       "ax25"
