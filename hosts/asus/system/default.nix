@@ -10,6 +10,7 @@
     docs.enable = true;
     console.enable = true;
     users.enable = true;
+    nix-index.enable = true;
     udev-rules = {
       enable = true;
       platformio = true;

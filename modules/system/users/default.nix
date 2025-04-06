@@ -17,9 +17,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    programs.fish.enable = true;
-    programs.command-not-found.enable = true;
-
     sops = {
       defaultSopsFile = "${self}/secrets/${hostname}/secrets.yaml";
       defaultSopsFormat = "yaml";
@@ -28,6 +25,7 @@ in {
     };
     environment.sessionVariables.SOPS_AGE_KEY_FILE = "/etc/sops-nix/keys.txt";
 
+    programs.fish.enable = true;
     users = {
       mutableUsers = false;
 
