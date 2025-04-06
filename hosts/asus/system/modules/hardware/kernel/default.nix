@@ -29,7 +29,7 @@
       "net.ipv4.icmp_echo_ignore_all" = 1;
     };
 
-    kernelParams = ["nohibernate" "rootfstype=btrfs" "raid=noautodetect"]; # "preempt=full"];
+    kernelParams = ["nohibernate" "rootfstype=btrfs" "raid=noautodetect"];
 
     kernelPackages = pkgs.linuxPackages_zen;
 

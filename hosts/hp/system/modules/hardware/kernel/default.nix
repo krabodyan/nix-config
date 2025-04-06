@@ -10,13 +10,14 @@
     kernel.sysctl = {
       "kernel.printk" = 2;
       "kernel.nmi_watchdog" = 0;
+      "kernel.watchdog" = 0;
 
       "kernel.core_pattern" = "|${pkgs.coreutils}/bin/false";
       "fs.suid_dumpable" = 0;
       "kernel.dmesg_restrict" = 0;
 
-      "vm.max_map_count" = 2147483642;
-      "vm.min_free_kbytes" = 1048576;
+      "vm.vfs_cache_pressure" = 50;
+      "vm.max_map_count" = 1048576;
 
       "net.ipv4.tcp_fastopen" = 3;
       "net.core.default_qdisc" = "cake";
@@ -30,6 +31,8 @@
 
     kernelParams = ["nohibernate" "rootfstype=ext4" "raid=noautodetect"];
 
+    kernelPackages = pkgs.linuxPackages_zen;
+
     kernelModules = [
       # "kvm-intel"
     ];
@@ -42,6 +45,7 @@
     initrd.verbose = false;
 
     blacklistedKernelModules = [
+      "iTCO_wdt" # intel watchdog
       "btrfs"
       "appletalk"
       "decnet"
