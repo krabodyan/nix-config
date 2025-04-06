@@ -29,7 +29,7 @@
       "net.ipv4.icmp_echo_ignore_all" = 1;
     };
 
-    kernelParams = ["nohibernate" "rootfstype=ext4" "raid=noautodetect" "radeon.cik_support=0" "amdgpu.cik_support=1"];
+    kernelParams = ["nohibernate" "rootfstype=ext4" "raid=noautodetect" "radeon.cik_support=0" "amdgpu.cik_support=1" "radeon.ci_support=0" "amdgpu.ci_support=1"];
 
     kernelPackages = pkgs.linuxPackages_zen;
 
@@ -46,6 +46,7 @@
 
     blacklistedKernelModules = [
       "iTCO_wdt" # intel watchdog
+      "radeon"
       "btrfs"
       "appletalk"
       "decnet"
