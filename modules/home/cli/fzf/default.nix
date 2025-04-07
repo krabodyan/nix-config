@@ -51,7 +51,7 @@ in {
         "--no-scrollbar"
         "--no-bold"
         "--no-separator"
-        "--height 7"
+        "--height 10"
         "--info hidden"
         "--reverse"
         "--ansi"

@@ -30,7 +30,7 @@ in
   ''
     #!/bin/bash
     riverctl background-color 0x${bg}
-    pidof swaybg || swaybg -m fill -i ${background} &
+    pidof swaybg > /dev/null || swaybg -m fill -i ${background} &
     riverctl border-color-focused ${focused}
     riverctl border-color-urgent ${border}
     riverctl border-color-unfocused ${border}
@@ -143,8 +143,9 @@ in
     pidof rivercarro > /dev/null || rivercarro -inner-gaps 0 -outer-gaps 0 -per-tag -main-ratio 0.5 &
     pidof dbus-daemon > /dev/null || dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork &
   ''
-  + (lib.optionalString (config.module.clipse.enable) ''
-    riverctl map -layout 0 normal Super V spawn "pidof clipse && pkill clipse || ${term} -w 850x800 -a floaterm clipse"
-    clipse -listen &
+  + (lib.optionalString (config.module.cliphist.enable) ''
+    riverctl map -layout 0 normal Super V spawn "${term} -o main.pad=14x14 -w 1000x300 -a floaterm sh -c 'cliphist list | fzf --no-sort | cliphist decode 2>/dev/null | wl-copy'"
+    riverctl map -layout 0 normal Super+Shift V spawn "${term} -o main.pad=14x14 -w 1000x300 -a floaterm sh -c 'cliphist list | fzf --no-sort | cliphist delete'"
+    riverctl map -layout 0 normal Super+Alt V spawn "cliphist wipe"
   '')
   + (lib.optionalString (extraConfig != null) extraConfig)
