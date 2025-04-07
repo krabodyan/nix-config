@@ -74,6 +74,7 @@
       modules =
         [
           inputs.sops-nix.homeManagerModules.sops
+          inputs.nix-index-database.hmModules.nix-index
         ]
         ++ [
           "${self}/overlays"

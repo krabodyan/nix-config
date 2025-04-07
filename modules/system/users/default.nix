@@ -26,6 +26,8 @@ in {
     environment.sessionVariables.SOPS_AGE_KEY_FILE = "/etc/sops-nix/keys.txt";
 
     programs.fish.enable = true;
+    programs.command-not-found.enable = false;
+
     users = {
       mutableUsers = false;
 
