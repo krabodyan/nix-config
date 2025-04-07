@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   colors,
   ...
@@ -13,6 +14,7 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    home.packages = [ pkgs.clipse ];
     xdg.configFile."clipse/config.json".text = ''
       {
           "allowDuplicates": false,

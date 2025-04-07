@@ -140,8 +140,8 @@ in
 
     riverctl default-layout rivercarro
 
-    pidof rivercarro || rivercarro -inner-gaps 0 -outer-gaps 0 -per-tag -main-ratio 0.5 &
-    pidof dbus-daemon || dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork &
+    pidof rivercarro > /dev/null || rivercarro -inner-gaps 0 -outer-gaps 0 -per-tag -main-ratio 0.5 &
+    pidof dbus-daemon > /dev/null || dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork &
   ''
   + (lib.optionalString (config.module.clipse.enable) ''
     riverctl map -layout 0 normal Super V spawn "pidof clipse && pkill clipse || ${term} -w 850x800 -a floaterm clipse"
