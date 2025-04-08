@@ -14,8 +14,6 @@ in {
   config = mkIf cfg.enable {
     programs.starship = {
       enable = true;
-      enableZshIntegration = true;
-      enableFishIntegration = false;
       settings =
         {
           add_newline = false;

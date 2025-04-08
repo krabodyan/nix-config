@@ -100,6 +100,10 @@ in {
           name = "fzf";
           inherit (pkgs.fishPlugins.fzf-fish) src;
         }
+        {
+          name = "sponge";
+          inherit (pkgs.fishPlugins.sponge) src;
+        }
       ];
 
       loginShellInit =
@@ -199,15 +203,13 @@ in {
           end
 
           set -g fish_key_bindings fish_hybrid_key_bindings
+          set -g fish_greeting
+          set -g fish_cursor_visual block
+          set -g fish_cursor_default block
+          set -g fish_cursor_insert line
+          set -g fish_cursor_replace_one underscore
 
-          set -g fish_prompt_pwd_full_dirs 2
-
-          set fish_greeting
-
-          set fish_cursor_visual block
-          set fish_cursor_default block
-          set fish_cursor_insert line
-          set fish_cursor_replace_one underscore
+          set sponge_purge_only_on_exit true
 
           set_color ${black} black
           set_color ${brblack} brblack
@@ -223,38 +225,6 @@ in {
           set_color ${brmagenta} brmagenta
           set_color ${cyan} cyan
           set_color ${brcyan} brcyan
-
-          function fish_mode_prompt
-          end
-
-          function fish_prompt
-            switch $fish_bind_mode
-              case insert
-                printf "\033]12;#${mode_insert}\007"
-                set_color normal
-              case default
-                printf "\033]12;#${mode_normal}\007"
-                set_color ${mode_normal}
-              case visual replace_one
-                printf "\033]12;#${mode_select}\007"
-                set_color ${mode_select}
-              case '*'
-                printf "\033]12;#${green}\007"
-                set_color green
-            end
-
-            if set -q IN_NIX_SHELL
-              if set -q DEV_SHELL_NAME
-                printf "\033[35m$DEV_SHELL_NAME\033[0m %s%s 󰧞 " (prompt_pwd) (fish_git_prompt)
-              else
-                printf "\033[35mnix-shell\033[0m %s%s 󰧞 " (prompt_pwd) (fish_git_prompt)
-              end
-            else
-              printf "%s%s 󰧞 " (prompt_pwd) (fish_git_prompt)
-            end
-
-            set_color normal
-          end
 
           # ---- syntax ----
           set -g fish_color_param white
@@ -289,44 +259,6 @@ in {
           set -g fish_pager_color_secondary_description brblack
           set -g fish_pager_color_secondary_background brblack
 
-          # ---- git ----
-          set -g __fish_git_prompt_show_informative_status 1
-          set -g __fish_git_prompt_showdirtystate 1
-          set -g __fish_git_prompt_showstashstate 1
-          set -g __fish_git_prompt_showuntrackedfiles 1
-          set -g __fish_git_prompt_show_informative_status 0
-          set -g __fish_git_prompt_char_stateseparator ""
-
-          set -g __fish_git_prompt_color_branch cyan
-          set -g __fish_git_prompt_color_prefix brblack
-          set -g __fish_git_prompt_color_suffix brblack
-
-          set -g __fish_git_prompt_showupstream auto
-          set -g __fish_git_prompt_color_upstream green
-          set -g __fish_git_prompt_char_upstream_ahead ' ↑'
-          set -g __fish_git_prompt_char_upstream_behind ' ↓'
-          set -g __fish_git_prompt_char_upstream_diverged ' ↓↑'
-          set -g __fish_git_prompt_char_upstream_equal ""
-
-          set -g __fish_git_prompt_color_merging magenta
-
-          set -g __fish_git_prompt_color_invalidstate red
-          set -g __fish_git_prompt_char_invalidstate ' ✖'
-
-          set -g __fish_git_prompt_color_dirtystate red
-          set -g __fish_git_prompt_char_dirtystate ' M'
-
-          set -g __fish_git_prompt_color_stagedstate green
-          set -g __fish_git_prompt_char_stagedstate ' M'
-
-          set -g __fish_git_prompt_color_stashstate red
-          set -g __fish_git_prompt_char_stashstate ' S'
-
-          set -g __fish_git_prompt_color_untrackedfiles red
-          set -g __fish_git_prompt_char_untrackedfiles ' ?'
-
-          set -g __fish_git_prompt_char_cleanstate ""
-
           printf '\e[?45l'
         '';
 
@@ -339,6 +271,22 @@ in {
               echo $name builded
             end
           '';
+        starship_precmd_user_func = with colors; ''
+          switch $fish_bind_mode
+            case insert
+              printf "\033]12;#${mode_insert}\007"
+              set_color normal
+            case default
+              printf "\033]12;#${mode_normal}\007"
+              set_color ${mode_normal}
+            case visual replace_one
+              printf "\033]12;#${mode_select}\007"
+              set_color ${mode_select}
+            case '*'
+              printf "\033]12;#${green}\007"
+              set_color green
+          end
+        '';
         _fzf_search_directory = assert config.module.fzf.enable;
         # fish
           ''

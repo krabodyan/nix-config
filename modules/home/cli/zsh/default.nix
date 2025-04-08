@@ -18,7 +18,6 @@ in {
     home.packages = with pkgs; [
       zsh-completions
     ];
-
     programs.zsh = {
       enable = true;
       history = {
@@ -29,7 +28,15 @@ in {
         ignoreSpace = true;
         ignoreDups = true;
       };
-      defaultKeymap = "vicmd";
+      enableCompletion = true;
+      autosuggestion = {
+        enable = true;
+        strategy = ["completion" "history"];
+      };
+      syntaxHighlighting = {
+        enable = true;
+      };
+      defaultKeymap = "viins";
       # plugins = with pkgs; [
       #   {
       #     inherit (jq-zsh-plugin) src name;
@@ -88,28 +95,33 @@ in {
           source ${./binds.zsh}
           source ${./options.zsh}
 
-          bindkey -v
-          zle-keymap-select () {
-            if [ $KEYMAP = vicmd ]; then
-              echo -ne "\033]12;${mode_normal}\007\033[2 q"
-            else
-              echo -ne "\033]12;${mode_insert}\007\033[0 q"
-            fi
-          }; zle -N zle-keymap-select
+          # bindkey -v
+          # zle-keymap-select () {
+          #   if [ $KEYMAP = vicmd ]; then
+          #     echo -ne "\033]12;${mode_normal}\007\033[2 q"
+          #   else
+          #     echo -ne "\033]12;${mode_insert}\007\033[0 q"
+          #   fi
+          # }; zle -N zle-keymap-select
 
-          zle-line-init () {
-            zle -K viins
-            echo -ne "\033]12;${mode_insert}\007\033[0 q"
-          }; zle -N zle-line-init
+          # zle-line-init () {
+          #   zle -K viins
+          #   echo -ne "\033]12;${mode_insert}\007\033[0 q"
+          # }; zle -N zle-line-init
         '';
-      enableCompletion = true;
-      autosuggestion = {
-        enable = true;
-        strategy = ["completion" "history"];
-      };
-      syntaxHighlighting = {
-        enable = true;
-      };
+
+      # initExtra = ''
+      #   # source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+      # '';
+
+      loginExtra =
+        # zsh
+        ''
+          if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+            export WLR_DRM_DEVICES=/dev/dri/igpu
+            exec river
+          fi
+        '';
     };
   };
 }
