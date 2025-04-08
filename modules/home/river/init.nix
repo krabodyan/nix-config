@@ -81,8 +81,8 @@ in
     riverctl map -layout 0 normal Super+Shift n   spawn "riverctl send-to-output -current-tags next && riverctl focus-output next"
 
     riverctl hide-cursor timeout 5000
-    riverctl map -layout 0 normal Super     b hide-cursor timeout 5000
-    riverctl map -layout 0 normal Super+Alt b hide-cursor timeout 0
+    riverctl map -layout 0 normal Super       b hide-cursor timeout 5000
+    riverctl map -layout 0 normal Super+Shift b hide-cursor timeout 0
 
     riverctl xcursor-theme ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}
     riverctl set-repeat 40 400
@@ -144,8 +144,8 @@ in
     pidof dbus-daemon > /dev/null || dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork &
   ''
   + (lib.optionalString (config.module.cliphist.enable) ''
-    riverctl map -layout 0 normal Super V spawn "${term} -o main.pad=14x14 -w 1000x300 -a floaterm sh -c 'cliphist list | fzf --no-sort | cliphist decode 2>/dev/null | wl-copy'"
-    riverctl map -layout 0 normal Super+Shift V spawn "${term} -o main.pad=14x14 -w 1000x300 -a floaterm sh -c 'cliphist list | fzf --no-sort | cliphist delete'"
-    riverctl map -layout 0 normal Super+Alt V spawn "cliphist wipe"
+    riverctl map -layout 0 normal Super V spawn "pidof cliphist || ${term} -o main.pad=14x14 -w 1000x300 -a floaterm sh -c 'cliphist list | fzf --no-sort | cliphist decode 2>/dev/null | wl-copy'"
+    riverctl map -layout 0 normal Super+Alt V spawn "pidof cliphist || ${term} -o main.pad=14x14 -w 1000x300 -a floaterm sh -c 'cliphist list | fzf --no-sort | cliphist delete'"
+    riverctl map -layout 0 normal Super+Shift V spawn "cliphist wipe"
   '')
   + (lib.optionalString (extraConfig != null) extraConfig)
