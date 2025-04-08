@@ -38,6 +38,7 @@ in {
     programs.mpv = {
       enable = true;
       extraInput = ''
+        ESC          quit
         WHEEL_UP     add volume  3
         WHEEL_DOWN   add volume -3
         h            seek       -3
