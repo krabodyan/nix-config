@@ -36,7 +36,8 @@ in {
 
           directory = {
             truncation_length = 2;
-            truncate_to_repo = false;
+            truncate_to_repo = true;
+            fish_style_pwd_dir_length = 1;
             read_only = " [RO]";
             style = "$path$read_only ";
           };

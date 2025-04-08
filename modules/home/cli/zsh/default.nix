@@ -22,7 +22,7 @@ in {
       defaultKeymap = "vicmd";
       # plugins = with pkgs; [
       #   {
-      #     inherit (zsh-autosuggestions) src name;
+      #     inherit (jq-zsh-plugin) src name;
       #   }
       # ];
       autosuggestion = {
