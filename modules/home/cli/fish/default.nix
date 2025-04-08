@@ -29,12 +29,7 @@ in {
     programs.fish = {
       enable = true;
 
-      shellAbbrs = let
-        genDocker = builtins.mapAttrs (name: value: {
-          command = "docker";
-          expansion = value;
-        });
-      in
+      shellAbbrs =
         {
           # ------- NIX -------
           nr = {
@@ -63,7 +58,10 @@ in {
           # ----- DOCKER -----
           d = "docker";
         }
-        // genDocker {
+        // builtins.mapAttrs (name: value: {
+          command = "docker";
+          expansion = value;
+        }) {
           s = "stack";
           sp = "stack ps";
           ss = "stack services";
@@ -127,6 +125,8 @@ in {
             for mode in default insert visual
               bind --preset --erase -M $mode alt-r
               bind --preset --erase -M $mode alt-v
+              bind --preset --erase -M $mode alt-s
+              bind --preset --erase -M $mode alt-d
 
               bind --preset --erase -M $mode alt-h
               bind --preset --erase -M $mode alt-j
@@ -199,7 +199,6 @@ in {
 
           set -g fish_key_bindings fish_hybrid_key_bindings
 
-          # set -g fish_prompt_pwd_dir_length 1
           set -g fish_prompt_pwd_full_dirs 2
 
           set fish_greeting
