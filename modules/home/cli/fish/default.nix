@@ -80,6 +80,7 @@ in {
       in
         {
           inherit tm;
+          "," = "comma -P fzf";
           ns = "nix-shell --command fish -p";
         }
         // lib.genAttrs ["ino" "rust" "rasp" "tauri"] (
