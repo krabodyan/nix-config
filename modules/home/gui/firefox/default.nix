@@ -82,7 +82,6 @@ in {
           "browser.tabs.insertAfterCurrent" = true;
           "browser.in-content.dark-mode" = true;
           "ui.systemUsesDarkTheme" = 1;
-          # "browser.startup.page" = 3;
           "datareporting.healthreport.uploadEnabled" = false;
           # "media.peerconnection.enabled" = false;
           "browser.search.suggest.enabled.private" = true;
@@ -93,14 +92,6 @@ in {
           "toolkit.telemetry.enabled" = false;
           # "default-browser-agent.enabled" = false;
           "browser.urlbar.trimHttps" = true;
-          # "onebar.conditional-navigation-buttons" = false;
-          "onebar.disable-centering-of-URLbar" = false;
-          "onebar.disable-https-truncate" = true;
-          "onebar.disable-single-tab" = true;
-          "onebar.hide-all-URLbar-icons" = true;
-          "onebar.hide-all-tabs-button" = true;
-          "onebar.hide-navigation-buttons" = true;
-          "onebar.hide-unified-extensions-button" = false;
           "browser.download.useDownloadDir" = false;
           "browser.urlbar.suggest.engines" = false;
           "browser.urlbar.suggest.addons" = false;
@@ -120,14 +111,14 @@ in {
 
           "browser.warnOnQuit" = false;
           "browser.warnOnQuitShortcut" = false;
-          "browser.download.always_ask_before_handling_new_types" = true;
+          "browser.download.always_ask_before_handling_new_types" = false;
           "browser.gesture.swipe.left" = "cmd_scrollLeft";
           "browser.gesture.swipe.right" = "cmd_scrollRight";
           DisableTelemetry = true;
           DisableFirefoxStudies = true;
           DisablePocket = true;
-          DisplayBookmarksToolbar = "always"; # alternatives: "always" or "newtab"
-          DisplayMenuBar = "default-off"; # alternatives: "always", "never" or "default-on"
+          DisplayBookmarksToolbar = "never"; # alternatives: "always" or "newtab"
+          DisplayMenuBar = "never"; # alternatives: "always", "never" or "default-on"
           SearchBar = "unified"; # alternative: "separate"
         };
         userChrome = builtins.readFile ./firefox.css;
