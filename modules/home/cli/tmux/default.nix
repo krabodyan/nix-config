@@ -21,7 +21,7 @@ in {
 
         set -as terminal-features ",xterm*:RGB"
         set -as terminal-overrides ",xterm*:Tc"
-        set -g default-shell ${pkgs.fish}/bin/fish
+        set -g default-shell ${pkgs.zsh}/bin/zsh
 
         set -g prefix M-Space
         bind M-Space send-prefix
