@@ -20,9 +20,9 @@ in {
         {
           add_newline = false;
           format = lib.concatStrings [
+            "$git_branch"
             "$nix_shell"
             "$directory"
-            "$git_branch"
             "$git_commit"
             "$git_state"
             "$git_status"
@@ -43,7 +43,7 @@ in {
           };
 
           git_branch = {
-            format = "[\\(](bright-black)[$branch](cyan)[\\)](bright-black) ";
+            format = "[$branch](cyan) ";
             only_attached = true;
           };
 
@@ -59,16 +59,16 @@ in {
 
           git_status = {
             format = "$all_status$ahead_behind";
-            ahead = "[\${count}↑](red) ";
-            behind = "[\${count}↓](red) ";
+            ahead = "[↑](green) ";
+            behind = "[↓](green) ";
             conflicted = "[\${behind_count}↓ \${ahead_count}↑](red) ";
-            untracked = "[\${count}?](red) ";
-            modified = "[\${count}M](red) ";
-            staged = "[\${count}M](green) ";
-            stashed = "[\${count}S](bright-red) ";
-            renamed = "[\${count}R](red) ";
-            deleted = "[\${count}D](red) ";
-            typechanged = "[\${count}T](bright-yellow) ";
+            untracked = "[?](red) ";
+            modified = "[M](red) ";
+            staged = "[M](green) ";
+            stashed = "[S](bright-red) ";
+            renamed = "[R](red) ";
+            deleted = "[D](red) ";
+            typechanged = "[T](bright-yellow) ";
             disabled = false;
             ignore_submodules = true;
           };

@@ -1,0 +1,17 @@
+export ABBR_SET_EXPANSION_CURSOR=1
+# Show an error when a globbing expansion doesn't find any match
+setopt nomatch
+# List on ambiguous completion and Insert first match immediately
+setopt auto_list menu_complete
+
+# Use pushd when cd-ing around
+# setopt auto_pushd pushd_minus pushd_silent
+
+# Use single quotes in string without the weird escape tricks
+setopt rc_quotes
+# Single word commands can resume an existing job
+setopt auto_resume
+# Show history expansion before running a command
+setopt hist_verify
+# Remove useless whitespace from commands
+setopt hist_reduce_blanks
