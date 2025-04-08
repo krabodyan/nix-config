@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "21.03.2025, 23:11:09",
-	"time": 1742591469417,
+	"@time": "4/8/2025, 9:57:09 AM",
+	"time": 1744095429621,
 	"environment": {
 		"extension": "1.99.997",
 		"platform": "linux",
-		"firefox": 136
+		"firefox": 137
 	},
 	"autoDarkMode": 1,
 	"exclusionRules": [
@@ -29,7 +29,9 @@
 		"map u goBack",
 		"map <c-u> goForward",
 		"map \\ passNextKey",
-		"map <a-a> LinkHints.activate",
+		"map! <a-a> LinkHints.activate",
+		"map c LinkHints.activateEdit",
+		"map v LinkHints.activateSelect",
 		"map <a-s-a> LinkHints.activateOpenInNewTab",
 		"map j scrollDown",
 		"map k scrollUp",
@@ -38,8 +40,8 @@
 		"map ? showHelp",
 		"map m enterVisualMode",
 		"map M enterVisualLineMode",
-		"map gi focusInput",
-		"mapkey <a-d> <c-[>",
+		"map p switchFocus",
+		"mapkey <a-s> <c-[>",
 		""
 	],
 	"linkHintCharacters": "fjdklweruiopmcvn",
@@ -53,7 +55,7 @@
 		"  background: #f9e289; ",
 		"  border: none;",
 		"  outline: none;",
-		"  font-size: 21px;",
+		"  font-size: 16px;",
 		"  font-family: monospace;",
 		"  font-weight: 400;",
 		"  text-transform: lowercase;",
