@@ -36,6 +36,10 @@ in {
             expansion = "nix run nixpkgs#%";
             setCursor = true;
           };
+          nd = {
+            expansion = "nix develop $FLAKE#% --command fish";
+            setCursor = true;
+          };
 
           # ------- GIT -------
           g = "git";
@@ -76,7 +80,7 @@ in {
         };
 
       shellAliases = let
-        tm = "${pkgs.tmux}/bin/tmux -L $(uuidgen)";
+        tm = "test $TMUX && fish || ${pkgs.tmux}/bin/tmux -L $(uuidgen)";
       in
         {
           inherit tm;
@@ -84,7 +88,7 @@ in {
           ns = "nix-shell --command fish -p";
         }
         // lib.genAttrs ["ino" "rust" "rasp" "tauri"] (
-          name: "nix develop $FLAKE#${name} --command ${tm}"
+          name: "nix develop $FLAKE#${name} --command sh -c \"${tm}\""
         );
 
       plugins = [
