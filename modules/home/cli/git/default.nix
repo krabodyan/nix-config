@@ -33,6 +33,9 @@ in {
 
       attributes = [
         "*.svg binary"
+        "*.json binary"
+        "*.lock binary"
+        "*.drawio binary"
       ];
 
       extraConfig = {
