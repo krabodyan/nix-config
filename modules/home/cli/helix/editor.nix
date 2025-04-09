@@ -66,10 +66,15 @@
   };
 
   statusline = {
+    diagnostics = ["hint" "warning" "error"];
+    workspace-diagnostics = ["hint" "warning" "error"];
     right = [
       "diagnostics"
+      "workspace-diagnostics"
+      "separator"
       "read-only-indicator"
       "file-modification-indicator"
+      "separator"
       "file-name"
       "spinner"
     ];

@@ -41,7 +41,7 @@
     "string" = brblue;
     "string.regexp" = brmagenta;
     "string.special" = brmagenta;
-    "string.special.symbol" = red;
+    "string.special.symbol" = brred;
     "string.special.path" = brmagenta;
 
     "comment" = fg-dark;
@@ -51,7 +51,7 @@
     "variable.builtin" = fg;
     "variable.other.member" = fg;
 
-    "label" = red; # used for lifetimes
+    "label" = brred; # used for lifetimes
 
     "punctuation" = overlay1;
     "punctuation.bracket" = overlay2;
@@ -68,7 +68,7 @@
 
     "namespace" = fg;
 
-    "special" = red;
+    "special" = brred;
 
     "markup.heading.marker" = {
       fg = peach;
