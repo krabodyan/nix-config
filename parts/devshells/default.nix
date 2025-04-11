@@ -24,8 +24,9 @@
 
       buildInputs = with pkgs; [
         sqlite.dev
-        llvmPackages.clang
         libudev-zero
+        dbus.dev
+        llvmPackages.clang
         (
           rust-pkgs.rust-bin.nightly.latest.default.override
           {
@@ -40,12 +41,12 @@
       name = "rasp";
       DEV_SHELL_NAME = "rasp";
       RUST_BACKTRACE = 1;
+      CARGO_BUILD_TARGET = "thumbv6m-none-eabi";
 
       nativeBuildInputs = with pkgs;
         rust-default-utils
         ++ [
-          probe-rs-tools
-          probe-rs
+          elf2uf2-rs
           picotool
         ];
       buildInputs = [

@@ -13,7 +13,7 @@ in {
   };
   config = mkIf cfg.enable {
     hardware.bluetooth = {
-      enable = false;
+      enable = true;
       powerOnBoot = false;
     };
   };
