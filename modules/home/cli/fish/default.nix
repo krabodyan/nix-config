@@ -126,7 +126,7 @@ in {
         else null;
 
       interactiveShellInit = with colors; # fish
-
+      
         ''
           function fish_hybrid_key_bindings
             fish_vi_key_bindings
@@ -270,14 +270,11 @@ in {
           set -g __fish_git_prompt_showdirtystate 1
           set -g __fish_git_prompt_showstashstate 1
           set -g __fish_git_prompt_showuntrackedfiles 1
+          set -g __fish_git_prompt_showupstream auto
           set -g __fish_git_prompt_show_informative_status 0
           set -g __fish_git_prompt_char_stateseparator ""
 
           set -g __fish_git_prompt_color_branch cyan
-          # set -g __fish_git_prompt_color_prefix brblack
-          # set -g __fish_git_prompt_color_suffix brblack
-
-          set -g __fish_git_prompt_showupstream auto
           set -g __fish_git_prompt_color_upstream green
           set -g __fish_git_prompt_char_upstream_ahead ' ↑'
           set -g __fish_git_prompt_char_upstream_behind ' ↓'
@@ -308,7 +305,7 @@ in {
 
       functions = {
         fish_mode_prompt = with colors; # fish
-
+        
           ''
             switch $fish_bind_mode
               case insert

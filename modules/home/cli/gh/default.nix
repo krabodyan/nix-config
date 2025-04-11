@@ -14,6 +14,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = [ pkgs.gh ];
+    home.packages = [pkgs.gh];
   };
 }
