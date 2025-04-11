@@ -150,8 +150,8 @@ in {
 
               bind -M $mode ctrl-l "clear; commandline -f repaint"
 
-              bind -M $mode alt-H prevd repaint-mode
-              bind -M $mode alt-L nextd repaint-mode
+              bind -M $mode alt-H prevd repaint
+              bind -M $mode alt-L nextd repaint
 
               bind -M $mode alt-o forward-bigword
               bind -M $mode alt-i backward-bigword
