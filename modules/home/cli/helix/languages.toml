@@ -42,7 +42,7 @@ command = "nixd"
 # TS -----------------------
 [[language]]
 name = "typescript"
-language-servers = ["typescript-language-server"] 
+language-servers = ["typescript-language-server"]
 roots = ["package-lock.json", "tsconfig.json", ".prettierrc.json"]
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 
@@ -64,23 +64,28 @@ name = "rust"
 "{" = "}"
 
 [language-server.rust-analyzer.config]
-lru.capacity = 256
+cache.warmup = true
+cachePriming.numThreads = 12
+numThreads = 12
+lru.capacity = 512
 check.command = "clippy"
-cargo.buildScripts.enable = false
 check.invocationStrategy = "once"
-semanticHighlighting.nonStandardTokens = false
+check.allTargets = false
+checkOnSave = true
+references.excludeTests = true
+references.excludeImports = true
 diagnostics.disabled = ["proc-macro-disabled"]
+diagnostics.styleLints.enable = true
 procMacro.ignored.tauri_macros = [ "command", "generate_handler" ]
 procMacro.ignored.tokio_macros = [ "main" ]
 procMacro.ignored.embassy_executor_macros = [ "main" ]
-cache.warmup = false
-checkOnSave = true
 completion.autoAwait.enable = false
 completion.autoIter.enable = false
 completion.autoimport.enable = true
 completion.hideDeprecated = true
 completion.postfix.enable = false
-inlayHints.closingBraceHints.minLines = 5
+inlayHints.implicitDrops.enable = true
+inlayHints.closingBraceHints.minLines = 8
 inlayHints.parameterHints.enable = false
 inlayHints.typeHints.hideClosureInitialization = true
 files.excludeDirs = [ ".git", "target" ]
