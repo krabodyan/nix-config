@@ -71,6 +71,7 @@ in {
     xdg.mimeApps.defaultApplications = mkAssociations {
       types = [
         "image/png"
+        "image/avif"
         "image/jpeg"
         "image/webp"
         "image/svg"
