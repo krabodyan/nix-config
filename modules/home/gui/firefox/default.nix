@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  inputs,
   mkAssociations,
   ...
 }: let
@@ -36,7 +37,7 @@ in {
 
     programs.firefox = {
       enable = true;
-      package = pkgs.firefox-wayland;
+      package = inputs.chaotic.legacyPackages.${pkgs.system}.firefox_nightly;
       profiles.krabodyan = {
         settings = {
           "general.autoScroll" = false;

@@ -44,8 +44,8 @@ in {
           palette = with colors; {
             base00 = bg; # Фон (самый темный)
             base01 = surface0; # Темная поверхность
-            base02 = bg; # Средняя поверхность
-            base03 = overlay0; # Тусклый текст, элементы UI
+            base02 = surface2; # Средняя поверхность
+            base03 = overlay2; # Тусклый текст, элементы UI
             base04 = subtext0; # Чуть ярче, для вторичного текста
             base05 = fg; # Обычный текст
             base06 = fg-bright; # Яркий текст

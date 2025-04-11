@@ -34,6 +34,10 @@
   opacity: 35% !important;
 }
 
+/* #nav-bar-customization-target { */
+  /* background: -moz-Dialog !important; */
+/* } */
+
 /* Window control buttons (min, resize and close) */
 .titlebar-buttonbox-container {
   display: none !important;
@@ -71,6 +75,7 @@
 #picture-in-picture-button,
 #tracking-protection-icon-container,
 #reader-mode-button,
+#urlbar-searchmode-switcher,
 #translations-button {
   display: none !important
 }
@@ -87,7 +92,7 @@
 
 #nav-bar {
   border: none !important;
-  background: none !important;
+  /* background: none !important; */
 }
 
 /* --- ~END~ element visibility section --- */
@@ -188,7 +193,7 @@
 
 #nav-bar,
 #PersonalToolbar {
-  background-color: #0000 !important;
+  /* background-color: #0000 !important; */
   background-image: none !important;
   box-shadow: none !important
 }

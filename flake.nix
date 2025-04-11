@@ -22,6 +22,8 @@
 
     nix-colors.url = "github:misterio77/nix-colors";
 
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
