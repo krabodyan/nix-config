@@ -21,7 +21,7 @@ in {
         inputs.nix-cursors.packages.${pkgs.system}.google-cursor.override {
           background_color = surface2;
           outline_color = overlay1;
-          accent_color = red;
+          accent_color = surface2;
         };
       name = "GoogleDot-Custom";
       size = 16;
@@ -48,37 +48,75 @@ in {
         package = pkgs.papirus-icon-theme;
         name = "Papirus-Dark";
       };
-      theme = let
-        colorScheme = {
-          slug = "paradise";
-          name = "paradise";
-          author = "krabodyan";
-          palette = with colors; {
-            base00 = bg; # Фон (самый темный)
-            base01 = surface0; # Темная поверхность
-            base02 = surface2; # Средняя поверхность
-            base03 = overlay2; # Тусклый текст, элементы UI
-            base04 = subtext0; # Чуть ярче, для вторичного текста
-            base05 = fg; # Обычный текст
-            base06 = fg-bright; # Яркий текст
-            base07 = rosewater; # Самый светлый цвет, почти белый
-            base08 = red; # Красный (ошибки, предупреждения)
-            base09 = orange; # Оранжевый (вариативный акцент)
-            base0A = yellow; # Желтый (предупреждения, метки)
-            base0B = green; # Зеленый (успешные операции)
-            base0C = blue; # Голубой (вариативный акцент)
-            base0D = overlay2; # Синий (ссылки, подсветка) # фокуc
-            base0E = magenta; # Фиолетовый (спец. выделения)
-            base0F = peach; # Редко используемый акцент
+      theme = {
+        name = "paradise";
+        package = pkgs.stdenv.mkDerivation {
+          name = "generated-gtk-theme-paradise";
+          src = pkgs.fetchFromGitHub {
+            owner = "nana-4";
+            repo = "materia-theme";
+            rev = "76cac96ca7fe45dc9e5b9822b0fbb5f4cad47984";
+            sha256 = "sha256-0eCAfm/MWXv6BbCl2vbVbvgv8DiUH09TAUhoKq7Ow0k=";
           };
+          buildInputs = with pkgs; let
+            rendersvg = pkgs.runCommand "rendersvg" {} ''
+              mkdir -p $out/bin
+              ln -s ${pkgs.resvg}/bin/resvg $out/bin/rendersvg
+            '';
+          in [
+            sassc
+            bc
+            which
+            rendersvg
+            meson
+            ninja
+            nodePackages.sass
+            gtk4.dev
+            optipng
+          ];
+          phases = [
+            "unpackPhase"
+            "installPhase"
+          ];
+          installPhase = with colors; ''
+            HOME=/build
+            chmod 777 -R .
+            patchShebangs .
+            mkdir -p $out/share/themes
+            mkdir bin
+            sed -e 's/handle-horz-.*//' -e 's/handle-vert-.*//' -i ./src/gtk-2.0/assets.txt
+
+            cat > /build/gtk-colors << EOF
+              BTN_BG=${surface2}
+              BTN_FG=${fg}
+              FG=${fg}
+              BG=${bg}
+              HDR_BTN_BG=${surface1}
+              HDR_BTN_FG=${fg}
+              ACCENT_BG=${select}
+              ACCENT_FG=${fg}
+              HDR_FG=${fg}
+              HDR_BG=${bg}
+              MATERIA_SURFACE=${surface0}
+              MATERIA_VIEW=${bg-bright}
+              MENU_BG=${surface0}
+              MENU_FG=${fg}
+              SEL_BG=${select}
+              SEL_FG=${bg}
+              TXT_BG=${red}
+              TXT_FG=${fg}
+              WM_BORDER_FOCUS=${bg}
+              WM_BORDER_UNFOCUS=${bg}
+              UNITY_DEFAULT_LAUNCHER_STYLE=False
+              NAME=paradise
+              MATERIA_STYLE_COMPACT=True
+            EOF
+
+            echo "Changing colours:"
+            ./change_color.sh -o paradise /build/gtk-colors -i False -t "$out/share/themes"
+            chmod 555 -R .
+          '';
         };
-        inherit
-          (inputs.nix-colors.lib-contrib {inherit pkgs;})
-          gtkThemeFromScheme
-          ;
-      in {
-        name = colorScheme.slug;
-        package = gtkThemeFromScheme {scheme = colorScheme;};
       };
       gtk2 = {
         configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
