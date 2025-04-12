@@ -123,6 +123,7 @@ in
     riverctl rule-add -app-id "org.telegram.desktop" tags 1
     riverctl rule-add -app-id "google-chrome" tags 2
     riverctl rule-add -app-id "firefox" tags 2
+    riverctl rule-add -app-id "firefox-nightly" tags 2
     riverctl rule-add -app-id "vesktop" tags 4
     riverctl rule-add -app-id "steam" tags 16
     riverctl rule-add -app-id "steam" no-float
@@ -142,6 +143,7 @@ in
 
     pidof rivercarro > /dev/null || rivercarro -inner-gaps 0 -outer-gaps 0 -per-tag -main-ratio 0.5 &
     pidof dbus-daemon > /dev/null || dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork &
+    pidof wl-clip-persist > /dev/null || wl-clip-persist --clipboard regular &
   ''
   + (lib.optionalString (config.module.cliphist.enable) ''
     riverctl map -layout 0 normal Super V spawn "pidof cliphist || ${term} -o main.pad=14x14 -w 1000x300 -a floaterm sh -c 'cliphist list | fzf --no-sort | cliphist decode 2>/dev/null | wl-copy'"

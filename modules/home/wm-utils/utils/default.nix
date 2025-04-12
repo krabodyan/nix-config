@@ -16,11 +16,13 @@ in {
     home.packages = with pkgs; [
       grim
       slurp
+      lswt
       wlr-randr
       wl-gammactl
       wev
       xwayland
       wl-clipboard
+      wl-clip-persist
     ];
   };
 }
