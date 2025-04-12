@@ -22,6 +22,11 @@
 
     nix-colors.url = "github:misterio77/nix-colors";
 
+    nix-cursors = {
+      url = "github:LilleAila/nix-cursors";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     flake-parts = {

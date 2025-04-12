@@ -16,7 +16,19 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = [pkgs.dconf];
-    home.pointerCursor = import ./google-cursor.nix {inherit pkgs;};
+    home.pointerCursor = {
+      package = with colors.hex;
+        inputs.nix-cursors.packages.${pkgs.system}.google-cursor.override {
+          background_color = surface2;
+          outline_color = overlay1;
+          accent_color = red;
+        };
+      name = "GoogleDot-Custom";
+      size = 16;
+      gtk.enable = true;
+      x11.enable = true;
+      x11.defaultCursor = "X_cursor";
+    };
     dconf = {
       enable = true;
       settings = {
