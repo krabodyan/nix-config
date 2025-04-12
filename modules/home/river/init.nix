@@ -7,7 +7,7 @@
 }:
 with colors; let
   term = "foot";
-  focused = "0x${surface1}";
+  focused = "0x${surface0}";
   border = "0x${bg-dark}";
   kbd = "riverctl keyboard-layout -options grp:alts_toggle,caps:backspace,shift:both_capslock us,ua,ru";
 
@@ -141,7 +141,7 @@ in
 
     riverctl default-layout rivercarro
 
-    pidof rivercarro > /dev/null || rivercarro -inner-gaps 0 -outer-gaps 0 -per-tag -main-ratio 0.5 &
+    pidof rivercarro > /dev/null || rivercarro -inner-gaps 0 -outer-gaps 0  -width-ratio-centered -per-tag -main-ratio 0.5 &
     pidof dbus-daemon > /dev/null || dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork &
     pidof wl-clip-persist > /dev/null || wl-clip-persist --clipboard regular &
   ''

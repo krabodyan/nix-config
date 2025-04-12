@@ -30,17 +30,19 @@ in {
         sorting-method = "fzf";
       };
       theme = with colors.hex; let
+        transparent = mkLiteral "transparent";
         inherit (config.lib.formats.rasi) mkLiteral;
+        border = mkLiteral surface2;
+        bright = mkLiteral subtext0;
+        dark = mkLiteral fg-dark;
+        background = mkLiteral bg;
+        urgent = mkLiteral red;
       in {
         "*" = {
           font = "${systemFont} SemiBold 11";
-          bg = mkLiteral "${bg}"; # 99
-          fg = mkLiteral "${fg-dark}";
-          red = mkLiteral "${red}";
-          fg-bright = mkLiteral "${fg}";
-          background-color = mkLiteral "@bg";
-          text-color = mkLiteral "@fg";
-          separatorcolor = mkLiteral "transparent";
+          background-color = background;
+          text-color = dark;
+          separatorcolor = transparent;
           border = 0;
           margin = 0;
           padding = 0;
@@ -53,12 +55,12 @@ in {
           y-offset = -30;
           border-radius = 6;
           border = 2;
-          border-color = mkLiteral "${border}";
-          background-color = mkLiteral "@bg";
+          border-color = border;
+          background-color = background;
         };
 
         mainbox = {
-          background-color = mkLiteral "@bg";
+          background-color = background;
           children = map mkLiteral ["inputbar" "listview"];
         };
 
@@ -69,24 +71,23 @@ in {
         };
 
         inputbar = {
-          text-color = mkLiteral "@fg-bright";
+          text-color = bright;
           children = map mkLiteral ["prompt" "entry"];
         };
 
         prompt = {
-          text-color = mkLiteral "@fg-bright";
-          background-color = mkLiteral "transparent";
+          text-color = bright;
+          background-color = transparent;
           enabled = true;
         };
 
         entry = {
-          text-color = mkLiteral "@fg-bright";
           border-radius = 5;
           border = 2;
-          border-color = mkLiteral "${border}";
-          background-color = mkLiteral "transparent";
+          border-color = border;
+          background-color = transparent;
           placeholder = "";
-          cursor = mkLiteral "underline";
+          cursor-color = dark;
           blink = false;
           padding = mkLiteral "5 10";
           margin = mkLiteral "20 20 10 20";
@@ -94,11 +95,11 @@ in {
 
         element = {
           margin = 5;
-          background-color = mkLiteral "transparent";
+          background-color = transparent;
         };
 
         element-text = {
-          background-color = mkLiteral "transparent";
+          background-color = transparent;
           text-color = mkLiteral "inherit";
           expand = true;
           horizontal-align = mkLiteral "0.5";
@@ -107,39 +108,39 @@ in {
         };
 
         "element.normal.normal" = {
-          text-color = mkLiteral "@fg";
+          text-color = dark;
         };
 
         "element.normal.urgent" = {
-          text-color = mkLiteral "@fg";
+          text-color = urgent;
         };
 
         "element.normal.active" = {
-          text-color = mkLiteral "@fg-bright";
+          text-color = bright;
         };
 
         "element.selected.normal" = {
-          text-color = mkLiteral "@fg-bright";
+          text-color = bright;
         };
 
         "element.selected.urgent" = {
-          text-color = mkLiteral "@red";
+          text-color = urgent;
         };
 
         "element.selected.active" = {
-          text-color = mkLiteral "@fg-bright";
+          text-color = bright;
         };
 
         "element.alternate.normal" = {
-          text-color = mkLiteral "@fg";
+          text-color = dark;
         };
 
         "element.alternate.urgent" = {
-          text-color = mkLiteral "@fg";
+          text-color = urgent;
         };
 
         "element.alternate.active" = {
-          text-color = mkLiteral "@fg";
+          text-color = bright;
         };
       };
     };
