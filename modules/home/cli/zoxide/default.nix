@@ -21,7 +21,7 @@ in {
 
     programs.zoxide = {
       enable = true;
-      enableFishIntegration = config.module.fish.enable;
+      enableFishIntegration = true;
       options = ["--cmd cd"];
     };
   };
