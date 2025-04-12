@@ -42,7 +42,15 @@ in {
           };
 
           # ------- GIT -------
-          g = "git";
+          ga = "git add";
+          gc = "git commit";
+          gs = "git status";
+
+          gr = "git restore";
+          grs = "git restore --staged";
+
+          gg = "git graph -10";
+
           cm = {
             command = "git";
             expansion = "commit -m \"%\"";
@@ -53,11 +61,6 @@ in {
             expansion = "commit --all -m \"%\"";
             setCursor = true;
           };
-          gs = "git status";
-          gr = "git restore";
-          grs = "git restore --staged";
-          ga = "git add";
-          gg = "git graph -10";
 
           # ----- DOCKER -----
           d = "docker";
@@ -126,7 +129,7 @@ in {
         else null;
 
       interactiveShellInit = with colors; # fish
-      
+
         ''
           function fish_hybrid_key_bindings
             fish_vi_key_bindings
@@ -305,7 +308,7 @@ in {
 
       functions = {
         fish_mode_prompt = with colors; # fish
-        
+
           ''
             switch $fish_bind_mode
               case insert
