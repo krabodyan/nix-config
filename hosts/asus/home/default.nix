@@ -104,6 +104,5 @@
     swaylock.enable = true;
     mako.enable = true;
     wm-utils.enable = true;
-    cliphist.enable = true;
   };
 }
