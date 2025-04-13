@@ -2,7 +2,7 @@
   lib,
   pkgs,
   config,
-  systemFont,
+  fonts,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -17,7 +17,7 @@ in {
     home.packages = [pkgs.vesktop];
     xdg.configFile."vesktop/settings/quickCss.css".text = ''
       * {
-        font-family: "${systemFont}" !important;
+        font-family: "${fonts.monospace}" !important;
         font-weight: bold !important;
         font-size: 15px !important;
       }

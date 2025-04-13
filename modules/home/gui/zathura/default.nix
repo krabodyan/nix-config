@@ -1,8 +1,8 @@
 {
   lib,
+  fonts,
   colors,
   config,
-  systemFont,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -46,7 +46,7 @@ in {
         index-active-fg = bg;
         index-fg = fg;
         index-bg = bg;
-        font = "${systemFont} 16";
+        font = "${fonts.monospace} 16";
       };
       mappings = {
         "f" = "toggle_fullscreen";

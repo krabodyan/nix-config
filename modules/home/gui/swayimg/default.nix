@@ -1,9 +1,9 @@
 {
   lib,
   pkgs,
+  fonts,
   colors,
   config,
-  systemFont,
   mkAssociations,
   ...
 }: let
@@ -28,7 +28,7 @@ in {
       slideshow = no
 
       [font]
-      name = ${systemFont}
+      name = ${fonts.monospace}
       size = 14
       color = ${fg}ff
       shadow = #000000a0

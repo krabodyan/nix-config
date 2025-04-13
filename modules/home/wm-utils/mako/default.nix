@@ -1,9 +1,9 @@
 {
   lib,
   pkgs,
+  fonts,
   config,
   colors,
-  systemFont,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -18,7 +18,7 @@ in {
     home.packages = [pkgs.libnotify];
     services.mako = with colors.hex; {
       enable = true;
-      font = "${systemFont} SemiBold 11";
+      font = "${fonts.monospace} SemiBold 11";
       sort = "-time";
       layer = "overlay";
       anchor = "bottom-center";

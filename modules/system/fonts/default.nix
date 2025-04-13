@@ -1,19 +1,16 @@
 {
   lib,
   pkgs,
+  fonts,
   config,
-  systemFont,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf mkOption;
+  inherit (lib) mkEnableOption mkIf;
   cfg = config.module.packages.fonts;
 in {
   options = {
     module.packages.fonts = {
       enable = mkEnableOption "enable fonts";
-      serif = mkOption {
-        type = lib.types.str;
-      };
     };
   };
   config = mkIf cfg.enable {
@@ -23,10 +20,10 @@ in {
       noto-fonts
       noto-fonts-emoji
       noto-fonts-cjk-sans
-      roboto
       twemoji-color-font
       nerd-fonts.symbols-only
       nerd-fonts.iosevka-term
+      roboto
     ];
 
     fonts.fontDir.enable = true;
@@ -36,9 +33,9 @@ in {
       hinting.enable = true;
       cache32Bit = true;
       defaultFonts = {
-        serif = [cfg.serif];
-        sansSerif = [cfg.serif];
-        monospace = [systemFont];
+        serif = [fonts.serif];
+        sansSerif = [fonts.serif];
+        monospace = [fonts.monospace];
         emoji = ["SymbolsNerdFont" "FontAwesome" "Noto Color Emoji"];
       };
     };

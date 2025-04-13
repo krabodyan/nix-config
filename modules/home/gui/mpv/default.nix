@@ -1,8 +1,8 @@
 {
   lib,
+  fonts,
   colors,
   config,
-  systemFont,
   mkAssociations,
   ...
 }: let
@@ -28,7 +28,7 @@ in {
       audio-file-auto=fuzzy
       audio-file-paths=RUS Sound
 
-      osd-font='${systemFont}'
+      osd-font='${fonts.monospace}'
       osd-font-size=40
       osd-border-color='${surface1}'
       osd-border-size=1

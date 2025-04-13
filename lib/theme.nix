@@ -1,5 +1,8 @@
 rec {
-  systemFont = "IosevkaTerm Nerd Font";
+  fonts = {
+    monospace = "IosevkaTerm Nerd Font";
+    serif = "Roboto Medium";
+  };
 
   colors = rec {
     select = brmagenta;

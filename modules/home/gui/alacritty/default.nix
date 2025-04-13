@@ -2,7 +2,7 @@
   lib,
   config,
   colors,
-  systemFont,
+  fonts,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -22,7 +22,7 @@ in {
         };
         font = {
           normal = {
-            family = systemFont;
+            family = fonts.monospace;
             style = "Regular";
           };
           size = 17;

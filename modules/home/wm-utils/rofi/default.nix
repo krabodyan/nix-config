@@ -3,7 +3,7 @@
   pkgs,
   config,
   colors,
-  systemFont,
+  fonts,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -39,7 +39,7 @@ in {
         urgent = mkLiteral red;
       in {
         "*" = {
-          font = "${systemFont} SemiBold 11";
+          font = "${fonts.monospace} SemiBold 11";
           background-color = background;
           text-color = dark;
           separatorcolor = transparent;

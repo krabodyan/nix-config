@@ -1,8 +1,8 @@
 {
   lib,
+  fonts,
   config,
   colors,
-  systemFont,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -20,7 +20,7 @@ in {
         t = "00000000";
         fg = overlay1;
       in {
-        font = systemFont;
+        font = fonts.monospace;
         daemonize = true;
 
         color = bg;

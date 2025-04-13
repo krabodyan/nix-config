@@ -25,10 +25,7 @@
       extraPackages = with pkgs; [
         imagemagick
       ];
-      fonts = {
-        enable = true;
-        serif = "Roboto Medium";
-      };
+      fonts.enable = true;
     };
 
     xdg-portal = {

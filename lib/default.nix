@@ -3,7 +3,7 @@
   inputs,
 }: let
   inherit (import ./util.nix) mkAssociations allDirs;
-  inherit (import ./theme.nix) colors systemFont;
+  inherit (import ./theme.nix) colors fonts;
   mkHost = hostDir: {
     stateVersion,
     system,
@@ -24,8 +24,8 @@
           system
           hostDir
           colors
+          fonts
           overlays
-          systemFont
           ;
       };
       modules = with inputs;
@@ -67,7 +67,7 @@
           system
           hostDir
           colors
-          systemFont
+          fonts
           overlays
           ;
       };

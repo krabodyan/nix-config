@@ -2,7 +2,7 @@
   lib,
   config,
   colors,
-  systemFont,
+  fonts,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -24,7 +24,7 @@ in {
             # "ss14"
           ];
           fontfeatures = lib.concatStringsSep ":fontfeatures=" features;
-          font = "${systemFont}:size=17:fontfeatures=${fontfeatures}";
+          font = "${fonts.monospace}:size=17:fontfeatures=${fontfeatures}";
         in {
           term = "foot";
 

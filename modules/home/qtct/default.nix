@@ -1,9 +1,9 @@
 {
   lib,
   pkgs,
+  fonts,
   config,
   colors,
-  systemFont,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -35,8 +35,8 @@ in {
         style=Fusion
 
         [Fonts]
-        fixed="${systemFont},12,-1,5,57,0,0,0,0,0,Medium"
-        general="Roboto Medium,12,-1,5,50,0,0,0,0,0"
+        fixed="${fonts.monospace},12,-1,5,57,0,0,0,0,0,Medium"
+        general="${fonts.serif},12,-1,5,50,0,0,0,0,0"
 
         [Interface]
         activate_item_on_single_click=1
@@ -69,8 +69,8 @@ in {
         style=Fusion
 
         [Fonts]
-        fixed="${systemFont},12,-1,5,57,0,0,0,0,0,Medium"
-        general="Roboto Medium,12,-1,5,50,0,0,0,0,0"
+        fixed="${fonts.monospace},12,-1,5,57,0,0,0,0,0,Medium"
+        general="${fonts.serif},12,-1,5,50,0,0,0,0,0"
 
         [Interface]
         activate_item_on_single_click=1
