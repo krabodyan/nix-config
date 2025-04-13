@@ -1,24 +1,20 @@
 let
   toggle = "A-d";
   binds = {
-    "A-ret" = ["insert_mode" "insert_newline" "open_above" "insert_tab"];
-    "A-S-h" = "unindent";
-    "A-S-l" = "indent";
     "up" = "no_op";
     "down" = "no_op";
     "left" = "no_op";
     "right" = "no_op";
 
+    "A-ret" = ["insert_mode" "insert_newline" "open_above" "insert_tab"];
+    "A-S-h" = "unindent";
+    "A-S-l" = "indent";
+
     "C-c" = "completion";
-    "C-b" = ''
-      :noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}
-    '';
-    "C-S-b" = ''
-      :sh gh browse %{filename:git_rel}:%{linenumber} -c=%sh{git rev-parse HEAD}
-    '';
+    "C-b" = ":noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}";
 
     "A-y" = "save_selection";
-    "A-f" = ["goto_line_end_newline"];
+    "A-f" = "goto_line_end_newline";
     "A-g" = "goto_first_nonwhitespace";
     "A-a" = ["normal_mode" "goto_word"];
 
@@ -30,53 +26,21 @@ let
     "A-7" = "toggle_comments";
     "A-?" = "toggle_block_comments";
 
-    "A-S-k" = [
-      "normal_mode"
-      "goto_line_end"
-      "extend_line_below"
-      "delete_selection"
-      "move_line_up"
-      "paste_before"
-    ];
-    "A-S-j" = [
-      "normal_mode"
-      "goto_line_end"
-      "extend_line_below"
-      "delete_selection"
-      "paste_after"
-    ];
-    "C-A-k" = [
-      "trim_selections"
-      "normal_mode"
-      "extend_line"
-      "yank"
-      "open_above"
-      "normal_mode"
-      "replace_with_yanked"
-      "collapse_selection"
-    ];
-    "C-A-j" = [
-      "trim_selections"
-      "normal_mode"
-      "extend_line"
-      "yank"
-      "move_line_down"
-      "open_above"
-      "normal_mode"
-      "replace_with_yanked"
-      "collapse_selection"
-    ];
+    "A-S-k" = ["normal_mode" "goto_line_end" "extend_line_below" "delete_selection" "move_line_up" "paste_before"];
+    "A-S-j" = ["normal_mode" "goto_line_end" "extend_line_below" "delete_selection" "paste_after"];
+    "C-A-k" = ["trim_selections" "normal_mode" "extend_line" "yank" "open_above" "normal_mode" "replace_with_yanked" "collapse_selection"];
+    "C-A-j" = ["trim_selections" "normal_mode" "extend_line" "yank" "move_line_down" "open_above" "normal_mode" "replace_with_yanked" "collapse_selection"];
+
     "A-=" = "increment";
     "A-minus" = "decrement";
   };
   special = {
-    "=" = ":format";
+    "tab" = "no_op";
     "<" = "no_op";
     ">" = "no_op";
+
+    "=" = ":format";
     t = ["normal_mode" "extend_to_word"];
-    "tab" = "no_op";
-    "A-x" = "extend_line_up";
-    "esc" = ["collapse_selection" "keep_primary_selection"];
     a = ["append_mode" "collapse_selection"];
     p = ":clipboard-paste-after";
     P = ":clipboard-paste-before";
@@ -84,11 +48,16 @@ let
     y = ":clipboard-yank-join";
     Y = ":clipboard-yank";
     i = ["collapse_selection" "insert_mode"];
-    "S-j" = "join_selections";
-    "A-j" = "join_selections_space";
+
+    J = "join_selections";
+    "C-j" = "join_selections_space";
     "S-m" = "merge_selections";
+
     "S-c" = "copy_selection_on_next_line";
     "A-c" = "copy_selection_on_prev_line";
+
+    "A-x" = "extend_line_up";
+    esc = ["collapse_selection" "keep_primary_selection"];
   };
 in rec {
   insert =
@@ -109,7 +78,6 @@ in rec {
     // special
     // {
       ${toggle} = ["collapse_selection" "insert_mode"];
-      "A-v" = ["select_mode" "flip_selections"];
       f = ["select_mode" "find_next_char"];
       F = ["select_mode" "find_prev_char"];
       space = {
@@ -129,7 +97,6 @@ in rec {
     // special
     // {
       ${toggle} = ["collapse_selection" "normal_mode"];
-      "A-v" = "flip_selections";
       space = normal.space;
       "A-a" = "goto_word";
     };
