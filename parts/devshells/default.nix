@@ -25,6 +25,7 @@
       buildInputs = with pkgs; [
         sqlite.dev
         libudev-zero
+        fontconfig
         dbus.dev
         llvmPackages.clang
         (
