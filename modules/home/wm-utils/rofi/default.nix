@@ -32,8 +32,8 @@ in {
       theme = with colors.hex; let
         transparent = mkLiteral "transparent";
         inherit (config.lib.formats.rasi) mkLiteral;
-        border = mkLiteral surface2;
-        bright = mkLiteral subtext0;
+        border = mkLiteral overlay0;
+        bright = mkLiteral fg;
         dark = mkLiteral fg-dark;
         background = mkLiteral bg;
         urgent = mkLiteral red;
