@@ -23,7 +23,7 @@
     nix-colors.url = "github:misterio77/nix-colors";
 
     nix-cursors = {
-      url = "github:LilleAila/nix-cursors";
+      url = "github:krabodyan/nix-cursors";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

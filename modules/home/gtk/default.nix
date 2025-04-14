@@ -24,7 +24,7 @@ in {
           accent_color = surface2;
         };
       name = "GoogleDot-Custom";
-      size = 16;
+      size = 18;
       gtk.enable = true;
       x11.enable = true;
       x11.defaultCursor = "X_cursor";
