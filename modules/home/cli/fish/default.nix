@@ -211,7 +211,8 @@ in {
 
           set -g fish_key_bindings fish_hybrid_key_bindings
 
-          set sponge_purge_only_on_exit true
+          set -g sponge_purge_only_on_exit true
+          set -g sponge_successful_exit_codes 0 130
 
           set -g fish_greeting
           set -g fish_cursor_visual block
