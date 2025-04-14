@@ -68,26 +68,53 @@ cache.warmup = true
 cachePriming.numThreads = 12
 numThreads = 12
 lru.capacity = 512
+cargo.buildScripts.enable = false
+
 check.command = "clippy"
 check.invocationStrategy = "once"
 check.allTargets = false
 checkOnSave = true
+
 references.excludeTests = true
 references.excludeImports = true
+
 diagnostics.disabled = ["proc-macro-disabled"]
 diagnostics.styleLints.enable = true
-procMacro.ignored.tauri_macros = [ "command", "generate_handler" ]
-procMacro.ignored.tokio_macros = [ "main" ]
-procMacro.ignored.embassy_executor_macros = [ "main" ]
+
+procMacro.ignored.tauri-macros = [ "command", "generate_handler" ]
+procMacro.ignored.async-trait = [ "async-trait"]
+procMacro.ignored.tokio-macros = [ "main" ]
+procMacro.ignored.embassy-executor-macros = [ "main" ]
+
 completion.autoAwait.enable = false
 completion.autoIter.enable = false
 completion.autoimport.enable = true
 completion.hideDeprecated = true
 completion.postfix.enable = false
-inlayHints.implicitDrops.enable = true
+
+inlayHints.maxLength = 15
+inlayHints.renderColons = false
+inlayHints.implicitDrops.enable = false
+inlayHints.implicitSizedBoundHints.enable = true
+inlayHints.lifetimeElisionHints.enable = "skip_trivial"
+inlayHints.lifetimeElisionHints.useParameterNames = true
+inlayHints.closureReturnTypeHints.enable = "with_block"
+inlayHints.closureCaptureHints.enable = true
+inlayHints.genericParameterHints.lifetime.enable = true
+inlayHints.genericParameterHints.type.enable = true
+inlayHints.expressionAdjustmentHints.mode = "prefer_prefix" # prefix | postfix | prefer _
+inlayHints.expressionAdjustmentHints.enable = "reborrow" # always | never | reborrow
+inlayHints.expressionAdjustmentHints.hideOutsideUnsafe = false
 inlayHints.closingBraceHints.minLines = 8
 inlayHints.parameterHints.enable = false
 inlayHints.typeHints.hideClosureInitialization = true
+inlayHints.typeHints.hideNamedConstructor = true
+inlayHints.rangeExclusiveHints.enable = true
+
+lens.enable = false
+assist.expressionFillDefault = ""
+assist.termSearch.borrowcheck = false
+assist.termSearch.fuel = 1000
 files.excludeDirs = [ ".git", "target" ]
 
 # PYTHON --------------------------

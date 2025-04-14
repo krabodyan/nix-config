@@ -75,8 +75,8 @@
       modifiers = ["bold"];
     };
     "markup.heading.1" = sky;
-    "markup.heading.2" = sky;
-    "markup.heading.3" = green;
+    "markup.heading.2" = green;
+    "markup.heading.3" = blue;
     "markup.heading.4" = yellow;
     "markup.heading.5" = magenta;
     "markup.heading.6" = teal;
@@ -91,6 +91,7 @@
     "diff.plus" = green;
     "diff.minus" = red;
     "diff.delta" = blue;
+    "diff.delta.moved" = yellow;
 
     "ui.background" = {};
 
