@@ -19,7 +19,10 @@ in {
       types = ["inode/directory" "application/x-gnome-saved-search"];
       desktop = "yazi.desktop";
     };
-    home.packages = with pkgs; [ouch];
+    home.packages = with pkgs; [
+      ouch
+      exiftool
+    ];
     programs.yazi = {
       enable = true;
       enableFishIntegration = true;

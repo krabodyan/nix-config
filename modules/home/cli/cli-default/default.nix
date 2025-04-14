@@ -20,14 +20,16 @@ in {
     home.packages = with pkgs;
       [
         pv
+        jiq
+
         xdg-utils
 
         python3
         ffmpeg-full
+
         dust
         dua
         duf
-        exiftool
 
         pulsemixer
       ]
