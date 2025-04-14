@@ -23,6 +23,8 @@ with colors; let
       [
         "File Upload"
         "Open File"
+        "Save File"
+        "Save Image"
         "Open Document"
         "Choose Files"
       ]);
@@ -135,8 +137,10 @@ in
 
     riverctl rule-add -app-id "xdg-desktop-portal-gtk" float
     riverctl rule-add -app-id "xdg-desktop-portal-gtk" dimensions 1000 800
-    riverctl rule-add -title "Медіапереглядач" no-fullscreen
-    riverctl rule-add -title "Медіапереглядач" float
+
+    riverctl rule-add -title "Media viewer" no-fullscreen
+    riverctl rule-add -title "Media viewer" float
+
     ${picker-rules}
 
     riverctl default-layout rivercarro
