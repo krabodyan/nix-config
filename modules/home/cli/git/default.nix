@@ -92,6 +92,7 @@ in {
           addEmptyPathspec = false;
           statusHints = false;
           pushUpdateRejected = false;
+          forceDeleteBranch = false;
         };
 
         commit.template = builtins.toString (pkgs.writeText "template.txt" ''
