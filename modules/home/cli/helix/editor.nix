@@ -19,7 +19,7 @@
   bufferline = "multiple";
   popup-border = "all";
   text-width = 145;
-  jump-label-alphabet = "fjdkshlweruiopmaqcvngbzxty";
+  jump-label-alphabet = "jklfdsahgiorewmcnvb";
 
   clipboard-provider = "wayland";
 

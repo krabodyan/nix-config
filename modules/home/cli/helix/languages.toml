@@ -69,6 +69,7 @@ cachePriming.numThreads = 12
 numThreads = 12
 lru.capacity = 512
 cargo.buildScripts.enable = false
+cargo.noDeps = true
 
 check.command = "clippy"
 check.invocationStrategy = "once"
@@ -112,7 +113,7 @@ inlayHints.typeHints.hideNamedConstructor = true
 inlayHints.rangeExclusiveHints.enable = true
 
 lens.enable = false
-assist.expressionFillDefault = ""
+assist.expressionFillDefault = "todo"
 assist.termSearch.borrowcheck = false
 assist.termSearch.fuel = 1000
 files.excludeDirs = [ ".git", "target" ]

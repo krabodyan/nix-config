@@ -1,20 +1,28 @@
 {colors}: {
   paradise = with colors.hex; {
     "diagnostic.error" = {
-      underline.style = "curl";
-      underline.color = red;
+      underline = {
+        style = "curl";
+        color = red;
+      };
     };
     "diagnostic.warning" = {
-      underline.style = "curl";
-      underline.color = yellow;
+      underline = {
+        style = "curl";
+        color = yellow;
+      };
     };
     "diagnostic.info" = {
-      underline.style = "curl";
-      underline.color = yellow;
+      underline = {
+        style = "curl";
+        color = yellow;
+      };
     };
     "diagnostic.hint" = {
-      underline.style = "curl";
-      underline.color = yellow;
+      underline = {
+        style = "curl";
+        color = yellow;
+      };
     };
     "diagnostic.unnecessary" = {
       underline.color = fg-dark;
@@ -158,7 +166,7 @@
     "ui.virtual.inlay-hint" = fg-dark;
     "ui.virtual.jump-label" = {
       bg = surface2;
-      fg = green;
+      fg = brmagenta;
     };
 
     "ui.selection" = {bg = surface2;};
