@@ -46,6 +46,9 @@ in {
         border-color=${red}
         default-timeout=12000
 
+        [app-name="foot" urgency="normal"]
+        border-color=${green}
+
         [app-name="foot"]
         on-notify=exec ${pkgs.pipewire}/bin/pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga &
 

@@ -4,6 +4,7 @@
     -a swaynotify \
     -t 1500 \
     -h string:x-canonical-private-synchronous:swaynotify \
+    --urgency low \
   '';
   bctl = "${pkgs.brightnessctl}/bin/brightnessctl";
 in

@@ -9,6 +9,7 @@
     -t 1000 \
     -a swaynotify \
     -h string:x-canonical-private-synchronous:swaynotify \
+    --urgency low \
   '';
   slurp = "${pkgs.slurp}/bin/slurp -b ${colors.bg}66 -c ${colors.select}";
   copy = "${pkgs.wl-clipboard}/bin/wl-copy -t image/png";

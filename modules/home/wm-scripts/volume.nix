@@ -5,6 +5,7 @@
     -t 1000 \
     -a swaynotify \
     -h string:x-canonical-private-synchronous:swaynotify \
+    --urgency low \
   '';
 in
   pkgs.writeShellScriptBin "__volume" ''
