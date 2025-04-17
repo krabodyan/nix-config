@@ -18,11 +18,9 @@ in {
     in rec {
       l = "${eza} --no-filesize --no-user --no-time --no-permissions";
 
-      lsa = "${l} -a";
-      ls = "${l} --git-ignore";
-      la = "${l} -a --git-ignore";
-
-      lt = "${l} --tree --git-ignore";
+      ls = "${l}";
+      la = "${l} -a";
+      lt = "${l} --tree";
 
       ll = "${eza} --octal-permissions --no-permissions";
       lla = "${eza} --octal-permissions --no-permissions -a";
