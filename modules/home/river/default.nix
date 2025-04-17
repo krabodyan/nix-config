@@ -21,7 +21,7 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [swaybg rivercarro];
+    home.packages = with pkgs; [swaybg wideriver];
     wayland.windowManager.river = {
       enable = true;
       xwayland.enable = true;
