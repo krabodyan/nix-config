@@ -33,7 +33,7 @@ in {
           font-italic = "${font}:weight=Regular:slant=Italic";
           font-bold-italic = "${font}:weight=SemiBold:slant=Italic";
 
-          pad = "14x4 center";
+          pad = "8x0 center";
           dpi-aware = "no";
           resize-by-cells = "no";
           resize-delay-ms = 300;
