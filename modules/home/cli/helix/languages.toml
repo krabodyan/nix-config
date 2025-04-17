@@ -92,6 +92,7 @@ completion.autoIter.enable = false
 completion.autoimport.enable = true
 completion.hideDeprecated = true
 completion.postfix.enable = false
+completion.autoself.enable = false
 
 inlayHints.maxLength = 15
 inlayHints.renderColons = false
