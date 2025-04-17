@@ -20,7 +20,7 @@ in {
       vo=dmabuf-wayland
       volume=50
       keep-open=yes
-      fullscreen=yes
+      fullscreen=no
       force-window
       sid=0
 
@@ -39,12 +39,17 @@ in {
       enable = true;
       extraInput = ''
         ESC          quit
+        й            quit
         WHEEL_UP     add volume  3
         WHEEL_DOWN   add volume -3
         h            seek       -3
         l            seek        3
         k            add volume  5
         j            add volume -5
+        р            seek       -3
+        д            seek        3
+        л            add volume  5
+        о            add volume -5
         UP           add volume  3
         DOWN         add volume -3
         RIGHT        seek        3
