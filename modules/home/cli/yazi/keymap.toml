@@ -17,9 +17,9 @@ run = "plugin compress"
 desc = "Compress to archive"
 
 [[manager.prepend_keymap]]
-on = "<Space>"
-run = "toggle --state=none"
-desc = "Toggle the current selection state"
+on = "z"
+run = "plugin zoxide"
+desc = "Jump to a directory via zoxide"
 
 [[manager.prepend_keymap]]
 on = "<Space>"
