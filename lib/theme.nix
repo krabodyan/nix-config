@@ -20,6 +20,7 @@ rec {
     surface0 = "1a1a1a";
     surface1 = "262626";
     surface2 = "2e2e2e";
+    surface3 = "383838";
 
     fg = "f7f6ef";
     fg-dark = "474747";

@@ -97,9 +97,10 @@
     "markup.raw" = yellow;
 
     "diff.plus" = green;
+    "diff.delta" = green;
     "diff.minus" = red;
-    "diff.delta" = blue;
     "diff.delta.moved" = yellow;
+    "diff.delta.conflict" = brred;
 
     "ui.background" = {};
 
@@ -123,29 +124,32 @@
       modifiers = ["bold"];
     };
 
-    # popup = space
+    # help docs border
     "ui.popup" = {
-      fg = overlay0;
       inherit bg;
+      fg = surface3;
     };
+
+    # space menu, m menu
+    # borders
     "ui.popup.info" = {
-      inherit fg bg;
-    };
-    # ui.menu = autocomplete
-    "ui.menu" = {
-      fg = overlay0;
       inherit bg;
+      fg = surface3;
     };
+    # text
+    "ui.text.info" = overlay2;
+
+    # autocomplete and its border
+    "ui.menu" = {
+      inherit bg;
+      fg = surface3;
+    };
+
     "ui.menu.selected" = fg;
-    "ui.menu.scroll" = surface2;
+    "ui.menu.scroll" = surface3;
 
     "ui.picker.header" = fg-dark;
-    "ui.window" = surface1;
-    "ui.help" = {
-      # menu in command mode :
-      fg = overlay0;
-      inherit bg;
-    };
+    "ui.window" = surface0;
     "ui.bufferline" = {
       fg = surface2;
       inherit bg;
@@ -153,10 +157,19 @@
     "ui.bufferline.active" = subtext0;
     "ui.bufferline.background" = {bg = bg;};
 
+    # menu in command mode :
+    "ui.help" = {
+      fg = overlay2;
+      inherit bg;
+    };
+
     "ui.text" = fg;
-    "ui.text.inactive" = overlay1;
+    # previous command in command mode history
+    "ui.text.inactive" = surface3;
+    # dir in picker
+    "ui.text.directory" = fg;
+    # focused file in picker
     "ui.text.focus" = {
-      inherit fg;
       bg = surface1;
     };
 
