@@ -42,20 +42,20 @@ in {
         hovered         = { reversed  = true  }
         preview_hovered = { underline = false }
 
-        find_keyword  = { fg = "red" }
-        find_position = { fg = "red" }
+        find_keyword  = { fg = "lightred" }
+        find_position = { fg = "lightred" }
 
-        marker_copied   = { fg = "yellow", bg = "yellow" }
-        marker_cut      = { fg = "red",    bg = "red" }
-        marker_marked   = { fg = "blue",   bg = "blue" }
-        marker_selected = { fg = "green",  bg = "green" }
+        marker_copied   = { fg = "yellow",   bg = "yellow" }
+        marker_cut      = { fg = "lightred", bg = "lightred" }
+        marker_marked   = { fg = "blue",     bg = "blue" }
+        marker_selected = { fg = "green",    bg = "green" }
 
         tab_active   = { fg = "black", bg = "lightmagenta" }
         tab_inactive = { fg = "white", bg = "reset" }
         tab_width    = 2
 
         count_copied   = { fg = "black", bg = "yellow" }
-        count_cut      = { fg = "black", bg = "red" }
+        count_cut      = { fg = "black", bg = "lightred" }
         count_selected = { fg = "black", bg = "lightmagenta" }
 
         border_symbol = "│"
@@ -65,9 +65,9 @@ in {
         sep_left  = { open  = "", close = "" }
         sep_right = { open  = "", close = "" }
 
-        progress_label  = { fg = "white", bg = "black", dim = true }
-        progress_normal = { fg = "green", bg = "black", dim = true }
-        progress_error  = { fg = "red",   bg = "black", dim = true }
+        progress_label  = { fg = "white",    bg = "black", dim = true }
+        progress_normal = { fg = "green",    bg = "black", dim = true }
+        progress_error  = { fg = "lightred", bg = "black", dim = true }
 
         perm_type  = { fg = "lightmagenta" }
         perm_read  = { fg = "lightmagenta" }
@@ -78,14 +78,14 @@ in {
         [mode]
         normal_main = { fg = "black",     bg = "${border}"         }
         select_main = { fg = "black",     bg = "green"             }
-        unset_main  = { fg = "black",     bg = "red"               }
+        unset_main  = { fg = "black",     bg = "lightred"          }
         normal_alt =  { fg = "${border}", bg = "black", dim = true }
         select_alt =  { fg = "green",     bg = "black", dim = true }
-        unset_alt  =  { fg = "red",       bg = "black", dim = true }
+        unset_alt  =  { fg = "lightred",  bg = "black", dim = true }
 
         [select]
         border   = { fg = "${border}" }
-        active   = { fg = "red" }
+        active   = { fg = "lightred" }
         inactive = {}
 
         [input]
@@ -100,13 +100,13 @@ in {
         [tasks]
         border  = { fg = "${border}" }
         title   = {}
-        hovered = { fg = "red", underline = true }
+        hovered = { fg = "lightred", underline = true }
 
         [which]
-        mask            = { bg = "black", dim = true }
-        cand            = { fg = "red"    }
-        rest            = { fg = "green"  }
-        desc            = { fg = "white"  }
+        mask            = { bg = "black", dim = false }
+        cand            = { fg = "lightred", dim = false }
+        rest            = { fg = "green", dim = false }
+        desc            = { fg = "white", dim = false  }
         separator       = "   "
 
         [help]
@@ -118,7 +118,7 @@ in {
         [notify]
         title_info  = { fg = "green"  }
         title_warn  = { fg = "yellow" }
-        title_error = { fg = "red"    }
+        title_error = { fg = "lightred"    }
 
         [filetype]
 
