@@ -82,10 +82,10 @@ references.excludeImports = true
 diagnostics.disabled = ["proc-macro-disabled"]
 diagnostics.styleLints.enable = true
 
-procMacro.ignored.tauri-macros = [ "command", "generate_handler" ]
-procMacro.ignored.async-trait = [ "async-trait"]
-procMacro.ignored.tokio-macros = [ "main" ]
-procMacro.ignored.embassy-executor-macros = [ "main" ]
+procMacro.ignored.tauri_macros = [ "command", "generate_handler" ]
+procMacro.ignored.async_trait = [ "async-trait"]
+procMacro.ignored.tokio_macros = [ "main" ]
+procMacro.ignored.embassy_executor_macros = [ "main" ]
 
 completion.autoAwait.enable = false
 completion.autoIter.enable = false
@@ -112,6 +112,7 @@ inlayHints.parameterHints.enable = false
 inlayHints.typeHints.hideClosureInitialization = true
 inlayHints.typeHints.hideNamedConstructor = true
 inlayHints.rangeExclusiveHints.enable = true
+inlayHints.discriminantHints.enable = "fieldless"
 
 lens.enable = false
 assist.expressionFillDefault = "todo"
