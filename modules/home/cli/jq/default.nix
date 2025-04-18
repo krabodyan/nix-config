@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   config,
   ...
 }: let
@@ -16,10 +15,10 @@ in {
     programs.jq = {
       enable = true;
       colors = {
-        null = "0;31";
-        false = "0;31";
-        true = "0;31";
-        numbers = "0;31";
+        null = "0;91";
+        false = "0;91";
+        true = "0;91";
+        numbers = "0;91";
         strings = "0;34";
         arrays = "2;37";
         objects = "2;37";
