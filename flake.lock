@@ -84,11 +84,11 @@
     "fish-done": {
       "flake": false,
       "locked": {
-        "lastModified": 1743609250,
-        "narHash": "sha256-h+L741selF95Cn4AcAFScGz78UyUiyv1sj9fNMuka4o=",
+        "lastModified": 1744911884,
+        "narHash": "sha256-rWhL/HHWpTBVaMmVHzyQmS7SMFEOyI6ln3NMP+XqOaY=",
         "owner": "krabodyan",
         "repo": "fish-done-osc99",
-        "rev": "16bdd2314eb8823186962f3f49250d91ba73a890",
+        "rev": "ae0851dfeea501fee2a2c7ae7164e645512ff643",
         "type": "github"
       },
       "original": {
@@ -189,11 +189,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1744385517,
-        "narHash": "sha256-pqiSmtbquoBM3cVHELcXHl8CLT8moXVkwbtc5xd5Br0=",
+        "lastModified": 1744988393,
+        "narHash": "sha256-ZUGH3xkkQ8WRM2s1wRduJnPDnv/sIW1QwnPuyvVN5lg=",
         "owner": "helix-editor",
         "repo": "helix",
-        "rev": "340934db92aea902a61b9f79b9e6f4bd15111044",
+        "rev": "523e8aa7816cde5f0dc38593737b50527e3348fe",
         "type": "github"
       },
       "original": {
