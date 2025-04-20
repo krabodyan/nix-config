@@ -5,6 +5,7 @@
       overlays = [(import inputs.rust-overlay)];
     };
     rust-default-utils = with pkgs; [
+      cargo-llvm-cov
       cargo-watch
       cargo-expand
       pkg-config
@@ -32,7 +33,7 @@
           rust-pkgs.rust-bin.nightly.latest.default.override
           {
             targets = ["x86_64-unknown-linux-gnu"];
-            extensions = ["rust-src" "rust-analyzer"];
+            extensions = ["rust-src" "rust-analyzer" "llvm-tools-preview"];
           }
         )
       ];
