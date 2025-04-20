@@ -3,6 +3,7 @@
   pkgs,
   config,
   system,
+  inputs,
   username,
   stateVersion,
   ...
@@ -28,6 +29,7 @@ in {
 
     nix = {
       package = pkgs.lix;
+      nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
       gc.automatic = false;
       optimise = {
         automatic = true;
