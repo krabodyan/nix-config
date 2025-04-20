@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "4/8/2025, 9:57:09 AM",
-	"time": 1744095429621,
+	"@time": "4/20/2025, 10:23:06 PM",
+	"time": 1745176986074,
 	"environment": {
-		"extension": "1.99.997",
+		"extension": "2.12.3",
 		"platform": "linux",
-		"firefox": 137
+		"firefox": 139
 	},
 	"autoDarkMode": 1,
 	"exclusionRules": [
@@ -22,6 +22,7 @@
 		"map R reload",
 		"",
 		"map i enterInsertMode",
+		"map gg scrollToTop",
 		"map ge scrollToBottom",
 		"map <a-h> previousTab",
 		"map <a-l> nextTab",
@@ -55,7 +56,7 @@
 		"  background: #f9e289; ",
 		"  border: none;",
 		"  outline: none;",
-		"  font-size: 16px;",
+		"  font-size: 18px;",
 		"  font-family: monospace;",
 		"  font-weight: 400;",
 		"  text-transform: lowercase;",
