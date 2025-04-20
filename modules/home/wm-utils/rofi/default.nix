@@ -85,6 +85,7 @@ in {
           border-radius = 5;
           border = 2;
           border-color = border;
+          text-color = bright;
           background-color = transparent;
           placeholder = "";
           cursor-color = dark;
