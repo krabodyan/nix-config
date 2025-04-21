@@ -23,20 +23,20 @@
 
   clipboard-provider = "wayland";
 
-  end-of-line-diagnostics = "hint";
+  end-of-line-diagnostics = "disable";
   inline-diagnostics = {
-    cursor-line = "info";
+    cursor-line = "hint";
     max-diagnostics = 3;
   };
 
   lsp = {
     enable = true;
-    display-messages = true;
-    display-progress-messages = false;
-    display-inlay-hints = true;
-    display-signature-help-docs = false;
     snippets = false;
+    display-messages = true;
+    display-inlay-hints = true;
     auto-signature-help = true;
+    display-progress-messages = true;
+    display-signature-help-docs = true;
   };
 
   indent-guides = {
