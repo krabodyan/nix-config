@@ -20,7 +20,7 @@
     git = {
       enable = true;
       userName = "krabodyan";
-      userEmail = "krabraketa@gmail.com";
+      userEmail = "krabodyan@gmail.com";
     };
     git-delta.enable = true;
     lazygit.enable = true;
