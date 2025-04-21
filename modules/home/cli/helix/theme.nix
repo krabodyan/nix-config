@@ -7,26 +7,27 @@
       };
     };
     "diagnostic.warning" = {
-      underline = {
-        style = "curl";
-        color = yellow;
-      };
+      # underline = {
+      #   style = "curl";
+      #   color = yellow;
+      # };
     };
     "diagnostic.info" = {
-      underline = {
-        style = "curl";
-        color = yellow;
-      };
+      # underline = {
+      #   style = "curl";
+      #   color = yellow;
+      # };
     };
     "diagnostic.hint" = {
-      underline = {
-        style = "curl";
-        color = yellow;
-      };
+      # underline = {
+      #   style = "curl";
+      #   color = yellow;
+      # };
     };
     "diagnostic.unnecessary" = {
-      underline.color = fg-dark;
-      fg = fg-dark;
+      # underline.color = fg-dark;
+      fg = overlay1;
+      modifiers = ["crossed_out"];
     };
 
     "error" = red;
@@ -136,8 +137,8 @@
       inherit bg;
       fg = surface3;
     };
-    # text
-    "ui.text.info" = overlay2;
+    # text in space menu, m menu
+    "ui.text.info" = subtext0;
 
     # autocomplete and its border
     "ui.menu" = {
@@ -145,7 +146,7 @@
       fg = surface3;
     };
 
-    "ui.menu.selected" = fg;
+    "ui.menu.selected" = subtext0;
     "ui.menu.scroll" = surface3;
 
     "ui.picker.header" = fg-dark;
@@ -163,6 +164,7 @@
       inherit bg;
     };
 
+    # all text including statusline
     "ui.text" = fg;
     # previous command in command mode history
     "ui.text.inactive" = surface3;
@@ -180,6 +182,7 @@
     "ui.virtual.jump-label" = {
       bg = surface2;
       fg = brmagenta;
+      modifiers = ["italic"];
     };
 
     "ui.selection" = {bg = surface2;};
