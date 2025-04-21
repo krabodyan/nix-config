@@ -36,6 +36,9 @@ in {
       [keys.viewer]
       k = prev_file
       j = next_file
+      t = zoom fit
+      z = zoom real
+      f = fullscreen
       left = rotate_left
       right = rotate_right
       bracketleft = flip_vertical
@@ -46,6 +49,8 @@ in {
       Shift+ScrollDown = step_up 5
       ScrollUp = zoom +10
       ScrollDown = zoom -10
+      Ctrl+equal = zoom +10
+      Ctrl+minus = zoom -10
 
       [info]
       show = yes
