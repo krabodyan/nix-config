@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  colors,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -17,10 +18,11 @@ in {
       enable = true;
       settings.gui = {
         border = "single";
-        theme = {
-          activeBorderColor = ["green"];
-          inactiveBorderColor = ["black"];
-          selectedLineBgColor = ["black"];
+        nerdFontsVersion = 3;
+        theme = with colors.hex; {
+          activeBorderColor = [brgreen];
+          inactiveBorderColor = [overlay0];
+          selectedLineBgColor = [overlay0];
         };
       };
     };
