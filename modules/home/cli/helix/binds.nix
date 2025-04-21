@@ -56,7 +56,7 @@ let
     "S-c" = "copy_selection_on_next_line";
     "A-c" = "copy_selection_on_prev_line";
 
-    "A-x" = "extend_line_up";
+    "C-r" = ["insert_mode" "insert_register"];
     esc = ["collapse_selection" "keep_primary_selection"];
   };
 in rec {
