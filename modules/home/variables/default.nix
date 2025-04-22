@@ -14,8 +14,6 @@ in {
   config = mkIf cfg.enable {
     home.sessionPath = ["$HOME/.cargo/bin"];
     home.sessionVariables = {
-      XDG_SESSION_DESKTOP = "river";
-      XDG_CURRENT_DESKTOP = "river";
       EGL_PLATFORM = "wayland";
       CLUTTER_BACKEND = "wayland";
       XDG_SESSION_TYPE = "wayland";

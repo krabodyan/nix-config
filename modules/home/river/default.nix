@@ -22,6 +22,10 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [swaybg wideriver];
+    home.sessionVariables = {
+      XDG_SESSION_DESKTOP = "river";
+      XDG_CURRENT_DESKTOP = "river";
+    };
     wayland.windowManager.river = {
       enable = true;
       xwayland.enable = true;
