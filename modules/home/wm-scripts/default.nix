@@ -11,13 +11,8 @@ in {
   options = {
     module.wm-scripts = {
       enable = mkEnableOption "enable wm-scripts";
-      touchpadcommands = {
-        toggleup = mkOption {
-          type = lib.types.str;
-        };
-        toggledown = mkOption {
-          type = lib.types.str;
-        };
+      touchpad-cmd = mkOption {
+        type = lib.types.str;
       };
     };
   };
@@ -26,7 +21,7 @@ in {
       (import ./volume.nix {inherit pkgs;})
       (import ./touchpad.nix {
         inherit pkgs;
-        inherit (cfg.touchpadcommands) toggleup toggledown;
+        inherit (cfg) touchpad-cmd;
       })
       (import ./microphone.nix {inherit pkgs;})
       (import ./brightness.nix {inherit pkgs;})

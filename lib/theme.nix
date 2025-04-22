@@ -7,7 +7,7 @@ rec {
   colors = rec {
     select = brmagenta;
 
-    border = "ffdef6";
+    border = overlay0;
 
     mode_insert = overlay1;
     mode_normal = brred;

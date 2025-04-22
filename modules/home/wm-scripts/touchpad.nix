@@ -1,7 +1,6 @@
 {
   pkgs,
-  toggleup,
-  toggledown,
+  touchpad-cmd,
   ...
 }: let
   send = ''
@@ -11,11 +10,7 @@
   '';
 in
   pkgs.writeShellScriptBin "__touchpad" ''
-    if riverctl list-input-configs | grep -q "disabled"; then
-      ${toggleup}
-      ${send} "touchpad enabled"
-    else
-      ${toggledown}
-      ${send} "touchpad disabled"
-    fi
+    makoctl dismiss
+    ${touchpad-cmd}
+    ${send} "touchpad toggled"
   ''
