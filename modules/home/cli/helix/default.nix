@@ -37,7 +37,6 @@ in {
       tailwindcss-language-server
       typescript-language-server
       svelte-language-server
-      superhtml
       nodePackages.prettier
       # cpp
       clang-tools
