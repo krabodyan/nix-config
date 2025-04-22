@@ -22,21 +22,38 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    home.sessionVariables = {
+      XDG_SESSION_DESKTOP = "sway";
+      XDG_CURRENT_DESKTOP = "sway";
+    };
     wayland.windowManager.sway = {
       enable = true;
       checkConfig = false;
-      wrapperFeatures.gtk = true;
+      wrapperFeatures = {
+        gtk = true;
+        base = false;
+      };
       xwayland = true;
       extraConfig = ''
         title_align center
         titlebar_border_thickness 0
-        default_border pixel 1
-        default_floating_border pixel 1
+        default_border pixel 2
+        default_floating_border pixel 2
       '';
+      systemd.xdgAutostart = false;
+      systemd.extraCommands = [
+        "systemctl --user reset-failed"
+        "systemctl --user start sway-session.target"
+        "dbus-update-activation-environment --systemd --all"
+        "swaymsg -mt subscribe '[]' || true"
+        "systemctl --user stop sway-session.target"
+      ];
       config = {
         modifier = "Mod4";
         terminal = "foot";
         startup = [
+          # {command = "dbus-daemon --session --address=unix:path=/run/user/1000/bus";}
+          {command = "wl-clip-persist --clipboard regular";}
           {command = "${pkgs.swaykbdd}/bin/swaykbdd";}
         ];
         assigns = {
@@ -51,12 +68,10 @@ in {
             {class = "^vesktop$";}
             {app_id = "^vesktop$";}
           ];
-          "workspace 4" = [
-            {class = "^steam$";}
-            {class = "^zoom$";}
-          ];
           "workspace 5" = [
             {class = "^ONLYOFFICE$";}
+            {class = "^steam$";}
+            {class = "^zoom$";}
           ];
         };
 
@@ -65,22 +80,18 @@ in {
             command = "floating enable; resize set 1000 px 800 px";
             criteria.app_id = "xdg-desktop-portal-gtk";
           }
-          # {
-          #   command = "floating enable; resize set 1000 px 800 px";
-          #   criteria.title = "^Виберіть файли|Вивантаження файлу|File Upload|Відкрити документ$";
-          # }
           {
             command = "floating enable";
             criteria.app_id = "floaterm";
           }
           {
-            command = "border pixel 1";
+            command = "border pixel 2";
             criteria.app_id = ".*";
           }
-          {
-            command = "floating enable";
-            criteria.class = "^zoom$";
-          }
+          # {
+          #   command = "floating enable";
+          #   criteria.class = "^zoom$";
+          # }
         ];
 
         output."eDP-1" = {
@@ -128,14 +139,14 @@ in {
             background = bg;
             border = bg;
             childBorder = bg;
-            indicator = red;
+            indicator = bg;
             text = overlay0;
           };
           focused = {
             background = bg;
             border = bg;
             childBorder = border;
-            indicator = blue;
+            indicator = border;
             text = subtext0;
           };
         in {
@@ -171,8 +182,12 @@ in {
           down = "j";
         in {
           "${mod}+e" = "exec ${pkgs.foot}/bin/foot";
+          "${mod}+r" = "exec ${pkgs.foot}/bin/foot -a floaterm pulsemixer";
           "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot -a floaterm";
           "${mod}+d" = "exec pidof rofi && pkill rofi || ${pkgs.rofi-wayland}/bin/rofi -show drun -kb-cancel 'Alt+Return'";
+          "${mod}+c" = ''exec notify-send --expire-time 2000 "$(date +"%d %B %H:%M")"'';
+
+          "${mod}+w" = "input type:keyboard xkb_switch_layout 0";
 
           "${mod}+Shift+Delete" = "exit";
 
@@ -196,7 +211,7 @@ in {
           "${mod}+f" = "floating toggle";
 
           "${mod}+s" = "layout toggle tabbed splith";
-          "${mod}+c" = "layout toggle splith splitv";
+          "${mod}+v" = "layout toggle splith splitv";
 
           "${mod}+space" = "focus next";
           "Alt+Shift+Tab" = "focus mode_toggle";
