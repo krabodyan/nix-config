@@ -20,7 +20,7 @@ in {
       vo=dmabuf-wayland
       volume=50
       keep-open=yes
-      fullscreen=no
+      fullscreen=yes
       force-window
       sid=0
 
