@@ -25,7 +25,6 @@
       # };
     };
     "diagnostic.unnecessary" = {
-      # underline.color = fg-dark;
       fg = overlay1;
       modifiers = ["crossed_out"];
     };
@@ -152,7 +151,7 @@
     "ui.picker.header" = fg-dark;
     "ui.window" = surface0;
     "ui.bufferline" = {
-      fg = surface2;
+      fg = surface3;
       inherit bg;
     };
     "ui.bufferline.active" = subtext0;
@@ -213,15 +212,15 @@
 
     "ui.cursor.normal" = {
       fg = bg;
-      bg = overlay1;
+      bg = overlay2;
     };
     "ui.cursor.insert" = {
       fg = bg;
-      bg = overlay1;
+      bg = overlay2;
     };
     "ui.cursor.select" = {
       fg = bg;
-      bg = overlay1;
+      bg = overlay2;
     };
 
     "ui.cursorline.primary" = {bg = bg-bright;};
