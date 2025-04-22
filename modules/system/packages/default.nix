@@ -21,6 +21,7 @@ in {
     environment.systemPackages = with pkgs;
       [
         gnumake
+        just
         git
         sops
         gcc

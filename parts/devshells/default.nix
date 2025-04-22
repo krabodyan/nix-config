@@ -50,6 +50,7 @@
         ++ [
           elf2uf2-rs
           picotool
+          minicom
         ];
       buildInputs = [
         (
@@ -110,6 +111,7 @@
         glibc_multi
         pkgsCross.avr.buildPackages.gcc
         platformio
+        minicom
       ];
     };
   };
