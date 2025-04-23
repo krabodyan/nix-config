@@ -32,8 +32,6 @@ in
     if [ $status -eq 0 ]; then
       ${grim} -g "$size" - | ${copy}
       ${send} "screenshot copied"
-    else
-      ${send} "screenshot canceled"
     fi
 
     if [ "$1" = "swayimg" ]; then
