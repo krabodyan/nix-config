@@ -79,12 +79,18 @@
     gtk.enable = true;
     wm-scripts = {
       enable = true;
-      touchpad-cmd = "swaymsg input type:touchpad events toggle enabled disabled";
-      #   if riverctl list-input-configs | grep -q "disabled"; then
-      #     riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events enabled
-      #   else
-      #     riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events disabled
-      #   fi
+      touchpad-cmd =
+        # bash
+        ''
+          swaymsg input type:touchpad events toggle enabled disabled
+        '';
+        # ''
+        #   if riverctl list-input-configs | grep -q "disabled"; then
+        #     riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events enabled
+        #   else
+        #     riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events disabled
+        #   fi
+        # '';
     };
     sway = {
       enable = true;
@@ -102,6 +108,7 @@
     #     riverctl input "pointer-1133-50504-Logitech_USB_Receiver_Mouse" pointer-accel 0
     #   '';
     # };
+
     rofi.enable = true;
     swaylock.enable = true;
     mako.enable = true;

@@ -30,6 +30,12 @@ in {
       enable = true;
       xwayland.enable = true;
       systemd.enable = true;
+      systemd.extraCommands = [
+        "systemctl --user reset-failed"
+        "systemctl --user stop river-session.target"
+        "systemctl --user start river-session.target"
+        "dbus-update-activation-environment --systemd --all"
+      ];
       extraConfig = import ./init.nix {
         inherit colors lib config;
         inherit (cfg) background extraConfig;

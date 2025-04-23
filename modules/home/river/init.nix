@@ -163,7 +163,6 @@ in
       --log-threshold                error       \
       > /dev/null &
 
-    pidof dbus-daemon > /dev/null || dbus-daemon --session --address=unix:path=/run/user/1000/bus --fork &
     pidof wl-clip-persist > /dev/null || wl-clip-persist --clipboard regular &
   ''
   + (lib.optionalString (config.module.cliphist.enable) ''
