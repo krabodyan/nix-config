@@ -29,7 +29,7 @@ in {
 
     nix = {
       package = pkgs.lix;
-      nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+      nixPath = ["nixpkgs=${inputs.nixpkgs}"];
       gc.automatic = false;
       optimise = {
         automatic = true;

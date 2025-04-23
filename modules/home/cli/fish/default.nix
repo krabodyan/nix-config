@@ -129,7 +129,7 @@ in {
         else null;
 
       interactiveShellInit = with colors; # fish
-
+      
         ''
           function fish_hybrid_key_bindings
             fish_vi_key_bindings
@@ -309,7 +309,7 @@ in {
 
       functions = {
         fish_mode_prompt = with colors; # fish
-
+        
           ''
             switch $fish_bind_mode
               case insert
