@@ -11,8 +11,14 @@ in {
   options = {
     module.wm-scripts = {
       enable = mkEnableOption "enable wm-scripts";
-      touchpad-cmd = mkOption {
-        type = lib.types.str;
+      touchpad = {
+        type = mkOption {
+          type = lib.types.enum ["river" "sway"];
+        };
+        device = mkOption {
+          type = lib.types.nullOr lib.types.str;
+          default = null;
+        };
       };
     };
   };
@@ -21,7 +27,7 @@ in {
       (import ./volume.nix {inherit pkgs;})
       (import ./touchpad.nix {
         inherit pkgs;
-        inherit (cfg) touchpad-cmd;
+        inherit (cfg.touchpad) type device;
       })
       (import ./microphone.nix {inherit pkgs;})
       (import ./brightness.nix {inherit pkgs;})
