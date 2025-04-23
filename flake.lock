@@ -189,11 +189,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1744988393,
-        "narHash": "sha256-ZUGH3xkkQ8WRM2s1wRduJnPDnv/sIW1QwnPuyvVN5lg=",
+        "lastModified": 1745302248,
+        "narHash": "sha256-MEEYZaOYmU2SlgzAKRFjF4vtODRx/AUG33nRJ+nKy78=",
         "owner": "helix-editor",
         "repo": "helix",
-        "rev": "523e8aa7816cde5f0dc38593737b50527e3348fe",
+        "rev": "0815b52e0959e21ec792ea41d508a050b552f850",
         "type": "github"
       },
       "original": {
@@ -513,7 +513,8 @@
         "sops-nix": "sops-nix",
         "treefmt-nix": "treefmt-nix",
         "yazi-plugin-compress": "yazi-plugin-compress",
-        "yazi-plugin-ouch": "yazi-plugin-ouch"
+        "yazi-plugin-ouch": "yazi-plugin-ouch",
+        "yazi-plugin-rsync": "yazi-plugin-rsync"
       }
     },
     "rust-analyzer-src": {
@@ -672,6 +673,22 @@
       "original": {
         "owner": "ndtoan96",
         "repo": "ouch.yazi",
+        "type": "github"
+      }
+    },
+    "yazi-plugin-rsync": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745397756,
+        "narHash": "sha256-xAhkDTNi0MjHqESKk8j60WABYvaF7NElO2W/rsL2w2Y=",
+        "owner": "krabodyan",
+        "repo": "rsync.yazi",
+        "rev": "dd5a3f906228b4f5bb4f3d04f958081a492a4e5b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "krabodyan",
+        "repo": "rsync.yazi",
         "type": "github"
       }
     }

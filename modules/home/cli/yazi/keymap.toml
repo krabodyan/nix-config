@@ -17,6 +17,11 @@ run = "plugin compress"
 desc = "Compress to archive"
 
 [[manager.prepend_keymap]]
+on = [ "R" ]
+run = "plugin rsync"
+desc = "Copy via rsync"
+
+[[manager.prepend_keymap]]
 on = "z"
 run = "plugin zoxide"
 desc = "Jump to a directory via zoxide"

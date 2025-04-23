@@ -32,6 +32,7 @@ in {
       "yazi/keymap.toml".source = ./keymap.toml;
       "yazi/plugins/ouch.yazi/main.lua".source = "${inputs.yazi-plugin-ouch}/main.lua";
       "yazi/plugins/compress.yazi/main.lua".source = "${inputs.yazi-plugin-compress}/init.lua";
+      "yazi/plugins/rsync.yazi/main.lua".source = "${inputs.yazi-plugin-rsync}/main.lua";
 
       "yazi/theme.toml".text = let
         border = "lightmagenta";
@@ -116,9 +117,9 @@ in {
         footer  = { fg = "black", dim = true, bg = "white" }
 
         [notify]
-        title_info  = { fg = "green"  }
-        title_warn  = { fg = "yellow" }
-        title_error = { fg = "lightred"    }
+        title_info  = { fg = "green"    }
+        title_warn  = { fg = "yellow"   }
+        title_error = { fg = "lightred" }
 
         [filetype]
 

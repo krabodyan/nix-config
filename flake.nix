@@ -63,6 +63,11 @@
       url = "github:ndtoan96/ouch.yazi";
       flake = false;
     };
+
+    yazi-plugin-rsync = {
+      url = "github:krabodyan/rsync.yazi";
+      flake = false;
+    };
   };
 
   outputs = {
