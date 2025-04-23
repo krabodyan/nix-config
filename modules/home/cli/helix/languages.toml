@@ -20,7 +20,12 @@ inlayHints.parameterNames.enabled = false
 command = "tailwindcss-language-server"
 args = ["--stdio"]
 
-# ARDUINO --------------------------
+
+[[language]]
+name = "gas"
+indent = { tab-width = 4, unit = "\t" }
+
+# CPP --------------------------
 
 [[language]]
 name = "cpp"

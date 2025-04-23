@@ -40,6 +40,8 @@ in {
       nodePackages.prettier
       # cpp
       clang-tools
+      # asm
+      asm-lsp
       # other
       vscode-langservers-extracted
     ];
