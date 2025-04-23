@@ -13,14 +13,13 @@ in {
   };
   config = mkIf cfg.enable {
     systemd.coredump.enable = false;
-    systemd.extraConfig = ''
-      DefaultTimeoutStartSec=15s
-      TimeoutStartSec=15s
+    boot.initrd.systemd.extraConfig = ''
+      [Manager]
       DefaultTimeoutStopSec=15s
-      TimeoutStopSec=15s
+      DefaultTimeoutStartSec=15s
       DefaultTimeoutAbortSec=20sec
-      TimeoutAbortSec=20sec
     '';
+    systemd.extraConfig = config.boot.initrd.systemd.extraConfig;
     services = {
       logind.killUserProcesses = true;
       journald.extraConfig = ''
