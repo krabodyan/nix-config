@@ -153,6 +153,9 @@ in {
           };
           "type:touchpad" = {
             events = "disabled";
+            dwt = "enabled";
+            tap = "enabled";
+            natural_scroll = "enabled";
           };
           "type:pointer" = {
             accel_profile = "flat";
