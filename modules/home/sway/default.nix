@@ -31,15 +31,9 @@ in {
       checkConfig = false;
       wrapperFeatures = {
         gtk = true;
-        base = false;
+        base = true;
       };
       xwayland = true;
-      extraConfig = ''
-        title_align center
-        titlebar_border_thickness 0
-        default_border pixel 2
-        default_floating_border pixel 2
-      '';
       systemd.xdgAutostart = false;
       systemd.extraCommands = [
         "systemctl --user reset-failed"
@@ -52,9 +46,8 @@ in {
         modifier = "Mod4";
         terminal = "foot";
         startup = [
-          # {command = "dbus-daemon --session --address=unix:path=/run/user/1000/bus";}
-          {command = "wl-clip-persist --clipboard regular";}
-          {command = "${pkgs.swaykbdd}/bin/swaykbdd";}
+          {command = "${pkgs.swaykbdd}/bin/swaykbdd &";}
+          {command = "wl-clip-persist --clipboard regular &";}
         ];
         assigns = {
           "workspace 1" = [
@@ -65,7 +58,6 @@ in {
             {app_id = "^firefox-nightly$";}
           ];
           "workspace 3" = [
-            {class = "^vesktop$";}
             {app_id = "^vesktop$";}
           ];
           "workspace 5" = [
@@ -88,10 +80,6 @@ in {
             command = "border pixel 2";
             criteria.app_id = ".*";
           }
-          # {
-          #   command = "floating enable";
-          #   criteria.class = "^zoom$";
-          # }
         ];
 
         output."eDP-1" = {
@@ -163,7 +151,9 @@ in {
             repeat_rate = "40";
             repeat_delay = "400";
           };
-          "type:touchpad" = {events = "disabled";};
+          "type:touchpad" = {
+            events = "disabled";
+          };
           "type:pointer" = {
             accel_profile = "flat";
             pointer_accel = "0";
@@ -249,6 +239,12 @@ in {
           "${mod}+Shift+Print" = "exec wl-paste | swappy -f -";
         };
       };
+      extraConfig = ''
+        title_align center
+        titlebar_border_thickness 0
+        default_border pixel 2
+        default_floating_border pixel 2
+      '';
     };
   };
 }
