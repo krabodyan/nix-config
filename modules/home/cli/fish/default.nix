@@ -15,7 +15,7 @@ in {
       loginShell = {
         enable = mkEnableOption "enable fish loginshell";
         wm = mkOption {
-          type = lib.types.str;
+          type = lib.types.enum ["river" "sway"];
           example = "river";
         };
         withIGPU = mkOption {
@@ -113,23 +113,25 @@ in {
         }
       ];
 
-      loginShellInit =
+      loginShellInit = with cfg.loginShell;
         if cfg.loginShell.enable
-        then # fish
-          ''
-            if test (tty) = "/dev/tty1"
-              ${
-              if cfg.loginShell.withIGPU
-              then "set -x WLR_DRM_DEVICES /dev/dri/igpu"
-              else ""
-            }
-              exec ${cfg.loginShell.wm}
-            end
-          ''
+        then
+          assert config.module."${wm}".enable || throw "cant use ${wm} for fish loginShell as it it not enabled";
+          # fish
+            ''
+              if test (tty) = "/dev/tty1"
+                ${
+                if withIGPU
+                then "set -x WLR_DRM_DEVICES /dev/dri/igpu"
+                else ""
+              }
+                exec ${wm}
+              end
+            ''
         else null;
 
       interactiveShellInit = with colors; # fish
-      
+
         ''
           function fish_hybrid_key_bindings
             fish_vi_key_bindings
@@ -309,7 +311,7 @@ in {
 
       functions = {
         fish_mode_prompt = with colors; # fish
-        
+
           ''
             switch $fish_bind_mode
               case insert
