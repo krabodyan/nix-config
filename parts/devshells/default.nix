@@ -5,9 +5,10 @@
       overlays = [(import inputs.rust-overlay)];
     };
     rust-default-utils = with pkgs; [
+      cargo-show-asm
       cargo-llvm-cov
-      cargo-watch
       cargo-expand
+      cargo-watch
       pkg-config
     ];
   in {
