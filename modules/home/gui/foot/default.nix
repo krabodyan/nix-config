@@ -97,7 +97,7 @@ in {
           dim4 = "6ea4cc";
           dim5 = "cc7cb6";
           dim6 = "70ccca";
-          dim7 = overlay1;
+          dim7 = overlay2;
         };
       };
     };
