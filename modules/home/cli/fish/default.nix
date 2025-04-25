@@ -72,11 +72,11 @@ in {
           s = "stack";
           sp = "stack ps";
           ss = "stack services";
-          sd = "stack deploy -c docker-compose-yml";
+          sd = "stack deploy -d -c docker-compose.yml";
           sv = "service";
+          c = "compose";
           i = "image";
-          c = "container";
-          n = "node";
+          cn = "container";
           nl = "node ls";
           np = "node ps";
           r = "run --rm -it";
@@ -150,6 +150,7 @@ in {
               bind --preset --erase -M $mode ctrl-r
               bind --preset --erase -M $mode ctrl-h
 
+              bind -M $mode alt-backspace backward-kill-word
               bind -M $mode alt-f end-of-line
               bind -M $mode alt-g beginning-of-line
 
