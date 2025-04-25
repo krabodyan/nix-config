@@ -17,6 +17,7 @@
       LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
       DEV_SHELL_NAME = "rust";
       RUST_BACKTRACE = 1;
+      RUST_LOG = "DEBUG";
 
       nativeBuildInputs = with pkgs;
         rust-default-utils
@@ -45,6 +46,7 @@
       DEV_SHELL_NAME = "rasp";
       RUST_BACKTRACE = 1;
       CARGO_BUILD_TARGET = "thumbv6m-none-eabi";
+      RUST_LOG = "DEBUG";
 
       nativeBuildInputs = with pkgs;
         rust-default-utils
@@ -70,6 +72,7 @@
       DEV_SHELL_NAME = "tauri";
       RUST_BACKTRACE = 1;
       GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
+      RUST_LOG = "DEBUG";
 
       nativeBuildInputs = with pkgs;
         rust-default-utils
