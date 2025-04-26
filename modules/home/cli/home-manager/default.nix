@@ -15,7 +15,7 @@ in {
   };
   config = mkIf cfg.enable {
     home = {
-      username = "${username}";
+      inherit username;
       homeDirectory = "/home/${username}";
       inherit stateVersion;
     };

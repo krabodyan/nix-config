@@ -37,7 +37,7 @@ in {
             setCursor = true;
           };
           nd = {
-            expansion = "nix develop $FLAKE#% --command fish";
+            expansion = "nix develop $NH_FLAKE#% --command fish";
             setCursor = true;
           };
 
@@ -91,7 +91,7 @@ in {
           ns = "nix-shell --command fish -p";
         }
         // lib.genAttrs ["ino" "rust" "rasp" "tauri"] (
-          name: "nix develop $FLAKE#${name} --command sh -c \"${tm}\""
+          name: "nix develop $NH_FLAKE#${name} --command sh -c \"${tm}\""
         );
 
       plugins = [
@@ -165,6 +165,7 @@ in {
               bind -M $mode alt-shift-i backward-word
 
               bind -M $mode alt-u backward-kill-line
+              bind -M $mode -m insert alt-e edit_command_buffer
             end
 
             bind -M insert            alt-enter   repaint-mode execute
@@ -344,7 +345,7 @@ in {
           # fish
           ''
             for name in rust tauri ino rasp
-              nix build $FLAKE#devShells.x86_64-linux.$name -o ~/.gc-root-$name
+              nix build $NH_FLAKE#devShells.x86_64-linux.$name -o ~/.gc-root-$name
               echo $name builded
             end
           '';

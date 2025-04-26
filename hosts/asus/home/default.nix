@@ -53,7 +53,6 @@
         obsidian
         gimp
         system-config-printer
-        fritzing
         whatsie
         onlyoffice-bin
         obs-studio

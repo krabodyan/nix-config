@@ -84,8 +84,12 @@
         ];
     };
 in {
-  forAllSystems = inputs.nixpkgs.lib.systems.flakeExposed;
-
   genNixos = builtins.mapAttrs mkHost;
-  genHome = builtins.mapAttrs mkHome;
+  genHome = hosts:
+    builtins.listToAttrs (
+      builtins.map (name: {
+        name = hosts.${name}.username;
+        value = mkHome name hosts.${name};
+      }) (builtins.attrNames hosts)
+    );
 }

@@ -79,7 +79,7 @@
     hosts = import ./hosts.nix;
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = libx.forAllSystems;
+      systems = ["x86_64-linux"];
       imports = [
         inputs.treefmt-nix.flakeModule
         ./parts/devshells
