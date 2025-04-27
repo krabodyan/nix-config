@@ -27,6 +27,8 @@ in {
       python312Packages.python-lsp-server
       # json
       biome
+      # toml
+      taplo
       # nix
       nixd
       alejandra
