@@ -4,7 +4,7 @@
   ...
 }: {
   module = {
-    bluetooth.enable = true;
+    bluetooth.enable = false;
     bootloader.enable = true;
     tmpfs.enable = true;
     ssd-btrfs.enable = true;
@@ -18,6 +18,7 @@
       platformio = true;
     };
     locale.enable = true;
+    libvirtd.enable = false;
 
     packages = {
       enable = true;

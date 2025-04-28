@@ -29,6 +29,9 @@
     cli-default = {
       enable = true;
       extra = with pkgs; [
+        cdrtools # for terraform
+        tenv
+        ansible
         sqlx-cli
         scrcpy
         android-tools

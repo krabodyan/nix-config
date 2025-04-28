@@ -42,7 +42,7 @@
     '';
 
     kernelModules = [
-      # "kvm-intel"
+      "kvm-intel"
     ];
 
     initrd.kernelModules = [

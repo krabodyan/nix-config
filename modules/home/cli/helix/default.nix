@@ -17,33 +17,41 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      # docker
+      # docker and etc
       docker-compose-language-service
       dockerfile-language-server-nodejs
-      yaml-language-server
+      terraform-ls
+
       # python
       black
       ruff
       python312Packages.python-lsp-server
-      # json
-      biome
-      # toml
-      taplo
+
+      # config formats
+      biome #  json
+      taplo # toml
+      yaml-language-server
+
       # nix
       nixd
       alejandra
+
       # shell
       bash-language-server
       fish-lsp
+
       # web
       tailwindcss-language-server
       typescript-language-server
       svelte-language-server
       nodePackages.prettier
+
       # cpp
       clang-tools
+
       # asm
       asm-lsp
+
       # other
       vscode-langservers-extracted
     ];

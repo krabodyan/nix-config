@@ -123,6 +123,13 @@ in {
         "log/"
         "*.swp"
 
+        # terraform
+        ".terraform/"
+        ".terraform.lock.hcl"
+        ".terraform.tfstate.lock.info"
+        "terraform.tfstate"
+        "terraform.tfstate.backup"
+
         # c commons
         "__pycache__"
         "cmake-build-debug"
