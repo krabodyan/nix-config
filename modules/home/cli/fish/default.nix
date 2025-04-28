@@ -147,6 +147,8 @@ in {
               bind --preset --erase -M $mode ctrl-r
               bind --preset --erase -M $mode ctrl-h
 
+              bind --preset --erase -M $mode \~
+
               bind -M $mode alt-backspace backward-kill-word
               bind -M $mode alt-f end-of-line
               bind -M $mode alt-g beginning-of-line
@@ -164,6 +166,8 @@ in {
               bind -M $mode alt-u backward-kill-line
               bind -M $mode -m insert alt-e edit_command_buffer
             end
+
+            bind -M visual \~ togglecase-selection
 
             bind -M insert            alt-enter   repaint-mode execute
             bind -M insert            shift-enter repaint-mode execute
