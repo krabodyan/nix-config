@@ -32,10 +32,6 @@ in {
       shellAbbrs =
         {
           # ------- NIX -------
-          nr = {
-            expansion = "nix run nixpkgs#%";
-            setCursor = true;
-          };
           nd = {
             expansion = "nix develop $NH_FLAKE#% --command fish";
             setCursor = true;
@@ -138,6 +134,7 @@ in {
 
             for mode in default insert visual
               bind --preset --erase -M $mode alt-r
+              bind --preset --erase -M $mode alt-p
               bind --preset --erase -M $mode alt-v
               bind --preset --erase -M $mode alt-s
               bind --preset --erase -M $mode alt-d
@@ -182,6 +179,8 @@ in {
 
             bind -M default           d delete-char
             bind -M default           U redo
+            bind -M default     shift-d kill-word
+            bind -M visual      shift-d kill-word
             bind -M visual            d kill-selection end-selection begin-selection
             bind -M visual  -m insert c kill-selection end-selection repaint-mode
             bind -M default -m insert c delete-char repaint-mode
@@ -195,6 +194,9 @@ in {
 
             bind -M default -m visual x beginning-of-line begin-selection end-of-line repaint-mode
             bind -M visual            x beginning-of-line begin-selection end-of-line
+
+            bind -M visual u       undo
+            bind -M visual shift-u undo
 
             bind -M insert alt-h backward-char
             bind -M insert alt-l forward-char
