@@ -13,7 +13,7 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    home.packages = [pkgs.htop];
+    home.packages = [pkgs.htop-vim];
     xdg.configFile."htop/htoprc" = {
       force = true;
       text = ''
