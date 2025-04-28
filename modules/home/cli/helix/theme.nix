@@ -180,7 +180,7 @@
     "ui.virtual.inlay-hint" = fg-dark;
     "ui.virtual.jump-label" = {
       bg = surface2;
-      fg = brmagenta;
+      fg = bryellow;
       modifiers = ["italic"];
     };
 
