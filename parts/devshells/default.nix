@@ -35,7 +35,7 @@
           rust-pkgs.rust-bin.nightly.latest.default.override
           {
             targets = ["x86_64-unknown-linux-gnu"];
-            extensions = ["rust-src" "rust-analyzer" "llvm-tools-preview"];
+            extensions = ["rust-src" "rust-analyzer" "llvm-tools-preview" "miri"];
           }
         )
       ];
