@@ -152,6 +152,7 @@ assist.expressionFillDefault = ""
 assist.termSearch.borrowcheck = false
 assist.termSearch.fuel = 100
 files.excludeDirs = [".git", ".github", "target", "assets", "static", "dist"]
+files.watcher = "server"
 
 # PYTHON --------------------------
 [[language]]
