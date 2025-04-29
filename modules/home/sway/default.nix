@@ -60,10 +60,12 @@ in {
           "workspace 3" = [
             {app_id = "^vesktop$";}
           ];
+          "workspace 4" = [
+            {class = "^zoom$";}
+          ];
           "workspace 5" = [
             {class = "^ONLYOFFICE$";}
             {class = "^steam$";}
-            {class = "^zoom$";}
           ];
         };
 
@@ -75,6 +77,10 @@ in {
           {
             command = "floating enable";
             criteria.app_id = "floaterm";
+          }
+          {
+            command = "floating enable";
+            criteria.class = "zoom";
           }
           {
             command = "border pixel 2";
