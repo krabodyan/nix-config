@@ -29,6 +29,8 @@
     cli-default = {
       enable = true;
       extra = with pkgs; [
+        minikube
+        kubectl
         cdrtools # for terraform
         tenv
         ansible

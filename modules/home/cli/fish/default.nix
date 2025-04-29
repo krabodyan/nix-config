@@ -31,6 +31,13 @@ in {
 
       shellAbbrs =
         {
+          # ------- K8S -------
+          k = "kubectl";
+          kg = "kubectl get -o wide";
+          kd = "kubectl get -o wide deployments";
+          kp = "kubectl get -o wide pods";
+          ka = "kubectl apply -f";
+
           # ------- NIX -------
           nd = {
             expansion = "nix develop $NH_FLAKE#% --command fish";
