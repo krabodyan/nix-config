@@ -26,17 +26,18 @@
   end-of-line-diagnostics = "disable";
   inline-diagnostics = {
     cursor-line = "hint";
+    other-lines = "disable";
     max-diagnostics = 3;
   };
 
   lsp = {
     enable = true;
-    snippets = false;
+    snippets = true;
     display-messages = true;
     display-inlay-hints = true;
-    auto-signature-help = true;
+    auto-signature-help = false;
     display-progress-messages = true;
-    display-signature-help-docs = true;
+    display-signature-help-docs = false;
   };
 
   indent-guides = {
@@ -69,16 +70,16 @@
     diagnostics = ["hint" "warning" "error"];
     workspace-diagnostics = ["hint" "warning" "error"];
     right = [
-      "diagnostics"
-      "workspace-diagnostics"
-      "separator"
       "read-only-indicator"
       "file-modification-indicator"
       "separator"
       "file-name"
       "spinner"
     ];
-    center = [];
+    center = [
+      "diagnostics"
+      "workspace-diagnostics"
+    ];
     left = [];
     separator = " ";
   };

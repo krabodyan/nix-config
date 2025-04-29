@@ -75,6 +75,11 @@ in {
         add_ignore = ext: "*.${ext}";
       in
         config.programs.git.ignores
+        ++ [
+          "Cargo.lock"
+          "flake.lock"
+          "package-lock.json"
+        ]
         ++ map add_ignore [
           "png"
           "svg"

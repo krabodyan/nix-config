@@ -88,71 +88,76 @@ lru.capacity = 512
 cargo.buildScripts.enable = false
 cargo.noDeps = true
 
-hover.show.fields = 10
-hover.show.enumVariants = 10
-hover.show.traitAssocItems = 10
-
-hover.actions.enable = false
-hover.memoryLayout.enable = false
-
 imports.granularity.group = "module"
 imports.preferPrelude = true
-
-check.command = "clippy"
-check.extraArgs = ["--tests", "--no-deps"]
-check.invocationStrategy = "once"
-check.noDefaultFeatures = true
-check.allTargets = false
-check.allFeatures = false
-
 references.excludeTests = true
 references.excludeImports = true
 
 diagnostics.disabled = ["proc-macro-disabled"]
 diagnostics.styleLints.enable = true
 
-procMacro.ignored.tauri_macros = ["command", "generate_handler"]
-procMacro.ignored.async_trait = ["async_trait"]
-procMacro.ignored.tokio_macros = ["main"]
-procMacro.ignored.embassy_executor_macros = ["main"]
-
-completion.autoAwait.enable = false
-completion.autoIter.enable = false
-completion.autoimport.enable = true
-completion.hideDeprecated = true
-completion.postfix.enable = false
-completion.autoself.enable = false
-completion.callable.snippets = "add_parentheses"
-completion.addSemicolonToUnit = false
-
-inlayHints.maxLength = 8
-inlayHints.renderColons = false
-inlayHints.implicitDrops.enable = false
-inlayHints.implicitSizedBoundHints.enable = false
-inlayHints.lifetimeElisionHints.enable = "skip_trivial"
-inlayHints.lifetimeElisionHints.useParameterNames = true
-inlayHints.closureReturnTypeHints.enable = "with_block"
-inlayHints.closureCaptureHints.enable = true
-inlayHints.genericParameterHints.lifetime.enable = true
-inlayHints.genericParameterHints.type.enable = false
-inlayHints.expressionAdjustmentHints.mode = "prefer_prefix"    # prefix | postfix | prefer _
-inlayHints.expressionAdjustmentHints.enable = "never"          # always | never | reborrow
-inlayHints.expressionAdjustmentHints.hideOutsideUnsafe = false
-inlayHints.closingBraceHints.minLines = 15
-inlayHints.parameterHints.enable = false
-inlayHints.typeHints.enable = true
-inlayHints.typeHints.hideClosureInitialization = true
-inlayHints.typeHints.hideNamedConstructor = true
-inlayHints.rangeExclusiveHints.enable = true
-inlayHints.discriminantHints.enable = "fieldless"
-inlayHints.bindingModeHints.enable = false
-
-lens.enable = false
-assist.expressionFillDefault = ""
+assist.expressionFillDefault = "todo"
 assist.termSearch.borrowcheck = false
 assist.termSearch.fuel = 100
+assist.emitMustUse = true
+
 files.excludeDirs = [".git", ".github", "target", "assets", "static", "dist"]
 files.watcher = "server"
+
+[language-server.rust-analyzer.config.hover]
+show.fields = 10
+show.enumVariants = 10
+show.traitAssocItems = 10
+actions.enable = false
+memoryLayout.enable = false
+lens.enable = false
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+extraArgs = ["--tests", "--no-deps"]
+invocationStrategy = "once"
+noDefaultFeatures = true
+allTargets = false
+allFeatures = false
+
+[language-server.rust-analyzer.config.procMacro]
+ignored.tauri_macros = ["command", "generate_handler"]
+ignored.async_trait = ["async_trait"]
+ignored.tokio_macros = ["main"]
+ignored.embassy_executor_macros = ["main"]
+
+[language-server.rust-analyzer.config.completion]
+autoAwait.enable = false
+autoIter.enable = false
+autoimport.enable = true
+hideDeprecated = true
+postfix.enable = false
+autoself.enable = false
+callable.snippets = "add_parentheses"
+addSemicolonToUnit = false
+
+[language-server.rust-analyzer.config.inlayHints]
+maxLength = 8
+renderColons = false
+implicitDrops.enable = false
+implicitSizedBoundHints.enable = false
+lifetimeElisionHints.enable = "skip_trivial"
+lifetimeElisionHints.useParameterNames = true
+closureReturnTypeHints.enable = "with_block"
+closureCaptureHints.enable = true
+genericParameterHints.lifetime.enable = true
+genericParameterHints.type.enable = false
+expressionAdjustmentHints.mode = "prefer_prefix"    # prefix | postfix | prefer _
+expressionAdjustmentHints.enable = "never"          # always | never | reborrow
+expressionAdjustmentHints.hideOutsideUnsafe = false
+closingBraceHints.minLines = 15
+parameterHints.enable = false
+typeHints.enable = true
+typeHints.hideClosureInitialization = true
+typeHints.hideNamedConstructor = true
+rangeExclusiveHints.enable = true
+discriminantHints.enable = "fieldless"
+bindingModeHints.enable = false
 
 # PYTHON --------------------------
 [[language]]
