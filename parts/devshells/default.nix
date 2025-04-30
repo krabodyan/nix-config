@@ -5,6 +5,7 @@
       overlays = [(import inputs.rust-overlay)];
     };
     rust-default-utils = with pkgs; [
+      sqlx-cli
       cargo-show-asm
       cargo-llvm-cov
       cargo-expand
