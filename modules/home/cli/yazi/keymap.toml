@@ -1,23 +1,26 @@
 [[manager.prepend_keymap]]
-on  = "y"
-run = [ '''
+on = "y"
+run = [
+	'''
 	shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' --confirm
-''', "yank" ]
+''',
+	"yank",
+]
 
 [[manager.prepend_keymap]]
-on  = [ "c", "e" ]
-run = [ '''
+on = ["c", "e"]
+run = ['''
 	shell 'ouch d -y "$@"' --confirm
-''' ]
+''']
 desc = "Extract here with ouch"
 
 [[manager.prepend_keymap]]
-on = [ "c", "a" ]
+on = ["c", "a"]
 run = "plugin compress"
 desc = "Compress to archive"
 
 [[manager.prepend_keymap]]
-on = [ "R" ]
+on = ["R"]
 run = "plugin rsync"
 desc = "Copy via rsync"
 
@@ -35,3 +38,8 @@ desc = "Toggle the current selection state"
 on = "<a-a>"
 run = "plugin fzf"
 desc = "Jump to a file/directory via fzf"
+
+[[input.prepend_keymap]]
+on = "<Esc>"
+run = "close"
+desc = "Cancel input"
