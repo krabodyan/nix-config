@@ -33,9 +33,17 @@ in {
         {
           # ------- K8S -------
           k = "kubectl";
+
           kg = "kubectl get -o wide";
-          kd = "kubectl get -o wide deployments";
-          kp = "kubectl get -o wide pods";
+          kga = "kubectl get -o wide all";
+          kgd = "kubectl get -o wide deployments";
+          kgs = "kubectl get -o wide services";
+          kgp = "kubectl get -o wide pods";
+
+          kd = "kubectl describe";
+          kdp = "kubectl describe pods";
+          kdd = "kubectl describe deployments";
+
           ka = "kubectl apply -f";
 
           # ------- NIX -------
