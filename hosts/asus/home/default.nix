@@ -25,20 +25,21 @@
     git-delta.enable = true;
     lazygit.enable = true;
     gh.enable = true;
+    kubectl.enable = true;
 
     cli-default = {
       enable = true;
       extra = with pkgs; [
-        minikube
-        kubectl
-        cdrtools # for terraform
         tenv
+        cdrtools
         ansible
-        sqlx-cli
+
         scrcpy
         android-tools
+
         postgresql
         litecli
+
         lazydocker
       ];
     };
@@ -46,8 +47,8 @@
       enable = true;
       loginShell = {
         enable = true;
-        wm = "sway";
         withIGPU = true;
+        wm = "sway";
       };
     };
 
