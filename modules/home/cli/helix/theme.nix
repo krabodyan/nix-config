@@ -181,7 +181,7 @@
     "ui.virtual.jump-label" = {
       bg = surface2;
       fg = bryellow;
-      modifiers = ["italic"];
+      modifiers = ["bold"];
     };
 
     "ui.selection" = {bg = surface2;};

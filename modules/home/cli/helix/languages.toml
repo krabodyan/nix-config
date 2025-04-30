@@ -128,7 +128,7 @@ ignored.embassy_executor_macros = ["main"]
 
 [language-server.rust-analyzer.config.completion]
 autoAwait.enable = false
-autoIter.enable = false
+autoIter.enable = true
 autoimport.enable = true
 hideDeprecated = true
 postfix.enable = false
@@ -137,7 +137,7 @@ callable.snippets = "add_parentheses"
 addSemicolonToUnit = false
 
 [language-server.rust-analyzer.config.inlayHints]
-maxLength = 8
+maxLength = 15
 renderColons = false
 implicitDrops.enable = false
 implicitSizedBoundHints.enable = false
