@@ -56,6 +56,7 @@
       "usbhid"
       "r8169"
       "mt7921e"
+      "usb_storage"
     ];
     initrd.verbose = false;
 
