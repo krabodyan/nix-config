@@ -45,6 +45,7 @@
     };
     fish = {
       enable = true;
+      kubectl = false;
       loginShell = {
         enable = true;
         withIGPU = true;

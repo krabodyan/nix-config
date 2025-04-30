@@ -12,6 +12,10 @@ in {
   options = {
     module.fish = {
       enable = mkEnableOption "enable fish";
+      kubectl = mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
       loginShell = {
         enable = mkEnableOption "enable fish loginshell";
         wm = mkOption {
@@ -333,6 +337,31 @@ in {
         '';
 
       functions = {
+        nix_prompt =
+          # fish
+          ''
+            if set -q IN_NIX_SHELL
+              if set -q DEV_SHELL_NAME
+                printf "\033[95m$DEV_SHELL_NAME\033[0m "
+              else
+                printf "\033[95mnix-shell\033[0m "
+              end
+            end
+          '';
+
+        kube_prompt =
+          mkIf cfg.kubectl
+          # fish
+          ''
+            set -l namespace (kubens -c 2>/dev/null)
+
+            if [ $status -ne 0 ];
+              return
+            end
+
+            printf "\033[93m$namespace\033[0m "
+          '';
+
         fish_mode_prompt = with colors; # fish
 
           ''
@@ -349,18 +378,15 @@ in {
           '';
 
         fish_prompt =
-          # fish
-          ''
-            if set -q IN_NIX_SHELL
-              if set -q DEV_SHELL_NAME
-                printf "\033[35m$DEV_SHELL_NAME\033[0m %s%s 󰧞 " (fish_git_prompt "%s ") (prompt_pwd)
-              else
-                printf "\033[35mnix-shell\033[0m %s%s 󰧞 " (fish_git_prompt "%s ") (prompt_pwd)
-              end
-            else
-              printf "%s%s 󰧞 " (fish_git_prompt "%s ") (prompt_pwd)
-            end
-          '';
+          if cfg.kubectl
+          then # fish
+            ''
+              printf "%s%s%s%s 󰧞 " (nix_prompt) (kube_prompt) (fish_git_prompt "%s ") (prompt_pwd)
+            ''
+          else # fish
+            ''
+              printf "%s%s%s 󰧞 " (nix_prompt) (fish_git_prompt "%s ") (prompt_pwd)
+            '';
 
         build-devshell =
           # fish
