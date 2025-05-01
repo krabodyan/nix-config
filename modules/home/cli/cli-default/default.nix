@@ -20,6 +20,7 @@ in {
     home.packages = with pkgs;
       [
         pv
+        yq
         jiq
 
         xdg-utils
