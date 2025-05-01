@@ -187,6 +187,8 @@ in {
           "${mod}+c" = ''exec notify-send --expire-time 2000 "$(date +"%d %B %H:%M")"'';
 
           "${mod}+w" = "input type:keyboard xkb_switch_layout 0";
+          "${mod}+Alt+b" = "seat seat0 hide_cursor 0";
+          "${mod}+b" = "seat seat0 hide_cursor ${config.wayland.windowManager.sway.config.seat.seat0.hide_cursor}";
 
           "${mod}+Shift+Delete" = "exit";
 
