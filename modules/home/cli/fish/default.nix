@@ -353,7 +353,7 @@ in {
           mkIf cfg.kubectl
           # fish
           ''
-            set -l namespace (kubens -c 2>/dev/null)
+            set -l namespace (yq -r '.contexts[] | select(.name == "minikube") | .context.namespace' ~/.kube/config 2>/dev/null)
 
             if [ $status -ne 0 ];
               return
