@@ -35,7 +35,7 @@
 }
 
 /* #nav-bar-customization-target { */
-  /* background: -moz-Dialog !important; */
+/* background: -moz-Dialog !important; */
 /* } */
 
 /* Window control buttons (min, resize and close) */
@@ -76,6 +76,7 @@
 #tracking-protection-icon-container,
 #reader-mode-button,
 #urlbar-searchmode-switcher,
+#searchmode-switcher-chicklet,
 #translations-button {
   display: none !important
 }
@@ -97,8 +98,20 @@
 
 /* --- ~END~ element visibility section --- */
 
+.tab-group-label {
+  outline: none !important;
+}
+
 /* Navbar size calc */
 :root {
+  --tab-selected-outline-color: transparent !important;
+  --tab-selected-bgcolor: #262626 !important;
+  --tab-group-color-cyan: var(--tab-group-color-cyan-invert) !important;
+  --tab-group-color-cyan-pale: var(--tab-group-label-text-dark) !important;
+  --tab-group-color-blue: var(--tab-group-color-blue-invert) !important;
+  --tab-group-color-blue-pale: var(--tab-group-label-text-dark) !important;
+  --tab-group-color-pink: var(--tab-group-color-pink-invert) !important;
+  --tab-group-color-pink-pale: var(--tab-group-label-text-dark) !important;
   /*  Default: 6px  */
   --NavbarWidth: 43;
   /*  Default values: 36 - 43  */
