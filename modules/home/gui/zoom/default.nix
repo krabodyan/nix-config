@@ -13,7 +13,10 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    home.packages = [pkgs.zoom-us];
+    home.packages = [(pkgs.zoom-us.override {
+      xdgDesktopPortalSupport = false;
+      pulseaudioSupport = true;
+    })];
     xdg.mimeApps.defaultApplications = {
       "x-scheme-handler/zoommtg" = ["Zoom.desktop"];
     };
