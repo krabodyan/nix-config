@@ -16,52 +16,50 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    home.packages = with pkgs; [
-      # docker and etc
-      docker-compose-language-service
-      dockerfile-language-server-nodejs
-      terraform-ls
-
-      # python
-      black
-      ruff
-      python312Packages.python-lsp-server
-
-      # config formats
-      biome #  json
-      taplo # toml
-      yaml-language-server
-
-      # nix
-      nixd
-      alejandra
-
-      # shell
-      bash-language-server
-      fish-lsp
-
-      # web
-      tailwindcss-language-server
-      typescript-language-server
-      svelte-language-server
-      nodePackages.prettier
-
-      # cpp
-      clang-tools
-
-      # asm
-      asm-lsp
-
-      # other
-      vscode-langservers-extracted
-    ];
-
     xdg.configFile."helix/languages.toml".source = ./languages.toml;
 
     programs.helix = {
       enable = true;
       package = inputs.helix.packages.${pkgs.system}.helix;
-      extraPackages = [
+      extraPackages = with pkgs; [
+        # docker and etc
+        docker-compose-language-service
+        dockerfile-language-server-nodejs
+        terraform-ls
+        helm-ls
+
+        # python
+        black
+        ruff
+        python312Packages.python-lsp-server
+
+        # config formats
+        biome #  json
+        taplo # toml
+        yaml-language-server
+
+        # nix
+        nixd
+        alejandra
+
+        # shell
+        bash-language-server
+        fish-lsp
+
+        # web
+        tailwindcss-language-server
+        typescript-language-server
+        svelte-language-server
+        nodePackages.prettier
+
+        # cpp
+        clang-tools
+
+        # asm
+        asm-lsp
+
+        # other
+        vscode-langservers-extracted
         (import ./yazi-picker.nix {inherit pkgs;})
       ];
       defaultEditor = true;
