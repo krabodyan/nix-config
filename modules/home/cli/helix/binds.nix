@@ -12,7 +12,6 @@ let
     "A-S-l" = "indent";
 
     "C-c" = "completion";
-    "C-b" = ":noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}";
 
     "A-y" = "save_selection";
     "A-f" = "goto_line_end_newline";
@@ -94,6 +93,10 @@ in rec {
         i = ":toggle lsp.display-inlay-hints";
         h = ":toggle end-of-line-diagnostics disable hint";
         B = ":echo %sh{git blame --date=short -L %{cursor_line},+1 %{buffer_name}}";
+        G = [
+          ":noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}"
+          ":echo opening in browser"
+        ];
         "S-c" = ":buffer-close!";
         "S-f" = ":open %sh{ __yazi_picker }";
         "A-f" = "file_picker_in_current_buffer_directory";
