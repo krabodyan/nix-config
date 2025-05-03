@@ -118,6 +118,7 @@ in {
       ignores = [
         "*.bak"
         ".cache/"
+        ".cache"
         "tmp/"
         "*.tmp"
         "log/"
@@ -135,7 +136,6 @@ in {
         "cmake-build-debug"
         "compile_commands.json"
         "vgcore.*"
-        ".cache"
         ".tags"
         "tags"
         "*~"
@@ -152,9 +152,6 @@ in {
 
         # node
         "node_modules"
-
-        # locked files
-        "*~"
 
         # nix
         "result"
