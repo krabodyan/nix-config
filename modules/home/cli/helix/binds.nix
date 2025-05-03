@@ -60,6 +60,9 @@ let
     "A-c" = "copy_selection_on_prev_line";
 
     "C-r" = ["insert_mode" "insert_register"];
+    "C-b" = [":pipe base64"];
+    "C-A-b" = [":pipe base64 -d"];
+
     esc = ["collapse_selection" "keep_primary_selection"];
   };
 in rec {
