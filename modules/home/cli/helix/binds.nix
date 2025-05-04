@@ -5,9 +5,17 @@ let
     "down" = "no_op";
     "left" = "no_op";
     "right" = "no_op";
-    "A-backspace" = "delete_word_backward";
+    "A-backspace" = ["commit_undo_checkpoint" "delete_word_backward"];
 
-    "A-ret" = ["insert_mode" "insert_newline" "open_above" "insert_tab"];
+    "A-ret" = [
+      "insert_mode"
+      "insert_newline"
+      "commit_undo_checkpoint"
+      "open_above"
+      "commit_undo_checkpoint"
+      "insert_tab"
+    ];
+
     "A-S-h" = "unindent";
     "A-S-l" = "indent";
 
@@ -18,7 +26,9 @@ let
     "A-g" = "goto_first_nonwhitespace";
     "A-a" = ["normal_mode" "goto_word"];
 
-    "A-s" = [":w" "normal_mode" "collapse_selection" "commit_undo_checkpoint"];
+    "A-s" = [":write" "normal_mode" "collapse_selection" "commit_undo_checkpoint"];
+    "A-S" = [":write!" "normal_mode" "collapse_selection" "commit_undo_checkpoint"];
+
     "A-e" = ":buffer-next";
     "A-w" = ":buffer-previous";
 
@@ -26,10 +36,42 @@ let
     "A-7" = "toggle_comments";
     "A-?" = "toggle_block_comments";
 
-    "A-S-k" = ["normal_mode" "goto_line_end" "extend_line_below" "delete_selection" "move_line_up" "paste_before"];
-    "A-S-j" = ["normal_mode" "goto_line_end" "extend_line_below" "delete_selection" "paste_after"];
-    "C-A-k" = ["trim_selections" "normal_mode" "extend_line" "yank" "open_above" "normal_mode" "replace_with_yanked" "collapse_selection"];
-    "C-A-j" = ["trim_selections" "normal_mode" "extend_line" "yank" "move_line_down" "open_above" "normal_mode" "replace_with_yanked" "collapse_selection"];
+    "A-S-k" = [
+      "normal_mode"
+      "goto_line_end"
+      "extend_line_below"
+      "delete_selection"
+      "move_line_up"
+      "paste_before"
+    ];
+    "A-S-j" = [
+      "normal_mode"
+      "goto_line_end"
+      "extend_line_below"
+      "delete_selection"
+      "paste_after"
+    ];
+    "C-A-k" = [
+      "trim_selections"
+      "normal_mode"
+      "extend_line"
+      "yank"
+      "open_above"
+      "normal_mode"
+      "replace_with_yanked"
+      "collapse_selection"
+    ];
+    "C-A-j" = [
+      "trim_selections"
+      "normal_mode"
+      "extend_line"
+      "yank"
+      "move_line_down"
+      "open_above"
+      "normal_mode"
+      "replace_with_yanked"
+      "collapse_selection"
+    ];
 
     "A-=" = "increment";
     "A-minus" = "decrement";
