@@ -353,7 +353,7 @@ in {
           mkIf cfg.kubectl
           # fish
           ''
-            set -l namespace (yq -r '.contexts[] | select(.name == "minikube") | .context.namespace' ~/.kube/config 2>/dev/null)
+            set -l namespace (kubens -c 2>/dev/null)
 
             if [ $status -ne 0 ];
               return
@@ -381,7 +381,7 @@ in {
           if cfg.kubectl
           then # fish
             ''
-              printf "%s%s%s%s 󰧞 " (nix_prompt) (kube_prompt) (fish_git_prompt "%s ") (prompt_pwd)
+              printf "%s%s%s%s 󰧞 " (kube_prompt) (nix_prompt) (fish_git_prompt "%s ") (prompt_pwd)
             ''
           else # fish
             ''
