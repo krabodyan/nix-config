@@ -11,10 +11,7 @@
 
     packages = {
       enable = true;
-      fonts = {
-        enable = true;
-        serif = "Roboto Medium";
-      };
+      fonts.enable = true;
     };
 
     xdg-portal = {

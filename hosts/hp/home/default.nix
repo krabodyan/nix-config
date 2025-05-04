@@ -22,6 +22,7 @@
     git-delta.enable = true;
     lazygit.enable = true;
     gh.enable = true;
+    kubectl.enable = true;
 
     cli-default = {
       enable = true;
@@ -30,7 +31,7 @@
       enable = true;
       loginShell = {
         enable = true;
-        wm = "river";
+        wm = "sway";
       };
     };
 
@@ -49,26 +50,14 @@
     gtk.enable = true;
     wm-scripts = {
       enable = true;
-      touchpadcommands = {
-        toggleup = ''
-          riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" events enabled
-        '';
-        toggledown = ''
-          riverctl input "pointer-2-7-SynPS/2_Synaptics_TouchPad" events disabled
-        '';
-      };
+      touchpad.type = "sway";
     };
-    river = {
+
+    sway = {
       enable = true;
       background = "~/flake/assets/background.jpg";
-      extraConfig = ''
-        riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" scroll-factor 0.2
-        riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" pointer-accel 0.3
-        riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" accel-profile flat
-        riverctl input "pointer-1133-50504-Logitech_USB_Receiver_Mouse" accel-profile flat
-        riverctl input "pointer-1133-50504-Logitech_USB_Receiver_Mouse" pointer-accel 0
-      '';
     };
+
     rofi.enable = true;
     swaylock.enable = true;
     mako.enable = true;
