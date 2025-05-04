@@ -365,7 +365,7 @@ in {
 
           ''
             if set -q SSH_CONNECTION
-              printf "\033[95m[SSH]\033[0m "
+              printf "\033[91m[SSH]\033[0m "
             end
           '';
 
