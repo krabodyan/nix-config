@@ -29,7 +29,7 @@
     };
     fish = {
       enable = true;
-      kube-prompt = false;
+      kube-prompt = true;
       ssh-prompt = true;
       loginShell = {
         enable = true;

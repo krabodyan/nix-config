@@ -46,6 +46,7 @@
     fish = {
       enable = true;
       kube-prompt = false;
+      ssh-prompt = false;
       loginShell = {
         enable = true;
         withIGPU = true;

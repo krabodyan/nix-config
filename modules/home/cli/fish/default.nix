@@ -401,13 +401,13 @@ in {
           parts = [
             (
               lib.optionalString
-              cfg.kube-prompt
-              "(kube_prompt)"
+              cfg.ssh-prompt
+              "(ssh_prompt)"
             )
             (
               lib.optionalString
-              cfg.ssh-prompt
-              "(ssh_prompt)"
+              cfg.kube-prompt
+              "(kube_prompt)"
             )
             "(nix_prompt)"
             "(fish_git_prompt \"%s \")"
