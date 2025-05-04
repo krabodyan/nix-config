@@ -85,11 +85,5 @@
     };
 in {
   genNixos = builtins.mapAttrs mkHost;
-  genHome = hosts:
-    builtins.listToAttrs (
-      builtins.map (name: {
-        name = hosts.${name}.username;
-        value = mkHome name hosts.${name};
-      }) (builtins.attrNames hosts)
-    );
+  genHome = builtins.mapAttrs mkHome;
 }
