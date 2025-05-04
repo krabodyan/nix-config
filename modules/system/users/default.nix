@@ -38,7 +38,7 @@ in {
 
       users = {
         root = {
-          shell = pkgs.fish;
+          shell = pkgs.bash;
           hashedPasswordFile = config.sops.secrets.password.path;
         };
 
