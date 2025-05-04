@@ -12,16 +12,25 @@ in {
   options = {
     module.fish = {
       enable = mkEnableOption "enable fish";
-      kubectl = mkOption {
+
+      kube-prompt = mkOption {
         type = lib.types.bool;
         default = false;
       };
+
+      ssh-prompt = mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
+
       loginShell = {
         enable = mkEnableOption "enable fish loginshell";
+
         wm = mkOption {
           type = lib.types.enum ["river" "sway"];
           example = "river";
         };
+
         withIGPU = mkOption {
           type = lib.types.bool;
           default = false;
@@ -349,8 +358,17 @@ in {
             end
           '';
 
+        ssh_prompt =
+          mkIf cfg.ssh-prompt # fish
+
+          ''
+            if set -q SSH_CONNECTION
+              printf "\033[95m[SSH]\033[0m "
+            end
+          '';
+
         kube_prompt =
-          mkIf cfg.kubectl
+          mkIf cfg.kube-prompt
           # fish
           ''
             set -l namespace (kubens -c 2>/dev/null)
@@ -377,16 +395,27 @@ in {
             end
           '';
 
-        fish_prompt =
-          if cfg.kubectl
-          then # fish
-            ''
-              printf "%s%s%s%s 󰧞 " (kube_prompt) (nix_prompt) (fish_git_prompt "%s ") (prompt_pwd)
-            ''
-          else # fish
-            ''
-              printf "%s%s%s 󰧞 " (nix_prompt) (fish_git_prompt "%s ") (prompt_pwd)
-            '';
+        fish_prompt = let
+          parts = [
+            (
+              lib.optionalString
+              cfg.kube-prompt
+              "(kube_prompt)"
+            )
+            (
+              lib.optionalString
+              cfg.ssh-prompt
+              "(ssh_prompt)"
+            )
+            "(nix_prompt)"
+            "(fish_git_prompt \"%s \")"
+            "(prompt_pwd)"
+          ];
+          formatString = lib.concatStrings (lib.replicate (builtins.length parts) "%s");
+          argsString = lib.concatStringsSep " " parts;
+        in ''
+          printf "${formatString} 󰧞 " ${argsString}
+        '';
 
         build-devshell =
           # fish

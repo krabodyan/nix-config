@@ -29,8 +29,11 @@
     };
     fish = {
       enable = true;
+      kube-prompt = false;
+      ssh-prompt = true;
       loginShell = {
         enable = true;
+        withIGPU = false;
         wm = "sway";
       };
     };

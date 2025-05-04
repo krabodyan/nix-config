@@ -45,7 +45,7 @@
     };
     fish = {
       enable = true;
-      kubectl = false;
+      kube-prompt = false;
       loginShell = {
         enable = true;
         withIGPU = true;
@@ -88,9 +88,7 @@
     wm-utils.enable = true;
     wm-scripts = {
       enable = true;
-      touchpad = {
-        type = "sway";
-      };
+      touchpad.type = "sway";
     };
     rofi.enable = true;
     swaylock.enable = true;
