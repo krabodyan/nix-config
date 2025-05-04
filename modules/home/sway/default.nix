@@ -46,7 +46,7 @@ in {
         modifier = "Mod4";
         terminal = "foot";
         startup = [
-          {command = "${pkgs.swaykbdd}/bin/swaykbdd -a firefox-nightly &";}
+          {command = "${pkgs.swaykbdd}/bin/swaykbdd -a firefox,chrome,firefox-nightly &";}
           {command = "wl-clip-persist --clipboard regular &";}
         ];
         assigns = {
