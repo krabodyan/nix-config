@@ -29,6 +29,7 @@
     };
 
     services = {
+      k3s.enable = true;
       sshd.enable = true;
       systemd-config.enable = true;
       earlyoom.enable = true;
