@@ -31,7 +31,6 @@ in {
       "yazi/yazi.toml".source = ./yazi.toml;
       "yazi/keymap.toml".source = ./keymap.toml;
       "yazi/plugins/ouch.yazi/main.lua".source = "${inputs.yazi-plugin-ouch}/main.lua";
-      "yazi/plugins/compress.yazi/main.lua".source = "${inputs.yazi-plugin-compress}/init.lua";
       "yazi/plugins/rsync.yazi/main.lua".source = "${inputs.yazi-plugin-rsync}/main.lua";
 
       "yazi/theme.toml".text = let

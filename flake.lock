@@ -279,7 +279,6 @@
         "rust-overlay": "rust-overlay_2",
         "sops-nix": "sops-nix",
         "treefmt-nix": "treefmt-nix",
-        "yazi-plugin-compress": "yazi-plugin-compress",
         "yazi-plugin-ouch": "yazi-plugin-ouch",
         "yazi-plugin-rsync": "yazi-plugin-rsync"
       }
@@ -376,22 +375,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "yazi-plugin-compress": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1723254185,
-        "narHash": "sha256-Yf5R3H8t6cJBMan8FSpK3BDSG5UnGlypKSMOi0ZFqzE=",
-        "owner": "KKV9",
-        "repo": "compress.yazi",
-        "rev": "60b24af23d1050f1700953a367dd4a2990ee51aa",
-        "type": "github"
-      },
-      "original": {
-        "owner": "KKV9",
-        "repo": "compress.yazi",
         "type": "github"
       }
     },
