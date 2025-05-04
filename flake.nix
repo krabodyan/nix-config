@@ -18,16 +18,12 @@
 
     rust-overlay.url = "github:oxalica/rust-overlay?rev=fd6795d3d28f956de01a0458b6fa7baae5c793b4";
 
-    # nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
-
     nix-colors.url = "github:misterio77/nix-colors";
 
     nix-cursors = {
       url = "github:krabodyan/nix-cursors";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
