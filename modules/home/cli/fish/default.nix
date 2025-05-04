@@ -252,6 +252,8 @@ in {
           set -g sponge_purge_only_on_exit true
           set -g sponge_successful_exit_codes 0 130
 
+          set -g __done_min_cmd_duration 100
+
           set -g fish_greeting
           set -g fish_cursor_visual block
           set -g fish_cursor_default block
