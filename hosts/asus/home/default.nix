@@ -43,9 +43,10 @@
         lazydocker
       ];
     };
+
     fish = {
       enable = true;
-      kube-prompt = false;
+      kube-prompt = true;
       ssh-prompt = false;
       loginShell = {
         enable = true;

@@ -47,11 +47,16 @@ in {
           # ------- K8S -------
           k = "kubectl";
 
-          kg = "kubectl get -o wide";
-          kga = "kubectl get -o wide all";
-          kgd = "kubectl get -o wide deployments";
-          kgs = "kubectl get -o wide services";
-          kgp = "kubectl get -o wide pods";
+          kg = "kubectl get";
+          kga = "kubectl get all";
+          kgd = "kubectl get deployments";
+          kgs = "kubectl get services";
+          kgp = "kubectl get pods";
+
+          o = {
+            expansion = "-o wide";
+            command = "kubectl";
+          };
 
           kd = "kubectl describe";
           kdp = "kubectl describe pods";
@@ -373,6 +378,10 @@ in {
           mkIf cfg.kube-prompt
           # fish
           ''
+            if not set -q KUBE
+              return
+            end
+
             set -l namespace (kubens -c 2>/dev/null)
 
             if [ $status -ne 0 ];
