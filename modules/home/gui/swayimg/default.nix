@@ -80,6 +80,7 @@ in {
         "image/jpeg"
         "image/webp"
         "image/svg"
+        "image/svg+xml"
         "image/heic"
         "image/avif"
         "image/heif"
