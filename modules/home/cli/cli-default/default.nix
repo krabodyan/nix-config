@@ -25,8 +25,10 @@ in {
 
         xdg-utils
 
-        python3
+        python3Full
         ffmpeg-full
+
+        iptables
 
         dust
         dua
