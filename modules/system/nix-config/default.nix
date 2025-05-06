@@ -31,13 +31,17 @@ in {
       package = pkgs.lix;
       nixPath = ["nixpkgs=${inputs.nixpkgs}"];
       gc.automatic = false;
+
       optimise = {
         automatic = true;
         dates = ["weekly"];
       };
+
       settings = {
         warn-dirty = false;
         experimental-features = ["nix-command" "flakes"];
+        builders-use-substitutes = true;
+        auto-optimise-store = true;
 
         substituters = [
           "https://helix.cachix.org"
@@ -53,14 +57,11 @@ in {
           "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
         ];
 
-        allowed-users = ["@wheel"];
-
         trusted-users = [
+          "@wheel"
           "root"
           username
         ];
-
-        auto-optimise-store = true;
       };
     };
   };
