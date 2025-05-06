@@ -29,6 +29,7 @@ in {
         ffmpeg-full
 
         iptables
+        tcpdump
 
         dust
         dua
