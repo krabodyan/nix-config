@@ -16,11 +16,11 @@ in {
     programs.fish.shellAliases = let
       eza = "${pkgs.eza}/bin/eza --group-directories-first --long --git --sort ext";
     in rec {
-      ls = "${eza} --no-filesize --no-user --no-time --no-permissions";
+      ls = "${eza} --no-filesize --no-user --no-time --no-permissions --ignore-glob \"target|node_modules|\"";
       la = "${ls} -a";
       lt = "${ls} --tree";
-      ll = "${eza}";
-      lla = "${eza} -a";
+      ll = "${eza} --group";
+      lla = "${ll} -a";
     };
     home.packages = [pkgs.eza];
   };
