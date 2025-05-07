@@ -21,6 +21,7 @@ in {
       role = "server";
       token = "99d12cbd-03d2-4693-bc9b-55ad00c96097";
       clusterInit = true;
+      extraFlags = ["--disable=traefik"];
     };
   };
 }
