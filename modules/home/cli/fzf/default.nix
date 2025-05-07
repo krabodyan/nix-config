@@ -41,7 +41,7 @@ in {
         "--info hidden"
         "--reverse"
         "--ansi"
-        "--bind 'tab:down,btab:up,alt-j:down,alt-k:up,alt-s:jump,alt-c:abort,alt-z:abort,alt-a:abort,alt-r:abort'"
+        "--bind 'tab:down,btab:up,alt-j:down,alt-k:up,alt-s:jump,alt-c:abort,alt-z:abort,alt-a:abort,alt-r:abort,alt-x:abort'"
       ];
       colors = let
         dark = "8";
