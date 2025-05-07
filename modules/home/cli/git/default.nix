@@ -125,11 +125,13 @@ in {
         "*.swp"
 
         # terraform
-        ".terraform/"
-        ".terraform.lock.hcl"
+        "*.tfstate"
+        "*.tfstate.backup"
+        ".crash.log"
         ".terraform.tfstate.lock.info"
-        "terraform.tfstate"
-        "terraform.tfstate.backup"
+        ".terraform/"
+        "*.tfvars"
+        "*.tfvars.json"
 
         # c commons
         "__pycache__"
