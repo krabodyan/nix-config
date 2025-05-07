@@ -205,12 +205,12 @@ in {
             # -m = --sets-mode
 
             bind -M visual \~ togglecase-selection
-            bind -M visual -m insert a 'set fish_cursor_end_mode exclusive' forward-single-char repaint-mode
+            bind -M default -m insert a forward-single-char repaint-mode
 
-            bind -M insert            alt-enter   repaint-mode execute
-            bind -M insert            shift-enter repaint-mode execute
-            bind -M default -m insert enter       repaint-mode execute
-            bind -M visual  -m insert enter       repaint-mode end-selection execute
+            bind -M insert            alt-enter   repaint execute
+            bind -M insert            shift-enter repaint execute
+            bind -M default -m insert enter       repaint execute
+            bind -M visual  -m insert enter       repaint end-selection execute
 
             bind -M default -m insert  alt-d repaint-mode
             bind -M insert  -m default alt-d repaint-mode
@@ -225,7 +225,8 @@ in {
             bind -M default -m insert c delete-char repaint-mode
 
             bind -M visual  -m insert i repaint-mode end-selection
-            bind -M default -m insert i repaint-mode end-selection
+            bind -M visual  -m insert a repaint-mode end-selection
+            bind -M default -m insert i repaint-mode
 
             bind -M visual     \; end-selection begin-selection
             bind -M visual alt-\; swap-selection-start-stop
@@ -256,16 +257,22 @@ in {
 
           set -g fish_key_bindings fish_hybrid_key_bindings
 
+          set -g fish_cursor_end_mode exclusive
+          set -g fish_cursor_selection_mode exclusive
+
           set -g sponge_purge_only_on_exit true
           set -g sponge_successful_exit_codes 0 130
 
           set -g __done_min_cmd_duration 100
 
           set -g fish_greeting
+
           set -g fish_cursor_visual block
           set -g fish_cursor_default block
           set -g fish_cursor_insert line
+          set -g fish_cursor_unknown line
           set -g fish_cursor_replace_one underscore
+
           set -g fish_prompt_pwd_full_dirs 2
 
           set_color ${black} black
