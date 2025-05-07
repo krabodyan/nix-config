@@ -63,6 +63,7 @@ in {
           kdd = "kubectl describe deployments";
 
           ka = "kubectl apply -f";
+          ke = "kubectl explain";
 
           # ------- NIX -------
           nd = {
@@ -200,15 +201,16 @@ in {
               bind -M $mode -m insert alt-e edit_command_buffer
             end
 
+            # -M = --mode
+            # -m = --sets-mode
+
             bind -M visual \~ togglecase-selection
+            bind -M visual -m insert a 'set fish_cursor_end_mode exclusive' forward-single-char repaint-mode
 
             bind -M insert            alt-enter   repaint-mode execute
             bind -M insert            shift-enter repaint-mode execute
             bind -M default -m insert enter       repaint-mode execute
             bind -M visual  -m insert enter       repaint-mode end-selection execute
-
-            # -M = --mode
-            # -m = --sets-mode
 
             bind -M default -m insert  alt-d repaint-mode
             bind -M insert  -m default alt-d repaint-mode
