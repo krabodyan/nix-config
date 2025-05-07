@@ -50,7 +50,7 @@
       dbus-broker.enable = true;
       docker = {
         enable = true;
-        storageDriver = "btrfs";
+        storageDriver = "overlay2";
       };
     };
 
