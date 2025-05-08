@@ -83,14 +83,20 @@ let
 
     "=" = ":format";
     d = "delete_selection_noyank";
+    c = "change_selection_noyank";
     D = "delete_word_forward";
     t = ["normal_mode" "extend_to_word"];
     a = ["append_mode" "collapse_selection"];
+
     p = ":clipboard-paste-after";
     P = "paste_before";
+
     R = ":clipboard-paste-replace";
-    y = ":clipboard-yank";
+
+    y = "yank_to_clipboard";
     Y = "yank";
+    "A-y" = ":clipboard-yank";
+
     i = ["collapse_selection" "insert_mode"];
 
     J = "join_selections";
