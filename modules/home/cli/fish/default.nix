@@ -387,11 +387,11 @@ in {
           mkIf cfg.kube-prompt
           # fish
           ''
-            if not set -q KUBE
+            if not set -q KUBIE_ACTIVE
               return
             end
 
-            set -l namespace (kubens -c 2>/dev/null)
+            set -l namespace (kubie info ns 2>/dev/null)
 
             if [ $status -ne 0 ];
               return
