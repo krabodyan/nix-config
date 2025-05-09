@@ -48,15 +48,17 @@ in {
           k = "kubectl";
 
           kg = "kubectl get";
-          kga = "kubectl get all";
-          kgd = "kubectl get deployments";
+          kga = "kubectl get deploy,svc,pods,cm,secrets,ingresses,rs,pv,pvc,sts";
+          kgd = "kubectl get deploy";
           kgs = "kubectl get services";
           kgp = "kubectl get pods";
-
           o = {
             expansion = "-o wide";
             command = "kubectl";
           };
+
+          kns = "kubie ns";
+          kcx = "kubie ctx";
 
           kd = "kubectl describe";
           kdp = "kubectl describe pods";
