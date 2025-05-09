@@ -21,6 +21,7 @@ in {
     environment.systemPackages = with pkgs;
       [
         gnumake
+        nfs-utils
         just
         git
         sops

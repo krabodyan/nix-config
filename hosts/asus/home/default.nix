@@ -31,8 +31,9 @@
       enable = true;
       extra = with pkgs; [
         tenv
-        cdrtools
         ansible
+        cdrtools
+        lazydocker
 
         scrcpy
         android-tools
@@ -40,7 +41,7 @@
         postgresql
         litecli
 
-        lazydocker
+        imagemagick
       ];
     };
 

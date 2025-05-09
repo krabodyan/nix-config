@@ -1,8 +1,4 @@
-{
-  pkgs,
-  hostname,
-  ...
-}: {
+{hostname, ...}: {
   module = {
     bluetooth.enable = false;
     bootloader.enable = true;
@@ -23,9 +19,6 @@
     packages = {
       enable = true;
       steam = true;
-      extraPackages = with pkgs; [
-        imagemagick
-      ];
       fonts.enable = true;
     };
 
@@ -46,7 +39,7 @@
         enableDaemon = false;
       };
       k3s-worker = {
-        enable = true;
+        enable = false;
         server = "https://192.168.1.155:6443";
         token = "99d12cbd-03d2-4693-bc9b-55ad00c96097";
       };
