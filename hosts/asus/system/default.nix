@@ -47,7 +47,7 @@
       };
       k3s-worker = {
         enable = true;
-        server = "192.168.1.155/24";
+        server = "https://192.168.1.155:6443";
         token = "99d12cbd-03d2-4693-bc9b-55ad00c96097";
       };
       systemd-config.enable = true;

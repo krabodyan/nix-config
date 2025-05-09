@@ -26,6 +26,7 @@
     };
 
     services = {
+      nfs.enable = true;
       k3s-server = {
         enable = true;
         token = "99d12cbd-03d2-4693-bc9b-55ad00c96097";
