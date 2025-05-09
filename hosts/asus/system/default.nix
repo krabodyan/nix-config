@@ -46,7 +46,7 @@
         enableDaemon = false;
       };
       systemd-config.enable = true;
-      earlyoom.enable = true;
+      earlyoom.enable = false;
       dbus-broker.enable = true;
       docker = {
         enable = true;
