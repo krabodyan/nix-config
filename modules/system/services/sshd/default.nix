@@ -4,16 +4,12 @@
   username,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf mkOption;
+  inherit (lib) mkEnableOption mkIf;
   cfg = config.module.services.sshd;
 in {
   options = {
     module.services.sshd = {
       enable = mkEnableOption "enables sshd";
-      enableDaemon = mkOption {
-        type = lib.types.bool;
-        example = true;
-      };
     };
   };
   config = mkIf cfg.enable {
