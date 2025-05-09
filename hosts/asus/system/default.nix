@@ -45,6 +45,11 @@
         enable = true;
         enableDaemon = false;
       };
+      k3s-worker = {
+        enable = true;
+        server = "192.168.1.155/24";
+        token = "99d12cbd-03d2-4693-bc9b-55ad00c96097";
+      };
       systemd-config.enable = true;
       earlyoom.enable = false;
       dbus-broker.enable = true;

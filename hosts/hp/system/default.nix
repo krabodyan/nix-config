@@ -26,10 +26,13 @@
     };
 
     services = {
-      k3s.enable = true;
+      k3s-server = {
+        enable = true;
+        token = "99d12cbd-03d2-4693-bc9b-55ad00c96097";
+      };
       sshd.enable = true;
       systemd-config.enable = true;
-      earlyoom.enable = true;
+      earlyoom.enable = false;
       dbus-broker.enable = true;
       docker = {
         enable = true;

@@ -4,14 +4,13 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
-  cfg = config.module.services.k3s;
+  cfg = config.module.services.k3s-server;
 in {
   options = {
-    module.services.k3s = {
+    module.services.k3s-server = {
       enable = mkEnableOption "enables k3s";
-      enableDaemon = mkOption {
-        type = lib.types.bool;
-        example = true;
+      token = mkOption {
+        type = lib.types.str;
       };
     };
   };
@@ -19,7 +18,7 @@ in {
     services.k3s = {
       enable = true;
       role = "server";
-      token = "99d12cbd-03d2-4693-bc9b-55ad00c96097";
+      token = cfg.token;
       clusterInit = true;
       # extraFlags = ["--disable=traefik"];
     };
