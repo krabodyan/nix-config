@@ -47,13 +47,16 @@ in {
         index-fg = fg;
         index-bg = bg;
         font = "${fonts.monospace} 16";
+        selection-clipboard = "clipboard";
+        selection-notification = false;
       };
       mappings = {
         "f" = "toggle_fullscreen";
         "]" = "rotate";
         "g" = "goto";
         "m" = "focus_inputbar ':blist '";
-        "M" = "focus_inputbar ':bmark '";
+        "M" = "focus_inputbar ':bjump '";
+        "<A-m>" = "focus_inputbar ':bmark '";
       };
     };
   };
