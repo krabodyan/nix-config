@@ -55,7 +55,7 @@ in {
         current-hl = bright;
         info = dark;
         header = dark;
-        pointer = "red";
+        pointer = bright;
         marker = bright;
         prompt = bright;
         spinner = bright;
