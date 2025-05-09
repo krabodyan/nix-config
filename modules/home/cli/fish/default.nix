@@ -73,6 +73,7 @@ in {
 
           # ------- GIT -------
           ga = "git add";
+          gp = "git push";
           gc = "git commit";
           gs = "git status";
 
