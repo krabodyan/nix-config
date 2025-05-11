@@ -51,6 +51,7 @@ in {
           kga = "kubectl get deploy,svc,pods,cm,secrets,ingresses,rs,pv,pvc,sts";
           kgd = "kubectl get deploy";
           kgs = "kubectl get services";
+          kgn = "kubectl get nodes";
           kgp = "kubectl get pods";
           o = {
             expansion = "-o wide";
