@@ -162,7 +162,7 @@ bindingModeHints.enable = false
 # PYTHON --------------------------
 [[language]]
 name = "python"
-language-servers = ["ruff", "pylsp"]
+language-servers = ["pyright"]
 
 [language.formatter]
 args = ["--line-length", "88", "--quiet", "-"]

@@ -30,8 +30,7 @@ in {
 
         # python
         black
-        ruff
-        python312Packages.python-lsp-server
+        pyright
 
         # config formats
         biome #  json
