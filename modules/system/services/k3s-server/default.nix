@@ -20,7 +20,7 @@ in {
       role = "server";
       token = cfg.token;
       clusterInit = true;
-      extraFlags = ["--flannel-backend=host-gw" "--disable=traefik"];
+      extraFlags = ["--flannel-backend=host-gw"]; # "--disable=traefik"];
     };
   };
 }
