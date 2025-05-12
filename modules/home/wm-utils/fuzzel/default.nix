@@ -43,6 +43,11 @@ in {
           exit-immediately-if-empty = true;
         };
 
+        key-bindings = {
+          next = "Mod1+j";
+          prev = "Mod1+k";
+        };
+
         colors = with colors;
           builtins.mapAttrs (name: value: "${value}ff") {
             selection = bg;
