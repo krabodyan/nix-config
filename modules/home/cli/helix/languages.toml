@@ -19,6 +19,14 @@ inlayHints.parameterNames.enabled = false
 command = "tailwindcss-language-server"
 args = ["--stdio"]
 
+# NGINX ----------------------
+[[language]]
+name = "nginx"
+language-servers = ["nginx"]
+
+[language-server.nginx]
+command = "nginx-language-server"
+
 # GNU ASM ----------------------
 
 [[language]]

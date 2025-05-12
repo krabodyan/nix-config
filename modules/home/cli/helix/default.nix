@@ -58,6 +58,7 @@ in {
         asm-lsp
 
         # other
+        nginx-language-server
         vscode-langservers-extracted
         (import ./yazi-picker.nix {inherit pkgs;})
       ];
