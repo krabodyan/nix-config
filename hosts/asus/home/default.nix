@@ -93,7 +93,7 @@
       enable = true;
       touchpad.type = "sway";
     };
-    rofi.enable = true;
+    fuzzel.enable = true;
     swaylock.enable = true;
     mako.enable = true;
 

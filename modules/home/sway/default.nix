@@ -183,7 +183,7 @@ in {
           "${mod}+e" = "exec ${pkgs.foot}/bin/foot";
           "${mod}+r" = "exec ${pkgs.foot}/bin/foot -a floaterm pulsemixer";
           "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot -a floaterm";
-          "${mod}+d" = "exec pidof rofi && pkill rofi || ${pkgs.rofi-wayland}/bin/rofi -show drun -kb-cancel 'Alt+Return'";
+          "${mod}+d" = "exec pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel";
           "${mod}+c" = ''exec notify-send --expire-time 2000 "$(date +"%d %B %H:%M")"'';
 
           "${mod}+w" = "input type:keyboard xkb_switch_layout 0";

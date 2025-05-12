@@ -61,7 +61,7 @@
       background = "~/flake/assets/background.jpg";
     };
 
-    rofi.enable = true;
+    fuzzel.enable = true;
     swaylock.enable = true;
     mako.enable = true;
     wm-utils.enable = true;
