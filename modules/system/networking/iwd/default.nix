@@ -8,10 +8,9 @@
 in {
   options = {
     module.networking.iwd = {
-      enable = mkEnableOption "enable wireless with iwd";
+      enable = mkEnableOption "enable iwd";
       enableDaemon = mkOption {
         type = lib.types.bool;
-        example = true;
         default = true;
       };
     };
@@ -21,13 +20,11 @@ in {
       iwd = {
         enable = true;
         settings = {
-          General = {
-            UseDefaultInterface = true;
-            EnableNetworkConfiguration = true;
-          };
-          Network = {EnableIPv6 = true;};
+          Network.EnableIPv6 = true;
           Settings.AutoConnect = true;
-          Scan.DisablePeriodicScan = false;
+          Scan.DisablePeriodicScan = true;
+          General.EnableNetworkConfiguration = true;
+          DriverQuirks.UseDefaultInterface = true;
         };
       };
     };
