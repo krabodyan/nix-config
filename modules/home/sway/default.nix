@@ -48,10 +48,12 @@ in {
       config = {
         modifier = "Mod4";
         terminal = "foot";
+
         startup = [
           {command = "${pkgs.swaykbdd}/bin/swaykbdd -a firefox,chrome,firefox-nightly &";}
           {command = "wl-clip-persist --clipboard regular &";}
         ];
+
         assigns = {
           "workspace 1" = [
             {app_id = "^org.telegram.desktop$";}
@@ -97,15 +99,15 @@ in {
         };
 
         gaps = {
-          smartBorders = "on";
-          smartGaps = true;
           inner = 0;
           outer = 0;
+          smartGaps = true;
+          smartBorders = "on";
         };
 
         window = {
-          hideEdgeBorders = "smart";
           titlebar = false;
+          hideEdgeBorders = "smart";
         };
 
         floating = {
@@ -172,31 +174,43 @@ in {
           };
         };
 
-        workspaceLayout = "default";
         bars = [];
+
+        workspaceLayout = "default";
         workspaceAutoBackAndForth = false;
+
+        workspaceOutputAssign = [
+          {
+            workspace = "8";
+            output = "HDMI";
+          }
+        ];
+
         bindkeysToCode = true;
+
         keybindings = let
           mod = config.wayland.windowManager.sway.config.modifier;
+
           menucmd =
             if cfg.menu == "fuzzel"
             then "pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel"
             else if cfg.menu == "rofi"
             then "pkill rofi || ${pkgs.rofi-wayland-unwrapped}/bin/rofi -show drun -kb-cancel 'Alt+Return'"
             else throw "unexpected menu";
-          left = "h";
-          right = "l";
+
           up = "k";
           down = "j";
+          left = "h";
+          right = "l";
         in {
-          "${mod}+e" = "exec ${pkgs.foot}/bin/foot";
-          "${mod}+r" = "exec ${pkgs.foot}/bin/foot -a floaterm pulsemixer";
-          "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot -a floaterm";
           "${mod}+d" = "exec ${menucmd}";
+          "${mod}+e" = "exec ${pkgs.foot}/bin/foot";
+          "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot -a floaterm";
+          "${mod}+r" = "exec ${pkgs.foot}/bin/foot -a floaterm pulsemixer";
           "${mod}+c" = ''exec notify-send --expire-time 2000 "$(date +"%d %B %H:%M")"'';
 
-          "${mod}+w" = "input type:keyboard xkb_switch_layout 0";
           "${mod}+Alt+b" = "seat seat0 hide_cursor 0";
+          "${mod}+w" = "input type:keyboard xkb_switch_layout 0";
           "${mod}+b" = "seat seat0 hide_cursor ${config.wayland.windowManager.sway.config.seat.seat0.hide_cursor}";
 
           "${mod}+Shift+Delete" = "exit";
@@ -213,8 +227,8 @@ in {
           "${mod}+Shift+${left}" = "move left";
           "${mod}+Shift+${right}" = "move right";
 
-          "${mod}+o" = "resize shrink width 20 px";
           "${mod}+i" = "resize grow width 20 px";
+          "${mod}+o" = "resize shrink width 20 px";
 
           "${mod}+q" = "kill";
           "${mod}+t" = "fullscreen";
@@ -234,6 +248,7 @@ in {
           "${mod}+5" = "workspace number 5";
           "${mod}+6" = "workspace number 6";
           "${mod}+7" = "workspace number 7";
+          "${mod}+8" = "workspace number 8";
 
           "${mod}+Shift+1" = "move container to workspace number 1";
           "${mod}+Shift+2" = "move container to workspace number 2";
@@ -242,8 +257,10 @@ in {
           "${mod}+Shift+5" = "move container to workspace number 5";
           "${mod}+Shift+6" = "move container to workspace number 6";
           "${mod}+Shift+7" = "move container to workspace number 7";
+          "${mod}+Shift+8" = "move container to workspace number 8";
 
-          F4 = "exec __microphone";
+          "${mod}+x" = "exec __brightness toggle";
+
           XF86AudioMute = "exec __volume mute";
           XF86AudioRaiseVolume = "exec __volume up";
           XF86AudioLowerVolume = "exec __volume down";
@@ -251,19 +268,21 @@ in {
           XF86MonBrightnessDown = "exec __brightness down";
           XF86TouchpadToggle = "exec __touchpad";
 
-          "${mod}+x" = "exec __brightness toggle";
-
+          F4 = "exec __microphone";
           Print = "exec __screenshot";
           Pause = "exec __screenshot full";
+
           "${mod}+Print" = "exec __screenshot swayimg";
           "${mod}+Shift+Print" = "exec wl-paste | swappy -f -";
         };
       };
+
       extraConfig = ''
         title_align center
         titlebar_border_thickness 0
         default_border pixel 2
         default_floating_border pixel 2
+        focus_wrapping workspace
       '';
     };
   };
