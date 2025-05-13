@@ -23,6 +23,7 @@ args = ["--stdio"]
 [[language]]
 name = "nginx"
 language-servers = ["nginx"]
+formatter = { command = "nginxfmt", args = [ "--pipe" ] }
 
 [language-server.nginx]
 command = "nginx-language-server"

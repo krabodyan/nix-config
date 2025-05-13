@@ -59,6 +59,7 @@ in {
 
         # other
         nginx-language-server
+        nginx-config-formatter
         vscode-langservers-extracted
         (import ./yazi-picker.nix {inherit pkgs;})
       ];
