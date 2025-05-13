@@ -366,6 +366,17 @@ in {
         '';
 
       functions = {
+        kubectl =
+          mkIf cfg.kube-prompt
+          # fish
+          ''
+            if not set -q KUBIE_ACTIVE
+              printf "kubie context not set\n" >&2
+              return 1
+            end
+            command kubectl $argv
+          '';
+
         nix_prompt =
           # fish
           ''
