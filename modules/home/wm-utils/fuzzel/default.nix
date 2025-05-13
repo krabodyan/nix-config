@@ -21,7 +21,7 @@ in {
           font = "${fonts.monospace}:size=11:weight=Regular";
           exit-on-keyboard-focus-loss = true;
           terminal = "foot -e";
-          prompt = "\"> \"";
+          prompt = "\"󰅂 \"";
           layer = "overlay";
           icons-enabled = false;
           filter-desktop = true;
@@ -30,9 +30,10 @@ in {
           anchor = "bottom";
           y-margin = "20";
           lines = "3";
-          horizontal-pad = "10";
-          vertical-pad = "10";
+          horizontal-pad = "15";
+          vertical-pad = "15";
           inner-pad = "5";
+          hide-before-typing = false;
         };
         border = {
           width = 1;

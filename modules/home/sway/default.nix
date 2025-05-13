@@ -15,6 +15,9 @@ in {
       background = mkOption {
         type = lib.types.str;
       };
+      menu = mkOption {
+        type = lib.types.enum ["rofi" "fuzzel"];
+      };
       extraConfig = mkOption {
         type = lib.types.nullOr lib.types.str;
         default = null;
@@ -175,6 +178,12 @@ in {
         bindkeysToCode = true;
         keybindings = let
           mod = config.wayland.windowManager.sway.config.modifier;
+          menucmd =
+            if cfg.menu == "fuzzel"
+            then "pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel"
+            else if cfg.menu == "rofi"
+            then "pkill rofi || ${pkgs.rofi-wayland-unwrapped}/bin/rofi -show drun -kb-cancel 'Alt+Return'"
+            else throw "unexpected menu";
           left = "h";
           right = "l";
           up = "k";
@@ -183,7 +192,7 @@ in {
           "${mod}+e" = "exec ${pkgs.foot}/bin/foot";
           "${mod}+r" = "exec ${pkgs.foot}/bin/foot -a floaterm pulsemixer";
           "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot -a floaterm";
-          "${mod}+d" = "exec pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel";
+          "${mod}+d" = "exec ${menucmd}";
           "${mod}+c" = ''exec notify-send --expire-time 2000 "$(date +"%d %B %H:%M")"'';
 
           "${mod}+w" = "input type:keyboard xkb_switch_layout 0";

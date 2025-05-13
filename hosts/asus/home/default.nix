@@ -93,13 +93,14 @@
       enable = true;
       touchpad.type = "sway";
     };
-    fuzzel.enable = true;
+    rofi.enable = true;
     swaylock.enable = true;
     mako.enable = true;
 
     sway = {
       enable = true;
       background = "~/flake/assets/background.jpg";
+      menu = "rofi";
     };
 
     # river = {
