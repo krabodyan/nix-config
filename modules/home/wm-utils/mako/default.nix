@@ -18,7 +18,9 @@ in {
     home.packages = [pkgs.libnotify];
     services.mako = with colors.hex; {
       enable = true;
-      settings = {
+      settings = let
+        beep = "exec ${pkgs.pipewire}/bin/pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga &";
+      in {
         icons = 0;
         markup = 0;
         font = "${fonts.monospace} SemiBold 11";
@@ -40,10 +42,7 @@ in {
         default-timeout = 3000;
         text-alignment = "center";
         outer-margin = "32,0";
-      };
-      criteria = let
-        beep = "exec ${pkgs.pipewire}/bin/pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga &";
-      in {
+
         "grouped=1" = {
           format = "<b>%s [%g]</b>\\n%b";
         };
