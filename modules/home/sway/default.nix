@@ -93,9 +93,15 @@ in {
           }
         ];
 
-        output."eDP-1" = {
-          bg = "${cfg.background} fill";
-          mode = "1920x1080@144.000Hz";
+        output = {
+          "eDP-1" = {
+            bg = "${cfg.background} fill";
+            mode = "1920x1080@144.000Hz";
+            pos = "0 0";
+          };
+          "HDMI-A-1" = {
+            pos = "10000 10000";
+          };
         };
 
         gaps = {
@@ -179,12 +185,19 @@ in {
         workspaceLayout = "default";
         workspaceAutoBackAndForth = false;
 
-        workspaceOutputAssign = [
-          {
-            workspace = "8";
-            output = "HDMI-A-1";
-          }
-        ];
+        workspaceOutputAssign =
+          (
+            map (num: {
+              workspace = toString num;
+              output = "eDP-1";
+            }) [1 2 3 4 5 6 7]
+          )
+          ++ [
+            {
+              workspace = "8";
+              output = "HDMI-A-1";
+            }
+          ];
 
         bindkeysToCode = true;
 

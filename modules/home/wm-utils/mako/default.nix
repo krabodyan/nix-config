@@ -28,6 +28,7 @@ in {
         layer = "overlay";
         group-by = "app-name";
         anchor = "bottom-center";
+        output = "eDP-1";
 
         text-color = fg;
         background-color = bg;
