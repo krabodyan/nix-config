@@ -36,21 +36,9 @@ let
     "A-7" = "toggle_comments";
     "A-?" = "toggle_block_comments";
 
-    "A-S-k" = [
-      "normal_mode"
-      "goto_line_end"
-      "extend_line_below"
-      "delete_selection"
-      "move_line_up"
-      "paste_before"
-    ];
-    "A-S-j" = [
-      "normal_mode"
-      "goto_line_end"
-      "extend_line_below"
-      "delete_selection"
-      "paste_after"
-    ];
+    "A-S-j" = ["extend_to_line_bounds" "delete_selection" "paste_after"];
+    "A-S-k" = ["extend_to_line_bounds" "delete_selection" "move_line_up" "paste_before"];
+
     "C-A-k" = [
       "trim_selections"
       "normal_mode"
@@ -61,6 +49,7 @@ let
       "replace_with_yanked"
       "collapse_selection"
     ];
+
     "C-A-j" = [
       "trim_selections"
       "normal_mode"
