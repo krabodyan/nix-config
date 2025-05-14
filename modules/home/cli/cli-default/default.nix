@@ -28,6 +28,7 @@ in {
         python3Full
         ffmpeg-full
 
+        lsof
         iptables
         tcpdump
 
