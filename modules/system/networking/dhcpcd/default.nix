@@ -21,16 +21,14 @@ in {
         enable = true;
         wait = "background";
         extraConfig = ''
-          noarp
           nohook iwd
         '';
       };
 
       firewall = {
         enable = false;
-        allowedTCPPorts = [2376 2377 7946];
-        allowedUDPPorts = [7946 4789];
       };
+
       useDHCP = true;
       hostName = cfg.hostname;
     };
