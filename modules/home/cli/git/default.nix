@@ -124,15 +124,6 @@ in {
         "log/"
         "*.swp"
 
-        # terraform
-        "*.tfstate"
-        "*.tfstate.backup"
-        ".crash.log"
-        ".terraform.tfstate.lock.info"
-        ".terraform/"
-        "*.tfvars"
-        "*.tfvars.json"
-
         # c commons
         "__pycache__"
         "cmake-build-debug"
