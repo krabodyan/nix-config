@@ -6,28 +6,15 @@
         color = red;
       };
     };
-    "diagnostic.warning" = {
-      # underline = {
-      #   style = "curl";
-      #   color = yellow;
-      # };
-    };
-    "diagnostic.info" = {
-      # underline = {
-      #   style = "curl";
-      #   color = yellow;
-      # };
-    };
-    "diagnostic.hint" = {
-      # underline = {
-      #   style = "curl";
-      #   color = yellow;
-      # };
-    };
+    "diagnostic.info" = {};
+    "diagnostic.hint" = {};
+    "diagnostic.warning" = {};
     "diagnostic.unnecessary" = {
       fg = overlay1;
       modifiers = ["crossed_out"];
     };
+
+    "rainbow" = [brred overlay2 bryellow brgreen];
 
     "error" = red;
     "warning" = yellow;
@@ -195,7 +182,6 @@
     # matching bracket
     "ui.cursor.match" = {
       underline.style = "line";
-      fg = magenta;
     };
     "ui.cursor.primary.normal" = {
       fg = bg;

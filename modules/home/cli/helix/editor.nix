@@ -4,11 +4,12 @@
   mouse = false;
   cursorline = true;
   color-modes = true;
-  scrolloff = 10;
+  scrolloff = 4;
   scroll-lines = 1;
   auto-format = false;
 
   continue-comments = false;
+  rainbow-brackets = true;
 
   completion-replace = false;
   preview-completion-insert = true;
