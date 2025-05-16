@@ -43,6 +43,7 @@ in {
 
         # shell
         bash-language-server
+        shfmt
         fish-lsp
 
         # web

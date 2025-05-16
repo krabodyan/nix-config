@@ -20,13 +20,24 @@ command = "tailwindcss-language-server"
 args = ["--stdio"]
 
 # NGINX ----------------------
+
 [[language]]
 name = "nginx"
 language-servers = ["nginx"]
-formatter = { command = "nginxfmt", args = [ "--pipe" ] }
+formatter = { command = "nginxfmt", args = ["--pipe"] }
 
 [language-server.nginx]
 command = "nginx-language-server"
+
+# BASH    ----------------------
+
+[[language]]
+name = "bash"
+formatter = { command = "shfmt", args = [
+  "--case-indent",
+  "--space-redirects",
+  "-",
+] }
 
 # GNU ASM ----------------------
 
