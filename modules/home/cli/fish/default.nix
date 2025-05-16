@@ -122,6 +122,7 @@ in {
         {
           inherit tm;
           "," = "comma -P fzf";
+          ssh = "TERM=xterm-color ${pkgs.openssh}/bin/ssh -o StrictHostKeyChecking=no";
           ns = "nix-shell --command fish -p";
         }
         // lib.genAttrs ["ino" "rust" "rasp" "tauri"] (
