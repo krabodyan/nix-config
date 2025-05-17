@@ -21,6 +21,7 @@ in {
         enable = true;
         wait = "background";
         extraConfig = ''
+          noarp
           nohook iwd
         '';
       };
