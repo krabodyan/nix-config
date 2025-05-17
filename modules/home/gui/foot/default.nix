@@ -1,8 +1,8 @@
 {
   lib,
+  fonts,
   config,
   colors,
-  fonts,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;

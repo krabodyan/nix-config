@@ -14,7 +14,7 @@
       modifiers = ["crossed_out"];
     };
 
-    "rainbow" = [brred overlay2 bryellow brgreen];
+    "rainbow" = [overlay2 brred bryellow brgreen];
 
     "error" = red;
     "warning" = yellow;
