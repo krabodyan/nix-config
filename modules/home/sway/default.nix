@@ -97,10 +97,6 @@ in {
           "eDP-1" = {
             bg = "${cfg.background} fill";
             mode = "1920x1080@144.000Hz";
-            pos = "0 0";
-          };
-          "HDMI-A-1" = {
-            pos = "10000 10000";
           };
         };
 
