@@ -137,12 +137,19 @@
 
     "ui.picker.header" = fg-dark;
     "ui.window" = surface0;
+
     "ui.bufferline" = {
+      inherit bg;
       fg = surface3;
+    };
+
+    "ui.bufferline.active" = {
+      fg = subtext0;
+    };
+
+    "ui.bufferline.background" = {
       inherit bg;
     };
-    "ui.bufferline.active" = subtext0;
-    "ui.bufferline.background" = {bg = bg;};
 
     # menu in command mode :
     "ui.help" = {

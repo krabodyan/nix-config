@@ -16,7 +16,7 @@ in {
   config = mkIf cfg.enable {
     programs.foot = {
       enable = true;
-      server.enable = false;
+      server.enable = true;
       settings = {
         main = let
           features = [
@@ -97,7 +97,7 @@ in {
           dim4 = "6ea4cc";
           dim5 = "cc7cb6";
           dim6 = "70ccca";
-          dim7 = overlay2;
+          dim7 = overlay1;
         };
       };
     };

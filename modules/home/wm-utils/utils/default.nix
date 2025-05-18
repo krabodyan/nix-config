@@ -22,7 +22,6 @@ in {
       wev
       xwayland
       wl-clipboard
-      wl-clip-persist
     ];
   };
 }

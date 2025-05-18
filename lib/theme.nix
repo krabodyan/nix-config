@@ -20,16 +20,16 @@ rec {
     surface0 = "1a1a1a";
     surface1 = "262626";
     surface2 = "2e2e2e";
-    surface3 = "383838";
+    surface3 = "424242";
 
     fg = "f7f6ef";
     fg-dark = "474747";
     fg-bright = "fffff7";
 
     overlay0 = "4d4d4d";
-    overlay1 = "666666";
-    overlay2 = "808080";
-    subtext0 = "a6a6a1";
+    overlay1 = "595959";
+    overlay2 = "666666";
+    subtext0 = "999999";
 
     black = surface1;
     red = "c43f3f";
