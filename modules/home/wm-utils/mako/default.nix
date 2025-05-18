@@ -49,12 +49,12 @@ in {
         };
 
         "urgency=critical" = {
-          border-color = red;
+          border-color = brred;
           default-timeout = 12000;
         };
 
         "app-name=foot urgency=normal" = {
-          border-color = green;
+          border-color = brgreen;
         };
 
         "app-name=foot" = {
