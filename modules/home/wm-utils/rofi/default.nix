@@ -52,7 +52,7 @@ in {
         window = {
           width = mkLiteral "364px";
           height = mkLiteral "134px";
-          y-offset = -30;
+          y-offset = -40;
           border-radius = 6;
           border = 2;
           border-color = border;

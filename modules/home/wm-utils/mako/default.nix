@@ -42,7 +42,7 @@ in {
         border-radius = 8;
         default-timeout = 3000;
         text-alignment = "center";
-        outer-margin = "32,0";
+        outer-margin = "40,0";
 
         "grouped=1" = {
           format = "<b>%s [%g]</b>\\n%b";
