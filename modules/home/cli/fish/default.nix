@@ -44,6 +44,9 @@ in {
 
       shellAbbrs =
         {
+          cpr = "rsync -arvP";
+          cp = "cp -vr";
+
           # ------- K8S -------
           k = "kubectl";
 
