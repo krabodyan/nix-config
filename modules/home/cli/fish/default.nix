@@ -120,7 +120,7 @@ in {
         };
 
       shellAliases = let
-        tm = "test $TMUX && fish || ${pkgs.tmux}/bin/tmux -L $(uuidgen)";
+        tm = "test $TMUX || ${pkgs.tmux}/bin/tmux -L $(uuidgen)";
       in
         {
           inherit tm;
