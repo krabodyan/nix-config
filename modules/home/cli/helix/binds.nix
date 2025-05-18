@@ -64,7 +64,9 @@ let
 
     "A-=" = "increment";
     "A-minus" = "decrement";
+    "C-b" = ":echo %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD } > /dev/null && echo opening in browser }";
   };
+
   special = {
     "tab" = "no_op";
     "<" = "no_op";
@@ -96,8 +98,6 @@ let
     "A-c" = "copy_selection_on_prev_line";
 
     "C-r" = ["insert_mode" "insert_register"];
-    "C-b" = [":pipe base64"];
-    "C-A-b" = [":pipe base64 -d"];
 
     esc = ["collapse_selection" "keep_primary_selection"];
   };
@@ -129,11 +129,7 @@ in rec {
         C = ":buffer-close!";
         i = ":toggle lsp.display-inlay-hints";
         h = ":toggle end-of-line-diagnostics disable hint";
-        B = ":echo %sh{git blame --date=short -L %{cursor_line},+1 %{buffer_name}}";
-        G = [
-          ":noop %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD }}"
-          ":echo opening in browser"
-        ];
+        B = ":echo %sh{ git blame --date=short -L %{cursor_line},+1 %{buffer_name} }";
         "S-c" = ":buffer-close!";
         "S-f" = ":open %sh{ __yazi_picker }";
         "A-f" = "file_picker_in_current_buffer_directory";
