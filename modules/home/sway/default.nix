@@ -45,13 +45,15 @@ in {
         "swaymsg -mt subscribe '[]' || true"
         "systemctl --user stop sway-session.target"
       ];
-      config = {
+      config = let
+        terminal = "${pkgs.foot}/bin/footclient";
+      in {
+        inherit terminal;
         modifier = "Mod4";
-        terminal = "foot";
 
         startup = [
           {command = "${pkgs.swaykbdd}/bin/swaykbdd -a firefox,chrome,firefox-nightly &";}
-          {command = "wl-clip-persist --clipboard regular &";}
+          {command = "${pkgs.wl-clip-persist}/bin/wl-clip-persist --clipboard regular &";}
         ];
 
         assigns = {
@@ -88,7 +90,7 @@ in {
             criteria.class = "zoom";
           }
           {
-            command = "border pixel 2";
+            command = "border pixel 1";
             criteria.app_id = ".*";
           }
         ];
@@ -213,9 +215,9 @@ in {
           right = "l";
         in {
           "${mod}+d" = "exec ${menucmd}";
-          "${mod}+e" = "exec ${pkgs.foot}/bin/foot";
-          "${mod}+Shift+e" = "exec ${pkgs.foot}/bin/foot -a floaterm";
-          "${mod}+r" = "exec ${pkgs.foot}/bin/foot -a floaterm pulsemixer";
+          "${mod}+e" = "exec ${terminal} ${pkgs.tmux}/bin/tmux -L $(uuidgen)";
+          "${mod}+Shift+e" = "exec ${terminal} -a floaterm";
+          "${mod}+r" = "exec ${terminal} -a floaterm pulsemixer";
           "${mod}+c" = ''exec notify-send --expire-time 2000 "$(date +"%d %B %H:%M")"'';
 
           "${mod}+Alt+b" = "seat seat0 hide_cursor 0";
@@ -289,8 +291,8 @@ in {
       extraConfig = ''
         title_align center
         titlebar_border_thickness 0
-        default_border pixel 2
-        default_floating_border pixel 2
+        default_border pixel 1
+        default_floating_border pixel 1
         focus_wrapping workspace
       '';
     };
