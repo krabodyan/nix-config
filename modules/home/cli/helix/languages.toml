@@ -201,7 +201,7 @@ language-servers = ["yaml-language-server"]
 formatter = { command = "prettier", args = ["--parser", "yaml"] }
 
 [language-server.yaml-language-server.config.yaml]
-schemas.kubernetes = "/*.yaml"
+# schemas.kubernetes = "/*.yaml"
 format.enable = true
 hover = true
 completion = true
