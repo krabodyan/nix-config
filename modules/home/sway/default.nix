@@ -215,7 +215,7 @@ in {
           right = "l";
         in {
           "${mod}+d" = "exec ${menucmd}";
-          "${mod}+e" = "exec ${terminal} ${pkgs.tmux}/bin/tmux -L $(uuidgen)";
+          "${mod}+e" = "exec ${terminal}";
           "${mod}+Shift+e" = "exec ${terminal} -a floaterm";
           "${mod}+r" = "exec ${terminal} -a floaterm pulsemixer";
           "${mod}+c" = ''exec notify-send --expire-time 2000 "$(date +"%d %B %H:%M")"'';

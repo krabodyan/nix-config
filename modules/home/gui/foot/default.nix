@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   fonts,
   config,
   colors,
@@ -27,6 +28,7 @@ in {
           font = "${fonts.monospace}:size=17:fontfeatures=${fontfeatures}";
         in {
           term = "foot";
+          shell = "${pkgs.fish}/bin/fish";
 
           font = "${font}:weight=Regular";
           font-bold = "${font}:weight=SemiBold";
@@ -56,6 +58,13 @@ in {
         };
 
         url = {launch = "xdg-open \${url}";};
+
+        bell = {
+          system = "no";
+          visual = "no";
+          notify = "no";
+          urgent = "no";
+        };
 
         cursor = {
           style = "beam";
