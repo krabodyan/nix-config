@@ -34,7 +34,7 @@ in {
 
         dust
         dua
-        duf
+        dysk
 
         pulsemixer
       ]
