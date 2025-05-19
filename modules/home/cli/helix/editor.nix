@@ -37,7 +37,7 @@
     snippets = true;
     display-messages = true;
     display-inlay-hints = true;
-    auto-signature-help = false;
+    auto-signature-help = true;
     display-progress-messages = true;
     display-signature-help-docs = false;
   };
