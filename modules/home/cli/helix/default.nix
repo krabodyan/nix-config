@@ -30,7 +30,8 @@ in {
 
         # python
         black
-        pyright
+        # pyright
+        python313Packages.jedi-language-server
 
         # config formats
         biome #  json

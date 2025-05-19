@@ -28,6 +28,7 @@ formatter = { command = "nginxfmt", args = ["--pipe"] }
 
 [language-server.nginx]
 command = "nginx-language-server"
+args = ["--log-file", "/dev/null"]
 
 # BASH    ----------------------
 
@@ -142,6 +143,7 @@ allFeatures = false
 
 [language-server.rust-analyzer.config.procMacro]
 ignored.tauri_macros = ["command", "generate_handler"]
+ignored.pyo3_macros = ["pymodule", "pyfunction"]
 ignored.async_trait = ["async_trait"]
 ignored.tokio_macros = ["main"]
 ignored.embassy_executor_macros = ["main"]
@@ -182,11 +184,21 @@ bindingModeHints.enable = false
 # PYTHON --------------------------
 [[language]]
 name = "python"
-language-servers = ["pyright"]
+language-servers = ["jedi"]
 
 [language.formatter]
 args = ["--line-length", "88", "--quiet", "-"]
 command = "black"
+
+[language-server.jedi]
+command = "jedi-language-server"
+
+[language-server.jedi.config.completion]
+ignorePatterns = ["^__.*?__$"]
+
+[language-server.jedi.config.workspace]
+extraPaths = ["typings/"]
+
 
 # HTML ------------------------------------
 [[language]]
