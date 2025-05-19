@@ -11,6 +11,7 @@
     tmux.enable = true;
     htop.enable = true;
     rustfmt.enable = true;
+    clang-format.enable = true;
     yazi.enable = true;
     bat.enable = true;
     helix.enable = true;
