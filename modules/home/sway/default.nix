@@ -53,7 +53,8 @@ in {
 
         startup = [
           {command = "${pkgs.swaykbdd}/bin/swaykbdd -a firefox,chrome,firefox-nightly &";}
-          {command = "${pkgs.wl-clip-persist}/bin/wl-clip-persist --clipboard regular &";}
+          {command = "${pkgs.wl-clip-persist}/bin/wl-clip-persist --clipboard regular &>/dev/null &";}
+          {command = "${pkgs.foot}/bin/foot --server";}
         ];
 
         assigns = {

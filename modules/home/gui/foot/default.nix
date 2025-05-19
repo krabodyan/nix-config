@@ -17,7 +17,7 @@ in {
   config = mkIf cfg.enable {
     programs.foot = {
       enable = true;
-      server.enable = true;
+      server.enable = false;
       settings = {
         main = let
           features = [
