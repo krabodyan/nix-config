@@ -120,7 +120,7 @@ in {
         };
 
       shellAliases = let
-        tm = "test $TMUX || ${pkgs.tmux}/bin/tmux -L $(uuidgen)";
+        tm = "test $TMUX && fish || ${pkgs.tmux}/bin/tmux -L $(uuidgen)";
       in
         {
           inherit tm;
@@ -332,12 +332,10 @@ in {
           set -g fish_pager_color_secondary_background brblack
 
           # ---- git ----
-          set -g __fish_git_prompt_show_informative_status 1
           set -g __fish_git_prompt_showdirtystate 1
           set -g __fish_git_prompt_showstashstate 1
           set -g __fish_git_prompt_showuntrackedfiles 1
           set -g __fish_git_prompt_showupstream auto
-          set -g __fish_git_prompt_show_informative_status 0
           set -g __fish_git_prompt_char_stateseparator ""
 
           set -g __fish_git_prompt_color_branch cyan
