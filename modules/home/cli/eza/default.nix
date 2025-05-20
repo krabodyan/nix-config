@@ -14,7 +14,7 @@ in {
   };
   config = mkIf cfg.enable {
     programs.fish.shellAliases = let
-      eza = "${pkgs.eza}/bin/eza --group-directories-first --long --git --sort ext";
+      eza = "${pkgs.eza}/bin/eza --group-directories-first --long --sort ext";
     in rec {
       ls = "${eza} --no-filesize --no-user --no-time --no-permissions --ignore-glob \"target|node_modules|\"";
       la = "${ls} -a";
