@@ -9,12 +9,13 @@
     time.enable = true;
     console.enable = true;
     users.enable = true;
+    locale.enable = true;
+    libvirtd.enable = false;
+    virtualbox.enable = false;
     udev-rules = {
       enable = true;
       platformio = true;
     };
-    locale.enable = true;
-    libvirtd.enable = false;
 
     packages = {
       enable = true;

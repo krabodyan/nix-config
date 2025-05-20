@@ -31,6 +31,7 @@
     cli-default = {
       enable = true;
       extra = with pkgs; [
+        vagrant
         tenv
         ansible
         cdrtools

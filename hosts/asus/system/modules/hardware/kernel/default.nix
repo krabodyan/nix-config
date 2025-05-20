@@ -42,7 +42,7 @@
     '';
 
     kernelModules = [
-      "kvm-intel"
+      "kvm_intel"
     ];
 
     initrd.kernelModules = [
@@ -61,6 +61,7 @@
     initrd.verbose = false;
 
     blacklistedKernelModules = [
+      # "kvm_intel"
       "iTCO_wdt" # intel watchdog
       "radeom"
       "amdgpu"
