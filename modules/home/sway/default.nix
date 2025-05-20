@@ -162,7 +162,7 @@ in {
 
         input = {
           "type:keyboard" = {
-            xkb_layout = "us,ua,ru";
+            xkb_layout = "us,ru,ua";
             xkb_options = "grp:alts_toggle,caps:backspace,shift:both_capslock";
             repeat_rate = "40";
             repeat_delay = "400";
