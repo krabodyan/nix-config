@@ -63,7 +63,11 @@ formatter.command = "taplo fmt"
 
 [[language]]
 name = "cpp"
+indent = { tab-width = 4, unit = "\t" }
 formatter.command = "clang-format"
+
+[language-server.clangd]
+args = ["--header-insertion=never"]
 
 # NIX --------------------------
 [[language]]
@@ -114,7 +118,7 @@ imports.preferPrelude = true
 references.excludeTests = true
 references.excludeImports = true
 
-diagnostics.disabled = ["proc-macro-disabled"]
+diagnostics.disabled = ["proc-macro-disabled", "missing_safety_doc"]
 diagnostics.styleLints.enable = true
 
 assist.expressionFillDefault = "todo"

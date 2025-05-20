@@ -1,10 +1,10 @@
 let
   toggle = "A-d";
   binds = {
-    "up" = "no_op";
-    "down" = "no_op";
-    "left" = "no_op";
-    "right" = "no_op";
+    # "up" = "no_op";
+    # "down" = "no_op";
+    # "left" = "no_op";
+    # "right" = "no_op";
     "A-backspace" = ["commit_undo_checkpoint" "delete_word_backward"];
 
     "A-ret" = [

@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: let
@@ -12,10 +13,15 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    home.packages = [pkgs.gdb];
     home.file.".clang-format".text = ''
       BasedOnStyle: LLVM
       AllowShortFunctionsOnASingleLine: false
       IndentWidth: 4
+      IndentExternBlock: Indent
+      IndentCaseBlocks: false
+      IndentCaseLabels: true
+      BreakTemplateDeclarations: Yes
       PointerAlignment: Left
       AlignConsecutiveAssignments:
         Enabled:         true
