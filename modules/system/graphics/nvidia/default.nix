@@ -26,7 +26,7 @@ in {
     hardware.nvidia = {
       modesetting.enable = true;
       powerManagement.enable = true;
-      powerManagement.finegrained = true;
+      powerManagement.finegrained = false;
       nvidiaSettings = false;
       open = true;
       package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
