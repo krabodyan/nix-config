@@ -25,7 +25,10 @@ in {
 
         xdg-utils
 
-        python3Full
+        mypy
+        python313Packages.ipython
+        python313Full
+
         ffmpeg-full
 
         lsof
