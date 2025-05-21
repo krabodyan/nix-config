@@ -31,14 +31,15 @@
     cli-default = {
       enable = true;
       extra = with pkgs; [
-        vagrant
-        tenv
-        ansible
-        cdrtools
+        postman
+        # vagrant
+        # tenv
+        # ansible
+        # cdrtools
         lazydocker
 
-        scrcpy
-        android-tools
+        # scrcpy
+        # android-tools
 
         postgresql
         litecli
