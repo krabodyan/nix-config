@@ -67,7 +67,6 @@
         system-config-printer
         whatsie
         onlyoffice-bin
-        obs-studio
         qbittorrent
         solaar
         gcolor3
@@ -82,6 +81,7 @@
     mpv.enable = true;
     firefox.enable = true;
     foot.enable = true;
+    obs.enable = true;
 
     # ------------- desktop environment
     xdg.enable = true;
