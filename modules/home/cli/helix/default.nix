@@ -16,62 +16,41 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    xdg.configFile."helix/languages.toml".source = ./languages.toml;
-
     programs.helix = {
       enable = true;
+      defaultEditor = true;
       package = inputs.helix.packages.${pkgs.system}.helix;
+
       extraPackages = with pkgs; [
-        # docker and etc
         docker-compose-language-service
         dockerfile-language-server-nodejs
-        terraform-ls
-        helm-ls
 
-        # python
-        black
-        # pyright
-        python313Packages.jedi-language-server
-
-        # config formats
-        biome #  json
-        taplo # toml
+        ruff
         yaml-language-server
-
-        # nix
-        nixd
-        alejandra
-
-        # shell
         bash-language-server
-        shfmt
         fish-lsp
 
-        # web
         tailwindcss-language-server
         typescript-language-server
         svelte-language-server
         nodePackages.prettier
 
-        # cpp
-        clang-tools
-
-        # asm
         asm-lsp
-
-        # other
-        nginx-language-server
-        nginx-config-formatter
         vscode-langservers-extracted
+
         (import ./yazi-picker.nix {inherit pkgs;})
       ];
-      defaultEditor = true;
+
       settings = {
         theme = "paradise";
         editor = import ./editor.nix;
         keys = import ./binds.nix;
       };
+
       themes = import ./theme.nix {inherit colors;};
+
+      languages = import ./languages.nix {inherit lib pkgs;};
+
       ignores = let
         add_ignore = ext: "*.${ext}";
       in
