@@ -91,6 +91,7 @@ let
     i = ["collapse_selection" "insert_mode"];
 
     J = "join_selections";
+    S = "split_selection_on_newline";
     "C-j" = "join_selections_space";
     "S-m" = "merge_selections";
 
