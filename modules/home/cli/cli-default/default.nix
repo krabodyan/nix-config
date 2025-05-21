@@ -26,6 +26,7 @@ in {
         xdg-utils
 
         mypy
+        uv
         python313Packages.ipython
         python313Full
 
