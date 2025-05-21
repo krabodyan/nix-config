@@ -44,7 +44,7 @@
       language-servers = ["jedi" "ruff"];
       formatter = {
         command = lib.getExe pkgs.black;
-        args = ["--line-length" "88" "--quiet" "-"];
+        args = ["--line-length" "80" "--quiet" "-"];
       };
     }
     {
@@ -97,7 +97,7 @@
       roots = ["."];
       formatter = {
         command = "taplo";
-        args = ["fmt"];
+        args = ["fmt" "-"];
       };
     }
     {
@@ -219,6 +219,7 @@
       command = lib.getExe pkgs.python313Packages.jedi-language-server;
       config = {
         completion = {
+          disableSnippets = true;
           ignorePatterns = ["^__.*?__$"];
         };
         workspace = {

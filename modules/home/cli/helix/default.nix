@@ -26,7 +26,10 @@ in {
         dockerfile-language-server-nodejs
 
         ruff
+
+        taplo
         yaml-language-server
+
         bash-language-server
         fish-lsp
 
