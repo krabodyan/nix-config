@@ -18,25 +18,23 @@ in {
       menu = mkOption {
         type = lib.types.enum ["rofi" "fuzzel"];
       };
-      extraConfig = mkOption {
-        type = lib.types.nullOr lib.types.str;
-        default = null;
-      };
     };
   };
+
   config = mkIf cfg.enable {
     home.sessionVariables = {
       XDG_SESSION_DESKTOP = "sway";
       XDG_CURRENT_DESKTOP = "sway";
     };
+
     wayland.windowManager.sway = {
       enable = true;
+      xwayland = true;
       checkConfig = false;
       wrapperFeatures = {
         gtk = true;
         base = true;
       };
-      xwayland = true;
       systemd.xdgAutostart = false;
       systemd.extraCommands = [
         "systemctl --user reset-failed"
@@ -45,17 +43,19 @@ in {
         "swaymsg -mt subscribe '[]' || true"
         "systemctl --user stop sway-session.target"
       ];
+
       config = let
         terminal = "${pkgs.foot}/bin/footclient";
       in {
         inherit terminal;
         modifier = "Mod4";
 
-        startup = [
-          {command = "${pkgs.swaykbdd}/bin/swaykbdd -a firefox,chrome,firefox-nightly &";}
-          {command = "${pkgs.wl-clip-persist}/bin/wl-clip-persist --clipboard regular &>/dev/null &";}
-          {command = "${pkgs.foot}/bin/foot --server";}
-        ];
+        startup = with pkgs;
+          map (cmd: {command = cmd;}) [
+            "${lib.getExe swaykbdd} -a firefox,chrome,firefox-nightly &"
+            "${lib.getExe wl-clip-persist} --clipboard regular &>/dev/null &"
+            "${lib.getExe foot} --server"
+          ];
 
         assigns = {
           "workspace 1" = [
@@ -132,9 +132,7 @@ in {
         };
 
         seat.seat0 = {
-          xcursor_theme = "${config.home.pointerCursor.name} ${
-            builtins.toString config.home.pointerCursor.size
-          }";
+          xcursor_theme = with config.home.pointerCursor; "${name} ${builtins.toString size}";
           hide_cursor = "5000";
         };
 
@@ -167,12 +165,14 @@ in {
             repeat_rate = "40";
             repeat_delay = "400";
           };
+
           "type:touchpad" = {
             events = "disabled";
             dwt = "enabled";
             tap = "enabled";
             natural_scroll = "enabled";
           };
+
           "type:pointer" = {
             accel_profile = "flat";
             pointer_accel = "0";
@@ -201,6 +201,10 @@ in {
         bindkeysToCode = true;
 
         keybindings = let
+          up = "k";
+          down = "j";
+          left = "h";
+          right = "l";
           mod = config.wayland.windowManager.sway.config.modifier;
 
           menucmd =
@@ -209,11 +213,6 @@ in {
             else if cfg.menu == "rofi"
             then "pkill rofi || ${pkgs.rofi-wayland-unwrapped}/bin/rofi -show drun -kb-cancel 'Alt+Return'"
             else throw "unexpected menu";
-
-          up = "k";
-          down = "j";
-          left = "h";
-          right = "l";
         in {
           "${mod}+d" = "exec ${menucmd}";
           "${mod}+e" = "exec ${terminal}";
@@ -249,9 +248,9 @@ in {
           "${mod}+s" = "layout toggle tabbed splith";
           "${mod}+v" = "layout toggle splith splitv";
 
-          "${mod}+space" = "focus next";
-          "Alt+Shift+Tab" = "focus mode_toggle";
           "${mod}+Tab" = "workspace back_and_forth";
+          "${mod}+space" = "focus next";
+          "${mod}+Shift+Tab" = "focus mode_toggle";
 
           "${mod}+1" = "workspace number 1";
           "${mod}+2" = "workspace number 2";
@@ -270,6 +269,9 @@ in {
           "${mod}+Shift+6" = "move container to workspace number 6";
           "${mod}+Shift+7" = "move container to workspace number 7";
           "${mod}+Shift+8" = "move container to workspace number 8";
+
+          "${mod}+Shift+n" = "move scratchpad";
+          "${mod}+n" = "scratchpad show";
 
           "${mod}+x" = "exec __brightness toggle";
 
@@ -295,6 +297,7 @@ in {
         default_border pixel 1
         default_floating_border pixel 1
         focus_wrapping workspace
+        bindswitch lid:on exec swaylock
       '';
     };
   };
