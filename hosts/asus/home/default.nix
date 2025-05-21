@@ -17,6 +17,7 @@
     helix.enable = true;
     eza.enable = true;
     jq.enable = true;
+    python.enable = true;
 
     git = {
       enable = true;
@@ -45,6 +46,7 @@
         litecli
 
         imagemagick
+        ffmpeg-full
       ];
     };
 
