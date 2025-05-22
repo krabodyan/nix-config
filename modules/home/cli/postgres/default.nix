@@ -17,10 +17,10 @@ in {
       postgresql
     ];
     home.file.".psqlrc".text = ''
-      \set QUIET ON
+      \set QUIET OFF
       \pset null '-'
 
-      \set PROMPT1 '%[%033[95m%]%n@%/%[%033[0m%]%# '
+      \set PROMPT1 '%[%033[95m%]%n@%/%[%033[0m%] %[%033[93m%][%x]%[%033[0m%] %[%033[92m%]%#%[%033[0m%] '
       \set PROMPT2 '%[%033[95m%]... : %[%033[0m%]'
 
       \pset pager 0
