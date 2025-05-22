@@ -16,8 +16,9 @@ in {
       enable = true;
       hidden = false;
       extraOptions = ["--color" "never" "--ignore-case"];
-      inherit (config.programs.git) ignores;
+      ignores = config.programs.git.ignores ++ ["Steam"];
     };
+
     programs.fzf = {
       enable = true;
       enableFishIntegration = false;
