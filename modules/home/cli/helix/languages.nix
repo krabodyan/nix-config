@@ -41,7 +41,7 @@
     }
     {
       name = "python";
-      language-servers = ["jedi" "ruff"];
+      language-servers = ["pyright" "ruff"];
       formatter = {
         command = lib.getExe pkgs.black;
         args = ["--line-length" "80" "--quiet" "-"];
@@ -213,19 +213,6 @@
 
     nix = {
       command = "${pkgs.nixd}/bin/nixd";
-    };
-
-    jedi = {
-      command = lib.getExe pkgs.python313Packages.jedi-language-server;
-      config = {
-        completion = {
-          disableSnippets = true;
-          ignorePatterns = ["^__.*?__$"];
-        };
-        workspace = {
-          extraPaths = ["typings/"];
-        };
-      };
     };
 
     svelteserver.config.configuration.typescript = {
