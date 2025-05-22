@@ -168,8 +168,8 @@ in {
             ''
         else null;
 
-      interactiveShellInit = with colors; # fish
-
+      interactiveShellInit = with colors;
+      # fish
         ''
           function fish_hybrid_key_bindings
             fish_vi_key_bindings
@@ -392,8 +392,8 @@ in {
           '';
 
         ssh_prompt =
-          mkIf cfg.ssh-prompt # fish
-
+          mkIf cfg.ssh-prompt
+          # fish
           ''
             if set -q SSH_CONNECTION
               printf "\033[91m[SSH]\033[0m "
@@ -417,8 +417,8 @@ in {
             printf "\033[93m$namespace\033[0m "
           '';
 
-        fish_mode_prompt = with colors; # fish
-
+        fish_mode_prompt = with colors;
+        # fish
           ''
             switch $fish_bind_mode
               case insert
