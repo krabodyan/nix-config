@@ -15,7 +15,7 @@ in {
     programs.fd = {
       enable = true;
       hidden = false;
-      extraOptions = ["--color" "never" "--ignore-case" "--follow"];
+      extraOptions = ["--color" "never" "--ignore-case"];
       inherit (config.programs.git) ignores;
     };
     programs.fzf = {
