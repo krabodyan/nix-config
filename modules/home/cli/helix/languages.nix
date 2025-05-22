@@ -90,7 +90,8 @@
         tab-width = 4;
         unit = "\t";
       };
-      formatter.command = "clang-format";
+      language-servers = ["clang"];
+      formatter.command = "${pkgs.clang-tools}/bin/clang-format";
     }
     {
       name = "toml";
@@ -124,6 +125,12 @@
       indent = {
         tab-width = 4;
         unit = "\t";
+      };
+    }
+    {
+      name = "just";
+      formatter = {
+        command = lib.getExe pkgs.just-formatter;
       };
     }
   ];
@@ -261,7 +268,7 @@
       args = ["lsp-proxy"];
     };
 
-    clangd = {
+    clang = {
       command = "${pkgs.clang-tools}/bin/clangd";
       args = ["--header-insertion=never"];
     };

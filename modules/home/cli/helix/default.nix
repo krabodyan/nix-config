@@ -33,6 +33,7 @@ in {
 
         bash-language-server
         fish-lsp
+        just-lsp
 
         tailwindcss-language-server
         typescript-language-server
