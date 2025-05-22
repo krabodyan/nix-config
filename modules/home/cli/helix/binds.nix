@@ -1,10 +1,6 @@
 let
   toggle = "A-d";
   binds = {
-    # "up" = "no_op";
-    # "down" = "no_op";
-    # "left" = "no_op";
-    # "right" = "no_op";
     "A-backspace" = ["commit_undo_checkpoint" "delete_word_backward"];
 
     "A-ret" = [
@@ -21,6 +17,8 @@ let
 
     "C-c" = "completion";
 
+    "C-k" = "kill_to_line_end";
+    "C-K" = "kill_to_line_start";
     "A-y" = "save_selection";
     "A-f" = "goto_line_end_newline";
     "A-g" = "goto_first_nonwhitespace";

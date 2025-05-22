@@ -15,7 +15,6 @@
   preview-completion-insert = true;
   completion-timeout = 5;
   completion-trigger-len = 2;
-  auto-info = false;
 
   undercurl = false;
   bufferline = "multiple";
