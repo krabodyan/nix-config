@@ -18,6 +18,7 @@
     eza.enable = true;
     jq.enable = true;
     python.enable = true;
+    postgres-cli.enable = true;
 
     git = {
       enable = true;
@@ -42,7 +43,6 @@
         # scrcpy
         # android-tools
 
-        postgresql
         litecli
 
         imagemagick
