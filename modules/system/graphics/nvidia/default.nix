@@ -29,13 +29,7 @@ in {
       powerManagement.finegrained = false;
       nvidiaSettings = false;
       open = true;
-      package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-        version = "570.133.07";
-        sha256_64bit = "sha256-LUPmTFgb5e9VTemIixqpADfvbUX1QoTT2dztwI3E3CY=";
-        openSha256 = "sha256-9l8N83Spj0MccA8+8R1uqiXBS0Ag4JrLPjrU3TaXHnM=";
-        settingsSha256 = "sha256-XMk+FvTlGpMquM8aE8kgYK2PIEszUZD2+Zmj2OpYrzU=";
-        usePersistenced = false;
-      };
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
       prime = {
         offload = {
           enable = true;
