@@ -1,17 +1,23 @@
-{hostname, ...}: {
+{
+  hostname,
+  yes,
+  no,
+  ...
+}: {
   module = {
-    bluetooth.enable = false;
-    bootloader.enable = true;
-    tmpfs.enable = true;
-    ssd-btrfs.enable = true;
-    sound.enable = true;
-    nix-config.enable = true;
-    time.enable = true;
-    console.enable = true;
-    users.enable = true;
-    locale.enable = true;
-    libvirtd.enable = false;
-    virtualbox.enable = false;
+    bluetooth = no;
+    bootloader = yes;
+    console = yes;
+    libvirtd = no;
+    locale = yes;
+    nix-config = yes;
+    sound = yes;
+    ssd-btrfs = yes;
+    time = yes;
+    tmpfs = yes;
+    users = yes;
+    virtualbox = no;
+
     udev-rules = {
       enable = true;
       platformio = true;
@@ -20,7 +26,7 @@
     packages = {
       enable = true;
       steam = true;
-      fonts.enable = true;
+      fonts = yes;
     };
 
     xdg-portal = {
@@ -30,8 +36,8 @@
     };
 
     security = {
-      pam.enable = true;
-      sudo.enable = true;
+      pam = yes;
+      sudo = yes;
     };
 
     services = {
@@ -39,18 +45,13 @@
         enable = true;
         enableDaemon = false;
       };
-      k3s-worker = {
-        enable = false;
-        server = "https://192.168.1.155:6443";
-        token = "99d12cbd-03d2-4693-bc9b-55ad00c96097";
-      };
-      systemd-config.enable = true;
-      earlyoom.enable = false;
-      dbus-broker.enable = true;
+      dbus-broker = yes;
       docker = {
         enable = true;
         storageDriver = "overlay2";
       };
+      earlyoom = no;
+      systemd-config = yes;
     };
 
     networking = {
@@ -65,7 +66,7 @@
     };
 
     graphics = {
-      minimal.enable = true;
+      minimal = yes;
       intel = {
         enable = true;
         newer = true;

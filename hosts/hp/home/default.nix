@@ -1,32 +1,31 @@
-{
+{yes, ...}: {
   module = {
     # ------------- cli
-    home-manager.enable = true;
-    nix-index.enable = true;
-    nh.enable = true;
-    fzf.enable = true;
-    zoxide.enable = true;
-    ripgrep.enable = true;
-    tmux.enable = true;
-    htop.enable = true;
-    bat.enable = true;
-    helix.enable = true;
-    eza.enable = true;
-    jq.enable = true;
+    bat = yes;
+    eza = yes;
+    fzf = yes;
+    helix = yes;
+    home-manager = yes;
+    htop = yes;
+    jq = yes;
+    nh = yes;
+    nix-index = yes;
+    ripgrep = yes;
+    tmux = yes;
+    zoxide = yes;
 
     git = {
       enable = true;
       userName = "krabodyan";
       userEmail = "krabodyan@gmail.com";
     };
-    git-delta.enable = true;
-    lazygit.enable = true;
-    gh.enable = true;
-    kubectl.enable = true;
+    gh = yes;
+    git-delta = yes;
+    kubectl = yes;
+    lazygit = yes;
 
-    cli-default = {
-      enable = true;
-    };
+    cli-default = yes;
+
     fish = {
       enable = true;
       kube-prompt = true;
@@ -42,15 +41,15 @@
     gui-default = {
       enable = true;
     };
-    screenshot.enable = true;
-    firefox.enable = true;
-    foot.enable = true;
+    screenshot = yes;
+    firefox = yes;
+    foot = yes;
 
     # ------------- desktop environment
-    xdg.enable = true;
-    variables.enable = true;
-    qtct.enable = true;
-    gtk.enable = true;
+    gtk = yes;
+    qtct = yes;
+    variables = yes;
+    xdg = yes;
     wm-scripts = {
       enable = true;
       touchpad.type = "sway";
@@ -61,10 +60,9 @@
       background = "~/flake/assets/background.jpg";
     };
 
-    fuzzel.enable = true;
-    swaylock.enable = true;
-    mako.enable = true;
-    wm-utils.enable = true;
-    cliphist.enable = true;
+    mako = yes;
+    rofi = yes;
+    swaylock = yes;
+    wm-utils = yes;
   };
 }

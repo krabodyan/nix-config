@@ -1,34 +1,39 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  yes,
+  ...
+}: {
   module = {
     # ------------- cli
-    home-manager.enable = true;
-    nix-index.enable = true;
-    nh.enable = true;
-    fzf.enable = true;
-    zoxide.enable = true;
-    ripgrep.enable = true;
-    fastfetch.enable = true;
-    tmux.enable = true;
-    htop.enable = true;
-    rustfmt.enable = true;
-    clang-format.enable = true;
-    yazi.enable = true;
-    bat.enable = true;
-    helix.enable = true;
-    eza.enable = true;
-    jq.enable = true;
-    python.enable = true;
-    postgres-cli.enable = true;
+    bat = yes;
+    clang-format = yes;
+    eza = yes;
+    fastfetch = yes;
+    fzf = yes;
+    helix = yes;
+    home-manager = yes;
+    htop = yes;
+    jq = yes;
+    network-utils = yes;
+    nh = yes;
+    nix-index = yes;
+    postgres-cli = yes;
+    python = yes;
+    ripgrep = yes;
+    rustfmt = yes;
+    tmux = yes;
+    yazi = yes;
+    zoxide = yes;
 
     git = {
       enable = true;
       userName = "krabodyan";
       userEmail = "krabodyan@gmail.com";
     };
-    git-delta.enable = true;
-    lazygit.enable = true;
-    gh.enable = true;
-    kubectl.enable = true;
+    gh = yes;
+    git-delta = yes;
+    kubectl = yes;
+    lazygit = yes;
 
     cli-default = {
       enable = true;
@@ -65,42 +70,43 @@
     gui-default = {
       enable = true;
       extra = with pkgs; [
-        obsidian
+        gcolor3
         gimp
         system-config-printer
-        whatsie
         onlyoffice-bin
         qbittorrent
         solaar
-        gcolor3
+        obsidian
+        whatsie
       ];
     };
-    screenshot.enable = true;
-    telegram.enable = true;
-    discord.enable = true;
-    zoom.enable = true;
-    swayimg.enable = true;
-    zathura.enable = true;
-    mpv.enable = true;
-    firefox.enable = true;
-    foot.enable = true;
-    obs.enable = true;
+
+    discord = yes;
+    firefox = yes;
+    foot = yes;
+    mpv = yes;
+    obs = yes;
+    screenshot = yes;
+    swayimg = yes;
+    telegram = yes;
+    zathura = yes;
+    zoom = yes;
 
     # ------------- desktop environment
-    xdg.enable = true;
-    variables.enable = true;
-    qtct.enable = true;
-    gtk.enable = true;
+    gtk = yes;
+    qtct = yes;
+    variables = yes;
+    xdg = yes;
 
     # ------------- window manager
-    wm-utils.enable = true;
+    wm-utils = yes;
     wm-scripts = {
       enable = true;
       touchpad.type = "sway";
     };
-    rofi.enable = true;
-    swaylock.enable = true;
-    mako.enable = true;
+    mako = yes;
+    rofi = yes;
+    swaylock = yes;
 
     sway = {
       enable = true;

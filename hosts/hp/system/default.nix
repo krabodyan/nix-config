@@ -1,17 +1,21 @@
-{hostname, ...}: {
+{
+  hostname,
+  yes,
+  ...
+}: {
   module = {
-    bootloader.enable = true;
-    tmpfs.enable = true;
-    sound.enable = true;
-    nix-config.enable = true;
-    time.enable = true;
-    console.enable = true;
-    users.enable = true;
-    locale.enable = true;
+    bootloader = yes;
+    tmpfs = yes;
+    sound = yes;
+    nix-config = yes;
+    time = yes;
+    console = yes;
+    users = yes;
+    locale = yes;
 
     packages = {
       enable = true;
-      fonts.enable = true;
+      fonts = yes;
     };
 
     xdg-portal = {
@@ -21,20 +25,20 @@
     };
 
     security = {
-      pam.enable = true;
-      sudo.enable = true;
+      pam = yes;
+      sudo = yes;
     };
 
     services = {
-      nfs.enable = true;
+      nfs = yes;
       k3s-server = {
         enable = true;
         token = "99d12cbd-03d2-4693-bc9b-55ad00c96097";
       };
-      sshd.enable = true;
-      systemd-config.enable = true;
+      sshd = yes;
+      systemd-config = yes;
       earlyoom.enable = false;
-      dbus-broker.enable = true;
+      dbus-broker = yes;
       docker = {
         enable = true;
       };
@@ -48,12 +52,12 @@
     };
 
     graphics = {
-      minimal.enable = true;
+      minimal = yes;
       intel = {
         enable = true;
         newer = false;
       };
-      amdgpu.enable = true;
+      amdgpu = yes;
     };
   };
 }
