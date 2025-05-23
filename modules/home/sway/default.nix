@@ -127,7 +127,7 @@ in {
         };
 
         focus = {
-          followMouse = false;
+          followMouse = true;
           wrapping = "yes";
         };
 
