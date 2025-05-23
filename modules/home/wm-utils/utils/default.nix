@@ -17,6 +17,7 @@ in {
       grim
       slurp
       lswt
+      swaybg
       wlr-randr
       wl-gammactl
       wev
