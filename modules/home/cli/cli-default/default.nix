@@ -25,10 +25,6 @@ in {
 
         xdg-utils
 
-        lsof
-        iptables
-        tcpdump
-
         dust
         dua
         dysk
