@@ -79,8 +79,7 @@ in {
         };
 
         colors = with colors; {
-          selection-background = surface2;
-          selection-foreground = fg;
+          selection-background = surface3;
           background = bg;
           foreground = fg;
           regular0 = black;
