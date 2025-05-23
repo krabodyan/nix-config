@@ -276,6 +276,11 @@
       };
     };
 
+    ruff = {
+      command = lib.getExe pkgs.ruff;
+      args = ["server" "--silent"];
+    };
+
     biome = {
       command = lib.getExe pkgs.biome;
       args = ["lsp-proxy"];

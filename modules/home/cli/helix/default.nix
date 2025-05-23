@@ -26,7 +26,6 @@ in {
         docker-compose-language-service
         dockerfile-language-server-nodejs
 
-        ruff
         pyright
 
         taplo
