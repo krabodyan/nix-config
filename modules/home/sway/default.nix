@@ -52,9 +52,10 @@ in {
 
         startup = with pkgs;
           map (cmd: {command = cmd;}) [
+            "${lib.getExe swaybg} -i ${cfg.background} -m fill &"
             "${lib.getExe swaykbdd} -a firefox,chrome,firefox-nightly &"
             "${lib.getExe wl-clip-persist} --clipboard regular &>/dev/null &"
-            "${lib.getExe foot} --server"
+            "${lib.getExe foot} --server &"
           ];
 
         assigns = {
@@ -98,7 +99,6 @@ in {
 
         output = {
           "eDP-1" = {
-            bg = "${cfg.background} fill";
             mode = "1920x1080@144.000Hz";
           };
         };
