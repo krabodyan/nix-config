@@ -8,7 +8,7 @@
 in {
   options = {
     module.sound = {
-      enable = mkEnableOption "enable sound with pipewire";
+      enable = mkEnableOption "sound with pipewire";
     };
   };
   config = mkIf cfg.enable {

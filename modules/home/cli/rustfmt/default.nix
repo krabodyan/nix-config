@@ -8,7 +8,7 @@
 in {
   options = {
     module.rustfmt = {
-      enable = mkEnableOption "enable rustfmt";
+      enable = mkEnableOption "rustfmt";
     };
   };
   config = mkIf cfg.enable {

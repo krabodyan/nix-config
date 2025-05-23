@@ -9,7 +9,7 @@
 in {
   options = {
     module.git-delta = {
-      enable = mkEnableOption "enable git-delta";
+      enable = mkEnableOption "git-delta";
     };
   };
 

@@ -9,7 +9,7 @@
 in {
   options = {
     module.services.sshd = {
-      enable = mkEnableOption "enables sshd";
+      enable = mkEnableOption "sshd";
     };
   };
   config = mkIf cfg.enable {

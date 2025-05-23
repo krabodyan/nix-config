@@ -10,7 +10,7 @@
 in {
   options = {
     module.wm-scripts = {
-      enable = mkEnableOption "enable wm-scripts";
+      enable = mkEnableOption "wm-scripts";
       touchpad = {
         type = mkOption {
           type = lib.types.enum ["river" "sway"];

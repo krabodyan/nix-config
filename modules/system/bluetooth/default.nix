@@ -8,7 +8,7 @@
 in {
   options = {
     module.bluetooth = {
-      enable = mkEnableOption "enable bluetooth";
+      enable = mkEnableOption "bluetooth";
     };
   };
   config = mkIf cfg.enable {

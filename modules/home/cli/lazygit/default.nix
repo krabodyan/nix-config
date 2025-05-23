@@ -9,7 +9,7 @@
 in {
   options = {
     module.lazygit = {
-      enable = mkEnableOption "enable lazygit";
+      enable = mkEnableOption "lazygit";
     };
   };
 

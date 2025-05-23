@@ -8,7 +8,7 @@
 in {
   options = {
     module.nh = {
-      enable = mkEnableOption "enables nh";
+      enable = mkEnableOption "nh";
     };
   };
   config = mkIf cfg.enable {

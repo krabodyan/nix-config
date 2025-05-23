@@ -11,7 +11,7 @@
 in {
   options = {
     module.gtk = {
-      enable = mkEnableOption "enable gtk";
+      enable = mkEnableOption "gtk";
     };
   };
   config = mkIf cfg.enable {

@@ -9,8 +9,8 @@
 in {
   options = {
     module.packages = {
-      enable = mkEnableOption "enable default packages";
-      steam = mkEnableOption "enable steam";
+      enable = mkEnableOption "default packages";
+      steam = mkEnableOption "steam";
       extraPackages = mkOption {
         type = lib.types.listOf lib.types.package;
         default = [];

@@ -12,7 +12,7 @@
 in {
   options = {
     module.users = {
-      enable = mkEnableOption "enable users";
+      enable = mkEnableOption "users";
     };
   };
 

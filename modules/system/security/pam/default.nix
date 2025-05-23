@@ -9,7 +9,7 @@
 in {
   options = {
     module.security.pam = {
-      enable = mkEnableOption "enable pam settigs";
+      enable = mkEnableOption "pam settigs";
     };
   };
   config = mkIf cfg.enable {

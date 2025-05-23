@@ -9,7 +9,7 @@
 in {
   options = {
     module.udev-rules = {
-      enable = mkEnableOption "enables udev rules for usb mouse";
+      enable = mkEnableOption "udev rules for usb mouse";
       platformio = mkOption {
         type = lib.types.bool;
         default = false;

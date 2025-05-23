@@ -8,7 +8,7 @@
 in {
   options = {
     module.fzf = {
-      enable = mkEnableOption "enable fzf with fd";
+      enable = mkEnableOption "fzf with fd";
     };
   };
   config = mkIf cfg.enable {

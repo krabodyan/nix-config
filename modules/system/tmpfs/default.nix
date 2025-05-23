@@ -8,7 +8,7 @@
 in {
   options = {
     module.tmpfs = {
-      enable = mkEnableOption "enable /tmp in tmpfs";
+      enable = mkEnableOption "/tmp in tmpfs";
     };
   };
   config = mkIf cfg.enable {

@@ -8,7 +8,7 @@
 in {
   options = {
     module.ripgrep = {
-      enable = mkEnableOption "enable ripgrep";
+      enable = mkEnableOption "ripgrep";
     };
   };
   config = mkIf cfg.enable {

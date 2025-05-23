@@ -8,7 +8,7 @@
 in {
   options = {
     module.services.docker = {
-      enable = mkEnableOption "enable docker";
+      enable = mkEnableOption "docker";
       storageDriver = mkOption {
         type = lib.types.nullOr (lib.types.str);
         example = "btrfs";

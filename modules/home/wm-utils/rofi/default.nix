@@ -11,7 +11,7 @@
 in {
   options = {
     module.rofi = {
-      enable = mkEnableOption "enable rofi";
+      enable = mkEnableOption "rofi";
     };
   };
   config = mkIf cfg.enable {

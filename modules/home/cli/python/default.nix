@@ -9,7 +9,7 @@
 in {
   options = {
     module.python = {
-      enable = mkEnableOption "enables python";
+      enable = mkEnableOption "python";
     };
   };
   config = mkIf cfg.enable {

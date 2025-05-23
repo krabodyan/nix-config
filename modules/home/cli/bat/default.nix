@@ -8,7 +8,7 @@
 in {
   options = {
     module.bat = {
-      enable = mkEnableOption "enable bat";
+      enable = mkEnableOption "bat";
     };
   };
   config = mkIf cfg.enable {

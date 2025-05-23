@@ -13,7 +13,7 @@
 in {
   options = {
     module.helix = {
-      enable = mkEnableOption "enable helix";
+      enable = mkEnableOption "helix";
     };
   };
   config = mkIf cfg.enable {

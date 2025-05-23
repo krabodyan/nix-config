@@ -11,7 +11,7 @@
 in {
   options = {
     module.qtct = {
-      enable = mkEnableOption "enable qtct";
+      enable = mkEnableOption "qtct";
     };
   };
   config = mkIf cfg.enable {

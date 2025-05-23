@@ -8,7 +8,7 @@
 in {
   options = {
     module.networking.iwd = {
-      enable = mkEnableOption "enable iwd";
+      enable = mkEnableOption "iwd";
       enableDaemon = mkOption {
         type = lib.types.bool;
         default = true;

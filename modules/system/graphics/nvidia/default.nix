@@ -8,7 +8,7 @@
 in {
   options = {
     module.graphics.nvidia-hybrid = {
-      enable = mkEnableOption "enable nvidia hybrid gpu";
+      enable = mkEnableOption "nvidia hybrid gpu";
       intelBusId = mkOption {
         type = lib.types.str;
         example = "PCI:0:2:0";

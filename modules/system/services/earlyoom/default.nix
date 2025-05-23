@@ -8,7 +8,7 @@
 in {
   options = {
     module.services.earlyoom = {
-      enable = mkEnableOption "enable earlyoom killer daemon";
+      enable = mkEnableOption "earlyoom killer daemon";
     };
   };
   config = mkIf cfg.enable {

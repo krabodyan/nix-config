@@ -8,7 +8,7 @@
 in {
   options = {
     module.zoxide = {
-      enable = mkEnableOption "enables zoxide";
+      enable = mkEnableOption "zoxide";
     };
   };
   config = mkIf cfg.enable {

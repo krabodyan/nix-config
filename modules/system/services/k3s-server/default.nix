@@ -8,7 +8,7 @@
 in {
   options = {
     module.services.k3s-server = {
-      enable = mkEnableOption "enables k3s";
+      enable = mkEnableOption "k3s";
       token = mkOption {
         type = lib.types.str;
       };

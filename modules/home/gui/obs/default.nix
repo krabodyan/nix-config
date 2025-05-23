@@ -9,7 +9,7 @@
 in {
   options = {
     module.obs = {
-      enable = mkEnableOption "enable obs";
+      enable = mkEnableOption "obs";
     };
   };
   config = mkIf cfg.enable {

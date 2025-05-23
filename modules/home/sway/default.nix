@@ -11,7 +11,7 @@
 in {
   options = {
     module.sway = {
-      enable = mkEnableOption "enable sway wm";
+      enable = mkEnableOption "sway wm";
       background = mkOption {
         type = lib.types.str;
       };

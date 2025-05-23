@@ -11,7 +11,7 @@
 in {
   options = {
     module.mpv = {
-      enable = mkEnableOption "enable mpv";
+      enable = mkEnableOption "mpv";
     };
   };
   config = mkIf cfg.enable {

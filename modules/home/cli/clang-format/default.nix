@@ -9,7 +9,7 @@
 in {
   options = {
     module.clang-format = {
-      enable = mkEnableOption "enable clang-format config";
+      enable = mkEnableOption "clang-format config";
     };
   };
   config = mkIf cfg.enable {

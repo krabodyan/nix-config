@@ -8,7 +8,7 @@
 in {
   options = {
     module.nix-index = {
-      enable = mkEnableOption "enable nix-index";
+      enable = mkEnableOption "nix-index";
     };
   };
   config = mkIf cfg.enable {

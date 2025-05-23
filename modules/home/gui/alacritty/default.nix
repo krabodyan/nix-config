@@ -10,7 +10,7 @@
 in {
   options = {
     module.alacritty = {
-      enable = mkEnableOption "enable alacritty";
+      enable = mkEnableOption "alacritty";
     };
   };
   config = mkIf cfg.enable {

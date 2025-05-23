@@ -9,7 +9,7 @@
 in {
   options = {
     module.postgres-cli = {
-      enable = mkEnableOption "enables postgres-cli";
+      enable = mkEnableOption "postgres-cli";
     };
   };
   config = mkIf cfg.enable {

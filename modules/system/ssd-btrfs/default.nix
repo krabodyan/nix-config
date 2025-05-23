@@ -8,7 +8,7 @@
 in {
   options = {
     module.ssd-btrfs = {
-      enable = mkEnableOption "enable btrfs autoscrub and trim";
+      enable = mkEnableOption "btrfs autoscrub and trim";
     };
   };
   config = mkIf cfg.enable {

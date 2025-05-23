@@ -15,7 +15,7 @@
   in {
     devShells.rust = pkgs.mkShell {
       name = "rust";
-      LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
+      # LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
       DEV_SHELL_NAME = "rust";
       RUST_BACKTRACE = 1;
       RUST_LOG = "DEBUG";
@@ -31,7 +31,7 @@
         libudev-zero
         fontconfig
         dbus.dev
-        llvmPackages.clang
+        # llvmPackages.clang
         (
           rust-pkgs.rust-bin.nightly.latest.default.override
           {
@@ -69,7 +69,7 @@
 
     devShells.tauri = pkgs.mkShell {
       name = "tauri";
-      LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
+      # LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
       DEV_SHELL_NAME = "tauri";
       RUST_BACKTRACE = 1;
       GIO_MODULE_DIR = "${pkgs.glib-networking}/lib/gio/modules/";
@@ -118,6 +118,10 @@
         platformio
         minicom
       ];
+    };
+
+    devShells.python = pkgs.mkShell {
+      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH";
     };
   };
 }

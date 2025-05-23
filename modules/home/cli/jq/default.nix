@@ -8,7 +8,7 @@
 in {
   options = {
     module.jq = {
-      enable = mkEnableOption "enables jq";
+      enable = mkEnableOption "jq";
     };
   };
   config = mkIf cfg.enable {

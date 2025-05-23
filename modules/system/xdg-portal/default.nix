@@ -9,7 +9,7 @@
 in {
   options = {
     module.xdg-portal = {
-      enable = mkEnableOption "enable xdg-portal";
+      enable = mkEnableOption "xdg-portal";
       terminal = mkOption {
         type = lib.types.str;
         example = "foot.desktop";

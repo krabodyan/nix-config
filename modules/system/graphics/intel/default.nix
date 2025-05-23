@@ -9,7 +9,7 @@
 in {
   options = {
     module.graphics.intel = {
-      enable = mkEnableOption "enable intel gpu support";
+      enable = mkEnableOption "intel gpu support";
       newer = mkOption {
         type = lib.types.bool;
       };

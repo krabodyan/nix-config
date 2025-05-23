@@ -11,7 +11,7 @@
 in {
   options = {
     module.fish = {
-      enable = mkEnableOption "enable fish";
+      enable = mkEnableOption "fish";
 
       kube-prompt = mkOption {
         type = lib.types.bool;
@@ -24,7 +24,7 @@ in {
       };
 
       loginShell = {
-        enable = mkEnableOption "enable fish loginshell";
+        enable = mkEnableOption "fish loginshell";
 
         wm = mkOption {
           type = lib.types.enum ["river" "sway"];

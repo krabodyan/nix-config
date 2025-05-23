@@ -9,7 +9,7 @@
 in {
   options = {
     module.htop = {
-      enable = mkEnableOption "enable htop";
+      enable = mkEnableOption "htop";
     };
   };
   config = mkIf cfg.enable {

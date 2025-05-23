@@ -10,7 +10,7 @@
 in {
   options = {
     module.discord = {
-      enable = mkEnableOption "enable discord";
+      enable = mkEnableOption "discord";
     };
   };
   config = mkIf cfg.enable {

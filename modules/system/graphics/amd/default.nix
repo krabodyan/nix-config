@@ -9,7 +9,7 @@
 in {
   options = {
     module.graphics.amdgpu = {
-      enable = mkEnableOption "enable amd gpu support";
+      enable = mkEnableOption "amd gpu support";
     };
   };
   config = mkIf cfg.enable {

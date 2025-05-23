@@ -10,7 +10,7 @@
 in {
   options = {
     module.clipse = {
-      enable = mkEnableOption "enable clipse";
+      enable = mkEnableOption "clipse";
     };
   };
   config = mkIf cfg.enable {

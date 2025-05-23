@@ -8,7 +8,7 @@
 in {
   options = {
     module.services.systemd-config = {
-      enable = mkEnableOption "enable minimal systemd settings";
+      enable = mkEnableOption "minimal systemd settings";
     };
   };
   config = mkIf cfg.enable {

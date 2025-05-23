@@ -10,7 +10,7 @@
 in {
   options = {
     module.libvirtd = {
-      enable = mkEnableOption "enable libvirtd";
+      enable = mkEnableOption "libvirtd";
     };
   };
   config = mkIf cfg.enable {

@@ -10,7 +10,7 @@
 in {
   options = {
     module.packages.fonts = {
-      enable = mkEnableOption "enable fonts";
+      enable = mkEnableOption "fonts";
     };
   };
   config = mkIf cfg.enable {

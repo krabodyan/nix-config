@@ -8,7 +8,7 @@
 in {
   options = {
     module.services.dbus-broker = {
-      enable = mkEnableOption "enable dbus broker";
+      enable = mkEnableOption "dbus broker";
     };
   };
   config = mkIf cfg.enable {

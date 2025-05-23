@@ -9,7 +9,7 @@
 in {
   options = {
     module.screenshot = {
-      enable = mkEnableOption "enable screenshot (swappy)";
+      enable = mkEnableOption "screenshot (swappy)";
     };
   };
   config = mkIf cfg.enable {

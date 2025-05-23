@@ -8,7 +8,7 @@
 in {
   options = {
     module.xdg = {
-      enable = mkEnableOption "enable xdg";
+      enable = mkEnableOption "xdg";
     };
   };
   config = mkIf cfg.enable {

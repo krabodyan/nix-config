@@ -10,7 +10,7 @@
 in {
   options = {
     module.console = {
-      enable = mkEnableOption "enable console font and colors";
+      enable = mkEnableOption "console font and colors";
     };
   };
   config = mkIf cfg.enable {

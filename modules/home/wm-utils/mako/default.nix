@@ -11,7 +11,7 @@
 in {
   options = {
     module.mako = {
-      enable = mkEnableOption "enable mako";
+      enable = mkEnableOption "mako";
     };
   };
   config = mkIf cfg.enable {

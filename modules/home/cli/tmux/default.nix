@@ -9,7 +9,7 @@
 in {
   options = {
     module.tmux = {
-      enable = mkEnableOption "enable tmux";
+      enable = mkEnableOption "tmux";
     };
   };
   config = mkIf cfg.enable {

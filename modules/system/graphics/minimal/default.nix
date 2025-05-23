@@ -9,7 +9,7 @@
 in {
   options = {
     module.graphics.minimal = {
-      enable = mkEnableOption "enable minimal graphics support";
+      enable = mkEnableOption "minimal graphics support";
     };
   };
   config = mkIf cfg.enable {

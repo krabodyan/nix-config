@@ -11,7 +11,7 @@
 in {
   options = {
     module.yazi = {
-      enable = mkEnableOption "enable yazi";
+      enable = mkEnableOption "yazi";
     };
   };
   config = mkIf cfg.enable {

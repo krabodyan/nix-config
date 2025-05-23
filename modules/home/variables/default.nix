@@ -8,7 +8,7 @@
 in {
   options = {
     module.variables = {
-      enable = mkEnableOption "enable variables";
+      enable = mkEnableOption "variables";
     };
   };
   config = mkIf cfg.enable {

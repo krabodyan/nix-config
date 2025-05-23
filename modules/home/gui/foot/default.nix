@@ -11,7 +11,7 @@
 in {
   options = {
     module.foot = {
-      enable = mkEnableOption "enable foot";
+      enable = mkEnableOption "foot";
     };
   };
   config = mkIf cfg.enable {

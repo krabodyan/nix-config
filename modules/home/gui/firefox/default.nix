@@ -10,7 +10,7 @@
 in {
   options = {
     module.firefox = {
-      enable = mkEnableOption "enable firefox";
+      enable = mkEnableOption "firefox";
     };
   };
   config = mkIf cfg.enable {

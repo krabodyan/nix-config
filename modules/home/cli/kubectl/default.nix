@@ -9,7 +9,7 @@
 in {
   options = {
     module.kubectl = {
-      enable = mkEnableOption "enables kubectl related utils";
+      enable = mkEnableOption "kubectl related utils";
     };
   };
   config = mkIf cfg.enable {

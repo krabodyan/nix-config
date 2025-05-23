@@ -10,7 +10,7 @@
 in {
   options = {
     module.river = {
-      enable = mkEnableOption "enable river wm";
+      enable = mkEnableOption "river wm";
       background = mkOption {
         type = lib.types.str;
       };

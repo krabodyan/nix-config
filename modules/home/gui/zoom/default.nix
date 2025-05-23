@@ -9,7 +9,7 @@
 in {
   options = {
     module.zoom = {
-      enable = mkEnableOption "enable zoom";
+      enable = mkEnableOption "zoom";
     };
   };
   config = mkIf cfg.enable {

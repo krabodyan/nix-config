@@ -10,7 +10,7 @@
 in {
   options = {
     module.swaylock = {
-      enable = mkEnableOption "enable swaylock";
+      enable = mkEnableOption "swaylock";
     };
   };
   config = mkIf cfg.enable {

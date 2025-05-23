@@ -9,7 +9,7 @@
 in {
   options = {
     module.gh = {
-      enable = mkEnableOption "enable gh";
+      enable = mkEnableOption "gh";
     };
   };
 

@@ -9,7 +9,7 @@
 in {
   options = {
     module.eza = {
-      enable = mkEnableOption "enables eza";
+      enable = mkEnableOption "eza";
     };
   };
   config = mkIf cfg.enable {

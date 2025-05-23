@@ -8,7 +8,7 @@
 in {
   options = {
     module.cliphist = {
-      enable = mkEnableOption "enable cliphist";
+      enable = mkEnableOption "cliphist";
     };
   };
   config = mkIf cfg.enable {

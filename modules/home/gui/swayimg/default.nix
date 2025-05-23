@@ -12,7 +12,7 @@
 in {
   options = {
     module.swayimg = {
-      enable = mkEnableOption "enable swayimg";
+      enable = mkEnableOption "swayimg";
     };
   };
   config = mkIf cfg.enable {

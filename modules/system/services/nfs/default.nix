@@ -8,7 +8,7 @@
 in {
   options = {
     module.services.nfs = {
-      enable = mkEnableOption "enables nfs";
+      enable = mkEnableOption "nfs";
     };
   };
   config = mkIf cfg.enable {

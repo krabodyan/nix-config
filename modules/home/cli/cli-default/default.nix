@@ -9,7 +9,7 @@
 in {
   options = {
     module.cli-default = {
-      enable = mkEnableOption "enable default cli apps";
+      enable = mkEnableOption "default cli apps";
       extra = mkOption {
         type = lib.types.listOf lib.types.package;
         default = [];

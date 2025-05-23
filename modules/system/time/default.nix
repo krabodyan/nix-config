@@ -8,7 +8,7 @@
 in {
   options = {
     module.time = {
-      enable = mkEnableOption "enable kyiv timezone";
+      enable = mkEnableOption "kyiv timezone";
     };
   };
   config = mkIf cfg.enable {

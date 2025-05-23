@@ -9,7 +9,7 @@
 in {
   options = {
     module.wm-utils = {
-      enable = mkEnableOption "enable wm related utils";
+      enable = mkEnableOption "wm related utils";
     };
   };
   config = mkIf cfg.enable {

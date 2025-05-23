@@ -8,7 +8,7 @@
 in {
   options = {
     module.security.sudo = {
-      enable = mkEnableOption "enable sudo-rs";
+      enable = mkEnableOption "sudo-rs";
     };
   };
   config = mkIf cfg.enable {

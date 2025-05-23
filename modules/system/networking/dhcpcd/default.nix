@@ -8,7 +8,7 @@
 in {
   options = {
     module.networking.dhcpcd = {
-      enable = mkEnableOption "enable network";
+      enable = mkEnableOption "network";
       hostname = mkOption {
         type = lib.types.str;
         example = "nixos";

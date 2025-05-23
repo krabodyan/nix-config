@@ -8,7 +8,7 @@
 in {
   options = {
     module.locale = {
-      enable = mkEnableOption "enable locale";
+      enable = mkEnableOption "locale";
     };
   };
   config = mkIf cfg.enable {

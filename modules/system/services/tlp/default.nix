@@ -8,7 +8,7 @@
 in {
   options = {
     module.services.tlp = {
-      enable = mkEnableOption "enables tlp";
+      enable = mkEnableOption "tlp";
       enableDaemon = mkOption {
         type = lib.types.bool;
         example = true;

@@ -10,7 +10,7 @@
 in {
   options = {
     module.home-manager = {
-      enable = mkEnableOption "enables home-manager";
+      enable = mkEnableOption "home-manager";
     };
   };
   config = mkIf cfg.enable {

@@ -9,7 +9,7 @@
 in {
   options = {
     module.gui-default = {
-      enable = mkEnableOption "enable default gui apps";
+      enable = mkEnableOption "default gui apps";
       extra = mkOption {
         type = lib.types.listOf lib.types.package;
         default = [];

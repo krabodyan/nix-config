@@ -9,7 +9,7 @@
 in {
   options = {
     module.telegram = {
-      enable = mkEnableOption "enable telegram";
+      enable = mkEnableOption "telegram";
     };
   };
   config = let

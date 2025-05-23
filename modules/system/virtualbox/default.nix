@@ -8,7 +8,7 @@
 in {
   options = {
     module.virtualbox = {
-      enable = mkEnableOption "enable virtualbox";
+      enable = mkEnableOption "virtualbox";
     };
   };
   config = mkIf cfg.enable {

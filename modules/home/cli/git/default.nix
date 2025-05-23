@@ -9,7 +9,7 @@
 in {
   options = {
     module.git = {
-      enable = mkEnableOption "enable git";
+      enable = mkEnableOption "git";
       userName = mkOption {
         type = lib.types.str;
       };

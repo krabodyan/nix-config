@@ -10,7 +10,7 @@
 in {
   options = {
     module.fuzzel = {
-      enable = mkEnableOption "enable fuzzel";
+      enable = mkEnableOption "fuzzel";
     };
   };
   config = mkIf cfg.enable {

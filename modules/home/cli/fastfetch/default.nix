@@ -8,7 +8,7 @@
 in {
   options = {
     module.fastfetch = {
-      enable = mkEnableOption "enable fastfetch";
+      enable = mkEnableOption "fastfetch";
     };
   };
   config = mkIf cfg.enable {
