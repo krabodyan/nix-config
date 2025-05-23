@@ -40,6 +40,7 @@
 
     extraModprobeConfig = ''
       options i915 enable_guc=3
+      options uvcvideo quirks=0x0104
     '';
 
     kernelModules = [
