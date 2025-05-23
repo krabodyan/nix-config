@@ -1,14 +1,13 @@
 {
-  pkgs,
   lib,
+  pkgs,
+  hostname,
 }: {
   language = [
     {
       name = "nix";
       language-servers = ["nix"];
-      formatter = {
-        command = lib.getExe pkgs.alejandra;
-      };
+      formatter.command = lib.getExe pkgs.alejandra;
     }
     {
       name = "rust";
@@ -220,6 +219,20 @@
 
     nix = {
       command = "${pkgs.nixd}/bin/nixd";
+      args = ["--log=error"];
+      config.nixd = {
+        nixpkgs = {
+          expr = "import <nixpkgs> { }";
+        };
+        options = {
+          nixos = {
+            expr = ''(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.${hostname}.options'';
+          };
+          home_manager = {
+            expr = ''(builtins.getFlake ("git+file://" + toString ./.)).homeConfigurations.${hostname}.options'';
+          };
+        };
+      };
     };
 
     svelteserver.config.configuration.typescript = {

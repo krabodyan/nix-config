@@ -4,6 +4,7 @@
   config,
   colors,
   inputs,
+  hostname,
   mkAssociations,
   ...
 }: let
@@ -54,15 +55,14 @@ in {
 
       themes = import ./theme.nix {inherit colors;};
 
-      languages = import ./languages.nix {inherit lib pkgs;};
+      languages = import ./languages.nix {inherit lib pkgs hostname;};
 
       ignores = let
         add_ignore = ext: "*.${ext}";
       in
         config.programs.git.ignores
         ++ [
-          "Cargo.lock"
-          "flake.lock"
+          "*.lock"
           "package-lock.json"
         ]
         ++ map add_ignore [

@@ -44,6 +44,7 @@
     stateVersion,
     system,
     username,
+    hostname,
     overlays ? [],
     ...
   }:
@@ -63,6 +64,7 @@
           allDirs
           mkAssociations
           username
+          hostname
           stateVersion
           system
           hostDir
