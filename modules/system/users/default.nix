@@ -17,15 +17,19 @@ in {
   };
 
   config = mkIf cfg.enable {
+    environment.sessionVariables.SOPS_AGE_KEY_FILE = "/etc/sops-nix/keys.txt";
     sops = {
       defaultSopsFile = "${self}/secrets/${hostname}/secrets.yaml";
       defaultSopsFormat = "yaml";
       age.keyFile = "/etc/sops-nix/keys.txt";
       secrets.password.neededForUsers = true;
     };
-    environment.sessionVariables.SOPS_AGE_KEY_FILE = "/etc/sops-nix/keys.txt";
 
-    programs.fish.enable = true;
+    programs.fish = {
+      enable = true;
+      package = pkgs.fishMinimal;
+    };
+
     programs.command-not-found.enable = false;
 
     users = {
@@ -45,7 +49,7 @@ in {
         ${username} = {
           uid = 1000;
           home = "/home/${username}";
-          shell = pkgs.fish;
+          shell = pkgs.fishMinimal;
           isNormalUser = true;
           description = "${username}";
           extraGroups = [

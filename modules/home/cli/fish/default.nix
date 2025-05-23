@@ -38,9 +38,11 @@ in {
       };
     };
   };
+
   config = mkIf cfg.enable {
     programs.fish = {
       enable = true;
+      package = pkgs.fishMinimal;
 
       shellAbbrs =
         {
