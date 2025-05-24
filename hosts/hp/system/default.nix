@@ -7,13 +7,13 @@
   module = {
     agenix.enable = true;
     bootloader = yes;
-    tmpfs = yes;
-    sound = yes;
-    nix-config = yes;
-    time = yes;
     console = yes;
-    users = yes;
     locale = yes;
+    nix-config = yes;
+    sound = yes;
+    time = yes;
+    tmpfs = yes;
+    users = yes;
 
     packages = {
       enable = true;

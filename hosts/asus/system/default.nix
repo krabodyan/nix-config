@@ -1,15 +1,12 @@
 {
   hostname,
   yes,
-  no,
   ...
 }: {
   module = {
     agenix = yes;
-    bluetooth = no;
     bootloader = yes;
     console = yes;
-    libvirtd = no;
     locale = yes;
     nix-config = yes;
     sound = yes;
@@ -17,7 +14,6 @@
     time = yes;
     tmpfs = yes;
     users = yes;
-    virtualbox = no;
 
     udev-rules = {
       enable = true;
@@ -47,11 +43,7 @@
         enableDaemon = false;
       };
       dbus-broker = yes;
-      docker = {
-        enable = true;
-        storageDriver = "overlay2";
-      };
-      earlyoom = no;
+      docker = yes;
       systemd-config = yes;
     };
 

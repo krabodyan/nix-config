@@ -11,8 +11,8 @@ in {
       enable = mkEnableOption "docker";
       storageDriver = mkOption {
         type = lib.types.nullOr (lib.types.str);
-        example = "btrfs";
-        default = null;
+        example = "overlay2";
+        default = "overlay2";
       };
     };
   };

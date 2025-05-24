@@ -59,7 +59,7 @@
 
     fish = {
       enable = true;
-      kube-prompt = true;
+      kube-prompt = false;
       ssh-prompt = false;
       loginShell = {
         enable = true;
@@ -115,19 +115,5 @@
       background = "~/flake/assets/background.jpg";
       menu = "rofi";
     };
-
-    # river = {
-    #   extraConfig = ''
-    #     riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" events disabled
-    #     riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" tap enabled
-    #     riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" dwt enabled
-    #     riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" natural_scroll enabled
-    #     riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" scroll-factor 0.2
-    #     riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" pointer-accel 0.3
-    #     riverctl input "pointer-1267-12410-ELAN1203:00_04F3:307A_Touchpad" accel-profile flat
-    #     riverctl input "pointer-1133-50504-Logitech_USB_Receiver_Mouse" accel-profile flat
-    #     riverctl input "pointer-1133-50504-Logitech_USB_Receiver_Mouse" pointer-accel 0
-    #   '';
-    # };
   };
 }

@@ -17,6 +17,7 @@ in {
       };
       menu = mkOption {
         type = lib.types.enum ["rofi" "fuzzel"];
+        example = "rofi";
       };
     };
   };

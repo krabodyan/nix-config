@@ -1,6 +1,7 @@
 {yes, ...}: {
   module = {
     agenix.enable = true;
+
     # ------------- cli
     bat = yes;
     eza = yes;
@@ -23,13 +24,12 @@
     gh = yes;
     git-delta = yes;
     kubectl = yes;
-    lazygit = yes;
 
     cli-default = yes;
 
     fish = {
       enable = true;
-      kube-prompt = true;
+      kube-prompt = false;
       ssh-prompt = true;
       loginShell = {
         enable = true;
@@ -42,7 +42,6 @@
     gui-default = {
       enable = true;
     };
-    screenshot = yes;
     firefox = yes;
     foot = yes;
 
@@ -51,6 +50,8 @@
     qtct = yes;
     variables = yes;
     xdg = yes;
+
+    # ------------- window manager
     wm-scripts = {
       enable = true;
       touchpad.type = "sway";
@@ -59,11 +60,11 @@
     sway = {
       enable = true;
       background = "~/flake/assets/background.jpg";
+      menu = "rofi";
     };
 
     mako = yes;
     rofi = yes;
-    swaylock = yes;
     wm-utils = yes;
   };
 }
