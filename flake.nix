@@ -19,7 +19,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    helix.url = "github:helix-editor/helix?ref=rainbow";
+    helix.url = "github:krabodyan/helix";
 
     rust-overlay.url = "github:oxalica/rust-overlay?rev=fd6795d3d28f956de01a0458b6fa7baae5c793b4";
 
