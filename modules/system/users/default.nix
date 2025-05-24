@@ -25,15 +25,15 @@ in {
     users = {
       mutableUsers = false;
 
-      groups = {
-        plugdev = {};
-        netdev = {};
-      };
-
       users = {
         root = {
           shell = pkgs.bash;
           hashedPasswordFile = config.age.secrets.password.path;
+          packages = with pkgs; [
+            git
+            helix
+            nh
+          ];
         };
 
         ${username} = {
@@ -46,8 +46,6 @@ in {
             "audio"
             "video"
             "wheel"
-            "plugdev"
-            "netdev"
             "input"
             "docker"
             "uucp"
