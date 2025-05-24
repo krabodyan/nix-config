@@ -31,11 +31,12 @@
     };
 
     services = {
-      sshd = yes;
-      systemd-config = yes;
-      earlyoom = no;
       dbus-broker = yes;
-      docker = no;
+      docker = yes;
+      earlyoom = yes;
+      getty-autologin = no;
+      sshd = yes;
+      systemd-config = no;
     };
 
     networking = {
