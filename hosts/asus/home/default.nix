@@ -4,6 +4,8 @@
   ...
 }: {
   module = {
+    agenix.enable = true;
+
     # ------------- cli
     bat = yes;
     clang-format = yes;

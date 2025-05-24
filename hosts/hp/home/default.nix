@@ -1,5 +1,6 @@
 {yes, ...}: {
   module = {
+    agenix.enable = true;
     # ------------- cli
     bat = yes;
     eza = yes;
