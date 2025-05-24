@@ -1,6 +1,7 @@
 {
   hostname,
   yes,
+  no,
   ...
 }: {
   module = {
@@ -30,18 +31,11 @@
     };
 
     services = {
-      nfs = yes;
-      k3s-server = {
-        enable = true;
-        token = "99d12cbd-03d2-4693-bc9b-55ad00c96097";
-      };
       sshd = yes;
       systemd-config = yes;
-      earlyoom.enable = false;
+      earlyoom = no;
       dbus-broker = yes;
-      docker = {
-        enable = true;
-      };
+      docker = no;
     };
 
     networking = {
