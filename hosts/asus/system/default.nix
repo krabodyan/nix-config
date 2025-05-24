@@ -5,6 +5,7 @@
   ...
 }: {
   module = {
+    agenix = yes;
     bluetooth = no;
     bootloader = yes;
     console = yes;

@@ -1,10 +1,11 @@
 {
-  hostname,
-  yes,
   no,
+  yes,
+  hostname,
   ...
 }: {
   module = {
+    agenix.enable = true;
     bootloader = yes;
     tmpfs = yes;
     sound = yes;

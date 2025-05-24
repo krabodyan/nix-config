@@ -1,7 +1,8 @@
 {
   lib,
-  config,
   pkgs,
+  inputs,
+  config,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
@@ -24,7 +25,7 @@ in {
         nfs-utils
         just
         git
-        sops
+        inputs.agenix.packages.${pkgs.system}.default
         gcc
         inxi
         wget

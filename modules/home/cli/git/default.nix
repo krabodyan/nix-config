@@ -21,6 +21,7 @@ in {
 
   config = mkIf cfg.enable {
     home.packages = [pkgs.actionlint];
+
     programs.git = {
       enable = true;
       inherit (cfg) userName userEmail;

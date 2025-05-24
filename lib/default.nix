@@ -34,8 +34,8 @@
       };
       modules = with inputs;
         [
+          agenix.nixosModules.default
           disko.nixosModules.default
-          sops-nix.nixosModules.sops
         ]
         ++ [
           "${self}/overlays"
@@ -81,7 +81,6 @@
       };
       modules =
         [
-          inputs.sops-nix.homeManagerModules.sops
           inputs.nix-index-database.hmModules.nix-index
         ]
         ++ [
