@@ -1,17 +1,26 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
-  cfg = config.module.rustfmt;
+  cfg = config.module.rust-cli;
 in {
   options = {
-    module.rustfmt = {
-      enable = mkEnableOption "rustfmt";
+    module.rust-cli = {
+      enable = mkEnableOption "rust related packages";
     };
   };
   config = mkIf cfg.enable {
+    home.packages = with pkgs; [
+      sqlx-cli
+      cargo-show-asm
+      cargo-llvm-cov
+      cargo-expand
+      cargo-watch
+    ];
+
     xdg.configFile."rustfmt/rustfmt.toml".text = ''
       edition = "2024"
       chain_width = 55

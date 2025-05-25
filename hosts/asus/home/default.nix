@@ -22,7 +22,7 @@
     postgres-cli = yes;
     python = yes;
     ripgrep = yes;
-    rustfmt = yes;
+    rust-cli = yes;
     tmux = yes;
     yazi = yes;
     zoxide = yes;
