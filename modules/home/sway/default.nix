@@ -125,7 +125,7 @@ in {
 
         floating = {
           titlebar = false;
-          modifier = config.wayland.windowManager.sway.config.modifier;
+          modifier = mod;
         };
 
         fonts = {
