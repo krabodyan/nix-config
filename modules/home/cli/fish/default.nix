@@ -165,7 +165,7 @@ in {
                 then "set -x WLR_DRM_DEVICES /dev/dri/igpu"
                 else ""
               }
-                ${wm}
+                ${wm} > /dev/null
               end
             ''
         else null;
