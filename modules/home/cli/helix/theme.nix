@@ -162,7 +162,7 @@
     # previous command in command mode history
     "ui.text.inactive" = surface3;
     # dir in picker
-    "ui.text.directory" = fg;
+    "ui.text.directory" = surface3;
     # focused file in picker
     "ui.text.focus" = {
       bg = surface1;

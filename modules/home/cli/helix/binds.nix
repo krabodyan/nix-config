@@ -132,11 +132,11 @@ in rec {
 
       f = {
         c = "file_picker_in_current_buffer_directory";
-        h = ":run-shell-command just";
+        j = ":run-shell-command just";
         i = ":toggle lsp.display-inlay-hints";
-        j = ":toggle end-of-line-diagnostics disable hint";
+        h = ":toggle end-of-line-diagnostics disable hint";
         s = ["search_selection_detect_word_boundaries" "select_all" "select_regex"];
-        space = ":open %sh{ __yazi_picker }";
+        space = ":open %sh{ __yazi_picker %{buffer_name} }";
       };
     };
 
