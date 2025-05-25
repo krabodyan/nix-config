@@ -39,6 +39,7 @@ in {
         typescript-language-server
         svelte-language-server
         nodePackages.prettier
+        nodejs-slim
 
         asm-lsp
         vscode-langservers-extracted

@@ -42,8 +42,8 @@
       name = "python";
       language-servers = ["pyright" "ruff"];
       formatter = {
-        command = lib.getExe pkgs.black;
-        args = ["--line-length" "80" "--quiet" "-"];
+        command = lib.getExe pkgs.ruff;
+        args = ["format" "-"];
       };
     }
     {
