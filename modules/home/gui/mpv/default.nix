@@ -42,6 +42,8 @@ in {
         й            quit
         WHEEL_UP     add volume  3
         WHEEL_DOWN   add volume -3
+        WHEEL_RIGHT  ignore
+        WHEEL_LEFT   ignore
         h            seek       -3
         l            seek        3
         k            add volume  5
