@@ -24,7 +24,7 @@ in {
         icons = 0;
         markup = 0;
         font = "${fonts.monospace} SemiBold 11";
-        sort = "-time";
+        sort = "+time";
         layer = "overlay";
         group-by = "app-name";
         anchor = "bottom-center";
