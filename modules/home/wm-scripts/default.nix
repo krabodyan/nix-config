@@ -24,11 +24,11 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = [
-      (import ./volume.nix {inherit pkgs;})
       (import ./touchpad.nix {
         inherit pkgs;
         inherit (cfg.touchpad) type device;
       })
+      (import ./volume.nix {inherit pkgs;})
       (import ./microphone.nix {inherit pkgs;})
       (import ./brightness.nix {inherit pkgs;})
       (import ./screenshot.nix {inherit pkgs colors;})

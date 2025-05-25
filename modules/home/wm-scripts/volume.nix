@@ -4,8 +4,8 @@
     ${pkgs.libnotify}/bin/notify-send \
     -t 1000 \
     -a swaynotify \
-    -h string:x-canonical-private-synchronous:swaynotify \
     --urgency low \
+    -h string:x-canonical-private-synchronous:swaynotify \
   '';
 in
   pkgs.writeShellScriptBin "__volume" ''
@@ -15,7 +15,7 @@ in
 
     if ${pamixer} --get-mute | grep -q "true"; then
       ${send} "󰖁 $(${pamixer} --get-volume-human)"
-      exit
+      exit 0
     fi
 
     if [ "$1" = "up" ]; then

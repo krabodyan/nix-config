@@ -8,8 +8,8 @@
     ${pkgs.libnotify}/bin/notify-send \
     -t 1000 \
     -a swaynotify \
-    -h string:x-canonical-private-synchronous:swaynotify \
     --urgency low \
+    -h string:x-canonical-private-synchronous:swaynotify \
   '';
 in
   if type == "sway"

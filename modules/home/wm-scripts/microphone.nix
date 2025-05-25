@@ -4,6 +4,7 @@
     ${pkgs.libnotify}/bin/notify-send \
     -t 1000 \
     -a swaynotify \
+    --urgency low \
     -h string:x-canonical-private-synchronous:swaynotify \
   '';
 in
