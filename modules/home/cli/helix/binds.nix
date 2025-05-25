@@ -15,7 +15,7 @@ let
     A-S-h = "unindent";
     A-S-l = "indent";
 
-    C-c = "completion";
+    C-c = ["completion" "signature_help"];
 
     C-k = "kill_to_line_end";
     C-K = "kill_to_line_start";
