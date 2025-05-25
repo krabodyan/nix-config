@@ -46,10 +46,17 @@ in {
       ];
 
       config = let
+        mod = "Mod4";
         terminal = "${pkgs.foot}/bin/footclient";
+        menucmd =
+          if cfg.menu == "fuzzel"
+          then "pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel"
+          else if cfg.menu == "rofi"
+          then "pkill rofi || ${pkgs.rofi-wayland-unwrapped}/bin/rofi -show drun -kb-cancel 'Alt+Return'"
+          else throw "unexpected menu";
       in {
         inherit terminal;
-        modifier = "Mod4";
+        modifier = mod;
 
         startup = with pkgs;
           map (cmd: {command = cmd;}) [
@@ -201,25 +208,23 @@ in {
 
         bindkeysToCode = true;
 
-        keybindings = let
-          up = "k";
-          down = "j";
-          left = "h";
-          right = "l";
-          mod = config.wayland.windowManager.sway.config.modifier;
+        modes = {
+          resize = {
+            "${mod}+o" = "exec notify-send -t 500 'mode default' & swaymsg mode default";
+            Escape = "mode default";
+            h = "resize grow width 20 px";
+            k = "resize grow height 20 px";
+            l = "resize shrink width 20 px";
+            j = "resize shrink height 20 px";
+          };
+        };
 
-          menucmd =
-            if cfg.menu == "fuzzel"
-            then "pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel"
-            else if cfg.menu == "rofi"
-            then "pkill rofi || ${pkgs.rofi-wayland-unwrapped}/bin/rofi -show drun -kb-cancel 'Alt+Return'"
-            else throw "unexpected menu";
-        in {
+        keybindings = {
           "${mod}+d" = "exec ${menucmd}";
           "${mod}+e" = "exec ${terminal}";
           "${mod}+Shift+e" = "exec ${terminal} -a floaterm";
           "${mod}+r" = "exec ${terminal} -a floaterm pulsemixer";
-          "${mod}+c" = ''exec notify-send --expire-time 2000 "$(date +"%d %B %H:%M")"'';
+          "${mod}+c" = ''exec notify-send -t 2000 "$(date +"%d %B %H:%M")"'';
 
           "${mod}+Alt+b" = "seat seat0 hide_cursor 0";
           "${mod}+w" = "input type:keyboard xkb_switch_layout 0";
@@ -229,25 +234,24 @@ in {
 
           "${mod}+Shift+0" = "exec swaylock";
 
-          "${mod}+${up}" = "focus up";
-          "${mod}+${down}" = "focus down";
-          "${mod}+${left}" = "focus left";
-          "${mod}+${right}" = "focus right";
+          "${mod}+k" = "focus up";
+          "${mod}+j" = "focus down";
+          "${mod}+h" = "focus left";
+          "${mod}+l" = "focus right";
 
-          "${mod}+Shift+${up}" = "move up";
-          "${mod}+Shift+${down}" = "move down";
-          "${mod}+Shift+${left}" = "move left";
-          "${mod}+Shift+${right}" = "move right";
+          "${mod}+Shift+k" = "move up";
+          "${mod}+Shift+j" = "move down";
+          "${mod}+Shift+h" = "move left";
+          "${mod}+Shift+l" = "move right";
 
-          "${mod}+i" = "resize grow width 20 px";
-          "${mod}+o" = "resize shrink width 20 px";
+          "${mod}+o" = "exec notify-send -t 500 'mode resize' & swaymsg mode resize";
 
           "${mod}+q" = "kill";
           "${mod}+t" = "fullscreen";
           "${mod}+f" = "floating toggle";
 
           "${mod}+s" = "layout toggle tabbed splith";
-          "${mod}+v" = "layout toggle splith splitv";
+          "${mod}+a" = "layout toggle splith splitv";
 
           "${mod}+Tab" = "workspace back_and_forth";
           "${mod}+space" = "focus next";
@@ -270,9 +274,6 @@ in {
           "${mod}+Shift+6" = "move container to workspace number 6";
           "${mod}+Shift+7" = "move container to workspace number 7";
           "${mod}+Shift+8" = "move container to workspace number 8";
-
-          "${mod}+Shift+n" = "move scratchpad";
-          "${mod}+n" = "scratchpad show";
 
           "${mod}+x" = "exec __brightness toggle";
 
