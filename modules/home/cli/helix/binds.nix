@@ -15,7 +15,8 @@ let
     A-S-h = "unindent";
     A-S-l = "indent";
 
-    C-c = ["completion" "signature_help"];
+    tab = ["signature_help"];
+    C-c = ["completion"];
 
     C-k = "kill_to_line_end";
     C-K = "kill_to_line_start";
@@ -27,8 +28,8 @@ let
     A-s = [":write" "normal_mode" "collapse_selection" "commit_undo_checkpoint"];
     A-S = [":write!" "normal_mode" "collapse_selection" "commit_undo_checkpoint"];
 
-    A-e = ":buffer-next";
-    A-w = ":buffer-previous";
+    A-e = "goto_next_buffer";
+    A-w = "goto_previous_buffer";
 
     "A-/" = "toggle_comments";
     "A-7" = "toggle_comments";
@@ -65,10 +66,6 @@ let
   };
 
   special = {
-    "tab" = "no_op";
-    "<" = "no_op";
-    ">" = "no_op";
-
     "=" = ":format";
     d = "delete_selection_noyank";
     c = "change_selection_noyank";
@@ -96,7 +93,13 @@ let
 
     esc = ["collapse_selection" "keep_primary_selection"];
 
-    C-b = ":echo %sh{ gh browse %{buffer_name}:%{cursor_line} -c=%sh{ git rev-parse HEAD } > /dev/null && echo opening in browser }";
+    C-b = [
+      ":noop %sh{ gh browse %{buffer_name}:%{cursor_line} -b=%sh{ git rev-parse --abbrev-ref HEAD } }"
+      ":echo opening in browser"
+    ];
+
+    ">" = "rotate_view";
+    "<" = "rotate_view_reverse";
   };
 in rec {
   insert =
@@ -130,7 +133,12 @@ in rec {
         C = ":buffer-close!";
       };
 
+      g = {
+        d = ["vsplit" "goto_definition"];
+      };
+
       f = {
+        q = "wclose";
         c = "file_picker_in_current_buffer_directory";
         j = ":run-shell-command just";
         i = ":toggle lsp.display-inlay-hints";
