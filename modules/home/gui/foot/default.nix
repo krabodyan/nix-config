@@ -21,8 +21,9 @@ in {
       settings = {
         main = let
           features = [
-            "ss12"
             # "ss14"
+            "ss12"
+            "ss18"
           ];
           fontfeatures = lib.concatStringsSep ":fontfeatures=" features;
           font = "${fonts.monospace}:size=17:fontfeatures=${fontfeatures}";
