@@ -1,10 +1,11 @@
 {
-  pkgs,
   yes,
+  self,
+  pkgs,
   ...
 }: {
   module = {
-    agenix.enable = true;
+    agenix = yes;
 
     # ------------- cli
     bat = yes;
@@ -16,6 +17,8 @@
     home-manager = yes;
     htop = yes;
     jq = yes;
+    kubectl = yes;
+    lazygit = yes;
     network-utils = yes;
     nh = yes;
     nix-index = yes;
@@ -29,13 +32,11 @@
 
     git = {
       enable = true;
+      gh = yes;
+      delta = yes;
       userName = "krabodyan";
       userEmail = "krabodyan@gmail.com";
     };
-    gh = yes;
-    git-delta = yes;
-    kubectl = yes;
-    lazygit = yes;
 
     cli-default = {
       enable = true;
@@ -103,7 +104,7 @@
 
     sway = {
       enable = true;
-      background = "~/flake/assets/background.jpg";
+      background = "${self}/assets/background.jpg";
       menu = "rofi";
     };
   };

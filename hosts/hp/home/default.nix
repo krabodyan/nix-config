@@ -1,4 +1,8 @@
-{yes, ...}: {
+{
+  yes,
+  self,
+  ...
+}: {
   module = {
     agenix.enable = true;
 
@@ -59,7 +63,7 @@
 
     sway = {
       enable = true;
-      background = "~/flake/assets/background.jpg";
+      background = "${self}/assets/background.jpg";
       menu = "rofi";
     };
 

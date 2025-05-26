@@ -5,10 +5,10 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
-  cfg = config.module.git-delta;
+  cfg = config.module.git.delta;
 in {
   options = {
-    module.git-delta = {
+    module.git.delta = {
       enable = mkEnableOption "git-delta";
     };
   };

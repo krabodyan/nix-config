@@ -5,10 +5,10 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
-  cfg = config.module.gh;
+  cfg = config.module.git.gh;
 in {
   options = {
-    module.gh = {
+    module.git.gh = {
       enable = mkEnableOption "gh";
     };
   };
