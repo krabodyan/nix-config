@@ -1,18 +1,15 @@
 {
   lib,
   config,
+  hostname,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf mkOption;
+  inherit (lib) mkEnableOption mkIf;
   cfg = config.module.networking.dhcpcd;
 in {
   options = {
     module.networking.dhcpcd = {
       enable = mkEnableOption "network";
-      hostname = mkOption {
-        type = lib.types.str;
-        example = "nixos";
-      };
     };
   };
   config = mkIf cfg.enable {
@@ -31,7 +28,7 @@ in {
       };
 
       useDHCP = true;
-      hostName = cfg.hostname;
+      hostName = hostname;
     };
   };
 }

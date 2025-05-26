@@ -1,11 +1,10 @@
 {
   no,
   yes,
-  hostname,
   ...
 }: {
   module = {
-    agenix.enable = true;
+    agenix = yes;
     bootloader = yes;
     console = yes;
     locale = yes;
@@ -15,10 +14,8 @@
     tmpfs = yes;
     users = yes;
 
-    packages = {
-      enable = true;
-      fonts = yes;
-    };
+    packages = yes;
+    fonts = yes;
 
     xdg-portal = {
       enable = true;
@@ -35,16 +32,14 @@
       dbus-broker = yes;
       docker = yes;
       earlyoom = yes;
-      getty-autologin = no;
+      getty-autologin = yes;
       sshd = yes;
-      systemd-config = no;
+      systemd-config = yes;
     };
 
     networking = {
-      dhcpcd = {
-        enable = true;
-        inherit hostname;
-      };
+      dhcpcd = yes;
+      iwd = no;
     };
 
     graphics = {

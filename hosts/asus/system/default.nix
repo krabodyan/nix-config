@@ -1,8 +1,4 @@
-{
-  hostname,
-  yes,
-  ...
-}: {
+{yes, ...}: {
   module = {
     agenix = yes;
     bootloader = yes;
@@ -48,10 +44,7 @@
     };
 
     networking = {
-      dhcpcd = {
-        enable = true;
-        inherit hostname;
-      };
+      dhcpcd = yes;
       iwd = {
         enable = true;
         enableDaemon = true;
