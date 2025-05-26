@@ -136,7 +136,8 @@ in rec {
       };
 
       g = {
-        d = ["vsplit" "goto_definition"];
+        d = ["goto_definition"];
+        D = ["vsplit" "goto_definition"];
       };
 
       f = {
