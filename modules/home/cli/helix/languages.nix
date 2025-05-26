@@ -166,7 +166,7 @@
 
       check = {
         command = "clippy";
-        extraArgs = ["--tests" "--no-deps"];
+        extraArgs = ["--tests" "--no-deps" "--" "-W" "clippy::pedantic"];
         invocationStrategy = "once";
         noDefaultFeatures = true;
         allTargets = false;
