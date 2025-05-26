@@ -15,7 +15,7 @@ let
     A-S-h = "unindent";
     A-S-l = "indent";
 
-    tab = ["signature_help"];
+    C-s = ["signature_help"];
     C-c = ["completion"];
 
     C-k = "kill_to_line_end";
@@ -66,6 +66,8 @@ let
   };
 
   special = {
+    tab = "no_op";
+
     "=" = ":format";
     d = "delete_selection_noyank";
     c = "change_selection_noyank";
