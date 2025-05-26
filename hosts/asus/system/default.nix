@@ -20,11 +20,10 @@
       platformio = true;
     };
 
-    packages = {
-      enable = true;
-      steam = true;
-      fonts = yes;
-    };
+    zoom = yes;
+    steam = yes;
+    packages = yes;
+    fonts = yes;
 
     xdg-portal = {
       enable = true;
@@ -45,6 +44,7 @@
       dbus-broker = yes;
       docker = yes;
       systemd-config = yes;
+      earlyoom = yes;
     };
 
     networking = {
@@ -54,7 +54,7 @@
       };
       iwd = {
         enable = true;
-        enableDaemon = false;
+        enableDaemon = true;
       };
     };
 

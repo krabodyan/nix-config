@@ -6,10 +6,10 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
-  cfg = config.module.packages.fonts;
+  cfg = config.module.fonts;
 in {
   options = {
-    module.packages.fonts = {
+    module.fonts = {
       enable = mkEnableOption "fonts";
     };
   };

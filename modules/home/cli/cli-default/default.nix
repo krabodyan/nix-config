@@ -14,6 +14,10 @@ in {
         type = lib.types.listOf lib.types.package;
         default = [];
       };
+      dev = mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
     };
   };
   config = mkIf cfg.enable {
@@ -30,6 +34,20 @@ in {
         dysk
 
         pulsemixer
+      ]
+      ++ lib.optionals cfg.dev [
+        gnumake
+        just
+        gcc
+
+        postman
+        # vagrant
+        # tenv
+        # ansible
+        # cdrtools
+
+        lazydocker
+        litecli
       ]
       ++ cfg.extra;
   };

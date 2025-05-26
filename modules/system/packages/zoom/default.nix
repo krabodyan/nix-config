@@ -12,8 +12,8 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    xdg.mimeApps.defaultApplications = {
-      "x-scheme-handler/zoommtg" = ["Zoom.desktop"];
+    programs.zoom-us = {
+      enable = true;
     };
   };
 }

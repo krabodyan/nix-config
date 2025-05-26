@@ -1,5 +1,7 @@
 {
   lib,
+  system,
+  inputs,
   config,
   username,
   ...
@@ -14,6 +16,9 @@ in {
   };
 
   config = mkIf cfg.enable {
+    environment.systemPackages = [
+      inputs.agenix.packages.${system}.default
+    ];
     age = {
       identityPaths = ["/etc/ssh/agekey"];
       secrets = {

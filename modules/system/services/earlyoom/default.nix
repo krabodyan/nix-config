@@ -12,12 +12,13 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    systemd.oomd.enable = false;
     services.systembus-notify.enable = true;
     services.earlyoom = {
       enable = true;
       enableNotifications = true;
-      freeMemThreshold = 5;
-      freeMemKillThreshold = 3;
+      freeMemThreshold = 15;
+      freeMemKillThreshold = 10;
     };
   };
 }

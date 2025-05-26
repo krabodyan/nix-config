@@ -39,19 +39,10 @@
 
     cli-default = {
       enable = true;
+      dev = true;
       extra = with pkgs; [
-        postman
-        # vagrant
-        # tenv
-        # ansible
-        # cdrtools
-        lazydocker
-
         # scrcpy
         # android-tools
-
-        litecli
-
         imagemagick
         ffmpeg-full
       ];
