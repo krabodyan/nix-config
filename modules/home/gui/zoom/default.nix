@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: let
@@ -12,6 +13,12 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    home.packages = [
+      (pkgs.zoom-us.override {
+        pulseaudioSupport = true;
+        wlrXdgDesktopPortalSupport = true;
+      })
+    ];
     xdg.mimeApps.defaultApplications = {
       "x-scheme-handler/zoommtg" = ["Zoom.desktop"];
     };

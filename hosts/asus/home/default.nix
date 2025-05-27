@@ -84,7 +84,6 @@
     swayimg = yes;
     telegram = yes;
     zathura = yes;
-    zoom = yes;
 
     # ------------- desktop environment
     gtk = yes;

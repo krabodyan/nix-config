@@ -16,7 +16,6 @@
       platformio = true;
     };
 
-    zoom = yes;
     steam = yes;
     packages = yes;
     fonts = yes;
