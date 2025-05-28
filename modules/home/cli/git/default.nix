@@ -107,6 +107,9 @@ in {
           # chore: description
           # chore(chore): description
 
+          # refactor: description
+          # refactor(refactor): description
+
           # style: description
           # style(style): description
 
