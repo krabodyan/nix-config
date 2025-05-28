@@ -136,84 +136,84 @@
 
   language-server = {
     rust-analyzer.config = {
-      cache.warmup = true;
-      cachePriming.numThreads = 12;
-      numThreads = 12;
-      lru.capacity = 512;
-      cargo.buildScripts.enable = false;
-      cargo.noDeps = true;
-      imports.granularity.group = "module";
-      imports.preferPrelude = true;
-      references.excludeTests = true;
-      references.excludeImports = true;
-      diagnostics.disabled = ["proc-macro-disabled" "missing_safety_doc"];
-      diagnostics.styleLints.enable = true;
+      assist.emitMustUse = true;
       assist.expressionFillDefault = "todo";
       assist.termSearch.borrowcheck = false;
       assist.termSearch.fuel = 100;
-      assist.emitMustUse = true;
+      cache.warmup = true;
+      cachePriming.numThreads = 12;
+      cargo.buildScripts.enable = false;
+      cargo.noDeps = true;
+      diagnostics.disabled = ["proc-macro-disabled" "missing_safety_doc"];
+      diagnostics.styleLints.enable = true;
       files.excludeDirs = [".git" ".github" "target" "assets" "static" "dist"];
       files.watcher = "server";
+      imports.granularity.group = "module";
+      imports.preferPrelude = true;
+      lru.capacity = 512;
+      numThreads = 12;
+      references.excludeImports = true;
+      references.excludeTests = true;
 
       hover = {
-        show.fields = 10;
-        show.enumVariants = 10;
-        show.traitAssocItems = 10;
         actions.enable = false;
-        memoryLayout.enable = false;
         lens.enable = false;
+        memoryLayout.enable = false;
+        show.enumVariants = 10;
+        show.fields = 10;
+        show.traitAssocItems = 10;
       };
 
       check = {
+        allFeatures = false;
+        allTargets = false;
         command = "clippy";
         extraArgs = ["--tests" "--no-deps" "--" "-W" "clippy::pedantic"];
         invocationStrategy = "once";
         noDefaultFeatures = true;
-        allTargets = false;
-        allFeatures = false;
       };
 
       procMacro = {
-        ignored.tauri_macros = ["command" "generate_handler"];
-        ignored.pyo3_macros = ["pymodule" "pyfunction"];
         ignored.async_trait = ["async_trait"];
-        ignored.tokio_macros = ["main"];
         ignored.embassy_executor_macros = ["main"];
+        ignored.pyo3_macros = ["pymodule" "pyfunction"];
+        ignored.tauri_macros = ["command" "generate_handler"];
+        ignored.tokio_macros = ["main"];
       };
 
       completion = {
+        addSemicolonToUnit = false;
         autoAwait.enable = false;
         autoIter.enable = true;
         autoimport.enable = true;
-        hideDeprecated = true;
-        postfix.enable = false;
         autoself.enable = false;
         callable.snippets = "add_parentheses";
-        addSemicolonToUnit = false;
+        hideDeprecated = true;
+        postfix.enable = false;
       };
 
       inlayHints = {
-        maxLength = 15;
-        renderColons = false;
-        implicitDrops.enable = false;
+        bindingModeHints.enable = false;
+        closingBraceHints.minLines = 15;
+        closureCaptureHints.enable = true;
+        closureReturnTypeHints.enable = "with_block";
+        discriminantHints.enable = "fieldless";
+        expressionAdjustmentHints.enable = "never"; # always | never | reborrow
+        expressionAdjustmentHints.hideOutsideUnsafe = false;
+        expressionAdjustmentHints.mode = "prefer_prefix"; # prefix | postfix | prefer
+        genericParameterHints.lifetime.enable = true;
+        genericParameterHints.type.enable = false;
+        implicitDrops.enable = true;
         implicitSizedBoundHints.enable = false;
         lifetimeElisionHints.enable = "skip_trivial";
         lifetimeElisionHints.useParameterNames = false;
-        closureReturnTypeHints.enable = "with_block";
-        closureCaptureHints.enable = true;
-        genericParameterHints.lifetime.enable = true;
-        genericParameterHints.type.enable = false;
-        expressionAdjustmentHints.mode = "prefer_prefix"; # prefix | postfix | prefer
-        expressionAdjustmentHints.enable = "never"; # always | never | reborrow
-        expressionAdjustmentHints.hideOutsideUnsafe = false;
-        closingBraceHints.minLines = 15;
+        maxLength = 15;
         parameterHints.enable = false;
+        rangeExclusiveHints.enable = true;
+        renderColons = false;
         typeHints.enable = true;
         typeHints.hideClosureInitialization = true;
         typeHints.hideNamedConstructor = true;
-        rangeExclusiveHints.enable = true;
-        discriminantHints.enable = "fieldless";
-        bindingModeHints.enable = false;
       };
     };
 
