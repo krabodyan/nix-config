@@ -17,8 +17,8 @@ in {
     services.earlyoom = {
       enable = true;
       enableNotifications = true;
-      freeMemThreshold = 15;
-      freeMemKillThreshold = 10;
+      freeMemThreshold = 12;
+      freeMemKillThreshold = 7;
     };
   };
 }
