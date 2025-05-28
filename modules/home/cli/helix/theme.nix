@@ -14,8 +14,6 @@
       modifiers = ["crossed_out"];
     };
 
-    "rainbow" = [overlay2 brred bryellow brgreen];
-
     "error" = red;
     "warning" = yellow;
     "info" = yellow;
@@ -188,6 +186,7 @@
     };
     # matching bracket
     "ui.cursor.match" = {
+      fg = brred;
       underline.style = "line";
     };
     "ui.cursor.primary.normal" = {
