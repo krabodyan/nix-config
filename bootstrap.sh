@@ -21,8 +21,8 @@ if [[ "${disk}" ]]; then
 		--arg device "$disk" || exit 1
 fi
 
-mkdir -p /mnt/etc/ssh || exit 1
-cp -v "$key" "/mnt/etc/ssh/" || exit 1
+sudo mkdir -p /mnt/etc/ssh || exit 1
+sudo cp -v "$key" "/mnt/etc/ssh/" || exit 1
 
 if [[ "${host}" ]]; then
 	sudo nixos-install --flake ".#$host" --root /mnt --no-root-password
