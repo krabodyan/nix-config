@@ -132,6 +132,27 @@
         command = lib.getExe pkgs.just-formatter;
       };
     }
+    {
+      name = "sql";
+      language-servers = ["sql"];
+      formatter = let
+        config =
+          pkgs.writeText "sqlfluff"
+          # ini
+          ''
+            [sqlfluff]
+            dialect = mysql
+
+            [sqlfluff:indentation]
+            indented_joins = True
+            indented_using_on = True
+            allow_implicit_indents = True
+          '';
+      in {
+        command = lib.getExe pkgs.sqlfluff;
+        args = ["format" "-" "--dialect" "mysql" "--disable-progress-bar" "--config" config];
+      };
+    }
   ];
 
   language-server = {
@@ -299,6 +320,18 @@
     terraform-ls = {
       command = lib.getExe pkgs.terraform-ls;
       args = ["serve" "-log-file" "/dev/null"];
+    };
+
+    sql = {
+      command = lib.getExe (pkgs.sqls.overrideAttrs {
+        src = pkgs.fetchFromGitHub {
+          owner = "camfowler";
+          repo = "sqls";
+          rev = "bugfix/omit-document-when-empty";
+          hash = "sha256-Lf7bP3Fl+cTFFRgnOkggUyp/e4CL25XYRhUsB6Hg2mI=";
+        };
+        vendorHash = "sha256-8jzecLaVUMlIJC2neb5XfvpBYIkkXnzvzq175ZBAnLo=";
+      });
     };
   };
 }

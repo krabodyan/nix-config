@@ -3,15 +3,6 @@ let
   binds = {
     A-backspace = ["commit_undo_checkpoint" "delete_word_backward"];
 
-    A-ret = [
-      "insert_mode"
-      "insert_newline"
-      "commit_undo_checkpoint"
-      "open_above"
-      "commit_undo_checkpoint"
-      "insert_tab"
-    ];
-
     A-S-h = "unindent";
     A-S-l = "indent";
 
@@ -75,7 +66,7 @@ let
     t = ["normal_mode" "extend_to_word"];
     a = ["append_mode" "collapse_selection"];
 
-    P = "paste_before";
+    P = "paste_after";
     p = ":clipboard-paste-before";
     R = ":clipboard-paste-replace";
 
@@ -141,12 +132,12 @@ in rec {
       };
 
       f = {
-        q = "wclose";
         c = "file_picker_in_current_buffer_directory";
         j = ":run-shell-command just";
         i = ":toggle lsp.display-inlay-hints";
         h = ":toggle end-of-line-diagnostics disable hint";
         s = ["search_selection_detect_word_boundaries" "select_all" "select_regex"];
+        l = ":sh sqlfluff lint %{buffer_name} --dialect mysql --nofail --disable-progress-bar";
         space = ":open %sh{ __yazi_picker %{buffer_name} }";
       };
     };
