@@ -47,7 +47,9 @@ in {
         # cdrtools
 
         lazydocker
+        sqlfluff
         litecli
+        mycli
       ]
       ++ cfg.extra;
   };
