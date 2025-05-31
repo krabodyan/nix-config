@@ -48,7 +48,7 @@
 
     "punctuation" = overlay1;
     "punctuation.bracket" = overlay2;
-    "punctuation.special" = peach;
+    "punctuation.special" = overlay2;
 
     "keyword" = brmagenta;
     "operator" = sky;
@@ -186,7 +186,7 @@
     };
     # matching bracket
     "ui.cursor.match" = {
-      fg = brred;
+      # fg = mode_normal;
       underline.style = "line";
     };
     "ui.cursor.primary.normal" = {
