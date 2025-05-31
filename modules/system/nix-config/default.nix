@@ -40,7 +40,7 @@ in {
 
       settings = {
         warn-dirty = false;
-        experimental-features = ["nix-command" "flakes"];
+        experimental-features = ["nix-command" "flakes" "repl-flake"];
         builders-use-substitutes = true;
         auto-optimise-store = true;
 
