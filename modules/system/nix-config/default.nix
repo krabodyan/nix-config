@@ -35,6 +35,7 @@ in {
       optimise = {
         automatic = true;
         dates = ["weekly"];
+        randomizedDelaySec = "30min";
       };
 
       settings = {
