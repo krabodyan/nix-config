@@ -78,10 +78,10 @@ in {
           ];
           "workspace 4" = [
             {class = "^zoom$";}
+            {class = "^steam$";}
           ];
           "workspace 5" = [
             {class = "^ONLYOFFICE$";}
-            {class = "^steam$";}
           ];
         };
 
@@ -178,7 +178,7 @@ in {
             events = "disabled";
             dwt = "enabled";
             tap = "enabled";
-            natural_scroll = "enabled";
+            natural_scroll = "disabled";
           };
 
           "type:pointer" = {
