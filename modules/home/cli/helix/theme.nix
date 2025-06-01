@@ -74,8 +74,12 @@
     "markup.heading.5" = magenta;
     "markup.heading.6" = teal;
     "markup.list" = sky;
-    "markup.bold".modifiers = ["bold"];
-    "markup.italic".modifiers = ["italic"];
+    "markup.bold" = {
+      modifiers = ["bold"];
+    };
+    "markup.italic" = {
+      modifiers = ["italic"];
+    };
     "markup.link.url" = blue;
 
     "markup.link.text" = blue;
@@ -160,14 +164,16 @@
     # previous command in command mode history
     "ui.text.inactive" = surface3;
     # dir in picker
-    "ui.text.directory" = surface3;
+    "ui.text.directory" = overlay0;
     # focused file in picker
     "ui.text.focus" = {
       bg = surface1;
     };
 
     "ui.virtual" = overlay0;
-    "ui.virtual.ruler" = {bg = bg-bright;};
+    "ui.virtual.ruler" = {
+      bg = bg-bright;
+    };
     "ui.virtual.indent-guide" = bg-bright;
     "ui.virtual.inlay-hint" = fg-dark;
     "ui.virtual.jump-label" = {
@@ -176,7 +182,9 @@
       modifiers = ["bold"];
     };
 
-    "ui.selection" = {bg = surface2;};
+    "ui.selection" = {
+      bg = surface2;
+    };
 
     "ui.cursor" = {
       fg = bg;
@@ -215,7 +223,10 @@
       bg = overlay2;
     };
 
-    "ui.cursorline.primary" = {bg = bg-bright;};
+    "ui.cursorline.primary" = {
+      bg = bg-bright;
+    };
+
     "ui.highlight" = {
       fg = yellow;
       bg = surface1;

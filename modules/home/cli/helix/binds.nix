@@ -66,7 +66,7 @@ let
     t = ["normal_mode" "extend_to_word"];
     a = ["append_mode" "collapse_selection"];
 
-    P = "paste_after";
+    P = "paste_before";
     p = ":clipboard-paste-before";
     R = ":clipboard-paste-replace";
 
@@ -132,6 +132,7 @@ in rec {
       };
 
       f = {
+        a = "select_all";
         c = "file_picker_in_current_buffer_directory";
         j = ":run-shell-command just";
         i = ":toggle lsp.display-inlay-hints";
