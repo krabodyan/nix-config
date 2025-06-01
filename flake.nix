@@ -19,11 +19,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    helix.url = "github:helix-editor/helix";
+    helix = {
+      url = "github:helix-editor/helix";
+    };
 
-    rust-overlay.url = "github:oxalica/rust-overlay?rev=fd6795d3d28f956de01a0458b6fa7baae5c793b4";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay?rev=fd6795d3d28f956de01a0458b6fa7baae5c793b4";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    nix-colors.url = "github:misterio77/nix-colors";
+    nix-colors = {
+      url = "github:misterio77/nix-colors";
+    };
 
     nix-cursors = {
       url = "github:krabodyan/nix-cursors";

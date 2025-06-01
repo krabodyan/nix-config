@@ -3,45 +3,45 @@ on = "<Esc>"
 run = "close"
 desc = "Cancel input"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 run = [
-	"shell 'for path in \"$@\"; do echo \"file://$path\"; done | wl-copy -t text/uri-list' --confirm",
-	"yank",
+  "shell 'for path in \"$@\"; do echo \"file://$path\"; done | wl-copy -t text/uri-list' --confirm",
+  "yank",
 ]
 on = "y"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["c", "e"]
 run = ['''
 	shell 'ouch d -y "$@"' --confirm
 ''']
 desc = "Extract here with ouch"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["c", "a"]
 run = "plugin ouch"
 desc = "Compress to archive"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = ["R"]
 run = "plugin rsync"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "z"
 run = "plugin zoxide"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "<Space>"
 run = "toggle --state=none"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "<a-a>"
 run = "plugin fzf"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "k"
 run = "arrow -1"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on = "j"
 run = "arrow 1"

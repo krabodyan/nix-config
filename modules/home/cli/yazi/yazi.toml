@@ -1,26 +1,35 @@
 [log]
 enabled = false
 
-[manager]
+[mgr]
 linemode = "none"
+mouse_events = []
 ratio = [0, 2, 3]
 show_hidden = false
+show_symlink = true
 sort_by = "alphabetical"
 sort_dir_first = true
 sort_sensitive = false
 
 [preview]
+image_delay = 20
 image_filter = "nearest"
-image_quality = 70
-image_delay = 50
+image_quality = 60
 max_width = 1200
+
+[tasks]
+micro_workers = 10
+macro_workers = 10
+image_alloc = 53687091
+image_bound = [0, 0]
+
 
 [plugin]
 prepend_previewers = [
-	{ mime = "application/*zip",            run = "ouch" },
-	{ mime = "application/x-tar",           run = "ouch" },
-	{ mime = "application/x-bzip2",         run = "ouch" },
-	{ mime = "application/x-7z-compressed", run = "ouch" },
-	{ mime = "application/x-rar",           run = "ouch" },
-	{ mime = "application/x-xz",            run = "ouch" },
+  { mime = "application/*zip", run = "ouch" },
+  { mime = "application/x-7z-compressed", run = "ouch" },
+  { mime = "application/x-bzip2", run = "ouch" },
+  { mime = "application/x-rar", run = "ouch" },
+  { mime = "application/x-tar", run = "ouch" },
+  { mime = "application/x-xz", run = "ouch" },
 ]
