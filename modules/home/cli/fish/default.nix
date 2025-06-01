@@ -156,7 +156,7 @@ in {
       loginShellInit = with cfg.loginShell;
         if cfg.loginShell.enable
         then
-          assert config.module."${wm}".enable || throw "cant use ${wm} for fish loginShell as it it not enabled";
+          assert config.module."${wm}".enable || throw "cant use ${wm} for fish loginShell as it is not enabled";
           # fish
             ''
               if test (tty) = "/dev/tty1"
@@ -270,7 +270,7 @@ in {
           set -g fish_cursor_end_mode exclusive
           set -g fish_cursor_selection_mode exclusive
 
-          set -g sponge_purge_only_on_exit true
+          set -g sponge_delay 2
           set -g sponge_successful_exit_codes 0 130 134 137
 
           set -g __done_min_cmd_duration 300
