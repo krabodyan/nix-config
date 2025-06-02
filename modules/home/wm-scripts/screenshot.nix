@@ -9,11 +9,12 @@
     -a swaynotify \
     --urgency low \
     -h string:x-canonical-private-synchronous:swaynotify \
+    "screenshot copied"
   '';
-  wayshot = "${pkgs.wayshot}/bin/wayshot --extension png --stdout";
   copy = "${pkgs.wl-clipboard}/bin/wl-copy -t image/png";
-  slurp = "${pkgs.slurp}/bin/slurp -b ${colors.bg}66 -c ${colors.select}";
   swayimg = "${pkgs.swayimg}/bin/swayimg --config info.show=no";
+  wayshot = "${pkgs.wayshot}/bin/wayshot --extension png --stdout";
+  slurp = with colors; "${pkgs.slurp}/bin/slurp -w 2 -b ${bg}b3 -c ${select}ff -B ${bg}b3";
 in
   pkgs.writeShellScriptBin "__screenshot" ''
     pidof slurp && exit 0
@@ -21,7 +22,19 @@ in
 
     if [ "$1" = "full" ]; then
       ${wayshot} | ${copy}
-      ${send} "screenshot copied"
+      ${send}
+      exit 0
+    fi
+
+    if [ "$1" = "window" ]; then
+      size=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | ${slurp})
+      status=$?
+
+      if [ $status -eq 0 ]; then
+        ${wayshot} -s "$size" | ${copy}
+        ${send}
+      fi
+
       exit 0
     fi
 
@@ -35,7 +48,7 @@ in
 
     if [ $status -eq 0 ]; then
       ${wayshot} -s "$size" | ${copy}
-      ${send} "screenshot copied"
+      ${send}
     fi
 
     if [ "$1" = "swayimg" ]; then

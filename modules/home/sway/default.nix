@@ -285,10 +285,11 @@ in {
           XF86TouchpadToggle = "exec __touchpad";
 
           F4 = "exec __microphone";
+
           Print = "exec __screenshot";
           Pause = "exec __screenshot full";
-
-          "${mod}+Print" = "exec __screenshot swayimg";
+          "${mod}+Print" = "exec __screenshot window";
+          "${mod}+Pause" = "exec __screenshot swayimg";
           "${mod}+Shift+Print" = "exec wl-paste | swappy -f -";
         };
       };
