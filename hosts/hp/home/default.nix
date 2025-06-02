@@ -27,14 +27,21 @@
     };
     gh = yes;
     git-delta = yes;
-    kubectl = yes;
 
     cli-default = yes;
 
     fish = {
       enable = true;
-      kube-prompt = false;
-      ssh-prompt = true;
+      prompt = {
+        ssh = true;
+        kubectl = false;
+      };
+      aliases = {
+        git = true;
+        podman = false;
+        docker = true;
+        kubectl = false;
+      };
       loginShell = {
         enable = true;
         withIGPU = false;

@@ -1,8 +1,4 @@
-{
-  no,
-  yes,
-  ...
-}: {
+{yes, ...}: {
   module = {
     agenix = yes;
     bootloader = yes;
@@ -39,7 +35,10 @@
 
     networking = {
       dhcpcd = yes;
-      iwd = no;
+      # iwd = {
+      #   enable = true;
+      #   enableDaemon = true;
+      # };
     };
 
     graphics = {
