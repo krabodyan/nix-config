@@ -20,8 +20,8 @@ in {
         unbind -a
         set -g mouse off
 
-        set -as terminal-features ",xterm*:RGB"
-        set -as terminal-overrides ",xterm*:Tc"
+        set -ga update-environment TERM
+        set -ga update-environment TERM_PROGRAM
         set -g default-shell ${pkgs.fish}/bin/fish
 
         set -g prefix M-Space
