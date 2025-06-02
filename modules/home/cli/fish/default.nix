@@ -13,14 +13,50 @@ in {
     module.fish = {
       enable = mkEnableOption "fish";
 
-      kube-prompt = mkOption {
-        type = lib.types.bool;
-        default = false;
+      prompt = {
+        kubectl = mkOption {
+          type = lib.types.bool;
+          description = "kubectl context and namespace";
+          default = false;
+          example = true;
+        };
+
+        ssh = mkOption {
+          type = lib.types.bool;
+          description = "show ssh connection status";
+          default = false;
+          example = true;
+        };
       };
 
-      ssh-prompt = mkOption {
-        type = lib.types.bool;
-        default = false;
+      aliases = {
+        git = mkOption {
+          type = lib.types.bool;
+          description = "git aliases";
+          default = false;
+          example = true;
+        };
+
+        podman = mkOption {
+          type = lib.types.bool;
+          description = "podman aliases";
+          default = false;
+          example = true;
+        };
+
+        docker = mkOption {
+          type = lib.types.bool;
+          description = "docker aliases";
+          default = false;
+          example = true;
+        };
+
+        kubectl = mkOption {
+          type = lib.types.bool;
+          description = "kubectl aliases";
+          default = false;
+          example = true;
+        };
       };
 
       loginShell = {
@@ -44,90 +80,111 @@ in {
       enable = true;
       package = pkgs.fishMinimal;
 
-      shellAbbrs =
+      shellAbbrs = lib.mkMerge [
         {
           cpr = "rsync -arvP";
           cp = "cp -vr";
-
-          # ------- K8S -------
-          k = "kubectl";
-
-          kg = "kubectl get";
-          kga = "kubectl get deploy,svc,pods,cm,secrets,ingresses,rs,pv,pvc,sts";
-          kgd = "kubectl get deploy";
-          kgs = "kubectl get services";
-          kgn = "kubectl get nodes";
-          kgp = "kubectl get pods";
-          o = {
-            expansion = "-o wide";
-            command = "kubectl";
-          };
-
-          kns = "kubie ns";
-          kcx = "kubie ctx";
-
-          kd = "kubectl describe";
-          kdp = "kubectl describe pods";
-          kdd = "kubectl describe deployments";
-
-          ka = "kubectl apply -f";
-          ke = "kubectl explain";
-
-          # ------- NIX -------
-          nd = {
-            expansion = "nix develop $NH_FLAKE#% --command fish";
-            setCursor = true;
-          };
-
-          # ------- GIT -------
-          ga = "git add";
-          gp = "git push";
-          gc = "git commit";
-          gs = "git status";
-
-          gr = "git restore";
-          grs = "git restore --staged";
-
-          gg = "git graph -10";
-
-          cm = {
-            command = "git";
-            expansion = "commit -m \"%\"";
-            setCursor = true;
-          };
-          cma = {
-            command = "git";
-            expansion = "commit --all -m \"%\"";
-            setCursor = true;
-          };
-
-          # ----- DOCKER -----
-          d = "docker";
         }
-        // builtins.mapAttrs (name: value: {
-          command = "docker";
-          expansion = value;
-        }) {
-          s = "stack";
-          sp = "stack ps";
-          ss = "stack services";
-          sd = "stack deploy -d -c docker-compose.yml";
-          sv = "service";
-          c = "compose";
-          i = "image";
-          cn = "container";
-          nl = "node ls";
-          np = "node ps";
-          r = "run --rm -it";
-        };
+        (
+          mkIf cfg.aliases.git {
+            ga = "git add";
+            gp = "git push";
+            gc = "git commit";
+            gs = "git status";
+
+            gr = "git restore";
+            grs = "git restore --staged";
+
+            gg = "git graph -10";
+
+            cm = {
+              command = "git";
+              expansion = "commit -m \"%\"";
+              setCursor = true;
+            };
+            cma = {
+              command = "git";
+              expansion = "commit --all -m \"%\"";
+              setCursor = true;
+            };
+          }
+        )
+        (
+          mkIf (cfg.aliases.podman) {
+            d = "podman";
+            dcu = "podman compose up";
+          }
+          // builtins.mapAttrs (name: value: {
+            command = "podman";
+            expansion = value;
+          }) {
+            c = "compose";
+            i = "image";
+            cn = "container";
+            r = "run --rm -it";
+          }
+        )
+        (
+          mkIf (cfg.aliases.docker) {
+            d = "docker";
+            dcu = "docker compose up";
+          }
+          // builtins.mapAttrs (name: value: {
+            command = "docker";
+            expansion = value;
+          }) {
+            s = "stack";
+            sp = "stack ps";
+            ss = "stack services";
+            sd = "stack deploy -d -c docker-compose.yml";
+            sv = "service";
+            c = "compose";
+            i = "image";
+            cn = "container";
+            nl = "node ls";
+            np = "node ps";
+            r = "run --rm -it";
+          }
+        )
+        (
+          mkIf cfg.aliases.kubectl {
+            k = "kubectl";
+
+            kg = "kubectl get";
+            kga = "kubectl get deploy,svc,pods,cm,secrets,ingresses,rs,pv,pvc,sts";
+            kgd = "kubectl get deploy";
+            kgs = "kubectl get services";
+            kgn = "kubectl get nodes";
+            kgp = "kubectl get pods";
+
+            o = {
+              expansion = "-o wide";
+              command = "kubectl";
+            };
+
+            kns = "kubie ns";
+            kcx = "kubie ctx";
+
+            kd = "kubectl describe";
+            kdp = "kubectl describe pods";
+            kdd = "kubectl describe deployments";
+
+            ka = "kubectl apply -f";
+            ke = "kubectl explain";
+          }
+        )
+      ];
 
       shellAliases = let
-        tm = "test $TMUX && fish || ${pkgs.tmux}/bin/tmux -L $(uuidgen)";
+        tm = "test $TMUX && fish || ${lib.getExe pkgs.tmux} -L $(uuidgen)";
       in
         {
           inherit tm;
+
           "," = "comma -P fzf";
+
           ssh = "TERM=xterm-color ${pkgs.openssh}/bin/ssh -o StrictHostKeyChecking=no";
+
           ns = "nix-shell --command fish -p";
         }
         // lib.genAttrs ["ino" "rust" "rasp" "tauri"] (
@@ -370,17 +427,6 @@ in {
         '';
 
       functions = {
-        kubectl =
-          mkIf cfg.kube-prompt
-          # fish
-          ''
-            if not set -q KUBIE_ACTIVE
-              printf "kubie context not set\n" >&2
-              return 1
-            end
-            command kubectl $argv
-          '';
-
         nix_prompt =
           # fish
           ''
@@ -393,8 +439,19 @@ in {
             end
           '';
 
+        kubectl =
+          mkIf cfg.aliases.kubectl
+          # fish
+          ''
+            if not set -q KUBIE_ACTIVE
+              printf "kubie context not set\n" >&2
+              return 1
+            end
+            command kubectl $argv
+          '';
+
         ssh_prompt =
-          mkIf cfg.ssh-prompt
+          mkIf cfg.prompt.ssh
           # fish
           ''
             if set -q SSH_CONNECTION
@@ -403,7 +460,7 @@ in {
           '';
 
         kube_prompt =
-          mkIf cfg.kube-prompt
+          mkIf cfg.prompt.kubectl
           # fish
           ''
             if not set -q KUBIE_ACTIVE
@@ -438,12 +495,12 @@ in {
           parts = [
             (
               lib.optionalString
-              cfg.ssh-prompt
+              cfg.prompt.ssh
               "(ssh_prompt)"
             )
             (
               lib.optionalString
-              cfg.kube-prompt
+              cfg.prompt.kubectl
               "(kube_prompt)"
             )
             "(nix_prompt)"

@@ -51,8 +51,16 @@
 
     fish = {
       enable = true;
-      kube-prompt = false;
-      ssh-prompt = false;
+      prompt = {
+        ssh = false;
+        kubectl = false;
+      };
+      aliases = {
+        git = true;
+        podman = true;
+        docker = false;
+        kubectl = false;
+      };
       loginShell = {
         enable = true;
         withIGPU = true;
