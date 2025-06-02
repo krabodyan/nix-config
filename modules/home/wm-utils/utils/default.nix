@@ -14,15 +14,16 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      grim
+      wayshot
       slurp
-      lswt
       swaybg
+
       wlr-randr
       wl-gammactl
-      wev
-      xwayland
       wl-clipboard
+
+      lswt
+      wev
     ];
   };
 }
