@@ -5,7 +5,6 @@
   inherit (import ./util.nix) mkAssociations allDirs;
   inherit (import ./theme.nix) colors fonts;
   yes = {enable = true;};
-  no = {enable = false;};
   mkHost = hostDir: {
     stateVersion,
     system,
@@ -29,7 +28,6 @@
           fonts
           overlays
           yes
-          no
           ;
       };
       modules = with inputs;
@@ -76,7 +74,6 @@
           fonts
           overlays
           yes
-          no
           ;
       };
       modules =
