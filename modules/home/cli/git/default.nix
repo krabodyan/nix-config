@@ -99,22 +99,19 @@ in {
 
         commit.template = builtins.toString (pkgs.writeText "template.txt" ''
           # <type>[optional scope][!]: <description>
-          # chore docs style refactor perf test
 
-          # feat: description
+          # fix(fix): description
           # feat(feat): description
-
-          # chore: description
           # chore(chore): description
-
-          # refactor: description
+          # style(style): description
           # refactor(refactor): description
 
-          # style: description
-          # style(style): description
-
-          # fix: description
-          # fix(fix): description
+          # ci(ci): description
+          # perf(perf): description
+          # test(test): description
+          # docs(docs): description
+          # build(build): description
+          # config(config): description
 
           # BREAKING CHANGE: description
         '');
