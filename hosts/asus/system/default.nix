@@ -9,6 +9,7 @@
     ssd-btrfs = yes;
     time = yes;
     tmpfs = yes;
+    podman = yes;
     users = yes;
 
     udev-rules = {
@@ -37,7 +38,7 @@
         enableDaemon = false;
       };
       dbus-broker = yes;
-      docker = yes;
+      # docker = yes;
       systemd-config = yes;
       earlyoom = yes;
     };

@@ -17,7 +17,7 @@
     home-manager = yes;
     htop = yes;
     jq = yes;
-    kubectl = yes;
+    # kubectl = yes;
     lazygit = yes;
     network-utils = yes;
     nh = yes;
