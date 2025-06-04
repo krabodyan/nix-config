@@ -17,6 +17,9 @@ in {
     home.file.".clang-format".text = ''
       BasedOnStyle: LLVM
       AllowShortFunctionsOnASingleLine: false
+      AllowShortLambdasOnASingleLine: false
+      AllowShortEnumsOnASingleLine: false
+      AllowShortCaseExpressionOnASingleLine: false
       IndentWidth: 4
       IndentExternBlock: Indent
       IndentCaseBlocks: false
