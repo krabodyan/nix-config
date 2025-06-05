@@ -65,8 +65,7 @@
     gui-default = {
       enable = true;
       extra = with pkgs; [
-        # onlyoffice-bin
-        whatsie
+        zapzap
       ];
     };
 
