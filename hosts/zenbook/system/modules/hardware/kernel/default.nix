@@ -7,6 +7,7 @@
   boot = {
     initrd.systemd.enable = true;
     initrd.systemd.dbus.enable = true;
+
     kernel.sysctl = {
       "kernel.printk" = 2;
       "kernel.nmi_watchdog" = 0;
@@ -31,18 +32,17 @@
 
     kernelParams = [
       "nohibernate"
-      "rootfstype=ext4"
-      "raid=noautodetect"
     ];
 
-    # kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_zen;
 
     kernelModules = [
-      # "kvm-intel"
+      "zenpower"
     ];
 
-    initrd.kernelModules = [
-    ];
+    extraModulePackages = [config.boot.kernelPackages.zenpower];
+
+    initrd.kernelModules = [];
 
     initrd.availableKernelModules = [
       "xhci_pci"
@@ -51,11 +51,13 @@
       "usb_storage"
       "sd_mod"
     ];
+
     initrd.verbose = false;
 
     blacklistedKernelModules = [
-      "iTCO_wdt" # intel watchdog
-      "i915"
+      "radeon"
+      "k10temp" # https://github.com/NixOS/nixos-hardware/blob/master/common/cpu/amd/zenpower.nix
+
       "btrfs"
       "appletalk"
       "decnet"
@@ -88,6 +90,7 @@
 
   hardware = {
     enableRedistributableFirmware = true;
+    amdgpu.initrd.enable = true;
     cpu.amd.updateMicrocode =
       lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
