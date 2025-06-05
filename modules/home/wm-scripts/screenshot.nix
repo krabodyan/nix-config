@@ -8,6 +8,7 @@ pkgs.writeShellApplication {
   name = "__screenshot";
 
   runtimeInputs = with pkgs; [
+    jq
     mako
     slurp
     swayimg
@@ -23,27 +24,29 @@ pkgs.writeShellApplication {
   in
     # bash
     ''
+      mode="''${1:-}"
       pidof slurp && exit 0
       makoctl dismiss
 
-      if [ "$1" = "full" ]; then
+      if [ "$mode" = "full" ]; then
         ${wayshot} | ${copy}
+        ${send} "screenshot copied"
         exit 0
       fi
 
-      if [ "$1" = "window" ]; then
+      if [ "$mode" = "window" ]; then
         size=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | ${slurp})
         status=$?
 
         if [ $status -eq 0 ]; then
           ${wayshot} -s "$size" | ${copy}
-          ${send}
+          ${send} "screenshot copied"
         fi
 
         exit 0
       fi
 
-      if [ "$1" = "swayimg" ]; then
+      if [ "$mode" = "swayimg" ]; then
         ${wayshot} | ${swayimg} - &
         PID=$!
       fi
@@ -53,10 +56,10 @@ pkgs.writeShellApplication {
 
       if [ $status -eq 0 ]; then
         ${wayshot} -s "$size" | ${copy}
-        ${send}
+        ${send} "screenshot copied"
       fi
 
-      if [ "$1" = "swayimg" ]; then
+      if [ "$mode" = "swayimg" ]; then
         kill "$PID"
       fi
     '';
