@@ -16,7 +16,6 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    powerManagement.cpuFreqGovernor = "powersave";
     services.tlp = {
       enable = true;
       settings = {

@@ -16,6 +16,7 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    powerManagement.cpuFreqGovernor = "powersave";
     services.auto-cpufreq = {
       enable = true;
       settings = {

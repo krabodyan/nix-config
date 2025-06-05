@@ -38,7 +38,7 @@
         enableDaemon = false;
       };
       dbus-broker = yes;
-      # docker = yes;
+      charge-threshold = yes;
       systemd-config = yes;
       earlyoom = yes;
     };
