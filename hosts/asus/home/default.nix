@@ -98,10 +98,7 @@
 
     # ------------- window manager
     wm-utils = yes;
-    wm-scripts = {
-      enable = true;
-      touchpad.type = "sway";
-    };
+    wm-scripts = yes;
     mako = yes;
     rofi = yes;
     swaylock = yes;

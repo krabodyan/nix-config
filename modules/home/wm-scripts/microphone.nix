@@ -1,19 +1,23 @@
-{pkgs, ...}: let
-  pamixer = "${pkgs.pamixer}/bin/pamixer";
-  send = ''
-    ${pkgs.libnotify}/bin/notify-send \
-    -t 1000 \
-    -a swaynotify \
-    --urgency low \
-    -h string:x-canonical-private-synchronous:swaynotify \
-  '';
-in
-  pkgs.writeShellScriptBin "__microphone" ''
-    ${pamixer} --default-source -t
-    if ${pamixer} --default-source --get-mute | grep -q "true"; then
-      ${send} "󰍭 $(${pamixer} --default-source --get-volume-human)"
+{
+  pkgs,
+  send,
+  ...
+}:
+pkgs.writeShellApplication {
+  name = "__microphone";
+
+  runtimeInputs = with pkgs; [
+    gnugrep
+    pamixer
+  ];
+
+  text = ''
+    pamixer --default-source -t
+    if pamixer --default-source --get-mute | grep -q "true"; then
+      ${send} "󰍭 $(pamixer --default-source --get-volume-human)"
     else
-      h="int:value:$(${pamixer} --default-source --get-volume)"
-      ${send} " $(${pamixer} --default-source --get-volume-human)" -h $h
+      h="int:value:$(pamixer --default-source --get-volume)"
+      ${send} " $(pamixer --default-source --get-volume-human)" -h "$h"
     fi
-  ''
+  '';
+}

@@ -63,10 +63,7 @@
     xdg = yes;
 
     # ------------- window manager
-    wm-scripts = {
-      enable = true;
-      touchpad.type = "sway";
-    };
+    wm-scripts = yes;
 
     sway = {
       enable = true;

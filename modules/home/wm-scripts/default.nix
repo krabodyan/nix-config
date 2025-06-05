@@ -11,27 +11,41 @@ in {
   options = {
     module.wm-scripts = {
       enable = mkEnableOption "wm-scripts";
-      touchpad = {
-        type = mkOption {
-          type = lib.types.enum ["river" "sway"];
-        };
-        device = mkOption {
-          type = lib.types.nullOr lib.types.str;
-          default = null;
-        };
+      touchpadDevice = mkOption {
+        type = lib.types.nullOr lib.types.str;
+        default = null;
       };
     };
   };
   config = mkIf cfg.enable {
-    home.packages = [
-      (import ./touchpad.nix {
-        inherit pkgs;
-        inherit (cfg.touchpad) type device;
-      })
-      (import ./volume.nix {inherit pkgs;})
-      (import ./microphone.nix {inherit pkgs;})
-      (import ./brightness.nix {inherit pkgs;})
-      (import ./screenshot.nix {inherit pkgs colors;})
-    ];
+    home.packages = let
+      send = ''
+        ${pkgs.libnotify}/bin/notify-send \
+        -t 1000 \
+        -a swaynotify \
+        --urgency low \
+        -h string:x-canonical-private-synchronous:swaynotify \
+      '';
+    in (
+      map
+      (file: (import file {
+        inherit pkgs send colors;
+        inherit (cfg) touchpadDevice;
+      }))
+      (lib.flatten [
+        ./volume.nix
+        ./brightness.nix
+        ./microphone.nix
+        ./screenshot.nix
+
+        (lib.optional
+          config.module.sway.enable
+          ./touchpad-sway.nix)
+
+        (lib.optional
+          config.module.river.enable
+          ./touchpad-river.nix)
+      ])
+    );
   };
 }
