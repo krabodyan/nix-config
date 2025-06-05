@@ -47,15 +47,24 @@ in {
 
       config = let
         mod = "Mod4";
-        terminal = "${pkgs.foot}/bin/footclient";
-        menucmd =
+
+        menuCmd =
           if cfg.menu == "fuzzel"
           then "pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel"
           else if cfg.menu == "rofi"
           then "pkill rofi || ${pkgs.rofi-wayland-unwrapped}/bin/rofi -show drun -kb-cancel 'Alt+Return'"
           else throw "unexpected menu";
+
+        screenshotCmd =
+          if config.module.swappy.enable
+          then "${lib.getExe pkgs.swappy} -f -"
+          else if config.module.satty.enable
+          then "${lib.getExe pkgs.satty} -f -"
+          else throw "swappy/satty not enabled";
+
+        terminalCmd = "${pkgs.foot}/bin/footclient";
       in {
-        inherit terminal;
+        terminal = terminalCmd;
         modifier = mod;
 
         startup = with pkgs;
@@ -220,10 +229,10 @@ in {
         };
 
         keybindings = {
-          "${mod}+d" = "exec ${menucmd}";
-          "${mod}+e" = "exec ${terminal}";
-          "${mod}+Shift+e" = "exec ${terminal} -a floaterm";
-          "${mod}+r" = "exec ${terminal} -a floaterm pulsemixer";
+          "${mod}+d" = "exec ${menuCmd}";
+          "${mod}+e" = "exec ${terminalCmd}";
+          "${mod}+Shift+e" = "exec ${terminalCmd} -a floaterm";
+          "${mod}+r" = "exec ${terminalCmd} -a floaterm ${lib.getExe pkgs.pulsemixer}";
           "${mod}+c" = ''exec notify-send -t 2000 "$(date +"%d %B %H:%M")"'';
 
           "${mod}+Alt+b" = "seat seat0 hide_cursor 0";
@@ -275,8 +284,7 @@ in {
           "${mod}+Shift+7" = "move container to workspace number 7";
           "${mod}+Shift+8" = "move container to workspace number 8";
 
-          "${mod}+x" = "exec __brightness toggle";
-
+          F4 = "exec __microphone";
           XF86AudioMute = "exec __volume mute";
           XF86AudioRaiseVolume = "exec __volume up";
           XF86AudioLowerVolume = "exec __volume down";
@@ -284,13 +292,14 @@ in {
           XF86MonBrightnessDown = "exec __brightness down";
           XF86TouchpadToggle = "exec __touchpad";
 
-          F4 = "exec __microphone";
+          "${mod}+x" = "exec __brightness toggle";
+          "${mod}+F10" = "exec __touchpad";
 
           Print = "exec __screenshot";
           Pause = "exec __screenshot full";
           "${mod}+Print" = "exec __screenshot window";
           "${mod}+Pause" = "exec __screenshot swayimg";
-          "${mod}+Shift+Print" = "exec wl-paste | swappy -f -";
+          "${mod}+Shift+Print" = "exec wl-paste | ${screenshotCmd}";
         };
       };
 

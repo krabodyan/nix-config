@@ -16,7 +16,7 @@ in {
   config = mkIf cfg.enable {
     fonts.packages = with pkgs; [
       corefonts
-      font-awesome
+      font-awesome_5
       noto-fonts
       noto-fonts-emoji
       noto-fonts-cjk-sans

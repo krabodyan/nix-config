@@ -17,7 +17,6 @@
     home-manager = yes;
     htop = yes;
     jq = yes;
-    # kubectl = yes;
     lazygit = yes;
     network-utils = yes;
     nh = yes;
@@ -73,7 +72,6 @@
       enable = true;
       extra = with pkgs; [
         gcolor3
-        gimp
         system-config-printer
         onlyoffice-bin
         qbittorrent
@@ -88,7 +86,6 @@
     foot = yes;
     mpv = yes;
     obs = yes;
-    screenshot = yes;
     swayimg = yes;
     telegram = yes;
     zathura = yes;
@@ -108,6 +105,7 @@
     mako = yes;
     rofi = yes;
     swaylock = yes;
+    swappy = yes;
 
     sway = {
       enable = true;
