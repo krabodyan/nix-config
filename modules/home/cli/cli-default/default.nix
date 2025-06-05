@@ -33,11 +33,10 @@ in {
         dua
         dysk
 
-        pulsemixer
+        just
       ]
       ++ lib.optionals cfg.dev [
         gnumake
-        just
         gcc
 
         postman
