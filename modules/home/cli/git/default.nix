@@ -24,6 +24,7 @@ in {
 
     programs.git = {
       enable = true;
+      package = pkgs.gitMinimal;
       inherit (cfg) userName userEmail;
 
       signing.format = "ssh";
