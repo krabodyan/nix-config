@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  mkAssociations,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -24,8 +25,13 @@ in {
         name = "Telegram Desktop";
         exec = "env QT_QPA_PLATFORMTHEME=gtk3 ${exec} -- %u";
       };
-      xdg.mimeApps.defaultApplications = {
-        "x-scheme-handler/tg" = ["${name}.desktop"];
+
+      xdg.mimeApps.defaultApplications = mkAssociations {
+        types = [
+          "x-scheme-handler/tg"
+          "application/x-xdg-protocol-tg"
+        ];
+        desktop = "${name}.desktop";
       };
     };
 }
