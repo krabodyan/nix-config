@@ -77,6 +77,7 @@ in {
         assigns = {
           "workspace 1" = [
             {app_id = "^org.telegram.desktop$";}
+            {app_id = "^Altus$";}
           ];
           "workspace 2" = [
             {app_id = "^firefox$";}
@@ -98,6 +99,10 @@ in {
           {
             command = "floating enable; resize set 1000 px 800 px";
             criteria.app_id = "xdg-desktop-portal-gtk";
+          }
+          {
+            command = "layout tabbed";
+            criteria.app_id = "^Altus$";
           }
           {
             command = "floating enable";
@@ -140,7 +145,7 @@ in {
         fonts = {
           names = [fonts.monospace];
           style = "SemiBold";
-          size = 12.0;
+          size = 11.0;
         };
 
         focus = {
@@ -159,7 +164,7 @@ in {
             border = bg;
             childBorder = bg;
             indicator = bg;
-            text = overlay0;
+            text = surface3;
           };
           focused = {
             background = bg;
@@ -303,14 +308,20 @@ in {
         };
       };
 
-      extraConfig = ''
-        title_align center
-        titlebar_border_thickness 0
-        default_border pixel 1
-        default_floating_border pixel 1
-        focus_wrapping workspace
-        bindswitch lid:on exec swaylock
-      '';
+      extraConfig =
+        # sway
+        ''
+          title_align center
+          titlebar_border_thickness 0
+          titlebar_padding 0
+
+          default_border pixel 1
+          default_floating_border pixel 1
+
+          focus_wrapping workspace
+
+          bindswitch lid:on exec swaylock
+        '';
     };
   };
 }
