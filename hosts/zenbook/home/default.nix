@@ -64,9 +64,7 @@
     # ------------- gui
     gui-default = {
       enable = true;
-      extra = with pkgs; [
-        zapzap
-      ];
+      # extra = with pkgs; [];
     };
 
     discord = yes;
@@ -76,6 +74,7 @@
     screenshot = yes;
     swayimg = yes;
     telegram = yes;
+    whatsapp = yes;
     zathura = yes;
 
     # ------------- desktop environment
