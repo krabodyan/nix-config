@@ -47,6 +47,7 @@ in {
 
       config = let
         mod = "Mod4";
+        hide_cursor = "5000";
 
         menuCmd =
           if cfg.menu == "fuzzel"
@@ -154,8 +155,8 @@ in {
         };
 
         seat.seat0 = {
+          inherit hide_cursor;
           xcursor_theme = with config.home.pointerCursor; "${name} ${builtins.toString size}";
-          hide_cursor = "5000";
         };
 
         colors = with colors.hex; let
@@ -240,9 +241,10 @@ in {
           "${mod}+r" = "exec ${terminalCmd} -a floaterm ${lib.getExe pkgs.pulsemixer}";
           "${mod}+c" = ''exec notify-send -t 2000 "$(date +"%d %B %H:%M")"'';
 
+          "${mod}+b" = "seat seat0 hide_cursor ${hide_cursor}";
           "${mod}+Alt+b" = "seat seat0 hide_cursor 0";
+
           "${mod}+w" = "input type:keyboard xkb_switch_layout 0";
-          "${mod}+b" = "seat seat0 hide_cursor ${config.wayland.windowManager.sway.config.seat.seat0.hide_cursor}";
 
           "${mod}+Shift+Delete" = "exit";
 
