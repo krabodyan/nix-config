@@ -44,12 +44,14 @@ in {
           initial-window-size-pixels = "1200x800";
           underline-offset = "12px";
           underline-thickness = "1px";
-          title = "terminal";
+          title = "Terminal";
           locked-title = "yes";
         };
 
         desktop-notifications = {
-          command = "notify-send --app-name foot --urgency \${urgency} --expire-time \${expire-time} \${title} \${body}";
+          command = ''
+            notify-send --app-name foot --urgency ''${urgency} --expire-time ''${expire-time} ''${title} ''${body}
+          '';
           inhibit-when-focused = "no";
         };
 
