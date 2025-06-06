@@ -21,7 +21,6 @@
     network-utils = yes;
     nh = yes;
     nix-index = yes;
-    postgres-cli = yes;
     python = yes;
     ripgrep = yes;
     rust-cli = yes;

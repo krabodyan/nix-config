@@ -23,6 +23,7 @@ in {
       \set PROMPT1 '%[%033[95m%]%n@%/%[%033[0m%] %[%033[93m%][%x]%[%033[0m%] %[%033[92m%]%#%[%033[0m%] '
       \set PROMPT2 '%[%033[95m%]... : %[%033[0m%]'
 
+      \x auto
       \pset pager 0
       \pset border 2
       \pset linestyle unicode
