@@ -68,7 +68,7 @@ in {
           "media.ffmpeg.vaapi.enabled" = true;
           "media.ffmpeg.encoder.enabled" = true;
           "security.sandbox.content.level" = 0;
-          # "widget.wayland.opaque-region.enabled" = false;
+          "widget.wayland.opaque-region.enabled" = false;
 
           "svg.context-properties.content.enabled" = true;
           "layout.css.color-mix.enabled" = true;
@@ -83,13 +83,14 @@ in {
           "browser.in-content.dark-mode" = true;
           "ui.systemUsesDarkTheme" = 1;
           "datareporting.healthreport.uploadEnabled" = false;
+          # "media.peerconnection.enabled" = false;
           "browser.search.suggest.enabled.private" = true;
-
           "geo.enabled" = false;
           "geo.wifi.uri" = "";
           "browser.search.geoip.url" = "";
+          # "browser.send_pings.require_same_host" = true;
           "toolkit.telemetry.enabled" = false;
-
+          # "default-browser-agent.enabled" = false;
           "browser.urlbar.trimHttps" = true;
           "browser.download.useDownloadDir" = false;
           "browser.urlbar.suggest.engines" = false;
@@ -111,7 +112,8 @@ in {
           "browser.warnOnQuit" = false;
           "browser.warnOnQuitShortcut" = false;
           "browser.download.always_ask_before_handling_new_types" = false;
-
+          "browser.gesture.swipe.left" = "cmd_scrollLeft";
+          "browser.gesture.swipe.right" = "cmd_scrollRight";
           DisableTelemetry = true;
           DisableFirefoxStudies = true;
           DisablePocket = true;
