@@ -42,9 +42,7 @@
       # "kvm-intel"
     ];
 
-    initrd.kernelModules = [
-      "i915"
-    ];
+    initrd.kernelModules = [];
 
     initrd.availableKernelModules = [
       "xhci_pci"
@@ -55,11 +53,13 @@
       "sr_mod"
       "rtsx_pci_sdmmc"
     ];
+
     initrd.verbose = false;
 
     blacklistedKernelModules = [
       "iTCO_wdt" # intel watchdog
       "radeon"
+      "amdgpu"
       "btrfs"
       "appletalk"
       "decnet"

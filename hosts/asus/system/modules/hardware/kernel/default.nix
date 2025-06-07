@@ -33,10 +33,10 @@
       "nohibernate"
       "rootfstype=btrfs"
       "raid=noautodetect"
-      "preempt=full"
+      # "preempt=full"
     ];
 
-    # kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_zen;
 
     extraModprobeConfig = ''
       options i915 enable_guc=3
@@ -44,28 +44,23 @@
     '';
 
     kernelModules = [
-      "kvm_intel"
+      # "kvm-intel"
     ];
 
-    initrd.kernelModules = [
-      "i915"
-    ];
+    initrd.kernelModules = [];
 
     initrd.availableKernelModules = [
       "xhci_pci"
       "thunderbolt"
       "nvme"
       "usbhid"
-      "r8169"
-      "mt7921e"
-      "usb_storage"
     ];
+
     initrd.verbose = false;
 
     blacklistedKernelModules = [
-      # "kvm_intel"
       "iTCO_wdt" # intel watchdog
-      "radeom"
+      "radeon"
       "amdgpu"
       "nouveau"
       "appletalk"
