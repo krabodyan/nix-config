@@ -26,6 +26,7 @@
                 content = {
                   type = "filesystem";
                   format = "ext4";
+                  mountOptions = ["defaults" "discard"];
                   mountpoint = "/";
                 };
               };
