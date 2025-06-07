@@ -42,14 +42,15 @@
 
     extraModulePackages = [config.boot.kernelPackages.zenpower];
 
-    initrd.kernelModules = [];
+    initrd.kernelModules = [
+      "dm-crypt"
+    ];
 
     initrd.availableKernelModules = [
       "xhci_pci"
-      "ehci_pci"
-      "ahci"
-      "usb_storage"
-      "sd_mod"
+      "thunderbolt"
+      "nvme"
+      "usbhid"
     ];
 
     initrd.verbose = false;
