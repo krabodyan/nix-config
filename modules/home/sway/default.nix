@@ -225,8 +225,7 @@ in {
 
         modes = {
           resize = {
-            "${mod}+o" = "exec notify-send -t 1000 'mode default' & swaymsg mode default";
-            Escape = "mode default";
+            "${mod}+o" = "exec makoctl dismiss & swaymsg mode default";
             h = "resize grow width 20 px";
             k = "resize grow height 20 px";
             l = "resize shrink width 20 px";
@@ -235,10 +234,13 @@ in {
         };
 
         keybindings = {
+          "${mod}+o" = "exec notify-send -a swaynotify -t 0 'mode resize' & swaymsg mode resize";
+
           "${mod}+d" = "exec ${menuCmd}";
           "${mod}+e" = "exec ${terminalCmd}";
-          "${mod}+Shift+e" = "exec ${terminalCmd} -a floaterm";
           "${mod}+r" = "exec ${terminalCmd} -a floaterm ${lib.getExe pkgs.pulsemixer}";
+          "${mod}+Shift+e" = "exec ${terminalCmd} -a floaterm";
+
           "${mod}+c" = ''exec notify-send -t 2000 "$(date +"%d %B %H:%M")"'';
 
           "${mod}+b" = "seat seat0 hide_cursor ${hide_cursor}";
@@ -259,8 +261,6 @@ in {
           "${mod}+Shift+j" = "move down";
           "${mod}+Shift+h" = "move left";
           "${mod}+Shift+l" = "move right";
-
-          "${mod}+o" = "exec notify-send -t 1000 'mode resize' & swaymsg mode resize";
 
           "${mod}+q" = "kill";
           "${mod}+t" = "fullscreen";
