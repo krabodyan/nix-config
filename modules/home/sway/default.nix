@@ -78,7 +78,6 @@ in {
         assigns = {
           "workspace 1" = [
             {app_id = "^org.telegram.desktop$";}
-            {app_id = "^Altus$";}
           ];
           "workspace 2" = [
             {app_id = "^firefox$";}
@@ -100,10 +99,6 @@ in {
           {
             command = "floating enable; resize set 1000 px 800 px";
             criteria.app_id = "xdg-desktop-portal-gtk";
-          }
-          {
-            command = "layout tabbed";
-            criteria.app_id = "^Altus$";
           }
           {
             command = "floating enable";
