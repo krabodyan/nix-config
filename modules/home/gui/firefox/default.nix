@@ -49,18 +49,6 @@ in {
             bitwarden
             nighttab
           ];
-
-          settings = {
-            "uBlock0@raymondhill.net".settings = {
-              selectedFilterLists = [
-                "ublock-filters"
-                "ublock-badware"
-                "ublock-privacy"
-                "ublock-unbreak"
-                "ublock-quick-fixes"
-              ];
-            };
-          };
         };
       };
     };

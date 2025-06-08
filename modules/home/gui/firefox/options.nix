@@ -12,6 +12,7 @@
 
   "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
+  "media.videocontrols.picture-in-picture.enabled" = false;
   "media.webspeech.synth.enabled" = false;
   "privacy.webrtc.legacyGlobalIndicator" = false;
 
