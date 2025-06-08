@@ -74,7 +74,6 @@
     screenshot = yes;
     swayimg = yes;
     telegram = yes;
-    whatsapp = yes;
     zathura = yes;
 
     # ------------- desktop environment
