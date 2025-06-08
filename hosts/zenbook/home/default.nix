@@ -1,7 +1,7 @@
 {
   yes,
   self,
-  pkgs,
+  # pkgs,
   ...
 }: {
   module = {
@@ -16,7 +16,6 @@
     home-manager = yes;
     htop = yes;
     jq = yes;
-    lazygit = yes;
     network-utils = yes;
     nh = yes;
     nix-index = yes;
@@ -37,9 +36,7 @@
     cli-default = {
       enable = true;
       dev = false;
-      extra = with pkgs; [
-        ffmpeg-full
-      ];
+      # extra = with pkgs; [];
     };
 
     fish = {
@@ -71,7 +68,6 @@
     firefox = yes;
     foot = yes;
     mpv = yes;
-    screenshot = yes;
     swayimg = yes;
     telegram = yes;
     zathura = yes;
@@ -88,6 +84,7 @@
     mako = yes;
     rofi = yes;
     swaylock = yes;
+    swappy = yes;
 
     sway = {
       enable = true;
