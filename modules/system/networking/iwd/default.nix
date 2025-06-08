@@ -23,7 +23,7 @@ in {
           Network.EnableIPv6 = true;
           Settings.AutoConnect = true;
           Scan.DisablePeriodicScan = true;
-          General.EnableNetworkConfiguration = true;
+          General.EnableNetworkConfiguration = false;
           DriverQuirks.UseDefaultInterface = true;
         };
       };
