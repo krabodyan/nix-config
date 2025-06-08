@@ -21,7 +21,12 @@ in {
     '';
     systemd.extraConfig = config.boot.initrd.systemd.extraConfig;
     services = {
-      logind.killUserProcesses = true;
+      logind = {
+        lidSwitch = "suspend";
+        suspendKey = "suspend";
+        hibernateKey = "suspend";
+        killUserProcesses = true;
+      };
       journald.extraConfig = ''
         Compress=yes
         SystemMaxUse=100M
