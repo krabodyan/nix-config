@@ -39,12 +39,6 @@ in {
         gnumake
         gcc
 
-        postman
-        # vagrant
-        # tenv
-        # ansible
-        # cdrtools
-
         lazydocker
         sqlfluff
         litecli
