@@ -43,14 +43,13 @@
     extraModulePackages = [config.boot.kernelPackages.zenpower];
 
     initrd.kernelModules = [
-      "dm-crypt"
+      "dm_crypt"
     ];
 
     initrd.availableKernelModules = [
       "xhci_pci"
-      "thunderbolt"
       "nvme"
-      "usbhid"
+      "rtsx_pci_sdmmc"
     ];
 
     initrd.verbose = false;

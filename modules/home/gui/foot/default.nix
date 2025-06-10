@@ -44,7 +44,7 @@ in {
           initial-window-size-pixels = "1200x800";
           underline-offset = "12px";
           underline-thickness = "1px";
-          title = "Terminal";
+          title = "terminal";
           locked-title = "yes";
         };
 

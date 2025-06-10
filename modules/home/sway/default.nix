@@ -4,9 +4,10 @@
   fonts,
   config,
   colors,
+  hostname,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf mkOption;
+  inherit (lib) mkEnableOption mkIf mkOption mkMerge;
   cfg = config.module.sway;
 in {
   options = {
@@ -114,12 +115,24 @@ in {
           }
         ];
 
-        output = {
-          "eDP-1" = {
-            mode = "1920x1080@144.000Hz";
-            bg = "${cfg.background} fill";
-          };
-        };
+        output = mkMerge [
+          (
+            mkIf (hostname == "zenbook") {
+              "eDP-1" = {
+                bg = "${cfg.background} fill";
+                scale = "1.4";
+              };
+            }
+          )
+          (
+            mkIf (hostname == "asus") {
+              "eDP-1" = {
+                bg = "${cfg.background} fill";
+                scale = "1";
+              };
+            }
+          )
+        ];
 
         gaps = {
           inner = 0;
@@ -185,10 +198,15 @@ in {
           };
 
           "type:touchpad" = {
-            events = "disabled";
             dwt = "enabled";
             tap = "enabled";
+            accel_profile = "flat";
+            pointer_accel = "0.5";
             natural_scroll = "disabled";
+            events =
+              if hostname == "zenbook"
+              then "enabled"
+              else "disabled";
           };
 
           "type:pointer" = {

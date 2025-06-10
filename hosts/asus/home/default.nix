@@ -83,7 +83,10 @@
 
     discord = yes;
     firefox = yes;
-    foot = yes;
+    foot = {
+      enable = true;
+      fontsize = 17;
+    };
     mpv = yes;
     obs = yes;
     swayimg = yes;
