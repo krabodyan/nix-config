@@ -4,7 +4,7 @@ host=""
 disk=""
 key="agekey"
 
-read -r -p "Enter host (asus/hp): " host
+read -r -p "Enter host (asus/hp/zenbook): " host
 
 if ! test -f "$key"; then
 	echo "identity file not found. should be named '$key'"

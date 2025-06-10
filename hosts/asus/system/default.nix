@@ -5,11 +5,11 @@
     console = yes;
     locale = yes;
     nix-config = yes;
+    podman = yes;
     sound = yes;
     ssd-btrfs = yes;
     time = yes;
     tmpfs = yes;
-    podman = yes;
     users = yes;
 
     udev-rules = {

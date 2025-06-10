@@ -75,6 +75,8 @@
         onlyoffice-bin
         qbittorrent
         solaar
+        mission-planner
+        qgroundcontrol
         obsidian
       ];
     };

@@ -1,7 +1,7 @@
 {
   yes,
   self,
-  # pkgs,
+  pkgs,
   ...
 }: {
   module = {
@@ -53,7 +53,6 @@
       };
       loginShell = {
         enable = true;
-        withIGPU = true;
         wm = "sway";
       };
     };
@@ -61,7 +60,10 @@
     # ------------- gui
     gui-default = {
       enable = true;
-      # extra = with pkgs; [];
+      extra = with pkgs; [
+        mission-planner
+        qgroundcontrol
+      ];
     };
 
     discord = yes;

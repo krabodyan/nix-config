@@ -21,6 +21,7 @@ in {
     };
 
     programs.command-not-found.enable = false;
+    programs.home-manager.enable = true;
 
     users = {
       mutableUsers = false;
@@ -37,6 +38,7 @@ in {
         };
 
         ${username} = {
+          inherit (config.users.users.root) packages;
           uid = 1000;
           home = "/home/${username}";
           shell = pkgs.fishMinimal;

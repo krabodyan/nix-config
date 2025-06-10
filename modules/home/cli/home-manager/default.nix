@@ -19,7 +19,6 @@ in {
       homeDirectory = "/home/${username}";
       inherit stateVersion;
     };
-    programs.home-manager.enable = true;
     news.display = "silent";
   };
 }

@@ -3,15 +3,16 @@
     agenix = yes;
     bootloader = yes;
     console = yes;
+    fonts = yes;
     locale = yes;
     nix-config = yes;
+    packages = yes;
+    podman = yes;
     sound = yes;
     time = yes;
     tmpfs = yes;
-    users = yes;
     udev-rules = yes;
-    packages = yes;
-    fonts = yes;
+    users = yes;
 
     xdg-portal = {
       enable = true;
