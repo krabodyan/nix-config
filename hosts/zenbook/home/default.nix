@@ -36,7 +36,9 @@
     cli-default = {
       enable = true;
       dev = true;
-      # extra = with pkgs; [];
+      extra = with pkgs; [
+        ffmpeg-full
+      ];
     };
 
     fish = {

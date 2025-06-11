@@ -13,7 +13,7 @@ in {
   };
   config = mkIf cfg.enable {
     hardware.amdgpu = {
-      opencl.enable = true;
+      # opencl.enable = true;
       amdvlk = {
         enable = true;
         # support32Bit.enable = true;
