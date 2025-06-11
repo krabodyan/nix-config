@@ -35,7 +35,7 @@
 
     cli-default = {
       enable = true;
-      dev = false;
+      dev = true;
       # extra = with pkgs; [];
     };
 
