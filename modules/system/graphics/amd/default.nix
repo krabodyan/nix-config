@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   config,
   ...
 }: let
@@ -13,8 +12,12 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    hardware.graphics = {
-      extraPackages = with pkgs; [mesa.opencl amdvlk];
+    hardware.amdgpu = {
+      opencl.enable = true;
+      amdvlk = {
+        enable = true;
+        # support32Bit.enable = true;
+      };
     };
   };
 }

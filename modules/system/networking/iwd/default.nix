@@ -22,7 +22,7 @@ in {
         settings = {
           Network.EnableIPv6 = true;
           Settings.AutoConnect = true;
-          Scan.DisablePeriodicScan = true;
+          Scan.DisablePeriodicScan = false;
           General.EnableNetworkConfiguration = false;
           DriverQuirks.UseDefaultInterface = true;
         };

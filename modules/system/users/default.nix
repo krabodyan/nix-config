@@ -21,7 +21,6 @@ in {
     };
 
     programs.command-not-found.enable = false;
-    programs.home-manager.enable = true;
 
     users = {
       mutableUsers = false;
@@ -34,6 +33,7 @@ in {
             git
             helix
             nh
+            home-manager
           ];
         };
 

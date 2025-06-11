@@ -32,6 +32,8 @@
 
     kernelParams = [
       "nohibernate"
+      "amdgpu.sg_display=0"
+      "amd_pstate=active"
     ];
 
     kernelPackages = pkgs.linuxPackages_zen;
@@ -44,6 +46,7 @@
 
     initrd.kernelModules = [
       "dm_crypt"
+      "amdgpu"
     ];
 
     initrd.availableKernelModules = [
@@ -90,7 +93,6 @@
 
   hardware = {
     enableRedistributableFirmware = true;
-    amdgpu.initrd.enable = true;
     cpu.amd.updateMicrocode =
       lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
