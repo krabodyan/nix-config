@@ -46,13 +46,13 @@
 
     initrd.kernelModules = [
       "dm_crypt"
-      "amdgpu"
     ];
 
     initrd.availableKernelModules = [
       "xhci_pci"
       "nvme"
       "rtsx_pci_sdmmc"
+      "amdgpu"
     ];
 
     initrd.verbose = false;
