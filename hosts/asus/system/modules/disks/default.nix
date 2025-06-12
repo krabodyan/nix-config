@@ -9,7 +9,7 @@
         partitions = {
           esp = {
             name = "NIXEFI";
-            end = "500M";
+            end = "512M";
             type = "EF00";
             content = {
               type = "filesystem";

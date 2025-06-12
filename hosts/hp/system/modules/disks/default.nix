@@ -7,14 +7,15 @@
         content = {
           type = "gpt";
           partitions = {
-            ESP = {
-              size = "512M";
+            esp = {
+              name = "NIXEFI";
+              end = "512M";
               type = "EF00";
               content = {
                 type = "filesystem";
                 format = "vfat";
+                extraArgs = ["-F32"];
                 mountpoint = "/boot";
-                mountOptions = ["umask=0077"];
               };
             };
             luks = {
