@@ -40,7 +40,7 @@
     }
     {
       name = "python";
-      language-servers = ["pyright" "ruff"];
+      language-servers = ["pyright"];
       formatter = {
         command = lib.getExe pkgs.ruff;
         args = ["format" "-"];

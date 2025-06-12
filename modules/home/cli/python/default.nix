@@ -16,8 +16,13 @@ in {
     home.packages = with pkgs; [
       uv
       mypy
-      python313Full
       python313Packages.ipython
+      (python313.withPackages
+        (ps:
+          with ps; [
+            numpy
+            matplotlib
+          ]))
     ];
   };
 }
