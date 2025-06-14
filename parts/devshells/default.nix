@@ -115,7 +115,14 @@
     };
 
     devShells.python = pkgs.mkShell {
-      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib:$LD_LIBRARY_PATH";
+      name = "python";
+      DEV_SHELL_NAME = "python";
+
+      buildInputs = with pkgs; [
+        python313Packages.numpy
+        python313Packages.plotly
+        python313Packages.matplotlib
+      ];
     };
   };
 }
