@@ -34,15 +34,15 @@
       };
       language-servers = ["svelteserver" "tailwindcss-ls"];
       formatter = {
-        command = lib.getExe pkgs.nodePackages.prettier;
+        command = "prettier";
         args = ["--parser" "svelte"];
       };
     }
     {
       name = "python";
-      language-servers = ["pyright"];
+      language-servers = ["pyright" "ty"];
       formatter = {
-        command = lib.getExe pkgs.ruff;
+        command = "ruff";
         args = ["format" "-"];
       };
     }
@@ -51,7 +51,7 @@
       file-types = ["yaml" "yml"];
       language-servers = ["yaml-language-server"];
       formatter = {
-        command = lib.getExe pkgs.nodePackages.prettier;
+        command = "prettier";
         args = ["--parser" "yaml"];
       };
     }
@@ -62,7 +62,7 @@
     {
       name = "html";
       formatter = {
-        command = lib.getExe pkgs.nodePackages.prettier;
+        command = "prettier";
         args = ["--parser" "html"];
       };
     }
@@ -70,7 +70,7 @@
       name = "tsx";
       language-servers = ["typescript-language-server"];
       formatter = {
-        command = lib.getExe pkgs.nodePackages.prettier;
+        command = "prettier";
         args = ["--parser" "html"];
       };
     }
@@ -79,7 +79,7 @@
       language-servers = ["typescript-language-server"];
       roots = ["package-lock.json" "tsconfig.json" ".prettierrc.json"];
       formatter = {
-        command = lib.getExe pkgs.nodePackages.prettier;
+        command = "prettier";
         args = ["--parser" "typescript"];
       };
     }
@@ -90,7 +90,7 @@
         unit = "\t";
       };
       language-servers = ["clang"];
-      formatter.command = "${pkgs.clang-tools}/bin/clang-format";
+      formatter.command = "clang-format";
     }
     {
       name = "toml";
@@ -103,7 +103,7 @@
     {
       name = "bash";
       formatter = {
-        command = lib.getExe pkgs.shfmt;
+        command = "shfmt";
         args = [
           "--case-indent"
           "--space-redirects"
@@ -115,7 +115,7 @@
       name = "nginx";
       language-servers = ["nginx"];
       formatter = {
-        command = lib.getExe pkgs.nginx-config-formatter;
+        command = "nginxfmt";
         args = ["--pipe"];
       };
     }
@@ -129,7 +129,7 @@
     {
       name = "just";
       formatter = {
-        command = lib.getExe pkgs.just-formatter;
+        command = "just-formatter";
       };
     }
     {
@@ -149,7 +149,7 @@
             allow_implicit_indents = True
           '';
       in {
-        command = lib.getExe pkgs.sqlfluff;
+        command = "sqlfluff";
         args = ["format" "-" "--dialect" "mysql" "--disable-progress-bar" "--config" config];
       };
     }
@@ -256,24 +256,28 @@
       };
     };
 
-    svelteserver.config.configuration.typescript = {
-      inlayHints.parameterTypes.enabled = false;
-      inlayHints.variableTypes.enabled = false;
-      inlayHints.propertyDeclarationTypes.enabled = false;
-      inlayHints.functionLikeReturnTypes.enabled = false;
-      inlayHints.enumMemberValues.enabled = false;
-      inlayHints.parameterNames.enabled = false;
+    svelteserver = {
+      config.configuration.typescript = {
+        inlayHints.parameterTypes.enabled = false;
+        inlayHints.variableTypes.enabled = false;
+        inlayHints.propertyDeclarationTypes.enabled = false;
+        inlayHints.functionLikeReturnTypes.enabled = false;
+        inlayHints.enumMemberValues.enabled = false;
+        inlayHints.parameterNames.enabled = false;
+      };
     };
 
-    yaml-language-server.config.yaml = {
-      format.enable = true;
-      hover = true;
-      completion = true;
-      suggest.parentSkeletonSelectedFirst = true;
+    yaml-language-server = {
+      config.yaml = {
+        format.enable = true;
+        hover = true;
+        completion = true;
+        suggest.parentSkeletonSelectedFirst = true;
+      };
     };
 
     json = {
-      command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
+      command = "vscode-json-language-server";
       except-features = ["format"];
       args = ["--stdio"];
       config.json = {
@@ -298,27 +302,37 @@
     };
 
     ruff = {
-      command = lib.getExe pkgs.ruff;
+      command = "ruff";
       args = ["server" "--silent"];
     };
 
+    ty = {
+      command = "ty";
+      args = ["server"];
+    };
+
+    pyright = {
+      command = "pyright-langserver";
+      args = ["--stdio"];
+    };
+
     biome = {
-      command = lib.getExe pkgs.biome;
+      command = "biome";
       args = ["lsp-proxy"];
     };
 
     clang = {
-      command = "${pkgs.clang-tools}/bin/clangd";
+      command = "clangd";
       args = ["--header-insertion=never"];
     };
 
     nginx = {
-      command = lib.getExe pkgs.nginx-language-server;
+      command = "nginx-language-server";
       args = ["--log-file" "/dev/null"];
     };
 
     terraform-ls = {
-      command = lib.getExe pkgs.terraform-ls;
+      command = "terraform-ls";
       args = ["serve" "-log-file" "/dev/null"];
     };
 

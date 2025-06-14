@@ -8,12 +8,22 @@
   mkAssociations,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf;
+  inherit (lib) mkEnableOption mkIf mkOption mkMerge;
   cfg = config.module.helix;
 in {
   options = {
     module.helix = {
       enable = mkEnableOption "helix";
+      webSupport = mkOption {
+        type = lib.types.bool;
+        example = "true";
+        default = false;
+      };
+      devopsSupport = mkOption {
+        type = lib.types.bool;
+        example = "true";
+        default = false;
+      };
     };
   };
   config = mkIf cfg.enable {
@@ -22,30 +32,49 @@ in {
       defaultEditor = true;
       package = inputs.helix.packages.${pkgs.system}.helix;
 
-      extraPackages = with pkgs; [
-        docker-compose-language-service
-        dockerfile-language-server-nodejs
+      extraPackages = with pkgs;
+        mkMerge [
+          [
+            docker-compose-language-service
+            dockerfile-language-server-nodejs
 
-        pyright
+            taplo
+            biome
+            yaml-language-server
 
-        taplo
-        yaml-language-server
+            shfmt
+            fish-lsp
+            just-lsp
+            bash-language-server
 
-        bash-language-server
-        fish-lsp
-        just-lsp
+            just-lsp
+            just-formatter
 
-        tailwindcss-language-server
-        typescript-language-server
-        svelte-language-server
-        nodePackages.prettier
-        nodejs-slim
+            ty
+            pyright
+            ruff
 
-        asm-lsp
-        vscode-langservers-extracted
+            sqlfluff
+            clang-tools
+            vscode-langservers-extracted
+            nodePackages.prettier
 
-        (import ./yazi-picker.nix {inherit pkgs;})
-      ];
+            (import ./yazi-picker.nix {inherit pkgs;})
+          ]
+          (mkIf
+            cfg.webSupport [
+              tailwindcss-language-server
+              typescript-language-server
+              svelte-language-server
+              nodejs-slim
+            ])
+          (mkIf
+            cfg.devopsSupport [
+              nginx-language-server
+              nginx-config-formatter
+              terraform-ls
+            ])
+        ];
 
       settings = {
         theme = "paradise";
