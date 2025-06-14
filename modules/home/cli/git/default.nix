@@ -30,8 +30,7 @@ in {
       signing.format = "ssh";
 
       aliases = {
-        s = "status";
-        graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) - %ar%C(reset)'";
+        graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) (%aN) %ar %C(reset)'";
       };
 
       attributes = [
