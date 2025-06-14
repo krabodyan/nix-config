@@ -16,7 +16,7 @@ in {
   config = let
     client = pkgs.telegram-desktop;
     name = "org.telegram.desktop";
-    exec = "telegram-desktop";
+    exec = "Telegram";
   in
     mkIf cfg.enable {
       home.packages = [client];
