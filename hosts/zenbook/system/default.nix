@@ -26,7 +26,10 @@
     };
 
     services = {
-      auto-cpufreq = yes;
+      tlp = {
+        enable = true;
+        enableDaemon = true;
+      };
       getty-autologin = yes;
       dbus-broker = yes;
       systemd-config = yes;

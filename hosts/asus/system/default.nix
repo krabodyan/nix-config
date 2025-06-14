@@ -35,7 +35,7 @@
     services = {
       tlp = {
         enable = true;
-        enableDaemon = false;
+        enableDaemon = true;
       };
       dbus-broker = yes;
       charge-threshold = yes;
