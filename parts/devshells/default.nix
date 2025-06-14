@@ -114,9 +114,9 @@
       ];
     };
 
-    devShells.python = pkgs.mkShell {
-      name = "python";
-      DEV_SHELL_NAME = "python";
+    devShells.py = pkgs.mkShell {
+      name = "py";
+      DEV_SHELL_NAME = "py";
 
       buildInputs = with pkgs; [
         python313Packages.numpy
