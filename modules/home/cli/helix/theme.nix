@@ -163,7 +163,7 @@
     "ui.text" = fg;
     # previous command in command mode history
     "ui.text.inactive" = surface3;
-    # dir in picker
+    # dir in picker and dir autocomplete and :open or :write autocomplete
     "ui.text.directory" = overlay0;
     # focused file in picker
     "ui.text.focus" = {

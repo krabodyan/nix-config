@@ -36,6 +36,7 @@
     display-messages = true;
     display-inlay-hints = true;
     auto-signature-help = false;
+    inlay-hints-length-limit = 24;
     display-progress-messages = true;
     display-signature-help-docs = false;
   };

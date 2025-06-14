@@ -228,7 +228,7 @@
         implicitSizedBoundHints.enable = false;
         lifetimeElisionHints.enable = "skip_trivial";
         lifetimeElisionHints.useParameterNames = false;
-        maxLength = 15;
+        maxLength = 24;
         parameterHints.enable = false;
         rangeExclusiveHints.enable = true;
         renderColons = false;
