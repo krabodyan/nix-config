@@ -47,7 +47,7 @@
       dhcpcd = yes;
       iwd = {
         enable = true;
-        enableDaemon = true;
+        enableDaemon = false;
       };
     };
 
