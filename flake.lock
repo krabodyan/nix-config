@@ -369,22 +369,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-nwjs": {
-      "locked": {
-        "lastModified": 1731576634,
-        "narHash": "sha256-+SoD+pLXi6yuokkbpAhEWN2PSSlUjqwFHlBlQ/kieYM=",
-        "owner": "ilya-epifanov",
-        "repo": "nixpkgs",
-        "rev": "dd6c713e76473e82ff2fb7d013b7b4c4966d7697",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ilya-epifanov",
-        "ref": "nwjs-versioning",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-wayland": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -436,7 +420,6 @@
         "nix-cursors": "nix-cursors",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-nwjs": "nixpkgs-nwjs",
         "nixpkgs-wayland": "nixpkgs-wayland",
         "rust-overlay": "rust-overlay_2",
         "treefmt-nix": "treefmt-nix",
