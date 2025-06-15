@@ -41,8 +41,23 @@ in {
       ];
 
       extraConfig = {
+        core = {
+          untrackedCache = true;
+          preloadIndex = true;
+          fsmonitor = true;
+        };
+
+        transfer = {
+          unpackLimit = 1;
+        };
+
         init = {
           defaultbranch = "master";
+        };
+
+        index = {
+          sparse = true;
+          threads = true;
         };
 
         branch = {
@@ -51,6 +66,7 @@ in {
 
         fetch = {
           prune = true;
+          parallel = 0;
         };
 
         merge = {
@@ -64,10 +80,13 @@ in {
 
         pull = {
           rebase = true;
+          twohead = "ort";
         };
 
         rebase = {
           autoStash = true;
+          autoSquash = true;
+          updateRefs = true;
         };
 
         stash = {
