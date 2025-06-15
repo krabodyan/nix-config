@@ -249,6 +249,7 @@ in {
               bind --preset --erase -M $mode ctrl-h
 
               bind --preset --erase -M $mode \~
+              bind --preset --erase -M $mode s
 
               bind -M $mode alt-backspace backward-kill-word
               bind -M $mode alt-f end-of-line
@@ -436,7 +437,7 @@ in {
               if set -q DEV_SHELL_NAME
                 printf "\033[95m$DEV_SHELL_NAME\033[0m "
               else
-                printf "\033[95mnix-shell\033[0m "
+                printf "\033[95mnix\033[0m "
               end
             end
           '';
