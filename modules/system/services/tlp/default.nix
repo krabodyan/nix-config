@@ -25,16 +25,18 @@ in {
           CPU_DRIVER_OPMODE_ON_AC = "active";
           CPU_DRIVER_OPMODE_ON_BAT = "active";
 
+          CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+
           CPU_SCALING_GOVERNOR_ON_AC = "powersave";
           CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+          CPU_SCALING_MIN_FREQ_ON_AC = 400000;
+          CPU_SCALING_MIN_FREQ_ON_BAT = 400000;
 
           CPU_BOOST_ON_AC = 1;
           CPU_BOOST_ON_BAT = 0;
           CPU_HWP_DYN_BOOST_ON_AC = 1;
           CPU_HWP_DYN_BOOST_ON_BAT = 0;
-
-          SCHED_POWERSAVE_ON_AC = 0;
-          SCHED_POWERSAVE_ON_BAT = 1;
 
           # Disk and PCIe
           DISK_IDLE_SECS_ON_AC = 1;
@@ -48,7 +50,6 @@ in {
 
           # USB
           USB_AUTOSUSPEND = 1;
-          USB_AUTOSUSPEND_DISABLE_ON_SHUTDOWN = 0;
 
           # Networking
           WIFI_PWR_ON_AC = "off";
@@ -59,15 +60,11 @@ in {
           # cat /sys/firmware/acpi/platform_profile_choices
           PLATFORM_PROFILE_ON_AC = "balanced";
           PLATFORM_PROFILE_ON_BAT = "quiet";
-
-          # Sleep behavior
-          MEM_SLEEP_ON_AC = "deep";
-          MEM_SLEEP_ON_BAT = "deep";
         }
         else {
           CPU_SCALING_GOVERNOR_ON_AC = "powersave";
           CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-          CPU_ENERGY_PERF_POLICY_ON_AC = "powersave";
+          CPU_ENERGY_PERF_POLICY_ON_AC = "power";
           CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
           PLATFORM_PROFILE_ON_AC = "balanced";
           PLATFORM_PROFILE_ON_BAT = "quiet";

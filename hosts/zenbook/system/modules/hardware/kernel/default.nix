@@ -32,6 +32,7 @@
 
     kernelParams = [
       "nohibernate"
+      "nowatchdog"
       "amdgpu.sg_display=0"
       "amd_pstate=active"
     ];
@@ -58,6 +59,7 @@
     initrd.verbose = false;
 
     blacklistedKernelModules = [
+      "sp5100_tco" # watchdog
       "radeon"
       "k10temp" # https://github.com/NixOS/nixos-hardware/blob/master/common/cpu/amd/zenpower.nix
 

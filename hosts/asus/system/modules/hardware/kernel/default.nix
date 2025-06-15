@@ -31,9 +31,9 @@
 
     kernelParams = [
       "nohibernate"
+      "nowatchdog"
       "rootfstype=btrfs"
       "raid=noautodetect"
-      # "preempt=full"
     ];
 
     kernelPackages = pkgs.linuxPackages_zen;
