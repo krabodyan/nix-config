@@ -77,6 +77,7 @@
         solaar
         mission-planner
         qgroundcontrol
+        betaflight-configurator
         obsidian
       ];
     };

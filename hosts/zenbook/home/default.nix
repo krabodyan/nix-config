@@ -65,6 +65,7 @@
       extra = with pkgs; [
         mission-planner
         qgroundcontrol
+        betaflight-configurator
       ];
     };
 
