@@ -33,7 +33,6 @@
       getty-autologin = yes;
       dbus-broker = yes;
       systemd-config = yes;
-      earlyoom = yes;
       charge-threshold = yes;
     };
 
