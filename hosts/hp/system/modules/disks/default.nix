@@ -7,9 +7,8 @@
         content = {
           type = "gpt";
           partitions = {
-            esp = {
-              name = "NIXEFI";
-              end = "1G";
+            ESP = {
+              size = "1G";
               type = "EF00";
               content = {
                 type = "filesystem";
