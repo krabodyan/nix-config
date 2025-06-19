@@ -13,6 +13,7 @@
     fastfetch = yes;
     fzf = yes;
     helix = yes;
+    postgres-cli = yes;
     home-manager = yes;
     htop = yes;
     jq = yes;

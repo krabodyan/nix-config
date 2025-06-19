@@ -40,7 +40,7 @@
     }
     {
       name = "python";
-      language-servers = ["pyright" "ty"];
+      language-servers = ["pyright"];
       formatter = {
         command = "ruff";
         args = ["format" "-"];
@@ -141,7 +141,7 @@
           # ini
           ''
             [sqlfluff]
-            dialect = mysql
+            dialect = postgres
 
             [sqlfluff:indentation]
             indented_joins = True
@@ -150,7 +150,7 @@
           '';
       in {
         command = "sqlfluff";
-        args = ["format" "-" "--dialect" "mysql" "--disable-progress-bar" "--config" config];
+        args = ["format" "-" "--dialect" "postgres" "--disable-progress-bar" "--config" config];
       };
     }
   ];

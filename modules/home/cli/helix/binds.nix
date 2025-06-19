@@ -138,7 +138,7 @@ in rec {
         i = ":toggle lsp.display-inlay-hints";
         h = ":toggle end-of-line-diagnostics disable hint";
         s = ["search_selection_detect_word_boundaries" "select_all" "select_regex"];
-        l = ":sh sqlfluff lint %{buffer_name} --dialect mysql --nofail --disable-progress-bar";
+        l = ":sh sqlfluff lint %{buffer_name} --dialect postgres --nofail --disable-progress-bar";
         space = ":open %sh{ __yazi_picker %{buffer_name} }";
       };
     };
