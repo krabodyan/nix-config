@@ -52,7 +52,10 @@
     };
 
     graphics = {
-      minimal = yes;
+      minimal = {
+        enable = true;
+        enable32Bit = true;
+      };
       intel = {
         enable = true;
         newer = true;
