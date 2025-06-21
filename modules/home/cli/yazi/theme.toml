@@ -1,5 +1,6 @@
 [mgr]
 cwd = { fg = "white", dim = true }
+syntect_theme = "~/.config/bat/themes/theme.tmTheme"
 
 hovered = { reversed = true }
 preview_hovered = { underline = false }
@@ -12,16 +13,18 @@ marker_cut = { fg = "lightred", bg = "lightred" }
 marker_marked = { fg = "blue", bg = "blue" }
 marker_selected = { fg = "green", bg = "green" }
 
-tab_active = { fg = "black", bg = "lightmagenta" }
-tab_inactive = { fg = "white", bg = "reset" }
-tab_width = 2
-
 count_copied = { fg = "black", bg = "yellow" }
 count_cut = { fg = "black", bg = "lightred" }
 count_selected = { fg = "black", bg = "lightmagenta" }
 
 border_symbol = "│"
 border_style = { fg = "black" }
+
+[tabs]
+active = { fg = "black", bg = "magenta" }
+inactive = { fg = "magenta", bg = "black", dim = true }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
 
 [status]
 sep_left = { open = "", close = "" }
