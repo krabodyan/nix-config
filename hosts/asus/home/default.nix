@@ -72,7 +72,7 @@
       extra = with pkgs; [
         gcolor3
         system-config-printer
-        onlyoffice-bin
+        onlyoffice-desktopeditors
         qbittorrent
         solaar
         mission-planner
