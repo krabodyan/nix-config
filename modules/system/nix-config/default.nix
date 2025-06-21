@@ -28,7 +28,7 @@ in {
     };
 
     nix = {
-      package = pkgs.lix;
+      package = pkgs.lixPackageSets.latest.lix;
       nixPath = ["nixpkgs=${inputs.nixpkgs}"];
       gc.automatic = false;
 
@@ -40,7 +40,7 @@ in {
 
       settings = {
         warn-dirty = false;
-        experimental-features = ["nix-command" "flakes" "repl-flake"];
+        experimental-features = ["nix-command" "flakes"];
         builders-use-substitutes = true;
         auto-optimise-store = true;
 
