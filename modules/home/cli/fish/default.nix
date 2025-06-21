@@ -110,41 +110,42 @@ in {
           }
         )
         (
-          mkIf (cfg.aliases.podman) {
-            d = "podman";
-            dcu = "podman compose up";
-          }
-          // builtins.mapAttrs (name: value: {
-            command = "podman";
-            expansion = value;
-          }) {
-            c = "compose";
-            i = "image";
-            cn = "container";
-            r = "run --rm -it";
-          }
+          mkIf (cfg.aliases.podman) ({
+              d = "podman";
+              docker = "podman";
+              dcu = "podman compose up";
+            }
+            // builtins.mapAttrs (name: value: {
+              command = "podman";
+              expansion = value;
+            }) {
+              c = "compose";
+              i = "image";
+              cn = "container";
+              r = "run --rm -it";
+            })
         )
         (
-          mkIf (cfg.aliases.docker) {
-            d = "docker";
-            dcu = "docker compose up";
-          }
-          // builtins.mapAttrs (name: value: {
-            command = "docker";
-            expansion = value;
-          }) {
-            s = "stack";
-            sp = "stack ps";
-            ss = "stack services";
-            sd = "stack deploy -d -c docker-compose.yml";
-            sv = "service";
-            c = "compose";
-            i = "image";
-            cn = "container";
-            nl = "node ls";
-            np = "node ps";
-            r = "run --rm -it";
-          }
+          mkIf (cfg.aliases.docker) ({
+              d = "docker";
+              dcu = "docker compose up";
+            }
+            // builtins.mapAttrs (name: value: {
+              command = "docker";
+              expansion = value;
+            }) {
+              s = "stack";
+              sp = "stack ps";
+              ss = "stack services";
+              sd = "stack deploy -d -c docker-compose.yml";
+              sv = "service";
+              c = "compose";
+              i = "image";
+              cn = "container";
+              nl = "node ls";
+              np = "node ps";
+              r = "run --rm -it";
+            })
         )
         (
           mkIf cfg.aliases.kubectl {
