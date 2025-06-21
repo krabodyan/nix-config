@@ -1,6 +1,5 @@
 {
   yes,
-  self,
   pkgs,
   ...
 }: {
@@ -107,7 +106,7 @@
 
     sway = {
       enable = true;
-      background = "${self}/assets/background.jpg";
+      background = "~/flake/assets/background.jpg";
       menu = "rofi";
     };
   };
