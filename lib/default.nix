@@ -5,6 +5,7 @@
   inherit (import ./util.nix) mkAssociations allDirs;
   inherit (import ./theme.nix) colors fonts;
   yes = {enable = true;};
+  publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBAS98GiFhPvcsST61a6HvWOQr09zoHLTNuydGYt0Rhp";
   mkHost = hostDir: {
     stateVersion,
     system,
@@ -28,6 +29,7 @@
           fonts
           overlays
           yes
+          publicKey
           ;
       };
       modules = with inputs;
@@ -74,6 +76,7 @@
           fonts
           overlays
           yes
+          publicKey
           ;
       };
       modules =

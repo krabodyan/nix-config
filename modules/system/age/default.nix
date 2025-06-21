@@ -28,7 +28,7 @@ in {
         ssh = {
           file = ../../../secrets/ssh.age;
           path = "/home/${username}/.ssh/id_ed25519";
-          mode = "700";
+          mode = "400";
           symlink = false;
           owner = username;
         };

@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  publicKey,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
@@ -27,10 +28,14 @@ in {
       package = pkgs.gitMinimal;
       inherit (cfg) userName userEmail;
 
-      signing.format = "ssh";
+      signing = {
+        format = "ssh";
+        key = "~/.ssh/id_ed25519";
+        signByDefault = true;
+      };
 
       aliases = {
-        graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) (%aN) %ar %C(reset)'";
+        graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) (%aN) [%G?] %ar %C(reset)'";
       };
 
       attributes = [
@@ -41,6 +46,12 @@ in {
       ];
 
       extraConfig = {
+        gpg.ssh.allowedSignersFile = toString (
+          pkgs.writeText "allowed_signers" ''
+            ${cfg.userEmail} ${publicKey}
+          ''
+        );
+
         core = {
           untrackedCache = true;
           preloadIndex = true;
