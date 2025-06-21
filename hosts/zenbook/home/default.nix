@@ -25,6 +25,7 @@
     tmux = yes;
     yazi = yes;
     zoxide = yes;
+    ssh = yes;
 
     git = {
       enable = true;
