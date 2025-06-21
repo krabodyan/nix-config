@@ -35,7 +35,7 @@ in {
       };
 
       aliases = {
-        graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) (%aN) [%G?] %ar %C(reset)'";
+        graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) (%aN) %ar %C(reset)'";
       };
 
       attributes = [
