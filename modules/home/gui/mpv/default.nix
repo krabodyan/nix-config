@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   fonts,
   colors,
   config,
@@ -37,6 +38,7 @@ in {
     '';
     programs.mpv = {
       enable = true;
+      package = pkgs.mpv-unwrapped;
       extraInput = ''
         ESC          quit
         й            quit
