@@ -16,6 +16,17 @@
             hash = "sha256-VIygMzCPTKzLr47bG1DYy/zj0OxsjGcms0G1BkI/TEI=";
           };
         };
+        sqls =
+          prev.sqls.overrideAttrs
+          {
+            src = prev.fetchFromGitHub {
+              owner = "camfowler";
+              repo = "sqls";
+              rev = "bugfix/omit-document-when-empty";
+              hash = "sha256-Lf7bP3Fl+cTFFRgnOkggUyp/e4CL25XYRhUsB6Hg2mI=";
+            };
+            vendorHash = "sha256-8jzecLaVUMlIJC2neb5XfvpBYIkkXnzvzq175ZBAnLo=";
+          };
       })
     ];
 }

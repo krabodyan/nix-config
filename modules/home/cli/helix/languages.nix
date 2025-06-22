@@ -337,15 +337,7 @@
     };
 
     sql = {
-      command = lib.getExe (pkgs.sqls.overrideAttrs {
-        src = pkgs.fetchFromGitHub {
-          owner = "camfowler";
-          repo = "sqls";
-          rev = "bugfix/omit-document-when-empty";
-          hash = "sha256-Lf7bP3Fl+cTFFRgnOkggUyp/e4CL25XYRhUsB6Hg2mI=";
-        };
-        vendorHash = "sha256-8jzecLaVUMlIJC2neb5XfvpBYIkkXnzvzq175ZBAnLo=";
-      });
+      command = "sqls";
     };
   };
 }

@@ -44,7 +44,6 @@ in {
 
             shfmt
             fish-lsp
-            just-lsp
             bash-language-server
 
             just-lsp
@@ -54,7 +53,6 @@ in {
             pyright
             ruff
 
-            sqlfluff
             clang-tools
             vscode-langservers-extracted
             nodePackages.prettier
@@ -66,10 +64,11 @@ in {
               tailwindcss-language-server
               typescript-language-server
               svelte-language-server
-              nodejs-slim
             ])
           (mkIf
             cfg.devopsSupport [
+              sqlfluff
+              sqls
               nginx-language-server
               nginx-config-formatter
               terraform-ls
