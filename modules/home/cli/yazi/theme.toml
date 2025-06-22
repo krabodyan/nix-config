@@ -22,7 +22,7 @@ border_style = { fg = "black" }
 
 [tabs]
 active = { fg = "black", bg = "magenta" }
-inactive = { fg = "magenta", bg = "black", dim = true }
+inactive = { fg = "lightmagenta", bg = "black", dim = true }
 sep_inner = { open = "", close = "" }
 sep_outer = { open = "", close = "" }
 
