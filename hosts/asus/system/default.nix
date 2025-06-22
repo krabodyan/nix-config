@@ -32,11 +32,12 @@
       sudo = yes;
     };
 
+    powerManagement = {
+      enable = true;
+      auto-cpufreq = true;
+    };
+
     services = {
-      tlp = {
-        enable = true;
-        enableDaemon = true;
-      };
       dbus-broker = yes;
       charge-threshold = yes;
       systemd-config = yes;

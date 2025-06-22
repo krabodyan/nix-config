@@ -5,19 +5,29 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
-  cfg = config.module.services.tlp;
+  cfg = config.module.powerManagement;
 in {
   options = {
-    module.services.tlp = {
-      enable = mkEnableOption "tlp";
-      enableDaemon = mkOption {
+    module.powerManagement = {
+      enable = mkEnableOption "power management ";
+      tlp = mkOption {
         type = lib.types.bool;
+        default = false;
+        example = true;
+      };
+      auto-cpufreq = mkOption {
+        type = lib.types.bool;
+        default = false;
         example = true;
       };
     };
   };
   config = mkIf cfg.enable {
-    services.tlp = {
+    powerManagement = {
+      enable = true;
+    };
+
+    services.tlp = mkIf cfg.tlp {
       enable = true;
       settings =
         if hostname == "zenbook"
@@ -81,6 +91,23 @@ in {
           MEM_SLEEP_ON_BAT = "s2idle";
         };
     };
-    systemd.services.tlp.enable = cfg.enableDaemon;
+
+    services.auto-cpufreq = mkIf cfg.auto-cpufreq {
+      enable = true;
+      settings = {
+        battery = {
+          governor = "powersave";
+          turbo = "never";
+          energy_performance_preference = "power";
+          platform_profile = "quiet";
+        };
+        charger = {
+          governor = "performance";
+          turbo = "auto";
+          energy_performance_preference = "balance_power";
+          platform_profile = "balanced";
+        };
+      };
+    };
   };
 }

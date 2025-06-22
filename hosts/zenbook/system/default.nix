@@ -25,11 +25,12 @@
       sudo = yes;
     };
 
+    powerManagement = {
+      enable = true;
+      auto-cpufreq = true;
+    };
+
     services = {
-      tlp = {
-        enable = true;
-        enableDaemon = true;
-      };
       getty-autologin = yes;
       dbus-broker = yes;
       systemd-config = yes;
