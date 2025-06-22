@@ -19,9 +19,9 @@ in {
     home.pointerCursor = {
       package = with colors.hex;
         inputs.nix-cursors.packages.${pkgs.system}.google-cursor.override {
-          background_color = surface2;
-          outline_color = overlay1;
-          accent_color = surface2;
+          background_color = surface3;
+          outline_color = subtext0;
+          accent_color = surface3;
         };
       name = "GoogleDot-Custom";
       size = 18;
