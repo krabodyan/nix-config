@@ -8,21 +8,16 @@
   mkAssociations,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf mkOption mkMerge;
+  inherit (lib) mkEnableOption mkIf mkOption;
   cfg = config.module.helix;
 in {
   options = {
     module.helix = {
       enable = mkEnableOption "helix";
-      webSupport = mkOption {
-        type = lib.types.bool;
-        example = "true";
-        default = false;
-      };
-      devopsSupport = mkOption {
-        type = lib.types.bool;
-        example = "true";
-        default = false;
+      components = mkOption {
+        type = lib.types.listOf (lib.types.enum ["base" "web" "devops" "sql" "cpp"]);
+        default = [];
+        example = ["base" "web" "devops" "sql" "cpp"];
       };
     };
   };
@@ -32,9 +27,9 @@ in {
       defaultEditor = true;
       package = inputs.helix.packages.${pkgs.system}.helix;
 
-      extraPackages = with pkgs;
-        mkMerge [
-          [
+      extraPackages = with pkgs; let
+        components = {
+          base = [
             docker-compose-language-service
             dockerfile-language-server-nodejs
 
@@ -53,26 +48,35 @@ in {
             pyright
             ruff
 
-            clang-tools
             vscode-langservers-extracted
-            nodePackages.prettier
+            nodePackages_latest.prettier
+          ];
 
-            (import ./yazi-picker.nix {inherit pkgs;})
-          ]
-          (mkIf
-            cfg.webSupport [
-              tailwindcss-language-server
-              typescript-language-server
-              svelte-language-server
-            ])
-          (mkIf
-            cfg.devopsSupport [
-              sqlfluff
-              sqls
-              nginx-language-server
-              nginx-config-formatter
-              terraform-ls
-            ])
+          web = [
+            tailwindcss-language-server
+            typescript-language-server
+            svelte-language-server
+          ];
+
+          cpp = [
+            clang-tools
+          ];
+
+          sql = [
+            sqlfluff
+            sqls
+          ];
+
+          devops = [
+            nginx-language-server
+            nginx-config-formatter
+            terraform-ls
+          ];
+        };
+      in
+        lib.flatten (map (component: components.${component}) cfg.components)
+        ++ [
+          (import ./yazi-picker.nix {inherit pkgs;})
         ];
 
       settings = {

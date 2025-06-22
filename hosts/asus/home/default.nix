@@ -12,7 +12,6 @@
     eza = yes;
     fastfetch = yes;
     fzf = yes;
-    helix = yes;
     home-manager = yes;
     htop = yes;
     jq = yes;
@@ -44,6 +43,11 @@
         imagemagick
         ffmpeg-full
       ];
+    };
+
+    helix = {
+      enable = true;
+      components = ["base" "sql" "web" "cpp"];
     };
 
     fish = {

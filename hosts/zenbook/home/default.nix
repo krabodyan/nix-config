@@ -11,7 +11,6 @@
     eza = yes;
     fastfetch = yes;
     fzf = yes;
-    helix = yes;
     postgres-cli = yes;
     home-manager = yes;
     htop = yes;
@@ -32,6 +31,11 @@
       delta = yes;
       userName = "krabodyan";
       userEmail = "krabodyan@gmail.com";
+    };
+
+    helix = {
+      enable = true;
+      components = ["base" "sql"];
     };
 
     cli-default = {

@@ -1,8 +1,4 @@
-{
-  yes,
-  self,
-  ...
-}: {
+{yes, ...}: {
   module = {
     agenix.enable = true;
 
@@ -10,7 +6,6 @@
     bat = yes;
     eza = yes;
     fzf = yes;
-    helix = yes;
     home-manager = yes;
     htop = yes;
     jq = yes;
@@ -22,11 +17,16 @@
 
     git = {
       enable = true;
+      gh = yes;
+      delta = yes;
       userName = "krabodyan";
       userEmail = "krabodyan@gmail.com";
     };
-    gh = yes;
-    git-delta = yes;
+
+    helix = {
+      enable = true;
+      components = ["base"];
+    };
 
     cli-default = yes;
 
@@ -50,9 +50,7 @@
     };
 
     # ------------- gui
-    gui-default = {
-      enable = true;
-    };
+    gui-default = yes;
     firefox = yes;
     foot = yes;
 
@@ -64,15 +62,15 @@
 
     # ------------- window manager
     wm-scripts = yes;
-
-    sway = {
-      enable = true;
-      background = "${self}/assets/background.jpg";
-      menu = "rofi";
-    };
-
     mako = yes;
     rofi = yes;
     wm-utils = yes;
+    swappy = yes;
+
+    sway = {
+      enable = true;
+      background = "~/flake/assets/background.jpg";
+      menu = "rofi";
+    };
   };
 }
