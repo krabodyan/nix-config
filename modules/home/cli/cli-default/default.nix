@@ -43,6 +43,7 @@ in {
         sqlfluff
         litecli
         mycli
+        actionlint
       ]
       ++ cfg.extra;
   };

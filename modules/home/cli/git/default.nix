@@ -21,8 +21,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = [pkgs.actionlint];
-
     programs.git = {
       enable = true;
       package = pkgs.gitMinimal;
