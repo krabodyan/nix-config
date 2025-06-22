@@ -11,7 +11,6 @@
     system,
     hostname,
     username,
-    overlays ? [],
   }:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
@@ -27,7 +26,6 @@
           hostDir
           colors
           fonts
-          overlays
           yes
           publicKey
           ;
