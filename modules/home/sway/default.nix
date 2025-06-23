@@ -200,6 +200,7 @@ in {
           "type:touchpad" = {
             dwt = "enabled";
             tap = "enabled";
+            tap_button_map = "lrm";
             accel_profile = "flat";
             pointer_accel = "0.5";
             natural_scroll = "disabled";
