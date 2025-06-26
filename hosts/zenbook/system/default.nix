@@ -1,6 +1,7 @@
 {yes, ...}: {
   module = {
     agenix = yes;
+    bluetooth = yes;
     bootloader = yes;
     console = yes;
     fonts = yes;

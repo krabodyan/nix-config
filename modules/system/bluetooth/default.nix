@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: let
@@ -16,5 +17,6 @@ in {
       enable = true;
       powerOnBoot = false;
     };
+    environment.systemPackages = [pkgs.bluez];
   };
 }
