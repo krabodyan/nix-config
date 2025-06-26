@@ -22,7 +22,7 @@ in {
     systemd.extraConfig = config.boot.initrd.systemd.extraConfig;
     services = {
       logind = {
-        lidSwitch = "suspend";
+        lidSwitch = "ignore";
         suspendKey = "suspend";
         hibernateKey = "suspend";
         killUserProcesses = true;
