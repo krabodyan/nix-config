@@ -65,6 +65,7 @@
   "browser.urlbar.showSearchSuggestionsFirst" = false;
 
   "browser.tabs.insertAfterCurrent" = true;
+  "browser.tabs.allowTabDetach" = false;
   "browser.tabs.tabMinWidth" = 66;
   "browser.tabs.tabClipWidth" = 86;
   "browser.search.suggest.enabled" = false;
