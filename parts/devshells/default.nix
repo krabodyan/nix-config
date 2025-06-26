@@ -114,14 +114,17 @@
       ];
     };
 
-    devShells.py = pkgs.mkShell {
+    devShells.pp = pkgs.mkShell {
       name = "py";
       DEV_SHELL_NAME = "py";
 
-      buildInputs = with pkgs; [
-        python313Packages.numpy
-        python313Packages.plotly
-        python313Packages.matplotlib
+      buildInputs = with pkgs.python313Packages; [
+        matplotlib
+        numpy
+        pandas
+        plotly
+        psycopg2-binary
+        pyyaml
       ];
     };
   };

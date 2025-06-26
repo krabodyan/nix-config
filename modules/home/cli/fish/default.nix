@@ -188,7 +188,7 @@ in {
 
           ns = "nix-shell --command fish -p";
         }
-        // lib.genAttrs ["ino" "rust" "rasp" "tauri" "py"] (
+        // lib.genAttrs ["ino" "rust" "rasp" "tauri" "pp"] (
           name: "nix develop $NH_FLAKE#${name} --command sh -c \"${tm}\""
         );
 
