@@ -1,6 +1,7 @@
 {
   nixpkgs.overlays = [
     (final: prev: {
+      # FIXME remove
       nwjs = prev.nwjs.overrideAttrs {
         version = "0.84.0";
         src = prev.fetchurl {
