@@ -126,11 +126,11 @@
     "fish-done": {
       "flake": false,
       "locked": {
-        "lastModified": 1747937357,
-        "narHash": "sha256-sjOczjQq8m0gUr+6wnQToOQv3b3a/kuyAu5vfKnD3YA=",
+        "lastModified": 1751138539,
+        "narHash": "sha256-Av0gr3Lol4KdsKnxQDx4zM7TcnH/oHReCDNm/B/vz9w=",
         "owner": "krabodyan",
         "repo": "fish-done-osc99",
-        "rev": "ebdfb309708e7068fb3ecd23f5e54b3df77cc3c2",
+        "rev": "0b44fe6bd4c24b366e02aedb1d1d09a3eccda11f",
         "type": "github"
       },
       "original": {
@@ -163,11 +163,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1751036100,
-        "narHash": "sha256-ICAPVr23cg3GXmAx7Aag5tyV4VmqEMaoI78sfeC8XSc=",
+        "lastModified": 1751130274,
+        "narHash": "sha256-pYe2qV8jo6jo81V+ZgcVmMWoyyiDW8EtTqqTu3pgyE4=",
         "owner": "helix-editor",
         "repo": "helix",
-        "rev": "44293dfd2248d82f39bb8e5b91cbb1daf2e24290",
+        "rev": "930340e646f2ae8801519cbda48ea2832872a771",
         "type": "github"
       },
       "original": {
@@ -204,11 +204,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1750973805,
-        "narHash": "sha256-BZXgag7I0rnL/HMHAsBz3tQrfKAibpY2vovexl2lS+Y=",
+        "lastModified": 1751131846,
+        "narHash": "sha256-VqXwSsEpmQlVUK0Y6FZ4YQwB63zWWD6ziHgQW2zEiUA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "080e8b48b0318b38143d5865de9334f46d51fce3",
+        "rev": "da077f20db88a173629624a30380658840d377b3",
         "type": "github"
       },
       "original": {
@@ -353,9 +353,7 @@
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_2",
         "rust-overlay": "rust-overlay_2",
-        "treefmt-nix": "treefmt-nix",
-        "yazi-plugin-ouch": "yazi-plugin-ouch",
-        "yazi-plugin-rsync": "yazi-plugin-rsync"
+        "treefmt-nix": "treefmt-nix"
       }
     },
     "rust-overlay": {
@@ -432,38 +430,6 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "yazi-plugin-ouch": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1749579615,
-        "narHash": "sha256-4KZeDkMXlhUV0Zh+VGBtz9kFPGOWCexYVuKUSCN463o=",
-        "owner": "ndtoan96",
-        "repo": "ouch.yazi",
-        "rev": "1ee69a56da3c4b90ec8716dd9dd6b82e7a944614",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ndtoan96",
-        "repo": "ouch.yazi",
-        "type": "github"
-      }
-    },
-    "yazi-plugin-rsync": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1745397756,
-        "narHash": "sha256-xAhkDTNi0MjHqESKk8j60WABYvaF7NElO2W/rsL2w2Y=",
-        "owner": "krabodyan",
-        "repo": "rsync.yazi",
-        "rev": "dd5a3f906228b4f5bb4f3d04f958081a492a4e5b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "krabodyan",
-        "repo": "rsync.yazi",
         "type": "github"
       }
     }

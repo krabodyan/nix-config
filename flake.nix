@@ -65,16 +65,6 @@
       url = "github:krabodyan/fish-done-osc99";
       flake = false;
     };
-
-    yazi-plugin-ouch = {
-      url = "github:ndtoan96/ouch.yazi";
-      flake = false;
-    };
-
-    yazi-plugin-rsync = {
-      url = "github:krabodyan/rsync.yazi";
-      flake = false;
-    };
   };
 
   outputs = {

@@ -2,7 +2,6 @@
   lib,
   pkgs,
   config,
-  inputs,
   mkAssociations,
   ...
 }: let
@@ -23,19 +22,21 @@ in {
     home.packages = with pkgs; [
       ouch
       exiftool
+      csvkit
     ];
 
     programs.yazi = {
       enable = true;
       enableFishIntegration = false;
+      plugins = {
+        inherit (pkgs.yaziPlugins) piper ouch rsync;
+      };
     };
 
     xdg.configFile = {
       "yazi/yazi.toml".source = ./yazi.toml;
       "yazi/theme.toml".source = ./theme.toml;
       "yazi/keymap.toml".source = ./keymap.toml;
-      "yazi/plugins/ouch.yazi/main.lua".source = "${inputs.yazi-plugin-ouch}/main.lua";
-      "yazi/plugins/rsync.yazi/main.lua".source = "${inputs.yazi-plugin-rsync}/main.lua";
     };
   };
 }

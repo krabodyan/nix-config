@@ -27,6 +27,8 @@ in {
         yq
         jiq
 
+        csview
+
         xdg-utils
 
         dust

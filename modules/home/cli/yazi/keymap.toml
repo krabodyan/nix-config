@@ -1,14 +1,27 @@
 [[input.prepend_keymap]]
 on = "<Esc>"
 run = "close"
-desc = "Cancel input"
 
 [[mgr.prepend_keymap]]
+on = "y"
 run = [
   "shell 'for path in \"$@\"; do echo \"file://$path\"; done | wl-copy -t text/uri-list' --confirm",
   "yank",
 ]
-on = "y"
+
+[[mgr.prepend_keymap]]
+on = "/"
+run = "filter --smart"
+
+[[mgr.prepend_keymap]]
+on = "s"
+run = "search --via rg"
+desc = "search via rg"
+
+[[mgr.prepend_keymap]]
+on = "f"
+run = "search --via=fd"
+desc = "search via fd"
 
 [[mgr.prepend_keymap]]
 on = ["c", "e"]
