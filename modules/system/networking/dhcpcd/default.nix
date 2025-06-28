@@ -19,7 +19,6 @@ in {
         wait = "background";
         extraConfig = ''
           noarp
-          nohook iwd
         '';
       };
 

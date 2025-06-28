@@ -20,11 +20,15 @@ in {
       iwd = {
         enable = true;
         settings = {
-          Network.EnableIPv6 = true;
+          Network.EnableIPv6 = false;
           Settings.AutoConnect = true;
-          Scan.DisablePeriodicScan = false;
           General.EnableNetworkConfiguration = false;
           DriverQuirks.UseDefaultInterface = true;
+          Scan = {
+            DisablePeriodicScan = false;
+            InitialPeriodicScanInterval = 0;
+            MaximumPeriodicScanInterval = 300;
+          };
         };
       };
     };
