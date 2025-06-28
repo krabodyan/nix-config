@@ -36,6 +36,7 @@
       dbus-broker = yes;
       systemd-config = yes;
       charge-threshold = yes;
+      asus-numberpad = yes;
     };
 
     networking = {
