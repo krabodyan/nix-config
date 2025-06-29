@@ -20,8 +20,8 @@ in {
       waylandDisplay = "wayland-1";
       ignoreWaylandDisplayEnv = false;
       config = {
-        # e.g. "activation_time" = "0.5";
-        # More Configuration Options
+        activation_time = "0.3";
+        enabled_touchpad_pointer = "1";
       };
     };
   };
