@@ -24,9 +24,12 @@ in {
   };
 
   config = mkIf cfg.enable {
+    home.packages = [pkgs.qt5.qtwayland];
+
     home.sessionVariables = {
       XDG_SESSION_DESKTOP = "sway";
       XDG_CURRENT_DESKTOP = "sway";
+      XDG_SESSION_TYPE = "wayland";
     };
 
     wayland.windowManager.sway = {
