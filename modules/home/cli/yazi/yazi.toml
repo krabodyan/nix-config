@@ -32,5 +32,5 @@ prepend_previewers = [
   { mime = 'application/x-rar', run = 'ouch' },
   { mime = 'application/x-tar', run = 'ouch' },
   { mime = 'application/x-xz', run = 'ouch' },
-  { mime = 'text/csv', run = 'piper -- csvlook "$1"' },
+  { mime = 'text/csv', run = 'piper -- csvlook --snifflimit 0 --no-header-row "$1"' },
 ]
