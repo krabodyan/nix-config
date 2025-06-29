@@ -17,11 +17,11 @@ in {
   config = mkIf cfg.enable {
     programs.rofi = {
       enable = true;
-      package = pkgs.rofi-wayland;
-      terminal = "foot";
+      package = pkgs.rofi-wayland-unwrapped;
+      terminal = "${pkgs.foot}/bin/footclient";
       location = "bottom";
+      modes = ["drun"];
       extraConfig = {
-        matching = "prefix";
         modi = "drun";
         display-drun = "";
         display-clipboard = "";
