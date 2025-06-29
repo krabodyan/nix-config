@@ -1,8 +1,6 @@
 let
   toggle = "A-d";
   binds = {
-    A-backspace = ["commit_undo_checkpoint" "delete_word_backward"];
-
     A-S-h = "unindent";
     A-S-l = "indent";
 
@@ -99,6 +97,8 @@ in rec {
     binds
     // {
       ${toggle} = "normal_mode";
+
+      A-backspace = ["commit_undo_checkpoint" "delete_word_backward"];
 
       A-o = "open_below";
       A-p = "open_above";
