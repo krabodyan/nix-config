@@ -69,8 +69,8 @@ in {
 
         terminalCmd = "${pkgs.foot}/bin/footclient";
       in {
-        terminal = terminalCmd;
         modifier = mod;
+        terminal = terminalCmd;
 
         startup = with pkgs;
           map (cmd: {command = cmd;}) [
@@ -167,7 +167,6 @@ in {
 
         seat.seat0 = {
           inherit hide_cursor;
-          xcursor_theme = with config.home.pointerCursor; "${name} ${builtins.toString size}";
         };
 
         colors = with colors.hex; let
@@ -327,7 +326,7 @@ in {
         };
       };
 
-      extraConfig =
+      extraConfigEarly =
         # sway
         ''
           title_align center

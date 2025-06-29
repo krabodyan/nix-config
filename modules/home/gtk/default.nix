@@ -17,17 +17,17 @@ in {
   config = mkIf cfg.enable {
     home.packages = [pkgs.dconf];
     home.pointerCursor = {
+      name = "GoogleDot-Custom";
       package = with colors.hex;
         inputs.nix-cursors.packages.${pkgs.system}.google-cursor.override {
           background_color = surface3;
           outline_color = subtext0;
           accent_color = surface3;
         };
-      name = "GoogleDot-Custom";
       size = 18;
       gtk.enable = true;
+      sway.enable = true;
       x11.enable = true;
-      x11.defaultCursor = "X_cursor";
     };
     dconf = {
       enable = true;
