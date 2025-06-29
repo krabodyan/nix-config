@@ -20,6 +20,10 @@ in {
         type = lib.types.enum ["rofi" "fuzzel"];
         example = "rofi";
       };
+      screenshot = mkOption {
+        type = lib.types.enum ["swappy" "satty"];
+        example = "swappy";
+      };
     };
   };
 
@@ -54,18 +58,20 @@ in {
         hide_cursor = "5000";
 
         menuCmd =
-          if cfg.menu == "fuzzel"
-          then "pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel"
-          else if cfg.menu == "rofi"
-          then "pkill rofi || ${pkgs.rofi-wayland-unwrapped}/bin/rofi -show drun -kb-cancel 'Alt+Return'"
-          else throw "unexpected menu";
+          {
+            fuzzel = "pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel";
+            rofi = "pkill rofi || ${pkgs.rofi-wayland-unwrapped}/bin/rofi -show drun -kb-cancel 'Alt+Return'";
+          }.${
+            cfg.menu
+          };
 
         screenshotCmd =
-          if config.module.swappy.enable
-          then "${lib.getExe pkgs.swappy} -f -"
-          else if config.module.satty.enable
-          then "${lib.getExe pkgs.satty} -f -"
-          else throw "swappy/satty not enabled";
+          {
+            swappy = "${lib.getExe pkgs.swappy} -f -";
+            satty = "${lib.getExe pkgs.satty} -f -";
+          }.${
+            cfg.screenshot
+          };
 
         terminalCmd = "${pkgs.foot}/bin/footclient";
       in {

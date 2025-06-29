@@ -100,6 +100,7 @@
       enable = true;
       background = "~/flake/assets/background.jpg";
       menu = "rofi";
+      screenshot = "swappy";
     };
   };
 }
