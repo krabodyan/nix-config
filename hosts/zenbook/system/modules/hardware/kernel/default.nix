@@ -5,9 +5,6 @@
   ...
 }: {
   boot = {
-    initrd.systemd.enable = true;
-    initrd.systemd.dbus.enable = true;
-
     kernel.sysctl = {
       "kernel.printk" = 2;
       "kernel.nmi_watchdog" = 0;

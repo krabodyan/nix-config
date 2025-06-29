@@ -15,7 +15,6 @@
                 format = "vfat";
                 extraArgs = ["-F32"];
                 mountpoint = "/boot";
-                mountOptions = ["defaults" "umask=0077"];
               };
             };
             luks = {
