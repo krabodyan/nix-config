@@ -15,7 +15,6 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    home.packages = [pkgs.dconf];
     home.pointerCursor = {
       name = "GoogleDot-Custom";
       package = with colors.hex;
@@ -24,11 +23,15 @@ in {
           outline_color = subtext0;
           accent_color = surface3;
         };
-      size = 18;
+      size = 16;
       gtk.enable = true;
       sway.enable = true;
-      x11.enable = true;
+      x11 = {
+        enable = true;
+        defaultCursor = "left_ptr";
+      };
     };
+    home.packages = [pkgs.dconf];
     dconf = {
       enable = true;
       settings = {
@@ -78,55 +81,59 @@ in {
             "unpackPhase"
             "installPhase"
           ];
-          installPhase = with colors; ''
-            HOME=/build
-            chmod 777 -R .
-            patchShebangs .
-            mkdir -p $out/share/themes
-            mkdir bin
-            sed -e 's/handle-horz-.*//' -e 's/handle-vert-.*//' -i ./src/gtk-2.0/assets.txt
+          installPhase = with colors; # bash
 
-            cat > /build/gtk-colors << EOF
-              BTN_BG=${surface2}
-              BTN_FG=${fg}
-              FG=${fg}
-              BG=${bg}
-              HDR_BTN_BG=${surface1}
-              HDR_BTN_FG=${fg}
-              ACCENT_BG=${select}
-              ACCENT_FG=${fg}
-              HDR_FG=${fg}
-              HDR_BG=${bg}
-              MATERIA_SURFACE=${surface0}
-              MATERIA_VIEW=${bg-bright}
-              MENU_BG=${surface0}
-              MENU_FG=${fg}
-              SEL_BG=${select}
-              SEL_FG=${bg}
-              TXT_BG=${red}
-              TXT_FG=${fg}
-              WM_BORDER_FOCUS=${bg}
-              WM_BORDER_UNFOCUS=${bg}
-              UNITY_DEFAULT_LAUNCHER_STYLE=False
-              NAME=paradise
-              MATERIA_STYLE_COMPACT=True
-            EOF
+            ''
+              HOME=/build
+              chmod 777 -R .
+              patchShebangs .
+              mkdir -p $out/share/themes
+              mkdir bin
+              sed -e 's/handle-horz-.*//' -e 's/handle-vert-.*//' -i ./src/gtk-2.0/assets.txt
 
-            echo "Changing colours:"
-            ./change_color.sh -o paradise /build/gtk-colors -i False -t "$out/share/themes"
-            chmod 555 -R .
-          '';
+              cat > /build/gtk-colors << EOF
+                BTN_BG=${surface2}
+                BTN_FG=${fg}
+                FG=${fg}
+                BG=${bg}
+                HDR_BTN_BG=${surface1}
+                HDR_BTN_FG=${fg}
+                ACCENT_BG=${select}
+                ACCENT_FG=${fg}
+                HDR_FG=${fg}
+                HDR_BG=${bg}
+                MATERIA_SURFACE=${surface0}
+                MATERIA_VIEW=${bg-bright}
+                MENU_BG=${surface0}
+                MENU_FG=${fg}
+                SEL_BG=${select}
+                SEL_FG=${bg}
+                TXT_BG=${red}
+                TXT_FG=${fg}
+                WM_BORDER_FOCUS=${bg}
+                WM_BORDER_UNFOCUS=${bg}
+                UNITY_DEFAULT_LAUNCHER_STYLE=False
+                NAME=paradise
+                MATERIA_STYLE_COMPACT=True
+              EOF
+
+              echo "Changing colours:"
+              ./change_color.sh -o paradise /build/gtk-colors -i False -t "$out/share/themes"
+              chmod 555 -R .
+            '';
         };
       };
       gtk2 = {
         configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-        extraConfig = ''
-          gtk-xft-antialias=1
-          gtk-xft-hinting=1
-          gtk-xft-hintstyle="hintslight"
-          gtk-xft-rgba="rgb"
-          gtk-dialogs-use-header=false
-        '';
+        extraConfig =
+          #ini
+          ''
+            gtk-xft-antialias=1
+            gtk-xft-hinting=1
+            gtk-xft-hintstyle="hintslight"
+            gtk-xft-rgba="rgb"
+            gtk-dialogs-use-header=false
+          '';
       };
 
       gtk3 = {
@@ -140,29 +147,31 @@ in {
           gtk-xft-rgba = "rgb";
           gtk-dialogs-use-header = false;
         };
-        extraCss = ''
-          window.csd,             /* gtk4? */
-          window.csd decoration { /* gtk3 */
-            box-shadow: none;
-          }
+        extraCss =
+          # css
+          ''
+            window.csd,             /* gtk4? */
+            window.csd decoration { /* gtk3 */
+              box-shadow: none;
+            }
 
-          headerbar.default-decoration {
-            /* You may need to tweak these values depending on your GTK theme */
-            margin-bottom: 50px;
-            margin-top: -100px;
-          }
+            headerbar.default-decoration {
+              /* You may need to tweak these values depending on your GTK theme */
+              margin-bottom: 50px;
+              margin-top: -100px;
+            }
 
-          .titlebar,
-          messagedialog.csd decoration,
-          .titlebar .background,
-          decoration,
-          window,
-          window.background
-          {
-            box-shadow: none;
-            border-radius: 0;
-          }
-        '';
+            .titlebar,
+            messagedialog.csd decoration,
+            .titlebar .background,
+            decoration,
+            window,
+            window.background
+            {
+              box-shadow: none;
+              border-radius: 0;
+            }
+          '';
       };
       gtk4 = {
         extraConfig = config.gtk.gtk3.extraConfig;

@@ -131,7 +131,7 @@ in {
             mkIf (hostname == "zenbook") {
               "eDP-1" = {
                 bg = "${cfg.background} fill";
-                scale = "1.4";
+                scale = "1.3";
               };
             }
           )
@@ -139,7 +139,6 @@ in {
             mkIf (hostname == "asus") {
               "eDP-1" = {
                 bg = "${cfg.background} fill";
-                scale = "1";
               };
             }
           )
