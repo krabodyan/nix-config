@@ -32,10 +32,7 @@
       sudo = yes;
     };
 
-    powerManagement = {
-      enable = true;
-      auto-cpufreq = true;
-    };
+    powerManagement = yes;
 
     services = {
       dbus-broker = yes;
