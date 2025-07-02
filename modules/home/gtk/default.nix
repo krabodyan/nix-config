@@ -19,16 +19,16 @@ in {
       name = "GoogleDot-Custom";
       package = with colors.hex;
         inputs.nix-cursors.packages.${pkgs.system}.google-cursor.override {
-          background_color = surface3;
-          outline_color = subtext0;
-          accent_color = surface3;
+          background_color = overlay1;
+          outline_color = fg;
+          accent_color = overlay1;
         };
       size = 16;
       gtk.enable = true;
       sway.enable = true;
       x11 = {
         enable = true;
-        defaultCursor = "left_ptr";
+        defaultCursor = "X_cursor";
       };
     };
     home.packages = [pkgs.dconf];
