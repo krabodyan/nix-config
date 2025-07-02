@@ -26,7 +26,7 @@ in {
             # "ss18"
           ];
           fontfeatures = lib.concatStringsSep ":fontfeatures=" features;
-          font = "${fonts.monospace}:size=17:fontfeatures=${fontfeatures}";
+          font = "${fonts.monospace}:size=11:fontfeatures=${fontfeatures}";
         in {
           term = "foot";
           shell = "${pkgs.fish}/bin/fish";
@@ -37,7 +37,7 @@ in {
           font-bold-italic = "${font}:weight=SemiBold:slant=Italic";
 
           pad = "8x0 center";
-          dpi-aware = "no";
+          dpi-aware = "yes";
           resize-by-cells = "no";
           resize-delay-ms = 300;
           resize-keep-grid = "no";

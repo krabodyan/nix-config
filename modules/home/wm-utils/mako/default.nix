@@ -2,6 +2,7 @@
   lib,
   pkgs,
   fonts,
+  hidpi,
   config,
   colors,
   ...
@@ -20,10 +21,14 @@ in {
       enable = true;
       settings = let
         beep = "exec ${pkgs.pipewire}/bin/pw-cat -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/audio-volume-change.oga &";
+        fontsize =
+          if hidpi
+          then "15"
+          else "11";
       in {
         icons = 0;
         markup = 0;
-        font = "${fonts.monospace} SemiBold 11";
+        font = "${fonts.monospace} SemiBold ${fontsize}";
         sort = "+time";
         layer = "overlay";
         group-by = "app-name";
@@ -35,10 +40,17 @@ in {
         border-color = overlay0;
         progress-color = "over ${overlay0}";
 
-        width = 400;
-        height = 110;
+        width =
+          if hidpi
+          then 550
+          else 400;
+
+        padding =
+          if hidpi
+          then "20,0"
+          else "12,0";
+
         border-size = 2;
-        padding = "12,0";
         border-radius = 8;
         default-timeout = 3000;
         text-alignment = "center";

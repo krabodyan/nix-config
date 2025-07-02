@@ -33,9 +33,10 @@ in {
       }
       // lib.optionalAttrs hidpi {
         QT_ENABLE_HIGHDPI_SCALING = 1;
-        QT_SCALE_FACTOR = 2;
-        GDK_SCALE = 2;
-        GDK_DPI_SCALE = 1.0;
+        QT_SCALE_FACTOR = 1.35;
+        GDK_SCALE = 1;
+        GDK_DPI_SCALE = 1.35;
+        _JAVA_OPTIONS = "-Dsun.java2d.uiScale=1.35";
       };
   };
 }

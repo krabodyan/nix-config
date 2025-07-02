@@ -132,6 +132,7 @@ in {
         output = {
           "eDP-1" = {
             bg = "${cfg.background} fill";
+            scale = "1";
           };
         };
 

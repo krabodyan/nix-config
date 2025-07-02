@@ -74,7 +74,6 @@
       ];
     };
 
-    discord = yes;
     firefox = yes;
     foot = yes;
     mpv = yes;
