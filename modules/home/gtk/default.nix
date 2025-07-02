@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  hidpi,
   config,
   inputs,
   colors,
@@ -23,7 +24,10 @@ in {
           outline_color = fg;
           accent_color = overlay1;
         };
-      size = 16;
+      size =
+        if hidpi
+        then 24
+        else 16;
       gtk.enable = true;
       sway.enable = true;
       x11 = {

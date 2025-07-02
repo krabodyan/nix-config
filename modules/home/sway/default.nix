@@ -1,13 +1,13 @@
 {
   lib,
   pkgs,
+  hidpi,
   fonts,
   config,
   colors,
-  hostname,
   ...
 }: let
-  inherit (lib) mkEnableOption mkIf mkOption mkMerge;
+  inherit (lib) mkEnableOption mkIf mkOption;
   cfg = config.module.sway;
 in {
   options = {
@@ -28,7 +28,10 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = [pkgs.qt5.qtwayland];
+    home.packages = with pkgs; [
+      qt5.qtwayland
+      qt6.qtwayland
+    ];
 
     home.sessionVariables = {
       XDG_SESSION_DESKTOP = "sway";
@@ -126,23 +129,11 @@ in {
           }
         ];
 
-        output = mkMerge [
-          (
-            mkIf (hostname == "zenbook") {
-              "eDP-1" = {
-                bg = "${cfg.background} fill";
-                scale = "1.3";
-              };
-            }
-          )
-          (
-            mkIf (hostname == "asus") {
-              "eDP-1" = {
-                bg = "${cfg.background} fill";
-              };
-            }
-          )
-        ];
+        output = {
+          "eDP-1" = {
+            bg = "${cfg.background} fill";
+          };
+        };
 
         gaps = {
           inner = 0;
@@ -214,7 +205,7 @@ in {
             pointer_accel = "0.5";
             natural_scroll = "disabled";
             events =
-              if hostname == "zenbook"
+              if hidpi
               then "enabled"
               else "disabled";
           };

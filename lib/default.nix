@@ -11,6 +11,7 @@
     system,
     hostname,
     username,
+    hidpi ? false,
   }:
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
@@ -28,6 +29,7 @@
           fonts
           yes
           publicKey
+          hidpi
           ;
       };
       modules = with inputs;
@@ -49,6 +51,7 @@
     username,
     hostname,
     overlays ? [],
+    hidpi ? false,
     ...
   }:
     inputs.home-manager.lib.homeManagerConfiguration {
@@ -76,6 +79,7 @@
           overlays
           yes
           publicKey
+          hidpi
           ;
       };
       modules =
