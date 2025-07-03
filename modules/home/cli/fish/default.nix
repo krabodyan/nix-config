@@ -268,12 +268,16 @@ in {
 
               bind -M $mode alt-u backward-kill-line
               bind -M $mode -m insert alt-e edit_command_buffer
+
+              bind -M $mode alt-= fish_vi_inc
+              bind -M $mode alt-minus fish_vi_dec
             end
 
             # -M = --mode
             # -m = --sets-mode
 
             bind -M visual \~ togglecase-selection
+
             bind -M default -m insert a forward-single-char repaint-mode
 
             bind -M insert            alt-enter   repaint execute
