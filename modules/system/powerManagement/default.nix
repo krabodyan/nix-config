@@ -15,19 +15,21 @@ in {
     powerManagement = {
       enable = true;
     };
-    enable = true;
-    settings = {
-      battery = {
-        governor = "powersave";
-        turbo = "never";
-        energy_performance_preference = "power";
-        platform_profile = "quiet";
-      };
-      charger = {
-        governor = "performance";
-        turbo = "auto";
-        energy_performance_preference = "balance_power";
-        platform_profile = "balanced";
+    services.auto-cpufreq = {
+      enable = true;
+      settings = {
+        battery = {
+          governor = "powersave";
+          turbo = "never";
+          energy_performance_preference = "power";
+          platform_profile = "quiet";
+        };
+        charger = {
+          governor = "performance";
+          turbo = "auto";
+          energy_performance_preference = "balance_power";
+          platform_profile = "balanced";
+        };
       };
     };
   };
