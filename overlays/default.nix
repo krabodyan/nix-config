@@ -1,6 +1,14 @@
 {
-  nixpkgs.overlays = [
+  inputs,
+  system,
+  ...
+}: {
+  nixpkgs.overlays = let
+    wayland = inputs.nixpkgs-wayland.packages.${system};
+  in [
     (final: prev: {
+      inherit (wayland) foot;
+
       # FIXME remove
       nwjs = prev.nwjs.overrideAttrs {
         version = "0.84.0";
@@ -9,6 +17,7 @@
           hash = "sha256-VIygMzCPTKzLr47bG1DYy/zj0OxsjGcms0G1BkI/TEI=";
         };
       };
+
       sqls =
         prev.sqls.overrideAttrs
         {

@@ -36,7 +36,6 @@
         [
           agenix.nixosModules.default
           disko.nixosModules.default
-          asus-numberpad-driver.nixosModules.default
         ]
         ++ [
           "${self}/overlays"
