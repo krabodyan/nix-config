@@ -51,6 +51,13 @@ in {
       systemd = {
         xdgAutostart = false;
         dbusImplementation = "broker";
+        extraCommands = [
+          "systemctl --user reset-failed"
+          "systemctl --user start sway-session.target"
+          "dbus-update-activation-environment --systemd --all"
+          "swaymsg -mt subscribe '[]' || true"
+          "systemctl --user stop sway-session.target"
+        ];
       };
       config = let
         mod = "Mod4";
