@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: let
@@ -12,6 +13,7 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    home.packages = [pkgs.xdg-user-dirs];
     xdg = {
       enable = true;
       userDirs = let
