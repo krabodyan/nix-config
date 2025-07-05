@@ -14,11 +14,13 @@ in {
 
   config = mkIf cfg.enable {
     boot.loader = {
-      systemd-boot.enable = true;
+      timeout = 5;
       efi.canTouchEfiVariables = true;
-      systemd-boot.configurationLimit = 12;
-      systemd-boot.consoleMode = "max";
-      timeout = 8;
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 12;
+        consoleMode = "max";
+      };
     };
   };
 }
