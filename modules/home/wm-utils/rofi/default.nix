@@ -1,9 +1,10 @@
 {
   lib,
   pkgs,
+  fonts,
+  hidpi,
   config,
   colors,
-  fonts,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -37,9 +38,13 @@ in {
         dark = mkLiteral fg-dark;
         background = mkLiteral bg;
         urgent = mkLiteral red;
+        fontsize =
+          if hidpi
+          then "14"
+          else "11";
       in {
         "*" = {
-          font = "${fonts.monospace} SemiBold 11";
+          font = "${fonts.monospace} SemiBold ${fontsize}";
           background-color = background;
           text-color = dark;
           separatorcolor = transparent;
@@ -50,8 +55,16 @@ in {
         };
 
         window = {
-          width = mkLiteral "364px";
-          height = mkLiteral "134px";
+          width = mkLiteral (
+            if hidpi
+            then "480px"
+            else "364px"
+          );
+          height = mkLiteral (
+            if hidpi
+            then "180px"
+            else "134px"
+          );
           y-offset = -40;
           border-radius = 6;
           border = 2;
@@ -90,8 +103,16 @@ in {
           placeholder = "";
           cursor-color = dark;
           blink = false;
-          padding = mkLiteral "5 10";
-          margin = mkLiteral "20 20 10 20";
+          padding = mkLiteral (
+            if hidpi
+            then "10 20"
+            else "5 10"
+          );
+          margin = mkLiteral (
+            if hidpi
+            then "25 25 15 25"
+            else "20 20 10 20"
+          );
         };
 
         element = {

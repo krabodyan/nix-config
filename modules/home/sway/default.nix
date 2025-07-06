@@ -157,7 +157,10 @@ in {
         fonts = {
           names = [fonts.monospace];
           style = "SemiBold";
-          size = 11.0;
+          size =
+            if hidpi
+            then 13.0
+            else 11.0;
         };
 
         focus = {
