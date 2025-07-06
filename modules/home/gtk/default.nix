@@ -85,8 +85,8 @@ in {
             "unpackPhase"
             "installPhase"
           ];
-          installPhase = with colors; # bash
-
+          installPhase = with colors;
+          # bash
             ''
               HOME=/build
               chmod 777 -R .
