@@ -78,9 +78,6 @@
         onlyoffice-desktopeditors
         qbittorrent
         solaar
-        mission-planner
-        qgroundcontrol
-        betaflight-configurator
         obsidian
       ];
     };

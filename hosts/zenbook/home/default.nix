@@ -71,6 +71,7 @@
         mission-planner
         qgroundcontrol
         betaflight-configurator
+        inav-configurator
       ];
     };
 
