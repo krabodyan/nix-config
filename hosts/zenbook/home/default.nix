@@ -68,6 +68,7 @@
     gui-default = {
       enable = true;
       extra = with pkgs; [
+        chromium
         mission-planner
         qgroundcontrol
         betaflight-configurator
