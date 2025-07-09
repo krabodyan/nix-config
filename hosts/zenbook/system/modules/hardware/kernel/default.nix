@@ -42,10 +42,6 @@
 
     extraModulePackages = [config.boot.kernelPackages.zenpower];
 
-    initrd.kernelModules = [
-      "dm_crypt"
-    ];
-
     initrd.availableKernelModules = [
       "xhci_pci"
       "nvme"
