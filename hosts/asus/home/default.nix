@@ -74,6 +74,8 @@
       enable = true;
       extra = with pkgs; [
         gcolor3
+        chromium
+        betaflight-configurator
         system-config-printer
         onlyoffice-desktopeditors
         qbittorrent
