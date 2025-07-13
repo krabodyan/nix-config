@@ -61,7 +61,8 @@ in {
       };
       config = let
         mod = "Mod4";
-        hide_cursor = "5000";
+        hideCursor = "5000";
+        resetLayout = "input type:keyboard xkb_switch_layout 0";
 
         menuCmd =
           {
@@ -169,7 +170,7 @@ in {
         };
 
         seat.seat0 = {
-          inherit hide_cursor;
+          hide_cursor = hideCursor;
         };
 
         colors = with colors.hex; let
@@ -255,17 +256,17 @@ in {
         keybindings = {
           "${mod}+o" = "exec notify-send -a swaynotify -t 0 'mode resize' & swaymsg mode resize";
 
-          "${mod}+d" = "exec ${menuCmd}";
+          "${mod}+d" = "exec swaymsg ${resetLayout} & ${menuCmd}";
           "${mod}+e" = "exec ${terminalCmd}";
           "${mod}+r" = "exec ${terminalCmd} -a floaterm ${lib.getExe pkgs.pulsemixer}";
           "${mod}+Shift+e" = "exec ${terminalCmd} -a floaterm";
 
           "${mod}+c" = ''exec notify-send -t 2000 "$(date +"%d %B %H:%M")"'';
 
-          "${mod}+b" = "seat seat0 hide_cursor ${hide_cursor}";
+          "${mod}+b" = "seat seat0 hide_cursor ${hideCursor}";
           "${mod}+Alt+b" = "seat seat0 hide_cursor 0";
 
-          "${mod}+w" = "input type:keyboard xkb_switch_layout 0";
+          "${mod}+w" = resetLayout;
 
           "${mod}+Shift+Delete" = "exit";
 
