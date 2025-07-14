@@ -54,7 +54,7 @@
       };
       aliases = {
         git = true;
-        podman = false;
+        podman = true;
         docker = false;
         kubectl = false;
       };
@@ -69,6 +69,7 @@
       enable = true;
       extra = with pkgs; [
         chromium
+        onlyoffice-desktopeditors
         mission-planner
         qgroundcontrol
         betaflight-configurator

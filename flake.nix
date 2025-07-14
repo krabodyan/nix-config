@@ -14,6 +14,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixpkgs-inav = {
+      url = "github:krabodyan/nixpkgs?ref=inav-and-betaflight-configurators";
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
