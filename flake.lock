@@ -324,6 +324,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-inav": {
+      "locked": {
+        "lastModified": 1752045789,
+        "narHash": "sha256-b1AM38JsM8PolwAftsFbFkcma/Rhq1Z+c65/BFBR6ls=",
+        "owner": "krabodyan",
+        "repo": "nixpkgs",
+        "rev": "d218b300fd5e71f2dd653714afd27ba0e05e3cee",
+        "type": "github"
+      },
+      "original": {
+        "owner": "krabodyan",
+        "ref": "inav-and-betaflight-configurators",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1751159883,
@@ -420,6 +436,7 @@
         "nix-cursors": "nix-cursors",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-inav": "nixpkgs-inav",
         "nixpkgs-wayland": "nixpkgs-wayland",
         "rust-overlay": "rust-overlay_2",
         "treefmt-nix": "treefmt-nix"

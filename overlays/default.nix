@@ -18,8 +18,6 @@
         };
       };
 
-      inav-configurator = inputs.nixpkgs-inav.legacyPackages.${system}.inav-configurator8;
-
       sqls =
         prev.sqls.overrideAttrs
         {

@@ -42,6 +42,7 @@
       enable = true;
       dev = true;
       extra = with pkgs; [
+        appimage-run
         ffmpeg-full
       ];
     };
@@ -73,7 +74,6 @@
         mission-planner
         qgroundcontrol
         betaflight-configurator
-        inav-configurator
       ];
     };
 
