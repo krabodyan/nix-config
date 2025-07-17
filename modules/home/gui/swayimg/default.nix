@@ -25,7 +25,6 @@ in {
       scale = optimal
       transparency = grid
       window = ${bg}ff
-      slideshow = no
 
       [font]
       name = ${fonts.monospace}
@@ -69,7 +68,6 @@ in {
 
       [list]
       order = alpha
-      loop = no
       recursive = no
       all = yes
     '';
