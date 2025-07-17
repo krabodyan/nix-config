@@ -166,7 +166,7 @@ in {
 
         focus = {
           followMouse = false;
-          wrapping = "yes";
+          wrapping = "workspace";
         };
 
         seat.seat0 = {
@@ -339,8 +339,6 @@ in {
 
           default_border pixel 1
           default_floating_border pixel 1
-
-          focus_wrapping workspace
 
           bindswitch lid:on exec swaylock
         '';
