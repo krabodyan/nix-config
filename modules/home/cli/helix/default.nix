@@ -53,9 +53,9 @@ in {
           ];
 
           web = [
-            tailwindcss-language-server
+            # tailwindcss-language-server
             typescript-language-server
-            svelte-language-server
+            # svelte-language-server
           ];
 
           cpp = [

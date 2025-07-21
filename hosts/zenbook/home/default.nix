@@ -24,6 +24,7 @@
     yazi = yes;
     zoxide = yes;
     ssh = yes;
+    obs = yes;
 
     git = {
       enable = true;
@@ -35,7 +36,7 @@
 
     helix = {
       enable = true;
-      components = ["base" "sql"];
+      components = ["base" "sql" "cpp" "web"];
     };
 
     cli-default = {

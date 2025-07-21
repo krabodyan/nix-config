@@ -125,6 +125,7 @@
         plotly
         psycopg2-binary
         pyyaml
+        pygame
       ];
     };
   };

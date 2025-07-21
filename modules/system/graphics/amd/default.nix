@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: let
@@ -12,6 +13,13 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    hardware.graphics = {
+      extraPackages = with pkgs; [
+        libva
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
+    };
     hardware.amdgpu = {
       # opencl.enable = true;
       amdvlk = {
