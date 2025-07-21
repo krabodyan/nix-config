@@ -1,9 +1,4 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   boot = {
     initrd.systemd.enable = true;
     initrd.systemd.dbus.enable = true;
@@ -94,7 +89,6 @@
 
   hardware = {
     enableRedistributableFirmware = true;
-    cpu.intel.updateMicrocode =
-      lib.mkDefault config.hardware.enableRedistributableFirmware;
+    cpu.intel.updateMicrocode = true;
   };
 }
