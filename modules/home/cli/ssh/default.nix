@@ -20,6 +20,16 @@ in {
           user = "firefly";
           port = 22;
         };
+        jetson2 = {
+          hostname = "10.0.3.165";
+          user = "ff-admin";
+          port = 22;
+        };
+        jetson3 = {
+          hostname = "10.0.3.164";
+          user = "firefly";
+          port = 22;
+        };
         microhard = {
           hostname = "192.168.168.170";
           user = "firefly";
