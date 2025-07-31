@@ -14,7 +14,7 @@
 
     udev-rules = {
       enable = true;
-      platformio = true;
+      # platformio = true;
     };
 
     steam = yes;

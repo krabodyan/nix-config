@@ -47,7 +47,7 @@
 
     helix = {
       enable = true;
-      components = ["base" "sql" "cpp"];
+      components = ["base" "cpp"];
     };
 
     fish = {
