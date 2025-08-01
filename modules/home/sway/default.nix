@@ -110,6 +110,9 @@ in {
           "workspace 5" = [
             {class = "^ONLYOFFICE$";}
           ];
+          "workspace 8" = [
+            {title = "dronesim"; }
+          ];
         };
 
         window.commands = [
