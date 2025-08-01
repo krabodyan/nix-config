@@ -22,7 +22,7 @@ in {
         };
         jetson2 = {
           hostname = "10.0.3.165";
-          user = "ff-admin";
+          user = "firefly";
           port = 22;
         };
         jetson3 = {
