@@ -6,6 +6,7 @@
     locale = yes;
     nix-config = yes;
     podman = yes;
+    distrobox = yes;
     sound = yes;
     ssd-btrfs = yes;
     time = yes;

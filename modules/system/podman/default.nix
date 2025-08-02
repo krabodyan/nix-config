@@ -15,6 +15,7 @@ in {
   config = mkIf cfg.enable {
     virtualisation.podman = {
       enable = true;
+      dockerCompat = true;
     };
     environment.systemPackages = [pkgs.podman-compose];
   };

@@ -9,6 +9,7 @@
     nix-config = yes;
     packages = yes;
     podman = yes;
+    distrobox = yes;
     sound = yes;
     time = yes;
     tmpfs = yes;
