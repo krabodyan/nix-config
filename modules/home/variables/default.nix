@@ -26,6 +26,7 @@ in {
 
         GTK_USE_PORTAL = 1;
         NIXOS_OZONE_WL = 1;
+        ELECTRON_OZONE_PLATFORM_HINT = "auto";
         MOZ_ENABLE_WAYLAND = 1;
         NIXPKGS_ALLOW_UNFREE = 1;
 
