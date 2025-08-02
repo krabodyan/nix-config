@@ -248,7 +248,8 @@ in {
 
         modes = {
           resize = {
-            "${mod}+o" = "exec makoctl dismiss & swaymsg mode default";
+            "${mod}+Shift+o" = "exec makoctl dismiss & swaymsg mode default";
+            Escape = "exec makoctl dismiss & swaymsg mode default";
             h = "resize grow width 20 px";
             k = "resize grow height 20 px";
             l = "resize shrink width 20 px";
@@ -257,11 +258,11 @@ in {
         };
 
         keybindings = {
-          "${mod}+o" = "exec notify-send -a swaynotify -t 0 'mode resize' & swaymsg mode resize";
+          "${mod}+Shift+o" = "exec notify-send -a swaynotify -t 0 'mode resize' & swaymsg mode resize";
 
           "${mod}+d" = "exec swaymsg ${resetLayout} & ${menuCmd}";
           "${mod}+e" = "exec ${terminalCmd}";
-          "${mod}+r" = "exec ${terminalCmd} -a floaterm ${lib.getExe pkgs.pulsemixer}";
+          "${mod}+Shift+r" = "exec ${terminalCmd} -a floaterm ${lib.getExe pkgs.pulsemixer}";
           "${mod}+Shift+e" = "exec ${terminalCmd} -a floaterm";
 
           "${mod}+c" = ''exec notify-send -t 2000 "$(date +"%d %B %H:%M")"'';
