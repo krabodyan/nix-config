@@ -13,13 +13,11 @@ in {
   };
   config = mkIf cfg.enable {
     systemd.coredump.enable = false;
-    boot.initrd.systemd.extraConfig = ''
-      [Manager]
-      DefaultTimeoutStopSec=15s
-      DefaultTimeoutStartSec=15s
-      DefaultTimeoutAbortSec=20sec
-    '';
-    systemd.extraConfig = config.boot.initrd.systemd.extraConfig;
+    systemd.settings.Manager = {
+      DefaultTimeoutStopSec = "10s";
+      DefaultTimeoutStartSec = "10s";
+      DefaultTimeoutAbortSec = "10s";
+    };
     services = {
       logind = {
         lidSwitch = "suspend";
