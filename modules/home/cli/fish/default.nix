@@ -89,6 +89,8 @@ in {
           mkIf cfg.aliases.git {
             ga = "git add";
             gp = "git push";
+            gpf = "git push --force-with-lease";
+
             gc = "git commit";
             gs = "git status";
 
