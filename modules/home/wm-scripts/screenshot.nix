@@ -18,9 +18,9 @@ pkgs.writeShellApplication {
 
   text = let
     copy = "wl-copy -t image/png";
-    slurp = "slurp -w 2 -b ${colors.bg}b3 -c ${colors.select}ff -B ${colors.bg}b3";
+    grim = "${pkgs.grim}/bin/grim -t png";
     swayimg = "swayimg --config info.show=no";
-    wayshot = "wayshot --extension png --stdout";
+    slurp = "slurp -w 2 -b ${colors.bg}b3 -c ${colors.select}ff -B ${colors.bg}b3";
   in
     # bash
     ''
@@ -29,25 +29,13 @@ pkgs.writeShellApplication {
       makoctl dismiss
 
       if [ "$mode" = "full" ]; then
-        ${wayshot} | ${copy}
+        ${grim} - | ${copy}
         ${send} "screenshot copied"
         exit 0
       fi
 
-      if [ "$mode" = "window" ]; then
-        size=$(swaymsg -t get_tree | jq -r '.. | select(.pid? and .visible?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | ${slurp})
-        status=$?
-
-        if [ $status -eq 0 ]; then
-          ${wayshot} -s "$size" | ${copy}
-          ${send} "screenshot copied"
-        fi
-
-        exit 0
-      fi
-
       if [ "$mode" = "swayimg" ]; then
-        ${wayshot} | ${swayimg} - &
+        ${grim} - | ${swayimg} - &
         PID=$!
       fi
 
@@ -55,7 +43,7 @@ pkgs.writeShellApplication {
       status=$?
 
       if [ $status -eq 0 ]; then
-        ${wayshot} -s "$size" | ${copy}
+        ${grim} -g "$size" - | ${copy}
         ${send} "screenshot copied"
       fi
 

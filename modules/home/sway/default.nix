@@ -250,6 +250,7 @@ in {
           resize = {
             "${mod}+Shift+o" = "exec makoctl dismiss & swaymsg mode default";
             Escape = "exec makoctl dismiss & swaymsg mode default";
+            Return = "exec makoctl dismiss & swaymsg mode default";
             h = "resize grow width 20 px";
             k = "resize grow height 20 px";
             l = "resize shrink width 20 px";
@@ -328,7 +329,7 @@ in {
 
           Print = "exec __screenshot";
           Pause = "exec __screenshot full";
-          "${mod}+Print" = "exec __screenshot window";
+          F12 = "exec __screenshot full";
           "${mod}+Pause" = "exec __screenshot swayimg";
           "${mod}+Shift+Print" = "exec wl-paste | ${screenshotCmd}";
         };
