@@ -30,11 +30,6 @@ in {
           user = "firefly";
           port = 22;
         };
-        microhard = {
-          hostname = "192.168.168.170";
-          user = "firefly";
-          port = 22;
-        };
       };
     };
   };
