@@ -329,7 +329,7 @@ in {
 
           Print = "exec __screenshot";
           Pause = "exec __screenshot full";
-          F12 = "exec __screenshot full";
+          F10 = "exec __screenshot full";
           "${mod}+Pause" = "exec __screenshot swayimg";
           "${mod}+Shift+Print" = "exec wl-paste | ${screenshotCmd}";
         };
