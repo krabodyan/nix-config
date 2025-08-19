@@ -70,6 +70,7 @@
     gui-default = {
       enable = true;
       extra = with pkgs; [
+        anydesk
         chromium
         onlyoffice-desktopeditors
         mission-planner
