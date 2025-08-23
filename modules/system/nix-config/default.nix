@@ -20,7 +20,9 @@ in {
     system = {
       inherit stateVersion;
     };
+
     nixpkgs.hostPlatform = system;
+
     nixpkgs.config = {
       allowUnfree = true;
       allowBroken = true;
@@ -43,6 +45,7 @@ in {
         experimental-features = ["nix-command" "flakes"];
         builders-use-substitutes = true;
         auto-optimise-store = true;
+        show-trace = true;
 
         substituters = [
           "https://helix.cachix.org"

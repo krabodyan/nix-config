@@ -19,6 +19,15 @@ in {
       homeDirectory = "/home/${username}";
       inherit stateVersion;
     };
+
     news.display = "silent";
+
+    programs.man.enable = false;
+
+    manual = {
+      html.enable = false;
+      json.enable = false;
+      manpages.enable = false;
+    };
   };
 }
