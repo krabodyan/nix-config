@@ -11,18 +11,20 @@
       RUST_BACKTRACE = 1;
       RUST_LOG = "DEBUG";
 
+      LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
+
       nativeBuildInputs = [pkgs.pkg-config];
 
       buildInputs = [
         (
-          rust-pkgs.rust-bin.nightly.latest.default.override
+          rust-pkgs.rust-bin.stable.latest.default.override
           {
             targets = ["x86_64-unknown-linux-gnu"];
             extensions = [
               "rust-src"
-              "llvm-tools-preview"
+              # "llvm-tools-preview"
               "rust-analyzer"
-              "miri"
+              # "miri"
             ];
           }
         )
