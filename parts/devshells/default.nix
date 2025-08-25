@@ -13,9 +13,13 @@
 
       LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
 
-      nativeBuildInputs = [pkgs.pkg-config];
+      nativeBuildInputs = with pkgs; [
+        pkg-config
+        clang
+      ];
 
-      buildInputs = [
+      buildInputs = with pkgs; [
+        opencv4.cxxdev
         (
           rust-pkgs.rust-bin.stable.latest.default.override
           {

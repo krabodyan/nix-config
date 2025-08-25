@@ -93,6 +93,18 @@
       formatter.command = "clang-format";
     }
     {
+      name = "cmake";
+      indent = {
+        tab-width = 4;
+        unit = "\t";
+      };
+      language-servers = ["cmake-language-server"];
+      formatter = {
+        command = "cmake-format";
+        args = ["-" "-o" "-"];
+      };
+    }
+    {
       name = "toml";
       roots = ["."];
       formatter = {
@@ -224,7 +236,7 @@
         expressionAdjustmentHints.mode = "prefer_prefix"; # prefix | postfix | prefer
         genericParameterHints.lifetime.enable = true;
         genericParameterHints.type.enable = false;
-        implicitDrops.enable = true;
+        implicitDrops.enable = false;
         implicitSizedBoundHints.enable = false;
         lifetimeElisionHints.enable = "skip_trivial";
         lifetimeElisionHints.useParameterNames = false;

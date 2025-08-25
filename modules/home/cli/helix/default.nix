@@ -59,7 +59,9 @@ in {
           ];
 
           cpp = [
+            cmake-language-server
             clang-tools
+            cmake-format
           ];
 
           sql = [

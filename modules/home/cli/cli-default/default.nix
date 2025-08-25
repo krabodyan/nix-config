@@ -40,6 +40,7 @@ in {
       ++ lib.optionals cfg.dev [
         gnumake
         gcc
+        cmake
 
         lazydocker
         sqlfluff
