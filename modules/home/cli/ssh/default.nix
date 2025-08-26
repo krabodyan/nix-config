@@ -30,6 +30,11 @@ in {
           user = "firefly";
           port = 22;
         };
+        prague = {
+          hostname = "10.0.9.128";
+          user = "nvidia";
+          port = 22;
+        };
       };
     };
   };
