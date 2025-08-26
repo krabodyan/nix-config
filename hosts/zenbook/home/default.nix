@@ -43,6 +43,7 @@
       enable = true;
       dev = true;
       extra = with pkgs; [
+        openvpn
         appimage-run
         ffmpeg-full
       ];

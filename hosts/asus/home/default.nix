@@ -38,8 +38,7 @@
       enable = true;
       dev = true;
       extra = with pkgs; [
-        # scrcpy
-        # android-tools
+        openvpn
         imagemagick
         ffmpeg-full
       ];
