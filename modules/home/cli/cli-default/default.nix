@@ -39,6 +39,7 @@ in {
       ]
       ++ lib.optionals cfg.dev [
         gnumake
+        cmake
         gcc
         cmake
 

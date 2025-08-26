@@ -35,6 +35,22 @@
       ];
     };
 
+    devShells.cuda = pkgs.mkShell {
+      name = "cuda";
+      DEV_SHELL_NAME = "cuda";
+
+      buildInputs = with pkgs; [
+        boost
+        cmake
+        nlohmann_json
+        cudatoolkit
+        opencv
+        openssl
+        curl
+      ];
+      CUDA_TOOLKIT_ROOT_DIR = "${pkgs.cudatoolkit.out}";
+    };
+
     devShells.rasp = pkgs.mkShell {
       name = "rasp";
       DEV_SHELL_NAME = "rasp";

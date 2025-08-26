@@ -189,6 +189,7 @@ in {
           ssh = "TERM=xterm-color ${pkgs.openssh}/bin/ssh -o StrictHostKeyChecking=no";
 
           ns = "nix-shell --command fish -p";
+          cuda = "nix develop $NH_FLAKE#cuda --impure --command sh -c \"${tm}\"";
         }
         // lib.genAttrs ["ino" "rust" "rasp" "tauri" "pp"] (
           name: "nix develop $NH_FLAKE#${name} --command sh -c \"${tm}\""
@@ -526,7 +527,7 @@ in {
         build-devshell =
           # fish
           ''
-            for name in rust tauri ino rasp
+            for name in rust tauri ino rasp cuda
               nix build $NH_FLAKE#devShells.x86_64-linux.$name -o ~/.gc-root-$name
               echo $name builded
             end

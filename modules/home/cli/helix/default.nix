@@ -60,8 +60,8 @@ in {
 
           cpp = [
             cmake-language-server
-            clang-tools
             cmake-format
+            clang-tools
           ];
 
           sql = [
