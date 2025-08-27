@@ -22,6 +22,7 @@
     python = yes;
     ripgrep = yes;
     rust-cli = yes;
+    ssh = yes;
     tmux = yes;
     yazi = yes;
     zoxide = yes;
