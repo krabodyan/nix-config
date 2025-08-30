@@ -47,7 +47,7 @@
 
     helix = {
       enable = true;
-      components = ["base" "cpp"];
+      components = ["base" "cpp" "web"];
     };
 
     fish = {
@@ -59,6 +59,7 @@
       aliases = {
         git = true;
         podman = true;
+        cmake = true;
         docker = false;
         kubectl = false;
       };

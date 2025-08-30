@@ -59,7 +59,7 @@ in {
           ];
 
           cpp = [
-            cmake-language-server
+            neocmakelsp
             cmake-format
             clang-tools
           ];

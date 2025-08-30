@@ -98,7 +98,7 @@
         tab-width = 4;
         unit = "\t";
       };
-      language-servers = ["cmake-language-server"];
+      language-servers = ["neocmakelsp"];
       formatter = {
         command = "cmake-format";
         args = ["-" "-o" "-"];
@@ -350,6 +350,16 @@
 
     sql = {
       command = "sqls";
+    };
+
+    neocmakelsp = {
+      init_options = {
+        lint = {
+          enable = true;
+        };
+        scan_cmake_in_package = false;
+        semantic_token = false;
+      };
     };
   };
 }

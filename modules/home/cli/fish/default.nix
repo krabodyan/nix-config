@@ -57,6 +57,13 @@ in {
           default = false;
           example = true;
         };
+
+        cmake = mkOption {
+          type = lib.types.bool;
+          description = "cmake aliases";
+          default = false;
+          example = true;
+        };
       };
 
       loginShell = {
@@ -85,6 +92,19 @@ in {
           cpr = "rsync -arvP";
           cp = "cp -vr";
         }
+        (
+          mkIf cfg.aliases.cmake (
+            builtins.mapAttrs (name: value: {
+              command = "cmake";
+              expansion = value;
+            })
+            {
+              conf = "-S . -B build";
+              build = "--build build -j $(nproc)";
+              compiledb = "-S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON";
+            }
+          )
+        )
         (
           mkIf cfg.aliases.git {
             ga = "git add";
@@ -188,6 +208,7 @@ in {
 
           ssh = "TERM=xterm-color ${pkgs.openssh}/bin/ssh -o StrictHostKeyChecking=no";
 
+          nix-shell = "nix-shell --command fish";
           ns = "nix-shell --command fish -p";
           cuda = "nix develop $NH_FLAKE#cuda --impure --command sh -c \"${tm}\"";
         }

@@ -40,6 +40,7 @@ in {
       ++ lib.optionals cfg.dev [
         gnumake
         cmake
+        cmake-lint
         gcc
         cmake
 

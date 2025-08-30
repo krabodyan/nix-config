@@ -40,15 +40,18 @@
       DEV_SHELL_NAME = "cuda";
 
       buildInputs = with pkgs; [
-        boost
         cmake
-        nlohmann_json
-        cudatoolkit
+
+        curl
+        boost
         opencv
         openssl
-        curl
+        nlohmann_json
+
+        cudaPackages.cudatoolkit
+        cudaPackages.tensorrt
       ];
-      CUDA_TOOLKIT_ROOT_DIR = "${pkgs.cudatoolkit.out}";
+      CUDA_TOOLKIT_ROOT_DIR = "${pkgs.cudaPackages.cudatoolkit.out}";
     };
 
     devShells.rasp = pkgs.mkShell {

@@ -58,6 +58,7 @@
       aliases = {
         git = true;
         podman = true;
+        cmake = true;
         docker = false;
         kubectl = false;
       };
