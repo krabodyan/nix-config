@@ -14,6 +14,7 @@ in {
   config = mkIf cfg.enable {
     programs.ssh = {
       enable = true;
+      serverAliveInterval = 60;
       matchBlocks = {
         jetson = {
           hostname = "10.0.3.166";
