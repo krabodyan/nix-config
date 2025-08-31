@@ -337,8 +337,8 @@ in {
 
             bind -M insert alt-h backward-char
             bind -M insert alt-l forward-char
-            bind -M insert alt-k up-line
-            bind -M insert alt-j down-line
+            bind -M insert alt-k up-or-search
+            bind -M insert alt-j down-or-search
 
             bind -M insert alt-r fzf-history-widget
             bind -M insert alt-z fzf-cd-widget
