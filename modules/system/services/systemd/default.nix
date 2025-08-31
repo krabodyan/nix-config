@@ -19,11 +19,11 @@ in {
       DefaultTimeoutAbortSec = "10s";
     };
     services = {
-      logind = {
-        lidSwitch = "suspend";
-        suspendKey = "suspend";
-        hibernateKey = "suspend";
-        killUserProcesses = true;
+      logind.settings.Login = {
+        HandleLidSwitch = "suspend";
+        HandleSuspendKey = "suspend";
+        HandleHibernateKey = "suspend";
+        KillUserProcesses = true;
       };
       journald.extraConfig = ''
         Compress=yes
