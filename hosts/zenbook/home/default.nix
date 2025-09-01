@@ -8,6 +8,7 @@
 
     # ------------- cli
     bat = yes;
+    clang-format = yes;
     eza = yes;
     fastfetch = yes;
     fzf = yes;
