@@ -5,6 +5,7 @@
   fonts,
   config,
   colors,
+  hostname,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
@@ -255,7 +256,12 @@ in {
           };
         };
 
-        keybindings = {
+        keybindings = let
+          microphoneKey =
+            if hostname == "zenbook"
+            then "F9"
+            else "F4";
+        in {
           "${mod}+Shift+o" = "exec notify-send -a swaynotify -t 0 'mode resize' & swaymsg mode resize";
 
           "${mod}+d" = "exec swaymsg ${resetLayout} & ${menuCmd}";
@@ -313,7 +319,7 @@ in {
           "${mod}+Shift+7" = "move container to workspace number 7";
           "${mod}+Shift+8" = "move container to workspace number 8";
 
-          F4 = "exec __microphone";
+          ${microphoneKey} = "exec __microphone";
           XF86AudioMute = "exec __volume mute";
           XF86AudioRaiseVolume = "exec __volume up";
           XF86AudioLowerVolume = "exec __volume down";
