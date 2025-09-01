@@ -99,9 +99,9 @@ in {
               expansion = value;
             })
             {
-              conf = "-S . -B build";
-              build = "--build build -j $(nproc)";
-              compiledb = "-S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON";
+              cfg = "-S . -B build";
+              bld = "--build build -j $(nproc)";
+              db = "-S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON";
             }
           )
         )
