@@ -34,7 +34,7 @@ in {
       }
       // lib.optionalAttrs hidpi {
         QT_ENABLE_HIGHDPI_SCALING = 1;
-        QT_SCALE_FACTOR = 1.35;
+        QT_SCALE_FACTOR = ""; # 1.35; onlyoffice
         GDK_SCALE = 1;
         GDK_DPI_SCALE = 1.35;
         _JAVA_OPTIONS = "-Dsun.java2d.uiScale=1.35";
