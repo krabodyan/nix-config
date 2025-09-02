@@ -5,22 +5,21 @@
     console = yes;
     locale = yes;
     nix-config = yes;
-    podman = yes;
     distrobox = yes;
     sound = yes;
     ssd-btrfs = yes;
     time = yes;
     tmpfs = yes;
     users = yes;
-
-    udev-rules = {
-      enable = true;
-      # platformio = true;
-    };
-
     steam = yes;
     packages = yes;
     fonts = yes;
+    udev-rules = yes;
+
+    podman = {
+      enable = true;
+      nvidia = true;
+    };
 
     xdg-portal = {
       enable = true;
