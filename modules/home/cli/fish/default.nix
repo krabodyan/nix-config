@@ -206,14 +206,13 @@ in {
 
           "," = "comma -P fzf";
 
-          ssh = "TERM=xterm-color ${pkgs.openssh}/bin/ssh -o StrictHostKeyChecking=no";
+          ssh = "TERM=xterm-color ${pkgs.openssh}/bin/ssh";
 
           nix-shell = "nix-shell --command fish";
           ns = "nix-shell --command fish -p";
-          cuda = "nix develop $NH_FLAKE#cuda --impure --command sh -c \"${tm}\"";
         }
-        // lib.genAttrs ["ino" "rust" "rasp" "tauri" "pp"] (
-          name: "nix develop $NH_FLAKE#${name} --command sh -c \"${tm}\""
+        // lib.genAttrs ["ino" "rust" "rasp" "tauri" "pp" "cuda"] (
+          name: "nix develop $NH_FLAKE#${name} --impure --command sh -c \"${tm}\""
         );
 
       plugins = [
@@ -548,8 +547,8 @@ in {
         build-devshell =
           # fish
           ''
-            for name in rust tauri ino rasp cuda
-              nix build $NH_FLAKE#devShells.x86_64-linux.$name -o ~/.gc-root-$name
+            for name in cuda pp
+              nix build $NH_FLAKE#devShells.x86_64-linux.$name --impure -o ~/.gc-root-$name
               echo $name builded
             end
           '';

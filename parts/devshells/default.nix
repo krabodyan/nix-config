@@ -8,6 +8,7 @@
     devShells.rust = pkgs.mkShell {
       name = "rust";
       DEV_SHELL_NAME = "rust";
+      runScript = "fish";
       RUST_BACKTRACE = 1;
       RUST_LOG = "DEBUG";
 
@@ -38,6 +39,7 @@
     devShells.cuda = pkgs.mkShell {
       name = "cuda";
       DEV_SHELL_NAME = "cuda";
+      runScript = "fish";
 
       buildInputs = with pkgs; [
         cmake
@@ -51,12 +53,14 @@
         cudaPackages.cudatoolkit
         cudaPackages.tensorrt
       ];
+
       CUDA_TOOLKIT_ROOT_DIR = "${pkgs.cudaPackages.cudatoolkit.out}";
     };
 
     devShells.rasp = pkgs.mkShell {
       name = "rasp";
       DEV_SHELL_NAME = "rasp";
+      runScript = "fish";
 
       RUST_BACKTRACE = 1;
       RUST_LOG = "DEBUG";
@@ -86,6 +90,7 @@
     devShells.tauri = pkgs.mkShell {
       name = "tauri";
       DEV_SHELL_NAME = "tauri";
+      runScript = "fish";
 
       RUST_BACKTRACE = 1;
       RUST_LOG = "DEBUG";
@@ -130,6 +135,7 @@
     devShells.ino = pkgs.mkShell {
       name = "ino";
       DEV_SHELL_NAME = "ino";
+      runScript = "fish";
 
       buildInputs = with pkgs; [
         glibc_multi
@@ -142,15 +148,21 @@
     devShells.pp = pkgs.mkShell {
       name = "py";
       DEV_SHELL_NAME = "py";
+      runScript = "fish";
 
       buildInputs = with pkgs.python313Packages; [
+        torch
+        ultralytics
+        opencv-python
+
         matplotlib
         numpy
         pandas
+
         plotly
+
         psycopg2-binary
         pyyaml
-        pygame
       ];
     };
   };
