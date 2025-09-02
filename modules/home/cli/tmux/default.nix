@@ -68,8 +68,6 @@ in {
         bind n new-window -a -c "#{pane_current_path}"
         bind M-n new-window -a -c "#{pane_current_path}"
 
-        bind s break-pane -d
-
         bind -n "M-1" select-window -t 1
         bind -n "M-2" select-window -t 2
         bind -n "M-3" select-window -t 3
