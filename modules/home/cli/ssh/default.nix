@@ -20,6 +20,9 @@ in {
           serverAliveInterval = 60;
           serverAliveCountMax = 20;
           port = 22;
+          extraOptions = {
+            strictHostKeyChecking = "no";
+          };
         };
         jetson = {
           hostname = "10.0.3.166";
