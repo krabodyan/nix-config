@@ -269,7 +269,10 @@ in {
           "${mod}+Shift+r" = "exec ${terminalCmd} -a floaterm ${lib.getExe pkgs.pulsemixer}";
           "${mod}+Shift+e" = "exec ${terminalCmd} -a floaterm";
 
-          "${mod}+c" = ''exec notify-send -t 2000 "$(date +"%d %B %H:%M")"'';
+          "${mod}+c" =
+            if hostname == "zenbook"
+            then ''exec notify-send -t 2000 "$(date +"%d %B %H:%M") [$(acpi | rg -o '\d+%')]"''
+            else ''exec notify-send -t 2000 "$(date +"%d %B %H:%M")"'';
 
           "${mod}+b" = "seat seat0 hide_cursor ${hideCursor}";
           "${mod}+Alt+b" = "seat seat0 hide_cursor 0";
