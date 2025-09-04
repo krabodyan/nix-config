@@ -74,7 +74,7 @@
       enable = true;
       extra = with pkgs; [
         anydesk
-        chromium
+        google-chrome
         onlyoffice-desktopeditors
         mission-planner
         qgroundcontrol
