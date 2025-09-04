@@ -92,6 +92,8 @@ in {
         bind -n M-n next-layout
         bind -n M-b previous-layout
 
+        bind -r d resize-pane -Z
+
         bind -r \] resize-pane -D 1
         bind -r \[ resize-pane -U 1
         bind -r i resize-pane -L 5
