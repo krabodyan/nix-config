@@ -44,6 +44,7 @@
       buildInputs = with pkgs; [
         cmake
 
+        fmt
         curl
         boost
         opencv
@@ -159,9 +160,9 @@
       runScript = "fish";
 
       buildInputs = with pkgs.python313Packages; [
-        torch
-        ultralytics
-        opencv-python
+        # torch
+        # ultralytics
+        # opencv-python
 
         matplotlib
         numpy
