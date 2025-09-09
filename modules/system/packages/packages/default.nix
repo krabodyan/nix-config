@@ -36,6 +36,7 @@ in {
 
         iotop
         iftop
+        nethogs
       ]
       ++ cfg.extraPackages;
   };
