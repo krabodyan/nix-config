@@ -25,7 +25,6 @@
     yazi = yes;
     zoxide = yes;
     ssh = yes;
-    obs = yes;
 
     git = {
       enable = true;
@@ -88,6 +87,8 @@
     swayimg = yes;
     telegram = yes;
     zathura = yes;
+    zoom = yes;
+    obs = yes;
 
     # ------------- desktop environment
     gtk = yes;
