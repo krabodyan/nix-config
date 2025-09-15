@@ -75,7 +75,7 @@
       enable = true;
       extra = with pkgs; [
         gcolor3
-        chromium
+        google-chrome
         betaflight-configurator
         system-config-printer
         onlyoffice-desktopeditors
