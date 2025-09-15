@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: let
@@ -12,6 +13,7 @@ in {
     };
   };
   config = mkIf cfg.enable {
+    home.packages = [pkgs.sshfs];
     programs.ssh = {
       enable = true;
       enableDefaultConfig = false;
