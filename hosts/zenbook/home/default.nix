@@ -25,6 +25,7 @@
     yazi = yes;
     zoxide = yes;
     ssh = yes;
+    diffuse = yes;
 
     git = {
       enable = true;

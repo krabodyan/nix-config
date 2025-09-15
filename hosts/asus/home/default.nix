@@ -26,6 +26,7 @@
     tmux = yes;
     yazi = yes;
     zoxide = yes;
+    diffuse = yes;
 
     git = {
       enable = true;
