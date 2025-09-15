@@ -61,7 +61,14 @@
 
     "namespace" = fg;
 
-    "special" = brred;
+    "special" = {
+      modifiers = [];
+    };
+
+    "special.derive" = {
+      fg = brred;
+      modifiers = [];
+    };
 
     "markup.heading.marker" = {
       fg = peach;
@@ -134,7 +141,7 @@
       fg = surface3;
     };
 
-    "ui.menu.selected" = subtext0;
+    "ui.menu.selected" = fg;
     "ui.menu.scroll" = surface3;
 
     "ui.picker.header" = fg-dark;
@@ -166,9 +173,7 @@
     # dir in picker and dir autocomplete and :open or :write autocomplete
     "ui.text.directory" = overlay0;
     # focused file in picker
-    "ui.text.focus" = {
-      bg = surface1;
-    };
+    "ui.text.focus" = brred;
 
     "ui.virtual" = overlay0;
     "ui.virtual.ruler" = {
@@ -194,7 +199,6 @@
     };
     # matching bracket
     "ui.cursor.match" = {
-      # fg = mode_normal;
       underline.style = "line";
     };
     "ui.cursor.primary.normal" = {
@@ -231,6 +235,11 @@
       fg = yellow;
       bg = surface1;
       modifiers = ["bold"];
+    };
+
+    # snippets
+    "tabstop" = {
+      bg = surface2;
     };
   };
 }

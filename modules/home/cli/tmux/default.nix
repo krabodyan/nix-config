@@ -89,8 +89,8 @@ in {
         bind "M-k" select-pane -U
         bind "M-l" select-pane -R
 
-        bind -n M-n next-layout
-        bind -n M-b previous-layout
+        bind -n "C-n" next-layout
+        bind -n "C-b" previous-layout
 
         bind -r d resize-pane -Z
 
