@@ -88,7 +88,7 @@ in {
 
         startup = with pkgs;
           map (cmd: {command = cmd;}) [
-            "${lib.getExe swaykbdd} -a 'firefox,chrome,firefox-nightly'"
+            "${lib.getExe swaykbdd} -a 'firefox,chrome,firefox-nightly,google-chrome'"
             "${lib.getExe wl-clip-persist} --clipboard regular --disable-timestamps --reconnect-tries 3"
             "${lib.getExe foot} --server"
           ];
