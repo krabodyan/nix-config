@@ -31,7 +31,7 @@ in {
           user = "firefly";
         };
         jetson2 = {
-          hostname = "10.0.3.165";
+          hostname = "10.0.3.163";
           user = "firefly";
         };
         jetson3 = {
