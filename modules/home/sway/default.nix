@@ -68,7 +68,7 @@ in {
         menuCmd =
           {
             fuzzel = "pkill fuzzel || ${pkgs.fuzzel}/bin/fuzzel";
-            rofi = "pkill rofi || ${pkgs.rofi-wayland-unwrapped}/bin/rofi -show drun -kb-cancel 'Alt+Return'";
+            rofi = "pkill rofi || ${pkgs.rofi-unwrapped}/bin/rofi -show drun -kb-cancel 'Alt+Return'";
           }.${
             cfg.menu
           };

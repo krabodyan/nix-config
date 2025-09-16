@@ -18,7 +18,7 @@ in {
   config = mkIf cfg.enable {
     programs.rofi = {
       enable = true;
-      package = pkgs.rofi-wayland-unwrapped;
+      package = pkgs.rofi-unwrapped;
       terminal = "${pkgs.foot}/bin/footclient";
       location = "bottom";
       modes = ["drun"];

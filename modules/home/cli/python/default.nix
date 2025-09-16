@@ -15,8 +15,8 @@ in {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       mypy
-      python313Packages.ipython
-      python313Full
+      python3Packages.ipython
+      python3
     ];
   };
 }

@@ -30,7 +30,7 @@ in {
     };
 
     nix = {
-      package = pkgs.lixPackageSets.latest.lix;
+      package = pkgs.nix;
       nixPath = ["nixpkgs=${inputs.nixpkgs}"];
       gc.automatic = false;
 
