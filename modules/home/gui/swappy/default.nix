@@ -31,6 +31,8 @@ in {
         show_panel=true
         paint_mode=Arrow
         fill_shape=false
+        transparent=false
+        transparency=35
       '';
   };
 }
