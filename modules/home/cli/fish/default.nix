@@ -340,10 +340,10 @@ in {
             bind -M insert alt-k up-or-search
             bind -M insert alt-j down-or-search
 
-            bind -M insert alt-r fzf-history-widget
-            bind -M insert alt-z fzf-cd-widget
+            bind -M insert alt-r _fzf_search_history
             bind -M insert alt-a _fzf_search_directory
-            bind -M insert alt-x _fzf_search_git_status
+            bind -M insert alt-s _fzf_search_git_status
+            bind -M insert alt-x _fzf_search_git_log
             bind -M insert alt-c "__zoxide_zi; commandline -f repaint"
 
             bind -M visual -m default y "fish_clipboard_copy; commandline -f end-selection repaint-mode"
@@ -552,6 +552,31 @@ in {
               nix build $NH_FLAKE#devShells.x86_64-linux.$name --impure -o ~/.gc-root-$name
               echo $name builded
             end
+          '';
+
+        _fzf_search_history = assert config.module.fzf.enable;
+        # fish
+          ''
+            if test -z "$fish_private_mode"
+                builtin history merge
+            end
+
+            set -f fzf_arguments $fzf_history_opts
+            set -f query (commandline)
+
+            set --prepend fzf_arguments \
+                --query="$query"
+
+            set -f commands_selected (
+                builtin history |
+                _fzf_wrapper $fzf_arguments
+            )
+
+            if test $status -eq 0
+                commandline --replace -- (string join ' ' $commands_selected)
+            end
+
+            commandline --function repaint
           '';
 
         _fzf_search_directory = assert config.module.fzf.enable;
