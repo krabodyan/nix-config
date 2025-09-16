@@ -338,13 +338,12 @@
       args = [
         "--background-index"
         "--header-insertion=never"
+        "--header-insertion-decorators"
         "--completion-style=detailed"
         "--all-scopes-completion"
         "--fallback-style=LLVM"
         "--function-arg-placeholders=false"
         "--clang-tidy"
-        "--clang-tidy-checks=*"
-        "--cross-file-rename"
         "--log=error"
       ];
     };
