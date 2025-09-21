@@ -29,6 +29,7 @@ in {
       powerManagement.finegrained = false;
       nvidiaSettings = false;
       open = false;
+      # package = config.boot.kernelPackages.nvidiaPackages.beta;
       package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
         version = "570.181";
         sha256_64bit = "sha256-8G0lzj8YAupQetpLXcRrPCyLOFA9tvaPPvAWurjj3Pk=";
