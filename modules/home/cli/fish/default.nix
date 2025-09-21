@@ -342,7 +342,7 @@ in {
 
             bind -M insert alt-r _fzf_search_history
             bind -M insert alt-a _fzf_search_directory
-            bind -M insert alt-s _fzf_search_git_status
+            bind -M insert alt-z _fzf_search_git_status
             bind -M insert alt-x _fzf_search_git_log
             bind -M insert alt-c "__zoxide_zi; commandline -f repaint"
 
