@@ -16,6 +16,7 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = [pkgs.satty];
+    # TODO rewrite to module
     xdg.configFile."satty/config.toml".text = with colors.hex;
     # toml
       ''

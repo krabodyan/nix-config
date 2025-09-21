@@ -44,11 +44,11 @@
       buildInputs = with pkgs; [
         cmake
 
-        fmt
-        curl
-        boost
-        opencv
-        openssl
+        fmt.dev
+        curl.dev
+        boost.dev
+        opencv.cxxdev
+        openssl.dev
         nlohmann_json
 
         cudaPackages.cudatoolkit
