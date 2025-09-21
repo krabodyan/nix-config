@@ -167,6 +167,7 @@
         matplotlib
         numpy
         pandas
+        scipy
 
         plotly
 
