@@ -41,8 +41,6 @@ in {
         gnumake
         cmake
         cmake-lint
-        gcc
-        cmake
 
         lazydocker
         sqlfluff

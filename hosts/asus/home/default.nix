@@ -28,6 +28,7 @@
     zoxide = yes;
     meld = yes;
     less = yes;
+    gcc = yes;
 
     git = {
       enable = true;
