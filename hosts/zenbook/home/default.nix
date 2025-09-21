@@ -25,7 +25,7 @@
     yazi = yes;
     zoxide = yes;
     ssh = yes;
-    diffuse = yes;
+    meld = yes;
     less = yes;
 
     git = {

@@ -32,8 +32,20 @@ in {
         signByDefault = true;
       };
 
-      aliases = {
+      aliases = let
+        git-cleanup = pkgs.writeShellScriptBin "git-cleanup" ''
+          for branch in $(git branch --merged master | grep -E -v '(^\*|master)'); do
+          	$confirm
+          	read -r -p "delete branch $branch? [y/N]: " confirm
+          	if [[ $confirm == "y" || $confirm == "Y" ]]; then
+          		git branch -d "$branch"
+          		git push origin --delete "$branch"
+          	fi
+          done
+        '';
+      in {
         graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) (%aN) %ar %C(reset)'";
+        cleanup = "!${git-cleanup}/bin/git-cleanup";
       };
 
       attributes = [
@@ -80,6 +92,12 @@ in {
 
         merge = {
           ff = "only";
+        };
+
+        mergetool = {
+          prompt = false;
+          keepBackup = false;
+          keepTemporaries = false;
         };
 
         rerere = {

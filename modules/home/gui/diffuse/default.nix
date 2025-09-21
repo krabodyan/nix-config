@@ -17,11 +17,6 @@ in {
 
     programs.git.extraConfig = {
       merge.tool = "diffuse";
-      mergetool = {
-        prompt = false;
-        keepBackup = false;
-        keepTemporaries = false;
-      };
     };
 
     xdg.configFile."diffuse/prefs".text = ''
