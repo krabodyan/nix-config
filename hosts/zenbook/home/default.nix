@@ -26,6 +26,7 @@
     zoxide = yes;
     ssh = yes;
     diffuse = yes;
+    less = yes;
 
     git = {
       enable = true;

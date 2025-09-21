@@ -27,6 +27,7 @@
     yazi = yes;
     zoxide = yes;
     diffuse = yes;
+    less = yes;
 
     git = {
       enable = true;
