@@ -16,6 +16,22 @@ in {
     home.packages = [pkgs.xdg-user-dirs];
     xdg = {
       enable = true;
+      portal.xdgOpenUsePortal = true;
+
+      configFile = {"mimeapps.list".force = true;};
+      mime.enable = true;
+      mimeApps = {
+        enable = true;
+        defaultApplicationPackages = [
+          config.programs.swayimg.package
+          config.programs.firefox.package
+          config.programs.zathura.package
+          config.programs.helix.package
+          config.programs.yazi.package
+          config.programs.mpv.package
+        ];
+      };
+
       userDirs = let
         mk = path: "${config.home.homeDirectory}/${path}";
       in {
@@ -29,10 +45,6 @@ in {
         templates = mk "templates";
         videos = mk "videos";
       };
-      mime.enable = true;
-      mimeApps.enable = true;
-      configFile = {"mimeapps.list".force = true;};
-      portal.xdgOpenUsePortal = true;
     };
   };
 }
