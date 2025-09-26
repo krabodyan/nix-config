@@ -26,6 +26,8 @@ in {
       IndentCaseLabels: true
       BreakTemplateDeclarations: Yes
       PointerAlignment: Left
+      BreakConstructorInitializers: BeforeComma
+      PackConstructorInitializers: Never
       AlignConsecutiveAssignments:
         Enabled:         true
       AlignConsecutiveBitFields:
