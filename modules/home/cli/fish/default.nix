@@ -118,7 +118,7 @@ in {
             gr = "git restore";
             grs = "git restore --staged";
 
-            gg = "git graph -10";
+            gg = "git graph -15";
 
             cm = {
               command = "git";
