@@ -137,6 +137,9 @@ in {
             bg = "${cfg.background} fill";
             scale = "1";
           };
+          "HDMI-A-1" = {
+            pos = "-1920 0";
+          };
         };
 
         gaps = {
