@@ -4,6 +4,10 @@
   ...
 }: {
   boot = {
+    bcache.enable = false;
+    initrd.systemd.enable = false;
+    initrd.systemd.dbus.enable = false;
+
     kernel.sysctl = {
       "kernel.printk" = 2;
       "kernel.nmi_watchdog" = 0;

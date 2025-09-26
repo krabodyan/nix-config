@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   boot = {
+    bcache.enable = false;
     initrd.systemd.enable = true;
     initrd.systemd.dbus.enable = true;
     kernel.sysctl = {
