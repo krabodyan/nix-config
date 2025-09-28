@@ -28,6 +28,8 @@ in {
       PointerAlignment: Left
       BreakConstructorInitializers: BeforeComma
       PackConstructorInitializers: Never
+      BreakBeforeBinaryOperators: None
+      PenaltyBreakAssignment: 100
       AlignConsecutiveAssignments:
         Enabled:         true
       AlignConsecutiveBitFields:
