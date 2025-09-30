@@ -77,6 +77,7 @@
     gui-default = {
       enable = true;
       extra = with pkgs; [
+        anydesk
         gcolor3
         google-chrome
         betaflight-configurator
