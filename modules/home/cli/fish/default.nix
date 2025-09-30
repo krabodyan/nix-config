@@ -89,7 +89,7 @@ in {
 
       shellAbbrs = lib.mkMerge [
         {
-          rsync-ssh = "rsync -avzP --append-verify user@ip:file.ext path";
+          rsync-ssh = "rsync -avzP --append-verify user@ip:path.from user@ip:path.to";
           cpr = "rsync -arvP --append-verify";
           cp = "cp -vr";
         }
