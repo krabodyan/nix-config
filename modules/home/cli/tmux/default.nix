@@ -75,6 +75,8 @@ in {
         bind -n "M-5" select-window -t 5
         bind -n "M-6" select-window -t 6
         bind -n "M-7" select-window -t 7
+        bind -n "M-9" select-window -t 8
+        bind -n "M-8" select-window -t 9
 
         bind -n "M-Tab" last-window
         bind "w" command-prompt "swap-window -t %%"
