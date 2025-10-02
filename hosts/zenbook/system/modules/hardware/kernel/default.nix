@@ -37,7 +37,7 @@
       "amd_pstate=active"
     ];
 
-    # kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_6_12;
 
     kernelModules = [
       "zenpower"
