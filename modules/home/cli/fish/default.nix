@@ -209,6 +209,8 @@ in {
 
           ssh = "TERM=xterm-color ${pkgs.openssh}/bin/ssh";
 
+          gdb = "gdb -q -ex 'set pagination off' -ex 'run'";
+
           nix-shell = "nix-shell --command fish";
           ns = "nix-shell --command fish -p";
         }
