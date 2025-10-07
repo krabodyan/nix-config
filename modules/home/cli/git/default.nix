@@ -130,6 +130,8 @@ in {
           colorMoved = "default";
         };
 
+        color.ui = "always";
+
         safe.directory = "*";
 
         advice = {
