@@ -83,6 +83,7 @@ in {
   };
 
   config = mkIf cfg.enable {
+    home.packages = [pkgs.grc];
     programs.fish = {
       enable = true;
       package = pkgs.fishMinimal;
@@ -118,7 +119,8 @@ in {
             gr = "git restore";
             grs = "git restore --staged";
 
-            gg = "git graph -15";
+            gg = "git graph -18";
+            ggl = "git graph";
 
             cm = {
               command = "git";
@@ -231,6 +233,10 @@ in {
           name = "fzf";
           inherit (pkgs.fishPlugins.fzf-fish) src;
         }
+        # {
+        #   name = "grc";
+        #   inherit (pkgs.fishPlugins.grc) src;
+        # }
         {
           name = "sponge";
           inherit (pkgs.fishPlugins.sponge) src;
