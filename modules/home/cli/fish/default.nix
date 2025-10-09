@@ -113,6 +113,7 @@ in {
             gp = "git push";
             gpf = "git push --force-with-lease";
 
+            gd = "git diff";
             gc = "git commit";
             gs = "git status";
 
