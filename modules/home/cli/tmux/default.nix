@@ -123,8 +123,9 @@ in {
 
         bind-key / copy-mode \; send-key ?
 
-        bind q kill-session
-        bind b set -g status
+        bind "Q" kill-session
+        bind "q" kill-window
+        bind "b" set -g status
       '';
   };
 }
