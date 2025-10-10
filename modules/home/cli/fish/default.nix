@@ -122,6 +122,7 @@ in {
 
             gg = "git graph -18";
             ggl = "git graph";
+            ggb = "git graph-branch";
 
             cm = {
               command = "git";
