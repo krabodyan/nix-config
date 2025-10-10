@@ -160,9 +160,10 @@
       runScript = "fish";
 
       buildInputs = with pkgs.python313Packages; [
-        # torch
-        # ultralytics
-        # opencv-python
+        torch
+        ultralytics
+        opencv-python
+        tensorrt
 
         matplotlib
         numpy
