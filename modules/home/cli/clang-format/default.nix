@@ -16,20 +16,37 @@ in {
     home.packages = [pkgs.gdb];
     home.file.".clang-format".text = ''
       BasedOnStyle: LLVM
+
       AllowShortFunctionsOnASingleLine: false
       AllowShortLambdasOnASingleLine: false
       AllowShortEnumsOnASingleLine: false
       AllowShortCaseExpressionOnASingleLine: false
+      AllowShortBlocksOnASingleLine: false
+      AllowAllArgumentsOnNextLine: false
+      AllowAllParametersOfDeclarationOnNextLine: false
+
       IndentWidth: 4
       IndentExternBlock: Indent
       IndentCaseBlocks: false
       IndentCaseLabels: true
+
+      BreakBeforeBraces: Custom
       BreakTemplateDeclarations: Yes
-      PointerAlignment: Left
-      BreakConstructorInitializers: BeforeComma
-      PackConstructorInitializers: Never
       BreakBeforeBinaryOperators: None
+      BreakFunctionDefinitionParameters: false
+      BreakConstructorInitializers: BeforeComma
+
+      PointerAlignment: Left
+      PackConstructorInitializers: Never
+
+      BinPackArguments: false
+      BinPackParameters: false
+
       PenaltyBreakAssignment: 100
+
+      LambdaBodyIndentation: OuterScope
+      MaxEmptyLinesToKeep: 2
+
       AlignConsecutiveAssignments:
         Enabled:         true
       AlignConsecutiveBitFields:
