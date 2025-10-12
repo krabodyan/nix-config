@@ -33,7 +33,7 @@ in {
         audio.granularSelect = true;
       };
       vencord = {
-        useSystem = true;
+        useSystem = false;
         themes.custom =
           # css
           ''
