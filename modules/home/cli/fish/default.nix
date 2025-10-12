@@ -219,7 +219,7 @@ in {
           ns = "nix-shell --command fish -p";
         }
         // lib.genAttrs ["ino" "rust" "rasp" "tauri" "pp" "cuda"] (
-          name: "nix develop $NH_FLAKE#${name} --impure --command sh -c \"${tm}\""
+          name: "nix develop $NH_FLAKE#${name} --impure --option build-dir /var/tmp --command sh -c \"${tm}\""
         );
 
       plugins = [
@@ -559,7 +559,7 @@ in {
           # fish
           ''
             for name in cuda pp
-              nix build $NH_FLAKE#devShells.x86_64-linux.$name --impure -o ~/.gc-root-$name
+              nix build $NH_FLAKE#devShells.x86_64-linux.$name --impure --option build-dir /var/tmp -o ~/.gc-root-$name
               echo $name builded
             end
           '';
