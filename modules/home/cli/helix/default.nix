@@ -112,7 +112,6 @@ in {
           "xls"
           "xlsx"
           # --end office
-          "csv"
           "drawio"
         ];
     };

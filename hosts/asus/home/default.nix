@@ -29,6 +29,7 @@
     meld = yes;
     less = yes;
     gcc = yes;
+    sc-im = yes;
 
     git = {
       enable = true;
@@ -85,7 +86,6 @@
         onlyoffice-desktopeditors
         qbittorrent
         solaar
-        obsidian
       ];
     };
 
