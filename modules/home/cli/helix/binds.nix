@@ -120,8 +120,8 @@ in rec {
       T = ["select_mode" "find_prev_char"];
 
       space = {
-        q = ":q";
-        Q = ":q!";
+        q = ":write-quit-all";
+        Q = ":quit-all!";
         c = ":buffer-close";
         C = ":buffer-close!";
       };
