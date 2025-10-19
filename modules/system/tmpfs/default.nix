@@ -14,7 +14,7 @@ in {
   config = mkIf cfg.enable {
     boot.tmp = {
       useTmpfs = true;
-      tmpfsSize = "6g";
+      tmpfsSize = "10g";
     };
   };
 }
