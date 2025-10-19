@@ -42,7 +42,7 @@ in {
       BinPackArguments: false
       BinPackParameters: false
 
-      PenaltyBreakAssignment: 100
+      PenaltyBreakAssignment: 120
 
       LambdaBodyIndentation: OuterScope
       MaxEmptyLinesToKeep: 2
