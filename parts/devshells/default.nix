@@ -168,6 +168,7 @@
         opencv-python
 
         tensorrt
+        pyturbojpeg
 
         matplotlib
         numpy
