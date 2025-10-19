@@ -159,10 +159,14 @@
       DEV_SHELL_NAME = "py";
       runScript = "fish";
 
+      CUDA_TOOLKIT_ROOT_DIR = "${pkgs.cudaPackages.cudatoolkit.out}";
+
       buildInputs = with pkgs.python313Packages; [
         torch
+        grad-cam
         ultralytics
         opencv-python
+
         tensorrt
 
         matplotlib
