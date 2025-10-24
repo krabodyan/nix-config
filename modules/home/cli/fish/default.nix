@@ -99,11 +99,12 @@ in {
             builtins.mapAttrs (name: value: {
               command = "cmake";
               expansion = value;
+              setCursor = true;
             })
             {
-              cfg = "-S . -B build";
-              bld = "--build build -j $(nproc)";
-              db = "-S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON";
+              cfg = "-S . -B build%";
+              bld = "--build build% -j $(nproc)";
+              db = "-S . -B build% -DCMAKE_EXPORT_COMPILE_COMMANDS=ON";
             }
           )
         )
