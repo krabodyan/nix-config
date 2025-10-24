@@ -84,11 +84,6 @@ let
 
     esc = ["collapse_selection" "keep_primary_selection"];
 
-    C-b = [
-      ":noop %sh{ gh browse %{buffer_name}:%{cursor_line} -b=%sh{ git rev-parse --abbrev-ref HEAD } }"
-      ":echo opening in browser"
-    ];
-
     ">" = "rotate_view";
     "<" = "rotate_view_reverse";
   };
@@ -139,6 +134,10 @@ in rec {
         h = ":toggle end-of-line-diagnostics disable hint";
         s = ["search_selection_detect_word_boundaries" "select_all" "select_regex"];
         l = ":sh sqlfluff lint %{buffer_name} --dialect postgres --nofail --disable-progress-bar";
+        b = [
+          ":noop %sh{ gh browse %{buffer_name}:%{cursor_line} -b=%sh{ git rev-parse --abbrev-ref HEAD } }"
+          ":echo opening in browser"
+        ];
         space = ":open %sh{ __yazi_picker %{buffer_name} }";
       };
     };
