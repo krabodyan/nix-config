@@ -96,6 +96,7 @@
     obs = yes;
     swayimg = yes;
     telegram = yes;
+    viber = yes;
     zathura = yes;
 
     # ------------- desktop environment
