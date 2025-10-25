@@ -46,6 +46,7 @@ in {
         graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) (%aN) %ar %C(reset)'";
         graph-branch = "log --oneline --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) (%aN) %ar %C(reset)'";
         cleanup = "!${git-cleanup}/bin/git-cleanup";
+        fetchall = "fetch origin '+refs/heads/*:refs/remotes/origin/*'";
       };
 
       attributes = [
@@ -86,6 +87,7 @@ in {
         };
 
         fetch = {
+          all = true;
           prune = true;
           parallel = 0;
         };
