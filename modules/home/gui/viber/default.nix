@@ -17,7 +17,7 @@ in {
 
     xdg.desktopEntries."viber" = {
       name = "Viber Desktop";
-      Path = "null";
+      exec = "${pkgs.viber}/opt/viber/Viber";
     };
   };
 }
