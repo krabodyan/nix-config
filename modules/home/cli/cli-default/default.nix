@@ -31,6 +31,8 @@ in {
 
         xdg-utils
 
+        scooter
+
         dust
         dua
         dysk
