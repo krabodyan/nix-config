@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   config,
   inputs,
   system,
@@ -18,8 +17,6 @@ in {
   config = mkIf cfg.enable {
     programs.firefox = {
       enable = true;
-
-      package = pkgs.firefox-wayland;
 
       policies = import ./policies.nix;
 

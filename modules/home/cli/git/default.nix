@@ -24,29 +24,11 @@ in {
     programs.git = {
       enable = true;
       package = pkgs.gitMinimal;
-      inherit (cfg) userName userEmail;
 
       signing = {
         format = "ssh";
         key = "~/.ssh/id_ed25519";
         signByDefault = true;
-      };
-
-      aliases = let
-        git-cleanup = pkgs.writeShellScriptBin "git-cleanup" ''
-          for branch in $(git -c color.ui=false branch --merged master | grep -E -v '(^\*|master)'); do
-          	read -r -p "delete branch $branch? [y/N]: " confirm
-          	if [[ $confirm == "y" || $confirm == "Y" || $confirm == "yes" ]]; then
-          		git branch -d "$branch"
-          		git push origin --delete "$branch"
-          	fi
-          done
-        '';
-      in {
-        graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) (%aN) %ar %C(reset)'";
-        graph-branch = "log --oneline --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) (%aN) %ar %C(reset)'";
-        cleanup = "!${git-cleanup}/bin/git-cleanup";
-        fetchall = "fetch origin '+refs/heads/*:refs/remotes/origin/*'";
       };
 
       attributes = [
@@ -56,7 +38,29 @@ in {
         "*.drawio binary"
       ];
 
-      extraConfig = {
+      settings = {
+        user = {
+          name = cfg.userName;
+          email = cfg.userEmail;
+        };
+
+        alias = let
+          git-cleanup = pkgs.writeShellScriptBin "git-cleanup" ''
+            for branch in $(git -c color.ui=false branch --merged master | grep -E -v '(^\*|master)'); do
+            	read -r -p "delete branch $branch? [y/N]: " confirm
+            	if [[ $confirm == "y" || $confirm == "Y" || $confirm == "yes" ]]; then
+            		git branch -d "$branch"
+            		git push origin --delete "$branch"
+            	fi
+            done
+          '';
+        in {
+          graph = "log --oneline --all --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) (%aN) %ar %C(reset)'";
+          graph-branch = "log --oneline --graph --format=format:'%C(brightmagenta)%h%C(reset)%C(auto)%d%C(reset) %s%C(black) (%aN) %ar %C(reset)'";
+          cleanup = "!${git-cleanup}/bin/git-cleanup";
+          fetchall = "fetch origin '+refs/heads/*:refs/remotes/origin/*'";
+        };
+
         gpg.ssh.allowedSignersFile = toString (
           pkgs.writeText "allowed_signers" ''
             ${cfg.userEmail} ${publicKey}

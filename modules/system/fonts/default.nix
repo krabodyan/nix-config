@@ -18,7 +18,7 @@ in {
       corefonts
       font-awesome_5
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       noto-fonts-cjk-sans
       twemoji-color-font
       nerd-fonts.symbols-only

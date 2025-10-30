@@ -16,7 +16,7 @@ in {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [delta];
 
-    programs.git.extraConfig = {
+    programs.git.settings = {
       core = {
         pager = "delta";
       };

@@ -33,6 +33,7 @@ in {
         "--pointer ' '"
         "--marker ' '"
         "--prompt '󰅂 '"
+        "--gutter ' '"
         "--border none"
         "--ellipsis ''"
         "--no-scrollbar"

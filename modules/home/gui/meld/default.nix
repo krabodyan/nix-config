@@ -16,7 +16,7 @@ in {
   config = mkIf cfg.enable {
     home.packages = [pkgs.meld];
 
-    programs.git.extraConfig = {
+    programs.git.settings = {
       merge.tool = "meld";
     };
 
