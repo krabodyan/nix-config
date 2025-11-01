@@ -29,6 +29,7 @@ in {
         ELECTRON_OZONE_PLATFORM_HINT = "auto";
         MOZ_ENABLE_WAYLAND = 1;
         NIXPKGS_ALLOW_UNFREE = 1;
+        NIXPKGS_ALLOW_BROKEN = 1;
 
         XDG_SCREENSHOTS_DIR = "~/pictures";
       }
