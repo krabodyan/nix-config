@@ -236,10 +236,6 @@ in {
           name = "fzf";
           inherit (pkgs.fishPlugins.fzf-fish) src;
         }
-        # {
-        #   name = "grc";
-        #   inherit (pkgs.fishPlugins.grc) src;
-        # }
         {
           name = "sponge";
           inherit (pkgs.fishPlugins.sponge) src;
