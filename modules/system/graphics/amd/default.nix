@@ -16,16 +16,8 @@ in {
     hardware.graphics = {
       extraPackages = with pkgs; [
         libva
-        vaapiVdpau
-        libvdpau-va-gl
+        libva-vdpau-driver
       ];
-    };
-    hardware.amdgpu = {
-      # opencl.enable = true;
-      amdvlk = {
-        enable = true;
-        # support32Bit.enable = true;
-      };
     };
   };
 }
