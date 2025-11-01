@@ -4,6 +4,7 @@
   hidpi,
   config,
   inputs,
+  system,
   colors,
   ...
 }: let
@@ -19,7 +20,7 @@ in {
     home.pointerCursor = {
       name = "GoogleDot-Custom";
       package = with colors.hex;
-        inputs.nix-cursors.packages.${pkgs.system}.google-cursor.override {
+        inputs.nix-cursors.packages.${system}.google-cursor.override {
           background_color = overlay1;
           outline_color = fg;
           accent_color = overlay1;

@@ -4,6 +4,7 @@
   config,
   colors,
   inputs,
+  system,
   hostname,
   mkAssociations,
   ...
@@ -25,7 +26,7 @@ in {
     programs.helix = {
       enable = true;
       defaultEditor = true;
-      package = inputs.helix.packages.${pkgs.system}.helix;
+      package = inputs.helix.packages.${system}.helix;
 
       extraPackages = with pkgs; let
         components = {
