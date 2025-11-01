@@ -1,7 +1,7 @@
 {inputs, ...}: {
   perSystem = {pkgs, ...}: let
     rust-pkgs = import inputs.nixpkgs {
-      inherit (pkgs) system;
+      inherit (pkgs.stdenv.hostPlatform) system;
       overlays = [(import inputs.rust-overlay)];
     };
   in {
