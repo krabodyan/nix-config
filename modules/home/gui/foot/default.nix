@@ -31,7 +31,7 @@ in {
           term = "foot";
           shell = "${pkgs.fish}/bin/fish";
 
-          font = "${font}:weight=Regular";
+          font = "${font}:weight=Medium";
           font-bold = "${font}:weight=SemiBold";
           font-italic = "${font}:weight=Regular:slant=Italic";
           font-bold-italic = "${font}:weight=SemiBold:slant=Italic";

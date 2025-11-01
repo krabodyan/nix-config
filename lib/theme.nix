@@ -13,7 +13,7 @@ rec {
     mode_normal = brred;
     mode_select = brmagenta;
 
-    bg = "0A0A0A";
+    bg = "0f0f0f";
     bg-dark = "000000";
     bg-bright = "141414";
 
