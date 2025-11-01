@@ -1,8 +1,10 @@
 {
   lib,
+  pkgs,
   fonts,
   colors,
   config,
+  mkAssociations,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -14,12 +16,19 @@ in {
     };
   };
   config = mkIf cfg.enable {
-    xdg.mimeApps.defaultApplications = {
-      "application/pdf" = "org.pwmt.zathura.desktop";
+    xdg.mimeApps.defaultApplications = mkAssociations {
+      types = [
+        "application/pdf"
+      ];
+      desktop = "org.pwmt.zathura-pdf-mupdf.desktop";
     };
 
     programs.zathura = {
       enable = true;
+      package = pkgs.zathura.override {
+        useMupdf = true;
+        plugins = [pkgs.zathuraPkgs.zathura_pdf_mupdf];
+      };
       options = with colors.hex; {
         adjust-open = "best-fit";
         default-bg = bg;
