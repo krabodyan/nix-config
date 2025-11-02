@@ -21,7 +21,7 @@ in {
     home.packages = let
       send = ''
         ${pkgs.libnotify}/bin/notify-send \
-        -t 1000 \
+        -t 400 \
         -a swaynotify \
         --urgency low \
         -h string:x-canonical-private-synchronous:swaynotify \
