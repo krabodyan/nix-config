@@ -77,6 +77,7 @@
       enable = true;
       extra = with pkgs; [
         anydesk
+        remmina
         google-chrome
         onlyoffice-desktopeditors
         mission-planner

@@ -30,6 +30,7 @@
     less = yes;
     gcc = yes;
     sc-im = yes;
+    postgres-cli = yes;
 
     git = {
       enable = true;
@@ -79,6 +80,7 @@
       enable = true;
       extra = with pkgs; [
         anydesk
+        remmina
         gcolor3
         google-chrome
         betaflight-configurator
