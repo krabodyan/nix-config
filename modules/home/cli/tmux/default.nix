@@ -79,7 +79,6 @@ in {
         bind -n "M-8" select-window -t 9
 
         bind -n "M-Tab" last-window
-        bind "w" command-prompt "swap-window -t %%"
         bind ":" command-prompt
 
         bind "h" select-pane -L
@@ -94,7 +93,10 @@ in {
         bind -n "C-n" next-layout
         bind -n "C-b" previous-layout
 
-        bind -r d resize-pane -Z
+        # zoom
+        bind -r z resize-pane -Z
+        bind "w" break-pane
+        bind "s" command-prompt "swap-window -t %%"
 
         bind -r \] resize-pane -D 1
         bind -r \[ resize-pane -U 1
