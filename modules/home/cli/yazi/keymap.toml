@@ -38,12 +38,17 @@ desc = "Compress to archive"
 [[mgr.prepend_keymap]]
 on = ["M", "s"]
 run = "plugin sshfs -- mount --jump"
-desc = "mount sshfs"
+desc = "mount"
+
+[[mgr.prepend_keymap]]
+on = ["M", "j"]
+run = "plugin sshfs -- jump"
+desc = "jump"
 
 [[mgr.prepend_keymap]]
 on = ["M", "u"]
 run = "plugin sshfs -- unmount"
-desc = "unmount sshfs"
+desc = "unmount"
 
 [[mgr.prepend_keymap]]
 on = ["R"]

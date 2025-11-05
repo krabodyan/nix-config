@@ -65,6 +65,11 @@
       url = "github:krabodyan/fish-done-osc99";
       flake = false;
     };
+
+    sshfs-yazi = {
+      url = "github:uhs-robert/sshfs.yazi";
+      flake = false;
+    };
   };
 
   outputs = {
