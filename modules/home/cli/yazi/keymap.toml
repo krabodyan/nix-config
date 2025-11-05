@@ -36,6 +36,16 @@ run = "plugin ouch"
 desc = "Compress to archive"
 
 [[mgr.prepend_keymap]]
+on = ["M", "s"]
+run = "plugin sshfs -- mount --jump"
+desc = "mount sshfs"
+
+[[mgr.prepend_keymap]]
+on = ["M", "u"]
+run = "plugin sshfs -- unmount"
+desc = "unmount sshfs"
+
+[[mgr.prepend_keymap]]
 on = ["R"]
 run = "plugin rsync"
 
