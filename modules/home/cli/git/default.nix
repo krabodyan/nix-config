@@ -33,6 +33,7 @@ in {
 
       attributes = [
         "*.svg binary"
+        "*.obj binary"
         "*.json binary"
         "*.lock binary"
         "*.drawio binary"
@@ -190,7 +191,6 @@ in {
         "*~"
         "*.o"
         "*.so"
-        "*.cmake"
         "*.gc??"
         "CMakeCache.txt"
         "CMakeFiles/"
