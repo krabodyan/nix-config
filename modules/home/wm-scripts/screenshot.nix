@@ -42,7 +42,7 @@ pkgs.writeShellApplication {
       status=$?
 
       if [ $status -eq 0 ]; then
-        ${grim} -g "$size" - | ${copy} & ${send} "screenshot copied"
+        ${grim} -g "$size" - | ${copy} && ${send} "screenshot copied"
       fi
 
       if [ "$mode" = "swayimg" ]; then
