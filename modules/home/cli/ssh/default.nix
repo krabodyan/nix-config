@@ -24,6 +24,7 @@ in {
           port = 22;
           extraOptions = {
             strictHostKeyChecking = "no";
+            Compression = "yes";
           };
         };
         jetson = {
