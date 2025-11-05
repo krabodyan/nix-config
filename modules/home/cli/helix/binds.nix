@@ -114,6 +114,10 @@ in rec {
       t = ["select_mode" "find_next_char"];
       T = ["select_mode" "find_prev_char"];
 
+      w = "move_next_sub_word_start";
+      e = "move_next_sub_word_end";
+      b = "move_prev_sub_word_start";
+
       space = {
         q = ":write-quit-all";
         Q = ":quit-all!";
