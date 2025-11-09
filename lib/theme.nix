@@ -1,6 +1,6 @@
 rec {
   fonts = {
-    monospace = "IosevkaTerm Nerd Font";
+    monospace = "IosevkaTerm NF";
     serif = "Roboto Medium";
   };
 
@@ -31,7 +31,7 @@ rec {
     overlay2 = "666666";
     subtext0 = "999999";
 
-    black = surface3;
+    black = surface2;
     red = "c43f3f";
     green = "9eff75";
     yellow = "f4dc75";
