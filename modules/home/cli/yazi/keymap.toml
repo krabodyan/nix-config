@@ -51,6 +51,16 @@ run = "plugin sshfs -- unmount"
 desc = "unmount"
 
 [[mgr.prepend_keymap]]
+on = ["M", "a"]
+run = "plugin sshfs -- add"
+desc = "add host"
+
+[[mgr.prepend_keymap]]
+on = ["M", "r"]
+run = "plugin sshfs -- remove"
+desc = "remove host"
+
+[[mgr.prepend_keymap]]
 on = ["R"]
 run = "plugin rsync"
 
