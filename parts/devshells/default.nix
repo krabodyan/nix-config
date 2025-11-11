@@ -50,6 +50,7 @@
         opencv.cxxdev
         openssl.dev
         nlohmann_json
+        onnxruntime.dev
 
         cudaPackages.cudatoolkit
         cudaPackages.tensorrt
