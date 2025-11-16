@@ -22,7 +22,9 @@
 
   "extensions.pocket.enabled" = false;
 
-  "security.sandbox.content.level" = 0;
+  "security.sandbox.content.level" = 1;
+  # "security.sandbox.warn_unprivileged_namespaces" = false;
+
   "widget.wayland.opaque-region.enabled" = false;
   "app.normandy.first_run" = false;
 

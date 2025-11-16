@@ -62,7 +62,6 @@ in {
           cpp = [
             neocmakelsp
             cmake-format
-            clang-tools
           ];
 
           sql = [

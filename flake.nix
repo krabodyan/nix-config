@@ -4,6 +4,14 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    nixpkgs-cuda = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixpkgs";
+      rev = "2fb006b87f04c4d3bdf08cfdbc7fab9c13d94a15";
+      narHash = "sha256-kJ8lIZsiPOmbkJypG+B5sReDXSD1KGu2VEPNqhRa/ew=";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

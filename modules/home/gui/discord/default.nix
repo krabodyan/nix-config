@@ -19,7 +19,7 @@ in {
       settings = with colors.hex; {
         appBadge = false;
         arRPC = false;
-        checkUpdates = false;
+        checkUpdates = true;
         customTitleBar = false;
         disableMinSize = true;
         discordBranch = "stable";
@@ -45,7 +45,7 @@ in {
           '';
         settings = {
           enabledThemes = ["custom.css"];
-          autoUpdate = false;
+          autoUpdate = true;
           frameless = true;
           autoUpdateNotification = false;
           notifyAboutUpdates = false;
