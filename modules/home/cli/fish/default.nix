@@ -37,13 +37,6 @@ in {
           example = true;
         };
 
-        podman = mkOption {
-          type = lib.types.bool;
-          description = "podman aliases";
-          default = false;
-          example = true;
-        };
-
         docker = mkOption {
           type = lib.types.bool;
           description = "docker aliases";
@@ -141,6 +134,7 @@ in {
           mkIf (cfg.aliases.docker) ({
               d = "docker";
               dcu = "docker compose up";
+              podman = "docker";
             }
             // builtins.mapAttrs (name: value: {
               command = "docker";
