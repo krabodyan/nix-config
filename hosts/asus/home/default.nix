@@ -63,9 +63,8 @@
       };
       aliases = {
         git = true;
-        podman = true;
         cmake = true;
-        docker = false;
+        docker = true;
         kubectl = false;
       };
       loginShell = {

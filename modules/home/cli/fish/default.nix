@@ -138,22 +138,6 @@ in {
           }
         )
         (
-          mkIf (cfg.aliases.podman) ({
-              d = "podman";
-              docker = "podman";
-              dcu = "podman compose up";
-            }
-            // builtins.mapAttrs (name: value: {
-              command = "podman";
-              expansion = value;
-            }) {
-              c = "compose";
-              i = "image";
-              cn = "container";
-              r = "run --rm -it";
-            })
-        )
-        (
           mkIf (cfg.aliases.docker) ({
               d = "docker";
               dcu = "docker compose up";
