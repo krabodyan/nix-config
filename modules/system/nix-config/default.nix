@@ -26,6 +26,7 @@ in {
     nixpkgs.config = {
       allowUnfree = true;
       allowBroken = true;
+      allowUnfreePredicate = _: true;
       allowInsecurePredicate = _: true;
     };
 

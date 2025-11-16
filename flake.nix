@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    nixpkgs-cuda = {
+    nixpkgs-pinned = {
       type = "github";
       owner = "NixOS";
       repo = "nixpkgs";
@@ -87,15 +87,25 @@
   } @ inputs: let
     libx = import ./lib {inherit self inputs;};
     hosts = import ./hosts.nix;
+    overlays = [(import ./overlays {inherit inputs;}).overlay];
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux"];
+
       imports = [
         inputs.treefmt-nix.flakeModule
         ./parts/devshells
         ./parts/treefmt
       ];
+
+      perSystem = {system, ...}: {
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit system overlays;
+        };
+      };
+
       flake = {
+        inherit overlays;
         nixosConfigurations = libx.genNixos hosts;
         homeConfigurations = libx.genHome hosts;
       };

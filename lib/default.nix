@@ -38,7 +38,6 @@
           disko.nixosModules.default
         ]
         ++ [
-          "${self}/overlays"
           "${self}/modules/system"
           "${self}/hosts/${hostDir}/system"
           "${self}/hosts/${hostDir}/system/modules"

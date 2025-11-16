@@ -8,7 +8,7 @@
 in {
   options = {
     module.powerManagement = {
-      enable = mkEnableOption "power management ";
+      enable = mkEnableOption "power management";
     };
   };
   config = mkIf cfg.enable {

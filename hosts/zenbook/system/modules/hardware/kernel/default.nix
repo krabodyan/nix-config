@@ -37,7 +37,7 @@
       "amd_pstate=active"
     ];
 
-    kernelPackages = pkgs.linuxPackages_6_12;
+    kernelPackages = pkgs.pinned.linuxPackages_latest;
 
     kernelModules = [
       "zenpower"
@@ -49,7 +49,6 @@
       "xhci_pci"
       "nvme"
       "rtsx_pci_sdmmc"
-      "amdgpu"
     ];
 
     initrd.verbose = false;
@@ -57,6 +56,7 @@
     blacklistedKernelModules = [
       "sp5100_tco" # watchdog
       "radeon"
+      "nouveau"
       "k10temp" # https://github.com/NixOS/nixos-hardware/blob/master/common/cpu/amd/zenpower.nix
 
       "btrfs"

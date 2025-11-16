@@ -4,9 +4,6 @@
       inherit (pkgs.stdenv.hostPlatform) system;
       overlays = [(import inputs.rust-overlay)];
     };
-    cuda-pkgs = import inputs.nixpkgs-cuda {
-      inherit (pkgs.stdenv.hostPlatform) system;
-    };
   in {
     devShells.rust = pkgs.mkShell {
       name = "rust";
@@ -43,7 +40,7 @@
       name = "cuda";
       DEV_SHELL_NAME = "cuda";
 
-      buildInputs = with cuda-pkgs; [
+      buildInputs = with pkgs.pinned; [
         cmake
         clang-tools
 
@@ -67,7 +64,7 @@
         gst_all_1.gst-vaapi
       ];
 
-      CUDA_TOOLKIT_ROOT_DIR = "${cuda-pkgs.cudaPackages.cudatoolkit.out}";
+      CUDA_TOOLKIT_ROOT_DIR = "${pkgs.pinned.cudaPackages.cudatoolkit.out}";
     };
 
     devShells.rasp = pkgs.mkShell {
@@ -163,7 +160,7 @@
       DEV_SHELL_NAME = "py";
       runScript = "fish";
 
-      CUDA_TOOLKIT_ROOT_DIR = "${cuda-pkgs.cudatoolkit.out}";
+      CUDA_TOOLKIT_ROOT_DIR = "${pkgs.pinned.cudatoolkit.out}";
 
       buildInputs = with pkgs.python313Packages; [
         torch

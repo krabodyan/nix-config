@@ -32,7 +32,7 @@
       "raid=noautodetect"
     ];
 
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.pinned.linuxPackages_zen;
 
     extraModprobeConfig = ''
       options i915 enable_guc=3
