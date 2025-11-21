@@ -106,10 +106,9 @@ in {
           ];
           "workspace 4" = [
             {class = "^zoom$";}
-            {class = "^steam$";}
           ];
           "workspace 5" = [
-            {class = "^ONLYOFFICE$";}
+            {class = "^steam$";}
           ];
         };
 
