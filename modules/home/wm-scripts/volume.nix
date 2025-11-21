@@ -17,7 +17,7 @@ pkgs.writeShellApplication {
     fi
 
     if pamixer --get-mute | grep -q "true"; then
-      ${send} "󰖁 $(pamixer --get-volume-human)"
+      ${send "swaynotify"} "󰖁 $(pamixer --get-volume-human)"
       exit 0
     fi
 
@@ -27,6 +27,6 @@ pkgs.writeShellApplication {
       pamixer -d 5
     fi
 
-    ${send} -h "int:value:$(pamixer --get-volume)" "󰕾 $(pamixer --get-volume-human)"
+    ${send "swaynotify"} -h "int:value:$(pamixer --get-volume)" "󰕾 $(pamixer --get-volume-human)"
   '';
 }

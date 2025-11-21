@@ -17,10 +17,10 @@ pkgs.writeShellApplication {
     ''
       if riverctl list-input-configs | grep -q "disabled"; then
         riverctl input "${touchpadDevice}" events enabled
-        ${send} "󰭯  touchpad enabled"
+        ${send "swaynotify"} "󰭯  touchpad enabled"
       else
         riverctl input "${touchpadDevice}" events disabled
-        ${send} "󱘂  touchpad disabled"
+        ${send "swaynotify"} "󱘂  touchpad disabled"
       fi
     '';
 }

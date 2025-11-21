@@ -38,6 +38,6 @@ pkgs.writeShellApplication {
       icon="󰃞 "
     fi
 
-    ${send} "$icon$b" -h "int:value:$b"
+    ${send "swaynotify"} "$icon$b" -h "int:value:$b"
   '';
 }

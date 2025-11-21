@@ -19,12 +19,12 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = let
-      send = ''
+      send = app: ''
         ${pkgs.libnotify}/bin/notify-send \
         -t 400 \
-        -a swaynotify \
+        -a ${app} \
         --urgency low \
-        -h string:x-canonical-private-synchronous:swaynotify \
+        -h string:x-canonical-private-synchronous:${app} \
       '';
     in (
       map

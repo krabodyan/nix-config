@@ -1,6 +1,5 @@
 {
   pkgs,
-  send,
   colors,
   ...
 }:
@@ -29,7 +28,7 @@ pkgs.writeShellApplication {
       makoctl dismiss
 
       if [ "$mode" = "full" ]; then
-        ${grim} - | ${copy} & ${send} "screenshot copied"
+        ${grim} - | ${copy}
         exit 0
       fi
 
@@ -42,7 +41,7 @@ pkgs.writeShellApplication {
       status=$?
 
       if [ $status -eq 0 ]; then
-        ${grim} -g "$size" - | ${copy} && ${send} "screenshot copied"
+        ${grim} -g "$size" - | ${copy}
       fi
 
       if [ "$mode" = "swayimg" ]; then

@@ -14,10 +14,10 @@ pkgs.writeShellApplication {
   text = ''
     pamixer --default-source -t
     if pamixer --default-source --get-mute | grep -q "true"; then
-      ${send} "󰍭 $(pamixer --default-source --get-volume-human)"
+      ${send "swaynotify"} "󰍭 $(pamixer --default-source --get-volume-human)"
     else
       h="int:value:$(pamixer --default-source --get-volume)"
-      ${send} " $(pamixer --default-source --get-volume-human)" -h "$h"
+      ${send "swaynotify"} " $(pamixer --default-source --get-volume-human)" -h "$h"
     fi
   '';
 }
