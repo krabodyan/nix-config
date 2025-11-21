@@ -40,13 +40,22 @@
       name = "cuda";
       DEV_SHELL_NAME = "cuda";
 
+      nativeBuildInputs = with pkgs.pinned; [pkg-config];
+
       buildInputs = with pkgs.pinned; [
         cmake
-        clang-tools
+        pkg-config
 
+        clang-tools
+        protobuf
+
+        qt6.qtbase
+
+        srt
         fmt.dev
         curl.dev
         boost.dev
+        gtest.dev
         opencv.cxxdev
         openssl.dev
         nlohmann_json
@@ -167,6 +176,7 @@
         grad-cam
         ultralytics
         opencv-python
+        gst-python
 
         tensorrt
 

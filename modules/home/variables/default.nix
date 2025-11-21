@@ -16,6 +16,8 @@ in {
     home.sessionPath = ["$HOME/.cargo/bin"];
     home.sessionVariables =
       {
+        EDITOR = "hx";
+
         GDK_BACKEND = "wayland,x11,*";
         SDL_VIDEODRIVER = "wayland";
 
