@@ -174,6 +174,7 @@ in {
 
       ignores = [
         "*.bak"
+        "build/"
         ".cache/"
         ".cache"
         "tmp/"
