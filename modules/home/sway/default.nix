@@ -235,7 +235,7 @@ in {
             map (num: {
               workspace = toString num;
               output = "eDP-1";
-            }) [1 2 3 4 5 6 7]
+            }) [1 2 3 4 5 6 7 9]
           )
           ++ [
             {
@@ -314,6 +314,7 @@ in {
           "${mod}+6" = "workspace number 6";
           "${mod}+7" = "workspace number 7";
           "${mod}+8" = "workspace number 8";
+          "${mod}+9" = "workspace number 9";
 
           "${mod}+Shift+1" = "move container to workspace number 1";
           "${mod}+Shift+2" = "move container to workspace number 2";
@@ -323,6 +324,7 @@ in {
           "${mod}+Shift+6" = "move container to workspace number 6";
           "${mod}+Shift+7" = "move container to workspace number 7";
           "${mod}+Shift+8" = "move container to workspace number 8";
+          "${mod}+Shift+9" = "move container to workspace number 9";
 
           ${microphoneKey} = "exec __microphone";
           XF86AudioMute = "exec __volume mute";
