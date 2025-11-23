@@ -8,7 +8,6 @@
     devShells.rust = pkgs.mkShell {
       name = "rust";
       DEV_SHELL_NAME = "rust";
-      runScript = "fish";
       RUST_BACKTRACE = 1;
       RUST_LOG = "DEBUG";
 
@@ -27,8 +26,8 @@
             targets = ["x86_64-unknown-linux-gnu"];
             extensions = [
               "rust-src"
-              # "llvm-tools-preview"
               "rust-analyzer"
+              # "llvm-tools-preview"
               # "miri"
             ];
           }
@@ -55,6 +54,7 @@
         fmt.dev
         curl.dev
         boost.dev
+        libuv.dev
         gtest.dev
         opencv.cxxdev
         openssl.dev
@@ -79,7 +79,6 @@
     devShells.rasp = pkgs.mkShell {
       name = "rasp";
       DEV_SHELL_NAME = "rasp";
-      runScript = "fish";
 
       RUST_BACKTRACE = 1;
       RUST_LOG = "DEBUG";
@@ -109,7 +108,6 @@
     devShells.tauri = pkgs.mkShell {
       name = "tauri";
       DEV_SHELL_NAME = "tauri";
-      runScript = "fish";
 
       RUST_BACKTRACE = 1;
       RUST_LOG = "DEBUG";
@@ -154,7 +152,6 @@
     devShells.ino = pkgs.mkShell {
       name = "ino";
       DEV_SHELL_NAME = "ino";
-      runScript = "fish";
 
       buildInputs = with pkgs; [
         glibc_multi
@@ -167,7 +164,6 @@
     devShells.pp = pkgs.mkShell {
       name = "py";
       DEV_SHELL_NAME = "py";
-      runScript = "fish";
 
       CUDA_TOOLKIT_ROOT_DIR = "${pkgs.pinned.cudatoolkit.out}";
 
