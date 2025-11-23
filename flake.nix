@@ -12,6 +12,14 @@
       narHash = "sha256-kJ8lIZsiPOmbkJypG+B5sReDXSD1KGu2VEPNqhRa/ew=";
     };
 
+    rust-overlay = {
+      type = "github";
+      owner = "oxalica";
+      repo = "rust-overlay";
+      rev = "63d22578600f70d293aede6bc737efef60ebd97f";
+      narHash = "sha256-Zo3LQQDz+64EQ9zor/WmeNTFLoZkjmhp0UY3G0D3seE=";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,11 +42,6 @@
 
     helix = {
       url = "github:helix-editor/helix";
-    };
-
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay?rev=63d22578600f70d293aede6bc737efef60ebd97f";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-colors = {
