@@ -18,6 +18,7 @@ in {
     programs.fish = {
       enable = true;
       package = pkgs.fishMinimal;
+      useBabelfish = true;
     };
 
     programs.command-not-found.enable = false;
@@ -25,23 +26,25 @@ in {
     users = {
       mutableUsers = false;
 
-      users = {
+      users = let
+        basePackages = with pkgs; [
+          git
+          helix
+          nh
+          home-manager
+        ];
+      in {
         root = {
           shell = pkgs.bash;
           hashedPasswordFile = config.age.secrets.password.path;
-          packages = with pkgs; [
-            git
-            helix
-            nh
-            home-manager
-          ];
+          packages = basePackages;
         };
 
         ${username} = {
-          inherit (config.users.users.root) packages;
           uid = 1000;
           home = "/home/${username}";
           shell = pkgs.fishMinimal;
+          packages = basePackages;
           isNormalUser = true;
           description = "${username}";
           extraGroups = [

@@ -533,7 +533,7 @@ in {
         build-devshell =
           # fish
           ''
-            for name in cuda pp
+            for name in cuda pp rust
               nix build $NH_FLAKE#devShells.x86_64-linux.$name --impure --option max-jobs 1 -o ~/.gc-root-$name
               echo $name builded
             end
