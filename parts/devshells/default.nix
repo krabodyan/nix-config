@@ -1,6 +1,6 @@
 {inputs, ...}: {
   perSystem = {pkgs, ...}: let
-    rust-pkgs = import inputs.nixpkgs {
+    rust-pkgs = import inputs.nixpkgs-pinned {
       inherit (pkgs.stdenv.hostPlatform) system;
       overlays = [(import inputs.rust-overlay)];
     };
@@ -11,15 +11,32 @@
       RUST_BACKTRACE = 1;
       RUST_LOG = "DEBUG";
 
-      LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
+      LIBCLANG_PATH = "${pkgs.pinned.llvmPackages.libclang.lib}/lib";
 
-      nativeBuildInputs = with pkgs; [
+      nativeBuildInputs = with pkgs.pinned; [
         pkg-config
         clang
       ];
 
-      buildInputs = with pkgs; [
+      CUDA_TOOLKIT_ROOT_DIR = "${pkgs.pinned.cudaPackages.cudatoolkit.out}";
+
+      buildInputs = with pkgs.pinned; [
+        gcc
+        curl.dev
         opencv4.cxxdev
+        openssl.dev
+
+        cudaPackages.cudatoolkit
+        cudaPackages.tensorrt
+
+        gst_all_1.gstreamer
+        gst_all_1.gst-plugins-base
+        gst_all_1.gst-plugins-good
+        gst_all_1.gst-plugins-bad
+        gst_all_1.gst-plugins-ugly
+        gst_all_1.gst-libav
+        gst_all_1.gst-vaapi
+
         (
           rust-pkgs.rust-bin.stable.latest.default.override
           {
@@ -54,7 +71,6 @@
         fmt.dev
         curl.dev
         boost.dev
-        libuv.dev
         gtest.dev
         opencv.cxxdev
         openssl.dev
