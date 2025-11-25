@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  username,
   hostname,
 }: {
   language = [
@@ -259,11 +260,17 @@
         };
         options = {
           nixos = {
-            expr = ''(builtins.getFlake ("git+file://" + toString ./.)).nixosConfigurations.${hostname}.options'';
+            expr = ''(builtins.getFlake "/home/${username}/flake").nixosConfigurations.${hostname}.options'';
           };
-          home_manager = {
-            expr = ''(builtins.getFlake ("git+file://" + toString ./.)).homeConfigurations.${hostname}.options'';
+          home-manager = {
+            expr = ''(builtins.getFlake "/home/${username}/flake").homeConfigurations.${hostname}.options'';
           };
+          # flake-parts = {
+          #   expr = ''(builtins.getFlake "/home/${username}/flake").debug.options'';
+          # };
+          # flake-parts2 = {
+          #   expr = ''(builtins.getFlake "/home/${username}/flake").currentSystem.options'';
+          # };
         };
       };
     };
@@ -367,7 +374,7 @@
         lint = {
           enable = true;
         };
-        scan_cmake_in_package = false;
+        scan_cmake_in_package = true;
         semantic_token = false;
       };
     };

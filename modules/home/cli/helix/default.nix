@@ -6,6 +6,7 @@
   inputs,
   system,
   hostname,
+  username,
   mkAssociations,
   ...
 }: let
@@ -89,7 +90,7 @@ in {
 
       themes = import ./theme.nix {inherit colors;};
 
-      languages = import ./languages.nix {inherit lib pkgs hostname;};
+      languages = import ./languages.nix {inherit lib pkgs hostname username;};
 
       ignores = let
         add_ignore = ext: "*.${ext}";
