@@ -26,7 +26,7 @@ in {
       changeDirWidgetCommand = "fd --type d";
       fileWidgetCommand = "fd --type f";
       defaultOptions = [
-        "--no-multi-line"
+        "--select-1"
         "--ignore-case"
         "--algo=v1"
         "--no-mouse"
