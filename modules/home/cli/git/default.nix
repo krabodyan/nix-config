@@ -47,7 +47,7 @@ in {
 
         alias = let
           git-cleanup = pkgs.writeShellScriptBin "git-cleanup" ''
-            for branch in $(git -c color.ui=false branch --merged master | grep -E -v '(^\*|master)'); do
+            for branch in $(git -c branch --merged master | grep -E -v '(^\*|master)'); do
             	read -r -p "delete branch $branch? [y/N]: " confirm
             	if [[ $confirm == "y" || $confirm == "Y" || $confirm == "yes" ]]; then
             		git branch -d "$branch"
@@ -137,7 +137,7 @@ in {
           colorMoved = "default";
         };
 
-        color.ui = "always";
+        color.ui = "auto";
 
         safe.directory = "*";
 
