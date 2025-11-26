@@ -13,17 +13,15 @@
 
       LIBCLANG_PATH = "${pkgs.pinned.llvmPackages.libclang.lib}/lib";
 
+      CUDA_TOOLKIT_ROOT_DIR = "${pkgs.pinned.cudaPackages.cudatoolkit.out}";
+
       nativeBuildInputs = with pkgs.pinned; [
         pkg-config
         clang
       ];
 
-      CUDA_TOOLKIT_ROOT_DIR = "${pkgs.pinned.cudaPackages.cudatoolkit.out}";
-
       buildInputs = with pkgs.pinned; [
-        gcc
-        curl.dev
-        opencv4.cxxdev
+        opencv.cxxdev
         openssl.dev
 
         cudaPackages.cudatoolkit
@@ -38,14 +36,14 @@
         gst_all_1.gst-vaapi
 
         (
-          rust-pkgs.rust-bin.stable.latest.default.override
+          rust-pkgs.rust-bin.nightly.latest.default.override
           {
             targets = ["x86_64-unknown-linux-gnu"];
             extensions = [
               "rust-src"
               "rust-analyzer"
-              # "llvm-tools-preview"
               # "miri"
+              # "llvm-tools-preview"
             ];
           }
         )
