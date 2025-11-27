@@ -14,22 +14,26 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
-      sqlx-cli
-      cargo-show-asm
-      cargo-llvm-cov
       cargo-expand
       cargo-watch
+      cargo-flamegraph
+      # sqlx-cli
+      # cargo-show-asm
+      # cargo-llvm-cov
     ];
 
     xdg.configFile."rustfmt/rustfmt.toml".text =
       # toml
       ''
         edition = "2024"
-        chain_width = 55
-        max_width = 80
         comment_width = 100
-        fn_call_width = 55
-        binop_separator = "Front"
+        max_width = 80
+        # chain_width = 55
+        # fn_call_width = 55
+        binop_separator = "Back"
+        use_small_heuristics = "Default"
+        combine_control_expr = false
+        fn_params_layout = "Compressed"
         group_imports = "StdExternalCrate"
         imports_granularity = "Module"
         hard_tabs = true

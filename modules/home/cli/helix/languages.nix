@@ -170,15 +170,15 @@
 
   language-server = {
     rust-analyzer.config = {
-      # assist.emitMustUse = true;
-      # assist.expressionFillDefault = "todo";
-      # assist.termSearch.borrowcheck = false;
-      # assist.termSearch.fuel = 100;
+      assist.emitMustUse = true;
+      assist.expressionFillDefault = "todo";
+      assist.termSearch.borrowcheck = false;
+      assist.termSearch.fuel = 100;
       cache.warmup = true;
       cachePriming.numThreads = 12;
-      # cargo.buildScripts.enable = false;
+      # cargo.buildScripts.enable = true;
       # cargo.noDeps = true;
-      diagnostics.disabled = ["proc-macro-disabled" "missing_safety_doc"];
+      diagnostics.disabled = ["proc-macro-disabled" "clippy::missing_safety_doc" "clippy::missing_errors_doc"];
       diagnostics.styleLints.enable = true;
       files.excludeDirs = [".git" ".github" "target" "assets" "static" "dist"];
       files.watcher = "server";
@@ -186,8 +186,8 @@
       imports.preferPrelude = true;
       lru.capacity = 512;
       numThreads = 12;
-      # references.excludeImports = true;
-      # references.excludeTests = true;
+      references.excludeImports = true;
+      references.excludeTests = true;
 
       hover = {
         actions.enable = false;
