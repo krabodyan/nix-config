@@ -175,9 +175,9 @@
       assist.termSearch.borrowcheck = false;
       assist.termSearch.fuel = 100;
       cache.warmup = true;
-      cachePriming.numThreads = 12;
-      # cargo.buildScripts.enable = true;
-      # cargo.noDeps = true;
+      cachePriming.numThreads = 0;
+      cargo.buildScripts.enable = false;
+      cargo.noDeps = false;
       diagnostics.disabled = ["proc-macro-disabled" "clippy::missing_safety_doc" "clippy::missing_errors_doc"];
       diagnostics.styleLints.enable = true;
       files.excludeDirs = [".git" ".github" "target" "assets" "static" "dist"];
@@ -185,7 +185,7 @@
       imports.granularity.group = "module";
       imports.preferPrelude = true;
       lru.capacity = 512;
-      numThreads = 12;
+      numThreads = 0;
       references.excludeImports = true;
       references.excludeTests = true;
 
