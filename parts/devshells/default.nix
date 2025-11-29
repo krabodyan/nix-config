@@ -5,7 +5,7 @@
       overlays = [(import inputs.rust-overlay)];
     };
   in {
-    devShells.rust = pkgs.mkShell {
+    devShells.rust = pkgs.mkShell rec {
       name = "rust";
       DEV_SHELL_NAME = "rust";
       RUST_BACKTRACE = 1;
@@ -23,6 +23,19 @@
       buildInputs = with pkgs.pinned; [
         opencv.cxxdev
         openssl.dev
+
+        expat
+        fontconfig
+        freetype
+        freetype.dev
+        libGL
+        pkg-config
+        xorg.libX11
+        xorg.libXcursor
+        xorg.libXi
+        xorg.libXrandr
+        wayland
+        libxkbcommon
 
         cudaPackages.cudatoolkit
         cudaPackages.tensorrt
@@ -48,6 +61,9 @@
           }
         )
       ];
+
+      LD_LIBRARY_PATH =
+        builtins.foldl' (a: b: "${a}:${b}/lib") "${pkgs.vulkan-loader}/lib" buildInputs;
     };
 
     devShells.cuda = pkgs.mkShell {
@@ -179,16 +195,16 @@
       name = "py";
       DEV_SHELL_NAME = "py";
 
-      CUDA_TOOLKIT_ROOT_DIR = "${pkgs.pinned.cudatoolkit.out}";
+      # CUDA_TOOLKIT_ROOT_DIR = "${pkgs.pinned.cudatoolkit.out}";
 
-      buildInputs = with pkgs.python313Packages; [
+      buildInputs = with pkgs.pinned.python313Packages; [
         torch
         grad-cam
         ultralytics
         opencv-python
         gst-python
 
-        tensorrt
+        # tensorrt
 
         matplotlib
         numpy
