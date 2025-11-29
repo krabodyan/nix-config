@@ -17,11 +17,12 @@ in {
     xdg.configFile."tmux/tmux.conf".text =
       # bash
       ''
-        unbind -a
+        unbind -a -T root
         set -g mouse off
 
         set -ga update-environment TERM
         set -ga update-environment TERM_PROGRAM
+
         set -g default-shell ${pkgs.fish}/bin/fish
 
         set -g prefix M-Space
@@ -41,8 +42,8 @@ in {
         set -g pane-active-border-style "fg=magenta,bg=default"
         set -g mode-style "bg=black,bright"
         set -g message-style "fg=white,bg=black"
-
-        set -g copy-mode-match-style "bg=red,fg=black"
+        set -g copy-mode-position-style "fg=white,bg=default"
+        set -g copy-mode-match-style "fg=black,bg=red"
 
         set -g status-interval 30
         set -g status-justify centre
@@ -55,8 +56,15 @@ in {
         set -g status-left-length 10
         set -g status-right-length 10
 
+        set -g cursor-style default
+        set -g prompt-cursor-colour brightwhite
+
+        set -g pane-border-indicators both
+        set -g pane-border-lines simple
+
         set -g destroy-unattached on
         set -g detach-on-destroy off
+
         set -g set-clipboard external
 
         setw -g automatic-rename on
@@ -95,7 +103,7 @@ in {
 
         # zoom
         bind -r z resize-pane -Z
-        bind "w" break-pane
+        bind "w" break-pane \; move-window -r
         bind "s" command-prompt "swap-window -t %%"
 
         bind -r \] resize-pane -D 1
@@ -109,7 +117,12 @@ in {
         bind "K" split-window -v -c "#{pane_current_path}"
 
         bind v copy-mode
-        bind -T copy-mode-vi M-d send-keys -X cancel
+
+        bind -T copy-mode-vi M-d \
+          if-shell -F '#{selection_active}' \
+            'send-keys -X clear-selection' \
+            'send-keys -X cancel'
+
         unbind -T copy-mode-vi "H"
         unbind -T copy-mode-vi "L"
 
@@ -119,11 +132,13 @@ in {
         bind -T copy-mode-vi "M-g" send -X start-of-line
 
         bind -T copy-mode-vi "v" send -X begin-selection
+        bind -T copy-mode-vi "x" send -X select-line
         bind -T copy-mode-vi "r" send-keys -X rectangle-toggle
         bind -T copy-mode-vi "y" send -X copy-pipe "reattach-to-user-namespace wl-copy"
         bind -T copy-mode-vi "Y" send-keys -X copy-pipe-and-cancel "tmux paste-buffer"
 
-        bind-key / copy-mode \; send-key ?
+        bind -T copy-mode-vi / command-prompt -T search -p "search:" { send-keys -X search-backward -- "%%" }
+        bind / copy-mode \; command-prompt -T search -p "search:" { send-keys -X search-backward -- "%%" }
 
         bind "Q" kill-session
         bind "q" kill-window
