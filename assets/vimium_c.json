@@ -1,17 +1,25 @@
 {
 	"name": "Vimium C",
-	"@time": "4/20/2025, 10:23:06 PM",
-	"time": 1745176986074,
+	"@time": "11/27/2025, 10:07:28 PM",
+	"time": 1764274048954,
 	"environment": {
 		"extension": "2.12.3",
 		"platform": "linux",
-		"firefox": 139
+		"firefox": 145
 	},
 	"autoDarkMode": 1,
 	"exclusionRules": [
 		{
-			"passKeys": "",
+			"passKeys": "*",
 			"pattern": ":https://typerun.top/"
+		},
+		{
+			"passKeys": "0 1 2 3 4 5 6 7 8 9",
+			"pattern": "^https?://"
+		},
+		{
+			"passKeys": "*",
+			"pattern": ":https://access.dwservice.net/"
 		}
 	],
 	"grabBackFocus": true,
@@ -27,8 +35,8 @@
 		"map <a-h> previousTab",
 		"map <a-l> nextTab",
 		"map <c-x> removeTab",
-		"map u goBack",
-		"map <c-u> goForward",
+		"map <c-u> goBack",
+		"map U goForward",
 		"map \\ passNextKey",
 		"map! <a-a> LinkHints.activate",
 		"map c LinkHints.activateEdit",
