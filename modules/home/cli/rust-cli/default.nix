@@ -16,10 +16,10 @@ in {
     home.packages = with pkgs; [
       cargo-expand
       cargo-watch
-      cargo-flamegraph
-      # sqlx-cli
+      # cargo-flamegraph
       # cargo-show-asm
       # cargo-llvm-cov
+      # sqlx-cli
     ];
 
     xdg.configFile."rustfmt/rustfmt.toml".text =

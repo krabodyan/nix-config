@@ -44,6 +44,7 @@
       enable = true;
       dev = true;
       extra = with pkgs; [
+        perf
         openvpn
         imagemagick
         ffmpeg-full

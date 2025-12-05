@@ -15,7 +15,7 @@
     packages = yes;
     fonts = yes;
     udev-rules = yes;
-    libvirtd = yes;
+    # libvirtd = yes;
     # printing = yes;
 
     podman = {
