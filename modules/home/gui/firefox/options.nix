@@ -2,6 +2,8 @@
   "browser.startup.page" = 3;
   "browser.sessionstore.max_resumed_crashes" = 0;
 
+  "browser.ctrlTab.sortByRecentlyUsed" = true;
+
   "widget.use-xdg-desktop-portal.file-picker" = 1;
 
   "browser.aboutConfig.showWarning" = false;
