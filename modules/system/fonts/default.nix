@@ -3,6 +3,7 @@
   pkgs,
   fonts,
   config,
+  username,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -25,6 +26,17 @@ in {
       nerd-fonts.iosevka-term
       roboto
     ];
+
+    system.userActivationScripts = {
+      coreFontsSetup = {
+        text =
+          # bash
+          ''
+            mkdir -p /home/${username}/.local/share/fonts/
+            ${pkgs.rsync}/bin/rsync -r "${pkgs.corefonts}/share/fonts/truetype/" "/home/${username}/.local/share/fonts/"
+          '';
+      };
+    };
 
     fonts.fontDir.enable = true;
     fonts.fontconfig = {
