@@ -171,25 +171,38 @@
   language-server = {
     rust-analyzer.config = {
       assist.emitMustUse = true;
-      assist.expressionFillDefault = "todo";
-      assist.termSearch.borrowcheck = false;
-      assist.termSearch.fuel = 100;
-      cache.warmup = true;
+      assist.expressionFillDefault = "default";
+      assist.termSearch.enable = false;
+      # assist.termSearch.borrowcheck = false;
+      # assist.termSearch.fuel = 100;
+
+      cachePriming.enable = true;
       cachePriming.numThreads = 0;
+
+      cargo.targetDir = true;
       cargo.buildScripts.enable = false;
+      cargo.buildScripts.rebuildOnSave = false;
+      cargo.noDefaultFeatures = true;
+      cargo.autoreload = true;
       cargo.noDeps = false;
-      diagnostics.disabled = ["proc-macro-disabled" "clippy::missing_safety_doc" "clippy::missing_errors_doc"];
+
+      diagnostics.disabled = ["proc-macro-disabled"];
       diagnostics.styleLints.enable = true;
+
       files.excludeDirs = [".git" ".github" "target" "assets" "static" "dist"];
       files.watcher = "server";
+
       imports.granularity.group = "module";
       imports.preferPrelude = true;
+
       lru.capacity = 512;
       numThreads = 0;
+
       references.excludeImports = true;
       references.excludeTests = true;
 
       hover = {
+        links.enable = false;
         actions.enable = false;
         lens.enable = false;
         memoryLayout.enable = false;
@@ -203,7 +216,16 @@
         allTargets = false;
         command = "clippy";
         extraArgs = ["--tests" "--no-deps" "--" "-W" "clippy::pedantic"];
-        invocationStrategy = "once";
+        invocationStrategy = "per_workspace";
+        ignore = [
+          "clippy::missing_errors_doc"
+          "clippy::missing_safety_doc"
+          "clippy::missing_panics_doc"
+          "clippy::cast_possible_truncation"
+          "clippy::cast_precision_loss"
+          "clippy::cast_possible_wrap"
+          "clippy::cast_sign_loss"
+        ];
         noDefaultFeatures = true;
       };
 
@@ -227,24 +249,34 @@
       };
 
       inlayHints = {
-        bindingModeHints.enable = false;
-        closingBraceHints.minLines = 15;
-        closureCaptureHints.enable = true;
+        maxLength = 12;
+
+        renderColons = false;
+        parameterHints.enable = false;
+        bindingModeHints.enable = true;
+        rangeExclusiveHints.enable = true;
+
+        closingBraceHints.minLines = 8;
+        closureCaptureHints.enable = false;
         closureReturnTypeHints.enable = "with_block";
+
         discriminantHints.enable = "fieldless";
+
         expressionAdjustmentHints.enable = "never"; # always | never | reborrow
         expressionAdjustmentHints.hideOutsideUnsafe = false;
+        expressionAdjustmentHints.disableReborrows = true;
         expressionAdjustmentHints.mode = "prefer_prefix"; # prefix | postfix | prefer
+
         genericParameterHints.lifetime.enable = true;
+        genericParameterHints.const.enable = true;
         genericParameterHints.type.enable = false;
+
         implicitDrops.enable = false;
         implicitSizedBoundHints.enable = false;
+
         lifetimeElisionHints.enable = "skip_trivial";
         lifetimeElisionHints.useParameterNames = false;
-        maxLength = 24;
-        parameterHints.enable = false;
-        rangeExclusiveHints.enable = true;
-        renderColons = false;
+
         typeHints.enable = true;
         typeHints.hideClosureInitialization = true;
         typeHints.hideNamedConstructor = true;
