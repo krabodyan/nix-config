@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  hidpi,
   fonts,
   config,
   colors,
@@ -41,7 +42,12 @@ in {
           resize-by-cells = "no";
           resize-delay-ms = 300;
           resize-keep-grid = "no";
-          initial-window-size-pixels = "1200x800";
+
+          initial-window-size-pixels =
+            if hidpi
+            then "1600x1000"
+            else "1200x800";
+
           underline-offset = "12px";
           underline-thickness = "1px";
           title = "terminal";
