@@ -12,9 +12,6 @@
       "fs.suid_dumpable" = 0;
       "kernel.dmesg_restrict" = 0;
 
-      "vm.vfs_cache_pressure" = 50;
-      "vm.max_map_count" = 1048576;
-
       "net.ipv4.tcp_fastopen" = 3;
       "net.core.default_qdisc" = "cake";
       "net.ipv4.tcp_congestion_control" = "bbr";

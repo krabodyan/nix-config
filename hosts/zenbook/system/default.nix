@@ -12,7 +12,7 @@
     distrobox = yes;
     sound = yes;
     time = yes;
-    tmpfs = yes;
+    zram = yes;
     udev-rules = yes;
     users = yes;
 

@@ -9,7 +9,7 @@
     sound = yes;
     ssd-btrfs = yes;
     time = yes;
-    tmpfs = yes;
+    zram = yes;
     users = yes;
     steam = yes;
     packages = yes;
