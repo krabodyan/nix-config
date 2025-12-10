@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
-  cfg = config.module.tmpfs;
+  cfg = config.module.zram;
 in {
   options = {
     module.zram = {
