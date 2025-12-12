@@ -24,21 +24,29 @@
         opencv.cxxdev
         openssl.dev
 
+        pkg-config
         expat
         fontconfig
         freetype
         freetype.dev
+        mesa
         libGL
-        pkg-config
         xorg.libX11
         xorg.libXcursor
         xorg.libXi
         xorg.libXrandr
+        xorg.libXinerama
+        dbus
         wayland
         libxkbcommon
+        pango
+        cairo
+        libcerf
 
         cudaPackages.cudatoolkit
         cudaPackages.tensorrt
+
+        nasm
 
         gst_all_1.gstreamer
         gst_all_1.gst-plugins-base

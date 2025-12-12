@@ -189,7 +189,7 @@
       diagnostics.disabled = ["proc-macro-disabled"];
       diagnostics.styleLints.enable = true;
 
-      files.excludeDirs = [".git" ".github" "target" "assets" "static" "dist"];
+      files.excludeDirs = [".git" ".github" "target" "assets" "static" "dist" "build"];
       files.watcher = "server";
 
       imports.granularity.group = "module";
@@ -205,7 +205,7 @@
         links.enable = false;
         actions.enable = false;
         lens.enable = false;
-        memoryLayout.enable = false;
+        memoryLayout.enable = true;
         show.enumVariants = 10;
         show.fields = 10;
         show.traitAssocItems = 10;
