@@ -262,9 +262,9 @@
 
         discriminantHints.enable = "fieldless";
 
-        expressionAdjustmentHints.enable = "never"; # always | never | reborrow
+        expressionAdjustmentHints.enable = "reborrow"; # always | never | reborrow
         expressionAdjustmentHints.hideOutsideUnsafe = false;
-        expressionAdjustmentHints.disableReborrows = true;
+        expressionAdjustmentHints.disableReborrows = false;
         expressionAdjustmentHints.mode = "prefer_prefix"; # prefix | postfix | prefer
 
         genericParameterHints.lifetime.enable = true;
