@@ -218,6 +218,7 @@
         extraArgs = ["--tests" "--no-deps" "--" "-W" "clippy::pedantic"];
         invocationStrategy = "per_workspace";
         ignore = [
+          "clippy::similar_names"
           "clippy::missing_errors_doc"
           "clippy::missing_safety_doc"
           "clippy::missing_panics_doc"
