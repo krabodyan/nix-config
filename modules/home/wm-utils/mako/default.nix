@@ -25,12 +25,14 @@ in {
           then "15"
           else "11";
 
-        beep_wrap = volume: sound: "exec ${pkgs.pipewire}/bin/pw-cat --volume ${volume} -p ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/${sound} &";
-        volume-change = beep_wrap "1.0" "audio-volume-change.oga";
-        message = beep_wrap "0.3" "message.oga";
-        warning = beep_wrap "0.3" "dialog-warning.oga";
-        # bell = beep_wrap "0.1" "bell.oga";
-        # service-login = beep_wrap "0.2" "service-login.oga";
+        sound-theme = "${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo";
+        beep-wrap = volume: sound: "exec ${pkgs.pipewire}/bin/pw-cat --volume ${volume} -p ${sound-theme}/${sound} &";
+
+        volume-change = beep-wrap "1.0" "audio-volume-change.oga";
+        message = beep-wrap "0.3" "message.oga";
+        warning = beep-wrap "0.3" "dialog-warning.oga";
+        # bell = beep-wrap "0.1" "bell.oga";
+        # service-login = beep-wrap "0.2" "service-login.oga";
       in {
         icons = 0;
         markup = 0;
