@@ -46,6 +46,7 @@
         cudaPackages.cudatoolkit
         cudaPackages.tensorrt
 
+        srt
         nasm
 
         gst_all_1.gstreamer
