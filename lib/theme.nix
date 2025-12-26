@@ -13,13 +13,13 @@ rec {
     mode_normal = brred;
     mode_select = brmagenta;
 
-    bg = "0f0f0f";
+    bg = "050505";
     bg-dark = "000000";
-    bg-bright = "141414";
+    bg-bright = "0f0f0f";
 
-    surface0 = "1a1a1a";
-    surface1 = "262626";
-    surface2 = "2e2e2e";
+    surface0 = "121212";
+    surface1 = "1a1a1a";
+    surface2 = "292929";
     surface3 = "424242";
 
     fg = "f7f6ef";
