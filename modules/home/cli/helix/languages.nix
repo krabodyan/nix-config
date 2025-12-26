@@ -205,7 +205,7 @@
         links.enable = false;
         actions.enable = false;
         lens.enable = false;
-        memoryLayout.enable = true;
+        memoryLayout.enable = false;
         show.enumVariants = 10;
         show.fields = 10;
         show.traitAssocItems = 10;
@@ -250,8 +250,6 @@
       };
 
       inlayHints = {
-        maxLength = 12;
-
         renderColons = false;
         parameterHints.enable = false;
         bindingModeHints.enable = true;

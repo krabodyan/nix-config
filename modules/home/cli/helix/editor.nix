@@ -35,7 +35,7 @@
     enable = true;
     snippets = true;
     display-messages = true;
-    display-inlay-hints = true;
+    display-inlay-hints = false;
     auto-signature-help = false;
     inlay-hints-length-limit = 24;
     display-progress-messages = true;
