@@ -23,7 +23,7 @@ in {
         no-init = true;
         chop-long-lines = false;
         status-column = true;
-        mouse = true;
+        mouse = false;
       };
     };
   };
