@@ -40,7 +40,7 @@
 
     helix = {
       enable = true;
-      components = ["base" "sql" "cpp" "web"];
+      components = ["base" "cpp"];
     };
 
     cli-default = {
@@ -79,9 +79,9 @@
         remmina
         google-chrome
         onlyoffice-desktopeditors
-        mission-planner
-        qgroundcontrol
-        betaflight-configurator
+        # mission-planner
+        # qgroundcontrol
+        # betaflight-configurator
       ];
     };
 

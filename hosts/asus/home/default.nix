@@ -83,7 +83,7 @@
         remmina
         gcolor3
         google-chrome
-        betaflight-configurator
+        # betaflight-configurator
         system-config-printer
         onlyoffice-desktopeditors
         qbittorrent

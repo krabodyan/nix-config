@@ -33,6 +33,8 @@ in {
 
         scooter
 
+        gnumake
+
         groff # for fish
 
         dust
@@ -42,15 +44,10 @@ in {
         just
       ]
       ++ lib.optionals cfg.dev [
-        gnumake
-        cmake
-        cmake-lint
-
-        lazydocker
-        sqlfluff
-        litecli
-        mycli
-        actionlint
+        # lazydocker
+        # litecli
+        # mycli
+        # actionlint
       ]
       ++ cfg.extra;
   };
