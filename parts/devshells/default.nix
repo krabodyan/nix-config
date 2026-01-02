@@ -24,24 +24,42 @@
         opencv.cxxdev
         openssl.dev
 
-        pkg-config
-        expat
-        fontconfig
-        freetype
-        freetype.dev
-        mesa
-        libGL
-        xorg.libX11
-        xorg.libXcursor
-        xorg.libXi
-        xorg.libXrandr
-        xorg.libXinerama
-        dbus
-        wayland
-        libxkbcommon
-        pango
-        cairo
-        libcerf
+        # pkg-config
+        # cmake
+        # ninja
+        # dbus
+
+        # xorg.libX11
+        # xorg.libXcursor
+        # xorg.libXinerama
+        # xorg.libXfixes
+        # xorg.libXrender
+        # xorg.libXft
+
+        # wayland
+        # wayland-protocols
+        # wayland-scanner
+        # libxkbcommon
+        # libdecor
+
+        # libglvnd
+        # mesa
+        # libGLU
+
+        # zlib
+        # libjpeg
+        # libpng
+
+        # fontconfig
+        # freetype
+        # glib
+        # pango
+        # cairo
+
+        # fltk14
+
+        SDL2
+        SDL2_ttf
 
         cudaPackages.cudatoolkit
         cudaPackages.tensorrt
