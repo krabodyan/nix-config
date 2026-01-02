@@ -22,7 +22,7 @@ open = [{ run = 'xdg-open "$1"', desc = "Open" }]
 noop = [{ run = 'true', block = false, desc = "do nothing" }]
 
 [open]
-rules = [{ name = "*", use = ["open", "reveal"] }]
+rules = [{ url = "*", use = ["open", "reveal"] }]
 
 [tasks]
 micro_workers = 10
@@ -43,6 +43,6 @@ prepend_previewers = [
 
 [[plugin.prepend_fetchers]]
 id = "mime"
-name = "*"
+url = "*"
 run = "mime-ext"
 prio = "high"
