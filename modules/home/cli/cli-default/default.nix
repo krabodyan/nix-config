@@ -33,6 +33,8 @@ in {
 
         scooter
 
+        groff # for fish
+
         dust
         dua
         dysk
