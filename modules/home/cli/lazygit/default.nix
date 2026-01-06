@@ -16,6 +16,7 @@ in {
   config = mkIf cfg.enable {
     programs.lazygit = {
       enable = true;
+      enableFishIntegration = false;
       settings.gui = {
         border = "single";
         nerdFontsVersion = 3;

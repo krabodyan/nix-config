@@ -15,7 +15,6 @@
     home-manager = yes;
     htop = yes;
     jq = yes;
-    lazygit = yes;
     network-utils = yes;
     nh = yes;
     nix-index = yes;

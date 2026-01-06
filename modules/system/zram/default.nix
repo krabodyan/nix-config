@@ -8,7 +8,7 @@
 in {
   options = {
     module.zram = {
-      enable = mkEnableOption "enable zram for /tmp and swap with sysctl vm options";
+      enable = mkEnableOption "zram for /tmp and swap with sysctl vm options";
     };
   };
   config = mkIf cfg.enable {
