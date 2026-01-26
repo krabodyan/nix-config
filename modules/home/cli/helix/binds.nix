@@ -131,13 +131,13 @@ in rec {
       };
 
       f = {
+        # j = ":run-shell-command just";
+        # l = ":sh sqlfluff lint %{buffer_name} --dialect postgres --nofail --disable-progress-bar";
         a = "select_all";
         c = "file_picker_in_current_buffer_directory";
-        j = ":run-shell-command just";
         i = ":toggle lsp.display-inlay-hints";
         h = ":toggle end-of-line-diagnostics disable hint";
         s = ["search_selection_detect_word_boundaries" "select_all" "select_regex"];
-        l = ":sh sqlfluff lint %{buffer_name} --dialect postgres --nofail --disable-progress-bar";
         b = [
           ":noop %sh{ gh browse %{buffer_name}:%{cursor_line} -b=%sh{ git rev-parse --abbrev-ref HEAD } }"
           ":echo opening in browser"
