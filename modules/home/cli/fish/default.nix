@@ -398,7 +398,7 @@ in {
           set -g fish_pager_color_selected_prefix white
           set -g fish_pager_color_selected_completion white
           set -g fish_pager_color_selected_description white
-          set -g fish_pager_color_selected_background --background=""
+          set -g fish_pager_color_selected_background normal
           set -g fish_pager_color_secondary brblack
           set -g fish_pager_color_secondary_prefix brblack
           set -g fish_pager_color_secondary_completion brblack
