@@ -63,6 +63,7 @@ in {
             NoTypingAnimation.enabled = true;
             UserSettingsAPI.enabled = true;
             WebScreenShareFixes.enabled = true;
+            NewGuildSettings.enable = true;
 
             VolumeBooster = {
               enabled = true;
