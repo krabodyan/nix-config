@@ -17,6 +17,10 @@ image_filter = "nearest"
 image_quality = 60
 max_width = 1200
 
+[indicator]
+current = { reversed = true }
+preview = { underline = false }
+
 [opener]
 open = [{ run = 'xdg-open "$1"', desc = "Open" }]
 noop = [{ run = 'true', block = false, desc = "do nothing" }]
@@ -44,5 +48,11 @@ prepend_previewers = [
 [[plugin.prepend_fetchers]]
 id = "mime"
 url = "*"
-run = "mime-ext"
+run = "mime.local"
+prio = "high"
+
+[[plugin.prepend_fetchers]]
+id = "mime"
+url = "*/"
+run = "mime.dir"
 prio = "high"
