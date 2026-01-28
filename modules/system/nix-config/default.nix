@@ -48,6 +48,9 @@ in {
         auto-optimise-store = true;
         show-trace = true;
 
+        stalled-download-timeout = 10;
+        connect-timeout = 10;
+
         substituters = [
           "https://helix.cachix.org"
           "https://cache.nixos.org"
