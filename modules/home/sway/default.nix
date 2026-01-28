@@ -88,7 +88,7 @@ in {
 
         startup = with pkgs;
           map (cmd: {command = cmd;}) [
-            "${lib.getExe swaykbdd} -a 'firefox,chrome,firefox-nightly,google-chrome'"
+            "${lib.getExe swaykbdd} -a 'firefox,chrome,firefox-nightly,firefox-esr,google-chrome'"
             "${lib.getExe wl-clip-persist} --clipboard regular --disable-timestamps --reconnect-tries 3"
             "${lib.getExe foot} --server"
           ];
@@ -99,6 +99,7 @@ in {
           ];
           "workspace 2" = [
             {app_id = "^firefox$";}
+            {app_id = "^firefox-esr$";}
             {app_id = "^firefox-nightly$";}
           ];
           "workspace 3" = [
@@ -109,6 +110,7 @@ in {
           ];
           "workspace 5" = [
             {class = "^steam$";}
+            {title = "^Steam$";}
           ];
         };
 
