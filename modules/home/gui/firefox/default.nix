@@ -70,7 +70,7 @@ in {
         "application/x-extension-shtml"
         "application/x-extension-xhtml"
       ];
-      desktop = "firefox.desktop";
+      desktop = "firefox-esr.desktop";
     };
   };
 }
