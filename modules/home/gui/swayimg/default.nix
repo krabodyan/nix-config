@@ -17,60 +17,74 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = [pkgs.swayimg];
-    xdg.configFile."swayimg/config".text = with colors.hex; ''
-      [general]
-      size = fullscreen
+    xdg.configFile."swayimg/config".text = with colors.hex; # ini
 
-      [viewer]
-      scale = optimal
-      transparency = grid
-      window = ${bg}ff
+      ''
+        [general]
+        size = fullscreen
 
-      [font]
-      name = ${fonts.monospace}
-      size = 14
-      color = ${fg}ff
-      shadow = #000000a0
+        [viewer]
+        scale = optimal
+        transparency = grid
+        window = ${bg}ff
 
-      [keys.viewer]
-      k = prev_file
-      j = next_file
-      t = zoom fit
-      z = zoom real
-      f = fullscreen
-      left = rotate_left
-      right = rotate_right
-      bracketleft = flip_vertical
-      bracketright = flip_horizontal
-      up = prev_file
-      down = next_file
-      Shift+ScrollUp = step_down 5
-      Shift+ScrollDown = step_up 5
-      ScrollUp = zoom +10
-      ScrollDown = zoom -10
-      Ctrl+equal = zoom +10
-      Ctrl+minus = zoom -10
+        [font]
+        name = ${fonts.monospace}
+        size = 14
+        color = ${fg}ff
+        shadow = #000000a0
 
-      [info]
-      show = yes
+        [keys.gallery]
+        k = prev_file
+        j = next_file
+        up = prev_file
+        down = next_file
+        i = info gallery,off
+        h = help
+        Return = mode viewer
 
-      [info.gallery]
-      top_left = +name,+format,+filesize,+imagesize,+exif
-      top_right = index
-      bottom_left = scale,frame
-      bottom_right = status
+        [keys.viewer]
+        k = prev_file
+        j = next_file
+        up = prev_file
+        down = next_file
+        t = zoom fit
+        z = zoom real
+        f = fullscreen
+        i = info viewer,off
+        h = help
+        left = rotate_left
+        right = rotate_right
+        bracketleft = flip_vertical
+        bracketright = flip_horizontal
+        Shift+ScrollUp = step_down 5
+        Shift+ScrollDown = step_up 5
+        ScrollUp = zoom +10
+        ScrollDown = zoom -10
+        Ctrl+equal = zoom +10
+        Ctrl+minus = zoom -10
+        Return = mode gallery
 
-      [info.viewer]
-      top_left = name,status
-      top_right = none
-      bottom_right = none
-      bottom_left = none
+        [info]
+        show = no
 
-      [list]
-      order = alpha
-      recursive = no
-      all = yes
-    '';
+        [info.gallery]
+        top_left = +name,+format,+filesize,+imagesize,+exif
+        top_right = index
+        bottom_left = scale,frame
+        bottom_right = status
+
+        [info.viewer]
+        top_left = +name,+format,+filesize,+imagesize,+exif
+        top_right = index
+        bottom_left = scale,frame
+        bottom_right = status
+
+        [list]
+        order = alpha
+        recursive = no
+        all = yes
+      '';
     xdg.mimeApps.defaultApplications = mkAssociations {
       types = [
         "image/png"
