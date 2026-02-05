@@ -133,6 +133,7 @@ in rec {
       f = {
         # j = ":run-shell-command just";
         # l = ":sh sqlfluff lint %{buffer_name} --dialect postgres --nofail --disable-progress-bar";
+        r = ":reload-all";
         a = "select_all";
         c = "file_picker_in_current_buffer_directory";
         i = ":toggle lsp.display-inlay-hints";
