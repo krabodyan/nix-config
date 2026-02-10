@@ -219,6 +219,7 @@
         invocationStrategy = "per_workspace";
         ignore = [
           "clippy::similar_names"
+          "clippy::many_single_char_names"
           "clippy::missing_errors_doc"
           "clippy::missing_safety_doc"
           "clippy::missing_panics_doc"
