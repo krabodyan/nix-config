@@ -183,6 +183,7 @@
       cargo.buildScripts.enable = false;
       cargo.buildScripts.rebuildOnSave = false;
       cargo.noDefaultFeatures = true;
+      cargo.allTargets = false;
       cargo.autoreload = true;
       cargo.noDeps = false;
 

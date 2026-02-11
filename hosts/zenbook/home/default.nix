@@ -29,6 +29,7 @@
     less = yes;
     gcc = yes;
     sc-im = yes;
+    rust-cli = yes;
 
     git = {
       enable = true;
