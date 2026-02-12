@@ -79,6 +79,7 @@
         anydesk
         remmina
         google-chrome
+        signal-desktop
         onlyoffice-desktopeditors
         # mission-planner
         # qgroundcontrol

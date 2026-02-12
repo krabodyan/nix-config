@@ -82,6 +82,7 @@
         remmina
         gcolor3
         google-chrome
+        signal-desktop
         # betaflight-configurator
         system-config-printer
         onlyoffice-desktopeditors
