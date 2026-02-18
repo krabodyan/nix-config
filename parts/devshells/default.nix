@@ -21,42 +21,12 @@
       ];
 
       buildInputs = with pkgs.pinned; [
+        python313Packages.numpy
+        python313Packages.urllib3
+        python313Packages.requests
+
         opencv.cxxdev
         openssl.dev
-
-        # pkg-config
-        # cmake
-        # ninja
-        # dbus
-
-        # xorg.libX11
-        # xorg.libXcursor
-        # xorg.libXinerama
-        # xorg.libXfixes
-        # xorg.libXrender
-        # xorg.libXft
-
-        # wayland
-        # wayland-protocols
-        # wayland-scanner
-        # libxkbcommon
-        # libdecor
-
-        # libglvnd
-        # mesa
-        # libGLU
-
-        # zlib
-        # libjpeg
-        # libpng
-
-        # fontconfig
-        # freetype
-        # glib
-        # pango
-        # cairo
-
-        # fltk14
 
         SDL2
         SDL2_ttf
