@@ -27,21 +27,30 @@ in {
             Compression = "yes";
           };
         };
+
         jetson = {
           hostname = "10.0.3.166";
           user = "firefly";
         };
+
         jetson2 = {
           hostname = "10.0.3.163";
           user = "firefly";
         };
+
         jetson3 = {
           hostname = "10.0.3.164";
           user = "firefly";
         };
+
         prague = {
           hostname = "10.0.9.128";
           user = "nvidia";
+        };
+
+        agx = {
+          hostname = "10.0.9.127";
+          user = "jetson";
         };
       };
     };
