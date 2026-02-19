@@ -25,8 +25,12 @@
     kernelParams = [
       "nohibernate"
       "nowatchdog"
+      "selinux=0"
+      "preempt=full"
+      "hpet=disable"
       "rootfstype=btrfs"
       "raid=noautodetect"
+      "split_lock_detect=off"
     ];
 
     kernelPackages = pkgs.pinned.linuxPackages_zen;
