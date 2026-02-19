@@ -78,6 +78,7 @@
     gui-default = {
       enable = true;
       extra = with pkgs; [
+        wl-crosshair
         anydesk
         remmina
         gcolor3

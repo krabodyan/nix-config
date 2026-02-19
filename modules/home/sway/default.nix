@@ -278,6 +278,8 @@ in {
             then ''exec notify-send -t 2000 "$(date +"%d %B %H:%M") [$(acpi | rg -o '\d+%')]"''
             else ''exec notify-send -t 2000 "$(date +"%d %B %H:%M")"'';
 
+          "${mod}+r" = "exec pkill wl-crosshair || wl-crosshair ~/flake/assets/cross/cross.png &";
+
           "${mod}+b" = "seat seat0 hide_cursor ${hideCursor}";
           "${mod}+Alt+b" = "seat seat0 hide_cursor 0";
 
