@@ -29,6 +29,7 @@ in {
     programs.yazi = {
       enable = true;
       enableFishIntegration = false;
+      shellWrapperName = "yy";
       plugins = {
         inherit (pkgs.yaziPlugins) piper ouch rsync mime-ext;
       };
