@@ -19,7 +19,7 @@ in {
       # cargo-flamegraph
       # cargo-show-asm
       # cargo-llvm-cov
-      # sqlx-cli
+      sqlx-cli
     ];
 
     xdg.configFile."rustfmt/rustfmt.toml".text =

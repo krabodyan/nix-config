@@ -24,9 +24,32 @@
         python313Packages.numpy
         python313Packages.urllib3
         python313Packages.requests
+        python313Packages.pytest
 
         opencv.cxxdev
         openssl.dev
+
+        xorg.libX11
+        xorg.libXext
+        xorg.libXrender
+        xorg.libXft
+        xorg.libXinerama
+        xorg.libXcursor
+        xorg.libXi
+
+        fontconfig
+        freetype
+        libpng
+        zlib
+        libjpeg
+        cairo
+        pango
+        glib
+        dbus
+        ninja
+
+        wayland
+        libxkbcommon
 
         SDL2
         SDL2_ttf
