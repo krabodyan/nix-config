@@ -44,8 +44,8 @@ in {
         };
 
         prague = {
-          hostname = "10.0.9.128";
-          user = "nvidia";
+          hostname = "10.0.9.155";
+          user = "test";
         };
 
         agx = {
