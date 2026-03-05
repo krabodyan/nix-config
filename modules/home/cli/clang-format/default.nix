@@ -14,6 +14,11 @@ in {
   };
   config = mkIf cfg.enable {
     home.packages = [pkgs.gdb];
+
+    xdg.configFile."gdb/gdbinit".text = ''
+      set auto-load safe-path /
+    '';
+
     home.file.".clang-format".text = ''
       BasedOnStyle: LLVM
 
