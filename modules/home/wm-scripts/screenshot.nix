@@ -11,7 +11,6 @@ pkgs.writeShellApplication {
     mako
     slurp
     swayimg
-    wayshot
     wl-clipboard
   ];
 
@@ -20,6 +19,9 @@ pkgs.writeShellApplication {
     grim = "${pkgs.grim}/bin/grim -t png";
     swayimg = "swayimg --config info.show=no";
     slurp = "slurp -w 2 -b ${colors.bg}b3 -c ${colors.select}ff -B ${colors.bg}b3";
+    geometry = ''
+      swaymsg -t get_tree | jq -r '.. | select(.focused? == true).rect | "\(.x),\(.y) \(.width)x\(.height)"'
+    '';
   in
     # bash
     ''
@@ -29,6 +31,11 @@ pkgs.writeShellApplication {
 
       if [ "$mode" = "full" ]; then
         ${grim} - | ${copy}
+        exit 0
+      fi
+
+      if [ "$mode" = "focus" ]; then
+        ${grim} -g "$(${geometry})" - | ${copy}
         exit 0
       fi
 
