@@ -105,6 +105,7 @@ in {
           mkIf cfg.aliases.git {
             ga = "git add";
             gp = "git push";
+            gl = "git pull";
             gpf = "git push --force-with-lease";
 
             gd = "git diff";
