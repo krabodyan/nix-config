@@ -53,6 +53,7 @@
 
         SDL2
         SDL2_ttf
+        SDL2_image
 
         cudaPackages.cudatoolkit
         cudaPackages.tensorrt
