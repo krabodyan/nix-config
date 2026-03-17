@@ -104,13 +104,15 @@ in {
         (
           mkIf cfg.aliases.git {
             ga = "git add";
-            gp = "git push";
             gl = "git pull";
+            gc = "git commit";
+            gs = "git status";
+
+            gp = "git push";
             gpf = "git push --force-with-lease";
 
             gd = "git diff";
-            gc = "git commit";
-            gs = "git status";
+            gds = "git diff --staged";
 
             gr = "git restore";
             grs = "git restore --staged";
