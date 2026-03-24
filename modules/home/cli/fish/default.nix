@@ -76,16 +76,19 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.packages = [pkgs.grc];
+    home.packages = [pkgs.nvd];
+
     programs.fish = {
       enable = true;
       package = pkgs.fishMinimal;
 
       shellAbbrs = lib.mkMerge [
         {
-          rsync-ssh = "rsync -avzP --append-verify user@ip:path.from user@ip:path.to";
           cpr = "rsync -arvP --append-verify";
           cp = "cp -vr";
+
+          ndiff = "nvd diff (printf '%s\n' ~/.local/state/nix/profiles/home-manager-* | sort -r | fzf) ~/.local/state/nix/profiles/home-manager";
+          nndiff = "nvd diff (printf '%s\n' /nix/var/nix/profiles/system-* | sort -r | fzf) /nix/var/nix/profiles/system";
         }
         (
           mkIf cfg.aliases.cmake (
