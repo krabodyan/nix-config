@@ -1,7 +1,7 @@
 {
   lib,
+  keys,
   config,
-  publicKey,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf;
@@ -14,9 +14,17 @@ in {
   };
 
   config = mkIf cfg.enable {
-    home.file.".ssh/id_ed25519.pub" = {
-      text = publicKey;
-      executable = false;
-    };
+    home.file =
+      lib.mapAttrs'
+      (name: key: {
+        name = "ssh-${name}";
+        value = {
+          text = key;
+          force = true;
+          executable = false;
+          target = ".ssh/${name}.pub";
+        };
+      })
+      keys;
   };
 }

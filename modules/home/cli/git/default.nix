@@ -1,8 +1,8 @@
 {
   lib,
   pkgs,
+  keys,
   config,
-  publicKey,
   ...
 }: let
   inherit (lib) mkEnableOption mkIf mkOption;
@@ -62,11 +62,14 @@ in {
           fetchall = "fetch origin '+refs/heads/*:refs/remotes/origin/*'";
         };
 
-        gpg.ssh.allowedSignersFile = toString (
-          pkgs.writeText "allowed_signers" ''
-            ${cfg.userEmail} ${publicKey}
-          ''
-        );
+        gpg.ssh.allowedSignersFile = let
+          key = keys."id_ed25519";
+        in
+          toString (
+            pkgs.writeText "allowed_signers" ''
+              ${cfg.userEmail} ${key}
+            ''
+          );
 
         core = {
           untrackedCache = true;
@@ -152,7 +155,7 @@ in {
           forceDeleteBranch = false;
         };
 
-        commit.template = builtins.toString (pkgs.writeText "template.txt" ''
+        commit.template = toString (pkgs.writeText "template.txt" ''
           # <type>[optional scope][!]: <description>
 
           # fix(fix): description

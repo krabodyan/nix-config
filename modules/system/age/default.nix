@@ -25,9 +25,16 @@ in {
         password = {
           file = ../../../secrets/password.age;
         };
-        ssh = {
-          file = ../../../secrets/ssh.age;
+        ssh-ed25519 = {
+          file = ../../../secrets/ssh_ed25519.age;
           path = "/home/${username}/.ssh/id_ed25519";
+          mode = "400";
+          symlink = false;
+          owner = username;
+        };
+        ssh-rsa = {
+          file = ../../../secrets/ssh_rsa.age;
+          path = "/home/${username}/.ssh/id_rsa";
           mode = "400";
           symlink = false;
           owner = username;
