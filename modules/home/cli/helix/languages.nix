@@ -173,13 +173,13 @@
       assist.emitMustUse = true;
       assist.expressionFillDefault = "default";
       assist.termSearch.enable = false;
-      # assist.termSearch.borrowcheck = false;
-      # assist.termSearch.fuel = 100;
+      assist.termSearch.borrowcheck = false;
+      assist.termSearch.fuel = 100;
 
       cachePriming.enable = true;
       cachePriming.numThreads = 0;
 
-      cargo.targetDir = true;
+      cargo.targetDir = false;
       cargo.buildScripts.enable = false;
       cargo.buildScripts.rebuildOnSave = false;
       cargo.noDefaultFeatures = true;
@@ -196,7 +196,7 @@
       imports.granularity.group = "module";
       imports.preferPrelude = true;
 
-      lru.capacity = 512;
+      lru.capacity = 2048;
       numThreads = 0;
 
       references.excludeImports = true;

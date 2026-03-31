@@ -1,4 +1,5 @@
 {
+  insecure = true;
   mouse = false;
   clipboard-provider = "wayland";
   undercurl = true;
