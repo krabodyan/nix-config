@@ -16,8 +16,8 @@
       type = "github";
       owner = "oxalica";
       repo = "rust-overlay";
-      rev = "63d22578600f70d293aede6bc737efef60ebd97f";
-      narHash = "sha256-Zo3LQQDz+64EQ9zor/WmeNTFLoZkjmhp0UY3G0D3seE=";
+      rev = "d9f52b51548e76ab8b6e7d647763047ebdec835c";
+      narHash = "sha256-3Oi4mBKzOCFQYLUyEjyc0s5cnlNj1MzmhpVKoLptpe8=";
     };
 
     home-manager = {
