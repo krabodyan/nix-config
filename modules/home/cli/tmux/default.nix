@@ -143,6 +143,7 @@ in {
         bind "Q" kill-session
         bind "q" kill-window
         bind "b" set -g status
+        bind "d" set -g status
       '';
   };
 }
