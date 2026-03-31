@@ -25,7 +25,6 @@
     tmux = yes;
     yazi = yes;
     zoxide = yes;
-    meld = yes;
     less = yes;
     gcc = yes;
     sc-im = yes;

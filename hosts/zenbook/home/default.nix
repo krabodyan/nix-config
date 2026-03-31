@@ -25,7 +25,6 @@
     yazi = yes;
     zoxide = yes;
     ssh = yes;
-    meld = yes;
     less = yes;
     gcc = yes;
     sc-im = yes;
