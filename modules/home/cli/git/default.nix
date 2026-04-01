@@ -63,11 +63,13 @@ in {
         };
 
         gpg.ssh.allowedSignersFile = let
-          key = keys."id_ed25519";
+          key_ed22519 = keys."id_ed25519";
+          key_rsa = keys."id_rsa";
         in
           toString (
             pkgs.writeText "allowed_signers" ''
-              ${cfg.userEmail} ${key}
+              ${cfg.userEmail} ${key_rsa}
+              ${cfg.userEmail} ${key_ed22519}
             ''
           );
 
