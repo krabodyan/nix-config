@@ -23,6 +23,15 @@
       };
     }
     {
+      name = "docker-compose";
+      file-types = [
+        {glob = "docker-compose.yaml";}
+        {glob = "docker-compose.yml";}
+        {glob = "docker-compose.*.yaml";}
+        {glob = "docker-compose.*.yml";}
+      ];
+    }
+    {
       name = "svelte";
       comment-token = "//";
       indent = {
@@ -182,7 +191,7 @@
       cargo.targetDir = false;
       cargo.buildScripts.enable = false;
       cargo.buildScripts.rebuildOnSave = false;
-      cargo.noDefaultFeatures = true;
+      cargo.noDefaultFeatures = false;
       cargo.allTargets = false;
       cargo.autoreload = true;
       cargo.noDeps = false;
