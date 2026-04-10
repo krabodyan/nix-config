@@ -51,7 +51,7 @@ in {
             ruff
 
             vscode-langservers-extracted
-            nodePackages_latest.prettier
+            prettier
           ];
 
           web = [

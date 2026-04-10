@@ -77,7 +77,7 @@
     gui-default = {
       enable = true;
       extra = with pkgs; [
-        cisco-packet-tracer_9
+        # cisco-packet-tracer_9
         wl-crosshair
         anydesk
         remmina
