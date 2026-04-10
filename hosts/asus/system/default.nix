@@ -18,10 +18,10 @@
     # libvirtd = yes;
     # printing = yes;
 
-    podman = {
-      enable = true;
-      nvidia = true;
-    };
+    # podman = {
+    #   enable = true;
+    #   nvidia = true;
+    # };
 
     xdg-portal = {
       enable = true;
@@ -41,6 +41,10 @@
       charge-threshold = yes;
       systemd-config = yes;
       earlyoom = yes;
+      docker = {
+        enable = true;
+        nvidia = true;
+      };
     };
 
     networking = {

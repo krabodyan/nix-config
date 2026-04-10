@@ -14,15 +14,19 @@ in {
         example = "overlay2";
         default = "overlay2";
       };
+      nvidia = mkOption {
+        type = lib.types.bool;
+        default = false;
+        example = true;
+      };
     };
   };
   config = mkIf cfg.enable {
+    hardware.nvidia-container-toolkit.enable = cfg.nvidia;
     virtualisation.docker = {
       enable = true;
       enableOnBoot = false;
       inherit (cfg) storageDriver;
     };
-    systemd.services.docker.wantedBy = lib.mkForce [];
-    systemd.sockets.docker.wantedBy = lib.mkForce [];
   };
 }

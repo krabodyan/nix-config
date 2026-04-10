@@ -23,6 +23,17 @@
       };
     }
     {
+      name = "docker-compose";
+      file-types = [
+        {glob = "docker-compose.yaml";}
+        {glob = "docker-compose.yml";}
+        {glob = "docker-compose.*.yaml";}
+        {glob = "docker-compose.*.yml";}
+        {glob = "docker-compose.yaml.*";}
+        {glob = "docker-compose.yml.*";}
+      ];
+    }
+    {
       name = "svelte";
       comment-token = "//";
       indent = {
