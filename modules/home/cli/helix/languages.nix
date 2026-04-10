@@ -193,7 +193,7 @@
       cargo.targetDir = false;
       cargo.buildScripts.enable = false;
       cargo.buildScripts.rebuildOnSave = false;
-      cargo.noDefaultFeatures = true;
+      cargo.noDefaultFeatures = false;
       cargo.allTargets = false;
       cargo.autoreload = true;
       cargo.noDeps = false;

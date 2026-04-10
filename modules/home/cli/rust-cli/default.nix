@@ -26,9 +26,9 @@ in {
       # toml
       ''
         edition = "2024"
-        comment_width = 100
+        comment_width = 80
         max_width = 80
-        fn_call_width = 65
+        # fn_call_width = 65
         chain_width = 55
         binop_separator = "Back"
         combine_control_expr = false
