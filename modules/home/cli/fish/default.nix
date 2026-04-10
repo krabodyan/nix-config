@@ -108,7 +108,7 @@ in {
           mkIf cfg.aliases.git {
             ga = "git add";
             gl = "git pull";
-            gc = "git commit";
+            gc = "git commit -v";
             gs = "git status";
 
             gp = "git push";
