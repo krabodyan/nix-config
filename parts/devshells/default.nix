@@ -10,6 +10,7 @@
       DEV_SHELL_NAME = "rust";
       RUST_BACKTRACE = 1;
       RUST_LOG = "DEBUG";
+      OPENCV_LINK_LIBS = "opencv_core,opencv_imgproc,opencv_imgcodecs,opencv_videoio,opencv_dnn";
 
       LIBCLANG_PATH = "${pkgs.pinned.llvmPackages.libclang.lib}/lib";
 
@@ -67,6 +68,7 @@
         gst_all_1.gst-plugins-good
         gst_all_1.gst-plugins-bad
         gst_all_1.gst-plugins-ugly
+        gst_all_1.gst-rtsp-server
         gst_all_1.gst-libav
         gst_all_1.gst-vaapi
 
@@ -237,6 +239,21 @@
 
         psycopg2-binary
         pyyaml
+      ];
+    };
+
+    devShells.ardu = pkgs.mkShell {
+      name = "ardu";
+      DEV_SHELL_NAME = "ardu";
+
+      buildInputs = with pkgs.pinned; [
+        cmake
+        mavproxy
+
+        python311Packages.empy
+        python311Packages.pexpect
+        python311Packages.pymavlink
+        python311Packages.future
       ];
     };
   };

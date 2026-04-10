@@ -203,7 +203,7 @@ in {
           nix-shell = "nix-shell --command fish";
           ns = "nix-shell --command fish -p";
         }
-        // lib.genAttrs ["ino" "rust" "rasp" "tauri" "pp" "cuda"] (
+        // lib.genAttrs ["ino" "rust" "rasp" "tauri" "pp" "cuda" "ardu"] (
           name: "nix develop $NH_FLAKE#${name} --impure --option max-jobs 1 --command sh -c \"${tm}\""
         );
 
@@ -539,7 +539,7 @@ in {
         build-devshell =
           # fish
           ''
-            for name in cuda pp rust
+            for name in cuda pp rust ardu
               nix build $NH_FLAKE#devShells.x86_64-linux.$name --impure --option max-jobs 1 -o ~/.gc-root-$name
               echo $name builded
             end
