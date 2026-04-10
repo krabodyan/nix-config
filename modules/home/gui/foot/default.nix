@@ -87,7 +87,7 @@ in {
           show-urls-launch = "Mod1+Control+o";
         };
 
-        colors = with colors; {
+        colors-dark = with colors; {
           selection-background = surface2;
           background = bg;
           foreground = fg;

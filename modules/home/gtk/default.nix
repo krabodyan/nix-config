@@ -179,6 +179,7 @@ in {
           '';
       };
       gtk4 = {
+        theme = config.gtk.theme;
         extraConfig = config.gtk.gtk3.extraConfig;
         extraCss = config.gtk.gtk3.extraCss;
       };

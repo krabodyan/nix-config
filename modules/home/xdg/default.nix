@@ -17,7 +17,6 @@ in {
     xdg = {
       enable = true;
       portal.xdgOpenUsePortal = true;
-
       configFile = {"mimeapps.list".force = true;};
       mime.enable = true;
       mimeApps = {
@@ -36,6 +35,7 @@ in {
         mk = path: "${config.home.homeDirectory}/${path}";
       in {
         enable = true;
+        setSessionVariables = false;
         desktop = mk "desktop";
         documents = mk "documents";
         download = mk "downloads";
