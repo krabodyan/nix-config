@@ -10,7 +10,6 @@
       DEV_SHELL_NAME = "rust";
       RUST_BACKTRACE = 1;
       RUST_LOG = "DEBUG";
-      OPENCV_LINK_LIBS = "opencv_core,opencv_imgproc,opencv_imgcodecs,opencv_videoio,opencv_dnn";
 
       LIBCLANG_PATH = "${pkgs.pinned.llvmPackages.libclang.lib}/lib";
 
