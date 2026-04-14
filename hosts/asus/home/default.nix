@@ -44,7 +44,7 @@
       extra = with pkgs; [
         perf
         openvpn
-        imagemagick
+        wireguard-tools
         ffmpeg-full
       ];
     };

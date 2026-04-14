@@ -44,12 +44,12 @@ in {
         };
 
         prague = {
-          hostname = "10.0.9.155";
+          hostname = "10.0.15.155";
           user = "test";
         };
 
         agx = {
-          hostname = "10.0.9.127";
+          hostname = "10.0.15.127";
           user = "jetson";
         };
       };

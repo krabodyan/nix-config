@@ -48,7 +48,7 @@
       dev = true;
       extra = with pkgs; [
         openvpn
-        appimage-run
+        wireguard-tools
         ffmpeg-full
       ];
     };
