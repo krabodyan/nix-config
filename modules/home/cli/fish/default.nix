@@ -120,20 +120,9 @@ in {
             gr = "git restore";
             grs = "git restore --staged";
 
-            gg = "git graph -18";
+            gg = "git graph -20";
             ggl = "git graph";
             ggb = "git graph-branch";
-
-            cm = {
-              command = "git";
-              expansion = "commit -m \"%\"";
-              setCursor = true;
-            };
-            cma = {
-              command = "git";
-              expansion = "commit --all -m \"%\"";
-              setCursor = true;
-            };
           }
         )
         (
@@ -157,6 +146,7 @@ in {
               nl = "node ls";
               np = "node ps";
               r = "run --rm -it";
+              rn = "run --rm -it --device nvidia.com/gpu=all";
             })
         )
         (
