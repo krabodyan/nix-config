@@ -198,7 +198,7 @@
       cargo.autoreload = true;
       cargo.noDeps = false;
 
-      diagnostics.disabled = ["proc-macro-disabled"];
+      diagnostics.disabled = ["proc-macro-disabled" "attribute-expansion-disabled"];
       diagnostics.styleLints.enable = true;
 
       files.excludeDirs = [".git" ".github" "target" "assets" "static" "dist" "build"];
@@ -246,11 +246,13 @@
       };
 
       procMacro = {
+        attributes.enable = false;
         ignored.async_trait = ["async_trait"];
         ignored.embassy_executor_macros = ["main"];
         ignored.pyo3_macros = ["pymodule" "pyfunction"];
         ignored.tauri_macros = ["command" "generate_handler"];
         ignored.tokio_macros = ["main"];
+        ignored.utoipa_gen = ["OpenApi" "openapi" "path"];
       };
 
       completion = {
